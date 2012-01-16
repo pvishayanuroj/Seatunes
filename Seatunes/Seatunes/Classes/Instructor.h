@@ -10,10 +10,27 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface Instructor : CCNode {
+@interface Instructor : CCNode <CCTargetedTouchDelegate> {
  
     CCSprite *sprite_;    
+ 
+    NSString *name_;
     
+    CCAction *idleAnimation_;
+    
+    CCAction *wrongAnimation_;
+    
+    CCAction *singingAnimation_;
+    
+    BOOL clickable_;
 }
+
++ (id) instructor:(InstructorType)instructorType;
+
+- (id) initInstructor:(InstructorType)instructorType;
+
+- (void) initAnimations;
+
+- (void) playNote:(KeyType)keyType;
 
 @end

@@ -145,6 +145,7 @@
         if (value != nil) {
             Key *key = (Key *)value;
             [key unselectButton];
+            CFDictionaryRemoveValue(touches_, touch);
         }
     }
 }

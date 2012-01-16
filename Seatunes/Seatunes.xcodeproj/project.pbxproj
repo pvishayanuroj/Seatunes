@@ -121,7 +121,6 @@
 		DAB1207A14C1E84D009B60FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1207914C1E84D009B60FB /* main.m */; };
 		DAB1207D14C1E84D009B60FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1207C14C1E84D009B60FB /* AppDelegate.m */; };
 		DAB1208014C1E84D009B60FB /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1207F14C1E84D009B60FB /* RootViewController.m */; };
-		DAB1208314C1E84D009B60FB /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1208214C1E84D009B60FB /* HelloWorldLayer.m */; };
 		DAB1208C14C30911009B60FB /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1208B14C30911009B60FB /* GameLayer.m */; };
 		DAB1208F14C3099B009B60FB /* Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1208E14C3099B009B60FB /* Keyboard.m */; };
 		DAB1209514C30A87009B60FB /* Instructor.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1209414C30A87009B60FB /* Instructor.m */; };
@@ -136,24 +135,11 @@
 		DAB1210714C35A08009B60FB /* E4-Piano.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DAB120ED14C35A08009B60FB /* E4-Piano.m4a */; };
 		DAB1210814C35A08009B60FB /* F4-Piano.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DAB120EE14C35A08009B60FB /* F4-Piano.m4a */; };
 		DAB1210914C35A08009B60FB /* G4-Piano.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DAB120EF14C35A08009B60FB /* G4-Piano.m4a */; };
-		DAB1210A14C35A08009B60FB /* Instructor Whale.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120F114C35A08009B60FB /* Instructor Whale.png */; };
-		DAB1210B14C35A08009B60FB /* Sea Anemone A4 Key Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120F214C35A08009B60FB /* Sea Anemone A4 Key Selected.png */; };
-		DAB1210C14C35A08009B60FB /* Sea Anemone A4 Key.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120F314C35A08009B60FB /* Sea Anemone A4 Key.png */; };
-		DAB1210D14C35A08009B60FB /* Sea Anemone B4 Key Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120F414C35A08009B60FB /* Sea Anemone B4 Key Selected.png */; };
-		DAB1210E14C35A08009B60FB /* Sea Anemone B4 Key.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120F514C35A08009B60FB /* Sea Anemone B4 Key.png */; };
-		DAB1210F14C35A08009B60FB /* Sea Anemone C4 Key Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120F614C35A08009B60FB /* Sea Anemone C4 Key Selected.png */; };
-		DAB1211014C35A08009B60FB /* Sea Anemone C4 Key.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120F714C35A08009B60FB /* Sea Anemone C4 Key.png */; };
-		DAB1211114C35A08009B60FB /* Sea Anemone C5 Key Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120F814C35A08009B60FB /* Sea Anemone C5 Key Selected.png */; };
-		DAB1211214C35A08009B60FB /* Sea Anemone C5 Key.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120F914C35A08009B60FB /* Sea Anemone C5 Key.png */; };
-		DAB1211314C35A08009B60FB /* Sea Anemone D4 Key Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120FA14C35A08009B60FB /* Sea Anemone D4 Key Selected.png */; };
-		DAB1211414C35A08009B60FB /* Sea Anemone D4 Key.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120FB14C35A08009B60FB /* Sea Anemone D4 Key.png */; };
-		DAB1211514C35A08009B60FB /* Sea Anemone E4 Key Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120FC14C35A08009B60FB /* Sea Anemone E4 Key Selected.png */; };
-		DAB1211614C35A08009B60FB /* Sea Anemone E4 Key.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120FD14C35A08009B60FB /* Sea Anemone E4 Key.png */; };
-		DAB1211714C35A08009B60FB /* Sea Anemone F4 Key Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120FE14C35A08009B60FB /* Sea Anemone F4 Key Selected.png */; };
-		DAB1211814C35A08009B60FB /* Sea Anemone F4 Key.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB120FF14C35A08009B60FB /* Sea Anemone F4 Key.png */; };
-		DAB1211914C35A08009B60FB /* Sea Anemone G4 Key Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB1210014C35A08009B60FB /* Sea Anemone G4 Key Selected.png */; };
-		DAB1211A14C35A08009B60FB /* Sea Anemone G4 Key.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB1210114C35A08009B60FB /* Sea Anemone G4 Key.png */; };
 		DAB1211D14C35F2C009B60FB /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1211C14C35F2B009B60FB /* GameScene.m */; };
+		DAB1216114C475FC009B60FB /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1216014C475F7009B60FB /* Note.m */; };
+		DAB1216514C48B1B009B60FB /* sheet01_animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB1216214C48B19009B60FB /* sheet01_animations.plist */; };
+		DAB1216614C48B1B009B60FB /* sheet01.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB1216314C48B1A009B60FB /* sheet01.plist */; };
+		DAB1216714C48B1B009B60FB /* sheet01.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB1216414C48B1B009B60FB /* sheet01.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -389,8 +375,6 @@
 		DAB1207C14C1E84D009B60FB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DAB1207E14C1E84D009B60FB /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		DAB1207F14C1E84D009B60FB /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		DAB1208114C1E84D009B60FB /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		DAB1208214C1E84D009B60FB /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		DAB1208414C1E84E009B60FB /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		DAB1208A14C30911009B60FB /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLayer.h; path = Classes/GameLayer.h; sourceTree = "<group>"; };
 		DAB1208B14C30911009B60FB /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLayer.m; path = Classes/GameLayer.m; sourceTree = "<group>"; };
@@ -416,25 +400,14 @@
 		DAB120ED14C35A08009B60FB /* E4-Piano.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "E4-Piano.m4a"; sourceTree = "<group>"; };
 		DAB120EE14C35A08009B60FB /* F4-Piano.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "F4-Piano.m4a"; sourceTree = "<group>"; };
 		DAB120EF14C35A08009B60FB /* G4-Piano.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-Piano.m4a"; sourceTree = "<group>"; };
-		DAB120F114C35A08009B60FB /* Instructor Whale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Instructor Whale.png"; sourceTree = "<group>"; };
-		DAB120F214C35A08009B60FB /* Sea Anemone A4 Key Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone A4 Key Selected.png"; sourceTree = "<group>"; };
-		DAB120F314C35A08009B60FB /* Sea Anemone A4 Key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone A4 Key.png"; sourceTree = "<group>"; };
-		DAB120F414C35A08009B60FB /* Sea Anemone B4 Key Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone B4 Key Selected.png"; sourceTree = "<group>"; };
-		DAB120F514C35A08009B60FB /* Sea Anemone B4 Key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone B4 Key.png"; sourceTree = "<group>"; };
-		DAB120F614C35A08009B60FB /* Sea Anemone C4 Key Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone C4 Key Selected.png"; sourceTree = "<group>"; };
-		DAB120F714C35A08009B60FB /* Sea Anemone C4 Key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone C4 Key.png"; sourceTree = "<group>"; };
-		DAB120F814C35A08009B60FB /* Sea Anemone C5 Key Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone C5 Key Selected.png"; sourceTree = "<group>"; };
-		DAB120F914C35A08009B60FB /* Sea Anemone C5 Key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone C5 Key.png"; sourceTree = "<group>"; };
-		DAB120FA14C35A08009B60FB /* Sea Anemone D4 Key Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone D4 Key Selected.png"; sourceTree = "<group>"; };
-		DAB120FB14C35A08009B60FB /* Sea Anemone D4 Key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone D4 Key.png"; sourceTree = "<group>"; };
-		DAB120FC14C35A08009B60FB /* Sea Anemone E4 Key Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone E4 Key Selected.png"; sourceTree = "<group>"; };
-		DAB120FD14C35A08009B60FB /* Sea Anemone E4 Key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone E4 Key.png"; sourceTree = "<group>"; };
-		DAB120FE14C35A08009B60FB /* Sea Anemone F4 Key Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone F4 Key Selected.png"; sourceTree = "<group>"; };
-		DAB120FF14C35A08009B60FB /* Sea Anemone F4 Key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone F4 Key.png"; sourceTree = "<group>"; };
-		DAB1210014C35A08009B60FB /* Sea Anemone G4 Key Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone G4 Key Selected.png"; sourceTree = "<group>"; };
-		DAB1210114C35A08009B60FB /* Sea Anemone G4 Key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sea Anemone G4 Key.png"; sourceTree = "<group>"; };
 		DAB1211B14C35F2A009B60FB /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
 		DAB1211C14C35F2B009B60FB /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Classes/GameScene.m; sourceTree = "<group>"; };
+		DAB1215F14C475F2009B60FB /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = Classes/Note.h; sourceTree = "<group>"; };
+		DAB1216014C475F7009B60FB /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = Classes/Note.m; sourceTree = "<group>"; };
+		DAB1216214C48B19009B60FB /* sheet01_animations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = sheet01_animations.plist; path = Resources/Spritesheets/sheet01_animations.plist; sourceTree = "<group>"; };
+		DAB1216314C48B1A009B60FB /* sheet01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = sheet01.plist; path = Resources/Spritesheets/sheet01.plist; sourceTree = "<group>"; };
+		DAB1216414C48B1B009B60FB /* sheet01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sheet01.png; path = Resources/Spritesheets/sheet01.png; sourceTree = "<group>"; };
+		DAB1216914C48F6C009B60FB /* Debugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Debugging.h; path = Classes/Debugging.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -495,8 +468,6 @@
 				DAB1207C14C1E84D009B60FB /* AppDelegate.m */,
 				DAB1207E14C1E84D009B60FB /* RootViewController.h */,
 				DAB1207F14C1E84D009B60FB /* RootViewController.m */,
-				DAB1208114C1E84D009B60FB /* HelloWorldLayer.h */,
-				DAB1208214C1E84D009B60FB /* HelloWorldLayer.m */,
 				DAB1208414C1E84E009B60FB /* GameConfig.h */,
 				DAB11F2A14C1E847009B60FB /* Resources */,
 				DAB11F3E14C1E847009B60FB /* libs */,
@@ -515,10 +486,13 @@
 				DAB1209914C30D6D009B60FB /* KeyDelegate.h */,
 				DAB1209314C30A87009B60FB /* Instructor.h */,
 				DAB1209414C30A87009B60FB /* Instructor.m */,
+				DAB1215F14C475F2009B60FB /* Note.h */,
+				DAB1216014C475F7009B60FB /* Note.m */,
 				DAB1209714C30BA3009B60FB /* Enums.h */,
 				DAB1209814C30BFC009B60FB /* CommonHeaders.h */,
 				DAB120E414C352C8009B60FB /* Utility.h */,
 				DAB120E514C352C8009B60FB /* Utility.m */,
+				DAB1216914C48F6C009B60FB /* Debugging.h */,
 			);
 			path = Seatunes;
 			sourceTree = "<group>";
@@ -526,6 +500,7 @@
 		DAB11F2A14C1E847009B60FB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DAB1216814C48B24009B60FB /* Spritesheets */,
 				DAB120E714C35A08009B60FB /* Notes */,
 				DAB120F014C35A08009B60FB /* Sprites */,
 				DAB11F2B14C1E847009B60FB /* Default.png */,
@@ -872,26 +847,19 @@
 		DAB120F014C35A08009B60FB /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
-				DAB120F114C35A08009B60FB /* Instructor Whale.png */,
-				DAB120F214C35A08009B60FB /* Sea Anemone A4 Key Selected.png */,
-				DAB120F314C35A08009B60FB /* Sea Anemone A4 Key.png */,
-				DAB120F414C35A08009B60FB /* Sea Anemone B4 Key Selected.png */,
-				DAB120F514C35A08009B60FB /* Sea Anemone B4 Key.png */,
-				DAB120F614C35A08009B60FB /* Sea Anemone C4 Key Selected.png */,
-				DAB120F714C35A08009B60FB /* Sea Anemone C4 Key.png */,
-				DAB120F814C35A08009B60FB /* Sea Anemone C5 Key Selected.png */,
-				DAB120F914C35A08009B60FB /* Sea Anemone C5 Key.png */,
-				DAB120FA14C35A08009B60FB /* Sea Anemone D4 Key Selected.png */,
-				DAB120FB14C35A08009B60FB /* Sea Anemone D4 Key.png */,
-				DAB120FC14C35A08009B60FB /* Sea Anemone E4 Key Selected.png */,
-				DAB120FD14C35A08009B60FB /* Sea Anemone E4 Key.png */,
-				DAB120FE14C35A08009B60FB /* Sea Anemone F4 Key Selected.png */,
-				DAB120FF14C35A08009B60FB /* Sea Anemone F4 Key.png */,
-				DAB1210014C35A08009B60FB /* Sea Anemone G4 Key Selected.png */,
-				DAB1210114C35A08009B60FB /* Sea Anemone G4 Key.png */,
 			);
 			name = Sprites;
 			path = Resources/Sprites;
+			sourceTree = "<group>";
+		};
+		DAB1216814C48B24009B60FB /* Spritesheets */ = {
+			isa = PBXGroup;
+			children = (
+				DAB1216214C48B19009B60FB /* sheet01_animations.plist */,
+				DAB1216314C48B1A009B60FB /* sheet01.plist */,
+				DAB1216414C48B1B009B60FB /* sheet01.png */,
+			);
+			name = Spritesheets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -962,23 +930,9 @@
 				DAB1210714C35A08009B60FB /* E4-Piano.m4a in Resources */,
 				DAB1210814C35A08009B60FB /* F4-Piano.m4a in Resources */,
 				DAB1210914C35A08009B60FB /* G4-Piano.m4a in Resources */,
-				DAB1210A14C35A08009B60FB /* Instructor Whale.png in Resources */,
-				DAB1210B14C35A08009B60FB /* Sea Anemone A4 Key Selected.png in Resources */,
-				DAB1210C14C35A08009B60FB /* Sea Anemone A4 Key.png in Resources */,
-				DAB1210D14C35A08009B60FB /* Sea Anemone B4 Key Selected.png in Resources */,
-				DAB1210E14C35A08009B60FB /* Sea Anemone B4 Key.png in Resources */,
-				DAB1210F14C35A08009B60FB /* Sea Anemone C4 Key Selected.png in Resources */,
-				DAB1211014C35A08009B60FB /* Sea Anemone C4 Key.png in Resources */,
-				DAB1211114C35A08009B60FB /* Sea Anemone C5 Key Selected.png in Resources */,
-				DAB1211214C35A08009B60FB /* Sea Anemone C5 Key.png in Resources */,
-				DAB1211314C35A08009B60FB /* Sea Anemone D4 Key Selected.png in Resources */,
-				DAB1211414C35A08009B60FB /* Sea Anemone D4 Key.png in Resources */,
-				DAB1211514C35A08009B60FB /* Sea Anemone E4 Key Selected.png in Resources */,
-				DAB1211614C35A08009B60FB /* Sea Anemone E4 Key.png in Resources */,
-				DAB1211714C35A08009B60FB /* Sea Anemone F4 Key Selected.png in Resources */,
-				DAB1211814C35A08009B60FB /* Sea Anemone F4 Key.png in Resources */,
-				DAB1211914C35A08009B60FB /* Sea Anemone G4 Key Selected.png in Resources */,
-				DAB1211A14C35A08009B60FB /* Sea Anemone G4 Key.png in Resources */,
+				DAB1216514C48B1B009B60FB /* sheet01_animations.plist in Resources */,
+				DAB1216614C48B1B009B60FB /* sheet01.plist in Resources */,
+				DAB1216714C48B1B009B60FB /* sheet01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1086,7 +1040,6 @@
 				DAB1207A14C1E84D009B60FB /* main.m in Sources */,
 				DAB1207D14C1E84D009B60FB /* AppDelegate.m in Sources */,
 				DAB1208014C1E84D009B60FB /* RootViewController.m in Sources */,
-				DAB1208314C1E84D009B60FB /* HelloWorldLayer.m in Sources */,
 				DAB1208C14C30911009B60FB /* GameLayer.m in Sources */,
 				DAB1208F14C3099B009B60FB /* Keyboard.m in Sources */,
 				DAB1209514C30A87009B60FB /* Instructor.m in Sources */,
@@ -1094,6 +1047,7 @@
 				DAB120E314C34FCD009B60FB /* Key.m in Sources */,
 				DAB120E614C352C9009B60FB /* Utility.m in Sources */,
 				DAB1211D14C35F2C009B60FB /* GameScene.m in Sources */,
+				DAB1216114C475FC009B60FB /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1149,7 +1103,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1166,7 +1120,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

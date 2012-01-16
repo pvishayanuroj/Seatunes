@@ -20,4 +20,6 @@
 
 + (NSString *) creatureNameFromEnum:(CreatureType)creature;
 
++ (NSString *) instructorNameFromEnum:(InstructorType)creature;
+
 @end

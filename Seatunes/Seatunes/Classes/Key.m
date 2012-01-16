@@ -32,9 +32,9 @@
         NSString *spriteName = [NSString stringWithFormat:@"%@ %@ Key.png", creatureName, keyName];
         NSString *selectedName = [NSString stringWithFormat:@"%@ %@ Key Selected.png", creatureName, keyName];
         
-        sprite_ = [[CCSprite spriteWithFile:spriteName] retain];
-        selected_ = [[CCSprite spriteWithFile:selectedName] retain];
-        //disabled_ = [[CCSprite spriteWithFile:disabledName] retain];     
+        sprite_ = [[CCSprite spriteWithSpriteFrameName:spriteName] retain];
+        selected_ = [[CCSprite spriteWithSpriteFrameName:selectedName] retain];
+        //disabled_ = [[CCSprite spriteWithSpriteFrameName:disabledName] retain];     
         
         sprite_.scale = 0.5f;
         selected_.scale = 0.5f;        

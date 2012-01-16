@@ -76,4 +76,19 @@
     return name;
 }
 
++ (NSString *) instructorNameFromEnum:(InstructorType)instructor
+{
+    NSString *name = @"";
+    
+    switch (instructor) {
+        case kWhaleInstructor:
+            name = @"Whale Instructor";
+            break;            
+        default:
+            break;
+    }
+    
+    return name;    
+}
+
 @end

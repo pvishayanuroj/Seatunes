@@ -36,3 +36,7 @@ typedef enum {
 typedef enum {
     kSeaAnemone
 } CreatureType;
+
+typedef enum {
+    kWhaleInstructor
+} InstructorType;
