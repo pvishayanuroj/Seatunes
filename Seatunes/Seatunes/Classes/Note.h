@@ -26,4 +26,8 @@
 
 - (void) blowAction;
 
+- (void) curveAction;
+
+- (void) scaleAction;
+
 @end
