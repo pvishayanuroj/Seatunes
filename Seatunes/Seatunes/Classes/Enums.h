@@ -14,7 +14,8 @@ typedef enum {
     kG4,
     kA4,
     kB4,
-    kC5
+    kC5,
+    kBlankNote
 } KeyType;
 
 typedef enum {

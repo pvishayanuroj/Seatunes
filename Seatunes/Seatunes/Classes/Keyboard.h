@@ -12,13 +12,25 @@
 #import "KeyDelegate.h"
 #import "KeyboardDelegate.h"
 
+@class Key;
+
 @interface Keyboard : CCNode <KeyDelegate> {
  
     InstrumentType instrumentType_;
     
-    NSMutableArray *keys_;
+    NSMutableDictionary *keys_;
     
     CFMutableDictionaryRef touches_;
+    
+    NSArray *sequence_;
+    
+    NSUInteger currentIndex_;
+    
+    Key *previousKey_;
+    
+    BOOL notePlayed_;
+    
+    BOOL isClickable_;
     
     id <KeyboardDelegate> delegate_;
     
@@ -37,5 +49,9 @@
 - (void) touchesMoved:(NSSet *)touches;
 
 - (void) touchesEnded:(NSSet *)touches;
+
+- (void) playSequence:(NSArray *)sequence;
+
+- (void) depressNote;
 
 @end

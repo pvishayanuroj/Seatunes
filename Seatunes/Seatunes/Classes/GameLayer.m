@@ -28,6 +28,24 @@
         keyboard_.position = ccp(100, 100);
         [self addChild:keyboard_];
         
+        NSMutableArray *test = [NSMutableArray arrayWithCapacity:10];
+        [test addObject:[NSNumber numberWithInteger:kC4]];
+        [test addObject:[NSNumber numberWithInteger:kC4]];
+        [test addObject:[NSNumber numberWithInteger:kG4]];
+        [test addObject:[NSNumber numberWithInteger:kG4]];
+        [test addObject:[NSNumber numberWithInteger:kA4]];
+        [test addObject:[NSNumber numberWithInteger:kA4]];
+        [test addObject:[NSNumber numberWithInteger:kG4]];  
+        [test addObject:[NSNumber numberWithInteger:kBlankNote]];  
+        [test addObject:[NSNumber numberWithInteger:kF4]];
+        [test addObject:[NSNumber numberWithInteger:kF4]];
+        [test addObject:[NSNumber numberWithInteger:kE4]];
+        [test addObject:[NSNumber numberWithInteger:kE4]];
+        [test addObject:[NSNumber numberWithInteger:kD4]];
+        [test addObject:[NSNumber numberWithInteger:kD4]];     
+        [test addObject:[NSNumber numberWithInteger:kC4]];        
+        [keyboard_ playSequence:test];
+        
     }
     return self;
 }
