@@ -79,7 +79,7 @@
 
 - (void) scaleAction
 {
-    CCActionInterval *scale = [CCScaleBy actionWithDuration:1.5f scale:2.5f];
+    CCActionInterval *scale = [CCScaleBy actionWithDuration:1.5f scale:3.0f];
     CCActionInterval *ease = [CCEaseIn actionWithAction:scale rate:1.0f];
     CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(scaleActionDone)];    
     [sprite_ runAction:[CCSequence actions:ease, done, nil]];
