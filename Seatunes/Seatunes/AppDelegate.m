@@ -110,6 +110,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
+    [glView setMultipleTouchEnabled:YES];
 	[[CCDirector sharedDirector] runWithScene: [GameScene node]];
 }
 

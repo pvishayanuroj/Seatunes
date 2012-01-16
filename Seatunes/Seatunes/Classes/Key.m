@@ -57,6 +57,7 @@
     [super dealloc];
 }
 
+/*
 - (void) onEnter
 {
 	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:1 swallowsTouches:YES];
@@ -68,6 +69,7 @@
 	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
 	[super onExit];
 }
+ */
 
 - (CGRect) rect
 {
@@ -81,6 +83,7 @@
 	return CGRectContainsPoint([self rect], [self convertTouchToNodeSpaceAR:touch]);
 }
 
+/*
 - (BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {	
     if (isClickable_) {    
@@ -105,6 +108,7 @@
         [self unselectButton];
     }
 }
+ */
 
 - (void) selectButton
 {

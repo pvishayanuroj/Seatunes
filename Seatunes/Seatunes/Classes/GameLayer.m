@@ -21,11 +21,12 @@
 {
     if ((self = [super init])) {
         
+        self.isTouchEnabled = YES;
         [AudioManager audioManager];
         
-        Keyboard *keyboard = [Keyboard keyboard:kEightKey];
-        keyboard.position = ccp(100, 100);
-        [self addChild:keyboard];
+        keyboard_ = [[Keyboard keyboard:kEightKey] retain];
+        keyboard_.position = ccp(100, 100);
+        [self addChild:keyboard_];
         
     }
     return self;
@@ -33,7 +34,29 @@
 
 - (void) dealloc
 {
+    [keyboard_ release];
+    
     [super dealloc];
+}
+
+- (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [keyboard_ touchesBegan:touches];
+}
+
+- (void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [keyboard_ touchesMoved:touches];
+}
+
+- (void) ccTouchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"Touches cancelled");        
+}
+
+- (void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [keyboard_ touchesEnded:touches];
 }
 
 @end

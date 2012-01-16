@@ -10,7 +10,11 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+@class Keyboard;
+
 @interface GameLayer : CCLayer {
+ 
+    Keyboard *keyboard_;
     
 }
 

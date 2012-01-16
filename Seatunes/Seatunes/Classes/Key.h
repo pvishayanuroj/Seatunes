@@ -11,7 +11,7 @@
 #import "cocos2d.h"
 #import "KeyDelegate.h"
 
-@interface Key : CCNode <CCTargetedTouchDelegate> {
+@interface Key : CCNode {
  
     CCSprite *sprite_;
     
@@ -33,6 +33,8 @@
 + (id) key:(KeyType)keyType creature:(CreatureType)creature;
 
 - (id) initKey:(KeyType)keyType creature:(CreatureType)creature;
+
+- (BOOL) containsTouchLocation:(UITouch *)touch;
 
 - (void) selectButton;
 

@@ -16,6 +16,10 @@
  
     InstrumentType instrumentType_;
     
+    NSMutableArray *keys_;
+    
+    CFMutableDictionaryRef touches_;
+    
     id <KeyboardDelegate> delegate_;
     
 }
@@ -27,5 +31,11 @@
 - (id) initKeyboard:(KeyboardType)keyboardType;
 
 - (void) placeEightKeys:(CreatureType)creature;
+
+- (void) touchesBegan:(NSSet *)touches;
+
+- (void) touchesMoved:(NSSet *)touches;
+
+- (void) touchesEnded:(NSSet *)touches;
 
 @end

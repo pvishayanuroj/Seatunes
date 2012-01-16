@@ -26,6 +26,9 @@
         instrumentType_ = kPiano;
         CreatureType creature = kSeaAnemone;
         
+        keys_ = [[NSMutableArray arrayWithCapacity:10] retain];     
+        touches_ = CFDictionaryCreateMutable(kCFAllocatorDefault, 24, nil, nil);
+        
         switch (keyboardType) {
             case kEightKey:
                 [self placeEightKeys:creature];        
@@ -40,6 +43,9 @@
 
 - (void) dealloc
 {
+    [keys_ release];
+    CFRelease(touches_);
+    
     [super dealloc];
 }
 
@@ -80,6 +86,15 @@
     [self addChild:k6];
     [self addChild:k7];
     [self addChild:k8];    
+    
+    [keys_ addObject:k1];
+    [keys_ addObject:k2];
+    [keys_ addObject:k3];
+    [keys_ addObject:k4];
+    [keys_ addObject:k5];
+    [keys_ addObject:k6];    
+    [keys_ addObject:k7];
+    [keys_ addObject:k8];    
 }
 
 - (void) keyPressed:(Key *)key
@@ -90,6 +105,68 @@
 - (void) keyDepressed:(Key *)key
 {
     [[AudioManager audioManager] stopSound];
+}
+
+- (void) touchesBegan:(NSSet *)touches
+{
+    // For all touches received
+    for (UITouch *touch in touches) {
+        NSUInteger index = 0;
+        // Check if any key was pressed
+        for (Key *key in keys_) {
+            // If key was pressed, associate it with this touch and activate it
+            if ([key containsTouchLocation:touch]) {
+                // When storing the value, add 1 so that null is never stored
+                CFDictionarySetValue(touches_, touch, (void *)(index + 1));
+                [key selectButton];
+                break;
+            }
+            index++;
+        }
+    }
+}
+
+- (void) touchesMoved:(NSSet *)touches
+{
+    for (UITouch *touch in touches) {
+        const void *value = CFDictionaryGetValue(touches_, touch);
+        
+        // If this touch was on a key, check if it moved off of it
+        if (value != nil) {
+            Key *key = [keys_ objectAtIndex:(NSUInteger)(value - 1)];
+            
+            // If touch has moved off the key, remove it from the dictionary
+            if (![key containsTouchLocation:touch]) {
+                CFDictionaryRemoveValue(touches_, touch);
+                [key unselectButton];
+            }
+        }
+        // Touch is moving in between keys, check if it got onto another key
+        else {            
+            NSUInteger index = 0;
+            for (Key *key in keys_) {
+                if ([key containsTouchLocation:touch]) {
+                    CFDictionarySetValue(touches_, touch, (void *)(index + 1));
+                    [key selectButton];
+                    break;
+                }
+                index++;
+            }            
+        }
+    }    
+}
+
+- (void) touchesEnded:(NSSet *)touches
+{
+    for (UITouch *touch in touches) {
+        const void *value = CFDictionaryGetValue(touches_, touch);
+        
+        // If touch was on a key, signal the key that it ended
+        if (value != nil) {
+            Key *key = [keys_ objectAtIndex:(NSUInteger)(value - 1)];
+            [key unselectButton];
+        }
+    }
 }
 
 @end
