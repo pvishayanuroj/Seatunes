@@ -42,16 +42,19 @@ static AudioManager *_audioManager = nil;
 	if ((self = [super init])) {
         
         SimpleAudioEngine *sae = [SimpleAudioEngine sharedEngine];
-        [sae preloadEffect:@"C4-Piano.m4a"];
-        [sae preloadEffect:@"D4-Piano.m4a"];
-        [sae preloadEffect:@"E4-Piano.m4a"];
-        [sae preloadEffect:@"F4-Piano.m4a"];
-        [sae preloadEffect:@"G4-Piano.m4a"];
-        [sae preloadEffect:@"A4-Piano.m4a"];
-        [sae preloadEffect:@"B4-Piano.m4a"];
-        [sae preloadEffect:@"C5-Piano.m4a"];        
-        backgroundMusicPlaying_ = NO;
         
+        NSArray *keyNames = [Utility allKeyNames];
+        NSArray *instrumentNames = [Utility allInstrumentNames];
+        
+        for (NSNumber *key in keyNames) {
+            NSString *keyName = [Utility keyNameFromEnum:[key integerValue]];
+            for (NSNumber *instrument in instrumentNames) {
+                NSString *instrumentName = [Utility instructorNameFromEnum:[instrument integerValue]];
+                NSString *fileName = [NSString stringWithFormat:@"%@-%@.m4a", keyName, instrumentName];
+                [sae preloadEffect:fileName];
+            }
+        }     
+        backgroundMusicPlaying_ = NO;
 	}
 	return self;
 }

@@ -46,6 +46,20 @@
     return name;
 }
 
++ (NSArray *) allKeyNames
+{
+    NSMutableArray *keys = [NSMutableArray arrayWithCapacity:8];
+    [keys addObject:[NSNumber numberWithInteger:kC4]];
+    [keys addObject:[NSNumber numberWithInteger:kD4]];
+    [keys addObject:[NSNumber numberWithInteger:kE4]];
+    [keys addObject:[NSNumber numberWithInteger:kF4]];
+    [keys addObject:[NSNumber numberWithInteger:kG4]];
+    [keys addObject:[NSNumber numberWithInteger:kA4]];
+    [keys addObject:[NSNumber numberWithInteger:kB4]];
+    [keys addObject:[NSNumber numberWithInteger:kC5]];   
+    return keys;
+}
+
 + (NSString *) instrumentNameFromEnum:(InstrumentType)instrument
 {
     NSString *name = @"";
@@ -53,12 +67,35 @@
     switch (instrument) {
         case kPiano:
             name = @"Piano";
-            break;            
+            break;       
+        case kFlute:
+            name = @"PopFlute";
+            break;
+        case kLowStrings:
+            name = @"LunarStrings";
+            break;
+        case kWarmPiano:
+            name = @"Whirly";
+            break;
+        case kMetallic:
+            name = @"Martian";
+            break;
         default:
             break;
     }
     
     return name;
+}
+
++ (NSArray *) allInstrumentNames
+{
+    NSMutableArray *instruments = [NSMutableArray arrayWithCapacity:8];
+    [instruments addObject:[NSNumber numberWithInteger:kPiano]];
+    [instruments addObject:[NSNumber numberWithInteger:kFlute]];
+    [instruments addObject:[NSNumber numberWithInteger:kLowStrings]];
+    [instruments addObject:[NSNumber numberWithInteger:kWarmPiano]];
+    [instruments addObject:[NSNumber numberWithInteger:kMetallic]];
+    return instruments;
 }
 
 + (NSString *) creatureNameFromEnum:(CreatureType)creature

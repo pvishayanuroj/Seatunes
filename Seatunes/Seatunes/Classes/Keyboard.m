@@ -9,6 +9,7 @@
 #import "Keyboard.h"
 #import "AudioManager.h"
 #import "Key.h"
+#import "Utility.h"
 
 @implementation Keyboard
 
@@ -55,15 +56,7 @@
 
 - (void) placeEightKeys:(CreatureType)creature
 {
-    NSMutableArray *keys = [NSMutableArray arrayWithCapacity:8];
-    [keys addObject:[NSNumber numberWithInteger:kC4]];
-    [keys addObject:[NSNumber numberWithInteger:kD4]];
-    [keys addObject:[NSNumber numberWithInteger:kE4]];
-    [keys addObject:[NSNumber numberWithInteger:kF4]];
-    [keys addObject:[NSNumber numberWithInteger:kG4]];
-    [keys addObject:[NSNumber numberWithInteger:kA4]];
-    [keys addObject:[NSNumber numberWithInteger:kB4]];
-    [keys addObject:[NSNumber numberWithInteger:kC5]];    
+    NSArray *keys = [Utility allKeyNames];
 
     NSInteger i = 0;
     for (NSNumber *keyName in keys) {

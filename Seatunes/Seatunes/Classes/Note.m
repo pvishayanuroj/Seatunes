@@ -86,9 +86,7 @@
 }
 
 - (void) scaleActionDone
-{
-    NSLog(@"scale done");
-    
+{   
     [self destroy];
 }
 

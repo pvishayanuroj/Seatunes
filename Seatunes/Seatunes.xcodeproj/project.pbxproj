@@ -7,6 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04C093AA14C4C7090087DA18 /* A4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */; };
+		04C093AB14C4C7090087DA18 /* A4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938B14C4C7090087DA18 /* A4-Martian.m4a */; };
+		04C093AC14C4C7090087DA18 /* A4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */; };
+		04C093AD14C4C7090087DA18 /* A4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938D14C4C7090087DA18 /* A4-Whirly.m4a */; };
+		04C093AE14C4C7090087DA18 /* B4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938E14C4C7090087DA18 /* B4-LunarStrings.m4a */; };
+		04C093AF14C4C7090087DA18 /* B4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938F14C4C7090087DA18 /* B4-Martian.m4a */; };
+		04C093B014C4C7090087DA18 /* B4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939014C4C7090087DA18 /* B4-PopFlute.m4a */; };
+		04C093B114C4C7090087DA18 /* B4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939114C4C7090087DA18 /* B4-Whirly.m4a */; };
+		04C093B214C4C7090087DA18 /* C4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939214C4C7090087DA18 /* C4-LunarStrings.m4a */; };
+		04C093B314C4C7090087DA18 /* C4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939314C4C7090087DA18 /* C4-Martian.m4a */; };
+		04C093B414C4C7090087DA18 /* C4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939414C4C7090087DA18 /* C4-PopFlute.m4a */; };
+		04C093B514C4C7090087DA18 /* C4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939514C4C7090087DA18 /* C4-Whirly.m4a */; };
+		04C093B614C4C7090087DA18 /* C5-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939614C4C7090087DA18 /* C5-LunarStrings.m4a */; };
+		04C093B714C4C7090087DA18 /* C5-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939714C4C7090087DA18 /* C5-Martian.m4a */; };
+		04C093B814C4C7090087DA18 /* C5-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939814C4C7090087DA18 /* C5-PopFlute.m4a */; };
+		04C093B914C4C7090087DA18 /* C5-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939914C4C7090087DA18 /* C5-Whirly.m4a */; };
+		04C093BA14C4C7090087DA18 /* D4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939A14C4C7090087DA18 /* D4-LunarStrings.m4a */; };
+		04C093BB14C4C7090087DA18 /* D4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939B14C4C7090087DA18 /* D4-Martian.m4a */; };
+		04C093BC14C4C7090087DA18 /* D4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939C14C4C7090087DA18 /* D4-PopFlute.m4a */; };
+		04C093BD14C4C7090087DA18 /* D4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939D14C4C7090087DA18 /* D4-Whirly.m4a */; };
+		04C093BE14C4C7090087DA18 /* E4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939E14C4C7090087DA18 /* E4-LunarStrings.m4a */; };
+		04C093BF14C4C7090087DA18 /* E4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939F14C4C7090087DA18 /* E4-Martian.m4a */; };
+		04C093C014C4C7090087DA18 /* E4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A014C4C7090087DA18 /* E4-PopFlute.m4a */; };
+		04C093C114C4C7090087DA18 /* E4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A114C4C7090087DA18 /* E4-Whirly.m4a */; };
+		04C093C214C4C7090087DA18 /* F4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A214C4C7090087DA18 /* F4-LunarStrings.m4a */; };
+		04C093C314C4C7090087DA18 /* F4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A314C4C7090087DA18 /* F4-Martian.m4a */; };
+		04C093C414C4C7090087DA18 /* F4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A414C4C7090087DA18 /* F4-PopFlute.m4a */; };
+		04C093C514C4C7090087DA18 /* F4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A514C4C7090087DA18 /* F4-Whirly.m4a */; };
+		04C093C614C4C7090087DA18 /* G4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A614C4C7090087DA18 /* G4-LunarStrings.m4a */; };
+		04C093C714C4C7090087DA18 /* G4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A714C4C7090087DA18 /* G4-Martian.m4a */; };
+		04C093C814C4C7090087DA18 /* G4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A814C4C7090087DA18 /* G4-PopFlute.m4a */; };
+		04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A914C4C7090087DA18 /* G4-Whirly.m4a */; };
 		DAB11F1A14C1E847009B60FB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1914C1E847009B60FB /* QuartzCore.framework */; };
 		DAB11F1C14C1E847009B60FB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1B14C1E847009B60FB /* OpenGLES.framework */; };
 		DAB11F1E14C1E847009B60FB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1D14C1E847009B60FB /* OpenAL.framework */; };
@@ -143,6 +175,38 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-LunarStrings.m4a"; sourceTree = "<group>"; };
+		04C0938B14C4C7090087DA18 /* A4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-Martian.m4a"; sourceTree = "<group>"; };
+		04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-PopFlute.m4a"; sourceTree = "<group>"; };
+		04C0938D14C4C7090087DA18 /* A4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-Whirly.m4a"; sourceTree = "<group>"; };
+		04C0938E14C4C7090087DA18 /* B4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B4-LunarStrings.m4a"; sourceTree = "<group>"; };
+		04C0938F14C4C7090087DA18 /* B4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B4-Martian.m4a"; sourceTree = "<group>"; };
+		04C0939014C4C7090087DA18 /* B4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B4-PopFlute.m4a"; sourceTree = "<group>"; };
+		04C0939114C4C7090087DA18 /* B4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B4-Whirly.m4a"; sourceTree = "<group>"; };
+		04C0939214C4C7090087DA18 /* C4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-LunarStrings.m4a"; sourceTree = "<group>"; };
+		04C0939314C4C7090087DA18 /* C4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Martian.m4a"; sourceTree = "<group>"; };
+		04C0939414C4C7090087DA18 /* C4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-PopFlute.m4a"; sourceTree = "<group>"; };
+		04C0939514C4C7090087DA18 /* C4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Whirly.m4a"; sourceTree = "<group>"; };
+		04C0939614C4C7090087DA18 /* C5-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C5-LunarStrings.m4a"; sourceTree = "<group>"; };
+		04C0939714C4C7090087DA18 /* C5-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C5-Martian.m4a"; sourceTree = "<group>"; };
+		04C0939814C4C7090087DA18 /* C5-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C5-PopFlute.m4a"; sourceTree = "<group>"; };
+		04C0939914C4C7090087DA18 /* C5-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C5-Whirly.m4a"; sourceTree = "<group>"; };
+		04C0939A14C4C7090087DA18 /* D4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D4-LunarStrings.m4a"; sourceTree = "<group>"; };
+		04C0939B14C4C7090087DA18 /* D4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D4-Martian.m4a"; sourceTree = "<group>"; };
+		04C0939C14C4C7090087DA18 /* D4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D4-PopFlute.m4a"; sourceTree = "<group>"; };
+		04C0939D14C4C7090087DA18 /* D4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D4-Whirly.m4a"; sourceTree = "<group>"; };
+		04C0939E14C4C7090087DA18 /* E4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "E4-LunarStrings.m4a"; sourceTree = "<group>"; };
+		04C0939F14C4C7090087DA18 /* E4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "E4-Martian.m4a"; sourceTree = "<group>"; };
+		04C093A014C4C7090087DA18 /* E4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "E4-PopFlute.m4a"; sourceTree = "<group>"; };
+		04C093A114C4C7090087DA18 /* E4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "E4-Whirly.m4a"; sourceTree = "<group>"; };
+		04C093A214C4C7090087DA18 /* F4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "F4-LunarStrings.m4a"; sourceTree = "<group>"; };
+		04C093A314C4C7090087DA18 /* F4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "F4-Martian.m4a"; sourceTree = "<group>"; };
+		04C093A414C4C7090087DA18 /* F4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "F4-PopFlute.m4a"; sourceTree = "<group>"; };
+		04C093A514C4C7090087DA18 /* F4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "F4-Whirly.m4a"; sourceTree = "<group>"; };
+		04C093A614C4C7090087DA18 /* G4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-LunarStrings.m4a"; sourceTree = "<group>"; };
+		04C093A714C4C7090087DA18 /* G4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-Martian.m4a"; sourceTree = "<group>"; };
+		04C093A814C4C7090087DA18 /* G4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-PopFlute.m4a"; sourceTree = "<group>"; };
+		04C093A914C4C7090087DA18 /* G4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-Whirly.m4a"; sourceTree = "<group>"; };
 		DAB11F1514C1E847009B60FB /* Seatunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seatunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB11F1914C1E847009B60FB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DAB11F1B14C1E847009B60FB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -831,6 +895,38 @@
 		DAB120E714C35A08009B60FB /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */,
+				04C0938B14C4C7090087DA18 /* A4-Martian.m4a */,
+				04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */,
+				04C0938D14C4C7090087DA18 /* A4-Whirly.m4a */,
+				04C0938E14C4C7090087DA18 /* B4-LunarStrings.m4a */,
+				04C0938F14C4C7090087DA18 /* B4-Martian.m4a */,
+				04C0939014C4C7090087DA18 /* B4-PopFlute.m4a */,
+				04C0939114C4C7090087DA18 /* B4-Whirly.m4a */,
+				04C0939214C4C7090087DA18 /* C4-LunarStrings.m4a */,
+				04C0939314C4C7090087DA18 /* C4-Martian.m4a */,
+				04C0939414C4C7090087DA18 /* C4-PopFlute.m4a */,
+				04C0939514C4C7090087DA18 /* C4-Whirly.m4a */,
+				04C0939614C4C7090087DA18 /* C5-LunarStrings.m4a */,
+				04C0939714C4C7090087DA18 /* C5-Martian.m4a */,
+				04C0939814C4C7090087DA18 /* C5-PopFlute.m4a */,
+				04C0939914C4C7090087DA18 /* C5-Whirly.m4a */,
+				04C0939A14C4C7090087DA18 /* D4-LunarStrings.m4a */,
+				04C0939B14C4C7090087DA18 /* D4-Martian.m4a */,
+				04C0939C14C4C7090087DA18 /* D4-PopFlute.m4a */,
+				04C0939D14C4C7090087DA18 /* D4-Whirly.m4a */,
+				04C0939E14C4C7090087DA18 /* E4-LunarStrings.m4a */,
+				04C0939F14C4C7090087DA18 /* E4-Martian.m4a */,
+				04C093A014C4C7090087DA18 /* E4-PopFlute.m4a */,
+				04C093A114C4C7090087DA18 /* E4-Whirly.m4a */,
+				04C093A214C4C7090087DA18 /* F4-LunarStrings.m4a */,
+				04C093A314C4C7090087DA18 /* F4-Martian.m4a */,
+				04C093A414C4C7090087DA18 /* F4-PopFlute.m4a */,
+				04C093A514C4C7090087DA18 /* F4-Whirly.m4a */,
+				04C093A614C4C7090087DA18 /* G4-LunarStrings.m4a */,
+				04C093A714C4C7090087DA18 /* G4-Martian.m4a */,
+				04C093A814C4C7090087DA18 /* G4-PopFlute.m4a */,
+				04C093A914C4C7090087DA18 /* G4-Whirly.m4a */,
 				DAB120E814C35A08009B60FB /* A4-Piano.m4a */,
 				DAB120E914C35A08009B60FB /* B4-Piano.m4a */,
 				DAB120EA14C35A08009B60FB /* C4-Piano.m4a */,
@@ -933,6 +1029,38 @@
 				DAB1216514C48B1B009B60FB /* sheet01_animations.plist in Resources */,
 				DAB1216614C48B1B009B60FB /* sheet01.plist in Resources */,
 				DAB1216714C48B1B009B60FB /* sheet01.png in Resources */,
+				04C093AA14C4C7090087DA18 /* A4-LunarStrings.m4a in Resources */,
+				04C093AB14C4C7090087DA18 /* A4-Martian.m4a in Resources */,
+				04C093AC14C4C7090087DA18 /* A4-PopFlute.m4a in Resources */,
+				04C093AD14C4C7090087DA18 /* A4-Whirly.m4a in Resources */,
+				04C093AE14C4C7090087DA18 /* B4-LunarStrings.m4a in Resources */,
+				04C093AF14C4C7090087DA18 /* B4-Martian.m4a in Resources */,
+				04C093B014C4C7090087DA18 /* B4-PopFlute.m4a in Resources */,
+				04C093B114C4C7090087DA18 /* B4-Whirly.m4a in Resources */,
+				04C093B214C4C7090087DA18 /* C4-LunarStrings.m4a in Resources */,
+				04C093B314C4C7090087DA18 /* C4-Martian.m4a in Resources */,
+				04C093B414C4C7090087DA18 /* C4-PopFlute.m4a in Resources */,
+				04C093B514C4C7090087DA18 /* C4-Whirly.m4a in Resources */,
+				04C093B614C4C7090087DA18 /* C5-LunarStrings.m4a in Resources */,
+				04C093B714C4C7090087DA18 /* C5-Martian.m4a in Resources */,
+				04C093B814C4C7090087DA18 /* C5-PopFlute.m4a in Resources */,
+				04C093B914C4C7090087DA18 /* C5-Whirly.m4a in Resources */,
+				04C093BA14C4C7090087DA18 /* D4-LunarStrings.m4a in Resources */,
+				04C093BB14C4C7090087DA18 /* D4-Martian.m4a in Resources */,
+				04C093BC14C4C7090087DA18 /* D4-PopFlute.m4a in Resources */,
+				04C093BD14C4C7090087DA18 /* D4-Whirly.m4a in Resources */,
+				04C093BE14C4C7090087DA18 /* E4-LunarStrings.m4a in Resources */,
+				04C093BF14C4C7090087DA18 /* E4-Martian.m4a in Resources */,
+				04C093C014C4C7090087DA18 /* E4-PopFlute.m4a in Resources */,
+				04C093C114C4C7090087DA18 /* E4-Whirly.m4a in Resources */,
+				04C093C214C4C7090087DA18 /* F4-LunarStrings.m4a in Resources */,
+				04C093C314C4C7090087DA18 /* F4-Martian.m4a in Resources */,
+				04C093C414C4C7090087DA18 /* F4-PopFlute.m4a in Resources */,
+				04C093C514C4C7090087DA18 /* F4-Whirly.m4a in Resources */,
+				04C093C614C4C7090087DA18 /* G4-LunarStrings.m4a in Resources */,
+				04C093C714C4C7090087DA18 /* G4-Martian.m4a in Resources */,
+				04C093C814C4C7090087DA18 /* G4-PopFlute.m4a in Resources */,
+				04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1145,6 +1273,7 @@
 				DAB1208914C1E84E009B60FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

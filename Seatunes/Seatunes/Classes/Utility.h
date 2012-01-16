@@ -16,7 +16,11 @@
 
 + (NSString *) keyNameFromEnum:(KeyType)key;
 
++ (NSArray *) allKeyNames;
+
 + (NSString *) instrumentNameFromEnum:(InstrumentType)instrument;
+
++ (NSArray *) allInstrumentNames;
 
 + (NSString *) creatureNameFromEnum:(CreatureType)creature;
 

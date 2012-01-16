@@ -9,6 +9,7 @@
 #import "Instructor.h"
 #import "Utility.h"
 #import "GameLayer.h"
+#import "AudioManager.h"
 
 @implementation Instructor
 
@@ -22,6 +23,15 @@
     if ((self = [super init])) {
         
         clickable_ = YES;
+        
+        switch (instructorType) {
+            case kWhaleInstructor:
+                instrumentType_ = kLowStrings;
+                break;       
+            default:
+                instrumentType_ = kPiano;
+                break;
+        }
         
         name_ = [[NSString stringWithFormat:@"%@", [Utility instructorNameFromEnum:instructorType]] retain];
         NSString *spriteFrameName = [NSString stringWithFormat:@"%@ Idle 01.png", name_];
@@ -74,6 +84,7 @@
     [self showSing];
     GameLayer *gameLayer = (GameLayer *)self.parent;
     [gameLayer addNote:keyType];
+    [[AudioManager audioManager] playSound:keyType instrument:instrumentType_];
 }
 
 - (void) onEnter

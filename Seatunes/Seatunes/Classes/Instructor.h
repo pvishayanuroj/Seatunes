@@ -16,6 +16,8 @@
  
     NSString *name_;
     
+    InstrumentType instrumentType_;
+    
     CCAction *idleAnimation_;
     
     CCAction *wrongAnimation_;

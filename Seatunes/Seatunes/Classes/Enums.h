@@ -26,7 +26,11 @@ typedef enum {
 } KeyboardType;
 
 typedef enum {
-    kPiano
+    kPiano,
+    kFlute,
+    kLowStrings,
+    kWarmPiano,
+    kMetallic
 } InstrumentType;
 
 typedef enum {
