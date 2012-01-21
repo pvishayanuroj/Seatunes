@@ -70,14 +70,16 @@
     }  
 }
 
-- (void) keyPressed:(Key *)key
+- (GLuint) keyPressed:(Key *)key
 {
-    [[AudioManager audioManager] playSound:key.keyType instrument:instrumentType_];
+    GLuint idNumber = [[AudioManager audioManager] playSound:key.keyType instrument:instrumentType_];
+    [delegate_ keyboardKeyPressed:key.keyType];
+    return idNumber;
 }
 
 - (void) keyDepressed:(Key *)key
 {
-    [[AudioManager audioManager] stopSound];
+    [[AudioManager audioManager] stopSound:key.soundID];
 }
 
 - (void) touchesBegan:(NSSet *)touches

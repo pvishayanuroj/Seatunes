@@ -23,9 +23,11 @@
 
 + (void) purgeAudioManager;
 
-- (void) playSound:(KeyType)key instrument:(InstrumentType)instrument;
+- (GLuint) playSound:(KeyType)key instrument:(InstrumentType)instrument;
 
 - (void) playSound:(SoundType)type;
+
+- (void) stopSound:(GLuint)effectNumber;
 
 - (void) stopSound;
 

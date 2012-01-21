@@ -21,6 +21,8 @@
     
     KeyType keyType_;
     
+    GLuint soundID_;
+    
     id <KeyDelegate> delegate_;
     
     BOOL isClickable_;    
@@ -29,6 +31,7 @@
 
 @property (nonatomic, assign) id <KeyDelegate> delegate;
 @property (nonatomic, readonly) KeyType keyType;
+@property (nonatomic, readonly) GLuint soundID;
 
 + (id) key:(KeyType)keyType creature:(CreatureType)creature;
 

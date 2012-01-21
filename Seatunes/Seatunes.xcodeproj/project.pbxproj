@@ -39,6 +39,8 @@
 		04C093C714C4C7090087DA18 /* G4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A714C4C7090087DA18 /* G4-Martian.m4a */; };
 		04C093C814C4C7090087DA18 /* G4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A814C4C7090087DA18 /* G4-PopFlute.m4a */; };
 		04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A914C4C7090087DA18 /* G4-Whirly.m4a */; };
+		04F4AC7C14C51A0F008666B0 /* Processor.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F4AC7B14C51A0F008666B0 /* Processor.m */; };
+		04F4AC8014C51FCC008666B0 /* Twinkle Twinkle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04F4AC7F14C51FCC008666B0 /* Twinkle Twinkle.plist */; };
 		DAB11F1A14C1E847009B60FB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1914C1E847009B60FB /* QuartzCore.framework */; };
 		DAB11F1C14C1E847009B60FB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1B14C1E847009B60FB /* OpenGLES.framework */; };
 		DAB11F1E14C1E847009B60FB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1D14C1E847009B60FB /* OpenAL.framework */; };
@@ -175,6 +177,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		048279F114C7B94700814021 /* ProcessorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProcessorDelegate.h; path = Classes/ProcessorDelegate.h; sourceTree = "<group>"; };
 		04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-LunarStrings.m4a"; sourceTree = "<group>"; };
 		04C0938B14C4C7090087DA18 /* A4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-Martian.m4a"; sourceTree = "<group>"; };
 		04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-PopFlute.m4a"; sourceTree = "<group>"; };
@@ -207,6 +210,9 @@
 		04C093A714C4C7090087DA18 /* G4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-Martian.m4a"; sourceTree = "<group>"; };
 		04C093A814C4C7090087DA18 /* G4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-PopFlute.m4a"; sourceTree = "<group>"; };
 		04C093A914C4C7090087DA18 /* G4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-Whirly.m4a"; sourceTree = "<group>"; };
+		04F4AC7A14C51A0F008666B0 /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Processor.h; path = Classes/Processor.h; sourceTree = "<group>"; };
+		04F4AC7B14C51A0F008666B0 /* Processor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Processor.m; path = Classes/Processor.m; sourceTree = "<group>"; };
+		04F4AC7F14C51FCC008666B0 /* Twinkle Twinkle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Twinkle Twinkle.plist"; sourceTree = "<group>"; };
 		DAB11F1514C1E847009B60FB /* Seatunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seatunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB11F1914C1E847009B60FB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DAB11F1B14C1E847009B60FB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -493,6 +499,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04F4AC7E14C51FCC008666B0 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				04F4AC7F14C51FCC008666B0 /* Twinkle Twinkle.plist */,
+			);
+			name = Songs;
+			path = Resources/Songs;
+			sourceTree = "<group>";
+		};
 		DAB11F0A14C1E847009B60FB = {
 			isa = PBXGroup;
 			children = (
@@ -557,6 +572,9 @@
 				DAB120E414C352C8009B60FB /* Utility.h */,
 				DAB120E514C352C8009B60FB /* Utility.m */,
 				DAB1216914C48F6C009B60FB /* Debugging.h */,
+				04F4AC7A14C51A0F008666B0 /* Processor.h */,
+				04F4AC7B14C51A0F008666B0 /* Processor.m */,
+				048279F114C7B94700814021 /* ProcessorDelegate.h */,
 			);
 			path = Seatunes;
 			sourceTree = "<group>";
@@ -564,6 +582,7 @@
 		DAB11F2A14C1E847009B60FB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04F4AC7E14C51FCC008666B0 /* Songs */,
 				DAB1216814C48B24009B60FB /* Spritesheets */,
 				DAB120E714C35A08009B60FB /* Notes */,
 				DAB120F014C35A08009B60FB /* Sprites */,
@@ -1061,6 +1080,7 @@
 				04C093C714C4C7090087DA18 /* G4-Martian.m4a in Resources */,
 				04C093C814C4C7090087DA18 /* G4-PopFlute.m4a in Resources */,
 				04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */,
+				04F4AC8014C51FCC008666B0 /* Twinkle Twinkle.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1176,6 +1196,7 @@
 				DAB120E614C352C9009B60FB /* Utility.m in Sources */,
 				DAB1211D14C35F2C009B60FB /* GameScene.m in Sources */,
 				DAB1216114C475FC009B60FB /* Note.m in Sources */,
+				04F4AC7C14C51A0F008666B0 /* Processor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,7 @@
 
 @synthesize delegate = delegate_;
 @synthesize keyType = keyType_;
+@synthesize soundID = soundID_;
 
 + (id) key:(KeyType)keyType creature:(CreatureType)creature
 {
@@ -115,7 +116,7 @@
     sprite_.visible = NO;
     selected_.visible = YES;
     
-    [delegate_ keyPressed:self];    
+    soundID_ = [delegate_ keyPressed:self];    
 }
 
 - (void) unselectButton

@@ -68,13 +68,14 @@ static AudioManager *_audioManager = nil;
 
 #pragma mark - Sound Methods
 
-- (void) playSound:(KeyType)key instrument:(InstrumentType)instrument
+- (GLuint) playSound:(KeyType)key instrument:(InstrumentType)instrument
 {
     NSString *keyName = [Utility keyNameFromEnum:key];
     NSString *instrumentName = [Utility instrumentNameFromEnum:instrument];
     NSString *name = [NSString stringWithFormat:@"%@-%@.m4a", keyName, instrumentName];
     SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];
     currentEffect_ = [engine playEffect:name];
+    return currentEffect_;
 }
 
 - (void) playSound:(SoundType)type
@@ -96,6 +97,12 @@ static AudioManager *_audioManager = nil;
 {
     SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];
     [engine stopEffect:currentEffect_];
+}
+
+- (void) stopSound:(GLuint)effectNumber
+{
+    SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];    
+    [engine stopEffect:effectNumber];
 }
 
 - (void) stopMusic

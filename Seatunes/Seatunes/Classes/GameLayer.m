@@ -11,6 +11,7 @@
 #import "AudioManager.h"
 #import "Note.h"
 #import "Instructor.h"
+#import "Processor.h"
 
 @implementation GameLayer
 
@@ -31,6 +32,7 @@
         [self addChild:instructor_];
         
         keyboard_ = [[Keyboard keyboard:kEightKey] retain];
+        keyboard_.delegate = self;
         keyboard_.position = ccp(100, 100);
         [self addChild:keyboard_];
         
@@ -52,6 +54,10 @@
         [test addObject:[NSNumber numberWithInteger:kC4]];        
         //[keyboard_ playSequence:test];
         
+        processor_ = [[Processor processor] retain];
+        processor_.delegate = self;
+        [processor_ loadSong:@"Twinkle Twinkle"];
+        [processor_ forward];
     }
     return self;
 }
@@ -60,6 +66,7 @@
 {
     [instructor_ release];
     [keyboard_ release];
+    [processor_ release];
     
     [super dealloc];
 }
@@ -85,5 +92,31 @@
     note.position = ccp(170.0f, 500.0f);
     [self addChild:note];
 }
+
+- (void) keyboardKeyPressed:(KeyType)keyType
+{
+    [processor_ notePlayed:keyType];
+}
+
+- (void) instructorPlayNote:(KeyType)keyType
+{
+    [instructor_ playNote:keyType];
+}
+
+- (void) incorrectNotePlayed
+{
+    
+}
+
+- (void) sectionComplete
+{
+    
+}
+
+- (void) songComplete
+{
+    
+}
+
 
 @end

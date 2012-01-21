@@ -83,7 +83,7 @@
 {
     [self showSing];
     GameLayer *gameLayer = (GameLayer *)self.parent;
-    [gameLayer addNote:keyType];
+    [gameLayer addNote:keyType]; 
     [[AudioManager audioManager] playSound:keyType instrument:instrumentType_];
 }
 

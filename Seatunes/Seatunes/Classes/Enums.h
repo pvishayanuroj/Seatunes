@@ -44,3 +44,9 @@ typedef enum {
 typedef enum {
     kWhaleInstructor
 } InstructorType;
+
+typedef enum {
+    kNoteRepeat,
+    kTimedNoteRepeat,
+    kSectionRepeat
+} ProcessorType;

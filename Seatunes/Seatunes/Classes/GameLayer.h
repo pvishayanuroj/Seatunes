@@ -9,15 +9,20 @@
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "KeyboardDelegate.h"
+#import "ProcessorDelegate.h"
 
 @class Keyboard;
 @class Instructor;
+@class Processor;
 
-@interface GameLayer : CCLayer {
+@interface GameLayer : CCLayer <KeyboardDelegate, ProcessorDelegate> {
  
     Instructor *instructor_;
     
     Keyboard *keyboard_;
+    
+    Processor *processor_;
     
 }
 

@@ -12,7 +12,7 @@
 
 @protocol KeyDelegate <NSObject>
 
-- (void) keyPressed:(Key *)key;
+- (GLuint) keyPressed:(Key *)key;
 
 - (void) keyDepressed:(Key *)key;
 

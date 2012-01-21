@@ -16,6 +16,8 @@
 
 + (NSString *) keyNameFromEnum:(KeyType)key;
 
++ (KeyType) keyEnumFromName:(NSString *)name;
+
 + (NSArray *) allKeyNames;
 
 + (NSString *) instrumentNameFromEnum:(InstrumentType)instrument;
