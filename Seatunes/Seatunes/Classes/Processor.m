@@ -22,8 +22,8 @@
 {
     if ((self = [super init])) {
         
-        sectionIndex_ = 0;
         noteIndex_ = 0;
+        timerActive_ = NO;
         
     }
     return self;
@@ -41,32 +41,27 @@
 	NSString *path = [[NSBundle mainBundle] pathForResource:songName ofType:@"plist"];
     NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:path];
     
-    NSArray *sections = [[NSArray arrayWithArray:[data objectForKey:@"Notes"]] retain];
-    notes_ = [[NSMutableArray arrayWithCapacity:[sections count]] retain];   
+    NSArray *storedNotes = [[NSArray arrayWithArray:[data objectForKey:@"Notes"]] retain];
+    notes_ = [[NSMutableArray arrayWithCapacity:[storedNotes count]] retain];   
     
-    // For each section
-    for (NSArray *section in sections) {
-        NSMutableArray *parsedSection = [NSMutableArray arrayWithCapacity:[section count]];
-        for (NSString *note in section) {
-            NSNumber *key = [NSNumber numberWithInteger:[Utility keyEnumFromName:note]];
-            [parsedSection addObject:key];
-        }
-        [notes_ addObject:parsedSection];
+    for (NSString *note in storedNotes) {
+        NSNumber *key = [NSNumber numberWithInteger:[Utility keyEnumFromName:note]];
+        [notes_ addObject:key];
     }
-    
-    NSLog(@"%@", notes_);
 }
 
 - (void) notePlayed:(KeyType)keyType
 {
     if (waitingForNote_) {
-        NSLog(@"expected note: %d, keyType: %d", expectedNote_, keyType);
+        // If incorrect note played
         if (keyType != expectedNote_) {
             [delegate_ incorrectNotePlayed];
         }
+        // Correct note played
         else {
+            timerActive_ = NO;
             waitingForNote_ = NO;
-            [self forward];
+            [self delayedForward:0.5f];
         }
     }
     else {
@@ -74,25 +69,49 @@
     }
 }
 
+- (void) delayedForward:(CGFloat)delayTime
+{
+    [self stopAllActions];
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:delayTime];
+    CCActionInstant *method = [CCCallFunc actionWithTarget:self selector:@selector(forward)];
+    [self runAction:[CCSequence actions:delay, method, nil]];
+}
+
 - (void) forward
 {
-    NSArray *section = [notes_ objectAtIndex:sectionIndex_];
-    if (noteIndex_ >= [section count]) {
-        if (sectionIndex_ >= [notes_ count]) {
-            [delegate_ songComplete];
+    if (noteIndex_ < [notes_ count]) {
+        KeyType note = [[notes_ objectAtIndex:noteIndex_] integerValue];
+        noteIndex_++;
+        
+        if (note == kBlankNote) {
+            [self delayedForward:1.0f];
         }
         else {
-            noteIndex_ = 0;
-            sectionIndex_++;
-            [delegate_ sectionComplete];
+            [delegate_ instructorPlayNote:note];
+            [self delayedReplay];
+            waitingForNote_ = YES;
+            timerActive_ = YES;
+            expectedNote_ = note;
         }
     }
     else {
-        KeyType note = [[[notes_ objectAtIndex:sectionIndex_] objectAtIndex:noteIndex_] integerValue];
-        noteIndex_++;
-        [delegate_ instructorPlayNote:note];
-        waitingForNote_ = YES;
-        expectedNote_ = note;
+        [delegate_ songComplete];
+    }
+}
+
+- (void) delayedReplay
+{
+    [self stopAllActions];
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:10.0f];
+    CCActionInstant *method = [CCCallFunc actionWithTarget:self selector:@selector(replay)];
+    [self runAction:[CCSequence actions:delay, method, nil]];    
+}
+
+- (void) replay
+{
+    if (timerActive_) {
+        [delegate_ instructorPlayNote:expectedNote_];
+        [self delayedReplay];
     }
 }
 

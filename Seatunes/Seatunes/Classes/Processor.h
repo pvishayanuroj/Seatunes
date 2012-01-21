@@ -17,13 +17,13 @@
     
     NSMutableArray *inputNotes_;
     
-    NSUInteger sectionIndex_;
-    
     NSUInteger noteIndex_;
     
     KeyType expectedNote_;
     
     BOOL waitingForNote_;
+    
+    BOOL timerActive_;
     
     id <ProcessorDelegate> delegate_;
     
@@ -40,5 +40,9 @@
 - (void) notePlayed:(KeyType)keyType;
 
 - (void) forward;
+
+- (void) delayedForward:(CGFloat)delayTime;
+
+- (void) delayedReplay;
 
 @end

@@ -55,6 +55,7 @@
         //[keyboard_ playSequence:test];
         
         processor_ = [[Processor processor] retain];
+        [self addChild:processor_];
         processor_.delegate = self;
         [processor_ loadSong:@"Twinkle Twinkle"];
         [processor_ forward];
