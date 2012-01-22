@@ -23,7 +23,7 @@
 			</dict>
 			<dict>
 				<key>Animate Delay</key>
-				<real>0.15</real>
+				<integer>1</integer>
 				<key>Name</key>
 				<string>Wrong</string>
 				<key>Num Frames</key>

@@ -33,6 +33,8 @@
 
 - (void) initAnimations;
 
+- (void) showWrongNote;
+
 - (void) playNote:(KeyType)keyType;
 
 @end

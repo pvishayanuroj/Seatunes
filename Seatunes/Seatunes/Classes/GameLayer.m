@@ -106,7 +106,7 @@
 
 - (void) incorrectNotePlayed
 {
-    
+    [instructor_ showWrongNote];
 }
 
 - (void) sectionComplete

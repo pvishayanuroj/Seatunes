@@ -70,13 +70,31 @@
 - (void) showIdle
 {
     [sprite_ stopAllActions];
-	[sprite_ runAction:idleAnimation_];
+    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(resetIdleFrame)];
+    
+    [sprite_ runAction:[CCSequence actions:(CCFiniteTimeAction *)idleAnimation_, done, nil]];
+}
+
+- (void) showWrongNote
+{
+    [sprite_ stopAllActions];
+    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(resetIdleFrame)];
+                            
+    [sprite_ runAction:[CCSequence actions:(CCFiniteTimeAction *)wrongAnimation_, done, nil]];
 }
 
 - (void) showSing
 {
     [sprite_ stopAllActions];
-	[sprite_ runAction:singingAnimation_];    
+    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(resetIdleFrame)];
+    
+    [sprite_ runAction:[CCSequence actions:(CCFiniteTimeAction *)singingAnimation_, done, nil]];    
+}
+
+- (void) resetIdleFrame
+{
+    NSString *spriteFrameName = [NSString stringWithFormat:@"%@ Idle 01.png", name_];
+    [sprite_ setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:spriteFrameName]];
 }
 
 - (void) playNote:(KeyType)keyType
@@ -84,7 +102,7 @@
     [self showSing];
     GameLayer *gameLayer = (GameLayer *)self.parent;
     [gameLayer addNote:keyType]; 
-    [[AudioManager audioManager] playSound:keyType instrument:instrumentType_];
+    //[[AudioManager audioManager] playSound:keyType instrument:instrumentType_];
 }
 
 - (void) onEnter
