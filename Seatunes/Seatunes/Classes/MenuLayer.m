@@ -47,10 +47,17 @@
         CocosOverlayViewController *c = [CocosOverlayViewController alloc];
         [[[CCDirector sharedDirector] openGLView] addSubview:c.view];
         
-        for ( int i = 0 ; i < 6; i++) {
-        CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:@"Bubble C4.png"];
-        sprite.position = ccp(100, i * 40);
-        [self addChild:sprite];
+        for ( int i = 0 ; i < 12; i++) {
+            NSString *name;
+            if (i % 2) {
+                name = @"Bubble C4.png";
+            }
+            else {
+                name = @"Bubble D4.png";
+            }
+            CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:name];
+            sprite.position = ccp(100, i * 40);
+            [self addChild:sprite];
         }
         
         /*

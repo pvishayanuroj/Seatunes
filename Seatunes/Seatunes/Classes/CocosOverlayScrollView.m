@@ -61,8 +61,9 @@
     
     CGPoint newLayerPosition = CGPointMake(dragPt.x + (scrollView.contentSize.height * 0.5f), dragPt.y + (scrollView.contentSize.width * 0.5f));
     
-    NSLog(@"%4.2f, %4.2f", newLayerPosition.x, newLayerPosition.y);
-    [topLayer setPosition:newLayerPosition];
+    //NSLog(@"%4.2f, %4.2f", newLayerPosition.x, newLayerPosition.y);
+    //[topLayer setPosition:newLayerPosition];
+    topLayer.position = newLayerPosition;
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView

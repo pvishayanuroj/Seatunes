@@ -19,7 +19,7 @@
     // NOTE - I have hardcoded the size to 1024x1024 as that is the size of the levels in
     // our game.  Ideally this value would be parameterized or configurable.
     //
-    scrollView.contentSize = CGSizeMake(320, 480);
+    scrollView.contentSize = CGSizeMake(320, 580);
     
     scrollView.delegate = scrollView;
     [scrollView setUserInteractionEnabled:TRUE];
