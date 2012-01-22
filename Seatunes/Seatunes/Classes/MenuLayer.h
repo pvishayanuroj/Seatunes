@@ -10,9 +10,15 @@
 #import "cocos2d.h"
 #import "SWTableView.h"
 
+/*
 @interface MenuLayer : CCLayer <SWTableViewDelegate, SWTableViewDataSource> {
     
     SWTableView *table_;
+    
+}
+ */
+
+@interface MenuLayer : CCLayer {
     
 }
 

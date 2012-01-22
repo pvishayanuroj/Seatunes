@@ -9,6 +9,7 @@
 #import "MenuLayer.h"
 #import "SWTableView.h"
 #import "SWTableViewCell.h"
+#import "CocosOverlayViewController.h"
 
 @interface MyCell : SWTableViewCell 
 {
@@ -43,6 +44,16 @@
         
         self.isTouchEnabled = YES;
         
+        CocosOverlayViewController *c = [CocosOverlayViewController alloc];
+        [[[CCDirector sharedDirector] openGLView] addSubview:c.view];
+        
+        for ( int i = 0 ; i < 6; i++) {
+        CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:@"Bubble C4.png"];
+        sprite.position = ccp(100, i * 40);
+        [self addChild:sprite];
+        }
+        
+        /*
         CGSize size = CGSizeMake(100, 200);
         
         table_ = [[SWTableView viewWithDataSource:self size:size] retain];
@@ -51,20 +62,22 @@
         [self addChild:table_];     
         
         CGSize s = [[CCDirector sharedDirector] winSize];
-        table_.position = ccp(s.width * 0.5f, s.height * 0.5f);
+        table_.position = ccp(s.width * 0.1f, s.height * 0.2f);
         
-        [table_ reloadData];        
+        [table_ reloadData];    
+        */
     }
     return self;
 }
 
 - (void) dealloc
 {
-    [table_ release];
+    //[table_ release];
     
     [super dealloc];
 }
 
+/*
 - (void) table:(SWTableView *)table cellTouched:(SWTableViewCell *)cell
 {
     NSLog(@"cell touched at index: %i", cell.idx);    
@@ -103,7 +116,8 @@
 
 - (NSUInteger) numberOfCellsInTableView:(SWTableView *)table 
 {
-    return 8;
+    return 38;
 }
+ */
 
 @end
