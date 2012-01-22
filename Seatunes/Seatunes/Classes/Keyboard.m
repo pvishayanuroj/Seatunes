@@ -24,7 +24,7 @@
 {
     if ((self = [super init])) {
         
-        instrumentType_ = kFlute;
+        instrumentType_ = kPiano;
         CreatureType creature = kSeaAnemone;
         isClickable_ = YES;
         

@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "GameLayer.h"
+#import "MenuLayer.h"
 
 @implementation GameScene
 
@@ -18,7 +19,10 @@
         [self animationLoader:@"sheet01_animations" spriteSheetName:@"sheet01"];
         
         GameLayer *gameLayer = [GameLayer start];
-        [self addChild:gameLayer z:0];    
+        //[self addChild:gameLayer z:0];    
+        
+        MenuLayer *menuLayer = [MenuLayer node];
+        [self addChild:menuLayer z:0];
         
     }
     return self;
