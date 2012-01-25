@@ -9,8 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+@class CocosOverlayScrollView;
+
 @interface CocosOverlayViewController : UIViewController {
+ 
+    CocosOverlayScrollView *scrollView_;
+    
+    CCNode *node_;
+    
+    CGSize contentSize_;
+    
+    CGRect frame_;
     
 }
+
++ (id) cocosOverlayViewController:(CCNode *)node contentSize:(CGSize)contentSize frame:(CGRect)frame;
+
+- (id) init:(CCNode *)node contentSize:(CGSize)contentSize frame:(CGRect)frame;
 
 @end

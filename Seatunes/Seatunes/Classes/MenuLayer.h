@@ -8,18 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "SWTableView.h"
 
-/*
-@interface MenuLayer : CCLayer <SWTableViewDelegate, SWTableViewDataSource> {
-    
-    SWTableView *table_;
-    
-}
- */
+@class CocosOverlayViewController;
 
 @interface MenuLayer : CCLayer {
+ 
+    CocosOverlayViewController *viewController_;
+ 
+    CGRect menuFrame_;
     
 }
+
++ (id) menuLayer:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize;
+
+- (id) initMenuLayer:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize;
 
 @end

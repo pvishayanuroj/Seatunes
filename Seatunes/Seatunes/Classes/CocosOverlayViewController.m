@@ -11,15 +11,40 @@
 
 @implementation CocosOverlayViewController
 
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
++ (id) cocosOverlayViewController:(CCNode *)node contentSize:(CGSize)contentSize frame:(CGRect)frame
 {
-    CocosOverlayScrollView *scrollView = [[CocosOverlayScrollView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
+    return [[[self alloc] init:node contentSize:contentSize frame:frame] autorelease];
+}
+
+- (id) init:(CCNode *)node contentSize:(CGSize)contentSize frame:(CGRect)frame
+{
+    if ((self = [super init])) {
+        
+        node_ = [node retain];
+        contentSize_ = contentSize;
+        frame_ = frame;
+    }
+    return self;
+}
+
+- (void) dealloc
+{
+    [scrollView_ release];
+    [node_ release];
     
-    // NOTE - I have hardcoded the size to 1024x1024 as that is the size of the levels in
-    // our game.  Ideally this value would be parameterized or configurable.
-    //
-    scrollView.contentSize = CGSizeMake(320, 580);
+    [super dealloc];
+}
+
+// Implement loadView to create a view hierarchy programmatically, without using a nib.
+- (void) loadView
+{
+    //CocosOverlayScrollView *scrollView = [[CocosOverlayScrollView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
+    CocosOverlayScrollView *scrollView = [CocosOverlayScrollView cocosOverlayScrollView];
+    
+    scrollView.contentSize = contentSize_;
+    scrollView.frame = frame_;
+    scrollView.bounds = scrollView.frame;
+    scrollView.node = node_;
     
     scrollView.delegate = scrollView;
     [scrollView setUserInteractionEnabled:TRUE];
@@ -27,6 +52,7 @@
     
     self.view = scrollView;
     
-    [scrollView release];
+//    [scrollView release];
 }
+
 @end

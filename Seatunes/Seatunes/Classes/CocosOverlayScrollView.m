@@ -11,10 +11,35 @@
 
 @implementation CocosOverlayScrollView
 
+@synthesize node = node_;
+
++ (id) cocosOverlayScrollView
+{
+    return [[[self alloc] initCocosOverlayScrollView] autorelease];
+}
+
+- (id) initCocosOverlayScrollView
+{
+    if ((self = [self initWithFrame:[UIScreen mainScreen].applicationFrame])) {
+     
+        firstScroll_ = YES;
+    
+    }
+    return self;
+}
+
+- (void) dealloc
+{
+    [node_ release];
+    
+    [super dealloc];
+}
+
 -(void) touchesBegan: (NSSet *) touches withEvent: (UIEvent *) event
 {
     if (!self.dragging)
     {
+        NSLog(@"touch began");
         UITouch* touch = [[touches allObjects] objectAtIndex:0];
         CGPoint location = [touch locationInView: [touch view]];
         
@@ -36,39 +61,24 @@
     [super touchesEnded: touches withEvent: event];
 }
 
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+- (void) scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    // TODO - Custom code for handling deceleration of the scroll view
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    //NSLog(@"scrollview did scroll");
+    if (firstScroll_) {
+        originalPos_ = node_.position;
+        firstScroll_ = NO;
+    }
     CGPoint dragPt = [scrollView contentOffset];
     
-    CCScene* currentScene = [[CCDirector sharedDirector] runningScene];
-    
-    // Only take the top layer to modify but other layers could be retrieved as well
-    //
-    CCLayer* topLayer = (CCLayer *)[currentScene.children objectAtIndex:1];
-    
-    //dragPt = [[CCDirector sharedDirector] convertCoordinate:dragPt];
-//    dragPt = [[CCDirector sharedDirector] convertToGL:dragPt];
-    dragPt = [[CCDirector sharedDirector] convertToUI:dragPt];
+    dragPt = [[CCDirector sharedDirector] convertToGL:dragPt];
+//    dragPt = [[CCDirector sharedDirector] convertToUI:dragPt];
     
     dragPt.y = dragPt.y * -1;
-    dragPt.x = dragPt.x * -1;
+
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    CGFloat newY = dragPt.y + winSize.height + originalPos_.y;
     
-    CGPoint newLayerPosition = CGPointMake(dragPt.x + (scrollView.contentSize.height * 0.5f), dragPt.y + (scrollView.contentSize.width * 0.5f));
-    
-    //NSLog(@"%4.2f, %4.2f", newLayerPosition.x, newLayerPosition.y);
-    //[topLayer setPosition:newLayerPosition];
-    topLayer.position = newLayerPosition;
+    //NSLog(@"OrigY: %4.2f, Prev pt: %4.2f, new pt: %4.2f", originalPos_.y, node_.position.y, newY);
+    node_.position = CGPointMake(node_.position.x, newY);
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    CGPoint dragPt = [scrollView contentOffset];
-    
-}
 @end
