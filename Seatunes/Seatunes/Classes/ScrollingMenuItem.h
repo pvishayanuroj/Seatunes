@@ -1,5 +1,5 @@
 //
-//  MenuItem.h
+//  ScrollingMenuItem.h
 //  Seatunes
 //
 //  Created by Paul Vishayanuroj on 1/24/12.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface MenuItem : CCNode <CCTargetedTouchDelegate> {
+@interface ScrollingMenuItem : CCNode <CCTargetedTouchDelegate> {
     
     CCSprite *sprite_;
     
@@ -17,8 +17,8 @@
     
 }
 
-+ (id) menuItem;
++ (id) scrollingMenuItem;
 
-- (id) initMenuItem;
+- (id) initScrollingMenuItem;
 
 @end

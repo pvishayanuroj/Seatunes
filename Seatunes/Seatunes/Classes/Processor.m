@@ -38,15 +38,18 @@
 
 - (void) loadSong:(NSString *)songName
 {
+    notes_ = [[NSMutableArray array] retain];    
+    
 	NSString *path = [[NSBundle mainBundle] pathForResource:songName ofType:@"plist"];
     NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:path];
     
     NSArray *storedNotes = [[NSArray arrayWithArray:[data objectForKey:@"Notes"]] retain];
-    notes_ = [[NSMutableArray arrayWithCapacity:[storedNotes count]] retain];   
     
-    for (NSString *note in storedNotes) {
-        NSNumber *key = [NSNumber numberWithInteger:[Utility keyEnumFromName:note]];
-        [notes_ addObject:key];
+    for (NSArray *section in storedNotes) {
+        for (NSString *note in section) {
+            NSNumber *key = [NSNumber numberWithInteger:[Utility keyEnumFromName:note]];
+            [notes_ addObject:key];
+        }            
     }
 }
 

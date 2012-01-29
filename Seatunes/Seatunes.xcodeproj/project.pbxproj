@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048508CC14D4CF11008BBA10 /* Nursery Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048508CB14D4CF11008BBA10 /* Nursery Pack.plist */; };
+		048508D714D4D4DC008BBA10 /* PlayMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508D614D4D4DC008BBA10 /* PlayMenuScene.m */; };
+		048508DB14D4D62D008BBA10 /* SliderBoxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */; };
+		048508DF14D4D701008BBA10 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DD14D4D701008BBA10 /* Button.m */; };
+		048508E414D4E4E6008BBA10 /* ScrollingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508E314D4E4E5008BBA10 /* ScrollingMenu.m */; };
+		048508E714D4E50D008BBA10 /* ScrollingMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */; };
 		04C093AA14C4C7090087DA18 /* A4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */; };
 		04C093AB14C4C7090087DA18 /* A4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938B14C4C7090087DA18 /* A4-Martian.m4a */; };
 		04C093AC14C4C7090087DA18 /* A4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */; };
@@ -41,10 +47,8 @@
 		04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A914C4C7090087DA18 /* G4-Whirly.m4a */; };
 		04F4AC7C14C51A0F008666B0 /* Processor.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F4AC7B14C51A0F008666B0 /* Processor.m */; };
 		04F4AC8014C51FCC008666B0 /* Twinkle Twinkle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04F4AC7F14C51FCC008666B0 /* Twinkle Twinkle.plist */; };
-		DA08E0A314CC7DEA00D1437B /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A214CC7DE700D1437B /* MenuLayer.m */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
-		DA08E0B514CE737D00D1437B /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B414CE737800D1437B /* MenuItem.m */; };
 		DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B714D458B800D1437B /* MainMenuScene.m */; };
 		DAB11F1A14C1E847009B60FB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1914C1E847009B60FB /* QuartzCore.framework */; };
 		DAB11F1C14C1E847009B60FB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1B14C1E847009B60FB /* OpenGLES.framework */; };
@@ -183,6 +187,19 @@
 
 /* Begin PBXFileReference section */
 		048279F114C7B94700814021 /* ProcessorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProcessorDelegate.h; path = Classes/ProcessorDelegate.h; sourceTree = "<group>"; };
+		048508CB14D4CF11008BBA10 /* Nursery Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Nursery Pack.plist"; sourceTree = "<group>"; };
+		048508D514D4D4DC008BBA10 /* PlayMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMenuScene.h; path = Classes/PlayMenuScene.h; sourceTree = "<group>"; };
+		048508D614D4D4DC008BBA10 /* PlayMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMenuScene.m; path = Classes/PlayMenuScene.m; sourceTree = "<group>"; };
+		048508D914D4D62D008BBA10 /* SliderBoxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderBoxMenu.h; path = Classes/SliderBoxMenu.h; sourceTree = "<group>"; };
+		048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SliderBoxMenu.m; path = Classes/SliderBoxMenu.m; sourceTree = "<group>"; };
+		048508DC14D4D701008BBA10 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Button.h; path = Classes/Button.h; sourceTree = "<group>"; };
+		048508DD14D4D701008BBA10 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Button.m; path = Classes/Button.m; sourceTree = "<group>"; };
+		048508DE14D4D701008BBA10 /* ButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonDelegate.h; path = Classes/ButtonDelegate.h; sourceTree = "<group>"; };
+		048508E114D4DB1C008BBA10 /* SliderBoxMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderBoxMenuDelegate.h; path = Classes/SliderBoxMenuDelegate.h; sourceTree = "<group>"; };
+		048508E214D4E4E5008BBA10 /* ScrollingMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollingMenu.h; path = Classes/ScrollingMenu.h; sourceTree = "<group>"; };
+		048508E314D4E4E5008BBA10 /* ScrollingMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollingMenu.m; path = Classes/ScrollingMenu.m; sourceTree = "<group>"; };
+		048508E514D4E50D008BBA10 /* ScrollingMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollingMenuItem.h; path = Classes/ScrollingMenuItem.h; sourceTree = "<group>"; };
+		048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollingMenuItem.m; path = Classes/ScrollingMenuItem.m; sourceTree = "<group>"; };
 		04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-LunarStrings.m4a"; sourceTree = "<group>"; };
 		04C0938B14C4C7090087DA18 /* A4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-Martian.m4a"; sourceTree = "<group>"; };
 		04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-PopFlute.m4a"; sourceTree = "<group>"; };
@@ -218,14 +235,10 @@
 		04F4AC7A14C51A0F008666B0 /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Processor.h; path = Classes/Processor.h; sourceTree = "<group>"; };
 		04F4AC7B14C51A0F008666B0 /* Processor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Processor.m; path = Classes/Processor.m; sourceTree = "<group>"; };
 		04F4AC7F14C51FCC008666B0 /* Twinkle Twinkle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Twinkle Twinkle.plist"; sourceTree = "<group>"; };
-		DA08E0A114CC7DE500D1437B /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuLayer.h; path = Classes/MenuLayer.h; sourceTree = "<group>"; };
-		DA08E0A214CC7DE700D1437B /* MenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuLayer.m; path = Classes/MenuLayer.m; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
 		DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayViewController.m; path = Classes/CocosOverlayViewController.m; sourceTree = "<group>"; };
 		DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayScrollView.h; path = Classes/CocosOverlayScrollView.h; sourceTree = "<group>"; };
 		DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayScrollView.m; path = Classes/CocosOverlayScrollView.m; sourceTree = "<group>"; };
-		DA08E0B314CE737200D1437B /* MenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuItem.h; path = Classes/MenuItem.h; sourceTree = "<group>"; };
-		DA08E0B414CE737800D1437B /* MenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuItem.m; path = Classes/MenuItem.m; sourceTree = "<group>"; };
 		DA08E0B614D4589900D1437B /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuScene.h; path = Classes/MainMenuScene.h; sourceTree = "<group>"; };
 		DA08E0B714D458B800D1437B /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuScene.m; path = Classes/MainMenuScene.m; sourceTree = "<group>"; };
 		DAB11F1514C1E847009B60FB /* Seatunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seatunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -514,6 +527,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		048508CA14D4CF11008BBA10 /* Packs */ = {
+			isa = PBXGroup;
+			children = (
+				048508CB14D4CF11008BBA10 /* Nursery Pack.plist */,
+			);
+			name = Packs;
+			path = Resources/Packs;
+			sourceTree = "<group>";
+		};
 		04F4AC7E14C51FCC008666B0 /* Songs */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +580,9 @@
 		DAB11F2914C1E847009B60FB /* Seatunes */ = {
 			isa = PBXGroup;
 			children = (
+				048508DC14D4D701008BBA10 /* Button.h */,
+				048508DD14D4D701008BBA10 /* Button.m */,
+				048508DE14D4D701008BBA10 /* ButtonDelegate.h */,
 				DAB1207B14C1E84D009B60FB /* AppDelegate.h */,
 				DAB1207C14C1E84D009B60FB /* AppDelegate.m */,
 				DAB1207E14C1E84D009B60FB /* RootViewController.h */,
@@ -570,10 +595,10 @@
 				DAB1211C14C35F2B009B60FB /* GameScene.m */,
 				DAB1208A14C30911009B60FB /* GameLayer.h */,
 				DAB1208B14C30911009B60FB /* GameLayer.m */,
-				DA08E0A114CC7DE500D1437B /* MenuLayer.h */,
-				DA08E0A214CC7DE700D1437B /* MenuLayer.m */,
-				DA08E0B314CE737200D1437B /* MenuItem.h */,
-				DA08E0B414CE737800D1437B /* MenuItem.m */,
+				048508E214D4E4E5008BBA10 /* ScrollingMenu.h */,
+				048508E314D4E4E5008BBA10 /* ScrollingMenu.m */,
+				048508E514D4E50D008BBA10 /* ScrollingMenuItem.h */,
+				048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */,
 				DAB120D514C30E60009B60FB /* AudioManager.h */,
 				DAB120D614C30E60009B60FB /* AudioManager.m */,
 				DAB1208D14C3099B009B60FB /* Keyboard.h */,
@@ -600,6 +625,11 @@
 				DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */,
 				DA08E0B614D4589900D1437B /* MainMenuScene.h */,
 				DA08E0B714D458B800D1437B /* MainMenuScene.m */,
+				048508D514D4D4DC008BBA10 /* PlayMenuScene.h */,
+				048508D614D4D4DC008BBA10 /* PlayMenuScene.m */,
+				048508D914D4D62D008BBA10 /* SliderBoxMenu.h */,
+				048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */,
+				048508E114D4DB1C008BBA10 /* SliderBoxMenuDelegate.h */,
 			);
 			path = Seatunes;
 			sourceTree = "<group>";
@@ -607,6 +637,7 @@
 		DAB11F2A14C1E847009B60FB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				048508CA14D4CF11008BBA10 /* Packs */,
 				04F4AC7E14C51FCC008666B0 /* Songs */,
 				DAB1216814C48B24009B60FB /* Spritesheets */,
 				DAB120E714C35A08009B60FB /* Notes */,
@@ -1106,6 +1137,7 @@
 				04C093C814C4C7090087DA18 /* G4-PopFlute.m4a in Resources */,
 				04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */,
 				04F4AC8014C51FCC008666B0 /* Twinkle Twinkle.plist in Resources */,
+				048508CC14D4CF11008BBA10 /* Nursery Pack.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1222,11 +1254,14 @@
 				DAB1211D14C35F2C009B60FB /* GameScene.m in Sources */,
 				DAB1216114C475FC009B60FB /* Note.m in Sources */,
 				04F4AC7C14C51A0F008666B0 /* Processor.m in Sources */,
-				DA08E0A314CC7DEA00D1437B /* MenuLayer.m in Sources */,
 				DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */,
 				DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */,
-				DA08E0B514CE737D00D1437B /* MenuItem.m in Sources */,
 				DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */,
+				048508D714D4D4DC008BBA10 /* PlayMenuScene.m in Sources */,
+				048508DB14D4D62D008BBA10 /* SliderBoxMenu.m in Sources */,
+				048508DF14D4D701008BBA10 /* Button.m in Sources */,
+				048508E414D4E4E6008BBA10 /* ScrollingMenu.m in Sources */,
+				048508E714D4E50D008BBA10 /* ScrollingMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

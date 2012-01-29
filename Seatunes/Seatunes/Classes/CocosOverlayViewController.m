@@ -46,13 +46,15 @@
     scrollView.bounds = scrollView.frame;
     scrollView.node = node_;
     
+    // Forces scrollbar to the top (depending on parameters, it could start in the middle)
+    CGPoint offset = CGPointMake(0, 0);
+    [scrollView setContentOffset:offset animated:NO];
+    
     scrollView.delegate = scrollView;
     [scrollView setUserInteractionEnabled:TRUE];
     [scrollView setScrollEnabled:TRUE];
     
     self.view = scrollView;
-    
-//    [scrollView release];
 }
 
 @end

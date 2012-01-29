@@ -6,10 +6,14 @@
 //  Copyright 2012 Paul Vishayanuroj. All rights reserved.
 //
 
+#import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "ButtonDelegate.h"
 
-@interface MainMenuScene : CCScene {
+@class Button;
+
+@interface MainMenuScene : CCScene <ButtonDelegate> {
     
 }
 

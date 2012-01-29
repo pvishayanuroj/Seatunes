@@ -8,7 +8,7 @@
 
 #import "GameScene.h"
 #import "GameLayer.h"
-#import "MenuLayer.h"
+#import "ScrollingMenu.h"
 
 @implementation GameScene
 
@@ -25,11 +25,11 @@
         // 60, 320 = -60, 320
         // 200, 100 = 20, 100
         // 320 - (a + b)
-        CGRect menuFrame = CGRectMake(0, 0, 200, 320);
+        CGRect menuFrame = CGRectMake(0, 20, 200, 300);
         //CGRect menuFrame = CGRectMake(0, 100, 200, 200);
         CGFloat scrollSize = 1000;
-        MenuLayer *menuLayer = [MenuLayer menuLayer:menuFrame scrollSize:scrollSize];
-        menuLayer.position = ccp(0, 0);
+        ScrollingMenu *menuLayer = [ScrollingMenu scrollingMenu:menuFrame scrollSize:scrollSize];
+        //menuLayer.position = ccp(0, 0);
         [self addChild:menuLayer z:0];
         
     }
