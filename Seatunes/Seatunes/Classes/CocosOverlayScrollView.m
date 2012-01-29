@@ -37,13 +37,7 @@
 
 -(void) touchesBegan: (NSSet *) touches withEvent: (UIEvent *) event
 {
-    if (!self.dragging)
-    {
-        NSLog(@"touch began");
-        UITouch* touch = [[touches allObjects] objectAtIndex:0];
-        CGPoint location = [touch locationInView: [touch view]];
-        
-        [self.nextResponder touchesBegan: touches withEvent:event];
+    if (!self.dragging) {
         [[[CCDirector sharedDirector] openGLView] touchesBegan:touches withEvent:event];
     }
     
@@ -52,9 +46,7 @@
 
 -(void) touchesEnded: (NSSet *) touches withEvent: (UIEvent *) event
 {
-    if (!self.dragging)
-    {
-        [self.nextResponder touchesEnded: touches withEvent:event];
+    if (!self.dragging) {
         [[[CCDirector sharedDirector] openGLView] touchesEnded:touches withEvent:event];
     }
     
@@ -70,8 +62,6 @@
     CGPoint dragPt = [scrollView contentOffset];
     
     dragPt = [[CCDirector sharedDirector] convertToGL:dragPt];
-//    dragPt = [[CCDirector sharedDirector] convertToUI:dragPt];
-    
     dragPt.y = dragPt.y * -1;
 
     CGSize winSize = [[CCDirector sharedDirector] winSize];

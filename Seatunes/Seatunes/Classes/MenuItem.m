@@ -51,6 +51,15 @@ static NSUInteger countID = 0;
                       (r.size.height *sprite_.scaleY ) / 2, r.size.width * sprite_.scaleX, r.size.height * sprite_.scaleY);
 }
 
+- (CGPoint)convertTouchToNodeSpaceAR:(UITouch *)touch
+{
+	CGPoint point = [touch locationInView: [touch view]];
+    UIScrollView *view = (UIScrollView *)touch.view;    
+    point.y = point.y - view.contentOffset.y;
+	point = [[CCDirector sharedDirector] convertToGL: point];
+	return [self convertToNodeSpaceAR:point];
+}
+
 - (BOOL) containsTouchLocation:(UITouch *)touch
 {	
 	return CGRectContainsPoint([self rect], [self convertTouchToNodeSpaceAR:touch]);
@@ -60,6 +69,13 @@ static NSUInteger countID = 0;
 {	
     //NSLog(@"touch began in menuitem");
     if ([self containsTouchLocation:touch]) {
+        UIScrollView *view = (UIScrollView *)touch.view;
+        NSLog(@"OFFSET: %4.2f", view.contentOffset.y);
+        
+        
+        CGPoint pt = [touch locationInView: [touch view]];        
+//        CGPoint pt = [self convertTouchToNodeSpaceAR:touch];
+        //NSLog(@"%4.2f, %4.2f", pt.x, pt.y);
         NSLog(@"item %d got it", unitID_);
         return YES;
     }
