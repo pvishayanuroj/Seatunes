@@ -54,38 +54,26 @@ static NSUInteger countID = 0;
 
 - (CGPoint) convertTouchToNodeSpaceAR:(UITouch *)touch
 {
-    CGPoint t = [self convertToWorldSpaceAR:ccp(0, -50)];
-    //NSLog(@"t: %4.2f", t.y);
-    
-    
 	CGPoint point = [touch locationInView: [touch view]];
-    //NSLog(@"%4.2f", point.y);
+
+    // Account for the scroll offset
     UIScrollView *view = (UIScrollView *)touch.view;    
-    
-    //NSLog(@"%4.2f", view.contentOffset.y);
     point.y = point.y - view.contentOffset.y;
     
     CGFloat yOrigin = view.frame.origin.y;
     CGFloat yHeight = view.frame.size.height;
     CGSize winSize = [[CCDirector sharedDirector] winSize];
 
-    //CGFloat yOrigin = winSize.height - (menuFrame.origin.y + menuFrame.size.height);    
-    
     yOrigin = -((yOrigin - winSize.height) + yHeight);
     
     CGPoint offset = CGPointMake(view.frame.origin.x + view.frame.size.width, yOrigin + view.frame.size.height);
 
     //NSLog(@"origin: %4.2f, size: %4.2f", yOrigin, view.frame.size.height);
     
+    // At this point it's in reference to the screen's coordinates
     point = ccpSub(offset, point);
     
-    //point.y = point.y - view.contentOffset.y;
-    //NSLog(@"after %4.2f", point.y);    
-	//point = [[CCDirector sharedDirector] convertToGL: point];
-    point = [self convertToNodeSpaceAR:point];
-    //NSLog(@"after2 %4.2f", point.y);    
-	//point = [self convertToNodeSpaceAR:point];
-    //NSLog(@"after3 %4.2f", point.y);        
+    point = [self convertToNodeSpaceAR:point];     
     return point;
 }
 
@@ -98,15 +86,7 @@ static NSUInteger countID = 0;
 {	
     //NSLog(@"touch began in menuitem");
     if ([self containsTouchLocation:touch]) {
-        /*
-        UIScrollView *view = (UIScrollView *)touch.view;
-        NSLog(@"OFFSET: %4.2f", view.contentOffset.y);
-        
-        
-        CGPoint pt = [touch locationInView: [touch view]];        
-//        CGPoint pt = [self convertTouchToNodeSpaceAR:touch];
-        //NSLog(@"%4.2f, %4.2f", pt.x, pt.y);
-         */
+
         NSLog(@"item %d got it", unitID_);
          
         return YES;
@@ -121,6 +101,9 @@ static NSUInteger countID = 0;
 
 - (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    if ([self containsTouchLocation:touch]) {
+        NSLog(@"touch ended for: %d", unitID_);
+    }
 }
 
 

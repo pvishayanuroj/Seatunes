@@ -26,6 +26,7 @@
         scrollSize_ = scrollSize;
         menuFrame_ = menuFrame;
         paddingSize_ = 40;
+        currentMenuItem_ = nil;
         
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         
@@ -61,6 +62,7 @@
     [menuItems_ release];
     [viewController_.view removeFromSuperview];
     [viewController_ release];
+    [currentMenuItem_ release];
     
     [super dealloc];
 }
@@ -87,10 +89,27 @@
 {
     for (ScrollingMenuItem<CCTargetedTouchDelegate>  *item in menuItems_) {
         if ([item ccTouchBegan:touch withEvent:event]) {
+            currentMenuItem_ = [item retain];
             return YES;
         }
     }
     return NO;
+}
+
+- (void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    if (currentMenuItem_) {
+        [currentMenuItem_ ccTouchMoved:touch withEvent:event];
+    }
+}
+
+- (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    if (currentMenuItem_) {
+        [currentMenuItem_ ccTouchEnded:touch withEvent:event];
+        [currentMenuItem_ release];
+        currentMenuItem_ = nil;
+    }
 }
 
 

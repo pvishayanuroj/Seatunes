@@ -23,6 +23,8 @@
     CGFloat scrollSize_;
     
     CGFloat paddingSize_;
+    
+    ScrollingMenuItem *currentMenuItem_;
 }
 
 + (id) scrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize;

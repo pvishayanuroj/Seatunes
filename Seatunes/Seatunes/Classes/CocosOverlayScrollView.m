@@ -35,12 +35,12 @@
     [super dealloc];
 }
 
--(void) touchesBegan: (NSSet *) touches withEvent: (UIEvent *) event
+- (void) touchesBegan: (NSSet *) touches withEvent: (UIEvent *) event
 {
     if (!self.dragging) {
         
-        UITouch *touch =[[touches allObjects] objectAtIndex:0];
-        CGPoint p = [touch locationInView:[touch view]];
+        UITouch *touch = [[touches allObjects] objectAtIndex:0];
+        //CGPoint p = [touch locationInView:[touch view]];
         //NSLog(@"p.y: %4.2f", p.y);
         
         CCNode<CCTargetedTouchDelegate> *node = (CCNode<CCTargetedTouchDelegate> *)node_;
@@ -48,16 +48,31 @@
         //[[[CCDirector sharedDirector] openGLView] touchesBegan:touches withEvent:event];
     }
     
-    [super touchesBegan: touches withEvent: event];
+    [super touchesBegan: touches withEvent:event];
 }
 
--(void) touchesEnded: (NSSet *) touches withEvent: (UIEvent *) event
+- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if (!self.dragging) {
-        [[[CCDirector sharedDirector] openGLView] touchesEnded:touches withEvent:event];
+        
+        UITouch *touch = [[touches allObjects] objectAtIndex:0];
+        CCNode<CCTargetedTouchDelegate> *node = (CCNode<CCTargetedTouchDelegate> *)node_;
+        [node ccTouchMoved:touch withEvent:event];        
     }
     
-    [super touchesEnded: touches withEvent: event];
+    [super touchesMoved:touches withEvent:event];
+}
+
+- (void) touchesEnded:(NSSet *) touches withEvent: (UIEvent *) event
+{
+    if (!self.dragging) {
+        
+        UITouch *touch = [[touches allObjects] objectAtIndex:0];
+        CCNode<CCTargetedTouchDelegate> *node = (CCNode<CCTargetedTouchDelegate> *)node_;
+        [node ccTouchEnded:touch withEvent:event];                
+    }
+    
+    [super touchesEnded:touches withEvent:event];
 }
 
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView
