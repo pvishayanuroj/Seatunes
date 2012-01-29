@@ -26,6 +26,10 @@
 
 + (NSString *) creatureNameFromEnum:(CreatureType)creature;
 
-+ (NSString *) instructorNameFromEnum:(InstructorType)creature;
++ (NSString *) instructorNameFromEnum:(InstructorType)instructor;
+
++ (NSString *) packNameFromEnum:(PackType)packType;
+
++ (NSArray *) allPackNames;
 
 @end

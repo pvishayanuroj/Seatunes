@@ -7,12 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		048508CC14D4CF11008BBA10 /* Nursery Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048508CB14D4CF11008BBA10 /* Nursery Pack.plist */; };
 		048508D714D4D4DC008BBA10 /* PlayMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508D614D4D4DC008BBA10 /* PlayMenuScene.m */; };
 		048508DB14D4D62D008BBA10 /* SliderBoxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */; };
 		048508DF14D4D701008BBA10 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DD14D4D701008BBA10 /* Button.m */; };
 		048508E414D4E4E6008BBA10 /* ScrollingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508E314D4E4E5008BBA10 /* ScrollingMenu.m */; };
 		048508E714D4E50D008BBA10 /* ScrollingMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */; };
+		048BBA7E14D534780086EABC /* Buy Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBA7714D534780086EABC /* Buy Text.png */; };
+		048BBA7F14D534780086EABC /* Credits Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBA7814D534780086EABC /* Credits Text.png */; };
+		048BBA8014D534780086EABC /* Exercise Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBA7914D534780086EABC /* Exercise Pack.png */; };
+		048BBA8214D534780086EABC /* Play Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBA7B14D534780086EABC /* Play Text.png */; };
+		048BBA8314D534780086EABC /* Slider Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBA7C14D534780086EABC /* Slider Box.png */; };
+		048BBAC014D5368C0086EABC /* American Classics Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAAC14D5368B0086EABC /* American Classics Pack.plist */; };
+		048BBAC114D5368C0086EABC /* Exercise Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAAE14D5368B0086EABC /* Exercise Pack.plist */; };
+		048BBAC214D5368C0086EABC /* Alphabet Song.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB014D5368B0086EABC /* Alphabet Song.plist */; };
+		048BBAC314D5368C0086EABC /* Frere Jacques.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB114D5368B0086EABC /* Frere Jacques.plist */; };
+		048BBAC414D5368C0086EABC /* Hot Cross Buns.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB214D5368B0086EABC /* Hot Cross Buns.plist */; };
+		048BBAC514D5368C0086EABC /* Itsy Bitsy Spider.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB314D5368B0086EABC /* Itsy Bitsy Spider.plist */; };
+		048BBAC614D5368C0086EABC /* Little Bo Peep.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB414D5368B0086EABC /* Little Bo Peep.plist */; };
+		048BBAC714D5368C0086EABC /* London Bridge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB514D5368B0086EABC /* London Bridge.plist */; };
+		048BBAC814D5368C0086EABC /* Mary Had A Little Lamb.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB614D5368B0086EABC /* Mary Had A Little Lamb.plist */; };
+		048BBAC914D5368C0086EABC /* Old MacDonald.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB714D5368B0086EABC /* Old MacDonald.plist */; };
+		048BBACA14D5368C0086EABC /* Polly Wolly Doodle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB814D5368B0086EABC /* Polly Wolly Doodle.plist */; };
+		048BBACB14D5368C0086EABC /* Ring Around A Rosy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB914D5368B0086EABC /* Ring Around A Rosy.plist */; };
+		048BBACC14D5368C0086EABC /* Row Row.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABA14D5368B0086EABC /* Row Row.plist */; };
+		048BBACD14D5368C0086EABC /* Skip To My Lou.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABB14D5368B0086EABC /* Skip To My Lou.plist */; };
+		048BBACE14D5368C0086EABC /* This Old Man.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABC14D5368C0086EABC /* This Old Man.plist */; };
+		048BBACF14D5368C0086EABC /* Three Blind Mice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABD14D5368C0086EABC /* Three Blind Mice.plist */; };
+		048BBAD014D5368C0086EABC /* Twinkle Twinkle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABE14D5368C0086EABC /* Twinkle Twinkle.plist */; };
+		048BBAD114D5368C0086EABC /* Nursery Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABF14D5368C0086EABC /* Nursery Pack.plist */; };
+		048BBAD414D539D90086EABC /* American Classics Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAD214D539D90086EABC /* American Classics Pack.png */; };
+		048BBAD514D539D90086EABC /* Nursery Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAD314D539D90086EABC /* Nursery Pack.png */; };
 		04C093AA14C4C7090087DA18 /* A4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */; };
 		04C093AB14C4C7090087DA18 /* A4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938B14C4C7090087DA18 /* A4-Martian.m4a */; };
 		04C093AC14C4C7090087DA18 /* A4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */; };
@@ -46,7 +70,6 @@
 		04C093C814C4C7090087DA18 /* G4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A814C4C7090087DA18 /* G4-PopFlute.m4a */; };
 		04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A914C4C7090087DA18 /* G4-Whirly.m4a */; };
 		04F4AC7C14C51A0F008666B0 /* Processor.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F4AC7B14C51A0F008666B0 /* Processor.m */; };
-		04F4AC8014C51FCC008666B0 /* Twinkle Twinkle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04F4AC7F14C51FCC008666B0 /* Twinkle Twinkle.plist */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
 		DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B714D458B800D1437B /* MainMenuScene.m */; };
@@ -188,7 +211,6 @@
 
 /* Begin PBXFileReference section */
 		048279F114C7B94700814021 /* ProcessorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProcessorDelegate.h; path = Classes/ProcessorDelegate.h; sourceTree = "<group>"; };
-		048508CB14D4CF11008BBA10 /* Nursery Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Nursery Pack.plist"; sourceTree = "<group>"; };
 		048508D514D4D4DC008BBA10 /* PlayMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMenuScene.h; path = Classes/PlayMenuScene.h; sourceTree = "<group>"; };
 		048508D614D4D4DC008BBA10 /* PlayMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMenuScene.m; path = Classes/PlayMenuScene.m; sourceTree = "<group>"; };
 		048508D914D4D62D008BBA10 /* SliderBoxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderBoxMenu.h; path = Classes/SliderBoxMenu.h; sourceTree = "<group>"; };
@@ -201,6 +223,31 @@
 		048508E314D4E4E5008BBA10 /* ScrollingMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollingMenu.m; path = Classes/ScrollingMenu.m; sourceTree = "<group>"; };
 		048508E514D4E50D008BBA10 /* ScrollingMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollingMenuItem.h; path = Classes/ScrollingMenuItem.h; sourceTree = "<group>"; };
 		048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollingMenuItem.m; path = Classes/ScrollingMenuItem.m; sourceTree = "<group>"; };
+		048BBA7714D534780086EABC /* Buy Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Buy Text.png"; sourceTree = "<group>"; };
+		048BBA7814D534780086EABC /* Credits Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Credits Text.png"; sourceTree = "<group>"; };
+		048BBA7914D534780086EABC /* Exercise Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exercise Pack.png"; sourceTree = "<group>"; };
+		048BBA7B14D534780086EABC /* Play Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play Text.png"; sourceTree = "<group>"; };
+		048BBA7C14D534780086EABC /* Slider Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slider Box.png"; sourceTree = "<group>"; };
+		048BBAAC14D5368B0086EABC /* American Classics Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "American Classics Pack.plist"; sourceTree = "<group>"; };
+		048BBAAE14D5368B0086EABC /* Exercise Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Exercise Pack.plist"; sourceTree = "<group>"; };
+		048BBAB014D5368B0086EABC /* Alphabet Song.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Alphabet Song.plist"; sourceTree = "<group>"; };
+		048BBAB114D5368B0086EABC /* Frere Jacques.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Frere Jacques.plist"; sourceTree = "<group>"; };
+		048BBAB214D5368B0086EABC /* Hot Cross Buns.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Hot Cross Buns.plist"; sourceTree = "<group>"; };
+		048BBAB314D5368B0086EABC /* Itsy Bitsy Spider.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Itsy Bitsy Spider.plist"; sourceTree = "<group>"; };
+		048BBAB414D5368B0086EABC /* Little Bo Peep.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Little Bo Peep.plist"; sourceTree = "<group>"; };
+		048BBAB514D5368B0086EABC /* London Bridge.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "London Bridge.plist"; sourceTree = "<group>"; };
+		048BBAB614D5368B0086EABC /* Mary Had A Little Lamb.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Mary Had A Little Lamb.plist"; sourceTree = "<group>"; };
+		048BBAB714D5368B0086EABC /* Old MacDonald.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Old MacDonald.plist"; sourceTree = "<group>"; };
+		048BBAB814D5368B0086EABC /* Polly Wolly Doodle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Polly Wolly Doodle.plist"; sourceTree = "<group>"; };
+		048BBAB914D5368B0086EABC /* Ring Around A Rosy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Ring Around A Rosy.plist"; sourceTree = "<group>"; };
+		048BBABA14D5368B0086EABC /* Row Row.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Row Row.plist"; sourceTree = "<group>"; };
+		048BBABB14D5368B0086EABC /* Skip To My Lou.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Skip To My Lou.plist"; sourceTree = "<group>"; };
+		048BBABC14D5368C0086EABC /* This Old Man.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "This Old Man.plist"; sourceTree = "<group>"; };
+		048BBABD14D5368C0086EABC /* Three Blind Mice.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Three Blind Mice.plist"; sourceTree = "<group>"; };
+		048BBABE14D5368C0086EABC /* Twinkle Twinkle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Twinkle Twinkle.plist"; sourceTree = "<group>"; };
+		048BBABF14D5368C0086EABC /* Nursery Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Nursery Pack.plist"; sourceTree = "<group>"; };
+		048BBAD214D539D90086EABC /* American Classics Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics Pack.png"; sourceTree = "<group>"; };
+		048BBAD314D539D90086EABC /* Nursery Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack.png"; sourceTree = "<group>"; };
 		04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-LunarStrings.m4a"; sourceTree = "<group>"; };
 		04C0938B14C4C7090087DA18 /* A4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-Martian.m4a"; sourceTree = "<group>"; };
 		04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-PopFlute.m4a"; sourceTree = "<group>"; };
@@ -235,7 +282,6 @@
 		04C093A914C4C7090087DA18 /* G4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-Whirly.m4a"; sourceTree = "<group>"; };
 		04F4AC7A14C51A0F008666B0 /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Processor.h; path = Classes/Processor.h; sourceTree = "<group>"; };
 		04F4AC7B14C51A0F008666B0 /* Processor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Processor.m; path = Classes/Processor.m; sourceTree = "<group>"; };
-		04F4AC7F14C51FCC008666B0 /* Twinkle Twinkle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Twinkle Twinkle.plist"; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
 		DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayViewController.m; path = Classes/CocosOverlayViewController.m; sourceTree = "<group>"; };
 		DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayScrollView.h; path = Classes/CocosOverlayScrollView.h; sourceTree = "<group>"; };
@@ -532,22 +578,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		048508CA14D4CF11008BBA10 /* Packs */ = {
+		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				048508CB14D4CF11008BBA10 /* Nursery Pack.plist */,
+				048BBAD214D539D90086EABC /* American Classics Pack.png */,
+				048BBAD314D539D90086EABC /* Nursery Pack.png */,
+				048BBA7714D534780086EABC /* Buy Text.png */,
+				048BBA7814D534780086EABC /* Credits Text.png */,
+				048BBA7914D534780086EABC /* Exercise Pack.png */,
+				048BBA7B14D534780086EABC /* Play Text.png */,
+				048BBA7C14D534780086EABC /* Slider Box.png */,
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = "<group>";
+		};
+		048BBAAA14D5368B0086EABC /* Packs */ = {
+			isa = PBXGroup;
+			children = (
+				048BBAAB14D5368B0086EABC /* American Classics */,
+				048BBAAC14D5368B0086EABC /* American Classics Pack.plist */,
+				048BBAAD14D5368B0086EABC /* Exercise */,
+				048BBAAE14D5368B0086EABC /* Exercise Pack.plist */,
+				048BBAAF14D5368B0086EABC /* Nursery Pack */,
+				048BBABF14D5368C0086EABC /* Nursery Pack.plist */,
 			);
 			name = Packs;
 			path = Resources/Packs;
 			sourceTree = "<group>";
 		};
-		04F4AC7E14C51FCC008666B0 /* Songs */ = {
+		048BBAAB14D5368B0086EABC /* American Classics */ = {
 			isa = PBXGroup;
 			children = (
-				04F4AC7F14C51FCC008666B0 /* Twinkle Twinkle.plist */,
 			);
-			name = Songs;
-			path = Resources/Songs;
+			path = "American Classics";
+			sourceTree = "<group>";
+		};
+		048BBAAD14D5368B0086EABC /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		048BBAAF14D5368B0086EABC /* Nursery Pack */ = {
+			isa = PBXGroup;
+			children = (
+				048BBAB014D5368B0086EABC /* Alphabet Song.plist */,
+				048BBAB114D5368B0086EABC /* Frere Jacques.plist */,
+				048BBAB214D5368B0086EABC /* Hot Cross Buns.plist */,
+				048BBAB314D5368B0086EABC /* Itsy Bitsy Spider.plist */,
+				048BBAB414D5368B0086EABC /* Little Bo Peep.plist */,
+				048BBAB514D5368B0086EABC /* London Bridge.plist */,
+				048BBAB614D5368B0086EABC /* Mary Had A Little Lamb.plist */,
+				048BBAB714D5368B0086EABC /* Old MacDonald.plist */,
+				048BBAB814D5368B0086EABC /* Polly Wolly Doodle.plist */,
+				048BBAB914D5368B0086EABC /* Ring Around A Rosy.plist */,
+				048BBABA14D5368B0086EABC /* Row Row.plist */,
+				048BBABB14D5368B0086EABC /* Skip To My Lou.plist */,
+				048BBABC14D5368C0086EABC /* This Old Man.plist */,
+				048BBABD14D5368C0086EABC /* Three Blind Mice.plist */,
+				048BBABE14D5368C0086EABC /* Twinkle Twinkle.plist */,
+			);
+			path = "Nursery Pack";
 			sourceTree = "<group>";
 		};
 		DAB11F0A14C1E847009B60FB = {
@@ -646,8 +739,8 @@
 		DAB11F2A14C1E847009B60FB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				048508CA14D4CF11008BBA10 /* Packs */,
-				04F4AC7E14C51FCC008666B0 /* Songs */,
+				048BBAAA14D5368B0086EABC /* Packs */,
+				048BBA7514D534780086EABC /* Images */,
 				DAB1216814C48B24009B60FB /* Spritesheets */,
 				DAB120E714C35A08009B60FB /* Notes */,
 				DAB120F014C35A08009B60FB /* Sprites */,
@@ -1145,8 +1238,31 @@
 				04C093C714C4C7090087DA18 /* G4-Martian.m4a in Resources */,
 				04C093C814C4C7090087DA18 /* G4-PopFlute.m4a in Resources */,
 				04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */,
-				04F4AC8014C51FCC008666B0 /* Twinkle Twinkle.plist in Resources */,
-				048508CC14D4CF11008BBA10 /* Nursery Pack.plist in Resources */,
+				048BBA7E14D534780086EABC /* Buy Text.png in Resources */,
+				048BBA7F14D534780086EABC /* Credits Text.png in Resources */,
+				048BBA8014D534780086EABC /* Exercise Pack.png in Resources */,
+				048BBA8214D534780086EABC /* Play Text.png in Resources */,
+				048BBA8314D534780086EABC /* Slider Box.png in Resources */,
+				048BBAC014D5368C0086EABC /* American Classics Pack.plist in Resources */,
+				048BBAC114D5368C0086EABC /* Exercise Pack.plist in Resources */,
+				048BBAC214D5368C0086EABC /* Alphabet Song.plist in Resources */,
+				048BBAC314D5368C0086EABC /* Frere Jacques.plist in Resources */,
+				048BBAC414D5368C0086EABC /* Hot Cross Buns.plist in Resources */,
+				048BBAC514D5368C0086EABC /* Itsy Bitsy Spider.plist in Resources */,
+				048BBAC614D5368C0086EABC /* Little Bo Peep.plist in Resources */,
+				048BBAC714D5368C0086EABC /* London Bridge.plist in Resources */,
+				048BBAC814D5368C0086EABC /* Mary Had A Little Lamb.plist in Resources */,
+				048BBAC914D5368C0086EABC /* Old MacDonald.plist in Resources */,
+				048BBACA14D5368C0086EABC /* Polly Wolly Doodle.plist in Resources */,
+				048BBACB14D5368C0086EABC /* Ring Around A Rosy.plist in Resources */,
+				048BBACC14D5368C0086EABC /* Row Row.plist in Resources */,
+				048BBACD14D5368C0086EABC /* Skip To My Lou.plist in Resources */,
+				048BBACE14D5368C0086EABC /* This Old Man.plist in Resources */,
+				048BBACF14D5368C0086EABC /* Three Blind Mice.plist in Resources */,
+				048BBAD014D5368C0086EABC /* Twinkle Twinkle.plist in Resources */,
+				048BBAD114D5368C0086EABC /* Nursery Pack.plist in Resources */,
+				048BBAD414D539D90086EABC /* American Classics Pack.png in Resources */,
+				048BBAD514D539D90086EABC /* Nursery Pack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

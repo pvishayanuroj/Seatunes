@@ -159,4 +159,34 @@
     return name;    
 }
 
++ (NSString *) packNameFromEnum:(PackType)packType
+{
+    NSString *name = @"";
+    
+    switch (packType) {
+        case kExercisePack:
+            name = @"Exercise Pack";
+            break;
+        case kNurseryPack:
+            name = @"Nursery Pack";
+            break;
+        case kAmericanClassicsPack:
+            name = @"American Classics Pack";
+            break;
+        default:
+            break;
+    }
+    
+    return name;
+}
+
++ (NSArray *) allPackNames
+{
+    NSMutableArray *packNames = [NSMutableArray arrayWithCapacity:8];
+    [packNames addObject:[NSNumber numberWithInteger:kExercisePack]];
+    [packNames addObject:[NSNumber numberWithInteger:kNurseryPack]];
+    [packNames addObject:[NSNumber numberWithInteger:kAmericanClassicsPack]];
+    return packNames;
+}
+
 @end

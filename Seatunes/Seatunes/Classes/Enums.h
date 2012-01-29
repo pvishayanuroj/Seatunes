@@ -54,5 +54,5 @@ typedef enum {
 typedef enum {
     kExercisePack,
     kNurseryPack,
-    kAmericanPack
+    kAmericanClassicsPack
 } PackType;

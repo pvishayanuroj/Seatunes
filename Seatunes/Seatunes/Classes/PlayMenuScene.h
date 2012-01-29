@@ -22,8 +22,18 @@
     SliderBoxMenu *sliderBoxMenu_;
     
     /* Maps song menu item IDs to song names */
-    NSMutableDictionary *songIDs_;
+    NSArray *songNames_;
     
 }
+
+- (void) startSong;
+
+- (NSArray *) loadSongNames:(NSString *)packName;
+
+- (void) loadPackMenu;
+
+- (void) loadSongMenu:(PackType)packType;
+
+- (void) cleanupSongMenu;
 
 @end

@@ -29,6 +29,8 @@
 
 - (void) dealloc
 {
+    NSLog(@"Cocos overlay view controller dealloc'd");
+    
     [scrollView_ release];
     [node_ release];
     

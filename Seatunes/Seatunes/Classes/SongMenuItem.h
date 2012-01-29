@@ -17,8 +17,8 @@
     
 }
 
-+ (id) songMenuItem:(NSString *)songName;
++ (id) songMenuItem:(NSString *)songName songIndex:(NSUInteger)songIndex;
 
-- (id) initSongMenuItem:(NSString *)songName;
+- (id) initSongMenuItem:(NSString *)songName songIndex:(NSUInteger)songIndex;
 
 @end

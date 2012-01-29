@@ -30,7 +30,6 @@
         itemMap_ = [[NSMutableDictionary dictionary] retain];
         sprite_ = [[CCSprite spriteWithFile:@"Slider Box.png"] retain];
         
-        
     }
     return self;
 }
@@ -48,12 +47,14 @@
 - (void) addMenuItem:(Button *)menuItem
 {
     NSUInteger count = [itemMap_ count];
+    menuItem.delegate = self;
     menuItem.position = CGPointMake(0, -(count * paddingSize_));
     [items_ addObject:menuItem];
     [self addChild:menuItem];    
     
     if (count == 0) {
         currentItem_ = 0;
+        [self addChild:sprite_];
     }
     
     NSNumber *buttonID = [NSNumber numberWithUnsignedInteger:menuItem.numID];
@@ -78,7 +79,7 @@
     if (!isMoving_) {
         isMoving_ = YES;
         CGPoint pos = CGPointMake(0, -(index * paddingSize_));
-        CCActionInterval *move = [CCMoveTo actionWithDuration:0.5f position:pos];
+        CCActionInterval *move = [CCMoveTo actionWithDuration:0.2f position:pos];
         //CCActionInterval *ease = [CCEaseIn actionWithAction:move rate:1.0f];
         CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(boxDoneMoving)];    
         [sprite_ runAction:[CCSequence actions:move, done, nil]]; 

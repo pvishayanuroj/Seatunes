@@ -26,14 +26,6 @@
         size_ = CGSizeMake(0, height);
         numID_ = numID;
         delegate_ = nil;
-        
-        NSString *name = @"Bubble C4.png";
-        sprite_ = [CCSprite spriteWithSpriteFrameName:name];
-        sprite_.position = ccp(100, 0);
-        [self addChild:sprite_];
-        
-        
-        
     }
     return self;
 }

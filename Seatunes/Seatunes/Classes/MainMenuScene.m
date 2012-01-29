@@ -31,6 +31,10 @@ static const CGFloat MMS_CREDITS_Y = 400.0f;
         Button *buyButton = [ImageButton imageButton:kPlayButton unselectedImage:buyText selectedImage:buyText];
         Button *creditsButton = [ImageButton imageButton:kPlayButton unselectedImage:creditsText selectedImage:creditsText];        
         
+        playButton.delegate = self;
+        buyButton.delegate = self;
+        creditsButton.delegate = self;
+        
         playButton.position = ccp(MMS_PLAY_X, MMS_PLAY_Y);
         buyButton.position = ccp(MMS_BUY_X, MMS_BUY_Y);
         creditsButton.position = ccp(MMS_CREDITS_X, MMS_CREDITS_Y);
@@ -54,7 +58,7 @@ static const CGFloat MMS_CREDITS_Y = 400.0f;
     switch (button.numID) {
         case kPlayButton:
             scene = [PlayMenuScene node];
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:2.0 scene:scene]];            
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:scene]];            
             break;
         case kBuySongsButton:
             break;

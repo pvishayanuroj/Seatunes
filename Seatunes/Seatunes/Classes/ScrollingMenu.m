@@ -22,7 +22,7 @@
 - (id) initScrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize
 {
     if ((self = [super init])) {
-        
+
         self.position = CGPointMake(menuFrame.origin.x, menuFrame.origin.y + menuFrame.size.height);        
         
         scrollSize_ = scrollSize;
@@ -42,29 +42,27 @@
         
         viewController_ = [[CocosOverlayViewController cocosOverlayViewController:self contentSize:contentSize frame:frame] retain];
         [[[CCDirector sharedDirector] openGLView] addSubview:viewController_.view];
-        
+
         menuItems_ = [[NSMutableArray array] retain];
-        
-        /*
-        for ( int i = 0 ; i < 10; i++) {
-            ScrollingMenuItem *item = [ScrollingMenuItem scrollingMenuItem];
-            [self addMenuItem:item];
-            //item.position = ccp(100, i * 40);
-            //[self addChild:item];
-        }
-         */
     }
     return self;
 }
 
 - (void) dealloc
 {
+    NSLog(@"Scrolling Menu dealloc'd");
+    
     [menuItems_ release];
-    [viewController_.view removeFromSuperview];
-    [viewController_ release];
+    //[viewController_.view removeFromSuperview];
     [currentMenuItem_ release];
     
     [super dealloc];
+}
+
+- (void) removeSuperview
+{
+    [viewController_.view removeFromSuperview];    
+    [viewController_ release];    
 }
 
 - (void) addMenuItem:(ScrollingMenuItem *)menuItem
