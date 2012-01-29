@@ -11,6 +11,12 @@
 #import "cocos2d.h"
 #import "ButtonDelegate.h"
 
+enum {
+    kPlayButton,
+    kBuySongsButton,
+    kCreditsButton
+};
+
 @class Button;
 
 @interface MainMenuScene : CCScene <ButtonDelegate> {

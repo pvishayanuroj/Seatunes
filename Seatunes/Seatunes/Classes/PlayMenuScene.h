@@ -10,8 +10,19 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "SliderBoxMenuDelegate.h"
+#import "ScrollingMenuDelegate.h"
 
-@interface PlayMenuScene : CCScene <SlideBoxMenuDelegate> {
+@class ScrollingMenu;
+@class SliderBoxMenu;
+
+@interface PlayMenuScene : CCScene <SlideBoxMenuDelegate, ScrollingMenuDelegate> {
+    
+    ScrollingMenu *scrollingMenu_;
+    
+    SliderBoxMenu *sliderBoxMenu_;
+    
+    /* Maps song menu item IDs to song names */
+    NSMutableDictionary *songIDs_;
     
 }
 

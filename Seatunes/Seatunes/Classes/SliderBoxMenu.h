@@ -18,6 +18,8 @@
     
     CCSprite *sprite_;
     
+    Button *currentMenuItem_;
+    
     NSUInteger currentItem_;
     
     NSMutableArray *items_;

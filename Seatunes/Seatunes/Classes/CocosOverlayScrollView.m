@@ -81,17 +81,8 @@
         originalPos_ = node_.position;
         firstScroll_ = NO;
     }
+    
     CGPoint dragPt = [scrollView contentOffset];
-
-        //NSLog(@"drag: %4.2f", dragPt.y);    
-    
-    //dragPt = [[CCDirector sharedDirector] convertToGL:dragPt];
-    //dragPt.y = dragPt.y * -1;
-    
-    //NSLog(@"drag: %4.2f", dragPt.y);    
-
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-    //CGFloat newY = dragPt.y + winSize.height + originalPos_.y;
     CGFloat newY = dragPt.y + originalPos_.y;
     
     //NSLog(@"OrigY: %4.2f, Prev pt: %4.2f, new pt: %4.2f", originalPos_.y, node_.position.y, newY);

@@ -12,6 +12,8 @@
 
 @protocol SlideBoxMenuDelegate <NSObject>
 
-- (void) menuItemSelected:(Button *)button;
+@optional
+
+- (void) slideBoxMenuItemSelected:(Button *)button;
 
 @end

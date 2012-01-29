@@ -12,6 +12,8 @@
 
 @implementation ScrollingMenu
 
+@synthesize delegate = delegate_;
+
 + (id) scrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize
 {
     return [[[self alloc] initScrollingMenu:menuFrame scrollSize:scrollSize] autorelease];
@@ -27,6 +29,7 @@
         menuFrame_ = menuFrame;
         paddingSize_ = 40;
         currentMenuItem_ = nil;
+        delegate_ = nil;
         
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         
@@ -42,17 +45,14 @@
         
         menuItems_ = [[NSMutableArray array] retain];
         
+        /*
         for ( int i = 0 ; i < 10; i++) {
             ScrollingMenuItem *item = [ScrollingMenuItem scrollingMenuItem];
             [self addMenuItem:item];
             //item.position = ccp(100, i * 40);
             //[self addChild:item];
         }
-        
-        ScrollingMenuItem *item = [ScrollingMenuItem scrollingMenuItem];
-        //[menuItems_ addObject:item];        
-        //item.position = CGPointMake(100, -1000);
-        //[self addChild:item];        
+         */
     }
     return self;
 }
@@ -70,7 +70,9 @@
 - (void) addMenuItem:(ScrollingMenuItem *)menuItem
 {
     NSUInteger count = [menuItems_ count];
-    menuItem.position = CGPointMake(100, -(count * paddingSize_ + 50));
+    menuItem.delegate = self;
+    menuItem.width = menuFrame_.size.width;
+    menuItem.position = CGPointMake(0, -(count * paddingSize_ + menuItem.height / 2));
     [menuItems_ addObject:menuItem];
     [self addChild:menuItem];       
 }
@@ -112,5 +114,11 @@
     }
 }
 
+- (void) scrollingMenuItemClicked:(ScrollingMenuItem *)menuItem
+{
+    if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuItemClicked:)]) {
+        [delegate_ scrollingMenuItemClicked:menuItem];
+    }
+}
 
 @end

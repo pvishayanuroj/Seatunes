@@ -50,6 +50,7 @@
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
 		DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B714D458B800D1437B /* MainMenuScene.m */; };
+		DA08E0C214D529CD00D1437B /* SongMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0C114D529C600D1437B /* SongMenuItem.m */; };
 		DAB11F1A14C1E847009B60FB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1914C1E847009B60FB /* QuartzCore.framework */; };
 		DAB11F1C14C1E847009B60FB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1B14C1E847009B60FB /* OpenGLES.framework */; };
 		DAB11F1E14C1E847009B60FB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1D14C1E847009B60FB /* OpenAL.framework */; };
@@ -241,6 +242,10 @@
 		DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayScrollView.m; path = Classes/CocosOverlayScrollView.m; sourceTree = "<group>"; };
 		DA08E0B614D4589900D1437B /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuScene.h; path = Classes/MainMenuScene.h; sourceTree = "<group>"; };
 		DA08E0B714D458B800D1437B /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuScene.m; path = Classes/MainMenuScene.m; sourceTree = "<group>"; };
+		DA08E0BE14D511F300D1437B /* ScrollingMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollingMenuDelegate.h; path = Classes/ScrollingMenuDelegate.h; sourceTree = "<group>"; };
+		DA08E0BF14D5150300D1437B /* ScrollingMenuItemDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollingMenuItemDelegate.h; path = Classes/ScrollingMenuItemDelegate.h; sourceTree = "<group>"; };
+		DA08E0C014D529C000D1437B /* SongMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SongMenuItem.h; path = Classes/SongMenuItem.h; sourceTree = "<group>"; };
+		DA08E0C114D529C600D1437B /* SongMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SongMenuItem.m; path = Classes/SongMenuItem.m; sourceTree = "<group>"; };
 		DAB11F1514C1E847009B60FB /* Seatunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seatunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB11F1914C1E847009B60FB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DAB11F1B14C1E847009B60FB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -597,8 +602,12 @@
 				DAB1208B14C30911009B60FB /* GameLayer.m */,
 				048508E214D4E4E5008BBA10 /* ScrollingMenu.h */,
 				048508E314D4E4E5008BBA10 /* ScrollingMenu.m */,
+				DA08E0BE14D511F300D1437B /* ScrollingMenuDelegate.h */,
 				048508E514D4E50D008BBA10 /* ScrollingMenuItem.h */,
 				048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */,
+				DA08E0BF14D5150300D1437B /* ScrollingMenuItemDelegate.h */,
+				DA08E0C014D529C000D1437B /* SongMenuItem.h */,
+				DA08E0C114D529C600D1437B /* SongMenuItem.m */,
 				DAB120D514C30E60009B60FB /* AudioManager.h */,
 				DAB120D614C30E60009B60FB /* AudioManager.m */,
 				DAB1208D14C3099B009B60FB /* Keyboard.h */,
@@ -1262,6 +1271,7 @@
 				048508DF14D4D701008BBA10 /* Button.m in Sources */,
 				048508E414D4E4E6008BBA10 /* ScrollingMenu.m in Sources */,
 				048508E714D4E50D008BBA10 /* ScrollingMenuItem.m in Sources */,
+				DA08E0C214D529CD00D1437B /* SongMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1317,7 +1327,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1334,7 +1344,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

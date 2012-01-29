@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "ScrollingMenuDelegate.h"
+#import "ScrollingMenuItemDelegate.h"
 
 @class CocosOverlayViewController;
 @class ScrollingMenuItem;
 
-@interface ScrollingMenu : CCLayer {
+@interface ScrollingMenu : CCLayer <ScrollingMenuItemDelegate> {
  
     CocosOverlayViewController *viewController_;
  
@@ -25,7 +27,11 @@
     CGFloat paddingSize_;
     
     ScrollingMenuItem *currentMenuItem_;
+    
+    id <ScrollingMenuDelegate> delegate_;
 }
+
+@property (nonatomic, assign) id <ScrollingMenuDelegate> delegate;
 
 + (id) scrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize;
 

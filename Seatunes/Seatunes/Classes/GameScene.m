@@ -9,6 +9,7 @@
 #import "GameScene.h"
 #import "GameLayer.h"
 #import "ScrollingMenu.h"
+#import "ScrollingMenuItem.h"
 
 @implementation GameScene
 
@@ -19,19 +20,7 @@
         [self animationLoader:@"sheet01_animations" spriteSheetName:@"sheet01"];
         
         GameLayer *gameLayer = [GameLayer start];
-        
-        //[self addChild:gameLayer z:0];    
-        
-        // 60, 320 = -60, 320
-        // 200, 100 = 20, 100
-        // 320 - (a + b)
-        CGRect menuFrame = CGRectMake(0, 20, 200, 300);
-        //CGRect menuFrame = CGRectMake(0, 100, 200, 200);
-        CGFloat scrollSize = 1000;
-        ScrollingMenu *menuLayer = [ScrollingMenu scrollingMenu:menuFrame scrollSize:scrollSize];
-        //menuLayer.position = ccp(0, 0);
-        [self addChild:menuLayer z:0];
-        
+        [self addChild:gameLayer z:0];        
     }
     return self;
 }

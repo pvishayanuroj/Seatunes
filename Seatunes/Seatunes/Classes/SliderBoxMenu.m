@@ -22,7 +22,9 @@
 {
     if ((self = [super init])) {
         
+        delegate_ = nil;
         isMoving_ = NO;
+        currentMenuItem_ = nil;
         paddingSize_ = paddingSize;
         items_ = [[NSMutableArray array] retain];
         itemMap_ = [[NSMutableDictionary dictionary] retain];
@@ -38,6 +40,7 @@
     [sprite_ release];
     [itemMap_ release];
     [items_ release];
+    [currentMenuItem_ release];
     
     [super dealloc];
 }
@@ -61,10 +64,10 @@
 
 - (void) buttonClicked:(Button *)button
 {
+    currentMenuItem_ = [button retain];
+    
     for (Button *item in items_) {
-        if (button.numID != item.numID) {
-            item.isClickable = NO;
-        }
+        item.isClickable = NO;
     }
     
     [self moveBoxTo:button.numID];
@@ -89,6 +92,14 @@
     }
     
     isMoving_ = NO;
+    if (delegate_ && [delegate_ respondsToSelector:@selector(slideBoxMenuItemSelected:)]) {
+        if (currentMenuItem_) {
+            [delegate_ slideBoxMenuItemSelected:currentMenuItem_];
+        }
+        
+    }
+    [currentMenuItem_ release];
+    currentMenuItem_ = nil;
 }
 
 @end

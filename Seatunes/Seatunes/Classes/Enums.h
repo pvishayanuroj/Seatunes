@@ -50,3 +50,9 @@ typedef enum {
     kTimedNoteRepeat,
     kSectionRepeat
 } ProcessorType;
+
+typedef enum {
+    kExercisePack,
+    kNurseryPack,
+    kAmericanPack
+} PackType;

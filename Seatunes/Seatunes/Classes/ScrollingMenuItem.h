@@ -8,17 +8,27 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "ScrollingMenuItemDelegate.h"
 
 @interface ScrollingMenuItem : CCNode <CCTargetedTouchDelegate> {
     
     CCSprite *sprite_;
     
-    NSUInteger unitID_;
+    CGSize size_;
+    
+    NSUInteger numID_;
+    
+    id <ScrollingMenuItemDelegate> delegate_;
     
 }
 
-+ (id) scrollingMenuItem;
+@property (nonatomic, assign) id <ScrollingMenuItemDelegate> delegate;
+@property (nonatomic, readonly) NSUInteger numID;
+@property (nonatomic, assign) CGFloat width;
+@property (nonatomic, readonly) CGFloat height;
 
-- (id) initScrollingMenuItem;
++ (id) scrollingMenuItem:(NSUInteger)numID height:(CGFloat)height;
+
+- (id) initScrollingMenuItem:(NSUInteger)numID height:(CGFloat)height;
 
 @end

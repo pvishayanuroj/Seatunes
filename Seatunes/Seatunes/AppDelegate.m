@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "GameConfig.h"
 #import "GameScene.h"
+#import "MainMenuScene.h"
 #import "RootViewController.h"
 
 @implementation AppDelegate
@@ -113,7 +114,7 @@
 	
 	// Run the intro Scene
     [glView setMultipleTouchEnabled:YES];
-	[[CCDirector sharedDirector] runWithScene: [GameScene node]];
+	[[CCDirector sharedDirector] runWithScene: [MainMenuScene node]];
 }
 
 

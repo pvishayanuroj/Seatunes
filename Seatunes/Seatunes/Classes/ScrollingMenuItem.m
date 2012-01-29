@@ -11,45 +11,56 @@
 
 @implementation ScrollingMenuItem
 
-static NSUInteger countID = 0;
+@synthesize delegate = delegate_;
+@synthesize numID = numID_;
 
-+ (id) scrollingMenuItem
++ (id) scrollingMenuItem:(NSUInteger)numID height:(CGFloat)height
 {
-    return [[[self alloc] initScrollingMenuItem] autorelease];
+    return [[[self alloc] initScrollingMenuItem:numID height:height] autorelease];
 }
 
-- (id) initScrollingMenuItem
+- (id) initScrollingMenuItem:(NSUInteger)numID height:(CGFloat)height
 {
     if ((self = [super init])) {
         
+        size_ = CGSizeMake(0, height);
+        numID_ = numID;
+        delegate_ = nil;
+        
         NSString *name = @"Bubble C4.png";
         sprite_ = [CCSprite spriteWithSpriteFrameName:name];
+        sprite_.position = ccp(100, 0);
         [self addChild:sprite_];
         
-        unitID_ = countID++;
+        
         
     }
     return self;
 }
 
-/*
-- (void) onEnter
+- (void) dealloc
 {
-	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:1 swallowsTouches:YES];
-	[super onEnter];
+    [super dealloc];
 }
 
-- (void) onExit
+- (CGFloat) width
 {
-	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
-	[super onExit];
+    return size_.width;
 }
-*/
+
+- (void) setWidth:(CGFloat)width
+{
+    size_.width = width;
+}
+
+- (CGFloat) height
+{
+    return size_.height;
+}
+
 - (CGRect) rect
 {
-	CGRect r = sprite_.textureRect;    
-	return CGRectMake(sprite_.position.x - (r.size.width * sprite_.scaleX) / 2, sprite_.position.y - 
-                      (r.size.height *sprite_.scaleY ) / 2, r.size.width * sprite_.scaleX, r.size.height * sprite_.scaleY);
+    return CGRectMake(-size_.width / 2, -size_.height / 2, size_.width, size_.height);
 }
 
 - (CGPoint) convertTouchToNodeSpaceAR:(UITouch *)touch
@@ -68,12 +79,11 @@ static NSUInteger countID = 0;
     
     CGPoint offset = CGPointMake(view.frame.origin.x + view.frame.size.width, yOrigin + view.frame.size.height);
 
-    //NSLog(@"origin: %4.2f, size: %4.2f", yOrigin, view.frame.size.height);
-    
     // At this point it's in reference to the screen's coordinates
-    point = ccpSub(offset, point);
+    point.y = offset.y - point.y;
     
-    point = [self convertToNodeSpaceAR:point];     
+    // Convert to the menu item's frame of reference
+    point = [self convertToNodeSpaceAR:point];
     return point;
 }
 
@@ -84,10 +94,9 @@ static NSUInteger countID = 0;
 
 - (BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {	
-    //NSLog(@"touch began in menuitem");
     if ([self containsTouchLocation:touch]) {
 
-        NSLog(@"item %d got it", unitID_);
+        //NSLog(@"item %d got it", numID_);
          
         return YES;
     }
@@ -102,7 +111,10 @@ static NSUInteger countID = 0;
 - (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
     if ([self containsTouchLocation:touch]) {
-        NSLog(@"touch ended for: %d", unitID_);
+        if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuItemClicked:)]) {
+            [delegate_ scrollingMenuItemClicked:self];
+        }
+        //NSLog(@"touch ended for: %d", numID_);
     }
 }
 
