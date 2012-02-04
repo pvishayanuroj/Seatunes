@@ -20,6 +20,8 @@
     
     NSMutableDictionary *keys_;
     
+    NSMutableDictionary *keyTimer_;
+    
     CFMutableDictionaryRef touches_;
     
     NSArray *sequence_;
@@ -49,6 +51,8 @@
 - (void) touchesMoved:(NSSet *)touches;
 
 - (void) touchesEnded:(NSSet *)touches;
+
+- (void) playNote:(KeyType)keyType time:(CGFloat)time;
 
 - (void) playSequence:(NSArray *)sequence;
 

@@ -10,6 +10,10 @@
 
 @protocol KeyboardDelegate <NSObject>
 
+@optional
+
 - (void) keyboardKeyPressed:(KeyType)keyType;
+
+- (void) keyboardKeyDepressed:(KeyType)keyType time:(CGFloat)time;
 
 @end

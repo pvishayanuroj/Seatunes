@@ -12,6 +12,7 @@
 #import "Note.h"
 #import "Instructor.h"
 #import "Processor.h"
+#import "GameLogicB.h"
 
 @implementation GameLayer
 
@@ -32,33 +33,15 @@
         [self addChild:instructor_];
         
         keyboard_ = [[Keyboard keyboard:kEightKey] retain];
-        keyboard_.delegate = self;
         keyboard_.position = ccp(100, 100);
         [self addChild:keyboard_];
         
-        NSMutableArray *test = [NSMutableArray arrayWithCapacity:10];
-        [test addObject:[NSNumber numberWithInteger:kC4]];
-        [test addObject:[NSNumber numberWithInteger:kC4]];
-        [test addObject:[NSNumber numberWithInteger:kG4]];
-        [test addObject:[NSNumber numberWithInteger:kG4]];
-        [test addObject:[NSNumber numberWithInteger:kA4]];
-        [test addObject:[NSNumber numberWithInteger:kA4]];
-        [test addObject:[NSNumber numberWithInteger:kG4]];  
-        [test addObject:[NSNumber numberWithInteger:kBlankNote]];  
-        [test addObject:[NSNumber numberWithInteger:kF4]];
-        [test addObject:[NSNumber numberWithInteger:kF4]];
-        [test addObject:[NSNumber numberWithInteger:kE4]];
-        [test addObject:[NSNumber numberWithInteger:kE4]];
-        [test addObject:[NSNumber numberWithInteger:kD4]];
-        [test addObject:[NSNumber numberWithInteger:kD4]];     
-        [test addObject:[NSNumber numberWithInteger:kC4]];        
-        //[keyboard_ playSequence:test];
+        GameLogicB *gameLogicB = [GameLogicB gameLogicB:@"Twinkle Twinkle"];
+        [gameLogicB setInstructor:instructor_];
+        [gameLogicB setKeyboard:keyboard_];
+        [self addChild:gameLogicB];
         
-        processor_ = [[Processor processor] retain];
-        [self addChild:processor_];
-        processor_.delegate = self;
-        [processor_ loadSong:@"Twinkle Twinkle"];
-        [processor_ forward];
+        [gameLogicB start];
     }
     return self;
 }
@@ -92,11 +75,6 @@
     Note *note = [Note note:keyType];
     note.position = ccp(170.0f, 500.0f);
     [self addChild:note];
-}
-
-- (void) keyboardKeyPressed:(KeyType)keyType
-{
-    [processor_ notePlayed:keyType];
 }
 
 - (void) instructorPlayNote:(KeyType)keyType

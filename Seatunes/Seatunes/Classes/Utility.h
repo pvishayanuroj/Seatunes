@@ -32,4 +32,8 @@
 
 + (NSArray *) allPackNames;
 
++ (NSArray *) loadSong:(NSString *)songName;
+
++ (NSArray *) loadFlattenedSong:(NSString *)songName;
+
 @end

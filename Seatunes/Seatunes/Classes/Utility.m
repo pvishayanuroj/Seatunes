@@ -189,4 +189,33 @@
     return packNames;
 }
 
++ (NSArray *) loadSong:(NSString *)songName
+{
+	NSString *path = [[NSBundle mainBundle] pathForResource:songName ofType:@"plist"];
+    NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    NSArray *notes = [NSArray arrayWithArray:[data objectForKey:@"Notes"]];
+    
+    return notes;
+}
+
++ (NSArray *) loadFlattenedSong:(NSString *)songName
+{
+    NSMutableArray *notes = [NSMutableArray array];    
+    
+	NSString *path = [[NSBundle mainBundle] pathForResource:songName ofType:@"plist"];
+    NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    NSArray *storedNotes = [[NSArray arrayWithArray:[data objectForKey:@"Notes"]] retain];
+    
+    for (NSArray *section in storedNotes) {
+        for (NSString *note in section) {
+            NSNumber *key = [NSNumber numberWithInteger:[Utility keyEnumFromName:note]];
+            [notes addObject:key];
+        }            
+    }
+    
+    return notes;
+}
+
 @end

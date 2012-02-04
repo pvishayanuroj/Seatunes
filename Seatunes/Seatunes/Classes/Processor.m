@@ -11,8 +11,6 @@
 
 @implementation Processor
 
-@synthesize delegate = delegate_;
-
 + (id) processor
 {
     return [[[self alloc] initProcessor] autorelease];
@@ -36,35 +34,18 @@
     [super dealloc];
 }
 
-- (void) loadSong:(NSString *)songName
-{
-    notes_ = [[NSMutableArray array] retain];    
-    
-	NSString *path = [[NSBundle mainBundle] pathForResource:songName ofType:@"plist"];
-    NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:path];
-    
-    NSArray *storedNotes = [[NSArray arrayWithArray:[data objectForKey:@"Notes"]] retain];
-    
-    for (NSArray *section in storedNotes) {
-        for (NSString *note in section) {
-            NSNumber *key = [NSNumber numberWithInteger:[Utility keyEnumFromName:note]];
-            [notes_ addObject:key];
-        }            
-    }
-}
-
 - (void) notePlayed:(KeyType)keyType
 {
     if (waitingForNote_) {
         // If incorrect note played
         if (keyType != expectedNote_) {
-            [delegate_ incorrectNotePlayed];
+            //[delegate_ incorrectNotePlayed];
         }
         // Correct note played
         else {
             timerActive_ = NO;
             waitingForNote_ = NO;
-            [self delayedForward:0.5f];
+            [self delayedForward:0.8f];
         }
     }
     else {
@@ -90,7 +71,7 @@
             [self delayedForward:1.0f];
         }
         else {
-            [delegate_ instructorPlayNote:note];
+            //[delegate_ instructorPlayNote:note];
             [self delayedReplay];
             waitingForNote_ = YES;
             timerActive_ = YES;
@@ -98,7 +79,7 @@
         }
     }
     else {
-        [delegate_ songComplete];
+        //[delegate_ songComplete];
     }
 }
 
@@ -113,7 +94,7 @@
 - (void) replay
 {
     if (timerActive_) {
-        [delegate_ instructorPlayNote:expectedNote_];
+        //[delegate_ instructorPlayNote:expectedNote_];
         [self delayedReplay];
     }
 }

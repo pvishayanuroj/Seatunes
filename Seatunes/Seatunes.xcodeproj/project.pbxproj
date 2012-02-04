@@ -37,6 +37,9 @@
 		048BBAD114D5368C0086EABC /* Nursery Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABF14D5368C0086EABC /* Nursery Pack.plist */; };
 		048BBAD414D539D90086EABC /* American Classics Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAD214D539D90086EABC /* American Classics Pack.png */; };
 		048BBAD514D539D90086EABC /* Nursery Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAD314D539D90086EABC /* Nursery Pack.png */; };
+		04B32C9514DDB1DB004AA98E /* GameLogicB.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9414DDB1DA004AA98E /* GameLogicB.m */; };
+		04B32C9D14DDDBF1004AA98E /* GameLogicA.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9C14DDDBF0004AA98E /* GameLogicA.m */; };
+		04B32CA014DDDC18004AA98E /* GameLogicC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9F14DDDC17004AA98E /* GameLogicC.m */; };
 		04C093AA14C4C7090087DA18 /* A4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */; };
 		04C093AB14C4C7090087DA18 /* A4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938B14C4C7090087DA18 /* A4-Martian.m4a */; };
 		04C093AC14C4C7090087DA18 /* A4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */; };
@@ -210,7 +213,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		048279F114C7B94700814021 /* ProcessorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProcessorDelegate.h; path = Classes/ProcessorDelegate.h; sourceTree = "<group>"; };
 		048508D514D4D4DC008BBA10 /* PlayMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMenuScene.h; path = Classes/PlayMenuScene.h; sourceTree = "<group>"; };
 		048508D614D4D4DC008BBA10 /* PlayMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMenuScene.m; path = Classes/PlayMenuScene.m; sourceTree = "<group>"; };
 		048508D914D4D62D008BBA10 /* SliderBoxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderBoxMenu.h; path = Classes/SliderBoxMenu.h; sourceTree = "<group>"; };
@@ -248,6 +250,12 @@
 		048BBABF14D5368C0086EABC /* Nursery Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Nursery Pack.plist"; sourceTree = "<group>"; };
 		048BBAD214D539D90086EABC /* American Classics Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics Pack.png"; sourceTree = "<group>"; };
 		048BBAD314D539D90086EABC /* Nursery Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack.png"; sourceTree = "<group>"; };
+		04B32C9314DDB1DA004AA98E /* GameLogicB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicB.h; path = Classes/GameLogicB.h; sourceTree = "<group>"; };
+		04B32C9414DDB1DA004AA98E /* GameLogicB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicB.m; path = Classes/GameLogicB.m; sourceTree = "<group>"; };
+		04B32C9B14DDDBF0004AA98E /* GameLogicA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicA.h; path = Classes/GameLogicA.h; sourceTree = "<group>"; };
+		04B32C9C14DDDBF0004AA98E /* GameLogicA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicA.m; path = Classes/GameLogicA.m; sourceTree = "<group>"; };
+		04B32C9E14DDDC16004AA98E /* GameLogicC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicC.h; path = Classes/GameLogicC.h; sourceTree = "<group>"; };
+		04B32C9F14DDDC17004AA98E /* GameLogicC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicC.m; path = Classes/GameLogicC.m; sourceTree = "<group>"; };
 		04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-LunarStrings.m4a"; sourceTree = "<group>"; };
 		04C0938B14C4C7090087DA18 /* A4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-Martian.m4a"; sourceTree = "<group>"; };
 		04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-PopFlute.m4a"; sourceTree = "<group>"; };
@@ -720,7 +728,12 @@
 				DAB1216914C48F6C009B60FB /* Debugging.h */,
 				04F4AC7A14C51A0F008666B0 /* Processor.h */,
 				04F4AC7B14C51A0F008666B0 /* Processor.m */,
-				048279F114C7B94700814021 /* ProcessorDelegate.h */,
+				04B32C9B14DDDBF0004AA98E /* GameLogicA.h */,
+				04B32C9C14DDDBF0004AA98E /* GameLogicA.m */,
+				04B32C9314DDB1DA004AA98E /* GameLogicB.h */,
+				04B32C9414DDB1DA004AA98E /* GameLogicB.m */,
+				04B32C9E14DDDC16004AA98E /* GameLogicC.h */,
+				04B32C9F14DDDC17004AA98E /* GameLogicC.m */,
 				DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */,
 				DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */,
 				DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */,
@@ -1388,6 +1401,9 @@
 				048508E414D4E4E6008BBA10 /* ScrollingMenu.m in Sources */,
 				048508E714D4E50D008BBA10 /* ScrollingMenuItem.m in Sources */,
 				DA08E0C214D529CD00D1437B /* SongMenuItem.m in Sources */,
+				04B32C9514DDB1DB004AA98E /* GameLogicB.m in Sources */,
+				04B32C9D14DDDBF1004AA98E /* GameLogicA.m in Sources */,
+				04B32CA014DDDC18004AA98E /* GameLogicC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,6 @@
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "ProcessorDelegate.h"
 
 @interface Processor : CCNode  {
  
@@ -25,17 +24,11 @@
     
     BOOL timerActive_;
     
-    id <ProcessorDelegate> delegate_;
-    
 }
-
-@property (nonatomic, assign) id <ProcessorDelegate> delegate;
 
 + (id) processor;
 
 - (id) initProcessor;
-
-- (void) loadSong:(NSString *)filename;
 
 - (void) notePlayed:(KeyType)keyType;
 

@@ -99,10 +99,11 @@
 
 - (void) playNote:(KeyType)keyType
 {
-    [self showSing];
-    GameLayer *gameLayer = (GameLayer *)self.parent;
-    [gameLayer addNote:keyType]; 
-    //[[AudioManager audioManager] playSound:keyType instrument:instrumentType_];
+    if (keyType != kBlankNote) {
+        [self showSing];
+        GameLayer *gameLayer = (GameLayer *)self.parent;
+        [gameLayer addNote:keyType];
+    }
 }
 
 - (void) onEnter

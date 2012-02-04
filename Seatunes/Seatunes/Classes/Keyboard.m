@@ -24,11 +24,13 @@
 {
     if ((self = [super init])) {
         
+        delegate_ = nil;
         instrumentType_ = kPiano;
         CreatureType creature = kSeaAnemone;
         isClickable_ = YES;
         
-        keys_ = [[NSMutableDictionary dictionaryWithCapacity:10] retain];     
+        keys_ = [[NSMutableDictionary dictionaryWithCapacity:10] retain];    
+        keyTimer_ = [[NSMutableDictionary dictionaryWithCapacity:10] retain];
         touches_ = CFDictionaryCreateMutable(kCFAllocatorDefault, 24, nil, nil);
         sequence_ = nil;
         previousKey_ = nil;
@@ -48,6 +50,7 @@
 - (void) dealloc
 {
     [keys_ release];
+    [keyTimer_ release];
     CFRelease(touches_);
     [sequence_ release];
     
@@ -72,14 +75,36 @@
 
 - (GLuint) keyPressed:(Key *)key
 {
+    double currentTime = CACurrentMediaTime();
+    
+    NSNumber *keyType = [NSNumber numberWithInteger:key.keyType];
+    NSNumber *timestamp = [NSNumber numberWithDouble:currentTime];
+    [keyTimer_ setObject:timestamp forKey:keyType];
+    
     GLuint idNumber = [[AudioManager audioManager] playSound:key.keyType instrument:instrumentType_];
-    [delegate_ keyboardKeyPressed:key.keyType];
+    
+    if ([delegate_ respondsToSelector:@selector(keyboardKeyPressed:)]) {
+        [delegate_ keyboardKeyPressed:key.keyType];
+    }
     return idNumber;
 }
 
 - (void) keyDepressed:(Key *)key
 {
+    double currentTime = CACurrentMediaTime();
+    
+    NSNumber *keyType = [NSNumber numberWithInteger:key.keyType];
+    NSNumber *timestamp = [keyTimer_ objectForKey:keyType];
+    
+    double delta = currentTime - [timestamp doubleValue];
+
+    [keyTimer_ removeObjectForKey:keyType];
+    
     [[AudioManager audioManager] stopSound:key.soundID];
+    
+    if ([delegate_ respondsToSelector:@selector(keyboardKeyDepressed:time:)]) {
+        [delegate_ keyboardKeyDepressed:key.keyType time:(CGFloat)delta];
+    }
 }
 
 - (void) touchesBegan:(NSSet *)touches
@@ -145,19 +170,36 @@
     }
 }
 
+- (void) playNote:(KeyType)keyType time:(CGFloat)time
+{
+    NSNumber *keyName = [NSNumber numberWithInteger:keyType];
+    Key *key = [keys_ objectForKey:keyName];
+    if (key) {
+        [key selectButton];
+        [previousKey_ release];
+        previousKey_ = [key retain];
+    }
+    
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:time];
+    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(depressNote)];
+    
+    [self runAction:[CCSequence actions:delay, done, nil]];
+}
+
 - (void) playSequence:(NSArray *)sequence
 {
-    [self schedule:@selector(playNote) interval:0.5f];
+    [self schedule:@selector(playSequenceNote) interval:0.5f];
     
     sequence_ = [sequence retain];
     currentIndex_ = 0;
 }
 
-- (void) playNote
+- (void) playSequenceNote
 {
     // Depress previously played key
     if (notePlayed_) {
         [self depressNote];
+        notePlayed_ = NO;        
         return;
     }
     
@@ -189,7 +231,6 @@
         [previousKey_ release];    
         previousKey_ = nil;
     }
-    notePlayed_ = NO;
 }
 
 @end
