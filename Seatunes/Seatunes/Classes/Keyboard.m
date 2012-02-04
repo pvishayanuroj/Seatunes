@@ -26,7 +26,7 @@
         
         delegate_ = nil;
         instrumentType_ = kPiano;
-        CreatureType creature = kSeaAnemone;
+        CreatureType creature = kClam;
         isClickable_ = YES;
         
         keys_ = [[NSMutableDictionary dictionaryWithCapacity:10] retain];    
@@ -66,7 +66,7 @@
         KeyType keyType = [keyName integerValue];
         Key *key = [Key key:keyType creature:creature];    
         key.delegate = self;
-        key.position = ccp(i * 80, 0);
+        key.position = ccp(i * 110, 0);
         [self addChild:key];
         [keys_ setObject:key forKey:keyName];
         i++;

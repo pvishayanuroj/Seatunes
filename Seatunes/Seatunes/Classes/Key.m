@@ -30,15 +30,12 @@
         NSString *keyName = [Utility keyNameFromEnum:keyType];
         NSString *creatureName = [Utility creatureNameFromEnum:creature];
         
-        NSString *spriteName = [NSString stringWithFormat:@"%@ %@ Key.png", creatureName, keyName];
-        NSString *selectedName = [NSString stringWithFormat:@"%@ %@ Key Selected.png", creatureName, keyName];
+        NSString *spriteName = [NSString stringWithFormat:@"%@ %@.png", creatureName, keyName];
+        NSString *selectedName = [NSString stringWithFormat:@"%@ %@ Selected.png", creatureName, keyName];
         
         sprite_ = [[CCSprite spriteWithSpriteFrameName:spriteName] retain];
         selected_ = [[CCSprite spriteWithSpriteFrameName:selectedName] retain];
         //disabled_ = [[CCSprite spriteWithSpriteFrameName:disabledName] retain];     
-        
-        sprite_.scale = 0.5f;
-        selected_.scale = 0.5f;        
         
         sprite_.visible = YES;
         selected_.visible = NO;

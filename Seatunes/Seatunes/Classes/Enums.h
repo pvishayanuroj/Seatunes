@@ -38,7 +38,8 @@ typedef enum {
 } SoundType;
 
 typedef enum {
-    kSeaAnemone
+    kSeaAnemone,
+    kClam
 } CreatureType;
 
 typedef enum {

@@ -11,7 +11,7 @@
 				<key>Name</key>
 				<string>Idle</string>
 				<key>Num Frames</key>
-				<integer>3</integer>
+				<integer>2</integer>
 			</dict>
 			<dict>
 				<key>Animate Delay</key>

@@ -137,6 +137,9 @@
         case kSeaAnemone:
             name = @"Sea Anemone";
             break;            
+        case kClam:
+            name = @"Clam";
+            break;
         default:
             break;
     }
