@@ -47,6 +47,11 @@ typedef enum {
 } InstructorType;
 
 typedef enum {
+    kBubbleCurve1,
+    kBubbleCurve2
+} BubbleCurveType;
+
+typedef enum {
     kNoteRepeat,
     kTimedNoteRepeat,
     kSectionRepeat

@@ -29,6 +29,4 @@
 
 - (id) init;
 
-- (void) addNote:(KeyType)keyType;
-
 @end

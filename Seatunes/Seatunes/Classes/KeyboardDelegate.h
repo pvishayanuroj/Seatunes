@@ -6,8 +6,6 @@
 //  Copyright (c) 2012 Paul Vishayanuroj. All rights reserved.
 //
 
-#import "CommonHeaders.h"
-
 @protocol KeyboardDelegate <NSObject>
 
 @optional

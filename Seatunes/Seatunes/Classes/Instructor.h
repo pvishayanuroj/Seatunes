@@ -9,8 +9,10 @@
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "NoteDelegate.h"
+#import "InstructorDelegate.h"
 
-@interface Instructor : CCNode <CCTargetedTouchDelegate> {
+@interface Instructor : CCNode <NoteDelegate, InstructorDelegate, CCTargetedTouchDelegate> {
  
     CCSprite *sprite_;    
  
@@ -24,8 +26,16 @@
     
     CCAction *singingAnimation_;
     
+    NSMutableArray *notes_;
+    
+    NSUInteger curveCounter_;
+    
     BOOL clickable_;
+    
+    id <InstructorDelegate> delegate_;
 }
+
+@property (nonatomic, assign) id <InstructorDelegate> delegate;
 
 + (id) instructor:(InstructorType)instructorType;
 
@@ -36,5 +46,9 @@
 - (void) showWrongNote;
 
 - (void) playNote:(KeyType)keyType;
+
+- (void) addNote:(KeyType)keyType;
+
+- (void) popOldestNote;
 
 @end

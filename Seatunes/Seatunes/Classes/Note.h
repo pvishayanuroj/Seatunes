@@ -9,25 +9,31 @@
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "NoteDelegate.h"
 
 @interface Note : CCNode {
     
     CCSprite *sprite_;
     
+    BubbleCurveType curveType_;
     
+    BOOL boundaryCrossFlag_;
     
+    id <NoteDelegate> delegate_; 
 }
 
-+ (id) note:(KeyType)keyType;
+@property (nonatomic, assign) id <NoteDelegate> delegate;
 
-- (id) initNote:(KeyType)keyType;
++ (id) note:(KeyType)keyType curveType:(BubbleCurveType)curveType;
 
-- (void) floatAction;
+- (id) initNote:(KeyType)keyType curveType:(BubbleCurveType)curveType;
+
+- (void) destroy;
 
 - (void) blowAction;
 
-- (void) curveAction;
+- (void) wobbleAction;
 
-- (void) scaleAction;
+- (void) curveAction;
 
 @end

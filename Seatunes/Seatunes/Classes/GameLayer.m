@@ -16,6 +16,11 @@
 
 @implementation GameLayer
 
+const static CGFloat GL_INSTRUCTOR_X = 200.0f;
+const static CGFloat GL_INSTRUCTOR_Y = 550.0f;
+const static CGFloat GL_KEYBOARD_X = 100.0f;
+const static CGFloat GL_KEYBOARD_Y = 100.0f;
+
 + (id) start
 {
     return [[[self alloc] init] autorelease];
@@ -29,11 +34,11 @@
         [AudioManager audioManager];
         
         instructor_ = [Instructor instructor:kWhaleInstructor];
-        instructor_.position = ccp(150.0f, 550.0f);
-        [self addChild:instructor_];
+        instructor_.position = ccp(GL_INSTRUCTOR_X, GL_INSTRUCTOR_Y);
+        [self addChild:instructor_ z:-1];
         
         keyboard_ = [[Keyboard keyboard:kEightKey] retain];
-        keyboard_.position = ccp(100, 100);
+        keyboard_.position = ccp(GL_KEYBOARD_X, GL_KEYBOARD_Y);
         [self addChild:keyboard_];
         
         GameLogicB *gameLogicB = [GameLogicB gameLogicB:@"Twinkle Twinkle"];
@@ -68,23 +73,6 @@
 - (void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [keyboard_ touchesEnded:touches];
-}
-
-- (void) addNote:(KeyType)keyType
-{
-    Note *note = [Note note:keyType];
-    note.position = ccp(170.0f, 500.0f);
-    [self addChild:note];
-}
-
-- (void) instructorPlayNote:(KeyType)keyType
-{
-    [instructor_ playNote:keyType];
-}
-
-- (void) incorrectNotePlayed
-{
-    [instructor_ showWrongNote];
 }
 
 - (void) sectionComplete

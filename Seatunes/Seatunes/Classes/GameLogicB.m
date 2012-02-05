@@ -10,6 +10,7 @@
 #import "Utility.h"
 #import "Keyboard.h"
 #import "Instructor.h"
+#import "Note.h"
 
 @implementation GameLogicB
 
@@ -44,12 +45,13 @@
 - (void) setKeyboard:(Keyboard *)keyboard
 {
     keyboard_ = [keyboard retain];
-    keyboard.delegate = self;
+    keyboard_.delegate = self;
 }
 
 - (void) setInstructor:(Instructor *)instructor
 {
     instructor_ = [instructor retain];
+    instructor_.delegate = self;
 }
 
 - (void) start
@@ -67,16 +69,15 @@
         
         if (keyType != kBlankNote) {
             [queue_ addObject:key];
-            if ([queue_ count] > 3) {
-                [self lossEvent];
-            }
         }
         
         [instructor_ playNote:keyType];        
     }
 }
 
-- (void) keyboardKeyDepressed:(KeyType)keyType time:(CGFloat)time
+#pragma mark - Delegate Methods
+
+- (void) keyboardKeyPressed:(KeyType)keyType
 {
     NSNumber *key = [NSNumber numberWithInteger:keyType];
     
@@ -87,6 +88,7 @@
         // Correct note played
         if ([key isEqualToNumber:correctNote]) {
             [queue_ removeObjectAtIndex:0];
+            [instructor_ popOldestNote];
         }
         // Incorrect note played
         else {
@@ -97,7 +99,11 @@
     else {
         NSLog(@"WRONG");        
     }
-    
+}
+
+- (void) noteCrossedBoundary:(Note *)note
+{
+    [self lossEvent];
 }
 
 - (void) lossEvent

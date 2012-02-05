@@ -10,11 +10,12 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "KeyboardDelegate.h"
+#import "InstructorDelegate.h"
 
 @class Keyboard;
 @class Instructor;
 
-@interface GameLogicB : CCNode <KeyboardDelegate> {
+@interface GameLogicB : CCNode <KeyboardDelegate, InstructorDelegate> {
  
     NSUInteger noteIndex_;
     

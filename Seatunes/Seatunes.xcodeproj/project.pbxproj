@@ -213,6 +213,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041E5F2C14DE206B0084BC0A /* NoteDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteDelegate.h; path = Classes/NoteDelegate.h; sourceTree = "<group>"; };
+		041E5F3114DE34100084BC0A /* InstructorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructorDelegate.h; path = Classes/InstructorDelegate.h; sourceTree = "<group>"; };
 		048508D514D4D4DC008BBA10 /* PlayMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMenuScene.h; path = Classes/PlayMenuScene.h; sourceTree = "<group>"; };
 		048508D614D4D4DC008BBA10 /* PlayMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMenuScene.m; path = Classes/PlayMenuScene.m; sourceTree = "<group>"; };
 		048508D914D4D62D008BBA10 /* SliderBoxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderBoxMenu.h; path = Classes/SliderBoxMenu.h; sourceTree = "<group>"; };
@@ -719,8 +721,10 @@
 				DAB1209914C30D6D009B60FB /* KeyDelegate.h */,
 				DAB1209314C30A87009B60FB /* Instructor.h */,
 				DAB1209414C30A87009B60FB /* Instructor.m */,
+				041E5F3114DE34100084BC0A /* InstructorDelegate.h */,
 				DAB1215F14C475F2009B60FB /* Note.h */,
 				DAB1216014C475F7009B60FB /* Note.m */,
+				041E5F2C14DE206B0084BC0A /* NoteDelegate.h */,
 				DAB1209714C30BA3009B60FB /* Enums.h */,
 				DAB1209814C30BFC009B60FB /* CommonHeaders.h */,
 				DAB120E414C352C8009B60FB /* Utility.h */,
