@@ -19,8 +19,12 @@
         
         [self animationLoader:@"sheet01_animations" spriteSheetName:@"sheet01"];
         
+        CCSprite *background = [CCSprite spriteWithFile:@"Game Background.png"];
+        background.anchorPoint = CGPointZero;
+        [self addChild:background];
+        
         GameLayer *gameLayer = [GameLayer start];
-        [self addChild:gameLayer z:0];        
+        [self addChild:gameLayer];        
     }
     return self;
 }

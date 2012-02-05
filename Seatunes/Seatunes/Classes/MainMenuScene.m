@@ -16,8 +16,6 @@ static const CGFloat MMS_PLAY_X = 100.0f;
 static const CGFloat MMS_PLAY_Y = 600.0f;
 static const CGFloat MMS_BUY_X = 200.0f;
 static const CGFloat MMS_BUY_Y = 500.0f;
-static const CGFloat MMS_CREDITS_X = 300.0f;
-static const CGFloat MMS_CREDITS_Y = 400.0f;
 
 - (id) init
 {
@@ -27,21 +25,17 @@ static const CGFloat MMS_CREDITS_Y = 400.0f;
         NSString *buyText = @"Buy Text.png";
         NSString *creditsText = @"Credits Text.png";        
         
-        Button *playButton = [ImageButton imageButton:kPlayButton unselectedImage:playText selectedImage:playText];
-        Button *buyButton = [ImageButton imageButton:kPlayButton unselectedImage:buyText selectedImage:buyText];
-        Button *creditsButton = [ImageButton imageButton:kPlayButton unselectedImage:creditsText selectedImage:creditsText];        
+        Button *playButton = [ScaledImageButton scaledImageButton:kPlayButton image:playText];
+        Button *buyButton = [ScaledImageButton scaledImageButton:kPlayButton image:buyText]; 
         
         playButton.delegate = self;
         buyButton.delegate = self;
-        creditsButton.delegate = self;
         
         playButton.position = ccp(MMS_PLAY_X, MMS_PLAY_Y);
         buyButton.position = ccp(MMS_BUY_X, MMS_BUY_Y);
-        creditsButton.position = ccp(MMS_CREDITS_X, MMS_CREDITS_Y);
         
         [self addChild:playButton];
         [self addChild:buyButton];
-        [self addChild:creditsButton];
         
     }
     return self;
@@ -61,8 +55,6 @@ static const CGFloat MMS_CREDITS_Y = 400.0f;
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:scene]];            
             break;
         case kBuySongsButton:
-            break;
-        case kCreditsButton:
             break;
         default:
             break;

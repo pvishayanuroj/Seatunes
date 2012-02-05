@@ -86,3 +86,15 @@
 - (id) initTextButton:(NSUInteger)numID text:(NSString *)text toggle:(BOOL)toggle;
 
 @end
+
+@interface ScaledImageButton : Button {
+    
+    CCSprite *sprite_;
+    
+}
+
++ (id) scaledImageButton:(NSUInteger)numID image:(NSString *)image;
+
+- (id) initScaledImageButton:(NSUInteger)numID image:(NSString *)image;
+
+@end

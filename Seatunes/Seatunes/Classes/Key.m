@@ -55,20 +55,6 @@
     [super dealloc];
 }
 
-/*
-- (void) onEnter
-{
-	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:1 swallowsTouches:YES];
-	[super onEnter];
-}
-
-- (void) onExit
-{
-	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
-	[super onExit];
-}
- */
-
 - (CGRect) rect
 {
 	CGRect r = sprite_.textureRect;    
@@ -80,33 +66,6 @@
 {	
 	return CGRectContainsPoint([self rect], [self convertTouchToNodeSpaceAR:touch]);
 }
-
-/*
-- (BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{	
-    if (isClickable_) {    
-        if ([self containsTouchLocation:touch]) {
-            [self selectButton];
-            return YES;
-        }
-    }
-    return NO;
-}
-
-- (void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    if (![self containsTouchLocation:touch]) {
-        [self unselectButton];
-    }    
-}
-
-- (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    if ([self containsTouchLocation:touch])	{
-        [self unselectButton];
-    }
-}
- */
 
 - (void) selectButton
 {

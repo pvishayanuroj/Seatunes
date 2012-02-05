@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041E5F3414DE39460084BC0A /* SpeechBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 041E5F3314DE39450084BC0A /* SpeechBubble.m */; };
+		041E5F3814DE40740084BC0A /* Game Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F3514DE40740084BC0A /* Game Background.png */; };
+		041E5F3914DE40740084BC0A /* Menu Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F3614DE40740084BC0A /* Menu Background.png */; };
+		041E5F3A14DE40740084BC0A /* Play Menu Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F3714DE40740084BC0A /* Play Menu Frame.png */; };
 		048508D714D4D4DC008BBA10 /* PlayMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508D614D4D4DC008BBA10 /* PlayMenuScene.m */; };
 		048508DB14D4D62D008BBA10 /* SliderBoxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */; };
 		048508DF14D4D701008BBA10 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DD14D4D701008BBA10 /* Button.m */; };
@@ -215,6 +219,11 @@
 /* Begin PBXFileReference section */
 		041E5F2C14DE206B0084BC0A /* NoteDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteDelegate.h; path = Classes/NoteDelegate.h; sourceTree = "<group>"; };
 		041E5F3114DE34100084BC0A /* InstructorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructorDelegate.h; path = Classes/InstructorDelegate.h; sourceTree = "<group>"; };
+		041E5F3214DE39440084BC0A /* SpeechBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechBubble.h; path = Classes/SpeechBubble.h; sourceTree = "<group>"; };
+		041E5F3314DE39450084BC0A /* SpeechBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeechBubble.m; path = Classes/SpeechBubble.m; sourceTree = "<group>"; };
+		041E5F3514DE40740084BC0A /* Game Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Background.png"; sourceTree = "<group>"; };
+		041E5F3614DE40740084BC0A /* Menu Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Background.png"; sourceTree = "<group>"; };
+		041E5F3714DE40740084BC0A /* Play Menu Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play Menu Frame.png"; sourceTree = "<group>"; };
 		048508D514D4D4DC008BBA10 /* PlayMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMenuScene.h; path = Classes/PlayMenuScene.h; sourceTree = "<group>"; };
 		048508D614D4D4DC008BBA10 /* PlayMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMenuScene.m; path = Classes/PlayMenuScene.m; sourceTree = "<group>"; };
 		048508D914D4D62D008BBA10 /* SliderBoxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderBoxMenu.h; path = Classes/SliderBoxMenu.h; sourceTree = "<group>"; };
@@ -591,6 +600,9 @@
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				041E5F3514DE40740084BC0A /* Game Background.png */,
+				041E5F3614DE40740084BC0A /* Menu Background.png */,
+				041E5F3714DE40740084BC0A /* Play Menu Frame.png */,
 				048BBAD214D539D90086EABC /* American Classics Pack.png */,
 				048BBAD314D539D90086EABC /* Nursery Pack.png */,
 				048BBA7714D534780086EABC /* Buy Text.png */,
@@ -722,11 +734,13 @@
 				DAB1209314C30A87009B60FB /* Instructor.h */,
 				DAB1209414C30A87009B60FB /* Instructor.m */,
 				041E5F3114DE34100084BC0A /* InstructorDelegate.h */,
+				041E5F3214DE39440084BC0A /* SpeechBubble.h */,
+				041E5F3314DE39450084BC0A /* SpeechBubble.m */,
+				DAB1209814C30BFC009B60FB /* CommonHeaders.h */,
 				DAB1215F14C475F2009B60FB /* Note.h */,
 				DAB1216014C475F7009B60FB /* Note.m */,
 				041E5F2C14DE206B0084BC0A /* NoteDelegate.h */,
 				DAB1209714C30BA3009B60FB /* Enums.h */,
-				DAB1209814C30BFC009B60FB /* CommonHeaders.h */,
 				DAB120E414C352C8009B60FB /* Utility.h */,
 				DAB120E514C352C8009B60FB /* Utility.m */,
 				DAB1216914C48F6C009B60FB /* Debugging.h */,
@@ -1280,6 +1294,9 @@
 				048BBAD114D5368C0086EABC /* Nursery Pack.plist in Resources */,
 				048BBAD414D539D90086EABC /* American Classics Pack.png in Resources */,
 				048BBAD514D539D90086EABC /* Nursery Pack.png in Resources */,
+				041E5F3814DE40740084BC0A /* Game Background.png in Resources */,
+				041E5F3914DE40740084BC0A /* Menu Background.png in Resources */,
+				041E5F3A14DE40740084BC0A /* Play Menu Frame.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1408,6 +1425,7 @@
 				04B32C9514DDB1DB004AA98E /* GameLogicB.m in Sources */,
 				04B32C9D14DDDBF1004AA98E /* GameLogicA.m in Sources */,
 				04B32CA014DDDC18004AA98E /* GameLogicC.m in Sources */,
+				041E5F3414DE39460084BC0A /* SpeechBubble.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

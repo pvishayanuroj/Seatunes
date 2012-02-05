@@ -266,3 +266,56 @@
 }
 
 @end
+
+@implementation ScaledImageButton
+
+static const CGFloat SIB_UNSCALED = 1.0f;
+static const CGFloat SIB_SCALED = 1.1f;
+
++ (id) scaledImageButton:(NSUInteger)numID image:(NSString *)image
+{
+    return [[[self alloc] initScaledImageButton:numID image:image] autorelease];
+}
+
+- (id) initScaledImageButton:(NSUInteger)numID image:(NSString *)image
+{
+    if ((self = [super initButton:numID toggle:NO])) {
+        
+        sprite_ = [[CCSprite spriteWithFile:image] retain];        
+        [self addChild:sprite_];        
+        
+    }
+    return self;
+}
+
+- (void) dealloc
+{
+    [sprite_ release];
+    
+    [super dealloc];
+}
+
+- (void) selectButton
+{
+    isSelected_ = YES;
+    sprite_.scale = SIB_SCALED;    
+    
+    [super selectButton];
+}
+
+- (void) unselectButton
+{
+    isSelected_ = NO;
+    sprite_.scale = SIB_UNSCALED;
+    
+    [super unselectButton];    
+}
+
+- (CGRect) rect
+{
+	CGRect r = sprite_.textureRect;    
+	return CGRectMake(sprite_.position.x - r.size.width / 2, sprite_.position.y - r.size.height / 2, r.size.width, r.size.height);
+}
+
+
+@end
