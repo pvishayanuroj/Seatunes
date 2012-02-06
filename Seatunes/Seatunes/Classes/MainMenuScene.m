@@ -22,8 +22,7 @@ static const CGFloat MMS_BUY_Y = 500.0f;
     if ((self = [super init])) {
         
         NSString *playText = @"Play Text.png";
-        NSString *buyText = @"Buy Text.png";
-        NSString *creditsText = @"Credits Text.png";        
+        NSString *buyText = @"Buy Text.png";     
         
         Button *playButton = [ScaledImageButton scaledImageButton:kPlayButton image:playText];
         Button *buyButton = [ScaledImageButton scaledImageButton:kPlayButton image:buyText]; 

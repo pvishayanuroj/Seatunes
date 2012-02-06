@@ -18,12 +18,13 @@
 
 - (id) initSongMenuItem:(NSString *)songName songIndex:(NSUInteger)songIndex
 {
-    if ((self = [super initScrollingMenuItem:songIndex height:50])) {
+    if ((self = [super initScrollingMenuItem:songIndex height:55])) {
         
         NSString *fontName = @"Arial";
-        CGFloat fontSize = 16;
+        CGFloat fontSize = 28;
         CCLabelTTF *label = [CCLabelTTF labelWithString:songName fontName:fontName fontSize:fontSize];
-        label.position = ccp(100, 0);
+        label.anchorPoint = ccp(0, 0.5f);
+        label.position = ccp(100.0f, 0);
         [self addChild:label];
         
     }

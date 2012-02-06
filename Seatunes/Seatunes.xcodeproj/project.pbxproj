@@ -11,6 +11,27 @@
 		041E5F3814DE40740084BC0A /* Game Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F3514DE40740084BC0A /* Game Background.png */; };
 		041E5F3914DE40740084BC0A /* Menu Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F3614DE40740084BC0A /* Menu Background.png */; };
 		041E5F3A14DE40740084BC0A /* Play Menu Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F3714DE40740084BC0A /* Play Menu Frame.png */; };
+		041E5F4D14DF28580084BC0A /* Easy Button Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F4C14DF28580084BC0A /* Easy Button Selected.png */; };
+		041E5F6014DF286E0084BC0A /* American Classics.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F4E14DF28630084BC0A /* American Classics.png */; };
+		041E5F6114DF286E0084BC0A /* Difficulty Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F4F14DF28630084BC0A /* Difficulty Text.png */; };
+		041E5F6214DF286E0084BC0A /* Easy Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5014DF28640084BC0A /* Easy Button.png */; };
+		041E5F6314DF286E0084BC0A /* Empty Star-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5114DF28650084BC0A /* Empty Star-hd.png */; };
+		041E5F6414DF286E0084BC0A /* Empty Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5214DF28650084BC0A /* Empty Star.png */; };
+		041E5F6514DF286E0084BC0A /* Full Star-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5314DF28660084BC0A /* Full Star-hd.png */; };
+		041E5F6614DF286E0084BC0A /* Full Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5414DF28660084BC0A /* Full Star.png */; };
+		041E5F6714DF286E0084BC0A /* Hard Button Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5514DF28660084BC0A /* Hard Button Selected.png */; };
+		041E5F6814DF286E0084BC0A /* Hard Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5614DF28670084BC0A /* Hard Button.png */; };
+		041E5F6914DF286E0084BC0A /* Medium Button Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5714DF28680084BC0A /* Medium Button Selected.png */; };
+		041E5F6A14DF286E0084BC0A /* Medium Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5814DF28680084BC0A /* Medium Button.png */; };
+		041E5F6B14DF286E0084BC0A /* Menu Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5914DF28690084BC0A /* Menu Button.png */; };
+		041E5F6C14DF286E0084BC0A /* Next Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5A14DF28690084BC0A /* Next Button.png */; };
+		041E5F6D14DF286E0084BC0A /* Nursery Songs.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5B14DF28690084BC0A /* Nursery Songs.png */; };
+		041E5F6E14DF286E0084BC0A /* Replay Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5C14DF286C0084BC0A /* Replay Button.png */; };
+		041E5F6F14DF286E0084BC0A /* Row Stripe.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5D14DF286D0084BC0A /* Row Stripe.png */; };
+		041E5F7014DF286E0084BC0A /* Side Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5E14DF286D0084BC0A /* Side Menu.png */; };
+		041E5F7114DF286E0084BC0A /* Speech Bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5F14DF286D0084BC0A /* Speech Bubble.png */; };
+		041E5F7414DF5C8A0084BC0A /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 041E5F7314DF5C870084BC0A /* Menu.m */; };
+		041E5F7714DF7CBD0084BC0A /* Starfish Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F7614DF7CBC0084BC0A /* Starfish Button.png */; };
 		048508D714D4D4DC008BBA10 /* PlayMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508D614D4D4DC008BBA10 /* PlayMenuScene.m */; };
 		048508DB14D4D62D008BBA10 /* SliderBoxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */; };
 		048508DF14D4D701008BBA10 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DD14D4D701008BBA10 /* Button.m */; };
@@ -224,6 +245,29 @@
 		041E5F3514DE40740084BC0A /* Game Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Background.png"; sourceTree = "<group>"; };
 		041E5F3614DE40740084BC0A /* Menu Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Background.png"; sourceTree = "<group>"; };
 		041E5F3714DE40740084BC0A /* Play Menu Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play Menu Frame.png"; sourceTree = "<group>"; };
+		041E5F4C14DF28580084BC0A /* Easy Button Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Easy Button Selected.png"; sourceTree = "<group>"; };
+		041E5F4E14DF28630084BC0A /* American Classics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics.png"; sourceTree = "<group>"; };
+		041E5F4F14DF28630084BC0A /* Difficulty Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Difficulty Text.png"; sourceTree = "<group>"; };
+		041E5F5014DF28640084BC0A /* Easy Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Easy Button.png"; sourceTree = "<group>"; };
+		041E5F5114DF28650084BC0A /* Empty Star-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty Star-hd.png"; sourceTree = "<group>"; };
+		041E5F5214DF28650084BC0A /* Empty Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty Star.png"; sourceTree = "<group>"; };
+		041E5F5314DF28660084BC0A /* Full Star-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Full Star-hd.png"; sourceTree = "<group>"; };
+		041E5F5414DF28660084BC0A /* Full Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Full Star.png"; sourceTree = "<group>"; };
+		041E5F5514DF28660084BC0A /* Hard Button Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hard Button Selected.png"; sourceTree = "<group>"; };
+		041E5F5614DF28670084BC0A /* Hard Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hard Button.png"; sourceTree = "<group>"; };
+		041E5F5714DF28680084BC0A /* Medium Button Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Medium Button Selected.png"; sourceTree = "<group>"; };
+		041E5F5814DF28680084BC0A /* Medium Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Medium Button.png"; sourceTree = "<group>"; };
+		041E5F5914DF28690084BC0A /* Menu Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Button.png"; sourceTree = "<group>"; };
+		041E5F5A14DF28690084BC0A /* Next Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next Button.png"; sourceTree = "<group>"; };
+		041E5F5B14DF28690084BC0A /* Nursery Songs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Songs.png"; sourceTree = "<group>"; };
+		041E5F5C14DF286C0084BC0A /* Replay Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Replay Button.png"; sourceTree = "<group>"; };
+		041E5F5D14DF286D0084BC0A /* Row Stripe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Row Stripe.png"; sourceTree = "<group>"; };
+		041E5F5E14DF286D0084BC0A /* Side Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Side Menu.png"; sourceTree = "<group>"; };
+		041E5F5F14DF286D0084BC0A /* Speech Bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble.png"; sourceTree = "<group>"; };
+		041E5F7214DF5C850084BC0A /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Menu.h; path = Classes/Menu.h; sourceTree = "<group>"; };
+		041E5F7314DF5C870084BC0A /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Menu.m; path = Classes/Menu.m; sourceTree = "<group>"; };
+		041E5F7514DF5CA40084BC0A /* MenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuDelegate.h; path = Classes/MenuDelegate.h; sourceTree = "<group>"; };
+		041E5F7614DF7CBC0084BC0A /* Starfish Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Starfish Button.png"; sourceTree = "<group>"; };
 		048508D514D4D4DC008BBA10 /* PlayMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMenuScene.h; path = Classes/PlayMenuScene.h; sourceTree = "<group>"; };
 		048508D614D4D4DC008BBA10 /* PlayMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMenuScene.m; path = Classes/PlayMenuScene.m; sourceTree = "<group>"; };
 		048508D914D4D62D008BBA10 /* SliderBoxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderBoxMenu.h; path = Classes/SliderBoxMenu.h; sourceTree = "<group>"; };
@@ -600,6 +644,26 @@
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				041E5F7614DF7CBC0084BC0A /* Starfish Button.png */,
+				041E5F4E14DF28630084BC0A /* American Classics.png */,
+				041E5F4F14DF28630084BC0A /* Difficulty Text.png */,
+				041E5F5014DF28640084BC0A /* Easy Button.png */,
+				041E5F5114DF28650084BC0A /* Empty Star-hd.png */,
+				041E5F5214DF28650084BC0A /* Empty Star.png */,
+				041E5F5314DF28660084BC0A /* Full Star-hd.png */,
+				041E5F5414DF28660084BC0A /* Full Star.png */,
+				041E5F5514DF28660084BC0A /* Hard Button Selected.png */,
+				041E5F5614DF28670084BC0A /* Hard Button.png */,
+				041E5F5714DF28680084BC0A /* Medium Button Selected.png */,
+				041E5F5814DF28680084BC0A /* Medium Button.png */,
+				041E5F5914DF28690084BC0A /* Menu Button.png */,
+				041E5F5A14DF28690084BC0A /* Next Button.png */,
+				041E5F5B14DF28690084BC0A /* Nursery Songs.png */,
+				041E5F5C14DF286C0084BC0A /* Replay Button.png */,
+				041E5F5D14DF286D0084BC0A /* Row Stripe.png */,
+				041E5F5E14DF286D0084BC0A /* Side Menu.png */,
+				041E5F5F14DF286D0084BC0A /* Speech Bubble.png */,
+				041E5F4C14DF28580084BC0A /* Easy Button Selected.png */,
 				041E5F3514DE40740084BC0A /* Game Background.png */,
 				041E5F3614DE40740084BC0A /* Menu Background.png */,
 				041E5F3714DE40740084BC0A /* Play Menu Frame.png */,
@@ -763,6 +827,9 @@
 				048508D914D4D62D008BBA10 /* SliderBoxMenu.h */,
 				048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */,
 				048508E114D4DB1C008BBA10 /* SliderBoxMenuDelegate.h */,
+				041E5F7214DF5C850084BC0A /* Menu.h */,
+				041E5F7314DF5C870084BC0A /* Menu.m */,
+				041E5F7514DF5CA40084BC0A /* MenuDelegate.h */,
 			);
 			path = Seatunes;
 			sourceTree = "<group>";
@@ -774,7 +841,6 @@
 				048BBA7514D534780086EABC /* Images */,
 				DAB1216814C48B24009B60FB /* Spritesheets */,
 				DAB120E714C35A08009B60FB /* Notes */,
-				DAB120F014C35A08009B60FB /* Sprites */,
 				DAB11F2B14C1E847009B60FB /* Default.png */,
 				DAB11F2D14C1E847009B60FB /* fps_images.png */,
 				DAB11F2F14C1E847009B60FB /* Icon-72.png */,
@@ -1148,14 +1214,6 @@
 			path = Resources/Notes;
 			sourceTree = "<group>";
 		};
-		DAB120F014C35A08009B60FB /* Sprites */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Sprites;
-			path = Resources/Sprites;
-			sourceTree = "<group>";
-		};
 		DAB1216814C48B24009B60FB /* Spritesheets */ = {
 			isa = PBXGroup;
 			children = (
@@ -1297,6 +1355,26 @@
 				041E5F3814DE40740084BC0A /* Game Background.png in Resources */,
 				041E5F3914DE40740084BC0A /* Menu Background.png in Resources */,
 				041E5F3A14DE40740084BC0A /* Play Menu Frame.png in Resources */,
+				041E5F4D14DF28580084BC0A /* Easy Button Selected.png in Resources */,
+				041E5F6014DF286E0084BC0A /* American Classics.png in Resources */,
+				041E5F6114DF286E0084BC0A /* Difficulty Text.png in Resources */,
+				041E5F6214DF286E0084BC0A /* Easy Button.png in Resources */,
+				041E5F6314DF286E0084BC0A /* Empty Star-hd.png in Resources */,
+				041E5F6414DF286E0084BC0A /* Empty Star.png in Resources */,
+				041E5F6514DF286E0084BC0A /* Full Star-hd.png in Resources */,
+				041E5F6614DF286E0084BC0A /* Full Star.png in Resources */,
+				041E5F6714DF286E0084BC0A /* Hard Button Selected.png in Resources */,
+				041E5F6814DF286E0084BC0A /* Hard Button.png in Resources */,
+				041E5F6914DF286E0084BC0A /* Medium Button Selected.png in Resources */,
+				041E5F6A14DF286E0084BC0A /* Medium Button.png in Resources */,
+				041E5F6B14DF286E0084BC0A /* Menu Button.png in Resources */,
+				041E5F6C14DF286E0084BC0A /* Next Button.png in Resources */,
+				041E5F6D14DF286E0084BC0A /* Nursery Songs.png in Resources */,
+				041E5F6E14DF286E0084BC0A /* Replay Button.png in Resources */,
+				041E5F6F14DF286E0084BC0A /* Row Stripe.png in Resources */,
+				041E5F7014DF286E0084BC0A /* Side Menu.png in Resources */,
+				041E5F7114DF286E0084BC0A /* Speech Bubble.png in Resources */,
+				041E5F7714DF7CBD0084BC0A /* Starfish Button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1426,6 +1504,7 @@
 				04B32C9D14DDDBF1004AA98E /* GameLogicA.m in Sources */,
 				04B32CA014DDDC18004AA98E /* GameLogicC.m in Sources */,
 				041E5F3414DE39460084BC0A /* SpeechBubble.m in Sources */,
+				041E5F7414DF5C8A0084BC0A /* Menu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

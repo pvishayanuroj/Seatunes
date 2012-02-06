@@ -62,3 +62,9 @@ typedef enum {
     kNurseryPack,
     kAmericanClassicsPack
 } PackType;
+
+typedef enum {
+    kDifficultyEasy,
+    kDifficultyMedium,
+    kDifficultyHard
+} DifficultyType;

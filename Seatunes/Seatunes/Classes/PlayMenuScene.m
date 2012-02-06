@@ -9,6 +9,7 @@
 #import "PlayMenuScene.h"
 #import "SliderBoxMenu.h"
 #import "ScrollingMenu.h"
+#import "Menu.h"
 #import "Button.h"
 #import "ScrollingMenuItem.h"
 #import "SongMenuItem.h"
@@ -46,6 +47,13 @@
 
 - (void) scrollingMenuItemClicked:(ScrollingMenuItem *)menuItem
 {
+    [self cleanupSongMenu];
+    [self loadDifficultyMenu];
+}
+
+- (void) menuItemSelected:(Button *)button
+{
+    NSLog(@"menu selected");
     [self startSong];
 }
 
@@ -87,6 +95,25 @@
     }    
 }
 
+- (void) loadDifficultyMenu
+{
+    Menu *menu = [Menu menu:256.0f isVertical:NO];
+    menu.delegate = self;
+    menu.position = ccp(256.0f, 400.0f);
+    
+    [menu addMenuBackground:@"Difficulty Text.png" pos:ccp(256.0f, 148.0f)];    
+    
+    Button *easyButton = [ImageButton imageButton:kDifficultyEasy unselectedImage:@"Easy Button.png" selectedImage:@"Easy Button Selected.png"];
+    Button *mediumButton = [ImageButton imageButton:kDifficultyMedium unselectedImage:@"Medium Button.png" selectedImage:@"Medium Button Selected.png"];
+    Button *hardButton = [ImageButton imageButton:kDifficultyHard unselectedImage:@"Hard Button.png" selectedImage:@"Hard Button Selected.png"];    
+    
+    [menu addMenuItem:easyButton];
+    [menu addMenuItem:mediumButton];
+    [menu addMenuItem:hardButton];    
+    
+    [self addChild:menu];
+}
+
 - (void) startSong
 {
     CCScene *scene = [GameScene node];
@@ -107,7 +134,8 @@
 {
     [scrollingMenu_ removeFromParentAndCleanup:YES];
     [scrollingMenu_ removeSuperview];
-    [scrollingMenu_ release];    
+    [scrollingMenu_ release];   
+    scrollingMenu_ = nil;
 }
 
 @end

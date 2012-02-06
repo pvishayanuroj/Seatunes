@@ -24,8 +24,6 @@
     
     CGFloat scrollSize_;
     
-    CGFloat paddingSize_;
-    
     ScrollingMenuItem *currentMenuItem_;
     
     id <ScrollingMenuDelegate> delegate_;

@@ -27,7 +27,6 @@
         
         scrollSize_ = scrollSize;
         menuFrame_ = menuFrame;
-        paddingSize_ = 40;
         currentMenuItem_ = nil;
         delegate_ = nil;
         
@@ -70,7 +69,7 @@
     NSUInteger count = [menuItems_ count];
     menuItem.delegate = self;
     menuItem.width = menuFrame_.size.width;
-    menuItem.position = CGPointMake(0, -(count * paddingSize_ + menuItem.height / 2));
+    menuItem.position = CGPointMake(0, -(count * menuItem.height + menuItem.height / 2));
     [menuItems_ addObject:menuItem];
     [self addChild:menuItem];       
 }

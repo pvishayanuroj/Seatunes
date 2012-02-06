@@ -10,12 +10,23 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "KeyboardDelegate.h"
+#import "MenuDelegate.h"
+#import "ButtonDelegate.h"
 
 @class Keyboard;
 @class Instructor;
 @class Processor;
+@class Menu;
+@class Button;
 
-@interface GameLayer : CCLayer <KeyboardDelegate> {
+enum {
+    kButtonSideMenu,
+    kButtonNext,
+    kButtonReplay,
+    kButtonMenu
+};
+
+@interface GameLayer : CCLayer <KeyboardDelegate, MenuDelegate, ButtonDelegate> {
  
     Instructor *instructor_;
     
@@ -23,10 +34,23 @@
     
     Processor *processor_;
     
+    Menu *sideMenu_;
+    
+    Button *sideMenuButton_;
+    
+    BOOL sideMenuOpen_;
+    
+    BOOL sideMenuLocked_;
+    
+    BOOL sideMenuMoving_;
 }
 
 + (id) start;
 
 - (id) init;
+
+- (void) showSideMenu;
+
+- (void) hideSideMenu;
 
 @end
