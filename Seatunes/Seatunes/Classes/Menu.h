@@ -18,6 +18,8 @@
     
     CGFloat paddingSize_;
     
+    CGFloat offset_;
+    
     BOOL isVertical_;
     
     id <MenuDelegate> delegate_;
@@ -28,7 +30,9 @@
 
 + (id) menu:(CGFloat)paddingSize isVertical:(BOOL)isVertical;
 
-- (id) initMenu:(CGFloat)paddingSize isVertical:(BOOL)isVertical;
++ (id) menu:(CGFloat)paddingSize isVertical:(BOOL)isVertical offset:(CGFloat)offset;
+
+- (id) initMenu:(CGFloat)paddingSize isVertical:(BOOL)isVertical offset:(CGFloat)offset;
 
 - (void) addMenuBackground:(NSString *)filename pos:(CGPoint)pos;
 

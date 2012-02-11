@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Easy Instructions</key>
+	<array>
+		<array>
+			<string>Hey there, little buddy! My name is Paul the Whale, I&apos;ll be your teacher while you&apos;re visiting us under the ocean.</string>
+			<string>If you look down there, you&apos;ll see my friends, the Crazy Clams, they make music when you touch them. Why don&apos;t you give it a try? Just tap any of them with your finger. Go ahead!</string>
+		</array>
+	</array>
+	<key>Easy Instructions 2</key>
+	<array>
+		<array>
+			<string>Now that you got the hang of it, we&apos;re going to play a little game to make some more music. </string>
+			<string>I&apos;m going to blow a bubble, and you&apos;ll see one of my clam friends open his mouth to sing.</string>
+			<string>After we&apos;re done, then it&apos;s your turn to play the same note! OK, are you ready yet?  You can tell me you&apos;re ready by poking me, but not too hard!</string>
+		</array>
+	</array>
+	<key>Easy Wrong Note</key>
+	<array>
+		<array>
+			<string>Oh that&apos;s not right. Remember, you have to play the same note that we play. Why don&apos;t you try again?</string>
+		</array>
+	</array>
+	<key>Easy Replay Note</key>
+	<array>
+		<array>
+			<string>Looks like you still haven&apos;t got it. I&apos;m going to show you the note again. Don&apos;t forget it!</string>
+		</array>
+	</array>
+	<key>Easy Correct Note</key>
+	<array>
+		<array>
+			<string>Good job! You&apos;re getting the hang of it. Let&apos;s keep going!</string>
+		</array>
+	</array>
+	<key>Medium Instructions</key>
+	<array>
+		<array>
+			<string>Hello, I&apos;m Paul the Whale. You have to help me! I don&apos;t know where my voice went. No, not this voice, my SINGING voice.</string>
+			<string>I got up today, and I can&apos;t sing anymore. I called my friends, the Clams, over to help, but they don&apos;t know my songs. Maybe you can help. I don&apos;t know if you&apos;re ready for this yet...</string>
+			<string>Well, maybe you are, little buddy. But you can&apos;t let me down! I&apos;m going to blow all the notes out, and you have to follow along. If I blow a red bubble, you have to play the red clam.</string>
+			<string>Don&apos;t fall behind. If you can&apos;t let any of my bubbles float away, we have to start over again, otherwise everybody will think I&apos;m a bad singer.</string>
+		</array>
+	</array>
+	<key>Hard Instructions</key>
+	<array>
+		<array>
+			<string>Hello, I&apos;m Paul the Whale. You have to help me! I don&apos;t know where my voice went. No, not this voice, my SINGING voice.</string>
+			<string>I got up today, and I can&apos;t sing anymore. I called my friends, the Clams, over to help, but they don&apos;t know my songs. Maybe you can help. I don&apos;t know if you&apos;re ready for this yet...</string>
+			<string>Well, maybe you are, little buddy. But you can&apos;t let me down! I&apos;m going to blow all the notes out, and you have to follow along. If I blow a red bubble, you have to play the red clam.</string>
+			<string>Don&apos;t fall behind. If you can&apos;t let any of my bubbles float away, we have to start over again, otherwise everybody will think I&apos;m a bad singer.</string>
+		</array>
+	</array>
+	<key>Wrong Note</key>
+	<array>
+		<array>
+			<string>Oh, that doesn&apos;t sound right</string>
+		</array>
+		<array>
+			<string>Hmm...that&apos;s not the right note</string>
+		</array>
+	</array>
+	<key>Medium Loss</key>
+	<array>
+		<array>
+			<string>That was a good try, but you&apos;ll have to be faster than that!</string>
+		</array>
+	</array>
+</dict>
+</plist>

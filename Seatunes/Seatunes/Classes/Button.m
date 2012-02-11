@@ -274,14 +274,20 @@ static const CGFloat SIB_SCALED = 1.1f;
 
 + (id) scaledImageButton:(NSUInteger)numID image:(NSString *)image
 {
-    return [[[self alloc] initScaledImageButton:numID image:image] autorelease];
+    return [[[self alloc] initScaledImageButton:numID image:image scale:1.0f] autorelease];
 }
 
-- (id) initScaledImageButton:(NSUInteger)numID image:(NSString *)image
++ (id) scaledImageButton:(NSUInteger)numID image:(NSString *)image scale:(CGFloat)scale
+{
+    return [[[self alloc] initScaledImageButton:numID image:image scale:scale] autorelease];
+}
+
+- (id) initScaledImageButton:(NSUInteger)numID image:(NSString *)image scale:(CGFloat)scale
 {
     if ((self = [super initButton:numID toggle:NO])) {
         
         sprite_ = [[CCSprite spriteWithFile:image] retain];        
+        sprite_.scale = scale;
         [self addChild:sprite_];        
         
     }

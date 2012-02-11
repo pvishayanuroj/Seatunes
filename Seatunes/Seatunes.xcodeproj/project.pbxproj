@@ -10,7 +10,6 @@
 		041E5F3414DE39460084BC0A /* SpeechBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 041E5F3314DE39450084BC0A /* SpeechBubble.m */; };
 		041E5F3814DE40740084BC0A /* Game Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F3514DE40740084BC0A /* Game Background.png */; };
 		041E5F3914DE40740084BC0A /* Menu Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F3614DE40740084BC0A /* Menu Background.png */; };
-		041E5F3A14DE40740084BC0A /* Play Menu Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F3714DE40740084BC0A /* Play Menu Frame.png */; };
 		041E5F4D14DF28580084BC0A /* Easy Button Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F4C14DF28580084BC0A /* Easy Button Selected.png */; };
 		041E5F6014DF286E0084BC0A /* American Classics.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F4E14DF28630084BC0A /* American Classics.png */; };
 		041E5F6114DF286E0084BC0A /* Difficulty Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F4F14DF28630084BC0A /* Difficulty Text.png */; };
@@ -97,6 +96,12 @@
 		04C093C714C4C7090087DA18 /* G4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A714C4C7090087DA18 /* G4-Martian.m4a */; };
 		04C093C814C4C7090087DA18 /* G4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A814C4C7090087DA18 /* G4-PopFlute.m4a */; };
 		04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A914C4C7090087DA18 /* G4-Whirly.m4a */; };
+		04D3318E14E2212200DD82D4 /* SpeechReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3318D14E2212200DD82D4 /* SpeechReader.m */; };
+		04D331BD14E6B53700DD82D4 /* SpeechManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D331BC14E6B53700DD82D4 /* SpeechManager.m */; };
+		04D331C714E6DDCC00DD82D4 /* Menu Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D331C614E6DDCC00DD82D4 /* Menu Frame.png */; };
+		04D331CB14E6DDD600DD82D4 /* SeatunesFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 04D331C914E6DDD600DD82D4 /* SeatunesFont.fnt */; };
+		04D331CC14E6DDD600DD82D4 /* SeatunesFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D331CA14E6DDD600DD82D4 /* SeatunesFont.png */; };
+		04D331CF14E7056700DD82D4 /* Speech.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D331CE14E7056700DD82D4 /* Speech.plist */; };
 		04F4AC7C14C51A0F008666B0 /* Processor.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F4AC7B14C51A0F008666B0 /* Processor.m */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
@@ -244,7 +249,6 @@
 		041E5F3314DE39450084BC0A /* SpeechBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeechBubble.m; path = Classes/SpeechBubble.m; sourceTree = "<group>"; };
 		041E5F3514DE40740084BC0A /* Game Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Background.png"; sourceTree = "<group>"; };
 		041E5F3614DE40740084BC0A /* Menu Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Background.png"; sourceTree = "<group>"; };
-		041E5F3714DE40740084BC0A /* Play Menu Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play Menu Frame.png"; sourceTree = "<group>"; };
 		041E5F4C14DF28580084BC0A /* Easy Button Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Easy Button Selected.png"; sourceTree = "<group>"; };
 		041E5F4E14DF28630084BC0A /* American Classics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics.png"; sourceTree = "<group>"; };
 		041E5F4F14DF28630084BC0A /* Difficulty Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Difficulty Text.png"; sourceTree = "<group>"; };
@@ -343,6 +347,16 @@
 		04C093A714C4C7090087DA18 /* G4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-Martian.m4a"; sourceTree = "<group>"; };
 		04C093A814C4C7090087DA18 /* G4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-PopFlute.m4a"; sourceTree = "<group>"; };
 		04C093A914C4C7090087DA18 /* G4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-Whirly.m4a"; sourceTree = "<group>"; };
+		04D3318C14E2212100DD82D4 /* SpeechReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechReader.h; path = Classes/SpeechReader.h; sourceTree = "<group>"; };
+		04D3318D14E2212200DD82D4 /* SpeechReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeechReader.m; path = Classes/SpeechReader.m; sourceTree = "<group>"; };
+		04D3318F14E2213000DD82D4 /* SpeechReaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechReaderDelegate.h; path = Classes/SpeechReaderDelegate.h; sourceTree = "<group>"; };
+		04D3319314E3880D00DD82D4 /* SpeechBubbleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechBubbleDelegate.h; path = Classes/SpeechBubbleDelegate.h; sourceTree = "<group>"; };
+		04D331BB14E6B53700DD82D4 /* SpeechManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechManager.h; path = Classes/SpeechManager.h; sourceTree = "<group>"; };
+		04D331BC14E6B53700DD82D4 /* SpeechManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeechManager.m; path = Classes/SpeechManager.m; sourceTree = "<group>"; };
+		04D331C614E6DDCC00DD82D4 /* Menu Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Frame.png"; sourceTree = "<group>"; };
+		04D331C914E6DDD600DD82D4 /* SeatunesFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SeatunesFont.fnt; sourceTree = "<group>"; };
+		04D331CA14E6DDD600DD82D4 /* SeatunesFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SeatunesFont.png; sourceTree = "<group>"; };
+		04D331CE14E7056700DD82D4 /* Speech.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Speech.plist; sourceTree = "<group>"; };
 		04F4AC7A14C51A0F008666B0 /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Processor.h; path = Classes/Processor.h; sourceTree = "<group>"; };
 		04F4AC7B14C51A0F008666B0 /* Processor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Processor.m; path = Classes/Processor.m; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
@@ -644,6 +658,7 @@
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				04D331C614E6DDCC00DD82D4 /* Menu Frame.png */,
 				041E5F7614DF7CBC0084BC0A /* Starfish Button.png */,
 				041E5F4E14DF28630084BC0A /* American Classics.png */,
 				041E5F4F14DF28630084BC0A /* Difficulty Text.png */,
@@ -666,7 +681,6 @@
 				041E5F4C14DF28580084BC0A /* Easy Button Selected.png */,
 				041E5F3514DE40740084BC0A /* Game Background.png */,
 				041E5F3614DE40740084BC0A /* Menu Background.png */,
-				041E5F3714DE40740084BC0A /* Play Menu Frame.png */,
 				048BBAD214D539D90086EABC /* American Classics Pack.png */,
 				048BBAD314D539D90086EABC /* Nursery Pack.png */,
 				048BBA7714D534780086EABC /* Buy Text.png */,
@@ -727,6 +741,25 @@
 				048BBABE14D5368C0086EABC /* Twinkle Twinkle.plist */,
 			);
 			path = "Nursery Pack";
+			sourceTree = "<group>";
+		};
+		04D331C814E6DDD600DD82D4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				04D331C914E6DDD600DD82D4 /* SeatunesFont.fnt */,
+				04D331CA14E6DDD600DD82D4 /* SeatunesFont.png */,
+			);
+			name = Fonts;
+			path = Resources/Fonts;
+			sourceTree = "<group>";
+		};
+		04D331CD14E7056700DD82D4 /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				04D331CE14E7056700DD82D4 /* Speech.plist */,
+			);
+			name = Speech;
+			path = Resources/Speech;
 			sourceTree = "<group>";
 		};
 		DAB11F0A14C1E847009B60FB = {
@@ -800,6 +833,12 @@
 				041E5F3114DE34100084BC0A /* InstructorDelegate.h */,
 				041E5F3214DE39440084BC0A /* SpeechBubble.h */,
 				041E5F3314DE39450084BC0A /* SpeechBubble.m */,
+				04D3319314E3880D00DD82D4 /* SpeechBubbleDelegate.h */,
+				04D3318C14E2212100DD82D4 /* SpeechReader.h */,
+				04D3318D14E2212200DD82D4 /* SpeechReader.m */,
+				04D3318F14E2213000DD82D4 /* SpeechReaderDelegate.h */,
+				04D331BB14E6B53700DD82D4 /* SpeechManager.h */,
+				04D331BC14E6B53700DD82D4 /* SpeechManager.m */,
 				DAB1209814C30BFC009B60FB /* CommonHeaders.h */,
 				DAB1215F14C475F2009B60FB /* Note.h */,
 				DAB1216014C475F7009B60FB /* Note.m */,
@@ -837,6 +876,8 @@
 		DAB11F2A14C1E847009B60FB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04D331CD14E7056700DD82D4 /* Speech */,
+				04D331C814E6DDD600DD82D4 /* Fonts */,
 				048BBAAA14D5368B0086EABC /* Packs */,
 				048BBA7514D534780086EABC /* Images */,
 				DAB1216814C48B24009B60FB /* Spritesheets */,
@@ -1354,7 +1395,6 @@
 				048BBAD514D539D90086EABC /* Nursery Pack.png in Resources */,
 				041E5F3814DE40740084BC0A /* Game Background.png in Resources */,
 				041E5F3914DE40740084BC0A /* Menu Background.png in Resources */,
-				041E5F3A14DE40740084BC0A /* Play Menu Frame.png in Resources */,
 				041E5F4D14DF28580084BC0A /* Easy Button Selected.png in Resources */,
 				041E5F6014DF286E0084BC0A /* American Classics.png in Resources */,
 				041E5F6114DF286E0084BC0A /* Difficulty Text.png in Resources */,
@@ -1375,6 +1415,10 @@
 				041E5F7014DF286E0084BC0A /* Side Menu.png in Resources */,
 				041E5F7114DF286E0084BC0A /* Speech Bubble.png in Resources */,
 				041E5F7714DF7CBD0084BC0A /* Starfish Button.png in Resources */,
+				04D331C714E6DDCC00DD82D4 /* Menu Frame.png in Resources */,
+				04D331CB14E6DDD600DD82D4 /* SeatunesFont.fnt in Resources */,
+				04D331CC14E6DDD600DD82D4 /* SeatunesFont.png in Resources */,
+				04D331CF14E7056700DD82D4 /* Speech.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1505,6 +1549,8 @@
 				04B32CA014DDDC18004AA98E /* GameLogicC.m in Sources */,
 				041E5F3414DE39460084BC0A /* SpeechBubble.m in Sources */,
 				041E5F7414DF5C8A0084BC0A /* Menu.m in Sources */,
+				04D3318E14E2212200DD82D4 /* SpeechReader.m in Sources */,
+				04D331BD14E6B53700DD82D4 /* SpeechManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

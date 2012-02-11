@@ -68,3 +68,20 @@ typedef enum {
     kDifficultyMedium,
     kDifficultyHard
 } DifficultyType;
+
+typedef enum {
+    kEasyInstructions,
+    kEasyInstructions2,    
+    kMediumInstructions,
+    kHardInstructions,
+    kSongStart,
+    kPlayedTooFast,
+    kFellBehind,
+    kWrongNote,
+    kEasyLoss,
+    kEasyFinish,
+    kMediumLoss,
+    kMediumFinish,
+    kHardLoss,
+    kHardFinish
+} SpeechType;

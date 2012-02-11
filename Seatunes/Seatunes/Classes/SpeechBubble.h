@@ -6,19 +6,67 @@
 //  Copyright 2012 Paul Vishayanuroj. All rights reserved.
 //
 
+#import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "SpeechBubbleDelegate.h"
 
-@interface SpeechBubble : CCNode {
+typedef struct {
+    NSUInteger numChars;
+    NSUInteger numRows;
+    CGFloat rowHeight;
+} SpeechBubbleDim;
+
+typedef enum {  
+    kBubbleClick,
+    kBubbleTimed,
+    kBubbleTimedClick
+} BubbleType;
+
+@interface SpeechBubble : CCNode <CCTargetedTouchDelegate> {
+    
+    CCSprite *sprite_;
+    
+    NSUInteger maxChars_;
+    
+    NSUInteger maxRows_;
+    
+    CGFloat rowHeight_;
+    
+    CGFloat time_;
+    
+    BOOL fullScreenTap_;
+    
+    BOOL isClickable_;
+    
+    BubbleType bubbleType_;
+    
+    NSMutableArray *textContainer_;
+    
+    id <SpeechBubbleDelegate> delegate_;
     
 }
 
-+ (id) staticSpeechBubble:(NSString *)text;
+@property (nonatomic, assign) id <SpeechBubbleDelegate> delegate;
 
-+ (id) tapSpeechBubble:(NSString *)text;
++ (id) tapSpeechBubble:(SpeechBubbleDim)dim fullScreenTap:(BOOL)fullScreenTap;
 
-- (id) initSpeechBubble:(NSString *)text isStatic:(BOOL)isStatic;
++ (id) timedSpeechBubble:(SpeechBubbleDim)dim fullScreenTap:(BOOL)fullScreenTap time:(CGFloat)time;
 
-- (void) destroy;
++ (id) timedClickSpeechBubble:(SpeechBubbleDim)dim fullScreenTap:(BOOL)fullScreenTap time:(CGFloat)time;
+
+- (id) initSpeechBubble:(SpeechBubbleDim)dim bubbleType:(BubbleType)bubbleType fullScreenTap:(BOOL)fullScreenTap time:(CGFloat)time;
+
+- (NSString *) parseText:(NSString *)text;
+
+- (NSString *) flatten:(NSArray *)components;
+
+- (NSArray *) separateWords:(NSString *)text;
+
+- (NSString *) setTextWithBMFont:(NSString*)string fntFile:(NSString*)fntFile;
+
+- (NSString *) setTextWithTTF:(NSString*)string fontName:(NSString*)name fontSize:(CGFloat)size;
+
+- (void) destroyBubble;
 
 @end

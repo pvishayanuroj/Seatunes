@@ -95,6 +95,8 @@
 
 + (id) scaledImageButton:(NSUInteger)numID image:(NSString *)image;
 
-- (id) initScaledImageButton:(NSUInteger)numID image:(NSString *)image;
++ (id) scaledImageButton:(NSUInteger)numID image:(NSString *)image scale:(CGFloat)scale;
+
+- (id) initScaledImageButton:(NSUInteger)numID image:(NSString *)image scale:(CGFloat)scale;
 
 @end

@@ -11,6 +11,7 @@
 #import "Keyboard.h"
 #import "Instructor.h"
 #import "Note.h"
+#import "SpeechReader.h"
 
 @implementation GameLogicB
 
@@ -28,6 +29,13 @@
         noteIndex_ = 0;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
+        
+        NSMutableArray *text = [NSMutableArray arrayWithCapacity:3];
+        //[text addObject:[NSNumber numberWithInteger:kEasyInstructions]];
+        [text addObject:[NSNumber numberWithInteger:kEasyInstructions2]];        
+        SpeechReader *reader = [SpeechReader speechReader:text tapRequired:YES];
+        reader.position = ccp(512, 500);
+        [self addChild:reader];
     }
     return self;
 }

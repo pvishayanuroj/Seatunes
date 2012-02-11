@@ -15,16 +15,22 @@
 
 +  (id) menu:(CGFloat)paddingSize isVertical:(BOOL)isVertical
 {
-    return [[[self alloc] initMenu:paddingSize isVertical:isVertical] autorelease];
+    return [[[self alloc] initMenu:paddingSize isVertical:isVertical offset:0.0f] autorelease];
 }
 
-- (id) initMenu:(CGFloat)paddingSize isVertical:(BOOL)isVertical
++  (id) menu:(CGFloat)paddingSize isVertical:(BOOL)isVertical offset:(CGFloat)offset
+{
+    return [[[self alloc] initMenu:paddingSize isVertical:isVertical offset:offset] autorelease];
+}
+
+- (id) initMenu:(CGFloat)paddingSize isVertical:(BOOL)isVertical offset:(CGFloat)offset
 {
     if ((self = [super init])) {
         
         isVertical_ = isVertical;
         delegate_ = nil;
         paddingSize_ = paddingSize;
+        offset_ = offset;
         numItems_ = 0;
         
     }
@@ -47,7 +53,7 @@
 - (void) addMenuItem:(Button *)menuItem
 {
     menuItem.delegate = self;
-    menuItem.position = isVertical_ ? ccp(0, -(numItems_ * paddingSize_)) : ccp(numItems_ * paddingSize_, 0);
+    menuItem.position = isVertical_ ? ccp(offset_, -(numItems_ * paddingSize_)) : ccp(numItems_ * paddingSize_, offset_);
     [self addChild:menuItem];
     numItems_++;
 }

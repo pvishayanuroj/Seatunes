@@ -51,15 +51,15 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         sideMenuButton_.position = ccp(GL_SIDEMENU_BUTTON_X, GL_SIDEMENU_BUTTON_Y);
         [self addChild:sideMenuButton_];
         
-        sideMenu_ = [[Menu menu:150.0f isVertical:YES] retain];
+        sideMenu_ = [[Menu menu:150.0f isVertical:YES offset:15.0f] retain];
         sideMenu_.delegate = self; 
         sideMenu_.position = ccp(GL_SIDEMENU_X, GL_SIDEMENU_Y);
         
         [sideMenu_ addMenuBackground:@"Side Menu.png" pos:ccp(0, -140.0f)];
         
-        Button *nextButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Next Button.png"];
-        Button *replayButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Replay Button.png"];
-        Button *menuButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Menu Button.png"];        
+        Button *nextButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Next Button.png" scale:0.9f];
+        Button *replayButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Replay Button.png" scale:0.9f];
+        Button *menuButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Menu Button.png" scale:0.9f];        
         
         [sideMenu_ addMenuItem:nextButton];
         [sideMenu_ addMenuItem:replayButton];
@@ -80,7 +80,7 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         [gameLogicB setKeyboard:keyboard_];
         [self addChild:gameLogicB];
         
-        [gameLogicB start];
+        //[gameLogicB start];
     }
     return self;
 }
