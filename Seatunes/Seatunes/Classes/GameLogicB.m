@@ -24,17 +24,15 @@
 {
     if ((self = [super init])) {
         
-        keyboard_ = nil;
-        instructor_ = nil;
         noteIndex_ = 0;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
         
         NSMutableArray *text = [NSMutableArray arrayWithCapacity:3];
-        //[text addObject:[NSNumber numberWithInteger:kEasyInstructions]];
+        [text addObject:[NSNumber numberWithInteger:kEasyInstructions]];
         [text addObject:[NSNumber numberWithInteger:kEasyInstructions2]];        
         SpeechReader *reader = [SpeechReader speechReader:text tapRequired:YES];
-        reader.position = ccp(512, 500);
+        reader.position = ccp(620, 500);
         [self addChild:reader];
     }
     return self;
@@ -44,22 +42,8 @@
 {
     [notes_ release];
     [queue_ release];
-    [keyboard_ release];
-    [instructor_ release];
     
     [super dealloc];
-}
-
-- (void) setKeyboard:(Keyboard *)keyboard
-{
-    keyboard_ = [keyboard retain];
-    keyboard_.delegate = self;
-}
-
-- (void) setInstructor:(Instructor *)instructor
-{
-    instructor_ = [instructor retain];
-    instructor_.delegate = self;
 }
 
 - (void) start

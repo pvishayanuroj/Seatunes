@@ -6,10 +6,12 @@
 //  Copyright (c) 2012 Paul Vishayanuroj. All rights reserved.
 //
 
+#import "CommonHeaders.h"
+
 @protocol SpeechReaderDelegate <NSObject>
 
 @optional
 
-- (void) speechComplete;
+- (void) speechComplete:(SpeechType)speechType;
 
 @end

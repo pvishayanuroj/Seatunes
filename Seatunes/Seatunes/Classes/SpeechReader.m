@@ -12,6 +12,12 @@
 
 @implementation SpeechReader
 
+static const NSUInteger SR_CHARS_PER_ROW = 35;
+static const NSUInteger SR_NUM_ROWS = 6;
+static const CGFloat SR_ROW_HEIGHT = 40.0f;
+static const CGFloat SR_TEXT_OFFSET_X = -180.0f;
+static const CGFloat SR_TEXT_OFFSET_Y = 150.0f;
+
 @synthesize delegate = delegate_;
 
 + (id) speechReader:(NSArray *)speeches tapRequired:(BOOL)tapRequired
@@ -26,6 +32,7 @@
         delegate_ = nil;
         currentBubble_ = nil;
         currentSpeechIndex_ = 0;
+        lastSpeechType_ = [[speeches lastObject] integerValue];
         
         tapRequired_ = tapRequired;
         
@@ -54,9 +61,10 @@
 - (void) createBubble
 {
     SpeechBubbleDim bubbleDim;
-    bubbleDim.numChars = 40;
-    bubbleDim.numRows = 6;
-    bubbleDim.rowHeight = 40.0f;
+    bubbleDim.numChars = SR_CHARS_PER_ROW;
+    bubbleDim.numRows = SR_NUM_ROWS;
+    bubbleDim.rowHeight = SR_ROW_HEIGHT;
+    bubbleDim.textOffset = ccp(SR_TEXT_OFFSET_X, SR_TEXT_OFFSET_Y);
     
     // If text remaining
     if (currentSpeechIndex_ < [speeches_ count]) {
@@ -66,26 +74,27 @@
         // If the last text
         if (currentSpeechIndex_ == [speeches_ count] - 1) {
             if (tapRequired_) {
-                speechBubble = [SpeechBubble timedClickSpeechBubble:bubbleDim fullScreenTap:YES time:5.0f];            
+                speechBubble = [SpeechBubble timedClickSpeechBubble:bubbleDim fullScreenTap:YES time:2.0f];            
             }
             else {
-                speechBubble = [SpeechBubble timedSpeechBubble:bubbleDim fullScreenTap:YES time:5.0f];
+                speechBubble = [SpeechBubble timedSpeechBubble:bubbleDim fullScreenTap:YES time:2.0f];
             }
         }
         // Not the last text
         else {
-            speechBubble = [SpeechBubble timedSpeechBubble:bubbleDim fullScreenTap:YES time:5.0f];
+            speechBubble = [SpeechBubble timedSpeechBubble:bubbleDim fullScreenTap:YES time:2.0f];
         }
         
         NSString *text = [speeches_ objectAtIndex:currentSpeechIndex_];
         speechBubble.delegate = self;
-        [speechBubble setTextWithTTF:text fontName:@"Arial" fontSize:16];
+        [speechBubble setTextWithTTF:text fontName:@"Arial" fontSize:24];
         [self addChild:speechBubble];
         currentSpeechIndex_++;
     }
     else {
-        if (delegate_ && [delegate_ respondsToSelector:@selector(speechComplete)]) {
-            [delegate_ speechComplete];
+        if (delegate_ && [delegate_ respondsToSelector:@selector(speechComplete:)]) {
+            [delegate_ speechComplete:lastSpeechType_];
+            [self removeFromParentAndCleanup:YES];
         }
     }
 }

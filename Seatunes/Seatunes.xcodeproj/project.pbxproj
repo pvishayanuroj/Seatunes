@@ -102,6 +102,7 @@
 		04D331CB14E6DDD600DD82D4 /* SeatunesFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 04D331C914E6DDD600DD82D4 /* SeatunesFont.fnt */; };
 		04D331CC14E6DDD600DD82D4 /* SeatunesFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D331CA14E6DDD600DD82D4 /* SeatunesFont.png */; };
 		04D331CF14E7056700DD82D4 /* Speech.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D331CE14E7056700DD82D4 /* Speech.plist */; };
+		04D331D214E7507200DD82D4 /* GameLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D331D114E7507100DD82D4 /* GameLogic.m */; };
 		04F4AC7C14C51A0F008666B0 /* Processor.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F4AC7B14C51A0F008666B0 /* Processor.m */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
@@ -357,6 +358,8 @@
 		04D331C914E6DDD600DD82D4 /* SeatunesFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SeatunesFont.fnt; sourceTree = "<group>"; };
 		04D331CA14E6DDD600DD82D4 /* SeatunesFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SeatunesFont.png; sourceTree = "<group>"; };
 		04D331CE14E7056700DD82D4 /* Speech.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Speech.plist; sourceTree = "<group>"; };
+		04D331D014E7506F00DD82D4 /* GameLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogic.h; path = Classes/GameLogic.h; sourceTree = "<group>"; };
+		04D331D114E7507100DD82D4 /* GameLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogic.m; path = Classes/GameLogic.m; sourceTree = "<group>"; };
 		04F4AC7A14C51A0F008666B0 /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Processor.h; path = Classes/Processor.h; sourceTree = "<group>"; };
 		04F4AC7B14C51A0F008666B0 /* Processor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Processor.m; path = Classes/Processor.m; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
@@ -849,6 +852,8 @@
 				DAB1216914C48F6C009B60FB /* Debugging.h */,
 				04F4AC7A14C51A0F008666B0 /* Processor.h */,
 				04F4AC7B14C51A0F008666B0 /* Processor.m */,
+				04D331D014E7506F00DD82D4 /* GameLogic.h */,
+				04D331D114E7507100DD82D4 /* GameLogic.m */,
 				04B32C9B14DDDBF0004AA98E /* GameLogicA.h */,
 				04B32C9C14DDDBF0004AA98E /* GameLogicA.m */,
 				04B32C9314DDB1DA004AA98E /* GameLogicB.h */,
@@ -1551,6 +1556,7 @@
 				041E5F7414DF5C8A0084BC0A /* Menu.m in Sources */,
 				04D3318E14E2212200DD82D4 /* SpeechReader.m in Sources */,
 				04D331BD14E6B53700DD82D4 /* SpeechManager.m in Sources */,
+				04D331D214E7507200DD82D4 /* GameLogic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,7 @@
 
 @implementation Keyboard
 
+@synthesize isClickable = isClickable_;
 @synthesize delegate = delegate_;
 
 + (id) keyboard:(KeyboardType)keyboardType
@@ -28,6 +29,7 @@
         instrumentType_ = kPiano;
         CreatureType creature = kClam;
         isClickable_ = YES;
+        isMuted_ = NO;
         
         keys_ = [[NSMutableDictionary dictionaryWithCapacity:10] retain];    
         keyTimer_ = [[NSMutableDictionary dictionaryWithCapacity:10] retain];
@@ -81,11 +83,15 @@
     NSNumber *timestamp = [NSNumber numberWithDouble:currentTime];
     [keyTimer_ setObject:timestamp forKey:keyType];
     
-    GLuint idNumber = [[AudioManager audioManager] playSound:key.keyType instrument:instrumentType_];
+    GLuint idNumber;
+    if (!isMuted_) {
+        idNumber = [[AudioManager audioManager] playSound:key.keyType instrument:instrumentType_];
+    }
     
     if ([delegate_ respondsToSelector:@selector(keyboardKeyPressed:)]) {
         [delegate_ keyboardKeyPressed:key.keyType];
     }
+    
     return idNumber;
 }
 
@@ -100,7 +106,12 @@
 
     [keyTimer_ removeObjectForKey:keyType];
     
-    [[AudioManager audioManager] stopSound:key.soundID];
+    if (!isMuted_) {
+        [[AudioManager audioManager] stopSound:key.soundID];
+    }
+    else {
+        isMuted_ = NO;
+    }
     
     if ([delegate_ respondsToSelector:@selector(keyboardKeyDepressed:time:)]) {
         [delegate_ keyboardKeyDepressed:key.keyType time:(CGFloat)delta];
@@ -170,8 +181,10 @@
     }
 }
 
-- (void) playNote:(KeyType)keyType time:(CGFloat)time
+- (void) playNote:(KeyType)keyType time:(CGFloat)time withSound:(BOOL)withSound
 {
+    isMuted_ = !withSound;
+    
     NSNumber *keyName = [NSNumber numberWithInteger:keyType];
     Key *key = [keys_ objectForKey:keyName];
     if (key) {

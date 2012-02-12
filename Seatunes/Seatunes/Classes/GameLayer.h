@@ -45,9 +45,9 @@ enum {
     BOOL sideMenuMoving_;
 }
 
-+ (id) start;
++ (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName;
 
-- (id) init;
+- (id) initWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName;
 
 - (void) showSideMenu;
 

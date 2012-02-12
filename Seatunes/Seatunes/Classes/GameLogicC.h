@@ -13,4 +13,8 @@
     
 }
 
++ (id) gameLogicC:(NSString *)songName;
+
+- (id) initGameLogicC:(NSString *)songName;
+
 @end

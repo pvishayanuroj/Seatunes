@@ -43,7 +43,11 @@
 
 - (void) initAnimations;
 
+- (void) showIdle;
+
 - (void) showWrongNote;
+
+- (void) showSing;
 
 - (void) playNote:(KeyType)keyType;
 

@@ -9,21 +9,19 @@
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GameLogic.h"
 #import "KeyboardDelegate.h"
 #import "InstructorDelegate.h"
+#import "SpeechReaderDelegate.h"
 
 @class Keyboard;
 @class Instructor;
 
-@interface GameLogicB : CCNode <KeyboardDelegate, InstructorDelegate> {
+@interface GameLogicB : GameLogic <KeyboardDelegate, InstructorDelegate, SpeechReaderDelegate> {
  
     NSUInteger noteIndex_;
     
     NSArray *notes_;
-    
-    Keyboard *keyboard_;
-    
-    Instructor *instructor_;
     
     NSMutableArray *queue_;
     
@@ -32,10 +30,6 @@
 + (id) gameLogicB:(NSString *)songName;
 
 - (id) initGameLogicB:(NSString *)songName;
-
-- (void) setKeyboard:(Keyboard *)keyboard;
-
-- (void) setInstructor:(Instructor *)instructor;
 
 - (void) start;
 

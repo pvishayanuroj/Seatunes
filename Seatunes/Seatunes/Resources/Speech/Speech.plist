@@ -68,5 +68,12 @@
 			<string>That was a good try, but you&apos;ll have to be faster than that!</string>
 		</array>
 	</array>
+	<key>Song Start</key>
+	<array>
+		<array>
+			<string>Here we go! Are you ready?</string>
+			<string>Ok, I&apos;m ready when you are!</string>
+		</array>
+	</array>
 </dict>
 </plist>

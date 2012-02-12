@@ -6,11 +6,11 @@
 //  Copyright 2012 Paul Vishayanuroj. All rights reserved.
 //
 
+#import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "SpeechReaderDelegate.h"
 #import "SpeechBubbleDelegate.h"
-
 
 @class SpeechBubble;
 
@@ -23,6 +23,8 @@
     NSString *remainingText_;
     
     BOOL tapRequired_;
+    
+    SpeechType lastSpeechType_;
     
     SpeechBubble *currentBubble_;
     

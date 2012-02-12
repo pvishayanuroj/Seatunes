@@ -56,6 +56,7 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
 - (void) destroy
 {
     [delegate_ noteDestroyed:self];
+    [self stopAllActions];
     [self removeFromParentAndCleanup:YES];
 }
 

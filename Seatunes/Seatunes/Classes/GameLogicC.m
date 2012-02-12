@@ -11,4 +11,22 @@
 
 @implementation GameLogicC
 
++ (id) gameLogicC:(NSString *)songName
+{
+    return [[[self alloc] initGameLogicC:songName] autorelease];
+}
+
+- (id) initGameLogicC:(NSString *)songName
+{
+    if ((self = [super init])) {
+
+    }
+    return self;
+}
+
+- (void) dealloc
+{
+    [super dealloc];
+}
+
 @end

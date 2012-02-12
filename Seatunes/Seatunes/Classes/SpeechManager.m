@@ -79,6 +79,9 @@ static SpeechManager *_speechManager = nil;
         case kHardInstructions:
             key = @"Hard Instructions";
             break;
+        case kSongStart:
+            key = @"Song Start";
+            break;
         default:
             break;
     }

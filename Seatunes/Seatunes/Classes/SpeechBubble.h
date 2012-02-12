@@ -15,6 +15,7 @@ typedef struct {
     NSUInteger numChars;
     NSUInteger numRows;
     CGFloat rowHeight;
+    CGPoint textOffset;
 } SpeechBubbleDim;
 
 typedef enum {  
@@ -27,11 +28,7 @@ typedef enum {
     
     CCSprite *sprite_;
     
-    NSUInteger maxChars_;
-    
-    NSUInteger maxRows_;
-    
-    CGFloat rowHeight_;
+    SpeechBubbleDim dim_;
     
     CGFloat time_;
     

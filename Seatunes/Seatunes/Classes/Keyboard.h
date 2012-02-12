@@ -34,10 +34,13 @@
     
     BOOL isClickable_;
     
+    BOOL isMuted_;
+    
     id <KeyboardDelegate> delegate_;
     
 }
 
+@property (nonatomic, assign) BOOL isClickable;
 @property (nonatomic, assign) id <KeyboardDelegate> delegate;
 
 + (id) keyboard:(KeyboardType)keyboardType;
@@ -52,7 +55,7 @@
 
 - (void) touchesEnded:(NSSet *)touches;
 
-- (void) playNote:(KeyType)keyType time:(CGFloat)time;
+- (void) playNote:(KeyType)keyType time:(CGFloat)time withSound:(BOOL)withSound;
 
 - (void) playSequence:(NSArray *)sequence;
 

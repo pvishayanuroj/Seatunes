@@ -12,7 +12,10 @@
 #import "Note.h"
 #import "Instructor.h"
 #import "Processor.h"
+#import "GameLogic.h"
+#import "GameLogicA.h"
 #import "GameLogicB.h"
+#import "GameLogicC.h"
 #import "Menu.h"
 #import "Button.h"
 
@@ -31,12 +34,12 @@ const static CGFloat GL_SIDEMENU_Y = 550.0f;
 const static CGFloat GL_SIDEMENU_MOVE_TIME = 0.5f;
 const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 
-+ (id) start
++ (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName
 {
-    return [[[self alloc] init] autorelease];
+    return [[[self alloc] initWithDifficulty:difficulty songName:songName] autorelease];
 }
 
-- (id) init
+- (id) initWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName
 {
     if ((self = [super init])) {
         
@@ -75,12 +78,24 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         keyboard_.position = ccp(GL_KEYBOARD_X, GL_KEYBOARD_Y);
         [self addChild:keyboard_];
         
-        GameLogicB *gameLogicB = [GameLogicB gameLogicB:@"Twinkle Twinkle"];
-        [gameLogicB setInstructor:instructor_];
-        [gameLogicB setKeyboard:keyboard_];
-        [self addChild:gameLogicB];
+        GameLogic *gameLogic;
+        switch (difficulty) {
+            case kDifficultyEasy:
+                gameLogic = [GameLogicA gameLogicA:songName];
+                break;
+            case kDifficultyMedium:
+                gameLogic = [GameLogicB gameLogicB:songName];
+                break;
+            case kDifficultyHard:
+                gameLogic = [GameLogicC gameLogicC:songName];
+                break;
+            default:
+                break;
+        }
         
-        //[gameLogicB start];
+        [gameLogic setInstructor:instructor_];
+        [gameLogic setKeyboard:keyboard_];
+        [self addChild:gameLogic];
     }
     return self;
 }

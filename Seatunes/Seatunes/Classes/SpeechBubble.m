@@ -34,9 +34,7 @@
     if ((self = [super init])) {
         
         delegate_ = nil;
-        maxChars_ = dim.numChars;
-        maxRows_ = dim.numRows;
-        rowHeight_ = dim.rowHeight;
+        dim_ = dim;
         time_ = time;
         bubbleType_ = bubbleType;
         fullScreenTap_ = fullScreenTap;
@@ -158,7 +156,7 @@
         
         NSUInteger wordLength = [word length];
         // If word is longer than the allowed size per row, just add it, hopefully you'll notice
-        if (wordLength > maxChars_) {
+        if (wordLength > dim_.numChars) {
             
             NSLog(@"Error - The following word is larger than the allowed width of the speech bubble: %@", word);
             
@@ -166,11 +164,11 @@
         else {
             
             // If word will make the row too long, start a new row
-            if ((charCount + wordLength + 1) > maxChars_) {
+            if ((charCount + wordLength + 1) > dim_.numChars) {
                 
                 // If making a new row would exceed the allowed number of rows,
                 // speech bubble is done
-                if (++rowCount == maxRows_) {
+                if (++rowCount == dim_.numRows) {
                     // Add the ellipsis to the end
                     [row addObject:[NSString stringWithString:@"..."]];
                     
@@ -206,7 +204,7 @@
         }
         
         CCLabelBMFont *label = [CCLabelBMFont labelWithString:text fntFile:fntFile];
-        label.position = ccp(-rowNum * rowHeight_, 0);
+        label.position = ccp(dim_.textOffset.x, -rowNum * dim_.rowHeight + dim_.textOffset.y);
         label.anchorPoint = ccp(0, 0.5f);
         [self addChild:label];
         
@@ -234,10 +232,8 @@
             text = [text stringByAppendingFormat:@"%@ ", word];
         }
         
-        NSLog(@"Adding %@", text);        
         CCLabelTTF *label = [CCLabelTTF labelWithString:text fontName:name fontSize:size];
-        label.position = ccp(0, -rowNum * rowHeight_);
-        DebugPoint(@"pt", label.position);
+        label.position = ccp(dim_.textOffset.x, -rowNum * dim_.rowHeight + dim_.textOffset.y);
         label.anchorPoint = ccp(0, 0.5f);
         label.color = ccc3(0, 0, 0);
         [self addChild:label];

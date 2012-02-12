@@ -23,7 +23,7 @@
         background.anchorPoint = CGPointZero;
         [self addChild:background];
         
-        GameLayer *gameLayer = [GameLayer start];
+        GameLayer *gameLayer = [GameLayer startWithDifficulty:kDifficultyEasy songName:@"Twinkle Twinkle"];
         [self addChild:gameLayer];        
     }
     return self;
