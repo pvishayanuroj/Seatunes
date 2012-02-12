@@ -28,7 +28,7 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
 {
     if ((self = [super init])) {
         
-        isFirstPlay_ = true;
+        isFirstPlay_ = false;
         noteIndex_ = 0;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
@@ -117,7 +117,8 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
             }
             // Incorrect note played
             else {
-                NSLog(@"WRONG");
+                [instructor_ showWrongNote];
+                [self runSpeech:kWrongNote];
             }
         }
         // Else no pending notes

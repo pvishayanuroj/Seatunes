@@ -21,6 +21,10 @@ static const CGFloat MMS_BUY_Y = 500.0f;
 {
     if ((self = [super init])) {
         
+        CCSprite *background = [CCSprite spriteWithFile:@"Menu Background.png"];
+        background.anchorPoint = CGPointZero;
+        [self addChild:background];                
+        
         NSString *playText = @"Play Text.png";
         NSString *buyText = @"Buy Text.png";     
         

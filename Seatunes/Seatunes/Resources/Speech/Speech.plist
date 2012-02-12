@@ -72,6 +72,8 @@
 	<array>
 		<array>
 			<string>Here we go! Are you ready?</string>
+		</array>
+		<array>
 			<string>Ok, I&apos;m ready when you are!</string>
 		</array>
 	</array>

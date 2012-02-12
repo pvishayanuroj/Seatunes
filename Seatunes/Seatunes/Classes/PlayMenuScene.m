@@ -22,6 +22,14 @@
 {
     if ((self = [super init])) {
         
+        CCSprite *background = [CCSprite spriteWithFile:@"Menu Background.png"];
+        background.anchorPoint = CGPointZero;
+        [self addChild:background];        
+        
+        CCSprite *menuFrame = [CCSprite spriteWithFile:@"Menu Frame.png"];
+        menuFrame.position = ccp(550, 400);
+        [self addChild:menuFrame];
+        
         [self loadPackMenu];        
         
         scrollingMenu_ = nil;
