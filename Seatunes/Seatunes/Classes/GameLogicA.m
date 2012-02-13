@@ -30,15 +30,16 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
         
         isFirstPlay_ = false;
         noteIndex_ = 0;
+        numWrongNotes_ = 0;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
         
         // If first time playing
         if (isFirstPlay_) {
-            [self runSpeech:kEasyInstructions];
+            [self runSingleSpeech:kEasyInstructions tapRequired:NO];
         }
         else { 
-            [self runSpeech:kSongStart];
+            [self runSingleSpeech:kSongStart tapRequired:YES];
         }
     }
     return self;
@@ -54,6 +55,7 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
 
 - (void) start
 {
+    keyboard_.isClickable = NO;    
     CCActionInterval *delay = [CCDelayTime actionWithDuration:1.5f];
     CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(forward)];
     [self runAction:[CCSequence actions:delay, done, nil]];
@@ -61,26 +63,40 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
 
 - (void) forward
 {
-    if ([notes_ count] > noteIndex_) {
+    if (noteIndex_ < [notes_ count]) {
         
         NSNumber *key = [notes_ objectAtIndex:noteIndex_++];
         
         KeyType keyType = [key integerValue];
         
         if (keyType != kBlankNote) {
-            [queue_ addObject:key];
-            [self playExampleNote:keyType];            
+            [queue_ addObject:key];  
+            [self playExampleNote:keyType];      
         }
         else {
             [self forward];
         }
-    }    
+    }   
+    else {
+        NSLog(@"Song complete");
+    }
+}
+
+- (void) replay
+{
+    if (noteIndex_ < [notes_ count]) { 
+        KeyType keyType = [[notes_ objectAtIndex:(noteIndex_ - 1)] integerValue];
+        if (keyType != kBlankNote) {     
+            [self playExampleNote:keyType];
+        }
+    }
 }
 
 - (void) playExampleNote:(KeyType)keyType
 {
     keyboard_.isClickable = NO;
     ignoreInput_ = YES;
+    numWrongNotes_ = 0;
     
     [instructor_ playNote:keyType];  
     //[instructor_ showSing];
@@ -102,39 +118,64 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
 
 - (void) keyboardKeyPressed:(KeyType)keyType
 {
+    // Playing the example note causes the delegate to be called
     if (!ignoreInput_) {
         NSNumber *key = [NSNumber numberWithInteger:keyType];
         
         if ([queue_ count] > 0) {
             
+            keyboard_.isClickable = NO;            
             NSNumber *correctNote = [queue_ objectAtIndex:0];
             
             // Correct note played
             if ([key isEqualToNumber:correctNote]) {
                 [queue_ removeObjectAtIndex:0];
                 [instructor_ popOldestNote];
-                [self start];
+                
+                // If first time and first note, show an encouraging message
+                if (isFirstPlay_ && noteIndex_ == 1) {
+                    [self runSingleSpeech:kEasyCorrectNote tapRequired:NO];
+                }
+                else {
+                    [self start];
+                }
             }
             // Incorrect note played
             else {
+                numWrongNotes_++;
                 [instructor_ showWrongNote];
-                [self runSpeech:kWrongNote];
+                
+                // If the first time and first note, show a more detailed message
+                if (isFirstPlay_ && noteIndex_ == 1) {
+                    NSArray *text = [NSArray arrayWithObjects:[NSNumber numberWithInteger:kEasyWrongNote], 
+                                                              [NSNumber numberWithInteger:kEasyReplay], nil];
+                    [self runSpeech:text tapRequired:NO];
+                }
+                // If wrong note played three times in a row, replay the note
+                else if (numWrongNotes_ == 3) {
+                    [self runSingleSpeech:kEasyReplay tapRequired:NO];
+                }
+                // Wrong note played (less than three times)
+                else {
+                    [self runSingleSpeech:kWrongNote tapRequired:NO];                    
+                }
             }
         }
-        // Else no pending notes
-        else {
-            NSLog(@"WRONG");        
-        }    
     }
 }
 
-- (void) runSpeech:(SpeechType)speechType
+- (void) runSingleSpeech:(SpeechType)speechType tapRequired:(BOOL)tapRequired
 {
     NSArray *text = [NSArray arrayWithObject:[NSNumber numberWithInteger:speechType]];            
-    SpeechReader *reader = [SpeechReader speechReader:text tapRequired:YES];
+    [self runSpeech:text tapRequired:tapRequired];
+}
+
+- (void) runSpeech:(NSArray *)speeches tapRequired:(BOOL)tapRequired
+{
+    SpeechReader *reader = [SpeechReader speechReader:speeches tapRequired:tapRequired];
     reader.delegate = self;
     reader.position = ccp(GLA_BUBBLE_X, GLA_BUBBLE_Y);
-    [self addChild:reader];    
+    [self addChild:reader];        
 }
 
 - (void) speechComplete:(SpeechType)speechType
@@ -145,14 +186,19 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
             [self startTestPlay];
             break;
         case kEasyInstructions2:
-            keyboard_.isClickable = YES;
+            [self start];
+            break;
+        case kEasyCorrectNote:
             [self start];
             break;
         case kSongStart:
-            keyboard_.isClickable = YES;            
             [self start];
             break;
+        case kEasyReplay:
+            [self replay];
+            break;
         default:
+            keyboard_.isClickable = YES;
             break;
     }
 }
@@ -168,7 +214,15 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
 - (void) endTestPlay
 {
     keyboard_.isClickable = NO;    
-    [self runSpeech:kEasyInstructions2];
+    [self runSingleSpeech:kEasyInstructions2 tapRequired:YES];
+}
+
+- (void) delayedReplay
+{
+    [self stopAllActions];
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:10.0f];
+    CCActionInstant *method = [CCCallFunc actionWithTarget:self selector:@selector(replay)];
+    [self runAction:[CCSequence actions:delay, method, nil]];    
 }
 
 @end

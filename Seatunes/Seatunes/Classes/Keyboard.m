@@ -157,7 +157,7 @@
         // Touch is moving in between keys, check if it got onto another key
         else {            
             for (Key *key in [keys_ allValues]) {
-                if ([key containsTouchLocation:touch]) {
+                if (isClickable_ && [key containsTouchLocation:touch]) {
                     CFDictionarySetValue(touches_, touch, key);
                     [key selectButton];
                     break;
@@ -168,7 +168,7 @@
 }
 
 - (void) touchesEnded:(NSSet *)touches
-{
+{    
     for (UITouch *touch in touches) {
         const void *value = CFDictionaryGetValue(touches_, touch);
         

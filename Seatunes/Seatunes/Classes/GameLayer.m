@@ -11,7 +11,7 @@
 #import "AudioManager.h"
 #import "Note.h"
 #import "Instructor.h"
-#import "Processor.h"
+#import "CCNode+PauseResume.h"
 #import "GameLogic.h"
 #import "GameLogicA.h"
 #import "GameLogicB.h"
@@ -47,6 +47,7 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         sideMenuOpen_ = NO;
         sideMenuLocked_ = NO;
         sideMenuMoving_ = NO;
+        isPaused_ = NO;
         [AudioManager audioManager];
         
         sideMenuButton_ = [[ImageButton imageButton:kButtonSideMenu unselectedImage:@"Starfish Button.png" selectedImage:@"Starfish Button.png"] retain];
@@ -78,30 +79,31 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         keyboard_.position = ccp(GL_KEYBOARD_X, GL_KEYBOARD_Y);
         [self addChild:keyboard_];
         
-        GameLogic *gameLogic;
         switch (difficulty) {
             case kDifficultyEasy:
-                gameLogic = [GameLogicA gameLogicA:songName];
+                gameLogic_ = [[GameLogicA gameLogicA:songName] retain];
                 break;
             case kDifficultyMedium:
-                gameLogic = [GameLogicB gameLogicB:songName];
+                gameLogic_ = [[GameLogicB gameLogicB:songName] retain];
                 break;
             case kDifficultyHard:
-                gameLogic = [GameLogicC gameLogicC:songName];
+                gameLogic_ = [[GameLogicC gameLogicC:songName] retain];
                 break;
             default:
+                gameLogic_ = nil;
                 break;
         }
         
-        [gameLogic setInstructor:instructor_];
-        [gameLogic setKeyboard:keyboard_];
-        [self addChild:gameLogic];
+        [gameLogic_ setInstructor:instructor_];
+        [gameLogic_ setKeyboard:keyboard_];
+        [self addChild:gameLogic_];
     }
     return self;
 }
 
 - (void) dealloc
 {
+    [gameLogic_ release];
     [instructor_ release];
     [keyboard_ release];
     [processor_ release];
@@ -113,17 +115,23 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 
 - (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [keyboard_ touchesBegan:touches];
+    if (!isPaused_) {
+        [keyboard_ touchesBegan:touches];
+    }
 }
 
 - (void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [keyboard_ touchesMoved:touches];
+    if (!isPaused_) {    
+        [keyboard_ touchesMoved:touches];
+    }
 }
 
 - (void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [keyboard_ touchesEnded:touches];
+    if (!isPaused_) {
+        [keyboard_ touchesEnded:touches];
+    }
 }
 
 - (void) sectionComplete
@@ -172,6 +180,9 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 {
     if (!sideMenuMoving_) {
         sideMenuMoving_ = YES;
+        
+        [self pauseGame];
+        
         CCActionInterval *move = [CCMoveBy actionWithDuration:GL_SIDEMENU_MOVE_TIME position:ccp(-GL_SIDEMENU_MOVE_AMOUNT, 0)];
         CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(doneShowSideMenu)];
         [sideMenu_ runAction:[CCSequence actions:move, done, nil]];
@@ -189,7 +200,11 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 
 - (void) hideSideMenu
 {
-    if (!sideMenuMoving_) {
+    if (!sideMenuMoving_) {        
+        sideMenuMoving_ = YES;
+        
+        [self resumeGame];
+        
         CCActionInterval *move = [CCMoveBy actionWithDuration:GL_SIDEMENU_MOVE_TIME position:ccp(GL_SIDEMENU_MOVE_AMOUNT, 0)];
         CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(doneHideSideMenu)];
         [sideMenu_ runAction:[CCSequence actions:move, done, nil]];    
@@ -203,6 +218,23 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 {
     sideMenuMoving_ = NO;
     sideMenuOpen_ = NO;    
+}
+
+- (void) pauseGame
+{
+    isPaused_ = YES;
+    keyboard_.isClickable = NO;
+    [gameLogic_ pauseHierarchy];
+    [instructor_ pauseHierarchy];
+    [keyboard_ pauseHierarchy];
+}
+
+- (void) resumeGame
+{
+    isPaused_ = NO;
+    [gameLogic_ resumeHierarchy];
+    [instructor_ resumeHierarchy];
+    [keyboard_ resumeHierarchy];
 }
 
 @end

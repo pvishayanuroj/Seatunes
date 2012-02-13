@@ -23,10 +23,13 @@
 			<string>Oh that&apos;s not right. Remember, you have to play the same note that we play. Why don&apos;t you try again?</string>
 		</array>
 	</array>
-	<key>Easy Replay Note</key>
+	<key>Easy Replay</key>
 	<array>
 		<array>
-			<string>Looks like you still haven&apos;t got it. I&apos;m going to show you the note again. Don&apos;t forget it!</string>
+			<string>I&apos;m going to show you the note again. Don&apos;t forget it!</string>
+		</array>
+		<array>
+			<string>Here&apos;s a hint:</string>
 		</array>
 	</array>
 	<key>Easy Correct Note</key>

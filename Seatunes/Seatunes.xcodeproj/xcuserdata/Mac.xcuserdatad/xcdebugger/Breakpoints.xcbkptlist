@@ -135,12 +135,26 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Seatunes/Classes/GameLogicA.m"
-         timestampString = "350711480.195494"
+         timestampString = "350784927.736969"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "106"
-         endingLineNumber = "106"
+         startingLineNumber = "123"
+         endingLineNumber = "123"
          landmarkName = "-keyboardKeyPressed:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Seatunes/Classes/GameLogicA.m"
+         timestampString = "350784927.736969"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "113"
+         endingLineNumber = "113"
+         landmarkName = "-donePlaying"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

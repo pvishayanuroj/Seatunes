@@ -103,7 +103,8 @@
 		04D331CC14E6DDD600DD82D4 /* SeatunesFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D331CA14E6DDD600DD82D4 /* SeatunesFont.png */; };
 		04D331CF14E7056700DD82D4 /* Speech.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D331CE14E7056700DD82D4 /* Speech.plist */; };
 		04D331D214E7507200DD82D4 /* GameLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D331D114E7507100DD82D4 /* GameLogic.m */; };
-		04F4AC7C14C51A0F008666B0 /* Processor.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F4AC7B14C51A0F008666B0 /* Processor.m */; };
+		04D331D414E8081A00DD82D4 /* Bubble Burst.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D331D314E8081A00DD82D4 /* Bubble Burst.png */; };
+		04D331E314E8A25400DD82D4 /* CCNode+PauseResume.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D331E214E8A24F00DD82D4 /* CCNode+PauseResume.m */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
 		DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B714D458B800D1437B /* MainMenuScene.m */; };
@@ -360,8 +361,9 @@
 		04D331CE14E7056700DD82D4 /* Speech.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Speech.plist; sourceTree = "<group>"; };
 		04D331D014E7506F00DD82D4 /* GameLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogic.h; path = Classes/GameLogic.h; sourceTree = "<group>"; };
 		04D331D114E7507100DD82D4 /* GameLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogic.m; path = Classes/GameLogic.m; sourceTree = "<group>"; };
-		04F4AC7A14C51A0F008666B0 /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Processor.h; path = Classes/Processor.h; sourceTree = "<group>"; };
-		04F4AC7B14C51A0F008666B0 /* Processor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Processor.m; path = Classes/Processor.m; sourceTree = "<group>"; };
+		04D331D314E8081A00DD82D4 /* Bubble Burst.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble Burst.png"; sourceTree = "<group>"; };
+		04D331E114E8A24C00DD82D4 /* CCNode+PauseResume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CCNode+PauseResume.h"; path = "Classes/CCNode+PauseResume.h"; sourceTree = "<group>"; };
+		04D331E214E8A24F00DD82D4 /* CCNode+PauseResume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CCNode+PauseResume.m"; path = "Classes/CCNode+PauseResume.m"; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
 		DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayViewController.m; path = Classes/CocosOverlayViewController.m; sourceTree = "<group>"; };
 		DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayScrollView.h; path = Classes/CocosOverlayScrollView.h; sourceTree = "<group>"; };
@@ -661,6 +663,7 @@
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				04D331D314E8081A00DD82D4 /* Bubble Burst.png */,
 				04D331C614E6DDCC00DD82D4 /* Menu Frame.png */,
 				041E5F7614DF7CBC0084BC0A /* Starfish Button.png */,
 				041E5F4E14DF28630084BC0A /* American Classics.png */,
@@ -800,6 +803,8 @@
 		DAB11F2914C1E847009B60FB /* Seatunes */ = {
 			isa = PBXGroup;
 			children = (
+				04D331E114E8A24C00DD82D4 /* CCNode+PauseResume.h */,
+				04D331E214E8A24F00DD82D4 /* CCNode+PauseResume.m */,
 				048508DC14D4D701008BBA10 /* Button.h */,
 				048508DD14D4D701008BBA10 /* Button.m */,
 				048508DE14D4D701008BBA10 /* ButtonDelegate.h */,
@@ -813,8 +818,6 @@
 				DAB1207714C1E84D009B60FB /* Supporting Files */,
 				DAB1211B14C35F2A009B60FB /* GameScene.h */,
 				DAB1211C14C35F2B009B60FB /* GameScene.m */,
-				DAB1208A14C30911009B60FB /* GameLayer.h */,
-				DAB1208B14C30911009B60FB /* GameLayer.m */,
 				048508E214D4E4E5008BBA10 /* ScrollingMenu.h */,
 				048508E314D4E4E5008BBA10 /* ScrollingMenu.m */,
 				DA08E0BE14D511F300D1437B /* ScrollingMenuDelegate.h */,
@@ -850,8 +853,8 @@
 				DAB120E414C352C8009B60FB /* Utility.h */,
 				DAB120E514C352C8009B60FB /* Utility.m */,
 				DAB1216914C48F6C009B60FB /* Debugging.h */,
-				04F4AC7A14C51A0F008666B0 /* Processor.h */,
-				04F4AC7B14C51A0F008666B0 /* Processor.m */,
+				DAB1208A14C30911009B60FB /* GameLayer.h */,
+				DAB1208B14C30911009B60FB /* GameLayer.m */,
 				04D331D014E7506F00DD82D4 /* GameLogic.h */,
 				04D331D114E7507100DD82D4 /* GameLogic.m */,
 				04B32C9B14DDDBF0004AA98E /* GameLogicA.h */,
@@ -1424,6 +1427,7 @@
 				04D331CB14E6DDD600DD82D4 /* SeatunesFont.fnt in Resources */,
 				04D331CC14E6DDD600DD82D4 /* SeatunesFont.png in Resources */,
 				04D331CF14E7056700DD82D4 /* Speech.plist in Resources */,
+				04D331D414E8081A00DD82D4 /* Bubble Burst.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1539,7 +1543,6 @@
 				DAB120E614C352C9009B60FB /* Utility.m in Sources */,
 				DAB1211D14C35F2C009B60FB /* GameScene.m in Sources */,
 				DAB1216114C475FC009B60FB /* Note.m in Sources */,
-				04F4AC7C14C51A0F008666B0 /* Processor.m in Sources */,
 				DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */,
 				DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */,
 				DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */,
@@ -1557,6 +1560,7 @@
 				04D3318E14E2212200DD82D4 /* SpeechReader.m in Sources */,
 				04D331BD14E6B53700DD82D4 /* SpeechManager.m in Sources */,
 				04D331D214E7507200DD82D4 /* GameLogic.m in Sources */,
+				04D331E314E8A25400DD82D4 /* CCNode+PauseResume.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

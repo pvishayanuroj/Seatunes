@@ -123,7 +123,6 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
     }
     // Why doesn't this give the correct value??
     //CGPoint pt = [self convertToWorldSpace:self.position];
-
 }
 
 @end

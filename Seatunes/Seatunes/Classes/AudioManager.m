@@ -113,7 +113,7 @@ static AudioManager *_audioManager = nil;
 - (void) pauseSound
 {
     SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];
-    
+
     [engine pauseBackgroundMusic];
 }
 

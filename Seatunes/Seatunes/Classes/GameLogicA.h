@@ -22,6 +22,8 @@
     
     NSMutableArray *queue_;  
     
+    NSUInteger numWrongNotes_;
+    
     BOOL isFirstPlay_;
     
     BOOL ignoreInput_;
@@ -36,8 +38,12 @@
 
 - (void) playExampleNote:(KeyType)keyType;
 
-- (void) runSpeech:(SpeechType)speechType;
+- (void) runSingleSpeech:(SpeechType)speechType tapRequired:(BOOL)tapRequired;
+
+- (void) runSpeech:(NSArray *)speeches tapRequired:(BOOL)tapRequired;
 
 - (void) startTestPlay;
+
+- (void) delayedReplay;
 
 @end

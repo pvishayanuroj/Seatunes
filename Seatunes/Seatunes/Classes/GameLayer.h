@@ -18,6 +18,7 @@
 @class Processor;
 @class Menu;
 @class Button;
+@class GameLogic;
 
 enum {
     kButtonSideMenu,
@@ -28,6 +29,8 @@ enum {
 
 @interface GameLayer : CCLayer <KeyboardDelegate, MenuDelegate, ButtonDelegate> {
  
+    GameLogic *gameLogic_;
+    
     Instructor *instructor_;
     
     Keyboard *keyboard_;
@@ -43,6 +46,8 @@ enum {
     BOOL sideMenuLocked_;
     
     BOOL sideMenuMoving_;
+    
+    BOOL isPaused_;
 }
 
 + (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName;
@@ -52,5 +57,9 @@ enum {
 - (void) showSideMenu;
 
 - (void) hideSideMenu;
+
+- (void) pauseGame;
+
+- (void) resumeGame;
 
 @end

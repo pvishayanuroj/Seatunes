@@ -72,8 +72,14 @@ typedef enum {
 typedef enum {
     kEasyInstructions,
     kEasyInstructions2,    
+    kEasyReplay,    
+    kEasyWrongNote,
+    kEasyCorrectNote,
     kMediumInstructions,
     kHardInstructions,
+
+    kMediumReplay,
+    kHardReplay,
     kSongStart,
     kPlayedTooFast,
     kFellBehind,

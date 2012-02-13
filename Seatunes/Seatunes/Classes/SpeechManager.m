@@ -85,6 +85,15 @@ static SpeechManager *_speechManager = nil;
         case kWrongNote:
             key = @"Wrong Note";
             break;
+        case kEasyWrongNote:
+            key = @"Easy Wrong Note";
+            break;
+        case kEasyCorrectNote:
+            key = @"Easy Correct Note";
+            break;
+        case kEasyReplay:
+            key = @"Easy Replay";
+            break;
         default:
             break;
     }
