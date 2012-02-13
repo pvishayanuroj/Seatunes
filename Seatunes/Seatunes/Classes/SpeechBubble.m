@@ -59,6 +59,10 @@
 
 - (void) dealloc
 {
+#if DEBUG_SHOWDEALLOC
+    NSLog(@"Speech Bubble dealloc'd");
+#endif    
+    
     [textContainer_ release];
     [sprite_ release];
     

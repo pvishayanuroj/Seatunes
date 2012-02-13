@@ -36,4 +36,6 @@
 
 - (void) curveAction;
 
+- (void) scaleAction;
+
 @end

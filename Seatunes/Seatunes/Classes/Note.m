@@ -48,16 +48,43 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
 
 - (void) dealloc
 {
-    [sprite_ release];
+#if DEBUG_SHOWDEALLOC
+    NSLog(@"Note dealloc'd");
+#endif
     
+    [sprite_ release];
+
     [super dealloc];
 }
 
 - (void) destroy
+{    
+    [self scaleAction];
+}
+
+- (void) scaleAction
+{
+    CCActionInterval *scale = [CCScaleTo actionWithDuration:0.08f scale:2.5f];
+    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(scaleActionDone)];        
+    [sprite_ runAction:[CCSequence actions:scale, done, nil]];
+}
+
+- (void) scaleActionDone
+{
+    [self stopAllActions];    
+    [sprite_ removeFromParentAndCleanup:YES]; 
+    CCSprite *sprite = [CCSprite spriteWithFile:@"Bubble Burst.png"];
+    [self addChild:sprite];
+    
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:0.1f];
+    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(popActionDone)];        
+    [self runAction:[CCSequence actions:delay, done, nil]];    
+}
+
+- (void) popActionDone
 {
     [delegate_ noteDestroyed:self];
-    [self stopAllActions];
-    [self removeFromParentAndCleanup:YES];
+    [self removeFromParentAndCleanup:YES];    
 }
 
 #pragma mark - Helper Methods
