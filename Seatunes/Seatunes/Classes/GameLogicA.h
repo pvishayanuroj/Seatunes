@@ -38,10 +38,6 @@
 
 - (void) playExampleNote:(KeyType)keyType;
 
-- (void) runSingleSpeech:(SpeechType)speechType tapRequired:(BOOL)tapRequired;
-
-- (void) runSpeech:(NSArray *)speeches tapRequired:(BOOL)tapRequired;
-
 - (void) startTestPlay;
 
 - (void) delayedReplay;

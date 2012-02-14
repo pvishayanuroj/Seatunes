@@ -13,7 +13,12 @@
 
 @implementation GameScene
 
-- (id) init
++ (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName
+{
+    return [[[self alloc] initWithDifficulty:difficulty songName:songName] autorelease];
+}
+
+- (id) initWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName
 {
     if ((self = [super init])) {
         
@@ -23,7 +28,7 @@
         background.anchorPoint = CGPointZero;
         [self addChild:background];
         
-        GameLayer *gameLayer = [GameLayer startWithDifficulty:kDifficultyEasy songName:@"Twinkle Twinkle"];
+        GameLayer *gameLayer = [GameLayer startWithDifficulty:difficulty songName:songName];
         [self addChild:gameLayer];        
     }
     return self;

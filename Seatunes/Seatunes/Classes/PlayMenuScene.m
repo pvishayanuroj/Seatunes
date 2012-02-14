@@ -14,7 +14,8 @@
 #import "ScrollingMenuItem.h"
 #import "SongMenuItem.h"
 #import "Utility.h"
-#import "GameScene.h"
+#import "DataUtility.h"
+#import "DifficultyMenuScene.h"
 
 @implementation PlayMenuScene
 
@@ -55,14 +56,9 @@
 
 - (void) scrollingMenuItemClicked:(ScrollingMenuItem *)menuItem
 {
-    [self cleanupSongMenu];
-    [self loadDifficultyMenu];
-}
-
-- (void) menuItemSelected:(Button *)button
-{
-    NSLog(@"menu selected");
-    [self startSong];
+    NSString *songName = [songNames_ objectAtIndex:menuItem.numID];
+    NSLog(@"Song clicked: %@", songName);
+    [self loadDifficultyMenu:songName];
 }
 
 - (void) loadPackMenu
@@ -75,7 +71,7 @@
     NSArray *packNames = [Utility allPackNames];
     
     for (NSNumber *packName in packNames) {
-        NSUInteger packType = [packName unsignedIntegerValue];
+        NSInteger packType = [packName unsignedIntegerValue];
         NSString *imageName = [NSString stringWithFormat:@"%@.png", [Utility packNameFromEnum:packType]];
         Button *button = [ImageButton imageButton:packType unselectedImage:imageName selectedImage:imageName];
         [sliderBoxMenu_ addMenuItem:button];
@@ -86,7 +82,7 @@
 {
     [self cleanupSongMenu];
     
-    CGRect menuFrame = CGRectMake(1024 - 650, 0, 650, 600);
+    CGRect menuFrame = CGRectMake(1024 - 650, 100, 650, 500);
     CGFloat scrollSize = 1000;
     scrollingMenu_ = [[ScrollingMenu scrollingMenu:menuFrame scrollSize:scrollSize] retain]; 
 
@@ -96,36 +92,25 @@
     // Get songs for pack
     songNames_ = [[self loadSongNames:[Utility packNameFromEnum:packType]] retain];
     
+    // Get scores for songs
+    NSDictionary *scores = [DataUtility loadSongScores];
+    
     NSUInteger idx = 0;
     for (NSString *songName in songNames_) {
-        ScrollingMenuItem *menuItem = [SongMenuItem songMenuItem:songName songIndex:idx++];
+        
+        // Load score
+        NSNumber *score = [scores objectForKey:songName];
+        ScoreType scoreType = (score == nil) ? kScoreZeroStar : [score integerValue];
+        
+        ScrollingMenuItem *menuItem = [SongMenuItem songMenuItem:songName songScore:scoreType songIndex:idx++];
         [scrollingMenu_ addMenuItem:menuItem];
     }    
 }
 
-- (void) loadDifficultyMenu
+- (void) loadDifficultyMenu:(NSString *)songName
 {
-    Menu *menu = [Menu menu:256.0f isVertical:NO];
-    menu.delegate = self;
-    menu.position = ccp(256.0f, 400.0f);
-    
-    [menu addMenuBackground:@"Difficulty Text.png" pos:ccp(256.0f, 148.0f)];    
-    
-    Button *easyButton = [ImageButton imageButton:kDifficultyEasy unselectedImage:@"Easy Button.png" selectedImage:@"Easy Button Selected.png"];
-    Button *mediumButton = [ImageButton imageButton:kDifficultyMedium unselectedImage:@"Medium Button.png" selectedImage:@"Medium Button Selected.png"];
-    Button *hardButton = [ImageButton imageButton:kDifficultyHard unselectedImage:@"Hard Button.png" selectedImage:@"Hard Button Selected.png"];    
-    
-    [menu addMenuItem:easyButton];
-    [menu addMenuItem:mediumButton];
-    [menu addMenuItem:hardButton];    
-    
-    [self addChild:menu];
-}
-
-- (void) startSong
-{
-    CCScene *scene = [GameScene node];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:scene]];    
+    CCScene *scene = [DifficultyMenuScene startWithSongName:songName];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0f scene:scene]];    
 }
 
 - (NSArray *) loadSongNames:(NSString *)packName

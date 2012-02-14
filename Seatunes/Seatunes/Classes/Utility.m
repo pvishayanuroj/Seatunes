@@ -192,6 +192,27 @@
     return packNames;
 }
 
++ (NSString *) difficultyPlayedKeyFromEnum:(DifficultyType)difficulty
+{
+    NSString *name = @"";
+    
+    switch (difficulty) {
+        case kDifficultyEasy:
+            name = @"Easy Played"; 
+            break;
+        case kDifficultyMedium:
+            name = @"Medium Played";
+            break;
+        case kDifficultyHard:
+            name = @"Hard Played";
+            break;
+        default:
+            break;
+    }
+    
+    return name;
+}
+
 + (NSArray *) loadSong:(NSString *)songName
 {
 	NSString *path = [[NSBundle mainBundle] pathForResource:songName ofType:@"plist"];

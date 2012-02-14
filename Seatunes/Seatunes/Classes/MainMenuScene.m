@@ -9,6 +9,7 @@
 #import "MainMenuScene.h"
 #import "PlayMenuScene.h"
 #import "Button.h"
+#import "AudioManager.h"
 
 @implementation MainMenuScene
 
@@ -20,6 +21,8 @@ static const CGFloat MMS_BUY_Y = 500.0f;
 - (id) init
 {
     if ((self = [super init])) {
+        
+        [AudioManager audioManager];        
         
         CCSprite *background = [CCSprite spriteWithFile:@"Menu Background.png"];
         background.anchorPoint = CGPointZero;

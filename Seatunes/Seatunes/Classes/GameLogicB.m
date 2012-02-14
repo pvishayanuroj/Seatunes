@@ -12,6 +12,7 @@
 #import "Instructor.h"
 #import "Note.h"
 #import "SpeechReader.h"
+#import "Utility.h"
 
 @implementation GameLogicB
 
@@ -24,16 +25,19 @@
 {
     if ((self = [super init])) {
         
+        NSString *key = [Utility difficultyPlayedKeyFromEnum:kDifficultyMedium];
+        isFirstPlay_ = [[NSUserDefaults standardUserDefaults] boolForKey:key];        
         noteIndex_ = 0;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
         
-        NSMutableArray *text = [NSMutableArray arrayWithCapacity:3];
-        [text addObject:[NSNumber numberWithInteger:kEasyInstructions]];
-        [text addObject:[NSNumber numberWithInteger:kEasyInstructions2]];        
-        SpeechReader *reader = [SpeechReader speechReader:text tapRequired:YES];
-        reader.position = ccp(620, 500);
-        [self addChild:reader];
+        // If first time playing
+        if (isFirstPlay_) {
+            [self runSingleSpeech:kMediumInstructions tapRequired:YES];
+        }
+        else { 
+            [self runSingleSpeech:kSongStart tapRequired:YES];
+        }
     }
     return self;
 }
@@ -48,6 +52,7 @@
 
 - (void) start
 {
+    keyboard_.isClickable = YES;
     [self schedule:@selector(loop:) interval:1.5f];
 }
 
@@ -64,6 +69,9 @@
         }
         
         [instructor_ playNote:keyType];        
+    } 
+    else {
+        [delegate_ songComplete:scoreInfo_];
     }
 }
 
@@ -104,5 +112,20 @@
     NSLog(@"LOSS");
 }
 
+- (void) speechComplete:(SpeechType)speechType
+{
+    switch (speechType) {
+            // From start speech, go to directly to gameplay or test play
+        case kMediumInstructions:
+            [self start];
+            break;
+        case kSongStart:
+            [self start];
+            break;
+        default:
+            keyboard_.isClickable = YES;
+            break;
+    }
+}
 
 @end

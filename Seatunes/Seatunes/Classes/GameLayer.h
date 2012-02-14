@@ -12,6 +12,7 @@
 #import "KeyboardDelegate.h"
 #import "MenuDelegate.h"
 #import "ButtonDelegate.h"
+#import "GameLogicDelegate.h"
 
 @class Keyboard;
 @class Instructor;
@@ -27,7 +28,7 @@ enum {
     kButtonMenu
 };
 
-@interface GameLayer : CCLayer <KeyboardDelegate, MenuDelegate, ButtonDelegate> {
+@interface GameLayer : CCLayer <KeyboardDelegate, MenuDelegate, ButtonDelegate, GameLogicDelegate> {
  
     GameLogic *gameLogic_;
     
@@ -40,6 +41,10 @@ enum {
     Menu *sideMenu_;
     
     Button *sideMenuButton_;
+    
+    NSString *songName_;
+    
+    DifficultyType difficulty_;
     
     BOOL sideMenuOpen_;
     

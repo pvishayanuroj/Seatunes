@@ -11,12 +11,11 @@
 #import "cocos2d.h"
 #import "SliderBoxMenuDelegate.h"
 #import "ScrollingMenuDelegate.h"
-#import "MenuDelegate.h"
 
 @class ScrollingMenu;
 @class SliderBoxMenu;
 
-@interface PlayMenuScene : CCScene <SlideBoxMenuDelegate, ScrollingMenuDelegate, MenuDelegate> {
+@interface PlayMenuScene : CCScene <SlideBoxMenuDelegate, ScrollingMenuDelegate> {
     
     ScrollingMenu *scrollingMenu_;
     
@@ -27,15 +26,13 @@
     
 }
 
-- (void) startSong;
-
 - (NSArray *) loadSongNames:(NSString *)packName;
 
 - (void) loadPackMenu;
 
 - (void) loadSongMenu:(PackType)packType;
 
-- (void) loadDifficultyMenu;
+- (void) loadDifficultyMenu:(NSString *)songName;
 
 - (void) cleanupSongMenu;
 

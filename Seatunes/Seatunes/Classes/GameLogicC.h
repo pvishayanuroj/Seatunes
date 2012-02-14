@@ -11,6 +11,8 @@
 
 @interface GameLogicC : CCNode {
     
+    BOOL isFirstPlay_;    
+    
 }
 
 + (id) gameLogicC:(NSString *)songName;

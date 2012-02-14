@@ -32,6 +32,8 @@
 
 + (NSArray *) allPackNames;
 
++ (NSString *) difficultyPlayedKeyFromEnum:(DifficultyType)difficulty;
+
 + (NSArray *) loadSong:(NSString *)songName;
 
 + (NSArray *) loadFlattenedSong:(NSString *)songName;

@@ -28,7 +28,8 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
 {
     if ((self = [super init])) {
         
-        isFirstPlay_ = false;
+        NSString *key = [Utility difficultyPlayedKeyFromEnum:kDifficultyEasy];
+        isFirstPlay_ = [[NSUserDefaults standardUserDefaults] boolForKey:key];
         noteIndex_ = 0;
         numWrongNotes_ = 0;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
@@ -36,10 +37,10 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
         
         // If first time playing
         if (isFirstPlay_) {
-            [self runSingleSpeech:kEasyInstructions tapRequired:NO];
+            [super runSingleSpeech:kEasyInstructions tapRequired:NO];
         }
         else { 
-            [self runSingleSpeech:kSongStart tapRequired:YES];
+            [super runSingleSpeech:kSongStart tapRequired:YES];
         }
     }
     return self;
@@ -63,22 +64,26 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
 
 - (void) forward
 {
+    // If more notes to play
     if (noteIndex_ < [notes_ count]) {
         
+        // Get note type
         NSNumber *key = [notes_ objectAtIndex:noteIndex_++];
-        
         KeyType keyType = [key integerValue];
         
+        // Play the note
         if (keyType != kBlankNote) {
             [queue_ addObject:key];  
             [self playExampleNote:keyType];      
         }
+        // Skip blank notes
         else {
             [self forward];
         }
     }   
+    // Song complete
     else {
-        NSLog(@"Song complete");
+        [delegate_ songComplete:scoreInfo_];
     }
 }
 
@@ -134,7 +139,7 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
                 
                 // If first time and first note, show an encouraging message
                 if (isFirstPlay_ && noteIndex_ == 1) {
-                    [self runSingleSpeech:kEasyCorrectNote tapRequired:NO];
+                    [super runSingleSpeech:kEasyCorrectNote tapRequired:NO];
                 }
                 else {
                     [self start];
@@ -149,33 +154,19 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
                 if (isFirstPlay_ && noteIndex_ == 1) {
                     NSArray *text = [NSArray arrayWithObjects:[NSNumber numberWithInteger:kEasyWrongNote], 
                                                               [NSNumber numberWithInteger:kEasyReplay], nil];
-                    [self runSpeech:text tapRequired:NO];
+                    [super runSpeech:text tapRequired:NO];
                 }
                 // If wrong note played three times in a row, replay the note
                 else if (numWrongNotes_ == 3) {
-                    [self runSingleSpeech:kEasyReplay tapRequired:NO];
+                    [super runSingleSpeech:kEasyReplay tapRequired:NO];
                 }
                 // Wrong note played (less than three times)
                 else {
-                    [self runSingleSpeech:kWrongNote tapRequired:NO];                    
+                    [super runSingleSpeech:kWrongNote tapRequired:NO];                    
                 }
             }
         }
     }
-}
-
-- (void) runSingleSpeech:(SpeechType)speechType tapRequired:(BOOL)tapRequired
-{
-    NSArray *text = [NSArray arrayWithObject:[NSNumber numberWithInteger:speechType]];            
-    [self runSpeech:text tapRequired:tapRequired];
-}
-
-- (void) runSpeech:(NSArray *)speeches tapRequired:(BOOL)tapRequired
-{
-    SpeechReader *reader = [SpeechReader speechReader:speeches tapRequired:tapRequired];
-    reader.delegate = self;
-    reader.position = ccp(GLA_BUBBLE_X, GLA_BUBBLE_Y);
-    [self addChild:reader];        
 }
 
 - (void) speechComplete:(SpeechType)speechType
@@ -214,7 +205,7 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
 - (void) endTestPlay
 {
     keyboard_.isClickable = NO;    
-    [self runSingleSpeech:kEasyInstructions2 tapRequired:YES];
+    [super runSingleSpeech:kEasyInstructions2 tapRequired:YES];
 }
 
 - (void) delayedReplay

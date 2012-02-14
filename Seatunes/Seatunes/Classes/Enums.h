@@ -58,9 +58,9 @@ typedef enum {
 } ProcessorType;
 
 typedef enum {
-    kExercisePack,
-    kNurseryPack,
-    kAmericanClassicsPack
+    kExercisePack = 0,
+    kNurseryPack = 1,
+    kAmericanClassicsPack = 2
 } PackType;
 
 typedef enum {
@@ -68,6 +68,13 @@ typedef enum {
     kDifficultyMedium,
     kDifficultyHard
 } DifficultyType;
+
+typedef enum {
+    kScoreZeroStar = 0,
+    kScoreOneStar = 1,
+    kScoreTwoStar = 2,
+    kScoreThreeStar = 3
+} ScoreType;
 
 typedef enum {
     kEasyInstructions,
@@ -91,3 +98,10 @@ typedef enum {
     kHardLoss,
     kHardFinish
 } SpeechType;
+
+typedef struct {
+    NSUInteger notesMissed;
+    NSUInteger notesHit;
+    NSUInteger totalNotes;
+    ScoreType score;
+} ScoreInfo;

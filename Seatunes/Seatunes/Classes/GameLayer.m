@@ -18,6 +18,8 @@
 #import "GameLogicC.h"
 #import "Menu.h"
 #import "Button.h"
+#import "Utility.h"
+#import "DataUtility.h"
 
 @implementation GameLayer
 
@@ -48,6 +50,8 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         sideMenuLocked_ = NO;
         sideMenuMoving_ = NO;
         isPaused_ = NO;
+        songName_ = [songName retain];
+        difficulty_ = difficulty;
         [AudioManager audioManager];
         
         sideMenuButton_ = [[ImageButton imageButton:kButtonSideMenu unselectedImage:@"Starfish Button.png" selectedImage:@"Starfish Button.png"] retain];
@@ -94,6 +98,7 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
                 break;
         }
         
+        gameLogic_.delegate = self; 
         [gameLogic_ setInstructor:instructor_];
         [gameLogic_ setKeyboard:keyboard_];
         [self addChild:gameLogic_];
@@ -109,6 +114,7 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
     [processor_ release];
     [sideMenu_ release];
     [sideMenuButton_ release];
+    [songName_ release];
     
     [super dealloc];
 }
@@ -134,14 +140,12 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
     }
 }
 
-- (void) sectionComplete
+- (void) songComplete:(ScoreInfo)scoreInfo
 {
+    [DataUtility saveSongScore:songName_ score:scoreInfo.score];
     
-}
-
-- (void) songComplete
-{
-    
+    NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty_];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];
 }
 
 - (void) buttonClicked:(Button *)button

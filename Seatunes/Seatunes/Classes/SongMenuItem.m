@@ -11,12 +11,12 @@
 
 @implementation SongMenuItem
 
-+ (id) songMenuItem:(NSString *)songName songIndex:(NSUInteger)songIndex
++ (id) songMenuItem:(NSString *)songName songScore:(ScoreType)songScore songIndex:(NSUInteger)songIndex
 {
-    return [[[self alloc] initSongMenuItem:songName songIndex:songIndex] autorelease];
+    return [[[self alloc] initSongMenuItem:songName songScore:songScore songIndex:songIndex] autorelease];
 }
 
-- (id) initSongMenuItem:(NSString *)songName songIndex:(NSUInteger)songIndex
+- (id) initSongMenuItem:(NSString *)songName songScore:(ScoreType)songScore songIndex:(NSUInteger)songIndex
 {
     if ((self = [super initScrollingMenuItem:songIndex height:55])) {
         
@@ -24,9 +24,23 @@
         CGFloat fontSize = 28;
         CCLabelTTF *label = [CCLabelTTF labelWithString:songName fontName:fontName fontSize:fontSize];
         label.anchorPoint = ccp(0, 0.5f);
-        label.position = ccp(100.0f, 0);
+        label.position = ccp(200.0f, 0);
         [self addChild:label];
         
+        NSInteger numStars = songScore;
+        
+        for (NSInteger i = 0; i < 3; ++i) {
+            CCSprite *sprite;
+            if (i < numStars) {
+                sprite = [CCSprite spriteWithFile:@"Full Star.png"];
+            }
+            else {
+                sprite = [CCSprite spriteWithFile:@"Empty Star.png"];                
+            }
+            sprite.scale = 0.25f;
+            sprite.position = ccp(35 * i + 80, 0);
+            [self addChild:sprite];
+        }
     }
     return self;
 }

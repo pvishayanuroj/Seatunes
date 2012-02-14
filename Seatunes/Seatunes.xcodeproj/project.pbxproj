@@ -31,6 +31,9 @@
 		041E5F7114DF286E0084BC0A /* Speech Bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5F14DF286D0084BC0A /* Speech Bubble.png */; };
 		041E5F7414DF5C8A0084BC0A /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 041E5F7314DF5C870084BC0A /* Menu.m */; };
 		041E5F7714DF7CBD0084BC0A /* Starfish Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F7614DF7CBC0084BC0A /* Starfish Button.png */; };
+		042FCA4314E8C97600E34155 /* DataUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 042FCA4214E8C97600E34155 /* DataUtility.m */; };
+		042FCA4714EA082200E34155 /* DifficultyMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 042FCA4614EA082100E34155 /* DifficultyMenuScene.m */; };
+		042FCA4A14EA084000E34155 /* BuyMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 042FCA4914EA084000E34155 /* BuyMenuScene.m */; };
 		048508D714D4D4DC008BBA10 /* PlayMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508D614D4D4DC008BBA10 /* PlayMenuScene.m */; };
 		048508DB14D4D62D008BBA10 /* SliderBoxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */; };
 		048508DF14D4D701008BBA10 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DD14D4D701008BBA10 /* Button.m */; };
@@ -274,6 +277,13 @@
 		041E5F7314DF5C870084BC0A /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Menu.m; path = Classes/Menu.m; sourceTree = "<group>"; };
 		041E5F7514DF5CA40084BC0A /* MenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuDelegate.h; path = Classes/MenuDelegate.h; sourceTree = "<group>"; };
 		041E5F7614DF7CBC0084BC0A /* Starfish Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Starfish Button.png"; sourceTree = "<group>"; };
+		042FCA4114E8C97600E34155 /* DataUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataUtility.h; path = Classes/DataUtility.h; sourceTree = "<group>"; };
+		042FCA4214E8C97600E34155 /* DataUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataUtility.m; path = Classes/DataUtility.m; sourceTree = "<group>"; };
+		042FCA4514EA082100E34155 /* DifficultyMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DifficultyMenuScene.h; path = Classes/DifficultyMenuScene.h; sourceTree = "<group>"; };
+		042FCA4614EA082100E34155 /* DifficultyMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DifficultyMenuScene.m; path = Classes/DifficultyMenuScene.m; sourceTree = "<group>"; };
+		042FCA4814EA084000E34155 /* BuyMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyMenuScene.h; path = Classes/BuyMenuScene.h; sourceTree = "<group>"; };
+		042FCA4914EA084000E34155 /* BuyMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyMenuScene.m; path = Classes/BuyMenuScene.m; sourceTree = "<group>"; };
+		042FCA4B14EA096700E34155 /* GameLogicDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicDelegate.h; path = Classes/GameLogicDelegate.h; sourceTree = "<group>"; };
 		048508D514D4D4DC008BBA10 /* PlayMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMenuScene.h; path = Classes/PlayMenuScene.h; sourceTree = "<group>"; };
 		048508D614D4D4DC008BBA10 /* PlayMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMenuScene.m; path = Classes/PlayMenuScene.m; sourceTree = "<group>"; };
 		048508D914D4D62D008BBA10 /* SliderBoxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderBoxMenu.h; path = Classes/SliderBoxMenu.h; sourceTree = "<group>"; };
@@ -803,6 +813,8 @@
 		DAB11F2914C1E847009B60FB /* Seatunes */ = {
 			isa = PBXGroup;
 			children = (
+				042FCA4114E8C97600E34155 /* DataUtility.h */,
+				042FCA4214E8C97600E34155 /* DataUtility.m */,
 				04D331E114E8A24C00DD82D4 /* CCNode+PauseResume.h */,
 				04D331E214E8A24F00DD82D4 /* CCNode+PauseResume.m */,
 				048508DC14D4D701008BBA10 /* Button.h */,
@@ -857,6 +869,7 @@
 				DAB1208B14C30911009B60FB /* GameLayer.m */,
 				04D331D014E7506F00DD82D4 /* GameLogic.h */,
 				04D331D114E7507100DD82D4 /* GameLogic.m */,
+				042FCA4B14EA096700E34155 /* GameLogicDelegate.h */,
 				04B32C9B14DDDBF0004AA98E /* GameLogicA.h */,
 				04B32C9C14DDDBF0004AA98E /* GameLogicA.m */,
 				04B32C9314DDB1DA004AA98E /* GameLogicB.h */,
@@ -871,6 +884,10 @@
 				DA08E0B714D458B800D1437B /* MainMenuScene.m */,
 				048508D514D4D4DC008BBA10 /* PlayMenuScene.h */,
 				048508D614D4D4DC008BBA10 /* PlayMenuScene.m */,
+				042FCA4514EA082100E34155 /* DifficultyMenuScene.h */,
+				042FCA4614EA082100E34155 /* DifficultyMenuScene.m */,
+				042FCA4814EA084000E34155 /* BuyMenuScene.h */,
+				042FCA4914EA084000E34155 /* BuyMenuScene.m */,
 				048508D914D4D62D008BBA10 /* SliderBoxMenu.h */,
 				048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */,
 				048508E114D4DB1C008BBA10 /* SliderBoxMenuDelegate.h */,
@@ -1561,6 +1578,9 @@
 				04D331BD14E6B53700DD82D4 /* SpeechManager.m in Sources */,
 				04D331D214E7507200DD82D4 /* GameLogic.m in Sources */,
 				04D331E314E8A25400DD82D4 /* CCNode+PauseResume.m in Sources */,
+				042FCA4314E8C97600E34155 /* DataUtility.m in Sources */,
+				042FCA4714EA082200E34155 /* DifficultyMenuScene.m in Sources */,
+				042FCA4A14EA084000E34155 /* BuyMenuScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,17 +11,24 @@
 #import "cocos2d.h"
 #import "KeyboardDelegate.h"
 #import "InstructorDelegate.h"
+#import "GameLogicDelegate.h"
+#import "SpeechReaderDelegate.h"
 
 @class Keyboard;
 @class Instructor;
 
-@interface GameLogic : CCNode <KeyboardDelegate, InstructorDelegate> {
+@interface GameLogic : CCNode <KeyboardDelegate, InstructorDelegate, SpeechReaderDelegate> {
     
     Keyboard *keyboard_;
     
     Instructor *instructor_;    
     
+    ScoreInfo scoreInfo_;
+    
+    id <GameLogicDelegate> delegate_;
 }
+
+@property (nonatomic, assign) id <GameLogicDelegate> delegate;
 
 + (id) gameLogic;
 
@@ -30,5 +37,9 @@
 - (void) setKeyboard:(Keyboard *)keyboard;
 
 - (void) setInstructor:(Instructor *)instructor;
+
+- (void) runSingleSpeech:(SpeechType)speechType tapRequired:(BOOL)tapRequired;
+
+- (void) runSpeech:(NSArray *)speeches tapRequired:(BOOL)tapRequired;
 
 @end
