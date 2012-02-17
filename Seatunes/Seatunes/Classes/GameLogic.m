@@ -32,7 +32,6 @@ static const CGFloat GL_BUBBLE_Y = 500.0f;
         instructor_ = nil;      
         scoreInfo_.notesHit = 0;
         scoreInfo_.notesMissed = 0;        
-        scoreInfo_.totalNotes = 0;
         scoreInfo_.score = kScoreZeroStar;
         
     }

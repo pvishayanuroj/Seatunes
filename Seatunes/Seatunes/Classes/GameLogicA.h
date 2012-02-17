@@ -42,4 +42,6 @@
 
 - (void) delayedReplay;
 
+- (void) endSong;
+
 @end

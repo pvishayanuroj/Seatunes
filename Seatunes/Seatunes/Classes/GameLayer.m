@@ -142,6 +142,8 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 
 - (void) songComplete:(ScoreInfo)scoreInfo
 {
+    NSLog(@"song done");
+    
     [DataUtility saveSongScore:songName_ score:scoreInfo.score];
     
     NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty_];

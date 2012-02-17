@@ -10,8 +10,6 @@
 
 @protocol NoteDelegate <NSObject>
 
-- (void) noteDestroyed:(Note *)note;
-
 - (void) noteCrossedBoundary:(Note *)note;
 
 @end

@@ -131,17 +131,13 @@ static const CGFloat IN_NOTE_Y = -60.0f;
 
 - (void) popOldestNote
 {
-    if ([notes_ count] > 0) {
+    if ([notes_ count] > 0) {   
         [[notes_ objectAtIndex:0] destroy];
+        [notes_ removeObjectAtIndex:0];
     }
 }
 
 #pragma mark - Delegate Methods
-
-- (void) noteDestroyed:(Note *)note
-{
-    [notes_ removeObject:note];
-}
 
 - (void) noteCrossedBoundary:(Note *)note
 {

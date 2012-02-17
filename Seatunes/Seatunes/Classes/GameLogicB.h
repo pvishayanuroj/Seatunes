@@ -35,6 +35,6 @@
 
 - (void) start;
 
-- (void) lossEvent;
+- (void) endSong;
 
 @end

@@ -16,9 +16,6 @@
 
 @implementation GameLogicA
 
-static const CGFloat GLA_BUBBLE_X = 620.0f;
-static const CGFloat GLA_BUBBLE_Y = 500.0f;
-
 + (id) gameLogicA:(NSString *)songName
 {
     return [[[self alloc] initGameLogicA:songName] autorelease];
@@ -29,7 +26,7 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
     if ((self = [super init])) {
         
         NSString *key = [Utility difficultyPlayedKeyFromEnum:kDifficultyEasy];
-        isFirstPlay_ = [[NSUserDefaults standardUserDefaults] boolForKey:key];
+        isFirstPlay_ = ![[NSUserDefaults standardUserDefaults] boolForKey:key];
         noteIndex_ = 0;
         numWrongNotes_ = 0;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
@@ -83,7 +80,7 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
     }   
     // Song complete
     else {
-        [delegate_ songComplete:scoreInfo_];
+        [self endSong];
     }
 }
 
@@ -129,6 +126,7 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
         
         if ([queue_ count] > 0) {
             
+            scoreInfo_.notesHit++;
             keyboard_.isClickable = NO;            
             NSNumber *correctNote = [queue_ objectAtIndex:0];
             
@@ -147,6 +145,9 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
             }
             // Incorrect note played
             else {
+                if (numWrongNotes_ == 0) {
+                    scoreInfo_.notesMissed++;
+                }
                 numWrongNotes_++;
                 [instructor_ showWrongNote];
                 
@@ -214,6 +215,17 @@ static const CGFloat GLA_BUBBLE_Y = 500.0f;
     CCActionInterval *delay = [CCDelayTime actionWithDuration:10.0f];
     CCActionInstant *method = [CCCallFunc actionWithTarget:self selector:@selector(replay)];
     [self runAction:[CCSequence actions:delay, method, nil]];    
+}
+
+- (void) endSong
+{
+    if (scoreInfo_.notesMissed == 0) {
+        scoreInfo_.score = kScoreOneStar;
+    }
+    else {
+        scoreInfo_.score = kScoreZeroStar;
+    }
+    [delegate_ songComplete:scoreInfo_];    
 }
 
 @end

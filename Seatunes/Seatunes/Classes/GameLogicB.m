@@ -26,7 +26,7 @@
     if ((self = [super init])) {
         
         NSString *key = [Utility difficultyPlayedKeyFromEnum:kDifficultyMedium];
-        isFirstPlay_ = [[NSUserDefaults standardUserDefaults] boolForKey:key];        
+        isFirstPlay_ = ![[NSUserDefaults standardUserDefaults] boolForKey:key];        
         noteIndex_ = 0;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
@@ -71,7 +71,7 @@
         [instructor_ playNote:keyType];        
     } 
     else {
-        [delegate_ songComplete:scoreInfo_];
+        [self endSong];
     }
 }
 
@@ -92,24 +92,28 @@
         }
         // Incorrect note played
         else {
-            NSLog(@"WRONG");
+            [instructor_ showWrongNote];
         }
     }
     // Else no pending notes
     else {
-        NSLog(@"WRONG");        
+
     }
 }
 
 - (void) noteCrossedBoundary:(Note *)note
 {
-    [self lossEvent];
-}
+    NSUInteger numQueued = [queue_ count];
 
-- (void) lossEvent
-{
+    for (NSUInteger i = 0; i < numQueued; ++i) {
+        [instructor_ popOldestNote];
+    }
+    
     [self unschedule:@selector(loop:)];
-    NSLog(@"LOSS");
+    keyboard_.isClickable = NO;
+    noteIndex_ -= numQueued;
+    [queue_ removeAllObjects];
+    [self runSingleSpeech:kMediumReplay tapRequired:YES];
 }
 
 - (void) speechComplete:(SpeechType)speechType
@@ -122,10 +126,24 @@
         case kSongStart:
             [self start];
             break;
+        case kMediumReplay:
+            [self start];
+            break;
         default:
             keyboard_.isClickable = YES;
             break;
     }
+}
+
+- (void) endSong
+{
+    if (scoreInfo_.notesMissed == 0) {
+        scoreInfo_.score = kScoreTwoStar;
+    }
+    else {
+        scoreInfo_.score = kScoreOneStar;
+    }
+    [delegate_ songComplete:scoreInfo_];
 }
 
 @end

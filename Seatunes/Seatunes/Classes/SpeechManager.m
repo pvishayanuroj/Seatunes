@@ -94,6 +94,18 @@ static SpeechManager *_speechManager = nil;
         case kEasyReplay:
             key = @"Easy Replay";
             break;
+        case kMediumReplay:
+            key = @"Medium Replay";
+            break;
+        case kHardReplay:
+            key = @"Hard Replay";
+            break;
+        case kNextSection:
+            key = @"Next Section";
+            break;
+        case kHardPlay:
+            key = @"Hard Play";
+            break;
         default:
             break;
     }

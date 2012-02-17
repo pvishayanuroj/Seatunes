@@ -41,19 +41,53 @@
 	<key>Medium Instructions</key>
 	<array>
 		<array>
-			<string>Hello, I&apos;m Paul the Whale. You have to help me! I don&apos;t know where my voice went. No, not this voice, my SINGING voice.</string>
+			<string>Hi again, it&apos;s Paul the Whale. You have to help me! I don&apos;t know where my voice went. No, not this voice, my SINGING voice.</string>
 			<string>I got up today, and I can&apos;t sing anymore. I called my friends, the Clams, over to help, but they don&apos;t know my songs. Maybe you can help. I don&apos;t know if you&apos;re ready for this yet...</string>
 			<string>Well, maybe you are, little buddy. But you can&apos;t let me down! I&apos;m going to blow all the notes out, and you have to follow along. If I blow a red bubble, you have to play the red clam.</string>
 			<string>Don&apos;t fall behind. If you can&apos;t let any of my bubbles float away, we have to start over again, otherwise everybody will think I&apos;m a bad singer.</string>
 		</array>
 	</array>
+	<key>Medium Replay</key>
+	<array>
+		<array>
+			<string>Oh no, you let one of my bubbles reach the surface. You&apos;ll have to be faster. Tell me when you&apos;re ready, and we&apos;ll try again.</string>
+		</array>
+		<array>
+			<string>Remember, you can&apos;t let the bubbles get away from you. Are you ready to try again?</string>
+		</array>
+	</array>
 	<key>Hard Instructions</key>
 	<array>
 		<array>
-			<string>Hello, I&apos;m Paul the Whale. You have to help me! I don&apos;t know where my voice went. No, not this voice, my SINGING voice.</string>
-			<string>I got up today, and I can&apos;t sing anymore. I called my friends, the Clams, over to help, but they don&apos;t know my songs. Maybe you can help. I don&apos;t know if you&apos;re ready for this yet...</string>
-			<string>Well, maybe you are, little buddy. But you can&apos;t let me down! I&apos;m going to blow all the notes out, and you have to follow along. If I blow a red bubble, you have to play the red clam.</string>
-			<string>Don&apos;t fall behind. If you can&apos;t let any of my bubbles float away, we have to start over again, otherwise everybody will think I&apos;m a bad singer.</string>
+			<string>You&apos;ve been getting really good at this, whale done! Ha ha, get it? Are you up for the final challenege?</string>
+			<string>Everybody&apos;s been hearing about you, they want to hear you play on your own. I can show you how each part goes before you start, but you&apos;ll have to use your memory after that!</string>
+			<string>Remember, you even if you get a wrong note, make sure you hit the right one before going on. If you get too many notes wrong, we&apos;ll have to stop.</string>
+			<string>Are you ready?</string>
+		</array>
+	</array>
+	<key>Hard Replay</key>
+	<array>
+		<array>
+			<string>That&apos;s not how it went. It goes like this -</string>
+			<string>I remember it sounded different, kind of like this -</string>
+		</array>
+	</array>
+	<key>Next Section</key>
+	<array>
+		<array>
+			<string>Good job! This is what the next section sounds like.</string>
+		</array>
+		<array>
+			<string>Keep up the good work. There&apos;s still more song left!</string>
+		</array>
+	</array>
+	<key>Hard Play</key>
+	<array>
+		<array>
+			<string>Ok, it&apos;s your turn!</string>
+		</array>
+		<array>
+			<string>Take a deep breath, concentrate, and play!</string>
 		</array>
 	</array>
 	<key>Wrong Note</key>
@@ -63,12 +97,6 @@
 		</array>
 		<array>
 			<string>Hmm...that&apos;s not the right note</string>
-		</array>
-	</array>
-	<key>Medium Loss</key>
-	<array>
-		<array>
-			<string>That was a good try, but you&apos;ll have to be faster than that!</string>
 		</array>
 	</array>
 	<key>Song Start</key>

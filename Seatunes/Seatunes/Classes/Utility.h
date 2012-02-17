@@ -34,7 +34,7 @@
 
 + (NSString *) difficultyPlayedKeyFromEnum:(DifficultyType)difficulty;
 
-+ (NSArray *) loadSong:(NSString *)songName;
++ (NSArray *) loadSectionedSong:(NSString *)songName;
 
 + (NSArray *) loadFlattenedSong:(NSString *)songName;
 

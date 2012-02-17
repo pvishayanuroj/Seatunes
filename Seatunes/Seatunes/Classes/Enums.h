@@ -7,15 +7,15 @@
 //
 
 typedef enum {
-    kC4,
-    kD4,
-    kE4,
-    kF4,
-    kG4,
-    kA4,
-    kB4,
-    kC5,
-    kBlankNote
+    kC4 = 0,
+    kD4 = 1,
+    kE4 = 2,
+    kF4 = 3,
+    kG4 = 4,
+    kA4 = 5,
+    kB4 = 6,
+    kC5 = 7,
+    kBlankNote = 8
 } KeyType;
 
 typedef enum {
@@ -96,12 +96,13 @@ typedef enum {
     kMediumLoss,
     kMediumFinish,
     kHardLoss,
-    kHardFinish
+    kHardFinish,
+    kNextSection,
+    kHardPlay
 } SpeechType;
 
 typedef struct {
     NSUInteger notesMissed;
     NSUInteger notesHit;
-    NSUInteger totalNotes;
     ScoreType score;
 } ScoreInfo;

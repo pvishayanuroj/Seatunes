@@ -213,14 +213,25 @@
     return name;
 }
 
-+ (NSArray *) loadSong:(NSString *)songName
++ (NSArray *) loadSectionedSong:(NSString *)songName
 {
+    NSMutableArray *sections = [NSMutableArray array];
+    
 	NSString *path = [[NSBundle mainBundle] pathForResource:songName ofType:@"plist"];
     NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:path];
     
-    NSArray *notes = [NSArray arrayWithArray:[data objectForKey:@"Notes"]];
+    NSArray *storedSections = [NSArray arrayWithArray:[data objectForKey:@"Notes"]];    
     
-    return notes;
+    for (NSArray *section in storedSections) {
+        NSMutableArray *notes = [NSMutableArray array];
+        for (NSString *note in section) {
+            NSNumber *key = [NSNumber numberWithInteger:[Utility keyEnumFromName:note]];
+            [notes addObject:key];            
+        }
+        [sections addObject:notes];
+    }
+    
+    return sections;
 }
 
 + (NSArray *) loadFlattenedSong:(NSString *)songName
@@ -230,9 +241,9 @@
 	NSString *path = [[NSBundle mainBundle] pathForResource:songName ofType:@"plist"];
     NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:path];
     
-    NSArray *storedNotes = [[NSArray arrayWithArray:[data objectForKey:@"Notes"]] retain];
+    NSArray *storedSections = [[NSArray arrayWithArray:[data objectForKey:@"Notes"]] retain];
     
-    for (NSArray *section in storedNotes) {
+    for (NSArray *section in storedSections) {
         for (NSString *note in section) {
             NSNumber *key = [NSNumber numberWithInteger:[Utility keyEnumFromName:note]];
             [notes addObject:key];

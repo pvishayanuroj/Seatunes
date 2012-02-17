@@ -83,7 +83,6 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
 
 - (void) popActionDone
 {
-    [delegate_ noteDestroyed:self];
     [self removeFromParentAndCleanup:YES];    
 }
 
