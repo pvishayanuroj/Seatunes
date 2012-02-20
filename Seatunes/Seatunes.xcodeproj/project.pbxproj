@@ -376,6 +376,7 @@
 		04D3E45E14F2DECA00FB0928 /* StarfishButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarfishButton.h; path = Classes/StarfishButton.h; sourceTree = "<group>"; };
 		04D3E45F14F2DECC00FB0928 /* StarfishButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarfishButton.m; path = Classes/StarfishButton.m; sourceTree = "<group>"; };
 		04D3E46114F2EF8F00FB0928 /* Water Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Water Background.png"; sourceTree = "<group>"; };
+		04D3E46314F2FCE100FB0928 /* ScoreLayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreLayerDelegate.h; path = Classes/ScoreLayerDelegate.h; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
 		DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayViewController.m; path = Classes/CocosOverlayViewController.m; sourceTree = "<group>"; };
 		DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayScrollView.h; path = Classes/CocosOverlayScrollView.h; sourceTree = "<group>"; };
@@ -896,6 +897,7 @@
 				041E5F7514DF5CA40084BC0A /* MenuDelegate.h */,
 				042FCA9D14F14CE700E34155 /* ScoreLayer.h */,
 				042FCA9E14F14CEA00E34155 /* ScoreLayer.m */,
+				04D3E46314F2FCE100FB0928 /* ScoreLayerDelegate.h */,
 				04D3E45E14F2DECA00FB0928 /* StarfishButton.h */,
 				04D3E45F14F2DECC00FB0928 /* StarfishButton.m */,
 			);

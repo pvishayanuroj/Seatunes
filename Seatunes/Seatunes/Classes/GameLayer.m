@@ -21,6 +21,8 @@
 #import "Button.h"
 #import "Utility.h"
 #import "DataUtility.h"
+#import "GameScene.h"
+#import "PlayMenuScene.h"
 
 @implementation GameLayer
 
@@ -41,6 +43,7 @@ static const CGFloat GL_SCOREMENU_X = 0.0f;
 static const CGFloat GL_SCOREMENU_Y = -430.0f;
 static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 
+#pragma mark - Object Lifecycle
 
 + (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName
 {
@@ -81,7 +84,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         
         [self addChild:sideMenu_];
         
-        instructor_ = [Instructor instructor:kWhaleInstructor];
+        instructor_ = [[Instructor instructor:kWhaleInstructor] retain];
         instructor_.position = ccp(GL_INSTRUCTOR_X, GL_INSTRUCTOR_Y);
         [self addChild:instructor_ z:-1];
         
@@ -125,6 +128,8 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     [super dealloc];
 }
 
+#pragma mark - Touch Handlers
+
 - (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if (!isPaused_) {
@@ -145,6 +150,8 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         [keyboard_ touchesEnded:touches];
     }
 }
+
+#pragma mark - Delegate Methods
 
 - (void) songComplete:(ScoreInfo)scoreInfo
 {
@@ -176,16 +183,33 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 
 - (void) menuItemSelected:(Button *)button
 {
+    [self menuSelection:button];
+}
+
+- (void) scoreLayerMenuItemSelected:(Button *)button
+{
+    [self menuSelection:button];    
+}
+
+#pragma mark - Helper Methods
+
+- (void) menuSelection:(Button *)button
+{
+    CCScene *scene;
     switch (button.numID) {
         case kButtonNext:
             break;
         case kButtonReplay:
+            scene = [GameScene startWithDifficulty:difficulty_ songName:songName_];
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:scene]];                         
             break;
         case kButtonMenu:
+            scene = [PlayMenuScene node];
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:scene]];             
             break;
         default:
             break;
-    }
+    }    
 }
 
 - (void) showSideMenu
@@ -238,6 +262,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     keyboard_.isClickable = NO;
     
     ScoreLayer *scoreLayer = [ScoreLayer scoreLayer:scoreInfo];
+    scoreLayer.delegate = self;
     scoreLayer.position = ccp(GL_SCOREMENU_X, GL_SCOREMENU_Y);
     [self addChild:scoreLayer];
     

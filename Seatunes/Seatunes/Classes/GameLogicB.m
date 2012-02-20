@@ -99,7 +99,7 @@
                 playerNoteIndex_++;
                 
                 // This note is the last note in the song
-                if (onLastNote_) {
+                if (onLastNote_ && [queue_ count] == 0) {
                     keyboard_.isClickable = NO;
                     ignoreInput_ = YES;            
                     [self runDelayedEndSpeech];                         

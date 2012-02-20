@@ -9,6 +9,7 @@
 #import "ScoreLayer.h"
 #import "Button.h"
 #import "Menu.h"
+#import "PlayMenuScene.h"
 
 @implementation ScoreLayer
 
@@ -29,6 +30,8 @@ static const CGFloat SL_REPLAY_Y = 205.0f;
 static const CGFloat SL_MENU_X = 810.0f;
 static const CGFloat SL_MENU_Y = 75.0f;
 
+@synthesize delegate = delegate_;
+
 + (id) scoreLayer:(ScoreInfo)scoreInfo
 {
     return [[[self alloc] initScoreLayer:scoreInfo] autorelease];
@@ -37,6 +40,8 @@ static const CGFloat SL_MENU_Y = 75.0f;
 - (id) initScoreLayer:(ScoreInfo)scoreInfo
 {
     if ((self = [super init])) {
+        
+        delegate_ = nil;
         
         CCSprite *sprite = [CCSprite spriteWithFile:@"Score Menu Frame.png"];
         sprite.position = ccp(0, 0);
@@ -118,17 +123,7 @@ static const CGFloat SL_MENU_Y = 75.0f;
 
 - (void) buttonClicked:(Button *)button
 {
-    switch (button.numID) {
-        case kButtonMenu:
-            
-            break;
-        case kButtonNext:
-            break;
-        case kButtonReplay:
-            break;
-        default:
-            break;
-    }       
+    [delegate_ scoreLayerMenuItemSelected:button];
 }
 
 

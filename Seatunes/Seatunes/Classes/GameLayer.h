@@ -9,10 +9,10 @@
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "KeyboardDelegate.h"
 #import "MenuDelegate.h"
 #import "ButtonDelegate.h"
 #import "GameLogicDelegate.h"
+#import "ScoreLayerDelegate.h"
 
 @class Keyboard;
 @class Instructor;
@@ -22,7 +22,7 @@
 @class GameLogic;
 @class ScoreLayer;
 
-@interface GameLayer : CCLayer <KeyboardDelegate, MenuDelegate, ButtonDelegate, GameLogicDelegate> {
+@interface GameLayer : CCLayer <MenuDelegate, ButtonDelegate, GameLogicDelegate, ScoreLayerDelegate> {
  
     GameLogic *gameLogic_;
     
@@ -52,6 +52,8 @@
 + (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName;
 
 - (id) initWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName;
+
+- (void) menuSelection:(Button *)button;
 
 - (void) showSideMenu;
 
