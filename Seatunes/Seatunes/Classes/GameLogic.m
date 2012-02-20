@@ -10,22 +10,27 @@
 #import "Keyboard.h"
 #import "Instructor.h"
 #import "SpeechReader.h"
+#import "Utility.h"
 
 @implementation GameLogic
 
-static const CGFloat GL_BUBBLE_X = 620.0f;
-static const CGFloat GL_BUBBLE_Y = 500.0f;
+static const CGFloat GL_BUBBLE_X = 630.0f;
+static const CGFloat GL_BUBBLE_Y = 600.0f;
 
 @synthesize delegate = delegate_;
 
 + (id) gameLogic
 {
-    return [[[self alloc] initGameLogic] autorelease];
+    NSAssert(NO, @"Constructor must be implemented in derived class");
+    return nil;
 }
 
-- (id) initGameLogic
+- (id) initGameLogic:(DifficultyType)difficulty
 {
     if ((self = [super init])) {
+        
+        NSString *key = [Utility difficultyPlayedKeyFromEnum:kDifficultyEasy];
+        isFirstPlay_ = ![[NSUserDefaults standardUserDefaults] boolForKey:key];        
         
         delegate_ = nil;
         keyboard_ = nil;

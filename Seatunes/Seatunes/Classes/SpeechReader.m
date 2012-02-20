@@ -16,7 +16,7 @@ static const NSUInteger SR_CHARS_PER_ROW = 35;
 static const NSUInteger SR_NUM_ROWS = 6;
 static const CGFloat SR_ROW_HEIGHT = 40.0f;
 static const CGFloat SR_TEXT_OFFSET_X = -180.0f;
-static const CGFloat SR_TEXT_OFFSET_Y = 150.0f;
+static const CGFloat SR_TEXT_OFFSET_Y = 80.0f;
 
 @synthesize delegate = delegate_;
 
@@ -58,6 +58,8 @@ static const CGFloat SR_TEXT_OFFSET_Y = 150.0f;
     [super dealloc];
 }
 
+const static CGFloat BUB_TM = 20.0f;
+
 - (void) createBubble
 {
     SpeechBubbleDim bubbleDim;
@@ -74,20 +76,20 @@ static const CGFloat SR_TEXT_OFFSET_Y = 150.0f;
         // If the last text
         if (currentSpeechIndex_ == [speeches_ count] - 1) {
             if (tapRequired_) {
-                speechBubble = [SpeechBubble timedClickSpeechBubble:bubbleDim fullScreenTap:YES time:2.0f];            
+                speechBubble = [SpeechBubble timedClickSpeechBubble:bubbleDim fullScreenTap:YES time:BUB_TM];            
             }
             else {
-                speechBubble = [SpeechBubble timedSpeechBubble:bubbleDim fullScreenTap:YES time:2.0f];
+                speechBubble = [SpeechBubble timedSpeechBubble:bubbleDim fullScreenTap:YES time:BUB_TM];
             }
         }
         // Not the last text
         else {
-            speechBubble = [SpeechBubble timedSpeechBubble:bubbleDim fullScreenTap:YES time:2.0f];
+            speechBubble = [SpeechBubble timedSpeechBubble:bubbleDim fullScreenTap:YES time:BUB_TM];
         }
         
         NSString *text = [speeches_ objectAtIndex:currentSpeechIndex_];
         speechBubble.delegate = self;
-        [speechBubble setTextWithTTF:text fontName:@"Arial" fontSize:24];
+        [speechBubble setTextWithBMFont:text fntFile:@"Dialogue Font.fnt"];
         [self addChild:speechBubble];
         currentSpeechIndex_++;
     }

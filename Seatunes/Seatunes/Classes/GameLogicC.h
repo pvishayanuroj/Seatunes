@@ -29,11 +29,13 @@
     
     NSMutableArray *queue_;
     
+    NSMutableArray *notesHit_;    
+    
+    NSUInteger playerNoteIndex_;    
+    
     NSUInteger numWrongNotes_;    
     
-    BOOL ignoreInput_;
-    
-    BOOL isFirstPlay_;    
+    BOOL ignoreInput_; 
     
 }
 
@@ -44,5 +46,7 @@
 - (void) startSection;
 
 - (void) endSong;
+
+- (void) runDelayedEndSpeech;
 
 @end

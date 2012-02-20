@@ -16,6 +16,7 @@
 #import "GameLogicA.h"
 #import "GameLogicB.h"
 #import "GameLogicC.h"
+#import "ScoreLayer.h"
 #import "Menu.h"
 #import "Button.h"
 #import "Utility.h"
@@ -23,18 +24,23 @@
 
 @implementation GameLayer
 
-const static CGFloat GL_INSTRUCTOR_X = 200.0f;
-const static CGFloat GL_INSTRUCTOR_Y = 550.0f;
-const static CGFloat GL_KEYBOARD_X = 100.0f;
-const static CGFloat GL_KEYBOARD_Y = 100.0f;
+static const CGFloat GL_INSTRUCTOR_X = 200.0f;
+static const CGFloat GL_INSTRUCTOR_Y = 550.0f;
+static const CGFloat GL_KEYBOARD_X = 100.0f;
+static const CGFloat GL_KEYBOARD_Y = 100.0f;
 
-const static CGFloat GL_SIDEMENU_BUTTON_X = 970.0f;
-const static CGFloat GL_SIDEMENU_BUTTON_Y = 720.0f;
-const static CGFloat GL_SIDEMENU_ROTATION = 180.0f;
-const static CGFloat GL_SIDEMENU_X = 1130.0f;
-const static CGFloat GL_SIDEMENU_Y = 550.0f;
-const static CGFloat GL_SIDEMENU_MOVE_TIME = 0.5f;
-const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
+static const CGFloat GL_SIDEMENU_BUTTON_X = 970.0f;
+static const CGFloat GL_SIDEMENU_BUTTON_Y = 720.0f;
+static const CGFloat GL_SIDEMENU_ROTATION = 180.0f;
+static const CGFloat GL_SIDEMENU_X = 1130.0f;
+static const CGFloat GL_SIDEMENU_Y = 550.0f;
+static const CGFloat GL_SIDEMENU_MOVE_TIME = 0.5f;
+static const CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
+
+static const CGFloat GL_SCOREMENU_X = 0.0f;
+static const CGFloat GL_SCOREMENU_Y = -430.0f;
+static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
+
 
 + (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName
 {
@@ -66,8 +72,8 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         [sideMenu_ addMenuBackground:@"Side Menu.png" pos:ccp(0, -140.0f)];
         
         Button *nextButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Next Button.png" scale:0.9f];
-        Button *replayButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Replay Button.png" scale:0.9f];
-        Button *menuButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Menu Button.png" scale:0.9f];        
+        Button *replayButton = [ScaledImageButton scaledImageButton:kButtonReplay image:@"Replay Button.png" scale:0.9f];
+        Button *menuButton = [ScaledImageButton scaledImageButton:kButtonMenu image:@"Menu Button.png" scale:0.9f];        
         
         [sideMenu_ addMenuItem:nextButton];
         [sideMenu_ addMenuItem:replayButton];
@@ -101,7 +107,7 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         gameLogic_.delegate = self; 
         [gameLogic_ setInstructor:instructor_];
         [gameLogic_ setKeyboard:keyboard_];
-        [self addChild:gameLogic_];
+        [self addChild:gameLogic_];        
     }
     return self;
 }
@@ -142,12 +148,12 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 
 - (void) songComplete:(ScoreInfo)scoreInfo
 {
-    NSLog(@"song done");
-    
     [DataUtility saveSongScore:songName_ score:scoreInfo.score];
     
     NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty_];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];
+    
+    [self showScoreMenu:scoreInfo];
 }
 
 - (void) buttonClicked:(Button *)button
@@ -183,7 +189,7 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 }
 
 - (void) showSideMenu
-{
+{ 
     if (!sideMenuMoving_) {
         sideMenuMoving_ = YES;
         
@@ -224,6 +230,19 @@ const static CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 {
     sideMenuMoving_ = NO;
     sideMenuOpen_ = NO;    
+}
+
+- (void) showScoreMenu:(ScoreInfo)scoreInfo
+{
+    sideMenuButton_.isClickable = NO;
+    keyboard_.isClickable = NO;
+    
+    ScoreLayer *scoreLayer = [ScoreLayer scoreLayer:scoreInfo];
+    scoreLayer.position = ccp(GL_SCOREMENU_X, GL_SCOREMENU_Y);
+    [self addChild:scoreLayer];
+    
+    CCActionInterval *move = [CCMoveBy actionWithDuration:GL_SCOREMENU_MOVE_TIME position:ccp(GL_SCOREMENU_X, -GL_SCOREMENU_Y)];
+    [scoreLayer runAction:[CCSequence actions:move, nil]];    
 }
 
 - (void) pauseGame

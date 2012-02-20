@@ -50,7 +50,7 @@
         
         textContainer_ = [[NSMutableArray arrayWithCapacity:5] retain];
         
-        sprite_ = [[CCSprite spriteWithFile:@"Speech Bubble.png"] retain];
+        sprite_ = [[CCSprite spriteWithFile:@"Speech Bubble Large.png"] retain];
         [self addChild:sprite_];
         
     }
@@ -199,7 +199,7 @@
 {
     NSString *remainder = [self parseText:string];
     
-    NSUInteger rowNum = 0;
+    NSInteger rowNum = 0;
     for (NSArray *row in textContainer_) {
         
         NSString *text = [NSString string];        
@@ -207,8 +207,10 @@
             text = [text stringByAppendingFormat:@"%@ ", word];
         }
         
+        NSLog(@"%@", text);
         CCLabelBMFont *label = [CCLabelBMFont labelWithString:text fntFile:fntFile];
         label.position = ccp(dim_.textOffset.x, -rowNum * dim_.rowHeight + dim_.textOffset.y);
+        DebugPoint(@"pt", label.position);
         label.anchorPoint = ccp(0, 0.5f);
         [self addChild:label];
         

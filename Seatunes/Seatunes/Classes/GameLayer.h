@@ -20,13 +20,7 @@
 @class Menu;
 @class Button;
 @class GameLogic;
-
-enum {
-    kButtonSideMenu,
-    kButtonNext,
-    kButtonReplay,
-    kButtonMenu
-};
+@class ScoreLayer;
 
 @interface GameLayer : CCLayer <KeyboardDelegate, MenuDelegate, ButtonDelegate, GameLogicDelegate> {
  
@@ -62,6 +56,8 @@ enum {
 - (void) showSideMenu;
 
 - (void) hideSideMenu;
+
+- (void) showScoreMenu:(ScoreInfo)scoreInfo;
 
 - (void) pauseGame;
 

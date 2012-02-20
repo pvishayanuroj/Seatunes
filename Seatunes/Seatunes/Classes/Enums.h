@@ -98,7 +98,8 @@ typedef enum {
     kHardLoss,
     kHardFinish,
     kNextSection,
-    kHardPlay
+    kHardPlay,
+    kSongComplete
 } SpeechType;
 
 typedef struct {
@@ -106,3 +107,10 @@ typedef struct {
     NSUInteger notesHit;
     ScoreType score;
 } ScoreInfo;
+
+enum {
+    kButtonSideMenu,
+    kButtonNext,
+    kButtonReplay,
+    kButtonMenu
+};

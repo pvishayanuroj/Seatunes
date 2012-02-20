@@ -253,4 +253,44 @@
     return notes;
 }
 
++ (NSUInteger) countNumNotes:(NSArray *)notes
+{
+    NSUInteger count = 0;
+    for (NSNumber *note in notes) {
+        if ([note integerValue] != kBlankNote) {
+            count++;
+        }
+    }
+    return count;
+}
+
++ (NSUInteger) countNumNotesFromSections:(NSArray *)sections
+{
+    NSUInteger count = 0;
+    for (NSArray *section in sections) {
+        count += [Utility countNumNotes:section];
+    }
+    return count;
+}
+
++ (NSMutableArray *) generateBoolArray:(BOOL)val size:(NSUInteger)size
+{
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:size];
+    for (NSUInteger i = 0; i < size; ++i) {
+        [array addObject:[NSNumber numberWithBool:val]];
+    }
+    return array;
+}
+
++ (NSUInteger) countNumBool:(BOOL)val array:(NSArray *)array
+{
+    NSUInteger count = 0;
+    for (NSNumber *number in array) {
+        if ([number boolValue] == val) {
+            count++;
+        }
+    }
+    return count;
+}
+
 @end

@@ -25,6 +25,8 @@
     
     ScoreInfo scoreInfo_;
     
+    BOOL isFirstPlay_;
+    
     id <GameLogicDelegate> delegate_;
 }
 
@@ -32,7 +34,7 @@
 
 + (id) gameLogic;
 
-- (id) initGameLogic;
+- (id) initGameLogic:(DifficultyType)difficulty;
 
 - (void) setKeyboard:(Keyboard *)keyboard;
 

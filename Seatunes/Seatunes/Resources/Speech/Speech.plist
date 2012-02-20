@@ -108,5 +108,14 @@
 			<string>Ok, I&apos;m ready when you are!</string>
 		</array>
 	</array>
+	<key>Song Complete</key>
+	<array>
+		<array>
+			<string>You made it through the song, good job!</string>
+		</array>
+		<array>
+			<string>I knew you could do it!</string>
+		</array>
+	</array>
 </dict>
 </plist>

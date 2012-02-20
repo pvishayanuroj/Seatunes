@@ -25,8 +25,9 @@
     
     NSMutableArray *queue_;
     
-    BOOL isFirstPlay_;    
+    NSMutableArray *notesHit_;    
     
+    NSUInteger playerNoteIndex_;
 }
 
 + (id) gameLogicB:(NSString *)songName;

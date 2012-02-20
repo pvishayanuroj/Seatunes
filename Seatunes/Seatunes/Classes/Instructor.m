@@ -175,7 +175,8 @@ static const CGFloat IN_NOTE_Y = -60.0f;
 - (BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {	
     if (clickable_ && [self containsTouchLocation:touch]) {
-        [self playNote:kC4];
+        NSInteger note = arc4random() % 8;
+        [self playNote:note];
         return YES;
     }
     return NO;

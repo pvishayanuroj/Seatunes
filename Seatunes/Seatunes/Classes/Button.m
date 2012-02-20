@@ -269,8 +269,7 @@
 
 @implementation ScaledImageButton
 
-static const CGFloat SIB_UNSCALED = 1.0f;
-static const CGFloat SIB_SCALED = 1.1f;
+static const CGFloat SIB_SCALE_FACTOR = 1.1f;
 
 + (id) scaledImageButton:(NSUInteger)numID image:(NSString *)image
 {
@@ -286,6 +285,7 @@ static const CGFloat SIB_SCALED = 1.1f;
 {
     if ((self = [super initButton:numID toggle:NO])) {
         
+        origScale_ = scale;
         sprite_ = [[CCSprite spriteWithFile:image] retain];        
         sprite_.scale = scale;
         [self addChild:sprite_];        
@@ -304,7 +304,7 @@ static const CGFloat SIB_SCALED = 1.1f;
 - (void) selectButton
 {
     isSelected_ = YES;
-    sprite_.scale = SIB_SCALED;    
+    sprite_.scale = origScale_ * SIB_SCALE_FACTOR;    
     
     [super selectButton];
 }
@@ -312,7 +312,7 @@ static const CGFloat SIB_SCALED = 1.1f;
 - (void) unselectButton
 {
     isSelected_ = NO;
-    sprite_.scale = SIB_UNSCALED;
+    sprite_.scale = origScale_;
     
     [super unselectButton];    
 }

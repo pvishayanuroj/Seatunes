@@ -38,4 +38,12 @@
 
 + (NSArray *) loadFlattenedSong:(NSString *)songName;
 
++ (NSUInteger) countNumNotes:(NSArray *)notes;
+
++ (NSUInteger) countNumNotesFromSections:(NSArray *)sections;
+
++ (NSMutableArray *) generateBoolArray:(BOOL)val size:(NSUInteger)size;
+
++ (NSUInteger) countNumBool:(BOOL)val array:(NSArray *)array;
+
 @end

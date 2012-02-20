@@ -8,42 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		041E5F3414DE39460084BC0A /* SpeechBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 041E5F3314DE39450084BC0A /* SpeechBubble.m */; };
-		041E5F3814DE40740084BC0A /* Game Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F3514DE40740084BC0A /* Game Background.png */; };
-		041E5F3914DE40740084BC0A /* Menu Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F3614DE40740084BC0A /* Menu Background.png */; };
-		041E5F4D14DF28580084BC0A /* Easy Button Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F4C14DF28580084BC0A /* Easy Button Selected.png */; };
-		041E5F6014DF286E0084BC0A /* American Classics.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F4E14DF28630084BC0A /* American Classics.png */; };
-		041E5F6114DF286E0084BC0A /* Difficulty Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F4F14DF28630084BC0A /* Difficulty Text.png */; };
-		041E5F6214DF286E0084BC0A /* Easy Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5014DF28640084BC0A /* Easy Button.png */; };
-		041E5F6314DF286E0084BC0A /* Empty Star-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5114DF28650084BC0A /* Empty Star-hd.png */; };
-		041E5F6414DF286E0084BC0A /* Empty Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5214DF28650084BC0A /* Empty Star.png */; };
-		041E5F6514DF286E0084BC0A /* Full Star-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5314DF28660084BC0A /* Full Star-hd.png */; };
-		041E5F6614DF286E0084BC0A /* Full Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5414DF28660084BC0A /* Full Star.png */; };
-		041E5F6714DF286E0084BC0A /* Hard Button Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5514DF28660084BC0A /* Hard Button Selected.png */; };
-		041E5F6814DF286E0084BC0A /* Hard Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5614DF28670084BC0A /* Hard Button.png */; };
-		041E5F6914DF286E0084BC0A /* Medium Button Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5714DF28680084BC0A /* Medium Button Selected.png */; };
-		041E5F6A14DF286E0084BC0A /* Medium Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5814DF28680084BC0A /* Medium Button.png */; };
-		041E5F6B14DF286E0084BC0A /* Menu Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5914DF28690084BC0A /* Menu Button.png */; };
-		041E5F6C14DF286E0084BC0A /* Next Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5A14DF28690084BC0A /* Next Button.png */; };
-		041E5F6D14DF286E0084BC0A /* Nursery Songs.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5B14DF28690084BC0A /* Nursery Songs.png */; };
-		041E5F6E14DF286E0084BC0A /* Replay Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5C14DF286C0084BC0A /* Replay Button.png */; };
-		041E5F6F14DF286E0084BC0A /* Row Stripe.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5D14DF286D0084BC0A /* Row Stripe.png */; };
-		041E5F7014DF286E0084BC0A /* Side Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5E14DF286D0084BC0A /* Side Menu.png */; };
-		041E5F7114DF286E0084BC0A /* Speech Bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F5F14DF286D0084BC0A /* Speech Bubble.png */; };
 		041E5F7414DF5C8A0084BC0A /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 041E5F7314DF5C870084BC0A /* Menu.m */; };
-		041E5F7714DF7CBD0084BC0A /* Starfish Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 041E5F7614DF7CBC0084BC0A /* Starfish Button.png */; };
 		042FCA4314E8C97600E34155 /* DataUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 042FCA4214E8C97600E34155 /* DataUtility.m */; };
 		042FCA4714EA082200E34155 /* DifficultyMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 042FCA4614EA082100E34155 /* DifficultyMenuScene.m */; };
 		042FCA4A14EA084000E34155 /* BuyMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 042FCA4914EA084000E34155 /* BuyMenuScene.m */; };
+		042FCA9F14F14CED00E34155 /* ScoreLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 042FCA9E14F14CEA00E34155 /* ScoreLayer.m */; };
+		042FCAA614F155FF00E34155 /* MenuFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAA414F155FF00E34155 /* MenuFont.fnt */; };
+		042FCAA714F155FF00E34155 /* MenuFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAA514F155FF00E34155 /* MenuFont.png */; };
+		042FCAC314F1F21300E34155 /* American Classics Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAA814F1F21300E34155 /* American Classics Pack.png */; };
+		042FCAC414F1F21300E34155 /* Bubble Burst.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAA914F1F21300E34155 /* Bubble Burst.png */; };
+		042FCAC514F1F21300E34155 /* Buy Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAA14F1F21300E34155 /* Buy Text.png */; };
+		042FCAC614F1F21300E34155 /* Credits Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAB14F1F21300E34155 /* Credits Text.png */; };
+		042FCAC714F1F21300E34155 /* Difficulty Menu Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAC14F1F21300E34155 /* Difficulty Menu Frame.png */; };
+		042FCAC814F1F21300E34155 /* Difficulty Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAD14F1F21300E34155 /* Difficulty Text.png */; };
+		042FCAC914F1F21300E34155 /* Empty Star-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAE14F1F21300E34155 /* Empty Star-hd.png */; };
+		042FCACA14F1F21300E34155 /* Empty Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAF14F1F21300E34155 /* Empty Star.png */; };
+		042FCACB14F1F21300E34155 /* Exercise Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB014F1F21300E34155 /* Exercise Pack.png */; };
+		042FCACC14F1F21300E34155 /* Full Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB114F1F21300E34155 /* Full Star.png */; };
+		042FCACD14F1F21300E34155 /* Game Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB214F1F21300E34155 /* Game Background.png */; };
+		042FCACE14F1F21300E34155 /* Menu Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB314F1F21300E34155 /* Menu Background.png */; };
+		042FCACF14F1F21300E34155 /* Menu Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB414F1F21300E34155 /* Menu Button.png */; };
+		042FCAD014F1F21300E34155 /* Menu Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB514F1F21300E34155 /* Menu Frame.png */; };
+		042FCAD114F1F21300E34155 /* Next Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB614F1F21300E34155 /* Next Button.png */; };
+		042FCAD214F1F21300E34155 /* Nursery Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB714F1F21300E34155 /* Nursery Pack.png */; };
+		042FCAD314F1F21300E34155 /* Nursery Songs.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB814F1F21300E34155 /* Nursery Songs.png */; };
+		042FCAD414F1F21300E34155 /* Play Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB914F1F21300E34155 /* Play Text.png */; };
+		042FCAD514F1F21300E34155 /* Replay Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCABA14F1F21300E34155 /* Replay Button.png */; };
+		042FCAD614F1F21300E34155 /* Row Stripe.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCABB14F1F21300E34155 /* Row Stripe.png */; };
+		042FCAD714F1F21300E34155 /* Score Menu Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCABC14F1F21300E34155 /* Score Menu Frame.png */; };
+		042FCAD814F1F21300E34155 /* Side Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCABD14F1F21300E34155 /* Side Menu.png */; };
+		042FCAD914F1F21300E34155 /* Slider Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCABE14F1F21300E34155 /* Slider Box.png */; };
+		042FCADA14F1F21300E34155 /* Speech Bubble Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCABF14F1F21300E34155 /* Speech Bubble Large.png */; };
+		042FCADB14F1F21300E34155 /* Speech Bubble Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAC014F1F21300E34155 /* Speech Bubble Small.png */; };
+		042FCADD14F1F21300E34155 /* Starfish Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAC214F1F21300E34155 /* Starfish Button.png */; };
 		048508D714D4D4DC008BBA10 /* PlayMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508D614D4D4DC008BBA10 /* PlayMenuScene.m */; };
 		048508DB14D4D62D008BBA10 /* SliderBoxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */; };
 		048508DF14D4D701008BBA10 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DD14D4D701008BBA10 /* Button.m */; };
 		048508E414D4E4E6008BBA10 /* ScrollingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508E314D4E4E5008BBA10 /* ScrollingMenu.m */; };
 		048508E714D4E50D008BBA10 /* ScrollingMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */; };
-		048BBA7E14D534780086EABC /* Buy Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBA7714D534780086EABC /* Buy Text.png */; };
-		048BBA7F14D534780086EABC /* Credits Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBA7814D534780086EABC /* Credits Text.png */; };
-		048BBA8014D534780086EABC /* Exercise Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBA7914D534780086EABC /* Exercise Pack.png */; };
-		048BBA8214D534780086EABC /* Play Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBA7B14D534780086EABC /* Play Text.png */; };
-		048BBA8314D534780086EABC /* Slider Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBA7C14D534780086EABC /* Slider Box.png */; };
 		048BBAC014D5368C0086EABC /* American Classics Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAAC14D5368B0086EABC /* American Classics Pack.plist */; };
 		048BBAC114D5368C0086EABC /* Exercise Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAAE14D5368B0086EABC /* Exercise Pack.plist */; };
 		048BBAC214D5368C0086EABC /* Alphabet Song.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB014D5368B0086EABC /* Alphabet Song.plist */; };
@@ -62,8 +64,6 @@
 		048BBACF14D5368C0086EABC /* Three Blind Mice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABD14D5368C0086EABC /* Three Blind Mice.plist */; };
 		048BBAD014D5368C0086EABC /* Twinkle Twinkle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABE14D5368C0086EABC /* Twinkle Twinkle.plist */; };
 		048BBAD114D5368C0086EABC /* Nursery Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABF14D5368C0086EABC /* Nursery Pack.plist */; };
-		048BBAD414D539D90086EABC /* American Classics Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAD214D539D90086EABC /* American Classics Pack.png */; };
-		048BBAD514D539D90086EABC /* Nursery Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAD314D539D90086EABC /* Nursery Pack.png */; };
 		04B32C9514DDB1DB004AA98E /* GameLogicB.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9414DDB1DA004AA98E /* GameLogicB.m */; };
 		04B32C9D14DDDBF1004AA98E /* GameLogicA.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9C14DDDBF0004AA98E /* GameLogicA.m */; };
 		04B32CA014DDDC18004AA98E /* GameLogicC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9F14DDDC17004AA98E /* GameLogicC.m */; };
@@ -101,13 +101,13 @@
 		04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A914C4C7090087DA18 /* G4-Whirly.m4a */; };
 		04D3318E14E2212200DD82D4 /* SpeechReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3318D14E2212200DD82D4 /* SpeechReader.m */; };
 		04D331BD14E6B53700DD82D4 /* SpeechManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D331BC14E6B53700DD82D4 /* SpeechManager.m */; };
-		04D331C714E6DDCC00DD82D4 /* Menu Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D331C614E6DDCC00DD82D4 /* Menu Frame.png */; };
 		04D331CB14E6DDD600DD82D4 /* SeatunesFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 04D331C914E6DDD600DD82D4 /* SeatunesFont.fnt */; };
 		04D331CC14E6DDD600DD82D4 /* SeatunesFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D331CA14E6DDD600DD82D4 /* SeatunesFont.png */; };
 		04D331CF14E7056700DD82D4 /* Speech.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D331CE14E7056700DD82D4 /* Speech.plist */; };
 		04D331D214E7507200DD82D4 /* GameLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D331D114E7507100DD82D4 /* GameLogic.m */; };
-		04D331D414E8081A00DD82D4 /* Bubble Burst.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D331D314E8081A00DD82D4 /* Bubble Burst.png */; };
 		04D331E314E8A25400DD82D4 /* CCNode+PauseResume.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D331E214E8A24F00DD82D4 /* CCNode+PauseResume.m */; };
+		04D3E45C14F2025300FB0928 /* Dialogue Font.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 04D3E45A14F2025300FB0928 /* Dialogue Font.fnt */; };
+		04D3E45D14F2025300FB0928 /* Dialogue Font.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D3E45B14F2025300FB0928 /* Dialogue Font.png */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
 		DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B714D458B800D1437B /* MainMenuScene.m */; };
@@ -252,31 +252,9 @@
 		041E5F3114DE34100084BC0A /* InstructorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructorDelegate.h; path = Classes/InstructorDelegate.h; sourceTree = "<group>"; };
 		041E5F3214DE39440084BC0A /* SpeechBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechBubble.h; path = Classes/SpeechBubble.h; sourceTree = "<group>"; };
 		041E5F3314DE39450084BC0A /* SpeechBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeechBubble.m; path = Classes/SpeechBubble.m; sourceTree = "<group>"; };
-		041E5F3514DE40740084BC0A /* Game Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Background.png"; sourceTree = "<group>"; };
-		041E5F3614DE40740084BC0A /* Menu Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Background.png"; sourceTree = "<group>"; };
-		041E5F4C14DF28580084BC0A /* Easy Button Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Easy Button Selected.png"; sourceTree = "<group>"; };
-		041E5F4E14DF28630084BC0A /* American Classics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics.png"; sourceTree = "<group>"; };
-		041E5F4F14DF28630084BC0A /* Difficulty Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Difficulty Text.png"; sourceTree = "<group>"; };
-		041E5F5014DF28640084BC0A /* Easy Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Easy Button.png"; sourceTree = "<group>"; };
-		041E5F5114DF28650084BC0A /* Empty Star-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty Star-hd.png"; sourceTree = "<group>"; };
-		041E5F5214DF28650084BC0A /* Empty Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty Star.png"; sourceTree = "<group>"; };
-		041E5F5314DF28660084BC0A /* Full Star-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Full Star-hd.png"; sourceTree = "<group>"; };
-		041E5F5414DF28660084BC0A /* Full Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Full Star.png"; sourceTree = "<group>"; };
-		041E5F5514DF28660084BC0A /* Hard Button Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hard Button Selected.png"; sourceTree = "<group>"; };
-		041E5F5614DF28670084BC0A /* Hard Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hard Button.png"; sourceTree = "<group>"; };
-		041E5F5714DF28680084BC0A /* Medium Button Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Medium Button Selected.png"; sourceTree = "<group>"; };
-		041E5F5814DF28680084BC0A /* Medium Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Medium Button.png"; sourceTree = "<group>"; };
-		041E5F5914DF28690084BC0A /* Menu Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Button.png"; sourceTree = "<group>"; };
-		041E5F5A14DF28690084BC0A /* Next Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next Button.png"; sourceTree = "<group>"; };
-		041E5F5B14DF28690084BC0A /* Nursery Songs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Songs.png"; sourceTree = "<group>"; };
-		041E5F5C14DF286C0084BC0A /* Replay Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Replay Button.png"; sourceTree = "<group>"; };
-		041E5F5D14DF286D0084BC0A /* Row Stripe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Row Stripe.png"; sourceTree = "<group>"; };
-		041E5F5E14DF286D0084BC0A /* Side Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Side Menu.png"; sourceTree = "<group>"; };
-		041E5F5F14DF286D0084BC0A /* Speech Bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble.png"; sourceTree = "<group>"; };
 		041E5F7214DF5C850084BC0A /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Menu.h; path = Classes/Menu.h; sourceTree = "<group>"; };
 		041E5F7314DF5C870084BC0A /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Menu.m; path = Classes/Menu.m; sourceTree = "<group>"; };
 		041E5F7514DF5CA40084BC0A /* MenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuDelegate.h; path = Classes/MenuDelegate.h; sourceTree = "<group>"; };
-		041E5F7614DF7CBC0084BC0A /* Starfish Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Starfish Button.png"; sourceTree = "<group>"; };
 		042FCA4114E8C97600E34155 /* DataUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataUtility.h; path = Classes/DataUtility.h; sourceTree = "<group>"; };
 		042FCA4214E8C97600E34155 /* DataUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataUtility.m; path = Classes/DataUtility.m; sourceTree = "<group>"; };
 		042FCA4514EA082100E34155 /* DifficultyMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DifficultyMenuScene.h; path = Classes/DifficultyMenuScene.h; sourceTree = "<group>"; };
@@ -284,6 +262,36 @@
 		042FCA4814EA084000E34155 /* BuyMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyMenuScene.h; path = Classes/BuyMenuScene.h; sourceTree = "<group>"; };
 		042FCA4914EA084000E34155 /* BuyMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyMenuScene.m; path = Classes/BuyMenuScene.m; sourceTree = "<group>"; };
 		042FCA4B14EA096700E34155 /* GameLogicDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicDelegate.h; path = Classes/GameLogicDelegate.h; sourceTree = "<group>"; };
+		042FCA9D14F14CE700E34155 /* ScoreLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreLayer.h; path = Classes/ScoreLayer.h; sourceTree = "<group>"; };
+		042FCA9E14F14CEA00E34155 /* ScoreLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreLayer.m; path = Classes/ScoreLayer.m; sourceTree = "<group>"; };
+		042FCAA414F155FF00E34155 /* MenuFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MenuFont.fnt; sourceTree = "<group>"; };
+		042FCAA514F155FF00E34155 /* MenuFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuFont.png; sourceTree = "<group>"; };
+		042FCAA814F1F21300E34155 /* American Classics Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics Pack.png"; sourceTree = "<group>"; };
+		042FCAA914F1F21300E34155 /* Bubble Burst.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble Burst.png"; sourceTree = "<group>"; };
+		042FCAAA14F1F21300E34155 /* Buy Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Buy Text.png"; sourceTree = "<group>"; };
+		042FCAAB14F1F21300E34155 /* Credits Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Credits Text.png"; sourceTree = "<group>"; };
+		042FCAAC14F1F21300E34155 /* Difficulty Menu Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Difficulty Menu Frame.png"; sourceTree = "<group>"; };
+		042FCAAD14F1F21300E34155 /* Difficulty Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Difficulty Text.png"; sourceTree = "<group>"; };
+		042FCAAE14F1F21300E34155 /* Empty Star-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty Star-hd.png"; sourceTree = "<group>"; };
+		042FCAAF14F1F21300E34155 /* Empty Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty Star.png"; sourceTree = "<group>"; };
+		042FCAB014F1F21300E34155 /* Exercise Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exercise Pack.png"; sourceTree = "<group>"; };
+		042FCAB114F1F21300E34155 /* Full Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Full Star.png"; sourceTree = "<group>"; };
+		042FCAB214F1F21300E34155 /* Game Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Background.png"; sourceTree = "<group>"; };
+		042FCAB314F1F21300E34155 /* Menu Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Background.png"; sourceTree = "<group>"; };
+		042FCAB414F1F21300E34155 /* Menu Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Button.png"; sourceTree = "<group>"; };
+		042FCAB514F1F21300E34155 /* Menu Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Frame.png"; sourceTree = "<group>"; };
+		042FCAB614F1F21300E34155 /* Next Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next Button.png"; sourceTree = "<group>"; };
+		042FCAB714F1F21300E34155 /* Nursery Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack.png"; sourceTree = "<group>"; };
+		042FCAB814F1F21300E34155 /* Nursery Songs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Songs.png"; sourceTree = "<group>"; };
+		042FCAB914F1F21300E34155 /* Play Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play Text.png"; sourceTree = "<group>"; };
+		042FCABA14F1F21300E34155 /* Replay Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Replay Button.png"; sourceTree = "<group>"; };
+		042FCABB14F1F21300E34155 /* Row Stripe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Row Stripe.png"; sourceTree = "<group>"; };
+		042FCABC14F1F21300E34155 /* Score Menu Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Score Menu Frame.png"; sourceTree = "<group>"; };
+		042FCABD14F1F21300E34155 /* Side Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Side Menu.png"; sourceTree = "<group>"; };
+		042FCABE14F1F21300E34155 /* Slider Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slider Box.png"; sourceTree = "<group>"; };
+		042FCABF14F1F21300E34155 /* Speech Bubble Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble Large.png"; sourceTree = "<group>"; };
+		042FCAC014F1F21300E34155 /* Speech Bubble Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble Small.png"; sourceTree = "<group>"; };
+		042FCAC214F1F21300E34155 /* Starfish Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Starfish Button.png"; sourceTree = "<group>"; };
 		048508D514D4D4DC008BBA10 /* PlayMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMenuScene.h; path = Classes/PlayMenuScene.h; sourceTree = "<group>"; };
 		048508D614D4D4DC008BBA10 /* PlayMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMenuScene.m; path = Classes/PlayMenuScene.m; sourceTree = "<group>"; };
 		048508D914D4D62D008BBA10 /* SliderBoxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderBoxMenu.h; path = Classes/SliderBoxMenu.h; sourceTree = "<group>"; };
@@ -296,11 +304,6 @@
 		048508E314D4E4E5008BBA10 /* ScrollingMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollingMenu.m; path = Classes/ScrollingMenu.m; sourceTree = "<group>"; };
 		048508E514D4E50D008BBA10 /* ScrollingMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollingMenuItem.h; path = Classes/ScrollingMenuItem.h; sourceTree = "<group>"; };
 		048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollingMenuItem.m; path = Classes/ScrollingMenuItem.m; sourceTree = "<group>"; };
-		048BBA7714D534780086EABC /* Buy Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Buy Text.png"; sourceTree = "<group>"; };
-		048BBA7814D534780086EABC /* Credits Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Credits Text.png"; sourceTree = "<group>"; };
-		048BBA7914D534780086EABC /* Exercise Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exercise Pack.png"; sourceTree = "<group>"; };
-		048BBA7B14D534780086EABC /* Play Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play Text.png"; sourceTree = "<group>"; };
-		048BBA7C14D534780086EABC /* Slider Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slider Box.png"; sourceTree = "<group>"; };
 		048BBAAC14D5368B0086EABC /* American Classics Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "American Classics Pack.plist"; sourceTree = "<group>"; };
 		048BBAAE14D5368B0086EABC /* Exercise Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Exercise Pack.plist"; sourceTree = "<group>"; };
 		048BBAB014D5368B0086EABC /* Alphabet Song.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Alphabet Song.plist"; sourceTree = "<group>"; };
@@ -319,8 +322,6 @@
 		048BBABD14D5368C0086EABC /* Three Blind Mice.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Three Blind Mice.plist"; sourceTree = "<group>"; };
 		048BBABE14D5368C0086EABC /* Twinkle Twinkle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Twinkle Twinkle.plist"; sourceTree = "<group>"; };
 		048BBABF14D5368C0086EABC /* Nursery Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Nursery Pack.plist"; sourceTree = "<group>"; };
-		048BBAD214D539D90086EABC /* American Classics Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics Pack.png"; sourceTree = "<group>"; };
-		048BBAD314D539D90086EABC /* Nursery Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack.png"; sourceTree = "<group>"; };
 		04B32C9314DDB1DA004AA98E /* GameLogicB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicB.h; path = Classes/GameLogicB.h; sourceTree = "<group>"; };
 		04B32C9414DDB1DA004AA98E /* GameLogicB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicB.m; path = Classes/GameLogicB.m; sourceTree = "<group>"; };
 		04B32C9B14DDDBF0004AA98E /* GameLogicA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicA.h; path = Classes/GameLogicA.h; sourceTree = "<group>"; };
@@ -365,15 +366,15 @@
 		04D3319314E3880D00DD82D4 /* SpeechBubbleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechBubbleDelegate.h; path = Classes/SpeechBubbleDelegate.h; sourceTree = "<group>"; };
 		04D331BB14E6B53700DD82D4 /* SpeechManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechManager.h; path = Classes/SpeechManager.h; sourceTree = "<group>"; };
 		04D331BC14E6B53700DD82D4 /* SpeechManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeechManager.m; path = Classes/SpeechManager.m; sourceTree = "<group>"; };
-		04D331C614E6DDCC00DD82D4 /* Menu Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Frame.png"; sourceTree = "<group>"; };
 		04D331C914E6DDD600DD82D4 /* SeatunesFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SeatunesFont.fnt; sourceTree = "<group>"; };
 		04D331CA14E6DDD600DD82D4 /* SeatunesFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SeatunesFont.png; sourceTree = "<group>"; };
 		04D331CE14E7056700DD82D4 /* Speech.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Speech.plist; sourceTree = "<group>"; };
 		04D331D014E7506F00DD82D4 /* GameLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogic.h; path = Classes/GameLogic.h; sourceTree = "<group>"; };
 		04D331D114E7507100DD82D4 /* GameLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogic.m; path = Classes/GameLogic.m; sourceTree = "<group>"; };
-		04D331D314E8081A00DD82D4 /* Bubble Burst.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble Burst.png"; sourceTree = "<group>"; };
 		04D331E114E8A24C00DD82D4 /* CCNode+PauseResume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CCNode+PauseResume.h"; path = "Classes/CCNode+PauseResume.h"; sourceTree = "<group>"; };
 		04D331E214E8A24F00DD82D4 /* CCNode+PauseResume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CCNode+PauseResume.m"; path = "Classes/CCNode+PauseResume.m"; sourceTree = "<group>"; };
+		04D3E45A14F2025300FB0928 /* Dialogue Font.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Dialogue Font.fnt"; sourceTree = "<group>"; };
+		04D3E45B14F2025300FB0928 /* Dialogue Font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dialogue Font.png"; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
 		DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayViewController.m; path = Classes/CocosOverlayViewController.m; sourceTree = "<group>"; };
 		DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayScrollView.h; path = Classes/CocosOverlayScrollView.h; sourceTree = "<group>"; };
@@ -673,37 +674,32 @@
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				04D331D314E8081A00DD82D4 /* Bubble Burst.png */,
-				04D331C614E6DDCC00DD82D4 /* Menu Frame.png */,
-				041E5F7614DF7CBC0084BC0A /* Starfish Button.png */,
-				041E5F4E14DF28630084BC0A /* American Classics.png */,
-				041E5F4F14DF28630084BC0A /* Difficulty Text.png */,
-				041E5F5014DF28640084BC0A /* Easy Button.png */,
-				041E5F5114DF28650084BC0A /* Empty Star-hd.png */,
-				041E5F5214DF28650084BC0A /* Empty Star.png */,
-				041E5F5314DF28660084BC0A /* Full Star-hd.png */,
-				041E5F5414DF28660084BC0A /* Full Star.png */,
-				041E5F5514DF28660084BC0A /* Hard Button Selected.png */,
-				041E5F5614DF28670084BC0A /* Hard Button.png */,
-				041E5F5714DF28680084BC0A /* Medium Button Selected.png */,
-				041E5F5814DF28680084BC0A /* Medium Button.png */,
-				041E5F5914DF28690084BC0A /* Menu Button.png */,
-				041E5F5A14DF28690084BC0A /* Next Button.png */,
-				041E5F5B14DF28690084BC0A /* Nursery Songs.png */,
-				041E5F5C14DF286C0084BC0A /* Replay Button.png */,
-				041E5F5D14DF286D0084BC0A /* Row Stripe.png */,
-				041E5F5E14DF286D0084BC0A /* Side Menu.png */,
-				041E5F5F14DF286D0084BC0A /* Speech Bubble.png */,
-				041E5F4C14DF28580084BC0A /* Easy Button Selected.png */,
-				041E5F3514DE40740084BC0A /* Game Background.png */,
-				041E5F3614DE40740084BC0A /* Menu Background.png */,
-				048BBAD214D539D90086EABC /* American Classics Pack.png */,
-				048BBAD314D539D90086EABC /* Nursery Pack.png */,
-				048BBA7714D534780086EABC /* Buy Text.png */,
-				048BBA7814D534780086EABC /* Credits Text.png */,
-				048BBA7914D534780086EABC /* Exercise Pack.png */,
-				048BBA7B14D534780086EABC /* Play Text.png */,
-				048BBA7C14D534780086EABC /* Slider Box.png */,
+				042FCAA814F1F21300E34155 /* American Classics Pack.png */,
+				042FCAA914F1F21300E34155 /* Bubble Burst.png */,
+				042FCAAA14F1F21300E34155 /* Buy Text.png */,
+				042FCAAB14F1F21300E34155 /* Credits Text.png */,
+				042FCAAC14F1F21300E34155 /* Difficulty Menu Frame.png */,
+				042FCAAD14F1F21300E34155 /* Difficulty Text.png */,
+				042FCAAE14F1F21300E34155 /* Empty Star-hd.png */,
+				042FCAAF14F1F21300E34155 /* Empty Star.png */,
+				042FCAB014F1F21300E34155 /* Exercise Pack.png */,
+				042FCAB114F1F21300E34155 /* Full Star.png */,
+				042FCAB214F1F21300E34155 /* Game Background.png */,
+				042FCAB314F1F21300E34155 /* Menu Background.png */,
+				042FCAB414F1F21300E34155 /* Menu Button.png */,
+				042FCAB514F1F21300E34155 /* Menu Frame.png */,
+				042FCAB614F1F21300E34155 /* Next Button.png */,
+				042FCAB714F1F21300E34155 /* Nursery Pack.png */,
+				042FCAB814F1F21300E34155 /* Nursery Songs.png */,
+				042FCAB914F1F21300E34155 /* Play Text.png */,
+				042FCABA14F1F21300E34155 /* Replay Button.png */,
+				042FCABB14F1F21300E34155 /* Row Stripe.png */,
+				042FCABC14F1F21300E34155 /* Score Menu Frame.png */,
+				042FCABD14F1F21300E34155 /* Side Menu.png */,
+				042FCABE14F1F21300E34155 /* Slider Box.png */,
+				042FCABF14F1F21300E34155 /* Speech Bubble Large.png */,
+				042FCAC014F1F21300E34155 /* Speech Bubble Small.png */,
+				042FCAC214F1F21300E34155 /* Starfish Button.png */,
 			);
 			name = Images;
 			path = Resources/Images;
@@ -762,6 +758,10 @@
 		04D331C814E6DDD600DD82D4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				04D3E45A14F2025300FB0928 /* Dialogue Font.fnt */,
+				04D3E45B14F2025300FB0928 /* Dialogue Font.png */,
+				042FCAA414F155FF00E34155 /* MenuFont.fnt */,
+				042FCAA514F155FF00E34155 /* MenuFont.png */,
 				04D331C914E6DDD600DD82D4 /* SeatunesFont.fnt */,
 				04D331CA14E6DDD600DD82D4 /* SeatunesFont.png */,
 			);
@@ -894,6 +894,8 @@
 				041E5F7214DF5C850084BC0A /* Menu.h */,
 				041E5F7314DF5C870084BC0A /* Menu.m */,
 				041E5F7514DF5CA40084BC0A /* MenuDelegate.h */,
+				042FCA9D14F14CE700E34155 /* ScoreLayer.h */,
+				042FCA9E14F14CEA00E34155 /* ScoreLayer.m */,
 			);
 			path = Seatunes;
 			sourceTree = "<group>";
@@ -1393,11 +1395,6 @@
 				04C093C714C4C7090087DA18 /* G4-Martian.m4a in Resources */,
 				04C093C814C4C7090087DA18 /* G4-PopFlute.m4a in Resources */,
 				04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */,
-				048BBA7E14D534780086EABC /* Buy Text.png in Resources */,
-				048BBA7F14D534780086EABC /* Credits Text.png in Resources */,
-				048BBA8014D534780086EABC /* Exercise Pack.png in Resources */,
-				048BBA8214D534780086EABC /* Play Text.png in Resources */,
-				048BBA8314D534780086EABC /* Slider Box.png in Resources */,
 				048BBAC014D5368C0086EABC /* American Classics Pack.plist in Resources */,
 				048BBAC114D5368C0086EABC /* Exercise Pack.plist in Resources */,
 				048BBAC214D5368C0086EABC /* Alphabet Song.plist in Resources */,
@@ -1416,35 +1413,39 @@
 				048BBACF14D5368C0086EABC /* Three Blind Mice.plist in Resources */,
 				048BBAD014D5368C0086EABC /* Twinkle Twinkle.plist in Resources */,
 				048BBAD114D5368C0086EABC /* Nursery Pack.plist in Resources */,
-				048BBAD414D539D90086EABC /* American Classics Pack.png in Resources */,
-				048BBAD514D539D90086EABC /* Nursery Pack.png in Resources */,
-				041E5F3814DE40740084BC0A /* Game Background.png in Resources */,
-				041E5F3914DE40740084BC0A /* Menu Background.png in Resources */,
-				041E5F4D14DF28580084BC0A /* Easy Button Selected.png in Resources */,
-				041E5F6014DF286E0084BC0A /* American Classics.png in Resources */,
-				041E5F6114DF286E0084BC0A /* Difficulty Text.png in Resources */,
-				041E5F6214DF286E0084BC0A /* Easy Button.png in Resources */,
-				041E5F6314DF286E0084BC0A /* Empty Star-hd.png in Resources */,
-				041E5F6414DF286E0084BC0A /* Empty Star.png in Resources */,
-				041E5F6514DF286E0084BC0A /* Full Star-hd.png in Resources */,
-				041E5F6614DF286E0084BC0A /* Full Star.png in Resources */,
-				041E5F6714DF286E0084BC0A /* Hard Button Selected.png in Resources */,
-				041E5F6814DF286E0084BC0A /* Hard Button.png in Resources */,
-				041E5F6914DF286E0084BC0A /* Medium Button Selected.png in Resources */,
-				041E5F6A14DF286E0084BC0A /* Medium Button.png in Resources */,
-				041E5F6B14DF286E0084BC0A /* Menu Button.png in Resources */,
-				041E5F6C14DF286E0084BC0A /* Next Button.png in Resources */,
-				041E5F6D14DF286E0084BC0A /* Nursery Songs.png in Resources */,
-				041E5F6E14DF286E0084BC0A /* Replay Button.png in Resources */,
-				041E5F6F14DF286E0084BC0A /* Row Stripe.png in Resources */,
-				041E5F7014DF286E0084BC0A /* Side Menu.png in Resources */,
-				041E5F7114DF286E0084BC0A /* Speech Bubble.png in Resources */,
-				041E5F7714DF7CBD0084BC0A /* Starfish Button.png in Resources */,
-				04D331C714E6DDCC00DD82D4 /* Menu Frame.png in Resources */,
 				04D331CB14E6DDD600DD82D4 /* SeatunesFont.fnt in Resources */,
 				04D331CC14E6DDD600DD82D4 /* SeatunesFont.png in Resources */,
 				04D331CF14E7056700DD82D4 /* Speech.plist in Resources */,
-				04D331D414E8081A00DD82D4 /* Bubble Burst.png in Resources */,
+				042FCAA614F155FF00E34155 /* MenuFont.fnt in Resources */,
+				042FCAA714F155FF00E34155 /* MenuFont.png in Resources */,
+				042FCAC314F1F21300E34155 /* American Classics Pack.png in Resources */,
+				042FCAC414F1F21300E34155 /* Bubble Burst.png in Resources */,
+				042FCAC514F1F21300E34155 /* Buy Text.png in Resources */,
+				042FCAC614F1F21300E34155 /* Credits Text.png in Resources */,
+				042FCAC714F1F21300E34155 /* Difficulty Menu Frame.png in Resources */,
+				042FCAC814F1F21300E34155 /* Difficulty Text.png in Resources */,
+				042FCAC914F1F21300E34155 /* Empty Star-hd.png in Resources */,
+				042FCACA14F1F21300E34155 /* Empty Star.png in Resources */,
+				042FCACB14F1F21300E34155 /* Exercise Pack.png in Resources */,
+				042FCACC14F1F21300E34155 /* Full Star.png in Resources */,
+				042FCACD14F1F21300E34155 /* Game Background.png in Resources */,
+				042FCACE14F1F21300E34155 /* Menu Background.png in Resources */,
+				042FCACF14F1F21300E34155 /* Menu Button.png in Resources */,
+				042FCAD014F1F21300E34155 /* Menu Frame.png in Resources */,
+				042FCAD114F1F21300E34155 /* Next Button.png in Resources */,
+				042FCAD214F1F21300E34155 /* Nursery Pack.png in Resources */,
+				042FCAD314F1F21300E34155 /* Nursery Songs.png in Resources */,
+				042FCAD414F1F21300E34155 /* Play Text.png in Resources */,
+				042FCAD514F1F21300E34155 /* Replay Button.png in Resources */,
+				042FCAD614F1F21300E34155 /* Row Stripe.png in Resources */,
+				042FCAD714F1F21300E34155 /* Score Menu Frame.png in Resources */,
+				042FCAD814F1F21300E34155 /* Side Menu.png in Resources */,
+				042FCAD914F1F21300E34155 /* Slider Box.png in Resources */,
+				042FCADA14F1F21300E34155 /* Speech Bubble Large.png in Resources */,
+				042FCADB14F1F21300E34155 /* Speech Bubble Small.png in Resources */,
+				042FCADD14F1F21300E34155 /* Starfish Button.png in Resources */,
+				04D3E45C14F2025300FB0928 /* Dialogue Font.fnt in Resources */,
+				04D3E45D14F2025300FB0928 /* Dialogue Font.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1581,6 +1582,7 @@
 				042FCA4314E8C97600E34155 /* DataUtility.m in Sources */,
 				042FCA4714EA082200E34155 /* DifficultyMenuScene.m in Sources */,
 				042FCA4A14EA084000E34155 /* BuyMenuScene.m in Sources */,
+				042FCA9F14F14CED00E34155 /* ScoreLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

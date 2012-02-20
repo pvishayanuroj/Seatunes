@@ -91,6 +91,8 @@
     
     CCSprite *sprite_;
     
+    CGFloat origScale_;
+    
 }
 
 + (id) scaledImageButton:(NSUInteger)numID image:(NSString *)image;

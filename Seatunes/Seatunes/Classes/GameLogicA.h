@@ -22,9 +22,11 @@
     
     NSMutableArray *queue_;  
     
-    NSUInteger numWrongNotes_;
+    NSMutableArray *notesHit_;
     
-    BOOL isFirstPlay_;
+    NSUInteger playerNoteIndex_;    
+    
+    NSUInteger numWrongNotes_;
     
     BOOL ignoreInput_;
     

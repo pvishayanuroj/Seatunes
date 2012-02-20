@@ -23,14 +23,14 @@
 
 - (id) initGameLogicA:(NSString *)songName
 {
-    if ((self = [super init])) {
-        
-        NSString *key = [Utility difficultyPlayedKeyFromEnum:kDifficultyEasy];
-        isFirstPlay_ = ![[NSUserDefaults standardUserDefaults] boolForKey:key];
+    if ((self = [super initGameLogic:kDifficultyEasy])) {
+    
         noteIndex_ = 0;
         numWrongNotes_ = 0;
+        playerNoteIndex_ = 0;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
+        notesHit_ = [[Utility generateBoolArray:YES size:[Utility countNumNotes:notes_]] retain];
         
         // If first time playing
         if (isFirstPlay_) {
@@ -47,6 +47,7 @@
 {
     [notes_ release];
     [queue_ release];
+    [notesHit_ release];
     
     [super dealloc];
 }
@@ -145,11 +146,9 @@
             }
             // Incorrect note played
             else {
-                if (numWrongNotes_ == 0) {
-                    scoreInfo_.notesMissed++;
-                }
                 numWrongNotes_++;
                 [instructor_ showWrongNote];
+                [notesHit_ replaceObjectAtIndex:(noteIndex_ - 1) withObject:[NSNumber numberWithBool:NO]];
                 
                 // If the first time and first note, show a more detailed message
                 if (isFirstPlay_ && noteIndex_ == 1) {
@@ -219,6 +218,9 @@
 
 - (void) endSong
 {
+    scoreInfo_.notesMissed = [Utility countNumBool:NO array:notesHit_];
+    scoreInfo_.notesHit = [notesHit_ count] - scoreInfo_.notesMissed;    
+    
     if (scoreInfo_.notesMissed == 0) {
         scoreInfo_.score = kScoreOneStar;
     }

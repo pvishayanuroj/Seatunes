@@ -14,6 +14,8 @@
 
 @implementation GameLogicC
 
+#pragma mark - Object Lifecycle
+
 + (id) gameLogicC:(NSString *)songName
 {
     return [[[self alloc] initGameLogicC:songName] autorelease];
@@ -21,14 +23,13 @@
 
 - (id) initGameLogicC:(NSString *)songName
 {
-    if ((self = [super init])) {
-
-        NSString *key = [Utility difficultyPlayedKeyFromEnum:kDifficultyHard];
-        isFirstPlay_ = ![[NSUserDefaults standardUserDefaults] boolForKey:key];            
+    if ((self = [super initGameLogic:kDifficultyHard])) {
         
         sections_ = [[Utility loadSectionedSong:songName] retain];
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
+        notesHit_ = [[Utility generateBoolArray:YES size:[Utility countNumNotesFromSections:sections_]] retain];        
         
+        playerNoteIndex_ = 0;
         sectionIndex_ = 0;
         
         // If first time playing
@@ -49,6 +50,8 @@
     
     [super dealloc];
 }
+
+#pragma mark - Helper Methods
 
 - (void) startSection
 {
@@ -84,17 +87,6 @@
         [notes_ release];
         [self runSingleSpeech:kHardPlay tapRequired:NO];
     }    
-}
-
-- (void) endSong
-{
-    if (scoreInfo_.notesMissed == 0) {
-        scoreInfo_.score = kScoreTwoStar;
-    }
-    else {
-        scoreInfo_.score = kScoreOneStar;
-    }
-    [delegate_ songComplete:scoreInfo_];
 }
 
 - (void) replay
@@ -142,38 +134,53 @@
     // Playing the example note causes the delegate to be called
     if (!ignoreInput_) {    
         NSNumber *key = [NSNumber numberWithInteger:keyType];
+        NSNumber *correctNote = [queue_ objectAtIndex:0];
         
-        if ([queue_ count] > 0) {
+        // Correct note played
+        if ([key isEqualToNumber:correctNote]) {
+            numWrongNotes_ = 0;
+            [queue_ removeObjectAtIndex:0];
+            playerNoteIndex_++; 
             
-            NSNumber *correctNote = [queue_ objectAtIndex:0];
-            
-            // Correct note played
-            if ([key isEqualToNumber:correctNote]) {
-                numWrongNotes_ = 0;
-                [queue_ removeObjectAtIndex:0];
-            }
-            // Incorrect note played
-            else {
-                numWrongNotes_++;                        
-                [instructor_ showWrongNote];
-                
-                if (numWrongNotes_ == 3) {
-                    keyboard_.isClickable = NO;
-                    [self runSingleSpeech:kHardReplay tapRequired:NO];
+            // Section end
+            if ([queue_ count] == 0) {
+                keyboard_.isClickable = NO;
+                // More sections left
+                if (sectionIndex_ < [sections_ count]) {
+                    [self runSingleSpeech:kNextSection tapRequired:YES];
                 }
+                // Song complete
+                else {
+                    [self runDelayedEndSpeech];
+                }                     
             }
+            
         }
-        // Else section complete
+        // Incorrect note played
         else {
-            keyboard_.isClickable = YES;
-            if (sectionIndex_ < [sections_ count]) {
-                [self runSingleSpeech:kNextSection tapRequired:YES];
+            numWrongNotes_++;                        
+            [instructor_ showWrongNote];
+            [notesHit_ replaceObjectAtIndex:playerNoteIndex_ withObject:[NSNumber numberWithBool:NO]];                            
+            
+            // If wrong note played three times in a row, replay the note                
+            if (numWrongNotes_ == 3) {
+                keyboard_.isClickable = NO;
+                [self runSingleSpeech:kHardReplay tapRequired:NO];
             }
-            else {
-                [self endSong];
-            }        
         }
     }
+}
+
+- (void) runDelayedEndSpeech
+{
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:1.0f];
+    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(endSpeech)];
+    [self runAction:[CCSequence actions:delay, done, nil]];
+}
+
+- (void) endSpeech
+{
+    [self runSingleSpeech:kSongComplete tapRequired:NO];    
 }
 
 - (void) speechComplete:(SpeechType)speechType
@@ -192,9 +199,26 @@
         case kHardReplay:
             [self replay];
             break;
+        case kSongComplete:
+            [self endSong];
+            break;
         default:
             break;
     }
+}
+
+- (void) endSong
+{
+    scoreInfo_.notesMissed = [Utility countNumBool:NO array:notesHit_];
+    scoreInfo_.notesHit = [notesHit_ count] - scoreInfo_.notesMissed;    
+    
+    if (scoreInfo_.notesMissed == 0) {
+        scoreInfo_.score = kScoreThreeStar;
+    }
+    else {
+        scoreInfo_.score = kScoreTwoStar;
+    }
+    [delegate_ songComplete:scoreInfo_];
 }
 
 @end
