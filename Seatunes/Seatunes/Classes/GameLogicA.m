@@ -81,14 +81,17 @@
     }   
     // Song complete
     else {
-        [self endSong];
+        keyboard_.isClickable = NO;
+        ignoreInput_ = YES;            
+        [self runDelayedEndSpeech];
     }
 }
 
 - (void) replay
 {
-    if (noteIndex_ < [notes_ count]) { 
-        KeyType keyType = [[notes_ objectAtIndex:(noteIndex_ - 1)] integerValue];
+    NSUInteger index = noteIndex_ - 1;
+    if (index < [notes_ count]) { 
+        KeyType keyType = [[notes_ objectAtIndex:index] integerValue];
         if (keyType != kBlankNote) {     
             [self playExampleNote:keyType];
         }
@@ -115,6 +118,8 @@
 {
     keyboard_.isClickable = YES;
     ignoreInput_ = NO;
+    
+    [self delayedReplay];
 }
 
 #pragma mark - Delegate Methods
@@ -127,6 +132,9 @@
         
         if ([queue_ count] > 0) {
             
+            // Cancel delayed replay
+            [self stopAllActions];
+            
             scoreInfo_.notesHit++;
             keyboard_.isClickable = NO;            
             NSNumber *correctNote = [queue_ objectAtIndex:0];
@@ -134,7 +142,7 @@
             // Correct note played
             if ([key isEqualToNumber:correctNote]) {
                 [queue_ removeObjectAtIndex:0];
-                [instructor_ popOldestNote];
+                [instructor_ popNewestNote];
                 
                 // If first time and first note, show an encouraging message
                 if (isFirstPlay_ && noteIndex_ == 1) {
@@ -162,6 +170,7 @@
                 }
                 // Wrong note played (less than three times)
                 else {
+                    [self delayedReplay];
                     [super runSingleSpeech:kWrongNote tapRequired:NO];                    
                 }
             }
@@ -188,6 +197,9 @@
         case kEasyReplay:
             [self replay];
             break;
+        case kSongComplete:
+            [self endSong];
+            break;                        
         default:
             keyboard_.isClickable = YES;
             break;
@@ -220,14 +232,14 @@
 {
     scoreInfo_.notesMissed = [Utility countNumBool:NO array:notesHit_];
     scoreInfo_.notesHit = [notesHit_ count] - scoreInfo_.notesMissed;    
+    scoreInfo_.score = kScoreOneStar;
     
-    if (scoreInfo_.notesMissed == 0) {
-        scoreInfo_.score = kScoreOneStar;
-    }
-    else {
-        scoreInfo_.score = kScoreZeroStar;
-    }
-    [delegate_ songComplete:scoreInfo_];    
+    [keyboard_ applause];
+}
+
+- (void) applauseComplete
+{
+    [delegate_ songComplete:scoreInfo_];
 }
 
 @end

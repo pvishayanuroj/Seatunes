@@ -47,6 +47,4 @@
 
 - (void) endSong;
 
-- (void) runDelayedEndSpeech;
-
 @end

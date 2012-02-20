@@ -137,6 +137,14 @@ static const CGFloat IN_NOTE_Y = -60.0f;
     }
 }
 
+- (void) popNewestNote
+{
+    if ([notes_ count] > 0) {
+        [[notes_ lastObject] destroy];
+        [notes_ removeLastObject];
+    }
+}
+
 #pragma mark - Delegate Methods
 
 - (void) noteCrossedBoundary:(Note *)note

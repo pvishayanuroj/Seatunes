@@ -101,8 +101,6 @@
 		04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A914C4C7090087DA18 /* G4-Whirly.m4a */; };
 		04D3318E14E2212200DD82D4 /* SpeechReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3318D14E2212200DD82D4 /* SpeechReader.m */; };
 		04D331BD14E6B53700DD82D4 /* SpeechManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D331BC14E6B53700DD82D4 /* SpeechManager.m */; };
-		04D331CB14E6DDD600DD82D4 /* SeatunesFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 04D331C914E6DDD600DD82D4 /* SeatunesFont.fnt */; };
-		04D331CC14E6DDD600DD82D4 /* SeatunesFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D331CA14E6DDD600DD82D4 /* SeatunesFont.png */; };
 		04D331CF14E7056700DD82D4 /* Speech.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D331CE14E7056700DD82D4 /* Speech.plist */; };
 		04D331D214E7507200DD82D4 /* GameLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D331D114E7507100DD82D4 /* GameLogic.m */; };
 		04D331E314E8A25400DD82D4 /* CCNode+PauseResume.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D331E214E8A24F00DD82D4 /* CCNode+PauseResume.m */; };
@@ -366,8 +364,6 @@
 		04D3319314E3880D00DD82D4 /* SpeechBubbleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechBubbleDelegate.h; path = Classes/SpeechBubbleDelegate.h; sourceTree = "<group>"; };
 		04D331BB14E6B53700DD82D4 /* SpeechManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechManager.h; path = Classes/SpeechManager.h; sourceTree = "<group>"; };
 		04D331BC14E6B53700DD82D4 /* SpeechManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeechManager.m; path = Classes/SpeechManager.m; sourceTree = "<group>"; };
-		04D331C914E6DDD600DD82D4 /* SeatunesFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SeatunesFont.fnt; sourceTree = "<group>"; };
-		04D331CA14E6DDD600DD82D4 /* SeatunesFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SeatunesFont.png; sourceTree = "<group>"; };
 		04D331CE14E7056700DD82D4 /* Speech.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Speech.plist; sourceTree = "<group>"; };
 		04D331D014E7506F00DD82D4 /* GameLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogic.h; path = Classes/GameLogic.h; sourceTree = "<group>"; };
 		04D331D114E7507100DD82D4 /* GameLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogic.m; path = Classes/GameLogic.m; sourceTree = "<group>"; };
@@ -762,8 +758,6 @@
 				04D3E45B14F2025300FB0928 /* Dialogue Font.png */,
 				042FCAA414F155FF00E34155 /* MenuFont.fnt */,
 				042FCAA514F155FF00E34155 /* MenuFont.png */,
-				04D331C914E6DDD600DD82D4 /* SeatunesFont.fnt */,
-				04D331CA14E6DDD600DD82D4 /* SeatunesFont.png */,
 			);
 			name = Fonts;
 			path = Resources/Fonts;
@@ -1413,8 +1407,6 @@
 				048BBACF14D5368C0086EABC /* Three Blind Mice.plist in Resources */,
 				048BBAD014D5368C0086EABC /* Twinkle Twinkle.plist in Resources */,
 				048BBAD114D5368C0086EABC /* Nursery Pack.plist in Resources */,
-				04D331CB14E6DDD600DD82D4 /* SeatunesFont.fnt in Resources */,
-				04D331CC14E6DDD600DD82D4 /* SeatunesFont.png in Resources */,
 				04D331CF14E7056700DD82D4 /* Speech.plist in Resources */,
 				042FCAA614F155FF00E34155 /* MenuFont.fnt in Resources */,
 				042FCAA714F155FF00E34155 /* MenuFont.png in Resources */,

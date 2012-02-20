@@ -14,6 +14,7 @@
 @synthesize delegate = delegate_;
 @synthesize keyType = keyType_;
 @synthesize soundID = soundID_;
+@synthesize isSelected = isSelected_;
 
 + (id) key:(KeyType)keyType creature:(CreatureType)creature
 {
@@ -26,6 +27,7 @@
         
         keyType_ = keyType;
         isClickable_ = YES;
+        isSelected_ = NO;
         
         NSString *keyName = [Utility keyNameFromEnum:keyType];
         NSString *creatureName = [Utility creatureNameFromEnum:creature];
@@ -69,6 +71,8 @@
 
 - (void) selectButton
 {
+    isSelected_ = YES;
+    
     sprite_.visible = NO;
     selected_.visible = YES;
     
@@ -77,6 +81,8 @@
 
 - (void) unselectButton
 {
+    isSelected_ = NO;
+    
     selected_.visible = NO;
     sprite_.visible = YES;
     
@@ -86,6 +92,16 @@
 - (void) disableButton
 {
     
+}
+
+- (void) selectButtonTimed:(CGFloat)time
+{
+    [self selectButton];
+    
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:time];
+    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(unselectButton)];
+    
+    [self runAction:[CCSequence actions:delay, done, nil]];    
 }
 
 @end

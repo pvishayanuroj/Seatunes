@@ -25,8 +25,17 @@
 {
     NSMutableDictionary *scores = [NSMutableDictionary dictionaryWithDictionary:[self loadSongScores]];
     
+    NSNumber *savedScore = [scores objectForKey:songName];
+    
+    // Only save score if it is greater than saved score or if saved score doesn't exist
+    if (savedScore != nil) {
+        if (score < [savedScore integerValue]) {
+            return;
+        }
+    }
+    
     [scores setObject:[NSNumber numberWithInteger:score] forKey:songName];
-    [[NSUserDefaults standardUserDefaults] setObject:scores forKey:@"Song Scores"];
+    [[NSUserDefaults standardUserDefaults] setObject:scores forKey:@"Song Scores"];        
 }
 
 + (void) resetSongScores

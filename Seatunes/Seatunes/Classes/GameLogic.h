@@ -44,4 +44,6 @@
 
 - (void) runSpeech:(NSArray *)speeches tapRequired:(BOOL)tapRequired;
 
+- (void) runDelayedEndSpeech;
+
 @end

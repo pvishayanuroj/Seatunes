@@ -28,6 +28,10 @@
     NSMutableArray *notesHit_;    
     
     NSUInteger playerNoteIndex_;
+    
+    BOOL ignoreInput_;
+    
+    BOOL onLastNote_;
 }
 
 + (id) gameLogicB:(NSString *)songName;

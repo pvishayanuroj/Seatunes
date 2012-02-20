@@ -78,4 +78,16 @@ static const CGFloat GL_BUBBLE_Y = 600.0f;
     [self addChild:reader];        
 }
 
+- (void) runDelayedEndSpeech
+{
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:1.0f];
+    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(endSpeech)];
+    [self runAction:[CCSequence actions:delay, done, nil]];
+}
+
+- (void) endSpeech
+{
+    [self runSingleSpeech:kSongComplete tapRequired:NO];    
+}
+
 @end

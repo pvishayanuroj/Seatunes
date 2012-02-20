@@ -28,7 +28,7 @@
     
     NSUInteger currentIndex_;
     
-    Key *previousKey_;
+    BOOL isKeyboardMuted_;
     
     BOOL notePlayed_;
     
@@ -57,8 +57,6 @@
 
 - (void) playNote:(KeyType)keyType time:(CGFloat)time withSound:(BOOL)withSound;
 
-- (void) playSequence:(NSArray *)sequence;
-
-- (void) depressNote;
+- (void) applause;
 
 @end

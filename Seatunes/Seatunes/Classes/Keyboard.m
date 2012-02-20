@@ -28,6 +28,7 @@
         delegate_ = nil;
         instrumentType_ = kPiano;
         CreatureType creature = kClam;
+        isKeyboardMuted_ = NO;
         isClickable_ = YES;
         isMuted_ = NO;
         
@@ -35,7 +36,6 @@
         keyTimer_ = [[NSMutableDictionary dictionaryWithCapacity:10] retain];
         touches_ = CFDictionaryCreateMutable(kCFAllocatorDefault, 24, nil, nil);
         sequence_ = nil;
-        previousKey_ = nil;
         
         switch (keyboardType) {
             case kEightKey:
@@ -84,7 +84,7 @@
     [keyTimer_ setObject:timestamp forKey:keyType];
     
     GLuint idNumber;
-    if (!isMuted_) {
+    if (!isKeyboardMuted_ && !isMuted_) {
         idNumber = [[AudioManager audioManager] playSound:key.keyType instrument:instrumentType_];
     }
     
@@ -106,11 +106,13 @@
 
     [keyTimer_ removeObjectForKey:keyType];
     
-    if (!isMuted_) {
-        [[AudioManager audioManager] stopSound:key.soundID];
-    }
-    else {
-        isMuted_ = NO;
+    if (!isKeyboardMuted_) {
+        if (!isMuted_) {
+            [[AudioManager audioManager] stopSound:key.soundID];
+        }
+        else {
+            isMuted_ = NO;
+        }
     }
     
     if ([delegate_ respondsToSelector:@selector(keyboardKeyDepressed:time:)]) {
@@ -188,61 +190,38 @@
     NSNumber *keyName = [NSNumber numberWithInteger:keyType];
     Key *key = [keys_ objectForKey:keyName];
     if (key) {
-        [key selectButton];
-        [previousKey_ release];
-        previousKey_ = [key retain];
+        [key selectButtonTimed:time];
     }
+}
+
+- (void) applause
+{
+    //isKeyboardMuted_ = YES;
+    [self schedule:@selector(applauseLoop) interval:0.05f];
     
-    CCActionInterval *delay = [CCDelayTime actionWithDuration:time];
-    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(depressNote)];
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:5.0f];
+    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(applauseComplete)];
     
     [self runAction:[CCSequence actions:delay, done, nil]];
 }
 
-- (void) playSequence:(NSArray *)sequence
+- (void) applauseLoop
 {
-    [self schedule:@selector(playSequenceNote) interval:0.5f];
+    // Choose random key
+    NSInteger keyNumber = arc4random() % [keys_ count];
+    Key *key = [keys_ objectForKey:[NSNumber numberWithInteger:keyNumber]];    
     
-    sequence_ = [sequence retain];
-    currentIndex_ = 0;
-}
-
-- (void) playSequenceNote
-{
-    // Depress previously played key
-    if (notePlayed_) {
-        [self depressNote];
-        notePlayed_ = NO;        
-        return;
-    }
-    
-    // If notes still remaining
-    if (currentIndex_ < [sequence_ count]) {
-        // Play the next key        
-        NSNumber *keyName = [sequence_ objectAtIndex:currentIndex_++];
-        Key *key = [keys_ objectForKey:keyName];
-        // If an actual note is to be played (as opposed to a blank)
-        if (key) {
-            [key selectButton];
-            previousKey_ = [key retain];
-        }
-        notePlayed_ = YES;
-    }
-    // Otherwise end of sequence, stop calling this function
-    else {
-        [self unschedule:@selector(playNote)];
-        [sequence_ release];
-        sequence_ = nil;
+    if (key && !key.isSelected) {
+        [key selectButtonTimed:0.25f];
     }
 }
 
-- (void) depressNote
+- (void) applauseComplete
 {
-    // Only if an actual note was played last cycle
-    if (previousKey_) {
-        [previousKey_ unselectButton];
-        [previousKey_ release];    
-        previousKey_ = nil;
+    [self unschedule:@selector(applauseLoop)];
+    
+    if (delegate_ && [delegate_ respondsToSelector:@selector(applauseComplete)]) {
+        [delegate_ applauseComplete];
     }
 }
 

@@ -58,7 +58,7 @@ static const CGFloat SR_TEXT_OFFSET_Y = 80.0f;
     [super dealloc];
 }
 
-const static CGFloat BUB_TM = 20.0f;
+const static CGFloat BUB_TM = 2.0f;
 
 - (void) createBubble
 {

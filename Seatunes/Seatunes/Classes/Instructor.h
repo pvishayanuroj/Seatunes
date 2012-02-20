@@ -55,4 +55,6 @@
 
 - (void) popOldestNote;
 
+- (void) popNewestNote;
+
 @end

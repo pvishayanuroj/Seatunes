@@ -83,7 +83,7 @@
     } 
     // Finished playing notes in section
     else {
-        [self unschedule:@selector(loop)];
+        [self unschedule:@selector(loop)]; 
         [notes_ release];
         [self runSingleSpeech:kHardPlay tapRequired:NO];
     }    
@@ -151,6 +151,7 @@
                 }
                 // Song complete
                 else {
+                    ignoreInput_ = YES;
                     [self runDelayedEndSpeech];
                 }                     
             }
@@ -169,18 +170,6 @@
             }
         }
     }
-}
-
-- (void) runDelayedEndSpeech
-{
-    CCActionInterval *delay = [CCDelayTime actionWithDuration:1.0f];
-    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(endSpeech)];
-    [self runAction:[CCSequence actions:delay, done, nil]];
-}
-
-- (void) endSpeech
-{
-    [self runSingleSpeech:kSongComplete tapRequired:NO];    
 }
 
 - (void) speechComplete:(SpeechType)speechType
@@ -218,6 +207,12 @@
     else {
         scoreInfo_.score = kScoreTwoStar;
     }
+    
+    [keyboard_ applause];
+}
+
+- (void) applauseComplete
+{
     [delegate_ songComplete:scoreInfo_];
 }
 

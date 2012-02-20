@@ -27,6 +27,8 @@
         
         noteIndex_ = 0;
         playerNoteIndex_ = 0;
+        ignoreInput_ = NO;
+        onLastNote_ = NO;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
         notesHit_ = [[Utility generateBoolArray:YES size:[Utility countNumNotes:notes_]] retain];        
@@ -69,38 +71,46 @@
             [queue_ addObject:key];
         }
         
-        [instructor_ playNote:keyType];        
+        [instructor_ playNote:keyType];      
+        
+        // Check if this is the last note
+        if ([notes_ count] == noteIndex_) {
+            onLastNote_ = YES;
+            [self unschedule:@selector(loop:)];                     
+        }
     } 
-    else {
-        [self endSong];
-    }
 }
 
 #pragma mark - Delegate Methods
 
 - (void) keyboardKeyPressed:(KeyType)keyType
 {
-    NSNumber *key = [NSNumber numberWithInteger:keyType];
+    if (!ignoreInput_) {
+        NSNumber *key = [NSNumber numberWithInteger:keyType];
     
-    if ([queue_ count] > 0) {
-    
-        NSNumber *correctNote = [queue_ objectAtIndex:0];
-        
-        // Correct note played
-        if ([key isEqualToNumber:correctNote]) {
-            [queue_ removeObjectAtIndex:0];
-            [instructor_ popOldestNote];
-            playerNoteIndex_++;
+        if ([queue_ count] > 0) {
+            
+            NSNumber *correctNote = [queue_ objectAtIndex:0];            
+            
+            // Correct note played
+            if ([key isEqualToNumber:correctNote]) {
+                [queue_ removeObjectAtIndex:0];
+                [instructor_ popOldestNote];
+                playerNoteIndex_++;
+                
+                // This note is the last note in the song
+                if (onLastNote_) {
+                    keyboard_.isClickable = NO;
+                    ignoreInput_ = YES;            
+                    [self runDelayedEndSpeech];                         
+                }
+            }
+            // Incorrect note played
+            else {
+                [instructor_ showWrongNote];
+                [notesHit_ replaceObjectAtIndex:playerNoteIndex_ withObject:[NSNumber numberWithBool:NO]];            
+            }
         }
-        // Incorrect note played
-        else {
-            [instructor_ showWrongNote];
-            [notesHit_ replaceObjectAtIndex:playerNoteIndex_ withObject:[NSNumber numberWithBool:NO]];            
-        }
-    }
-    // Else no pending notes
-    else {
-
     }
 }
 
@@ -132,6 +142,9 @@
         case kMediumReplay:
             [self start];
             break;
+        case kSongComplete:
+            [self endSong];
+            break;            
         default:
             keyboard_.isClickable = YES;
             break;
@@ -149,6 +162,11 @@
     else {
         scoreInfo_.score = kScoreOneStar;
     }
+    [keyboard_ applause];
+}
+
+- (void) applauseComplete
+{
     [delegate_ songComplete:scoreInfo_];
 }
 

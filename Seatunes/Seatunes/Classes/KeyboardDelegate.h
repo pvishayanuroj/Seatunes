@@ -14,4 +14,6 @@
 
 - (void) keyboardKeyDepressed:(KeyType)keyType time:(CGFloat)time;
 
+- (void) applauseComplete;
+
 @end

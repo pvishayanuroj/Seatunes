@@ -25,13 +25,16 @@
     
     id <KeyDelegate> delegate_;
     
-    BOOL isClickable_;    
+    BOOL isClickable_;   
+    
+    BOOL isSelected_;
     
 }
 
 @property (nonatomic, assign) id <KeyDelegate> delegate;
 @property (nonatomic, readonly) KeyType keyType;
 @property (nonatomic, readonly) GLuint soundID;
+@property (nonatomic, readonly) BOOL isSelected;
 
 + (id) key:(KeyType)keyType creature:(CreatureType)creature;
 
@@ -44,5 +47,7 @@
 - (void) unselectButton;
 
 - (void) disableButton;
+
+- (void) selectButtonTimed:(CGFloat)time;
 
 @end
