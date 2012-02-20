@@ -178,6 +178,9 @@
         case kHardInstructions:
             [self startSection];
             break;
+        case kSongStart:
+            [self startSection];            
+            break;
         case kNextSection:
             [self startSection];
             break;

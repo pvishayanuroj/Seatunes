@@ -63,8 +63,8 @@
 
 - (void) loadPackMenu
 {
-    sliderBoxMenu_ = [[SliderBoxMenu sliderBoxMenu:120] retain];
-    sliderBoxMenu_.position = ccp(150, 600);
+    sliderBoxMenu_ = [[SliderBoxMenu sliderBoxMenu:160] retain];
+    sliderBoxMenu_.position = ccp(200, 550);
     sliderBoxMenu_.delegate = self;
     [self addChild:sliderBoxMenu_];
     

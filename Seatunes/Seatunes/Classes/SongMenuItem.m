@@ -20,9 +20,7 @@
 {
     if ((self = [super initScrollingMenuItem:songIndex height:55])) {
         
-        NSString *fontName = @"Arial";
-        CGFloat fontSize = 28;
-        CCLabelTTF *label = [CCLabelTTF labelWithString:songName fontName:fontName fontSize:fontSize];
+        CCLabelBMFont *label = [CCLabelBMFont labelWithString:songName fntFile:@"MenuFont.fnt"];
         label.anchorPoint = ccp(0, 0.5f);
         label.position = ccp(200.0f, 0);
         [self addChild:label];
@@ -37,6 +35,7 @@
             else {
                 sprite = [CCSprite spriteWithFile:@"Empty Star.png"];                
             }
+            
             sprite.scale = 0.25f;
             sprite.position = ccp(35 * i + 80, 0);
             [self addChild:sprite];
