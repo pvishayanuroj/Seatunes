@@ -9,20 +9,34 @@
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "MenuDelegate.h"
+#import "ButtonDelegate.h"
 
-@interface DifficultyMenuScene : CCScene <MenuDelegate> {
+@class Button;
+
+enum {
+    kDMSEasy,
+    kDMSMedium,
+    kDMSHard,
+    kDMSPlay
+};
+
+@interface DifficultyMenuScene : CCScene <ButtonDelegate> {
     
     NSString *songName_;
     
+    Button *easyButton_;
+    
+    Button *mediumButton_;
+    
+    Button *hardButton_;    
+    
+    DifficultyType difficulty_;
 }
 
 + (id) startWithSongName:(NSString *)songName;
 
 - (id) initWithSongName:(NSString *)songName;
 
-- (void) loadDifficultyMenu;
-
-- (void) startSong:(DifficultyType)difficulty songName:(NSString *)songName;
+- (void) startSong;
 
 @end

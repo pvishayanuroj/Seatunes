@@ -101,4 +101,6 @@
 
 - (id) initScaledImageButton:(NSUInteger)numID image:(NSString *)image scale:(CGFloat)scale;
 
+- (void) setImage:(NSString *)image;
+
 @end

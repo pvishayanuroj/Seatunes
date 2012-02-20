@@ -20,10 +20,10 @@
 {
     if ((self = [super initScrollingMenuItem:songIndex height:55])) {
         
-        CCLabelBMFont *label = [CCLabelBMFont labelWithString:songName fntFile:@"MenuFont.fnt"];
-        label.anchorPoint = ccp(0, 0.5f);
-        label.position = ccp(200.0f, 0);
-        [self addChild:label];
+        label_ = [[CCLabelBMFont labelWithString:songName fntFile:@"MenuFont.fnt"] retain];
+        label_.anchorPoint = ccp(0, 0.5f);
+        label_.position = ccp(200.0f, 0);
+        [self addChild:label_];
         
         NSInteger numStars = songScore;
         
@@ -46,6 +46,8 @@
 
 - (void) dealloc
 {
+    [label_ release];
+    
     [super dealloc];
 }
 

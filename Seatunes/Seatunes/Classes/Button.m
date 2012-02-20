@@ -132,6 +132,8 @@
 
 - (void) selectButton
 {
+    isSelected_ = YES;
+    
     if ([delegate_ respondsToSelector:@selector(buttonSelected:)]) {
         [delegate_ buttonSelected:self];
     }
@@ -139,6 +141,8 @@
 
 - (void) unselectButton
 {
+    isSelected_ = NO;
+    
     if ([delegate_ respondsToSelector:@selector(buttonUnselected:)]) {
         [delegate_ buttonUnselected:self];        
     }
@@ -187,7 +191,6 @@
 
 - (void) selectButton
 {
-    isSelected_ = YES;
     sprite_.visible = !isSelected_;
     selected_.visible = isSelected_;        
     
@@ -196,7 +199,6 @@
 
 - (void) unselectButton
 {
-    isSelected_ = NO;
     sprite_.visible = !isSelected_;
     selected_.visible = isSelected_;     
     
@@ -245,7 +247,6 @@
 
 - (void) selectButton
 {
-    isSelected_ = YES;
     text_.color = ccc3(255, 255, 255);
     
     [super selectButton];
@@ -253,7 +254,6 @@
 
 - (void) unselectButton
 {
-    isSelected_ = NO;    
     text_.color = ccc3(140, 140, 140); 
     
     [super unselectButton];        
@@ -302,8 +302,7 @@ static const CGFloat SIB_SCALE_FACTOR = 1.1f;
 }
 
 - (void) selectButton
-{
-    isSelected_ = YES;
+{ 
     sprite_.scale = origScale_ * SIB_SCALE_FACTOR;    
     
     [super selectButton];
@@ -311,7 +310,6 @@ static const CGFloat SIB_SCALE_FACTOR = 1.1f;
 
 - (void) unselectButton
 {
-    isSelected_ = NO;
     sprite_.scale = origScale_;
     
     [super unselectButton];    
@@ -321,6 +319,16 @@ static const CGFloat SIB_SCALE_FACTOR = 1.1f;
 {
 	CGRect r = sprite_.textureRect;    
 	return CGRectMake(sprite_.position.x - r.size.width / 2, sprite_.position.y - r.size.height / 2, r.size.width, r.size.height);
+}
+
+- (void) setImage:(NSString *)image
+{
+    [sprite_ removeFromParentAndCleanup:YES];
+    [sprite_ release];
+    
+    sprite_ = [[CCSprite spriteWithFile:image] retain];
+    [self addChild:sprite_];
+    sprite_.scale = origScale_;
 }
 
 

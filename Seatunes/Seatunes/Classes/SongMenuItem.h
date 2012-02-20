@@ -11,9 +11,9 @@
 #import "cocos2d.h"
 #import "ScrollingMenuItem.h"
 
-@interface SongMenuItem : ScrollingMenuItem {
+@interface SongMenuItem : ScrollingMenuItem <CCTargetedTouchDelegate> {
     
-    
+    CCLabelBMFont *label_;
     
 }
 

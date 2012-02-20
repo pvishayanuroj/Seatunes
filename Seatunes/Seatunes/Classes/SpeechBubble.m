@@ -207,10 +207,8 @@
             text = [text stringByAppendingFormat:@"%@ ", word];
         }
         
-        NSLog(@"%@", text);
         CCLabelBMFont *label = [CCLabelBMFont labelWithString:text fntFile:fntFile];
         label.position = ccp(dim_.textOffset.x, -rowNum * dim_.rowHeight + dim_.textOffset.y);
-        DebugPoint(@"pt", label.position);
         label.anchorPoint = ccp(0, 0.5f);
         [self addChild:label];
         

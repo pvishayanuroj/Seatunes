@@ -31,4 +31,6 @@
 
 - (id) initScrollingMenuItem:(NSUInteger)numID height:(CGFloat)height;
 
+- (BOOL) containsTouchLocation:(UITouch *)touch;
+
 @end
