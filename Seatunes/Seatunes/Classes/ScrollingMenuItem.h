@@ -12,8 +12,6 @@
 
 @interface ScrollingMenuItem : CCNode <CCTargetedTouchDelegate> {
     
-    CCSprite *sprite_;
-    
     CGSize size_;
     
     NSUInteger numID_;

@@ -14,6 +14,9 @@
 
 @implementation GameLogicC
 
+static const CGFloat GLC_PLAY_INTERVAL = 1.5f;
+static const CGFloat GLC_KEY_ANIMATION_INTERVAL = 0.75f;
+
 #pragma mark - Object Lifecycle
 
 + (id) gameLogicC:(NSString *)songName
@@ -61,7 +64,7 @@
     notes_ = [[sections_ objectAtIndex:sectionIndex_++] retain];
     noteIndex_ = 0;
     
-    [self schedule:@selector(loop) interval:1.0f];    
+    [self schedule:@selector(loop) interval:GLC_PLAY_INTERVAL];    
 }
 
 - (void) loop
@@ -78,7 +81,7 @@
         }
         
         [instructor_ playNote:keyType];  
-        [keyboard_ playNote:keyType time:0.5f withSound:NO];            
+        [keyboard_ playNote:keyType time:GLC_KEY_ANIMATION_INTERVAL withSound:NO];            
         [[AudioManager audioManager] playSound:keyType instrument:kLowStrings];        
     } 
     // Finished playing notes in section
@@ -104,7 +107,7 @@
         }
     }
 
-    [self schedule:@selector(replayLoop) interval:1.0f];
+    [self schedule:@selector(replayLoop) interval:GLC_PLAY_INTERVAL];
 }
 
 - (void) replayLoop
@@ -115,7 +118,7 @@
         NSNumber *key = [replayNotes_ objectAtIndex:replayNoteIndex_++];
         KeyType keyType = [key integerValue];
         [instructor_ playNote:keyType];        
-        [keyboard_ playNote:keyType time:0.5f withSound:NO];            
+        [keyboard_ playNote:keyType time:GLC_KEY_ANIMATION_INTERVAL withSound:NO];            
         [[AudioManager audioManager] playSound:keyType instrument:kLowStrings];                
     } 
     // Finished playing notes in section

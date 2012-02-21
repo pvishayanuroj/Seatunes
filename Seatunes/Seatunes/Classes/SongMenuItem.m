@@ -11,6 +11,8 @@
 
 @implementation SongMenuItem
 
+static const CGFloat SMI_CELL_HEIGHT = 55.0f;
+
 + (id) songMenuItem:(NSString *)songName songScore:(ScoreType)songScore songIndex:(NSUInteger)songIndex
 {
     return [[[self alloc] initSongMenuItem:songName songScore:songScore songIndex:songIndex] autorelease];
@@ -18,7 +20,7 @@
 
 - (id) initSongMenuItem:(NSString *)songName songScore:(ScoreType)songScore songIndex:(NSUInteger)songIndex
 {
-    if ((self = [super initScrollingMenuItem:songIndex height:55])) {
+    if ((self = [super initScrollingMenuItem:songIndex height:SMI_CELL_HEIGHT])) {
         
         label_ = [[CCLabelBMFont labelWithString:songName fntFile:@"MenuFont.fnt"] retain];
         label_.anchorPoint = ccp(0, 0.5f);

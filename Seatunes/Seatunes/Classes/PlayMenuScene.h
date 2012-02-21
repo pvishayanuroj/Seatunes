@@ -9,21 +9,27 @@
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "SliderBoxMenuDelegate.h"
 #import "ScrollingMenuDelegate.h"
 
 @class ScrollingMenu;
-@class SliderBoxMenu;
 
-@interface PlayMenuScene : CCScene <SlideBoxMenuDelegate, ScrollingMenuDelegate> {
+enum {
+    kScrollingMenuPack,
+    kScrollingMenuSong
+};
+typedef NSUInteger ScrollingMenuType;
+
+@interface PlayMenuScene : CCScene <ScrollingMenuDelegate> {
     
     ScrollingMenu *scrollingMenu_;
     
-    SliderBoxMenu *sliderBoxMenu_;
+    ScrollingMenu *packMenu_;
     
     /* Maps song menu item IDs to song names */
     NSArray *songNames_;
     
+    /* Maps pack menu item IDs to pack names */
+    NSArray *packNames_;
 }
 
 - (NSArray *) loadSongNames:(NSString *)packName;
@@ -35,5 +41,7 @@
 - (void) loadDifficultyMenu:(NSString *)songName;
 
 - (void) cleanupSongMenu;
+
+- (void) cleanupPackMenu;
 
 @end

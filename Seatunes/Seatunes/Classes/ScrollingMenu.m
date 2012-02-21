@@ -12,19 +12,21 @@
 
 @implementation ScrollingMenu
 
+@synthesize numID = numID_;
 @synthesize delegate = delegate_;
 
-+ (id) scrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize
++ (id) scrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize numID:(NSUInteger)numID
 {
-    return [[[self alloc] initScrollingMenu:menuFrame scrollSize:scrollSize] autorelease];
+    return [[[self alloc] initScrollingMenu:menuFrame scrollSize:scrollSize numID:numID] autorelease];
 }
 
-- (id) initScrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize
+- (id) initScrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize numID:(NSUInteger)numID
 {
     if ((self = [super init])) {
 
         self.position = CGPointMake(menuFrame.origin.x, menuFrame.origin.y + menuFrame.size.height);        
         
+        numID_ = numID;
         scrollSize_ = scrollSize;
         menuFrame_ = menuFrame;
         currentMenuItem_ = nil;
@@ -113,8 +115,8 @@
 
 - (void) scrollingMenuItemClicked:(ScrollingMenuItem *)menuItem
 {
-    if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuItemClicked:)]) {
-        [delegate_ scrollingMenuItemClicked:menuItem];
+    if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuItemClicked:menuItem:)]) {
+        [delegate_ scrollingMenuItemClicked:self menuItem:menuItem];
     }
 }
 

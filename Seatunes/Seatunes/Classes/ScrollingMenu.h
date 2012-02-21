@@ -26,14 +26,17 @@
     
     ScrollingMenuItem *currentMenuItem_;
     
+    NSUInteger numID_;    
+    
     id <ScrollingMenuDelegate> delegate_;
 }
 
+@property (nonatomic, readonly) NSUInteger numID;
 @property (nonatomic, assign) id <ScrollingMenuDelegate> delegate;
 
-+ (id) scrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize;
++ (id) scrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize numID:(NSUInteger)numID;
 
-- (id) initScrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize;
+- (id) initScrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize numID:(NSUInteger)numID;
 
 - (void) addMenuItem:(ScrollingMenuItem *)menuItem;
 

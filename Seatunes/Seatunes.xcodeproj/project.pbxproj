@@ -108,6 +108,7 @@
 		04D3E45D14F2025300FB0928 /* Dialogue Font.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D3E45B14F2025300FB0928 /* Dialogue Font.png */; };
 		04D3E46014F2DECD00FB0928 /* StarfishButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3E45F14F2DECC00FB0928 /* StarfishButton.m */; };
 		04D3E46214F2EF8F00FB0928 /* Water Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D3E46114F2EF8F00FB0928 /* Water Background.png */; };
+		04D3E46614F358B600FB0928 /* PackMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3E46514F358B200FB0928 /* PackMenuItem.m */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
 		DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B714D458B800D1437B /* MainMenuScene.m */; };
@@ -377,6 +378,8 @@
 		04D3E45F14F2DECC00FB0928 /* StarfishButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarfishButton.m; path = Classes/StarfishButton.m; sourceTree = "<group>"; };
 		04D3E46114F2EF8F00FB0928 /* Water Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Water Background.png"; sourceTree = "<group>"; };
 		04D3E46314F2FCE100FB0928 /* ScoreLayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreLayerDelegate.h; path = Classes/ScoreLayerDelegate.h; sourceTree = "<group>"; };
+		04D3E46414F358B000FB0928 /* PackMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PackMenuItem.h; path = Classes/PackMenuItem.h; sourceTree = "<group>"; };
+		04D3E46514F358B200FB0928 /* PackMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PackMenuItem.m; path = Classes/PackMenuItem.m; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
 		DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayViewController.m; path = Classes/CocosOverlayViewController.m; sourceTree = "<group>"; };
 		DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayScrollView.h; path = Classes/CocosOverlayScrollView.h; sourceTree = "<group>"; };
@@ -839,6 +842,8 @@
 				DA08E0BF14D5150300D1437B /* ScrollingMenuItemDelegate.h */,
 				DA08E0C014D529C000D1437B /* SongMenuItem.h */,
 				DA08E0C114D529C600D1437B /* SongMenuItem.m */,
+				04D3E46414F358B000FB0928 /* PackMenuItem.h */,
+				04D3E46514F358B200FB0928 /* PackMenuItem.m */,
 				DAB120D514C30E60009B60FB /* AudioManager.h */,
 				DAB120D614C30E60009B60FB /* AudioManager.m */,
 				DAB1208D14C3099B009B60FB /* Keyboard.h */,
@@ -1587,6 +1592,7 @@
 				042FCA4A14EA084000E34155 /* BuyMenuScene.m in Sources */,
 				042FCA9F14F14CED00E34155 /* ScoreLayer.m in Sources */,
 				04D3E46014F2DECD00FB0928 /* StarfishButton.m in Sources */,
+				04D3E46614F358B600FB0928 /* PackMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

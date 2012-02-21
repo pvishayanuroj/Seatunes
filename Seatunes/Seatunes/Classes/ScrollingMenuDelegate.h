@@ -8,12 +8,13 @@
 
 #import "CommonHeaders.h"
 
+@class ScrollingMenu;
 @class ScrollingMenuItem;
 
 @protocol ScrollingMenuDelegate <NSObject>
 
 @optional
 
-- (void) scrollingMenuItemClicked:(ScrollingMenuItem *)menuItem;
+- (void) scrollingMenuItemClicked:(ScrollingMenu *)scrollingMenu menuItem:(ScrollingMenuItem *)menuItem;
 
 @end

@@ -13,6 +13,7 @@
 #import "Button.h"
 #import "ScrollingMenuItem.h"
 #import "SongMenuItem.h"
+#import "PackMenuItem.h"
 #import "Utility.h"
 #import "DataUtility.h"
 #import "DifficultyMenuScene.h"
@@ -42,39 +43,46 @@
 
 - (void) dealloc
 {
-    [self cleanupSongMenu];    
-    [sliderBoxMenu_ release];
+    [self cleanupSongMenu];  
+    [self cleanupPackMenu];
     [songNames_ release];
+    [packNames_ release];
     
     [super dealloc];
 }
 
-- (void) slideBoxMenuItemSelected:(Button *)button
+- (void) scrollingMenuItemClicked:(ScrollingMenu *)scrollingMenu menuItem:(ScrollingMenuItem *)menuItem
 {
-    [self loadSongMenu:button.numID];
-}
-
-- (void) scrollingMenuItemClicked:(ScrollingMenuItem *)menuItem
-{
-    NSString *songName = [songNames_ objectAtIndex:menuItem.numID];
-    NSLog(@"Song clicked: %@", songName);
-    [self loadDifficultyMenu:songName];
+    switch (scrollingMenu.numID) {
+        case kScrollingMenuSong:
+            [self loadDifficultyMenu:[songNames_ objectAtIndex:menuItem.numID]];
+            break;
+        case kScrollingMenuPack:
+            [self loadSongMenu:[[packNames_ objectAtIndex:menuItem.numID] integerValue]];
+            break;
+        default:
+            break; 
+    }
 }
 
 - (void) loadPackMenu
 {
-    sliderBoxMenu_ = [[SliderBoxMenu sliderBoxMenu:160] retain];
-    sliderBoxMenu_.position = ccp(200, 550);
-    sliderBoxMenu_.delegate = self;
-    [self addChild:sliderBoxMenu_];
+    CGRect menuFrame = CGRectMake(100, 175, 200, 425);
+    CGFloat scrollSize = 500;
+    packMenu_ = [[ScrollingMenu scrollingMenu:menuFrame scrollSize:scrollSize numID:kScrollingMenuPack] retain]; 
     
-    NSArray *packNames = [Utility allPackNames];
+    packMenu_.delegate = self;
+    [self addChild:packMenu_]; 
     
-    for (NSNumber *packName in packNames) {
-        NSInteger packType = [packName unsignedIntegerValue];
-        NSString *imageName = [NSString stringWithFormat:@"%@.png", [Utility packNameFromEnum:packType]];
-        Button *button = [ImageButton imageButton:packType unselectedImage:imageName selectedImage:imageName];
-        [sliderBoxMenu_ addMenuItem:button];
+    // Get songs for pack
+    packNames_ = [[Utility allPackNames] retain];    
+    
+    NSUInteger idx = 0;
+    for (NSNumber *pack in packNames_) {    
+   
+        NSString *packName = [Utility packNameFromEnum:[pack integerValue]];
+        ScrollingMenuItem *menuItem = [PackMenuItem packenuItem:packName packIndex:idx++ isLocked:NO];
+        [packMenu_ addMenuItem:menuItem];
     }
 }
 
@@ -82,9 +90,9 @@
 {
     [self cleanupSongMenu];
     
-    CGRect menuFrame = CGRectMake(1024 - 650, 100, 650, 500);
-    CGFloat scrollSize = 1000;
-    scrollingMenu_ = [[ScrollingMenu scrollingMenu:menuFrame scrollSize:scrollSize] retain]; 
+    CGRect menuFrame = CGRectMake(350, 175, 650, 425);
+    CGFloat scrollSize = 800;
+    scrollingMenu_ = [[ScrollingMenu scrollingMenu:menuFrame scrollSize:scrollSize numID:kScrollingMenuSong] retain]; 
 
     scrollingMenu_.delegate = self;
     [self addChild:scrollingMenu_]; 
@@ -129,6 +137,14 @@
     [scrollingMenu_ removeSuperview];
     [scrollingMenu_ release];   
     scrollingMenu_ = nil;
+}
+
+- (void) cleanupPackMenu
+{
+    [packMenu_ removeFromParentAndCleanup:YES];
+    [packMenu_ removeSuperview];
+    [packMenu_ release];
+    packMenu_ = nil;
 }
 
 @end
