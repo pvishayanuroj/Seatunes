@@ -24,8 +24,6 @@ static const CGFloat MMS_BUY_Y = 500.0f;
         
         [AudioManager audioManager];        
         
-        playMenuScene_ = [[PlayMenuScene node] retain];
-        
         CCSprite *background = [CCSprite spriteWithFile:@"Menu Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];                
@@ -42,16 +40,16 @@ static const CGFloat MMS_BUY_Y = 500.0f;
 
 - (void) dealloc
 {
-    [playMenuScene_ release];
-    
     [super dealloc];
 }
 
 - (void) buttonClicked:(Button *)button
 {
+    CCScene *scene;
     switch (button.numID) {
         case kPlayButton:
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:playMenuScene_]];            
+            scene = [PlayMenuScene node];
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:scene]];            
             break;
         case kBuySongsButton:
             break;

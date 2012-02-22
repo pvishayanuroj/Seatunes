@@ -21,8 +21,6 @@ enum {
 
 @interface MainMenuScene : CCScene <ButtonDelegate> {
     
-    CCScene *playMenuScene_;
-    
 }
 
 @end

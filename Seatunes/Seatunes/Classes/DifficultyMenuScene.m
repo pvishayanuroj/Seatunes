@@ -13,13 +13,16 @@
 
 @implementation DifficultyMenuScene
 
-const CGFloat DMS_TEXT_Y = 530.0f;
-const CGFloat DMS_BUTTON_Y = 420.0f;
-const CGFloat DMS_BUTTON_X = 512.0f;
-const CGFloat DMS_BUTTON_PADDING = 200.0f;
+static const CGFloat DMS_TITLE_X = 512.0f;
+static const CGFloat DMS_TITLE_Y = 650.0f;
 
-const CGFloat DMS_PLAY_BUTTON_X = 650.0f;
-const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
+static const CGFloat DMS_TEXT_Y = 530.0f;
+static const CGFloat DMS_BUTTON_Y = 420.0f;
+static const CGFloat DMS_BUTTON_X = 512.0f;
+static const CGFloat DMS_BUTTON_PADDING = 200.0f;
+
+static const CGFloat DMS_PLAY_BUTTON_X = 650.0f;
+static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
 
 + (id) startWithSongName:(NSString *)songName
 {
@@ -37,6 +40,10 @@ const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
         songName_ = [songName retain];
         
         // Add text
+        CCLabelBMFont *titleText = [CCLabelBMFont labelWithString:@"Choose Difficulty" fntFile:@"MenuFont.fnt"];
+        titleText.position = ccp(DMS_TITLE_X, DMS_TITLE_Y);
+        [self addChild:titleText];
+        
         CCLabelBMFont *easyText = [CCLabelBMFont labelWithString:@"Novice" fntFile:@"MenuFont.fnt"];
         CCLabelBMFont *mediumText = [CCLabelBMFont labelWithString:@"Pro" fntFile:@"MenuFont.fnt"];
         CCLabelBMFont *hardText = [CCLabelBMFont labelWithString:@"Master" fntFile:@"MenuFont.fnt"];        
