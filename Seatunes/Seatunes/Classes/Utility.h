@@ -32,6 +32,8 @@
 
 + (NSArray *) allPackNames;
 
++ (NSArray *) defaultUnlockedPacks;
+
 + (NSString *) difficultyPlayedKeyFromEnum:(DifficultyType)difficulty;
 
 + (NSArray *) loadSectionedSong:(NSString *)songName;

@@ -34,6 +34,8 @@ typedef NSUInteger ScrollingMenuType;
 
 - (NSArray *) loadSongNames:(NSString *)packName;
 
+- (void) togglePackSelect:(NSUInteger)packIndex;
+
 - (void) loadPackMenu;
 
 - (void) loadSongMenu:(PackType)packType;

@@ -32,6 +32,7 @@
 }
 
 @property (nonatomic, readonly) NSUInteger numID;
+@property (nonatomic, readonly) NSMutableArray *menuItems;
 @property (nonatomic, assign) id <ScrollingMenuDelegate> delegate;
 
 + (id) scrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize numID:(NSUInteger)numID;

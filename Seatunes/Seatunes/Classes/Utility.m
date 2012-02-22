@@ -192,6 +192,13 @@
     return packNames;
 }
 
++ (NSArray *) defaultUnlockedPacks
+{
+    NSMutableArray *packNames = [NSMutableArray arrayWithCapacity:8];
+    [packNames addObject:[NSNumber numberWithInteger:kExercisePack]];
+    return packNames;
+}
+
 + (NSString *) difficultyPlayedKeyFromEnum:(DifficultyType)difficulty
 {
     NSString *name = @"";

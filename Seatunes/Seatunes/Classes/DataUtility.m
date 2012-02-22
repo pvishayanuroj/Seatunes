@@ -53,12 +53,18 @@
         packs = [Utility allPackNames];
     }
     else {
-        packs = [[NSUserDefaults standardUserDefaults] arrayForKey:@"Unlocked Packs"];
+        
+        NSArray *defaultPacks = [Utility defaultUnlockedPacks];
+        NSArray *unlockedPacks = [[NSUserDefaults standardUserDefaults] arrayForKey:@"Unlocked Packs"];
 
         // If none exists
         if (packs == nil) {
             packs = [NSArray array];
         }
+        
+        NSMutableArray *combined = [NSMutableArray arrayWithArray:defaultPacks];
+        [combined addObjectsFromArray:unlockedPacks];
+        packs = combined;
     }
     
     return packs;

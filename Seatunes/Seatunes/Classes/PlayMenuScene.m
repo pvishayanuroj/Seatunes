@@ -58,10 +58,28 @@
             [self loadDifficultyMenu:[songNames_ objectAtIndex:menuItem.numID]];
             break;
         case kScrollingMenuPack:
+            [self togglePackSelect:menuItem.numID];
             [self loadSongMenu:[[packNames_ objectAtIndex:menuItem.numID] integerValue]];
             break;
         default:
             break; 
+    }
+}
+
+- (void) togglePackSelect:(NSUInteger)packIndex
+{
+    NSArray *menuItems = packMenu_.menuItems;
+    NSUInteger index = 0;
+    for (ScrollingMenuItem *menuItem in menuItems) {
+        
+        PackMenuItem *packItem = (PackMenuItem *)menuItem;
+        if (index == packIndex) {
+            [packItem toggleSelected:YES];
+        }
+        else {
+            [packItem toggleSelected:NO];            
+        }
+        index++;
     }
 }
 
@@ -74,14 +92,18 @@
     packMenu_.delegate = self;
     [self addChild:packMenu_]; 
     
-    // Get songs for pack
+    // Get all packs
     packNames_ = [[Utility allPackNames] retain];    
+    
+    // Get unlocked packs
+    NSArray *unlockedPacks = [DataUtility loadUnlockedPacks];
     
     NSUInteger idx = 0;
     for (NSNumber *pack in packNames_) {    
    
+        BOOL isLocked = ![unlockedPacks containsObject:pack];
         NSString *packName = [Utility packNameFromEnum:[pack integerValue]];
-        ScrollingMenuItem *menuItem = [PackMenuItem packenuItem:packName packIndex:idx++ isLocked:NO];
+        ScrollingMenuItem *menuItem = [PackMenuItem packenuItem:packName packIndex:idx++ isLocked:isLocked];
         [packMenu_ addMenuItem:menuItem];
     }
 }

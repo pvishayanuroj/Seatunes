@@ -15,10 +15,16 @@
     
     CCSprite *sprite_;
     
+    NSString *packName_;
+    
+    BOOL isLocked_;
+    
 }
 
 + (id) packenuItem:(NSString *)packName packIndex:(NSUInteger)packIndex isLocked:(BOOL)isLocked;
 
 - (id) initPackMenuItem:(NSString *)packName packIndex:(NSUInteger)packIndex isLocked:(BOOL)isLocked;
+
+- (void) toggleSelected:(BOOL)selected;
 
 @end

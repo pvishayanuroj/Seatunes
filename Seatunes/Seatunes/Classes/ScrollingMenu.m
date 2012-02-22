@@ -13,6 +13,7 @@
 @implementation ScrollingMenu
 
 @synthesize numID = numID_;
+@synthesize menuItems = menuItems_;
 @synthesize delegate = delegate_;
 
 + (id) scrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize numID:(NSUInteger)numID

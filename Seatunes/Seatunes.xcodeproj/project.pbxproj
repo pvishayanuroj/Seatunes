@@ -15,29 +15,18 @@
 		042FCA9F14F14CED00E34155 /* ScoreLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 042FCA9E14F14CEA00E34155 /* ScoreLayer.m */; };
 		042FCAA614F155FF00E34155 /* MenuFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAA414F155FF00E34155 /* MenuFont.fnt */; };
 		042FCAA714F155FF00E34155 /* MenuFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAA514F155FF00E34155 /* MenuFont.png */; };
-		042FCAC314F1F21300E34155 /* American Classics Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAA814F1F21300E34155 /* American Classics Pack.png */; };
 		042FCAC414F1F21300E34155 /* Bubble Burst.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAA914F1F21300E34155 /* Bubble Burst.png */; };
-		042FCAC514F1F21300E34155 /* Buy Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAA14F1F21300E34155 /* Buy Text.png */; };
-		042FCAC614F1F21300E34155 /* Credits Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAB14F1F21300E34155 /* Credits Text.png */; };
 		042FCAC714F1F21300E34155 /* Difficulty Menu Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAC14F1F21300E34155 /* Difficulty Menu Frame.png */; };
-		042FCAC814F1F21300E34155 /* Difficulty Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAD14F1F21300E34155 /* Difficulty Text.png */; };
-		042FCAC914F1F21300E34155 /* Empty Star-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAE14F1F21300E34155 /* Empty Star-hd.png */; };
 		042FCACA14F1F21300E34155 /* Empty Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAF14F1F21300E34155 /* Empty Star.png */; };
-		042FCACB14F1F21300E34155 /* Exercise Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB014F1F21300E34155 /* Exercise Pack.png */; };
 		042FCACC14F1F21300E34155 /* Full Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB114F1F21300E34155 /* Full Star.png */; };
 		042FCACD14F1F21300E34155 /* Game Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB214F1F21300E34155 /* Game Background.png */; };
 		042FCACE14F1F21300E34155 /* Menu Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB314F1F21300E34155 /* Menu Background.png */; };
 		042FCACF14F1F21300E34155 /* Menu Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB414F1F21300E34155 /* Menu Button.png */; };
 		042FCAD014F1F21300E34155 /* Menu Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB514F1F21300E34155 /* Menu Frame.png */; };
 		042FCAD114F1F21300E34155 /* Next Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB614F1F21300E34155 /* Next Button.png */; };
-		042FCAD214F1F21300E34155 /* Nursery Pack.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB714F1F21300E34155 /* Nursery Pack.png */; };
-		042FCAD314F1F21300E34155 /* Nursery Songs.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB814F1F21300E34155 /* Nursery Songs.png */; };
-		042FCAD414F1F21300E34155 /* Play Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB914F1F21300E34155 /* Play Text.png */; };
 		042FCAD514F1F21300E34155 /* Replay Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCABA14F1F21300E34155 /* Replay Button.png */; };
-		042FCAD614F1F21300E34155 /* Row Stripe.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCABB14F1F21300E34155 /* Row Stripe.png */; };
 		042FCAD714F1F21300E34155 /* Score Menu Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCABC14F1F21300E34155 /* Score Menu Frame.png */; };
 		042FCAD814F1F21300E34155 /* Side Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCABD14F1F21300E34155 /* Side Menu.png */; };
-		042FCAD914F1F21300E34155 /* Slider Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCABE14F1F21300E34155 /* Slider Box.png */; };
 		042FCADA14F1F21300E34155 /* Speech Bubble Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCABF14F1F21300E34155 /* Speech Bubble Large.png */; };
 		042FCADB14F1F21300E34155 /* Speech Bubble Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAC014F1F21300E34155 /* Speech Bubble Small.png */; };
 		042FCADD14F1F21300E34155 /* Starfish Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAC214F1F21300E34155 /* Starfish Button.png */; };
@@ -46,6 +35,16 @@
 		048508DF14D4D701008BBA10 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DD14D4D701008BBA10 /* Button.m */; };
 		048508E414D4E4E6008BBA10 /* ScrollingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508E314D4E4E5008BBA10 /* ScrollingMenu.m */; };
 		048508E714D4E50D008BBA10 /* ScrollingMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */; };
+		0485A2C614F4818500AFF338 /* American Classics Pack Locked Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2BC14F4818500AFF338 /* American Classics Pack Locked Selected.png */; };
+		0485A2C714F4818500AFF338 /* American Classics Pack Locked Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2BD14F4818500AFF338 /* American Classics Pack Locked Unselected.png */; };
+		0485A2C814F4818500AFF338 /* American Classics Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2BE14F4818500AFF338 /* American Classics Pack Selected.png */; };
+		0485A2C914F4818500AFF338 /* American Classics Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2BF14F4818500AFF338 /* American Classics Pack Unselected.png */; };
+		0485A2CA14F4818500AFF338 /* Exercise Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C014F4818500AFF338 /* Exercise Pack Selected.png */; };
+		0485A2CB14F4818500AFF338 /* Exercise Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C114F4818500AFF338 /* Exercise Pack Unselected.png */; };
+		0485A2CC14F4818500AFF338 /* Nursery Pack Locked Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C214F4818500AFF338 /* Nursery Pack Locked Selected.png */; };
+		0485A2CD14F4818500AFF338 /* Nursery Pack Locked Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C314F4818500AFF338 /* Nursery Pack Locked Unselected.png */; };
+		0485A2CE14F4818500AFF338 /* Nursery Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C414F4818500AFF338 /* Nursery Pack Selected.png */; };
+		0485A2CF14F4818500AFF338 /* Nursery Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C514F4818500AFF338 /* Nursery Pack Unselected.png */; };
 		048BBAC014D5368C0086EABC /* American Classics Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAAC14D5368B0086EABC /* American Classics Pack.plist */; };
 		048BBAC114D5368C0086EABC /* Exercise Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAAE14D5368B0086EABC /* Exercise Pack.plist */; };
 		048BBAC214D5368C0086EABC /* Alphabet Song.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB014D5368B0086EABC /* Alphabet Song.plist */; };
@@ -267,29 +266,18 @@
 		042FCA9E14F14CEA00E34155 /* ScoreLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreLayer.m; path = Classes/ScoreLayer.m; sourceTree = "<group>"; };
 		042FCAA414F155FF00E34155 /* MenuFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MenuFont.fnt; sourceTree = "<group>"; };
 		042FCAA514F155FF00E34155 /* MenuFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuFont.png; sourceTree = "<group>"; };
-		042FCAA814F1F21300E34155 /* American Classics Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics Pack.png"; sourceTree = "<group>"; };
 		042FCAA914F1F21300E34155 /* Bubble Burst.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble Burst.png"; sourceTree = "<group>"; };
-		042FCAAA14F1F21300E34155 /* Buy Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Buy Text.png"; sourceTree = "<group>"; };
-		042FCAAB14F1F21300E34155 /* Credits Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Credits Text.png"; sourceTree = "<group>"; };
 		042FCAAC14F1F21300E34155 /* Difficulty Menu Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Difficulty Menu Frame.png"; sourceTree = "<group>"; };
-		042FCAAD14F1F21300E34155 /* Difficulty Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Difficulty Text.png"; sourceTree = "<group>"; };
-		042FCAAE14F1F21300E34155 /* Empty Star-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty Star-hd.png"; sourceTree = "<group>"; };
 		042FCAAF14F1F21300E34155 /* Empty Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty Star.png"; sourceTree = "<group>"; };
-		042FCAB014F1F21300E34155 /* Exercise Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exercise Pack.png"; sourceTree = "<group>"; };
 		042FCAB114F1F21300E34155 /* Full Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Full Star.png"; sourceTree = "<group>"; };
 		042FCAB214F1F21300E34155 /* Game Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Background.png"; sourceTree = "<group>"; };
 		042FCAB314F1F21300E34155 /* Menu Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Background.png"; sourceTree = "<group>"; };
 		042FCAB414F1F21300E34155 /* Menu Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Button.png"; sourceTree = "<group>"; };
 		042FCAB514F1F21300E34155 /* Menu Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Frame.png"; sourceTree = "<group>"; };
 		042FCAB614F1F21300E34155 /* Next Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Next Button.png"; sourceTree = "<group>"; };
-		042FCAB714F1F21300E34155 /* Nursery Pack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack.png"; sourceTree = "<group>"; };
-		042FCAB814F1F21300E34155 /* Nursery Songs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Songs.png"; sourceTree = "<group>"; };
-		042FCAB914F1F21300E34155 /* Play Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play Text.png"; sourceTree = "<group>"; };
 		042FCABA14F1F21300E34155 /* Replay Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Replay Button.png"; sourceTree = "<group>"; };
-		042FCABB14F1F21300E34155 /* Row Stripe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Row Stripe.png"; sourceTree = "<group>"; };
 		042FCABC14F1F21300E34155 /* Score Menu Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Score Menu Frame.png"; sourceTree = "<group>"; };
 		042FCABD14F1F21300E34155 /* Side Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Side Menu.png"; sourceTree = "<group>"; };
-		042FCABE14F1F21300E34155 /* Slider Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slider Box.png"; sourceTree = "<group>"; };
 		042FCABF14F1F21300E34155 /* Speech Bubble Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble Large.png"; sourceTree = "<group>"; };
 		042FCAC014F1F21300E34155 /* Speech Bubble Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble Small.png"; sourceTree = "<group>"; };
 		042FCAC214F1F21300E34155 /* Starfish Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Starfish Button.png"; sourceTree = "<group>"; };
@@ -305,6 +293,16 @@
 		048508E314D4E4E5008BBA10 /* ScrollingMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollingMenu.m; path = Classes/ScrollingMenu.m; sourceTree = "<group>"; };
 		048508E514D4E50D008BBA10 /* ScrollingMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollingMenuItem.h; path = Classes/ScrollingMenuItem.h; sourceTree = "<group>"; };
 		048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollingMenuItem.m; path = Classes/ScrollingMenuItem.m; sourceTree = "<group>"; };
+		0485A2BC14F4818500AFF338 /* American Classics Pack Locked Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics Pack Locked Selected.png"; sourceTree = "<group>"; };
+		0485A2BD14F4818500AFF338 /* American Classics Pack Locked Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics Pack Locked Unselected.png"; sourceTree = "<group>"; };
+		0485A2BE14F4818500AFF338 /* American Classics Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics Pack Selected.png"; sourceTree = "<group>"; };
+		0485A2BF14F4818500AFF338 /* American Classics Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics Pack Unselected.png"; sourceTree = "<group>"; };
+		0485A2C014F4818500AFF338 /* Exercise Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exercise Pack Selected.png"; sourceTree = "<group>"; };
+		0485A2C114F4818500AFF338 /* Exercise Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exercise Pack Unselected.png"; sourceTree = "<group>"; };
+		0485A2C214F4818500AFF338 /* Nursery Pack Locked Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack Locked Selected.png"; sourceTree = "<group>"; };
+		0485A2C314F4818500AFF338 /* Nursery Pack Locked Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack Locked Unselected.png"; sourceTree = "<group>"; };
+		0485A2C414F4818500AFF338 /* Nursery Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack Selected.png"; sourceTree = "<group>"; };
+		0485A2C514F4818500AFF338 /* Nursery Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack Unselected.png"; sourceTree = "<group>"; };
 		048BBAAC14D5368B0086EABC /* American Classics Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "American Classics Pack.plist"; sourceTree = "<group>"; };
 		048BBAAE14D5368B0086EABC /* Exercise Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Exercise Pack.plist"; sourceTree = "<group>"; };
 		048BBAB014D5368B0086EABC /* Alphabet Song.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Alphabet Song.plist"; sourceTree = "<group>"; };
@@ -676,33 +674,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0485A2BB14F4815300AFF338 /* Game Logic */ = {
+			isa = PBXGroup;
+			children = (
+				04D331D014E7506F00DD82D4 /* GameLogic.h */,
+				04D331D114E7507100DD82D4 /* GameLogic.m */,
+				042FCA4B14EA096700E34155 /* GameLogicDelegate.h */,
+				04B32C9B14DDDBF0004AA98E /* GameLogicA.h */,
+				04B32C9C14DDDBF0004AA98E /* GameLogicA.m */,
+				04B32C9314DDB1DA004AA98E /* GameLogicB.h */,
+				04B32C9414DDB1DA004AA98E /* GameLogicB.m */,
+				04B32C9E14DDDC16004AA98E /* GameLogicC.h */,
+				04B32C9F14DDDC17004AA98E /* GameLogicC.m */,
+			);
+			name = "Game Logic";
+			sourceTree = "<group>";
+		};
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0485A2BC14F4818500AFF338 /* American Classics Pack Locked Selected.png */,
+				0485A2BD14F4818500AFF338 /* American Classics Pack Locked Unselected.png */,
+				0485A2BE14F4818500AFF338 /* American Classics Pack Selected.png */,
+				0485A2BF14F4818500AFF338 /* American Classics Pack Unselected.png */,
+				0485A2C014F4818500AFF338 /* Exercise Pack Selected.png */,
+				0485A2C114F4818500AFF338 /* Exercise Pack Unselected.png */,
+				0485A2C214F4818500AFF338 /* Nursery Pack Locked Selected.png */,
+				0485A2C314F4818500AFF338 /* Nursery Pack Locked Unselected.png */,
+				0485A2C414F4818500AFF338 /* Nursery Pack Selected.png */,
+				0485A2C514F4818500AFF338 /* Nursery Pack Unselected.png */,
 				04D3E46114F2EF8F00FB0928 /* Water Background.png */,
-				042FCAA814F1F21300E34155 /* American Classics Pack.png */,
 				042FCAA914F1F21300E34155 /* Bubble Burst.png */,
-				042FCAAA14F1F21300E34155 /* Buy Text.png */,
-				042FCAAB14F1F21300E34155 /* Credits Text.png */,
 				042FCAAC14F1F21300E34155 /* Difficulty Menu Frame.png */,
-				042FCAAD14F1F21300E34155 /* Difficulty Text.png */,
-				042FCAAE14F1F21300E34155 /* Empty Star-hd.png */,
 				042FCAAF14F1F21300E34155 /* Empty Star.png */,
-				042FCAB014F1F21300E34155 /* Exercise Pack.png */,
 				042FCAB114F1F21300E34155 /* Full Star.png */,
 				042FCAB214F1F21300E34155 /* Game Background.png */,
 				042FCAB314F1F21300E34155 /* Menu Background.png */,
 				042FCAB414F1F21300E34155 /* Menu Button.png */,
 				042FCAB514F1F21300E34155 /* Menu Frame.png */,
 				042FCAB614F1F21300E34155 /* Next Button.png */,
-				042FCAB714F1F21300E34155 /* Nursery Pack.png */,
-				042FCAB814F1F21300E34155 /* Nursery Songs.png */,
-				042FCAB914F1F21300E34155 /* Play Text.png */,
 				042FCABA14F1F21300E34155 /* Replay Button.png */,
-				042FCABB14F1F21300E34155 /* Row Stripe.png */,
 				042FCABC14F1F21300E34155 /* Score Menu Frame.png */,
 				042FCABD14F1F21300E34155 /* Side Menu.png */,
-				042FCABE14F1F21300E34155 /* Slider Box.png */,
 				042FCABF14F1F21300E34155 /* Speech Bubble Large.png */,
 				042FCAC014F1F21300E34155 /* Speech Bubble Small.png */,
 				042FCAC214F1F21300E34155 /* Starfish Button.png */,
@@ -782,6 +795,81 @@
 			path = Resources/Speech;
 			sourceTree = "<group>";
 		};
+		04D3E46714F47CE200FB0928 /* Cocos2D Base */ = {
+			isa = PBXGroup;
+			children = (
+				DAB1207B14C1E84D009B60FB /* AppDelegate.h */,
+				DAB1207C14C1E84D009B60FB /* AppDelegate.m */,
+				DAB1207E14C1E84D009B60FB /* RootViewController.h */,
+				DAB1207F14C1E84D009B60FB /* RootViewController.m */,
+				DAB1208414C1E84E009B60FB /* GameConfig.h */,
+			);
+			name = "Cocos2D Base";
+			sourceTree = "<group>";
+		};
+		04D3E46814F47D1A00FB0928 /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				041E5F3214DE39440084BC0A /* SpeechBubble.h */,
+				041E5F3314DE39450084BC0A /* SpeechBubble.m */,
+				04D3319314E3880D00DD82D4 /* SpeechBubbleDelegate.h */,
+				04D3318C14E2212100DD82D4 /* SpeechReader.h */,
+				04D3318D14E2212200DD82D4 /* SpeechReader.m */,
+				04D3318F14E2213000DD82D4 /* SpeechReaderDelegate.h */,
+				04D331BB14E6B53700DD82D4 /* SpeechManager.h */,
+				04D331BC14E6B53700DD82D4 /* SpeechManager.m */,
+			);
+			name = Speech;
+			sourceTree = "<group>";
+		};
+		04D3E46914F47D2300FB0928 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				048508DC14D4D701008BBA10 /* Button.h */,
+				048508DD14D4D701008BBA10 /* Button.m */,
+				048508DE14D4D701008BBA10 /* ButtonDelegate.h */,
+				DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */,
+				DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */,
+				DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */,
+				DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */,
+				041E5F7214DF5C850084BC0A /* Menu.h */,
+				041E5F7314DF5C870084BC0A /* Menu.m */,
+				041E5F7514DF5CA40084BC0A /* MenuDelegate.h */,
+				048508D914D4D62D008BBA10 /* SliderBoxMenu.h */,
+				048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */,
+				048508E114D4DB1C008BBA10 /* SliderBoxMenuDelegate.h */,
+				04D3E45E14F2DECA00FB0928 /* StarfishButton.h */,
+				04D3E45F14F2DECC00FB0928 /* StarfishButton.m */,
+				048508E214D4E4E5008BBA10 /* ScrollingMenu.h */,
+				048508E314D4E4E5008BBA10 /* ScrollingMenu.m */,
+				DA08E0BE14D511F300D1437B /* ScrollingMenuDelegate.h */,
+				048508E514D4E50D008BBA10 /* ScrollingMenuItem.h */,
+				048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */,
+				DA08E0BF14D5150300D1437B /* ScrollingMenuItemDelegate.h */,
+				DA08E0C014D529C000D1437B /* SongMenuItem.h */,
+				DA08E0C114D529C600D1437B /* SongMenuItem.m */,
+				04D3E46414F358B000FB0928 /* PackMenuItem.h */,
+				04D3E46514F358B200FB0928 /* PackMenuItem.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		04D3E46A14F47D2C00FB0928 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				042FCA4114E8C97600E34155 /* DataUtility.h */,
+				042FCA4214E8C97600E34155 /* DataUtility.m */,
+				DAB120E414C352C8009B60FB /* Utility.h */,
+				DAB120E514C352C8009B60FB /* Utility.m */,
+				04D331E114E8A24C00DD82D4 /* CCNode+PauseResume.h */,
+				04D331E214E8A24F00DD82D4 /* CCNode+PauseResume.m */,
+				DAB1209814C30BFC009B60FB /* CommonHeaders.h */,
+				DAB1209714C30BA3009B60FB /* Enums.h */,
+				DAB1216914C48F6C009B60FB /* Debugging.h */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		DAB11F0A14C1E847009B60FB = {
 			isa = PBXGroup;
 			children = (
@@ -817,33 +905,16 @@
 		DAB11F2914C1E847009B60FB /* Seatunes */ = {
 			isa = PBXGroup;
 			children = (
-				042FCA4114E8C97600E34155 /* DataUtility.h */,
-				042FCA4214E8C97600E34155 /* DataUtility.m */,
-				04D331E114E8A24C00DD82D4 /* CCNode+PauseResume.h */,
-				04D331E214E8A24F00DD82D4 /* CCNode+PauseResume.m */,
-				048508DC14D4D701008BBA10 /* Button.h */,
-				048508DD14D4D701008BBA10 /* Button.m */,
-				048508DE14D4D701008BBA10 /* ButtonDelegate.h */,
-				DAB1207B14C1E84D009B60FB /* AppDelegate.h */,
-				DAB1207C14C1E84D009B60FB /* AppDelegate.m */,
-				DAB1207E14C1E84D009B60FB /* RootViewController.h */,
-				DAB1207F14C1E84D009B60FB /* RootViewController.m */,
-				DAB1208414C1E84E009B60FB /* GameConfig.h */,
+				04D3E46714F47CE200FB0928 /* Cocos2D Base */,
+				04D3E46A14F47D2C00FB0928 /* Utilities */,
+				04D3E46914F47D2300FB0928 /* UI */,
+				04D3E46814F47D1A00FB0928 /* Speech */,
+				0485A2BB14F4815300AFF338 /* Game Logic */,
 				DAB11F2A14C1E847009B60FB /* Resources */,
 				DAB11F3E14C1E847009B60FB /* libs */,
 				DAB1207714C1E84D009B60FB /* Supporting Files */,
 				DAB1211B14C35F2A009B60FB /* GameScene.h */,
 				DAB1211C14C35F2B009B60FB /* GameScene.m */,
-				048508E214D4E4E5008BBA10 /* ScrollingMenu.h */,
-				048508E314D4E4E5008BBA10 /* ScrollingMenu.m */,
-				DA08E0BE14D511F300D1437B /* ScrollingMenuDelegate.h */,
-				048508E514D4E50D008BBA10 /* ScrollingMenuItem.h */,
-				048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */,
-				DA08E0BF14D5150300D1437B /* ScrollingMenuItemDelegate.h */,
-				DA08E0C014D529C000D1437B /* SongMenuItem.h */,
-				DA08E0C114D529C600D1437B /* SongMenuItem.m */,
-				04D3E46414F358B000FB0928 /* PackMenuItem.h */,
-				04D3E46514F358B200FB0928 /* PackMenuItem.m */,
 				DAB120D514C30E60009B60FB /* AudioManager.h */,
 				DAB120D614C30E60009B60FB /* AudioManager.m */,
 				DAB1208D14C3099B009B60FB /* Keyboard.h */,
@@ -855,37 +926,11 @@
 				DAB1209314C30A87009B60FB /* Instructor.h */,
 				DAB1209414C30A87009B60FB /* Instructor.m */,
 				041E5F3114DE34100084BC0A /* InstructorDelegate.h */,
-				041E5F3214DE39440084BC0A /* SpeechBubble.h */,
-				041E5F3314DE39450084BC0A /* SpeechBubble.m */,
-				04D3319314E3880D00DD82D4 /* SpeechBubbleDelegate.h */,
-				04D3318C14E2212100DD82D4 /* SpeechReader.h */,
-				04D3318D14E2212200DD82D4 /* SpeechReader.m */,
-				04D3318F14E2213000DD82D4 /* SpeechReaderDelegate.h */,
-				04D331BB14E6B53700DD82D4 /* SpeechManager.h */,
-				04D331BC14E6B53700DD82D4 /* SpeechManager.m */,
-				DAB1209814C30BFC009B60FB /* CommonHeaders.h */,
 				DAB1215F14C475F2009B60FB /* Note.h */,
 				DAB1216014C475F7009B60FB /* Note.m */,
 				041E5F2C14DE206B0084BC0A /* NoteDelegate.h */,
-				DAB1209714C30BA3009B60FB /* Enums.h */,
-				DAB120E414C352C8009B60FB /* Utility.h */,
-				DAB120E514C352C8009B60FB /* Utility.m */,
-				DAB1216914C48F6C009B60FB /* Debugging.h */,
 				DAB1208A14C30911009B60FB /* GameLayer.h */,
 				DAB1208B14C30911009B60FB /* GameLayer.m */,
-				04D331D014E7506F00DD82D4 /* GameLogic.h */,
-				04D331D114E7507100DD82D4 /* GameLogic.m */,
-				042FCA4B14EA096700E34155 /* GameLogicDelegate.h */,
-				04B32C9B14DDDBF0004AA98E /* GameLogicA.h */,
-				04B32C9C14DDDBF0004AA98E /* GameLogicA.m */,
-				04B32C9314DDB1DA004AA98E /* GameLogicB.h */,
-				04B32C9414DDB1DA004AA98E /* GameLogicB.m */,
-				04B32C9E14DDDC16004AA98E /* GameLogicC.h */,
-				04B32C9F14DDDC17004AA98E /* GameLogicC.m */,
-				DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */,
-				DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */,
-				DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */,
-				DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */,
 				DA08E0B614D4589900D1437B /* MainMenuScene.h */,
 				DA08E0B714D458B800D1437B /* MainMenuScene.m */,
 				048508D514D4D4DC008BBA10 /* PlayMenuScene.h */,
@@ -894,17 +939,9 @@
 				042FCA4614EA082100E34155 /* DifficultyMenuScene.m */,
 				042FCA4814EA084000E34155 /* BuyMenuScene.h */,
 				042FCA4914EA084000E34155 /* BuyMenuScene.m */,
-				048508D914D4D62D008BBA10 /* SliderBoxMenu.h */,
-				048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */,
-				048508E114D4DB1C008BBA10 /* SliderBoxMenuDelegate.h */,
-				041E5F7214DF5C850084BC0A /* Menu.h */,
-				041E5F7314DF5C870084BC0A /* Menu.m */,
-				041E5F7514DF5CA40084BC0A /* MenuDelegate.h */,
 				042FCA9D14F14CE700E34155 /* ScoreLayer.h */,
 				042FCA9E14F14CEA00E34155 /* ScoreLayer.m */,
 				04D3E46314F2FCE100FB0928 /* ScoreLayerDelegate.h */,
-				04D3E45E14F2DECA00FB0928 /* StarfishButton.h */,
-				04D3E45F14F2DECC00FB0928 /* StarfishButton.m */,
 			);
 			path = Seatunes;
 			sourceTree = "<group>";
@@ -1425,35 +1462,34 @@
 				04D331CF14E7056700DD82D4 /* Speech.plist in Resources */,
 				042FCAA614F155FF00E34155 /* MenuFont.fnt in Resources */,
 				042FCAA714F155FF00E34155 /* MenuFont.png in Resources */,
-				042FCAC314F1F21300E34155 /* American Classics Pack.png in Resources */,
 				042FCAC414F1F21300E34155 /* Bubble Burst.png in Resources */,
-				042FCAC514F1F21300E34155 /* Buy Text.png in Resources */,
-				042FCAC614F1F21300E34155 /* Credits Text.png in Resources */,
 				042FCAC714F1F21300E34155 /* Difficulty Menu Frame.png in Resources */,
-				042FCAC814F1F21300E34155 /* Difficulty Text.png in Resources */,
-				042FCAC914F1F21300E34155 /* Empty Star-hd.png in Resources */,
 				042FCACA14F1F21300E34155 /* Empty Star.png in Resources */,
-				042FCACB14F1F21300E34155 /* Exercise Pack.png in Resources */,
 				042FCACC14F1F21300E34155 /* Full Star.png in Resources */,
 				042FCACD14F1F21300E34155 /* Game Background.png in Resources */,
 				042FCACE14F1F21300E34155 /* Menu Background.png in Resources */,
 				042FCACF14F1F21300E34155 /* Menu Button.png in Resources */,
 				042FCAD014F1F21300E34155 /* Menu Frame.png in Resources */,
 				042FCAD114F1F21300E34155 /* Next Button.png in Resources */,
-				042FCAD214F1F21300E34155 /* Nursery Pack.png in Resources */,
-				042FCAD314F1F21300E34155 /* Nursery Songs.png in Resources */,
-				042FCAD414F1F21300E34155 /* Play Text.png in Resources */,
 				042FCAD514F1F21300E34155 /* Replay Button.png in Resources */,
-				042FCAD614F1F21300E34155 /* Row Stripe.png in Resources */,
 				042FCAD714F1F21300E34155 /* Score Menu Frame.png in Resources */,
 				042FCAD814F1F21300E34155 /* Side Menu.png in Resources */,
-				042FCAD914F1F21300E34155 /* Slider Box.png in Resources */,
 				042FCADA14F1F21300E34155 /* Speech Bubble Large.png in Resources */,
 				042FCADB14F1F21300E34155 /* Speech Bubble Small.png in Resources */,
 				042FCADD14F1F21300E34155 /* Starfish Button.png in Resources */,
 				04D3E45C14F2025300FB0928 /* Dialogue Font.fnt in Resources */,
 				04D3E45D14F2025300FB0928 /* Dialogue Font.png in Resources */,
 				04D3E46214F2EF8F00FB0928 /* Water Background.png in Resources */,
+				0485A2C614F4818500AFF338 /* American Classics Pack Locked Selected.png in Resources */,
+				0485A2C714F4818500AFF338 /* American Classics Pack Locked Unselected.png in Resources */,
+				0485A2C814F4818500AFF338 /* American Classics Pack Selected.png in Resources */,
+				0485A2C914F4818500AFF338 /* American Classics Pack Unselected.png in Resources */,
+				0485A2CA14F4818500AFF338 /* Exercise Pack Selected.png in Resources */,
+				0485A2CB14F4818500AFF338 /* Exercise Pack Unselected.png in Resources */,
+				0485A2CC14F4818500AFF338 /* Nursery Pack Locked Selected.png in Resources */,
+				0485A2CD14F4818500AFF338 /* Nursery Pack Locked Unselected.png in Resources */,
+				0485A2CE14F4818500AFF338 /* Nursery Pack Selected.png in Resources */,
+				0485A2CF14F4818500AFF338 /* Nursery Pack Unselected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
