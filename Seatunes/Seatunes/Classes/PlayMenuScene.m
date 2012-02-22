@@ -20,6 +20,11 @@
 
 @implementation PlayMenuScene
 
+static const CGFloat PMS_MENU_FRAME_X = 550.0f;
+static const CGFloat PMS_MENU_FRAME_Y = 400.0f;
+static const CGFloat PMS_PACK_TITLE_X = 700.0f;
+static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
+
 - (id) init
 {
     if ((self = [super init])) {
@@ -29,8 +34,12 @@
         [self addChild:background];        
         
         CCSprite *menuFrame = [CCSprite spriteWithFile:@"Menu Frame.png"];
-        menuFrame.position = ccp(550, 400);
+        menuFrame.position = ccp(PMS_MENU_FRAME_X, PMS_MENU_FRAME_Y);
         [self addChild:menuFrame];
+        
+        packTitle_ = [CCLabelBMFont labelWithString:@"" fntFile:@"MenuFont.fnt"];
+        packTitle_.position = ccp(PMS_PACK_TITLE_X, PMS_PACK_TITLE_Y);
+        [self addChild:packTitle_];
         
         [self loadPackMenu];        
         
@@ -47,6 +56,7 @@
     [self cleanupPackMenu];
     [songNames_ release];
     [packNames_ release];
+    [packTitle_ release];
     
     [super dealloc];
 }
@@ -112,6 +122,9 @@
 {
     [self cleanupSongMenu];
     
+    NSString *packName = [Utility packNameFromEnum:packType];
+    [packTitle_ setString:packName];
+    
     CGRect menuFrame = CGRectMake(350, 175, 650, 425);
     CGFloat scrollSize = 800;
     scrollingMenu_ = [[ScrollingMenu scrollingMenu:menuFrame scrollSize:scrollSize numID:kScrollingMenuSong] retain]; 
@@ -120,7 +133,7 @@
     [self addChild:scrollingMenu_]; 
     
     // Get songs for pack
-    songNames_ = [[self loadSongNames:[Utility packNameFromEnum:packType]] retain];
+    songNames_ = [[self loadSongNames:packName] retain];
     
     // Get scores for songs
     NSDictionary *scores = [DataUtility loadSongScores];
