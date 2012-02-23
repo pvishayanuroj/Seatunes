@@ -153,7 +153,7 @@ static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
 - (void) loadDifficultyMenu:(NSString *)songName
 {
     CCScene *scene = [DifficultyMenuScene startWithSongName:songName];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0f scene:scene]];    
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
 }
 
 - (NSArray *) loadSongNames:(NSString *)packName

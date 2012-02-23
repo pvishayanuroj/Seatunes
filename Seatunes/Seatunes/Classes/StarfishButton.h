@@ -26,6 +26,6 @@
 
 - (id) initStarfishButton:(NSUInteger)numID text:(NSString *)text;
 
-- (void) startFastSpin;
+- (void) startSpin;
 
 @end

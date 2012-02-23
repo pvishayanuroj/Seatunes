@@ -201,11 +201,13 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
             break;
         case kButtonReplay:
             scene = [GameScene startWithDifficulty:difficulty_ songName:songName_];
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:scene]];                         
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];            
+            //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:scene]];                         
             break;
         case kButtonMenu:
             scene = [PlayMenuScene node];
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:scene]];             
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];            
+            //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:scene]];             
             break;
         default:
             break;

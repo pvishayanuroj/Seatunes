@@ -78,34 +78,48 @@ static const CGFloat SB_BUTTON_X = 100.0f;
 - (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
     if ([self containsTouchLocation:touch])	{
-        [self startFastSpin];
-        [self unselectButton];        
+        [self startSpin];
+        [self unselectButton]; 
+        
+        if ([delegate_ respondsToSelector:@selector(buttonClicked:)]) {
+        //    [delegate_ buttonClicked:self];
+        }            
     }
 }
 
 - (void) selectButton
 {
+    sprite_.scale = 1.1f;
+    
     [super selectButton];
 }
 
 - (void) unselectButton
 {
+    sprite_.scale = 1.0f;
+    
     [super unselectButton];    
 }
 
-- (void) startFastSpin
+- (void) startSpin
 {
     [sprite_ stopAllActions];
-    CCActionInterval *spin = [CCRotateBy actionWithDuration:3.0f angle:360.0f * 4];
+    CCActionInterval *spin = [CCRotateBy actionWithDuration:0.5f angle:180.0f * 1];
+    CCActionInstant *delay = [CCDelayTime actionWithDuration:0.25f];
+    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(doneSpin)];
+    [sprite_ runAction:[CCSequence actions:spin, delay, done, nil]];
+    
+    /*
     CCEaseIn *ease = [CCEaseIn actionWithAction:spin rate:2.0f];
     [sprite_ runAction:ease];
     
     CCDelayTime *delay = [CCDelayTime actionWithDuration:1.0f];
     CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(doneFastSpin)];
     [self runAction:[CCSequence actions:delay, done, nil]];
+     */
 }
 
-- (void) doneFastSpin
+- (void) doneSpin
 {
     if ([delegate_ respondsToSelector:@selector(buttonClicked:)]) {
         [delegate_ buttonClicked:self];

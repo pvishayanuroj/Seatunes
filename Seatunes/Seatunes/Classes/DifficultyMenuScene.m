@@ -125,7 +125,7 @@ static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
 - (void) startSong
 {
     CCScene *scene = [GameScene startWithDifficulty:difficulty_ songName:songName_];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:scene]];    
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
 }
 
 @end

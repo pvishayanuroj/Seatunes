@@ -49,7 +49,9 @@ static const CGFloat MMS_BUY_Y = 500.0f;
     switch (button.numID) {
         case kPlayButton:
             scene = [PlayMenuScene node];
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:scene]];            
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:NO]];
+
+            //[[CCDirector sharedDirector] replaceScene:[CCTransitionFlipY transitionWithDuration:0.5f scene:scene]];            
             break;
         case kBuySongsButton:
             break;
