@@ -108,6 +108,18 @@
 		04D3E46014F2DECD00FB0928 /* StarfishButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3E45F14F2DECC00FB0928 /* StarfishButton.m */; };
 		04D3E46214F2EF8F00FB0928 /* Water Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D3E46114F2EF8F00FB0928 /* Water Background.png */; };
 		04D3E46614F358B600FB0928 /* PackMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3E46514F358B200FB0928 /* PackMenuItem.m */; };
+		04DE51C314F7492C00F8E45C /* Applause 2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51B914F7492C00F8E45C /* Applause 2.caf */; };
+		04DE51C414F7492C00F8E45C /* Applause.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51BA14F7492C00F8E45C /* Applause.caf */; };
+		04DE51CA14F7492C00F8E45C /* Page Flip.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51C014F7492C00F8E45C /* Page Flip.caf */; };
+		04DE51E414F895C500F8E45C /* Menu Sound A1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51DB14F895C500F8E45C /* Menu Sound A1.caf */; };
+		04DE51E514F895C500F8E45C /* Menu Sound B0.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51DC14F895C500F8E45C /* Menu Sound B0.caf */; };
+		04DE51E614F895C500F8E45C /* Menu Sound B1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51DD14F895C500F8E45C /* Menu Sound B1.caf */; };
+		04DE51E714F895C500F8E45C /* Menu Sound C1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51DE14F895C500F8E45C /* Menu Sound C1.caf */; };
+		04DE51E814F895C500F8E45C /* Menu Sound C2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51DF14F895C500F8E45C /* Menu Sound C2.caf */; };
+		04DE51E914F895C500F8E45C /* Menu Sound D1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51E014F895C500F8E45C /* Menu Sound D1.caf */; };
+		04DE51EA14F895C500F8E45C /* Menu Sound E1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51E114F895C500F8E45C /* Menu Sound E1.caf */; };
+		04DE51EB14F895C500F8E45C /* Menu Sound F1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51E214F895C500F8E45C /* Menu Sound F1.caf */; };
+		04DE51EC14F895C500F8E45C /* Menu Sound G1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51E314F895C500F8E45C /* Menu Sound G1.caf */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
 		DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B714D458B800D1437B /* MainMenuScene.m */; };
@@ -378,6 +390,18 @@
 		04D3E46314F2FCE100FB0928 /* ScoreLayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreLayerDelegate.h; path = Classes/ScoreLayerDelegate.h; sourceTree = "<group>"; };
 		04D3E46414F358B000FB0928 /* PackMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PackMenuItem.h; path = Classes/PackMenuItem.h; sourceTree = "<group>"; };
 		04D3E46514F358B200FB0928 /* PackMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PackMenuItem.m; path = Classes/PackMenuItem.m; sourceTree = "<group>"; };
+		04DE51B914F7492C00F8E45C /* Applause 2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Applause 2.caf"; sourceTree = "<group>"; };
+		04DE51BA14F7492C00F8E45C /* Applause.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Applause.caf; sourceTree = "<group>"; };
+		04DE51C014F7492C00F8E45C /* Page Flip.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Page Flip.caf"; sourceTree = "<group>"; };
+		04DE51DB14F895C500F8E45C /* Menu Sound A1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Menu Sound A1.caf"; sourceTree = "<group>"; };
+		04DE51DC14F895C500F8E45C /* Menu Sound B0.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Menu Sound B0.caf"; sourceTree = "<group>"; };
+		04DE51DD14F895C500F8E45C /* Menu Sound B1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Menu Sound B1.caf"; sourceTree = "<group>"; };
+		04DE51DE14F895C500F8E45C /* Menu Sound C1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Menu Sound C1.caf"; sourceTree = "<group>"; };
+		04DE51DF14F895C500F8E45C /* Menu Sound C2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Menu Sound C2.caf"; sourceTree = "<group>"; };
+		04DE51E014F895C500F8E45C /* Menu Sound D1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Menu Sound D1.caf"; sourceTree = "<group>"; };
+		04DE51E114F895C500F8E45C /* Menu Sound E1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Menu Sound E1.caf"; sourceTree = "<group>"; };
+		04DE51E214F895C500F8E45C /* Menu Sound F1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Menu Sound F1.caf"; sourceTree = "<group>"; };
+		04DE51E314F895C500F8E45C /* Menu Sound G1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Menu Sound G1.caf"; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
 		DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayViewController.m; path = Classes/CocosOverlayViewController.m; sourceTree = "<group>"; };
 		DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayScrollView.h; path = Classes/CocosOverlayScrollView.h; sourceTree = "<group>"; };
@@ -870,6 +894,26 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		04DE51B614F7492C00F8E45C /* Sound Effects */ = {
+			isa = PBXGroup;
+			children = (
+				04DE51DB14F895C500F8E45C /* Menu Sound A1.caf */,
+				04DE51DC14F895C500F8E45C /* Menu Sound B0.caf */,
+				04DE51DD14F895C500F8E45C /* Menu Sound B1.caf */,
+				04DE51DE14F895C500F8E45C /* Menu Sound C1.caf */,
+				04DE51DF14F895C500F8E45C /* Menu Sound C2.caf */,
+				04DE51E014F895C500F8E45C /* Menu Sound D1.caf */,
+				04DE51E114F895C500F8E45C /* Menu Sound E1.caf */,
+				04DE51E214F895C500F8E45C /* Menu Sound F1.caf */,
+				04DE51E314F895C500F8E45C /* Menu Sound G1.caf */,
+				04DE51B914F7492C00F8E45C /* Applause 2.caf */,
+				04DE51BA14F7492C00F8E45C /* Applause.caf */,
+				04DE51C014F7492C00F8E45C /* Page Flip.caf */,
+			);
+			name = "Sound Effects";
+			path = "Resources/Sound Effects";
+			sourceTree = "<group>";
+		};
 		DAB11F0A14C1E847009B60FB = {
 			isa = PBXGroup;
 			children = (
@@ -949,6 +993,7 @@
 		DAB11F2A14C1E847009B60FB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04DE51B614F7492C00F8E45C /* Sound Effects */,
 				04D331CD14E7056700DD82D4 /* Speech */,
 				04D331C814E6DDD600DD82D4 /* Fonts */,
 				048BBAAA14D5368B0086EABC /* Packs */,
@@ -1490,6 +1535,18 @@
 				0485A2CD14F4818500AFF338 /* Nursery Pack Locked Unselected.png in Resources */,
 				0485A2CE14F4818500AFF338 /* Nursery Pack Selected.png in Resources */,
 				0485A2CF14F4818500AFF338 /* Nursery Pack Unselected.png in Resources */,
+				04DE51C314F7492C00F8E45C /* Applause 2.caf in Resources */,
+				04DE51C414F7492C00F8E45C /* Applause.caf in Resources */,
+				04DE51CA14F7492C00F8E45C /* Page Flip.caf in Resources */,
+				04DE51E414F895C500F8E45C /* Menu Sound A1.caf in Resources */,
+				04DE51E514F895C500F8E45C /* Menu Sound B0.caf in Resources */,
+				04DE51E614F895C500F8E45C /* Menu Sound B1.caf in Resources */,
+				04DE51E714F895C500F8E45C /* Menu Sound C1.caf in Resources */,
+				04DE51E814F895C500F8E45C /* Menu Sound C2.caf in Resources */,
+				04DE51E914F895C500F8E45C /* Menu Sound D1.caf in Resources */,
+				04DE51EA14F895C500F8E45C /* Menu Sound E1.caf in Resources */,
+				04DE51EB14F895C500F8E45C /* Menu Sound F1.caf in Resources */,
+				04DE51EC14F895C500F8E45C /* Menu Sound G1.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

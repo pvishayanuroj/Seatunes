@@ -23,7 +23,7 @@ static const CGFloat MMS_BUY_Y = 500.0f;
     if ((self = [super init])) {
         
         [AudioManager audioManager];        
-        
+         
         CCSprite *background = [CCSprite spriteWithFile:@"Menu Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];                
@@ -50,7 +50,7 @@ static const CGFloat MMS_BUY_Y = 500.0f;
         case kPlayButton:
             scene = [PlayMenuScene node];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:NO]];
-
+            [[AudioManager audioManager] playSoundEffect:kMenuE1];
             //[[CCDirector sharedDirector] replaceScene:[CCTransitionFlipY transitionWithDuration:0.5f scene:scene]];            
             break;
         case kBuySongsButton:

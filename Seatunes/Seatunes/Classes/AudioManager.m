@@ -78,19 +78,11 @@ static AudioManager *_audioManager = nil;
     return currentEffect_;
 }
 
-- (void) playSound:(SoundType)type
+- (void) playSoundEffect:(SoundType)type
 {
-    /*
-    NSString *name;
     SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];
-    
-    switch (type) {   
-        default:
-            NSAssert(NO, @"Invalid effect type");
-            break;
-    }
-     */
-
+    NSString *name = [Utility soundFileFromEnum:type];
+    [engine playEffect:name];
 }
 
 - (void) stopSound

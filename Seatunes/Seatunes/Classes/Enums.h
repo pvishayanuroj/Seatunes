@@ -34,7 +34,18 @@ typedef enum {
 } InstrumentType;
 
 typedef enum {
-    kDummy
+    kDummy,
+    kApplause,
+    kPageFlip,
+    kMenuB0,
+    kMenuC1,
+    kMenuD1,
+    kMenuE1,
+    kMenuF1,
+    kMenuG1,
+    kMenuA1,
+    kMenuB1,
+    kMenuC2,    
 } SoundType;
 
 typedef enum {

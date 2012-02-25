@@ -78,11 +78,11 @@ static const CGFloat SB_BUTTON_X = 100.0f;
 - (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
     if ([self containsTouchLocation:touch])	{
-        [self startSpin];
+        //[self startSpin];
         [self unselectButton]; 
         
         if ([delegate_ respondsToSelector:@selector(buttonClicked:)]) {
-        //    [delegate_ buttonClicked:self];
+            [delegate_ buttonClicked:self];
         }            
     }
 }

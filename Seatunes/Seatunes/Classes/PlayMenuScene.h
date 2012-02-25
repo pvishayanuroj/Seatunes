@@ -27,6 +27,8 @@ typedef NSUInteger ScrollingMenuType;
     
     CCLabelBMFont *packTitle_;
     
+    PackType currentPack_;
+    
     /* Maps song menu item IDs to song names */
     NSArray *songNames_;
     

@@ -17,6 +17,7 @@
 #import "Utility.h"
 #import "DataUtility.h"
 #import "DifficultyMenuScene.h"
+#import "AudioManager.h"
 
 @implementation PlayMenuScene
 
@@ -45,6 +46,11 @@ static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
         
         scrollingMenu_ = nil;
         [self loadSongMenu:kExercisePack];
+        currentPack_ = 0;
+        
+        CCActionInterval *delay = [CCDelayTime actionWithDuration:0.2f];
+        CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(delayedSound)];
+        [self runAction:[CCSequence actions:delay, done, nil]];
         
     }
     return self;
@@ -63,13 +69,19 @@ static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
 
 - (void) scrollingMenuItemClicked:(ScrollingMenu *)scrollingMenu menuItem:(ScrollingMenuItem *)menuItem
 {
+    PackType packType;
+    
     switch (scrollingMenu.numID) {
         case kScrollingMenuSong:
             [self loadDifficultyMenu:[songNames_ objectAtIndex:menuItem.numID]];
             break;
         case kScrollingMenuPack:
-            [self togglePackSelect:menuItem.numID];
-            [self loadSongMenu:[[packNames_ objectAtIndex:menuItem.numID] integerValue]];
+            packType = [[packNames_ objectAtIndex:menuItem.numID] integerValue];
+            if (packType != currentPack_) {
+                [self togglePackSelect:menuItem.numID];
+                [self loadSongMenu:packType];
+                [[AudioManager audioManager] playSoundEffect:kMenuB1];
+            }
             break;
         default:
             break; 
@@ -122,9 +134,11 @@ static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
 {
     [self cleanupSongMenu];
     
+    currentPack_ = packType;
     NSString *packName = [Utility packNameFromEnum:packType];
     [packTitle_ setString:packName];
     
+    // Setup the scrolling menu for the songs
     CGRect menuFrame = CGRectMake(350, 175, 650, 425);
     CGFloat scrollSize = 800;
     scrollingMenu_ = [[ScrollingMenu scrollingMenu:menuFrame scrollSize:scrollSize numID:kScrollingMenuSong] retain]; 
@@ -154,6 +168,7 @@ static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
 {
     CCScene *scene = [DifficultyMenuScene startWithSongName:songName];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
+    [[AudioManager audioManager] playSoundEffect:kPageFlip];    
 }
 
 - (NSArray *) loadSongNames:(NSString *)packName
@@ -180,6 +195,11 @@ static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
     [packMenu_ removeSuperview];
     [packMenu_ release];
     packMenu_ = nil;
+}
+
+- (void) delayedSound
+{
+    [[AudioManager audioManager] playSoundEffect:kPageFlip];
 }
 
 @end

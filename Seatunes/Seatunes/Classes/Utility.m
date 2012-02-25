@@ -220,6 +220,51 @@
     return name;
 }
 
++ (NSString *) soundFileFromEnum:(SoundType)soundType
+{
+    NSString *name = @"";
+    
+    switch (soundType) {
+        case kApplause:
+            name = @"Applause 2.caf";
+            break;
+        case kPageFlip:
+            name = @"Page Flip.caf";
+            break;
+        case kMenuB0:
+            name = @"Menu Sound B0.caf";
+            break;
+        case kMenuC1:
+            name = @"Menu Sound C1.caf";
+            break;
+        case kMenuD1:
+            name = @"Menu Sound D1.caf";
+            break;
+        case kMenuE1:
+            name = @"Menu Sound E1.caf";
+            break;
+        case kMenuF1:
+            name = @"Menu Sound F1.caf";
+            break;            
+        case kMenuG1:
+            name = @"Menu Sound G1.caf";
+            break; 
+        case kMenuA1:
+            name = @"Menu Sound A1.caf";
+            break; 
+        case kMenuB1:
+            name = @"Menu Sound B1.caf";
+            break; 
+        case kMenuC2:
+            name = @"Menu Sound C2.caf";
+            break;             
+        default:
+            break;
+    }
+    
+    return name;
+}
+
 + (NSArray *) loadSectionedSong:(NSString *)songName
 {
     NSMutableArray *sections = [NSMutableArray array];

@@ -10,6 +10,7 @@
 #import "GameScene.h"
 #import "Button.h"
 #import "StarfishButton.h"
+#import "AudioManager.h"
 
 @implementation DifficultyMenuScene
 
@@ -101,18 +102,21 @@ static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
             [(ScaledImageButton *)mediumButton_ setImage:@"Full Star.png"];                        
             [(ScaledImageButton *)easyButton_ setImage:@"Full Star.png"];  
             difficulty_ = kDifficultyHard;   
+            [[AudioManager audioManager] playSoundEffect:kMenuG1];            
             break;
         case kDMSMedium:
             [(ScaledImageButton *)hardButton_ setImage:@"Empty Star.png"];            
             [(ScaledImageButton *)mediumButton_ setImage:@"Full Star.png"];            
             [(ScaledImageButton *)easyButton_ setImage:@"Full Star.png"];                        
             difficulty_ = kDifficultyMedium;       
+            [[AudioManager audioManager] playSoundEffect:kMenuE1];            
             break;
         case kDMSEasy:
             [(ScaledImageButton *)hardButton_ setImage:@"Empty Star.png"];            
             [(ScaledImageButton *)mediumButton_ setImage:@"Empty Star.png"];                        
             [(ScaledImageButton *)easyButton_ setImage:@"Full Star.png"];                        
             difficulty_ = kDifficultyEasy;
+            [[AudioManager audioManager] playSoundEffect:kMenuC1];            
             break;
         case kDMSPlay:
             [self startSong];
@@ -126,6 +130,7 @@ static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
 {
     CCScene *scene = [GameScene startWithDifficulty:difficulty_ songName:songName_];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
+    [[AudioManager audioManager] playSoundEffect:kMenuB1];    
 }
 
 @end

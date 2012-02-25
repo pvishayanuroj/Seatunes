@@ -25,7 +25,7 @@
 
 - (GLuint) playSound:(KeyType)key instrument:(InstrumentType)instrument;
 
-- (void) playSound:(SoundType)type;
+- (void) playSoundEffect:(SoundType)type;
 
 - (void) stopSound:(GLuint)effectNumber;
 
