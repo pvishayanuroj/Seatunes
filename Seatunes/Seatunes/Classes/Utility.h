@@ -28,12 +28,6 @@
 
 + (NSString *) instructorNameFromEnum:(InstructorType)instructor;
 
-+ (NSString *) packNameFromEnum:(PackType)packType;
-
-+ (NSArray *) allPackNames;
-
-+ (NSArray *) defaultUnlockedPacks;
-
 + (NSString *) difficultyPlayedKeyFromEnum:(DifficultyType)difficulty;
 
 + (NSString *) soundFileFromEnum:(SoundType)soundType;

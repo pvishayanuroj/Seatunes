@@ -26,6 +26,8 @@ static const CGFloat PMS_MENU_FRAME_Y = 400.0f;
 static const CGFloat PMS_PACK_TITLE_X = 700.0f;
 static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
 
+@synthesize currentPack = currentPack_;
+
 - (id) init
 {
     if ((self = [super init])) {
@@ -45,8 +47,9 @@ static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
         [self loadPackMenu];        
         
         scrollingMenu_ = nil;
-        [self loadSongMenu:kExercisePack];
-        currentPack_ = 0;
+        currentPack_ = nil;
+        //[self loadSongMenu:kExercisePack];
+        //currentPackIndex_ = 0;
         
         CCActionInterval *delay = [CCDelayTime actionWithDuration:0.2f];
         CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(delayedSound)];
@@ -67,19 +70,24 @@ static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
     [super dealloc];
 }
 
+- (void) buttonClicked:(Button *)button
+{
+    
+}
+
 - (void) scrollingMenuItemClicked:(ScrollingMenu *)scrollingMenu menuItem:(ScrollingMenuItem *)menuItem
 {
-    PackType packType;
+    NSString *packName;
     
     switch (scrollingMenu.numID) {
         case kScrollingMenuSong:
             [self loadDifficultyMenu:[songNames_ objectAtIndex:menuItem.numID]];
             break;
         case kScrollingMenuPack:
-            packType = [[packNames_ objectAtIndex:menuItem.numID] integerValue];
-            if (packType != currentPack_) {
+            packName = [packNames_ objectAtIndex:menuItem.numID];
+            if (![packName isEqualToString:currentPack_]) {
                 [self togglePackSelect:menuItem.numID];
-                [self loadSongMenu:packType];
+                [self loadSongMenu:packName];
                 [[AudioManager audioManager] playSoundEffect:kMenuB1];
             }
             break;
@@ -115,27 +123,20 @@ static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
     [self addChild:packMenu_]; 
     
     // Get all packs
-    packNames_ = [[Utility allPackNames] retain];    
-    
-    // Get unlocked packs
-    NSArray *unlockedPacks = [DataUtility loadUnlockedPacks];
+    packNames_ = [[[DataUtility manager] allPackNames] retain];
     
     NSUInteger idx = 0;
-    for (NSNumber *pack in packNames_) {    
-   
-        BOOL isLocked = ![unlockedPacks containsObject:pack];
-        NSString *packName = [Utility packNameFromEnum:[pack integerValue]];
-        ScrollingMenuItem *menuItem = [PackMenuItem packenuItem:packName packIndex:idx++ isLocked:isLocked];
+    for (NSString *packName in packNames_) {    
+        ScrollingMenuItem *menuItem = [PackMenuItem packenuItem:packName packIndex:idx++ isLocked:NO];
         [packMenu_ addMenuItem:menuItem];
     }
 }
 
-- (void) loadSongMenu:(PackType)packType
+- (void) loadSongMenu:(NSString *)packName
 {
     [self cleanupSongMenu];
     
-    currentPack_ = packType;
-    NSString *packName = [Utility packNameFromEnum:packType];
+    self.currentPack = packName;
     [packTitle_ setString:packName];
     
     // Setup the scrolling menu for the songs
@@ -147,10 +148,10 @@ static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
     [self addChild:scrollingMenu_]; 
     
     // Get songs for pack
-    songNames_ = [[self loadSongNames:packName] retain];
+    songNames_ = [[[DataUtility manager] loadSongNames:packName] retain];
     
     // Get scores for songs
-    NSDictionary *scores = [DataUtility loadSongScores];
+    NSDictionary *scores = [[DataUtility manager] loadSongScores];
     
     NSUInteger idx = 0;
     for (NSString *songName in songNames_) {
@@ -169,16 +170,6 @@ static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
     CCScene *scene = [DifficultyMenuScene startWithSongName:songName];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
     [[AudioManager audioManager] playSoundEffect:kPageFlip];    
-}
-
-- (NSArray *) loadSongNames:(NSString *)packName
-{
-	NSString *path = [[NSBundle mainBundle] pathForResource:packName ofType:@"plist"];
-    NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:path];
-    
-    NSArray *songs = [NSArray arrayWithArray:[data objectForKey:@"Songs"]];
-
-    return songs;
 }
 
 - (void) cleanupSongMenu

@@ -11,21 +11,93 @@
 
 @implementation DataUtility
 
-+ (NSDictionary *) loadSongScores
+@synthesize allPackNames = allPackNames_;
+
+// For singleton
+static DataUtility *manager_ = nil;
+
+#pragma mark - Object Lifecycle
+
++ (DataUtility *) manager
 {
-    NSDictionary *scores = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"Song Scores"];
-    
-    if (scores == nil) {
-        scores = [NSDictionary dictionary];
+    @synchronized (self) {
+        if (manager_ == nil) {
+            // Alloc eventually calls allocWithZone
+            [[self alloc] init];
+        }
     }
-    return scores;
+    return manager_;
 }
 
-+ (void) saveSongScore:(NSString *)songName score:(ScoreType)score
+// Override allocWithZone to avoid potential page thrashing
++ (id) allocWithZone:(NSZone *)zone
 {
-    NSMutableDictionary *scores = [NSMutableDictionary dictionaryWithDictionary:[self loadSongScores]];
+    @synchronized (self) {
+        if (manager_ == nil) {
+            manager_ = [super allocWithZone:zone];
+            return manager_;
+        }
+    }
+    return nil;
+}
+
++ (void) purge
+{
+    [manager_ release];
+    manager_ = nil;
+}
+
+- (id) init
+{
+    if ((self = [super init])) {
+        
+        scores_ = nil;
+        allPackNames_ = nil;
+        packNames_ = nil;
+        packIdentifiers_ = nil;
+        defaultPacks_ = nil;
+        
+        [self loadPackInfo];
+    }
+    return self;
+}
+
+- (void) dealloc
+{
+    [scores_ release];
+    [allPackNames_ release];
+    [packNames_ release];
+    [packIdentifiers_ release];
+    [defaultPacks_ release];
     
-    NSNumber *savedScore = [scores objectForKey:songName];
+    [super dealloc];
+}
+
+#pragma mark - Score Methods
+
+- (NSMutableDictionary *) loadSongScores
+{
+    NSDictionary *loadedScores = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"Song Scores"];
+        
+    if (loadedScores == nil) {
+        scores_ = [NSMutableDictionary dictionary];
+    }
+    else {
+        scores_ = [NSMutableDictionary dictionaryWithDictionary:loadedScores];
+    }
+    
+    [scores_ retain];
+    
+    return scores_;
+}
+
+- (void) saveSongScore:(NSString *)songName score:(ScoreType)score
+{
+    if (scores_ == nil) {
+        [self loadSongScores];
+    }
+    
+    NSNumber *savedScore = [scores_ objectForKey:songName];
     
     // Only save score if it is greater than saved score or if saved score doesn't exist
     if (savedScore != nil) {
@@ -34,53 +106,108 @@
         }
     }
     
-    [scores setObject:[NSNumber numberWithInteger:score] forKey:songName];
-    [[NSUserDefaults standardUserDefaults] setObject:scores forKey:@"Song Scores"];        
+    [scores_ setObject:[NSNumber numberWithInteger:score] forKey:songName];
+    [[NSUserDefaults standardUserDefaults] setObject:scores_ forKey:@"Song Scores"];        
 }
 
-+ (void) resetSongScores
+- (void) resetSongScores
 {
+    [scores_ release];
+    scores_ = [[NSMutableDictionary dictionary] retain];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"Song Scores"];
 }
 
-+ (NSArray *) loadUnlockedPacks
-{
-    NSArray *packs;
-    
-    // First check if all packs were unlocked
-    BOOL allPacks = [[NSUserDefaults standardUserDefaults] boolForKey:@"All Packs"];
-    if (allPacks) {
-        packs = [Utility allPackNames];
-    }
-    else {
-        
-        NSArray *defaultPacks = [Utility defaultUnlockedPacks];
-        NSArray *unlockedPacks = [[NSUserDefaults standardUserDefaults] arrayForKey:@"Unlocked Packs"];
+#pragma mark - Pack Methods
 
-        // If none exists
-        if (packs == nil) {
-            packs = [NSArray array];
+- (void) loadPackInfo
+{
+    // Load default packs
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Default Packs" ofType:@"plist"];
+    defaultPacks_ = [[NSArray arrayWithContentsOfFile:path] retain];       
+    
+    // Load product identifiers
+	path = [[NSBundle mainBundle] pathForResource:@"Product Identifiers" ofType:@"plist"];
+    NSArray *data = [NSArray arrayWithContentsOfFile:path];
+    
+    NSLog(@"%@", data);
+    
+    NSMutableDictionary *packNames = [NSMutableDictionary dictionary];
+    NSMutableDictionary *packIdentifiers = [NSMutableDictionary dictionary];    
+    NSMutableArray *orderedPackNames = [NSMutableArray array];
+    
+    for (NSDictionary *packInfo in data) {
+        NSString *productName = [packInfo objectForKey:@"Product Name"];
+        NSString *productIdentifier = [packInfo objectForKey:@"Product Identifier"];
+        
+        if (productName != nil && productIdentifier != nil) {
+            [packNames setObject:productIdentifier forKey:productName];
+            [packIdentifiers setObject:productName forKey:productName];
+            [orderedPackNames addObject:productName];
         }
-        
-        NSMutableArray *combined = [NSMutableArray arrayWithArray:defaultPacks];
-        [combined addObjectsFromArray:unlockedPacks];
-        packs = combined;
     }
     
-    return packs;
-}
-
-+ (void) unlockPack:(PackType)packType
-{
-    NSMutableArray *packs = [NSMutableArray arrayWithArray:[self loadUnlockedPacks]];
+    packNames_ = [packNames retain];
+    packIdentifiers_ = [packIdentifiers retain];
     
-    [packs addObject:[NSNumber numberWithInteger:packType]];
-    [[NSUserDefaults standardUserDefaults] setObject:packs forKey:@"Unlocked Packs"]; 
+    // Load all pack names
+    // Start with default packs
+    NSMutableArray *allPacks = [NSMutableArray arrayWithArray:defaultPacks_];
+    
+    // Then add each product pack, as long as it isn't already contained in the defaults pack
+    // Also, do not include the "All Packs" product as a pack
+    for (NSString *packName in orderedPackNames) {
+        if (![allPacks containsObject:packName] && ![packName isEqualToString:kAllPacks]) {
+            [allPacks addObject:packName];
+        }
+    }
+    
+    allPackNames_ = [allPacks retain];
+    
+    NSLog(@"%@", allPackNames_);
 }
 
-+ (void) unlockAllPacks
+- (NSArray *) allProductNames
 {
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"All Packs"];
+    return [packNames_ allKeys];
+}
+
+- (NSArray *) allProductIdentifiers
+{
+    return [packIdentifiers_ allKeys];
+}
+
+- (NSString *) productIdentifierFromName:(NSString *)name
+{
+    NSString *productIdentifier = [packNames_ objectForKey:name];
+    
+    if (productIdentifier != nil) {
+        return productIdentifier;
+    }
+    
+    NSLog(@"Invalid product name: %@", name);
+    return nil;
+}
+
+- (NSString *) nameFromProductIdentifier:(NSString *)productIdentifier
+{
+    NSString *name = [packIdentifiers_ objectForKey:productIdentifier];
+    
+    if (name != nil) {
+        return name;
+    }
+    
+    NSLog(@"Invalid product identifier: %@", productIdentifier);
+    return nil;
+}
+
+- (NSArray *) loadSongNames:(NSString *)packName
+{
+	NSString *path = [[NSBundle mainBundle] pathForResource:packName ofType:@"plist"];
+    NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    NSArray *songs = [NSArray arrayWithArray:[data objectForKey:@"Songs"]];
+    
+    return songs;
 }
 
 @end

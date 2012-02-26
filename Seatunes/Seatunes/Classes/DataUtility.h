@@ -10,19 +10,40 @@
 #import <Foundation/Foundation.h>
 
 @interface DataUtility : NSObject {
+ 
+    NSMutableDictionary *scores_;
     
+    NSArray *allPackNames_;
+    
+    NSDictionary *packNames_;
+    
+    NSDictionary *packIdentifiers_;
+    
+    NSArray *defaultPacks_;
 }
 
-+ (NSDictionary *) loadSongScores;
+@property (nonatomic, readonly) NSArray *allPackNames;
 
-+ (void) saveSongScore:(NSString *)songName score:(ScoreType)score;
++ (DataUtility *) manager;
 
-+ (void) resetSongScores;
++ (void) purge;
 
-+ (NSArray *) loadUnlockedPacks;
+- (NSMutableDictionary *) loadSongScores;
 
-+ (void) unlockPack:(PackType)packType;
+- (void) saveSongScore:(NSString *)songName score:(ScoreType)score;
 
-+ (void) unlockAllPacks;
+- (void) resetSongScores;
+
+- (void) loadPackInfo;
+
+- (NSArray *) allProductNames;
+
+- (NSArray *) allProductIdentifiers;
+
+- (NSString *) productIdentifierFromName:(NSString *)name;
+
+- (NSString *) nameFromProductIdentifier:(NSString *)productIdentifier;
+
+- (NSArray *) loadSongNames:(NSString *)packName;
 
 @end

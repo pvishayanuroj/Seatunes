@@ -10,6 +10,7 @@
 #import "PlayMenuScene.h"
 #import "StarfishButton.h"
 #import "AudioManager.h"
+#import "DataUtility.h"
 
 @implementation MainMenuScene
 
@@ -23,6 +24,7 @@ static const CGFloat MMS_BUY_Y = 500.0f;
     if ((self = [super init])) {
         
         [AudioManager audioManager];        
+        [DataUtility manager];
          
         CCSprite *background = [CCSprite spriteWithFile:@"Menu Background.png"];
         background.anchorPoint = CGPointZero;

@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Paul Vishayanuroj. All rights reserved.
 //
 
+#define kAllPacks @"All Packs"
+
 typedef enum {
     kC4 = 0,
     kD4 = 1,
@@ -67,12 +69,6 @@ typedef enum {
     kTimedNoteRepeat,
     kSectionRepeat
 } ProcessorType;
-
-typedef enum {
-    kExercisePack = 0,
-    kNurseryPack = 1,
-    kAmericanClassicsPack = 2
-} PackType;
 
 typedef enum {
     kDifficultyEasy,

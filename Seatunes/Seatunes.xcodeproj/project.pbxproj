@@ -35,33 +35,13 @@
 		048508DF14D4D701008BBA10 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DD14D4D701008BBA10 /* Button.m */; };
 		048508E414D4E4E6008BBA10 /* ScrollingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508E314D4E4E5008BBA10 /* ScrollingMenu.m */; };
 		048508E714D4E50D008BBA10 /* ScrollingMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */; };
-		0485A2C614F4818500AFF338 /* American Classics Pack Locked Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2BC14F4818500AFF338 /* American Classics Pack Locked Selected.png */; };
-		0485A2C714F4818500AFF338 /* American Classics Pack Locked Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2BD14F4818500AFF338 /* American Classics Pack Locked Unselected.png */; };
-		0485A2C814F4818500AFF338 /* American Classics Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2BE14F4818500AFF338 /* American Classics Pack Selected.png */; };
-		0485A2C914F4818500AFF338 /* American Classics Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2BF14F4818500AFF338 /* American Classics Pack Unselected.png */; };
 		0485A2CA14F4818500AFF338 /* Exercise Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C014F4818500AFF338 /* Exercise Pack Selected.png */; };
 		0485A2CB14F4818500AFF338 /* Exercise Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C114F4818500AFF338 /* Exercise Pack Unselected.png */; };
 		0485A2CC14F4818500AFF338 /* Nursery Pack Locked Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C214F4818500AFF338 /* Nursery Pack Locked Selected.png */; };
 		0485A2CD14F4818500AFF338 /* Nursery Pack Locked Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C314F4818500AFF338 /* Nursery Pack Locked Unselected.png */; };
 		0485A2CE14F4818500AFF338 /* Nursery Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C414F4818500AFF338 /* Nursery Pack Selected.png */; };
 		0485A2CF14F4818500AFF338 /* Nursery Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C514F4818500AFF338 /* Nursery Pack Unselected.png */; };
-		048BBAC014D5368C0086EABC /* American Classics Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAAC14D5368B0086EABC /* American Classics Pack.plist */; };
 		048BBAC114D5368C0086EABC /* Exercise Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAAE14D5368B0086EABC /* Exercise Pack.plist */; };
-		048BBAC214D5368C0086EABC /* Alphabet Song.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB014D5368B0086EABC /* Alphabet Song.plist */; };
-		048BBAC314D5368C0086EABC /* Frere Jacques.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB114D5368B0086EABC /* Frere Jacques.plist */; };
-		048BBAC414D5368C0086EABC /* Hot Cross Buns.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB214D5368B0086EABC /* Hot Cross Buns.plist */; };
-		048BBAC514D5368C0086EABC /* Itsy Bitsy Spider.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB314D5368B0086EABC /* Itsy Bitsy Spider.plist */; };
-		048BBAC614D5368C0086EABC /* Little Bo Peep.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB414D5368B0086EABC /* Little Bo Peep.plist */; };
-		048BBAC714D5368C0086EABC /* London Bridge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB514D5368B0086EABC /* London Bridge.plist */; };
-		048BBAC814D5368C0086EABC /* Mary Had A Little Lamb.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB614D5368B0086EABC /* Mary Had A Little Lamb.plist */; };
-		048BBAC914D5368C0086EABC /* Old MacDonald.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB714D5368B0086EABC /* Old MacDonald.plist */; };
-		048BBACA14D5368C0086EABC /* Polly Wolly Doodle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB814D5368B0086EABC /* Polly Wolly Doodle.plist */; };
-		048BBACB14D5368C0086EABC /* Ring Around A Rosy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAB914D5368B0086EABC /* Ring Around A Rosy.plist */; };
-		048BBACC14D5368C0086EABC /* Row Row.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABA14D5368B0086EABC /* Row Row.plist */; };
-		048BBACD14D5368C0086EABC /* Skip To My Lou.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABB14D5368B0086EABC /* Skip To My Lou.plist */; };
-		048BBACE14D5368C0086EABC /* This Old Man.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABC14D5368C0086EABC /* This Old Man.plist */; };
-		048BBACF14D5368C0086EABC /* Three Blind Mice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABD14D5368C0086EABC /* Three Blind Mice.plist */; };
-		048BBAD014D5368C0086EABC /* Twinkle Twinkle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABE14D5368C0086EABC /* Twinkle Twinkle.plist */; };
 		048BBAD114D5368C0086EABC /* Nursery Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABF14D5368C0086EABC /* Nursery Pack.plist */; };
 		04B32C9514DDB1DB004AA98E /* GameLogicB.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9414DDB1DA004AA98E /* GameLogicB.m */; };
 		04B32C9D14DDDBF1004AA98E /* GameLogicA.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9C14DDDBF0004AA98E /* GameLogicA.m */; };
@@ -120,6 +100,34 @@
 		04DE51EA14F895C500F8E45C /* Menu Sound E1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51E114F895C500F8E45C /* Menu Sound E1.caf */; };
 		04DE51EB14F895C500F8E45C /* Menu Sound F1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51E214F895C500F8E45C /* Menu Sound F1.caf */; };
 		04DE51EC14F895C500F8E45C /* Menu Sound G1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51E314F895C500F8E45C /* Menu Sound G1.caf */; };
+		04DE51EF14F9DBFC00F8E45C /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE51EE14F9DBFC00F8E45C /* IAPHelper.m */; };
+		04DE51F114F9F87100F8E45C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DE51F014F9F87100F8E45C /* StoreKit.framework */; };
+		04DE51F314F9FAC000F8E45C /* Product Identifiers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51F214F9FAC000F8E45C /* Product Identifiers.plist */; };
+		04DE51F514F9FD1A00F8E45C /* Default Packs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51F414F9FD1A00F8E45C /* Default Packs.plist */; };
+		04DE51F814FA0F6C00F8E45C /* SeatunesIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE51F714FA0F6C00F8E45C /* SeatunesIAPHelper.m */; };
+		04DE51FD14FA18B800F8E45C /* Classics Pack Locked Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51F914FA18B800F8E45C /* Classics Pack Locked Selected.png */; };
+		04DE51FE14FA18B800F8E45C /* Classics Pack Locked Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51FA14FA18B800F8E45C /* Classics Pack Locked Unselected.png */; };
+		04DE51FF14FA18B800F8E45C /* Classics Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51FB14FA18B800F8E45C /* Classics Pack Selected.png */; };
+		04DE520014FA18B800F8E45C /* Classics Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51FC14FA18B800F8E45C /* Classics Pack Unselected.png */; };
+		04DE520214FA19E500F8E45C /* Classics Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520114FA19E500F8E45C /* Classics Pack.plist */; };
+		04DE521314FA19F200F8E45C /* Alphabet Song.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520414FA19F200F8E45C /* Alphabet Song.plist */; };
+		04DE521414FA19F200F8E45C /* Frere Jacques.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520514FA19F200F8E45C /* Frere Jacques.plist */; };
+		04DE521514FA19F200F8E45C /* Hot Cross Buns.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520614FA19F200F8E45C /* Hot Cross Buns.plist */; };
+		04DE521614FA19F200F8E45C /* Itsy Bitsy Spider.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520714FA19F200F8E45C /* Itsy Bitsy Spider.plist */; };
+		04DE521714FA19F200F8E45C /* Little Bo Peep.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520814FA19F200F8E45C /* Little Bo Peep.plist */; };
+		04DE521814FA19F200F8E45C /* London Bridge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520914FA19F200F8E45C /* London Bridge.plist */; };
+		04DE521914FA19F200F8E45C /* Mary Had A Little Lamb.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520A14FA19F200F8E45C /* Mary Had A Little Lamb.plist */; };
+		04DE521A14FA19F200F8E45C /* Old MacDonald.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520B14FA19F200F8E45C /* Old MacDonald.plist */; };
+		04DE521B14FA19F200F8E45C /* Polly Wolly Doodle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520C14FA19F200F8E45C /* Polly Wolly Doodle.plist */; };
+		04DE521C14FA19F200F8E45C /* Ring Around A Rosy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520D14FA19F200F8E45C /* Ring Around A Rosy.plist */; };
+		04DE521D14FA19F200F8E45C /* Row Row.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520E14FA19F200F8E45C /* Row Row.plist */; };
+		04DE521E14FA19F200F8E45C /* Skip To My Lou.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520F14FA19F200F8E45C /* Skip To My Lou.plist */; };
+		04DE521F14FA19F200F8E45C /* This Old Man.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE521014FA19F200F8E45C /* This Old Man.plist */; };
+		04DE522014FA19F200F8E45C /* Three Blind Mice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE521114FA19F200F8E45C /* Three Blind Mice.plist */; };
+		04DE522114FA19F200F8E45C /* Twinkle Twinkle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE521214FA19F200F8E45C /* Twinkle Twinkle.plist */; };
+		04DE522314FA1A2B00F8E45C /* Christmas Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */; };
+		04DE522614FA1A6F00F8E45C /* Christmas Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */; };
+		04DE522714FA1A6F00F8E45C /* Christmas Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
 		DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B714D458B800D1437B /* MainMenuScene.m */; };
@@ -305,33 +313,13 @@
 		048508E314D4E4E5008BBA10 /* ScrollingMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollingMenu.m; path = Classes/ScrollingMenu.m; sourceTree = "<group>"; };
 		048508E514D4E50D008BBA10 /* ScrollingMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollingMenuItem.h; path = Classes/ScrollingMenuItem.h; sourceTree = "<group>"; };
 		048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollingMenuItem.m; path = Classes/ScrollingMenuItem.m; sourceTree = "<group>"; };
-		0485A2BC14F4818500AFF338 /* American Classics Pack Locked Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics Pack Locked Selected.png"; sourceTree = "<group>"; };
-		0485A2BD14F4818500AFF338 /* American Classics Pack Locked Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics Pack Locked Unselected.png"; sourceTree = "<group>"; };
-		0485A2BE14F4818500AFF338 /* American Classics Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics Pack Selected.png"; sourceTree = "<group>"; };
-		0485A2BF14F4818500AFF338 /* American Classics Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "American Classics Pack Unselected.png"; sourceTree = "<group>"; };
 		0485A2C014F4818500AFF338 /* Exercise Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exercise Pack Selected.png"; sourceTree = "<group>"; };
 		0485A2C114F4818500AFF338 /* Exercise Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exercise Pack Unselected.png"; sourceTree = "<group>"; };
 		0485A2C214F4818500AFF338 /* Nursery Pack Locked Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack Locked Selected.png"; sourceTree = "<group>"; };
 		0485A2C314F4818500AFF338 /* Nursery Pack Locked Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack Locked Unselected.png"; sourceTree = "<group>"; };
 		0485A2C414F4818500AFF338 /* Nursery Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack Selected.png"; sourceTree = "<group>"; };
 		0485A2C514F4818500AFF338 /* Nursery Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack Unselected.png"; sourceTree = "<group>"; };
-		048BBAAC14D5368B0086EABC /* American Classics Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "American Classics Pack.plist"; sourceTree = "<group>"; };
 		048BBAAE14D5368B0086EABC /* Exercise Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Exercise Pack.plist"; sourceTree = "<group>"; };
-		048BBAB014D5368B0086EABC /* Alphabet Song.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Alphabet Song.plist"; sourceTree = "<group>"; };
-		048BBAB114D5368B0086EABC /* Frere Jacques.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Frere Jacques.plist"; sourceTree = "<group>"; };
-		048BBAB214D5368B0086EABC /* Hot Cross Buns.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Hot Cross Buns.plist"; sourceTree = "<group>"; };
-		048BBAB314D5368B0086EABC /* Itsy Bitsy Spider.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Itsy Bitsy Spider.plist"; sourceTree = "<group>"; };
-		048BBAB414D5368B0086EABC /* Little Bo Peep.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Little Bo Peep.plist"; sourceTree = "<group>"; };
-		048BBAB514D5368B0086EABC /* London Bridge.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "London Bridge.plist"; sourceTree = "<group>"; };
-		048BBAB614D5368B0086EABC /* Mary Had A Little Lamb.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Mary Had A Little Lamb.plist"; sourceTree = "<group>"; };
-		048BBAB714D5368B0086EABC /* Old MacDonald.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Old MacDonald.plist"; sourceTree = "<group>"; };
-		048BBAB814D5368B0086EABC /* Polly Wolly Doodle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Polly Wolly Doodle.plist"; sourceTree = "<group>"; };
-		048BBAB914D5368B0086EABC /* Ring Around A Rosy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Ring Around A Rosy.plist"; sourceTree = "<group>"; };
-		048BBABA14D5368B0086EABC /* Row Row.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Row Row.plist"; sourceTree = "<group>"; };
-		048BBABB14D5368B0086EABC /* Skip To My Lou.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Skip To My Lou.plist"; sourceTree = "<group>"; };
-		048BBABC14D5368C0086EABC /* This Old Man.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "This Old Man.plist"; sourceTree = "<group>"; };
-		048BBABD14D5368C0086EABC /* Three Blind Mice.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Three Blind Mice.plist"; sourceTree = "<group>"; };
-		048BBABE14D5368C0086EABC /* Twinkle Twinkle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Twinkle Twinkle.plist"; sourceTree = "<group>"; };
 		048BBABF14D5368C0086EABC /* Nursery Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Nursery Pack.plist"; sourceTree = "<group>"; };
 		04B32C9314DDB1DA004AA98E /* GameLogicB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicB.h; path = Classes/GameLogicB.h; sourceTree = "<group>"; };
 		04B32C9414DDB1DA004AA98E /* GameLogicB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicB.m; path = Classes/GameLogicB.m; sourceTree = "<group>"; };
@@ -402,6 +390,36 @@
 		04DE51E114F895C500F8E45C /* Menu Sound E1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Menu Sound E1.caf"; sourceTree = "<group>"; };
 		04DE51E214F895C500F8E45C /* Menu Sound F1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Menu Sound F1.caf"; sourceTree = "<group>"; };
 		04DE51E314F895C500F8E45C /* Menu Sound G1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Menu Sound G1.caf"; sourceTree = "<group>"; };
+		04DE51ED14F9DBFC00F8E45C /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAPHelper.h; path = Classes/IAPHelper.h; sourceTree = "<group>"; };
+		04DE51EE14F9DBFC00F8E45C /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = Classes/IAPHelper.m; sourceTree = "<group>"; };
+		04DE51F014F9F87100F8E45C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		04DE51F214F9FAC000F8E45C /* Product Identifiers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Product Identifiers.plist"; sourceTree = "<group>"; };
+		04DE51F414F9FD1A00F8E45C /* Default Packs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Default Packs.plist"; sourceTree = "<group>"; };
+		04DE51F614FA0F6C00F8E45C /* SeatunesIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeatunesIAPHelper.h; path = Classes/SeatunesIAPHelper.h; sourceTree = "<group>"; };
+		04DE51F714FA0F6C00F8E45C /* SeatunesIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeatunesIAPHelper.m; path = Classes/SeatunesIAPHelper.m; sourceTree = "<group>"; };
+		04DE51F914FA18B800F8E45C /* Classics Pack Locked Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Classics Pack Locked Selected.png"; sourceTree = "<group>"; };
+		04DE51FA14FA18B800F8E45C /* Classics Pack Locked Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Classics Pack Locked Unselected.png"; sourceTree = "<group>"; };
+		04DE51FB14FA18B800F8E45C /* Classics Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Classics Pack Selected.png"; sourceTree = "<group>"; };
+		04DE51FC14FA18B800F8E45C /* Classics Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Classics Pack Unselected.png"; sourceTree = "<group>"; };
+		04DE520114FA19E500F8E45C /* Classics Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Classics Pack.plist"; sourceTree = "<group>"; };
+		04DE520414FA19F200F8E45C /* Alphabet Song.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Alphabet Song.plist"; sourceTree = "<group>"; };
+		04DE520514FA19F200F8E45C /* Frere Jacques.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Frere Jacques.plist"; sourceTree = "<group>"; };
+		04DE520614FA19F200F8E45C /* Hot Cross Buns.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Hot Cross Buns.plist"; sourceTree = "<group>"; };
+		04DE520714FA19F200F8E45C /* Itsy Bitsy Spider.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Itsy Bitsy Spider.plist"; sourceTree = "<group>"; };
+		04DE520814FA19F200F8E45C /* Little Bo Peep.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Little Bo Peep.plist"; sourceTree = "<group>"; };
+		04DE520914FA19F200F8E45C /* London Bridge.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "London Bridge.plist"; sourceTree = "<group>"; };
+		04DE520A14FA19F200F8E45C /* Mary Had A Little Lamb.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Mary Had A Little Lamb.plist"; sourceTree = "<group>"; };
+		04DE520B14FA19F200F8E45C /* Old MacDonald.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Old MacDonald.plist"; sourceTree = "<group>"; };
+		04DE520C14FA19F200F8E45C /* Polly Wolly Doodle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Polly Wolly Doodle.plist"; sourceTree = "<group>"; };
+		04DE520D14FA19F200F8E45C /* Ring Around A Rosy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Ring Around A Rosy.plist"; sourceTree = "<group>"; };
+		04DE520E14FA19F200F8E45C /* Row Row.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Row Row.plist"; sourceTree = "<group>"; };
+		04DE520F14FA19F200F8E45C /* Skip To My Lou.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Skip To My Lou.plist"; sourceTree = "<group>"; };
+		04DE521014FA19F200F8E45C /* This Old Man.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "This Old Man.plist"; sourceTree = "<group>"; };
+		04DE521114FA19F200F8E45C /* Three Blind Mice.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Three Blind Mice.plist"; sourceTree = "<group>"; };
+		04DE521214FA19F200F8E45C /* Twinkle Twinkle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Twinkle Twinkle.plist"; sourceTree = "<group>"; };
+		04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Christmas Pack.plist"; sourceTree = "<group>"; };
+		04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Pack Selected.png"; sourceTree = "<group>"; };
+		04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Pack Unselected.png"; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
 		DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayViewController.m; path = Classes/CocosOverlayViewController.m; sourceTree = "<group>"; };
 		DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayScrollView.h; path = Classes/CocosOverlayScrollView.h; sourceTree = "<group>"; };
@@ -684,6 +702,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DE51F114F9F87100F8E45C /* StoreKit.framework in Frameworks */,
 				DAB11F1A14C1E847009B60FB /* QuartzCore.framework in Frameworks */,
 				DAB11F1C14C1E847009B60FB /* OpenGLES.framework in Frameworks */,
 				DAB11F1E14C1E847009B60FB /* OpenAL.framework in Frameworks */,
@@ -717,10 +736,12 @@
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				0485A2BC14F4818500AFF338 /* American Classics Pack Locked Selected.png */,
-				0485A2BD14F4818500AFF338 /* American Classics Pack Locked Unselected.png */,
-				0485A2BE14F4818500AFF338 /* American Classics Pack Selected.png */,
-				0485A2BF14F4818500AFF338 /* American Classics Pack Unselected.png */,
+				04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */,
+				04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */,
+				04DE51F914FA18B800F8E45C /* Classics Pack Locked Selected.png */,
+				04DE51FA14FA18B800F8E45C /* Classics Pack Locked Unselected.png */,
+				04DE51FB14FA18B800F8E45C /* Classics Pack Selected.png */,
+				04DE51FC14FA18B800F8E45C /* Classics Pack Unselected.png */,
 				0485A2C014F4818500AFF338 /* Exercise Pack Selected.png */,
 				0485A2C114F4818500AFF338 /* Exercise Pack Unselected.png */,
 				0485A2C214F4818500AFF338 /* Nursery Pack Locked Selected.png */,
@@ -751,51 +772,16 @@
 		048BBAAA14D5368B0086EABC /* Packs */ = {
 			isa = PBXGroup;
 			children = (
-				048BBAAB14D5368B0086EABC /* American Classics */,
-				048BBAAC14D5368B0086EABC /* American Classics Pack.plist */,
-				048BBAAD14D5368B0086EABC /* Exercise */,
+				04DE520314FA19F200F8E45C /* Nursery Pack */,
+				04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */,
+				04DE520114FA19E500F8E45C /* Classics Pack.plist */,
+				04DE51F414F9FD1A00F8E45C /* Default Packs.plist */,
+				04DE51F214F9FAC000F8E45C /* Product Identifiers.plist */,
 				048BBAAE14D5368B0086EABC /* Exercise Pack.plist */,
-				048BBAAF14D5368B0086EABC /* Nursery Pack */,
 				048BBABF14D5368C0086EABC /* Nursery Pack.plist */,
 			);
 			name = Packs;
 			path = Resources/Packs;
-			sourceTree = "<group>";
-		};
-		048BBAAB14D5368B0086EABC /* American Classics */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "American Classics";
-			sourceTree = "<group>";
-		};
-		048BBAAD14D5368B0086EABC /* Exercise */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Exercise;
-			sourceTree = "<group>";
-		};
-		048BBAAF14D5368B0086EABC /* Nursery Pack */ = {
-			isa = PBXGroup;
-			children = (
-				048BBAB014D5368B0086EABC /* Alphabet Song.plist */,
-				048BBAB114D5368B0086EABC /* Frere Jacques.plist */,
-				048BBAB214D5368B0086EABC /* Hot Cross Buns.plist */,
-				048BBAB314D5368B0086EABC /* Itsy Bitsy Spider.plist */,
-				048BBAB414D5368B0086EABC /* Little Bo Peep.plist */,
-				048BBAB514D5368B0086EABC /* London Bridge.plist */,
-				048BBAB614D5368B0086EABC /* Mary Had A Little Lamb.plist */,
-				048BBAB714D5368B0086EABC /* Old MacDonald.plist */,
-				048BBAB814D5368B0086EABC /* Polly Wolly Doodle.plist */,
-				048BBAB914D5368B0086EABC /* Ring Around A Rosy.plist */,
-				048BBABA14D5368B0086EABC /* Row Row.plist */,
-				048BBABB14D5368B0086EABC /* Skip To My Lou.plist */,
-				048BBABC14D5368C0086EABC /* This Old Man.plist */,
-				048BBABD14D5368C0086EABC /* Three Blind Mice.plist */,
-				048BBABE14D5368C0086EABC /* Twinkle Twinkle.plist */,
-			);
-			path = "Nursery Pack";
 			sourceTree = "<group>";
 		};
 		04D331C814E6DDD600DD82D4 /* Fonts */ = {
@@ -890,6 +876,10 @@
 				DAB1209814C30BFC009B60FB /* CommonHeaders.h */,
 				DAB1209714C30BA3009B60FB /* Enums.h */,
 				DAB1216914C48F6C009B60FB /* Debugging.h */,
+				04DE51ED14F9DBFC00F8E45C /* IAPHelper.h */,
+				04DE51EE14F9DBFC00F8E45C /* IAPHelper.m */,
+				04DE51F614FA0F6C00F8E45C /* SeatunesIAPHelper.h */,
+				04DE51F714FA0F6C00F8E45C /* SeatunesIAPHelper.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -914,6 +904,28 @@
 			path = "Resources/Sound Effects";
 			sourceTree = "<group>";
 		};
+		04DE520314FA19F200F8E45C /* Nursery Pack */ = {
+			isa = PBXGroup;
+			children = (
+				04DE520414FA19F200F8E45C /* Alphabet Song.plist */,
+				04DE520514FA19F200F8E45C /* Frere Jacques.plist */,
+				04DE520614FA19F200F8E45C /* Hot Cross Buns.plist */,
+				04DE520714FA19F200F8E45C /* Itsy Bitsy Spider.plist */,
+				04DE520814FA19F200F8E45C /* Little Bo Peep.plist */,
+				04DE520914FA19F200F8E45C /* London Bridge.plist */,
+				04DE520A14FA19F200F8E45C /* Mary Had A Little Lamb.plist */,
+				04DE520B14FA19F200F8E45C /* Old MacDonald.plist */,
+				04DE520C14FA19F200F8E45C /* Polly Wolly Doodle.plist */,
+				04DE520D14FA19F200F8E45C /* Ring Around A Rosy.plist */,
+				04DE520E14FA19F200F8E45C /* Row Row.plist */,
+				04DE520F14FA19F200F8E45C /* Skip To My Lou.plist */,
+				04DE521014FA19F200F8E45C /* This Old Man.plist */,
+				04DE521114FA19F200F8E45C /* Three Blind Mice.plist */,
+				04DE521214FA19F200F8E45C /* Twinkle Twinkle.plist */,
+			);
+			path = "Nursery Pack";
+			sourceTree = "<group>";
+		};
 		DAB11F0A14C1E847009B60FB = {
 			isa = PBXGroup;
 			children = (
@@ -934,6 +946,7 @@
 		DAB11F1814C1E847009B60FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04DE51F014F9F87100F8E45C /* StoreKit.framework */,
 				DAB11F1914C1E847009B60FB /* QuartzCore.framework */,
 				DAB11F1B14C1E847009B60FB /* OpenGLES.framework */,
 				DAB11F1D14C1E847009B60FB /* OpenAL.framework */,
@@ -1486,23 +1499,7 @@
 				04C093C714C4C7090087DA18 /* G4-Martian.m4a in Resources */,
 				04C093C814C4C7090087DA18 /* G4-PopFlute.m4a in Resources */,
 				04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */,
-				048BBAC014D5368C0086EABC /* American Classics Pack.plist in Resources */,
 				048BBAC114D5368C0086EABC /* Exercise Pack.plist in Resources */,
-				048BBAC214D5368C0086EABC /* Alphabet Song.plist in Resources */,
-				048BBAC314D5368C0086EABC /* Frere Jacques.plist in Resources */,
-				048BBAC414D5368C0086EABC /* Hot Cross Buns.plist in Resources */,
-				048BBAC514D5368C0086EABC /* Itsy Bitsy Spider.plist in Resources */,
-				048BBAC614D5368C0086EABC /* Little Bo Peep.plist in Resources */,
-				048BBAC714D5368C0086EABC /* London Bridge.plist in Resources */,
-				048BBAC814D5368C0086EABC /* Mary Had A Little Lamb.plist in Resources */,
-				048BBAC914D5368C0086EABC /* Old MacDonald.plist in Resources */,
-				048BBACA14D5368C0086EABC /* Polly Wolly Doodle.plist in Resources */,
-				048BBACB14D5368C0086EABC /* Ring Around A Rosy.plist in Resources */,
-				048BBACC14D5368C0086EABC /* Row Row.plist in Resources */,
-				048BBACD14D5368C0086EABC /* Skip To My Lou.plist in Resources */,
-				048BBACE14D5368C0086EABC /* This Old Man.plist in Resources */,
-				048BBACF14D5368C0086EABC /* Three Blind Mice.plist in Resources */,
-				048BBAD014D5368C0086EABC /* Twinkle Twinkle.plist in Resources */,
 				048BBAD114D5368C0086EABC /* Nursery Pack.plist in Resources */,
 				04D331CF14E7056700DD82D4 /* Speech.plist in Resources */,
 				042FCAA614F155FF00E34155 /* MenuFont.fnt in Resources */,
@@ -1525,10 +1522,6 @@
 				04D3E45C14F2025300FB0928 /* Dialogue Font.fnt in Resources */,
 				04D3E45D14F2025300FB0928 /* Dialogue Font.png in Resources */,
 				04D3E46214F2EF8F00FB0928 /* Water Background.png in Resources */,
-				0485A2C614F4818500AFF338 /* American Classics Pack Locked Selected.png in Resources */,
-				0485A2C714F4818500AFF338 /* American Classics Pack Locked Unselected.png in Resources */,
-				0485A2C814F4818500AFF338 /* American Classics Pack Selected.png in Resources */,
-				0485A2C914F4818500AFF338 /* American Classics Pack Unselected.png in Resources */,
 				0485A2CA14F4818500AFF338 /* Exercise Pack Selected.png in Resources */,
 				0485A2CB14F4818500AFF338 /* Exercise Pack Unselected.png in Resources */,
 				0485A2CC14F4818500AFF338 /* Nursery Pack Locked Selected.png in Resources */,
@@ -1547,6 +1540,31 @@
 				04DE51EA14F895C500F8E45C /* Menu Sound E1.caf in Resources */,
 				04DE51EB14F895C500F8E45C /* Menu Sound F1.caf in Resources */,
 				04DE51EC14F895C500F8E45C /* Menu Sound G1.caf in Resources */,
+				04DE51F314F9FAC000F8E45C /* Product Identifiers.plist in Resources */,
+				04DE51F514F9FD1A00F8E45C /* Default Packs.plist in Resources */,
+				04DE51FD14FA18B800F8E45C /* Classics Pack Locked Selected.png in Resources */,
+				04DE51FE14FA18B800F8E45C /* Classics Pack Locked Unselected.png in Resources */,
+				04DE51FF14FA18B800F8E45C /* Classics Pack Selected.png in Resources */,
+				04DE520014FA18B800F8E45C /* Classics Pack Unselected.png in Resources */,
+				04DE520214FA19E500F8E45C /* Classics Pack.plist in Resources */,
+				04DE521314FA19F200F8E45C /* Alphabet Song.plist in Resources */,
+				04DE521414FA19F200F8E45C /* Frere Jacques.plist in Resources */,
+				04DE521514FA19F200F8E45C /* Hot Cross Buns.plist in Resources */,
+				04DE521614FA19F200F8E45C /* Itsy Bitsy Spider.plist in Resources */,
+				04DE521714FA19F200F8E45C /* Little Bo Peep.plist in Resources */,
+				04DE521814FA19F200F8E45C /* London Bridge.plist in Resources */,
+				04DE521914FA19F200F8E45C /* Mary Had A Little Lamb.plist in Resources */,
+				04DE521A14FA19F200F8E45C /* Old MacDonald.plist in Resources */,
+				04DE521B14FA19F200F8E45C /* Polly Wolly Doodle.plist in Resources */,
+				04DE521C14FA19F200F8E45C /* Ring Around A Rosy.plist in Resources */,
+				04DE521D14FA19F200F8E45C /* Row Row.plist in Resources */,
+				04DE521E14FA19F200F8E45C /* Skip To My Lou.plist in Resources */,
+				04DE521F14FA19F200F8E45C /* This Old Man.plist in Resources */,
+				04DE522014FA19F200F8E45C /* Three Blind Mice.plist in Resources */,
+				04DE522114FA19F200F8E45C /* Twinkle Twinkle.plist in Resources */,
+				04DE522314FA1A2B00F8E45C /* Christmas Pack.plist in Resources */,
+				04DE522614FA1A6F00F8E45C /* Christmas Pack Selected.png in Resources */,
+				04DE522714FA1A6F00F8E45C /* Christmas Pack Unselected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1686,6 +1704,8 @@
 				042FCA9F14F14CED00E34155 /* ScoreLayer.m in Sources */,
 				04D3E46014F2DECD00FB0928 /* StarfishButton.m in Sources */,
 				04D3E46614F358B600FB0928 /* PackMenuItem.m in Sources */,
+				04DE51EF14F9DBFC00F8E45C /* IAPHelper.m in Sources */,
+				04DE51F814FA0F6C00F8E45C /* SeatunesIAPHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

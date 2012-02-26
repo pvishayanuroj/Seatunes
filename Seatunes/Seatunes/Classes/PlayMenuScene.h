@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "ScrollingMenuDelegate.h"
+#import "ButtonDelegate.h"
 
 @class ScrollingMenu;
 
@@ -19,7 +20,7 @@ enum {
 };
 typedef NSUInteger ScrollingMenuType;
 
-@interface PlayMenuScene : CCScene <ScrollingMenuDelegate> {
+@interface PlayMenuScene : CCScene <ScrollingMenuDelegate, ButtonDelegate> {
     
     ScrollingMenu *scrollingMenu_;
     
@@ -27,7 +28,7 @@ typedef NSUInteger ScrollingMenuType;
     
     CCLabelBMFont *packTitle_;
     
-    PackType currentPack_;
+    NSString *currentPack_;
     
     /* Maps song menu item IDs to song names */
     NSArray *songNames_;
@@ -36,13 +37,13 @@ typedef NSUInteger ScrollingMenuType;
     NSArray *packNames_;
 }
 
-- (NSArray *) loadSongNames:(NSString *)packName;
+@property (nonatomic, retain) NSString *currentPack;
 
 - (void) togglePackSelect:(NSUInteger)packIndex;
 
 - (void) loadPackMenu;
 
-- (void) loadSongMenu:(PackType)packType;
+- (void) loadSongMenu:(NSString *)packName;
 
 - (void) loadDifficultyMenu:(NSString *)songName;
 
