@@ -11,7 +11,7 @@
 
 @implementation PackMenuItem
 
-static const CGFloat PMI_CELL_HEIGHT = 160.0f;
+static const CGFloat PMI_CELL_HEIGHT = PACK_MENU_CELL_HEIGHT;
 static const CGFloat PMI_SPRITE_X = 100.0f;
 
 + (id) packenuItem:(NSString *)packName packIndex:(NSUInteger)packIndex isLocked:(BOOL)isLocked

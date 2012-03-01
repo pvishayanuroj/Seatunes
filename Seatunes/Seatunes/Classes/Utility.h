@@ -44,4 +44,6 @@
 
 + (NSUInteger) countNumBool:(BOOL)val array:(NSArray *)array;
 
++ (BOOL) hasInternetConnection;
+
 @end

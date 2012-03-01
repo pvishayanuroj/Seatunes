@@ -11,11 +11,13 @@
 #import "StarfishButton.h"
 #import "AudioManager.h"
 #import "DataUtility.h"
+#import "SeatunesIAPHelper.h"
 
 @implementation MainMenuScene
 
 static const CGFloat MMS_PLAY_X = 100.0f;
-static const CGFloat MMS_PLAY_Y = 600.0f;
+//static const CGFloat MMS_PLAY_Y = 600.0f;
+static const CGFloat MMS_PLAY_Y = 100.0f;
 static const CGFloat MMS_BUY_X = 200.0f;
 static const CGFloat MMS_BUY_Y = 500.0f;
 
@@ -23,8 +25,12 @@ static const CGFloat MMS_BUY_Y = 500.0f;
 {
     if ((self = [super init])) {
         
+        // Initialize the audio engine and all preload sounds
         [AudioManager audioManager];        
-        [DataUtility manager];
+        
+        // Load all the IAP singleton with all product identifiers (does not make a network request)
+        NSSet *productIdentifiers = [NSSet setWithArray:[[DataUtility manager] allProductIdentifiers]];
+        [[SeatunesIAPHelper manager] loadProductIdentifiers:productIdentifiers];
          
         CCSprite *background = [CCSprite spriteWithFile:@"Menu Background.png"];
         background.anchorPoint = CGPointZero;

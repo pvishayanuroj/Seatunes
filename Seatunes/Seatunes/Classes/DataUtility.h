@@ -46,4 +46,6 @@
 
 - (NSArray *) loadSongNames:(NSString *)packName;
 
+- (BOOL) isDefaultPack:(NSString *)packName;
+
 @end

@@ -129,8 +129,6 @@ static DataUtility *manager_ = nil;
 	path = [[NSBundle mainBundle] pathForResource:@"Product Identifiers" ofType:@"plist"];
     NSArray *data = [NSArray arrayWithContentsOfFile:path];
     
-    NSLog(@"%@", data);
-    
     NSMutableDictionary *packNames = [NSMutableDictionary dictionary];
     NSMutableDictionary *packIdentifiers = [NSMutableDictionary dictionary];    
     NSMutableArray *orderedPackNames = [NSMutableArray array];
@@ -162,8 +160,6 @@ static DataUtility *manager_ = nil;
     }
     
     allPackNames_ = [allPacks retain];
-    
-    NSLog(@"%@", allPackNames_);
 }
 
 - (NSArray *) allProductNames
@@ -208,6 +204,11 @@ static DataUtility *manager_ = nil;
     NSArray *songs = [NSArray arrayWithArray:[data objectForKey:@"Songs"]];
     
     return songs;
+}
+
+- (BOOL) isDefaultPack:(NSString *)packName
+{
+    return [defaultPacks_ containsObject:packName];
 }
 
 @end

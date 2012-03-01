@@ -6,7 +6,14 @@
 //  Copyright (c) 2012 Paul Vishayanuroj. All rights reserved.
 //
 
+#define kProductPurchaseNotification @"ProductPurchased"
+#define kProductPurchaseFailedNotification @"ProductPurchasedFailed"
+#define kProductsLoadedNotification @"ProductsLoaded"
+#define kProductsLoadedFailedNotification @"ProductsLoadedFailed"
+
 #define kAllPacks @"All Packs"
+#define PACK_MENU_CELL_HEIGHT 160
+#define SONG_MENU_CELL_HEIGHT 55
 
 typedef enum {
     kC4 = 0,

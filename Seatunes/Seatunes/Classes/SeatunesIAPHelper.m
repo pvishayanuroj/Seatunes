@@ -48,7 +48,9 @@ static SeatunesIAPHelper *manager_ = nil;
 - (id) init
 {
     if ((self = [super init])) {
-         
+        
+        
+        
     }
     
     return self;
@@ -62,13 +64,13 @@ static SeatunesIAPHelper *manager_ = nil;
 - (BOOL) allPacksPurchased
 {
     NSString *productIdentifier = [[DataUtility manager] productIdentifierFromName:kAllPacks];
-    return [self packPurchased:productIdentifier];
+    return [self productPurchased:productIdentifier];
 }
 
 - (BOOL) packPurchased:(NSString *)packName
 {
     NSString *productIdentifier = [[DataUtility manager] productIdentifierFromName:packName];
-    return [self packPurchased:productIdentifier];
+    return [self productPurchased:productIdentifier];
 }
 
 - (BOOL) productPurchased:(NSString *)productIdentifier

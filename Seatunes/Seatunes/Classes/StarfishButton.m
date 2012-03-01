@@ -11,7 +11,7 @@
 
 @implementation StarfishButton
 
-static const CGFloat SB_BUTTON_X = 100.0f;
+static const CGFloat SB_LABEL_X = 75.0f;
 
 #pragma mark - Object Lifecycle
 
@@ -29,7 +29,8 @@ static const CGFloat SB_BUTTON_X = 100.0f;
         [self addChild:sprite_];
         
         label_ = [[CCLabelBMFont labelWithString:text fntFile:@"MenuFont.fnt"] retain];
-        label_.position = ccp(SB_BUTTON_X, 0);
+        label_.position = ccp(SB_LABEL_X, 0);
+        label_.anchorPoint = ccp(0, 0.5f);
         [self addChild:label_];
     }
     return self;

@@ -7,7 +7,7 @@
 //
 
 #import "Utility.h"
-
+#import "Reachability.h"
 
 @implementation Utility
 
@@ -306,6 +306,13 @@
         }
     }
     return count;
+}
+
++ (BOOL) hasInternetConnection
+{
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    
+    return [reachability currentReachabilityStatus] != NotReachable;
 }
 
 @end

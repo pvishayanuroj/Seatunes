@@ -6,11 +6,9 @@
 //  Copyright (c) 2012 Paul Vishayanuroj. All rights reserved.
 //
 
+#import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
-
-#define kProductPurchaseNotification @"ProductPurchased"
-#define kProductPurchaseFailedNotification @"ProductPurchasedFailed"
 
 @interface IAPHelper : NSObject <SKProductsRequestDelegate, SKPaymentTransactionObserver> {
     
@@ -21,6 +19,8 @@
     NSMutableSet *purchasedProducts_;
     
 }
+
+- (void) loadProductIdentifiers:(NSSet *)productIdentifiers;
 
 - (void) requestProducts;
 

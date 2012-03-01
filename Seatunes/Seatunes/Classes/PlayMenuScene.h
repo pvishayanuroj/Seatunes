@@ -13,20 +13,33 @@
 #import "ButtonDelegate.h"
 
 @class ScrollingMenu;
+@class Button;
+@class LoadingIndicator;
 
 enum {
     kScrollingMenuPack,
-    kScrollingMenuSong
+    kScrollingMenuSong,
+    kButtonBuyAllPacks,
+    kButtonBuyCurrentPack
 };
-typedef NSUInteger ScrollingMenuType;
 
-@interface PlayMenuScene : CCScene <ScrollingMenuDelegate, ButtonDelegate> {
+typedef enum {
+    kStateNoPurchase,
+    kStateBuyAllPacks,
+    kStateBuyCurrentPack
+} BuyState;
+
+@interface PlayMenuScene : CCScene <ScrollingMenuDelegate, ButtonDelegate, UIAlertViewDelegate> {
     
     ScrollingMenu *scrollingMenu_;
     
     ScrollingMenu *packMenu_;
     
     CCLabelBMFont *packTitle_;
+    
+    Button *allPacksButton_;
+    
+    Button *packButton_;
     
     NSString *currentPack_;
     
@@ -35,9 +48,18 @@ typedef NSUInteger ScrollingMenuType;
     
     /* Maps pack menu item IDs to pack names */
     NSArray *packNames_;
+    
+    BuyState buyState_;
+    
+    NSString *productIdentifierToBuy_;
+
+    LoadingIndicator *loadingIndicator_;
+
 }
 
 @property (nonatomic, retain) NSString *currentPack;
+
+- (void) buyProduct:(BuyState)buyState;
 
 - (void) togglePackSelect:(NSUInteger)packIndex;
 
@@ -50,5 +72,11 @@ typedef NSUInteger ScrollingMenuType;
 - (void) cleanupSongMenu;
 
 - (void) cleanupPackMenu;
+
+- (void) showDialog:(NSString *)title text:(NSString *)text;
+
+- (void) showLoading;
+
+- (void) finishLoading;
 
 @end

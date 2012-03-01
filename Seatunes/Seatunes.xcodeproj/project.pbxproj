@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040A0CA614FC7316006803F9 /* Lock Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 040A0CA514FC7316006803F9 /* Lock Icon.png */; };
 		041E5F3414DE39460084BC0A /* SpeechBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 041E5F3314DE39450084BC0A /* SpeechBubble.m */; };
 		041E5F7414DF5C8A0084BC0A /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 041E5F7314DF5C870084BC0A /* Menu.m */; };
 		042FCA4314E8C97600E34155 /* DataUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 042FCA4214E8C97600E34155 /* DataUtility.m */; };
@@ -30,6 +31,11 @@
 		042FCADA14F1F21300E34155 /* Speech Bubble Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCABF14F1F21300E34155 /* Speech Bubble Large.png */; };
 		042FCADB14F1F21300E34155 /* Speech Bubble Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAC014F1F21300E34155 /* Speech Bubble Small.png */; };
 		042FCADD14F1F21300E34155 /* Starfish Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAC214F1F21300E34155 /* Starfish Button.png */; };
+		0431B78214FF2080005D6FBA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431B78114FF2080005D6FBA /* Reachability.m */; };
+		0431B78414FF26EF005D6FBA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0431B78314FF26EF005D6FBA /* SystemConfiguration.framework */; };
+		0431B78714FF2C97005D6FBA /* LoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431B78614FF2C97005D6FBA /* LoadingIndicator.m */; };
+		0431B78A14FF2DD0005D6FBA /* Back Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0431B78814FF2DD0005D6FBA /* Back Arrow.png */; };
+		0431B78B14FF2DD0005D6FBA /* Loading Indicator Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0431B78914FF2DD0005D6FBA /* Loading Indicator Background.png */; };
 		048508D714D4D4DC008BBA10 /* PlayMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508D614D4D4DC008BBA10 /* PlayMenuScene.m */; };
 		048508DB14D4D62D008BBA10 /* SliderBoxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */; };
 		048508DF14D4D701008BBA10 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DD14D4D701008BBA10 /* Button.m */; };
@@ -268,6 +274,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040A0CA514FC7316006803F9 /* Lock Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lock Icon.png"; sourceTree = "<group>"; };
 		041E5F2C14DE206B0084BC0A /* NoteDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteDelegate.h; path = Classes/NoteDelegate.h; sourceTree = "<group>"; };
 		041E5F3114DE34100084BC0A /* InstructorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructorDelegate.h; path = Classes/InstructorDelegate.h; sourceTree = "<group>"; };
 		041E5F3214DE39440084BC0A /* SpeechBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechBubble.h; path = Classes/SpeechBubble.h; sourceTree = "<group>"; };
@@ -301,6 +308,13 @@
 		042FCABF14F1F21300E34155 /* Speech Bubble Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble Large.png"; sourceTree = "<group>"; };
 		042FCAC014F1F21300E34155 /* Speech Bubble Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble Small.png"; sourceTree = "<group>"; };
 		042FCAC214F1F21300E34155 /* Starfish Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Starfish Button.png"; sourceTree = "<group>"; };
+		0431B78014FF2080005D6FBA /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Classes/Reachability.h; sourceTree = "<group>"; };
+		0431B78114FF2080005D6FBA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Classes/Reachability.m; sourceTree = "<group>"; };
+		0431B78314FF26EF005D6FBA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0431B78514FF2C97005D6FBA /* LoadingIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingIndicator.h; path = Classes/LoadingIndicator.h; sourceTree = "<group>"; };
+		0431B78614FF2C97005D6FBA /* LoadingIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingIndicator.m; path = Classes/LoadingIndicator.m; sourceTree = "<group>"; };
+		0431B78814FF2DD0005D6FBA /* Back Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back Arrow.png"; sourceTree = "<group>"; };
+		0431B78914FF2DD0005D6FBA /* Loading Indicator Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading Indicator Background.png"; sourceTree = "<group>"; };
 		048508D514D4D4DC008BBA10 /* PlayMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMenuScene.h; path = Classes/PlayMenuScene.h; sourceTree = "<group>"; };
 		048508D614D4D4DC008BBA10 /* PlayMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMenuScene.m; path = Classes/PlayMenuScene.m; sourceTree = "<group>"; };
 		048508D914D4D62D008BBA10 /* SliderBoxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderBoxMenu.h; path = Classes/SliderBoxMenu.h; sourceTree = "<group>"; };
@@ -702,6 +716,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0431B78414FF26EF005D6FBA /* SystemConfiguration.framework in Frameworks */,
 				04DE51F114F9F87100F8E45C /* StoreKit.framework in Frameworks */,
 				DAB11F1A14C1E847009B60FB /* QuartzCore.framework in Frameworks */,
 				DAB11F1C14C1E847009B60FB /* OpenGLES.framework in Frameworks */,
@@ -736,6 +751,9 @@
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0431B78814FF2DD0005D6FBA /* Back Arrow.png */,
+				0431B78914FF2DD0005D6FBA /* Loading Indicator Background.png */,
+				040A0CA514FC7316006803F9 /* Lock Icon.png */,
 				04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */,
 				04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */,
 				04DE51F914FA18B800F8E45C /* Classics Pack Locked Selected.png */,
@@ -860,6 +878,8 @@
 				DA08E0C114D529C600D1437B /* SongMenuItem.m */,
 				04D3E46414F358B000FB0928 /* PackMenuItem.h */,
 				04D3E46514F358B200FB0928 /* PackMenuItem.m */,
+				0431B78514FF2C97005D6FBA /* LoadingIndicator.h */,
+				0431B78614FF2C97005D6FBA /* LoadingIndicator.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -876,6 +896,8 @@
 				DAB1209814C30BFC009B60FB /* CommonHeaders.h */,
 				DAB1209714C30BA3009B60FB /* Enums.h */,
 				DAB1216914C48F6C009B60FB /* Debugging.h */,
+				0431B78014FF2080005D6FBA /* Reachability.h */,
+				0431B78114FF2080005D6FBA /* Reachability.m */,
 				04DE51ED14F9DBFC00F8E45C /* IAPHelper.h */,
 				04DE51EE14F9DBFC00F8E45C /* IAPHelper.m */,
 				04DE51F614FA0F6C00F8E45C /* SeatunesIAPHelper.h */,
@@ -946,6 +968,7 @@
 		DAB11F1814C1E847009B60FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0431B78314FF26EF005D6FBA /* SystemConfiguration.framework */,
 				04DE51F014F9F87100F8E45C /* StoreKit.framework */,
 				DAB11F1914C1E847009B60FB /* QuartzCore.framework */,
 				DAB11F1B14C1E847009B60FB /* OpenGLES.framework */,
@@ -1565,6 +1588,9 @@
 				04DE522314FA1A2B00F8E45C /* Christmas Pack.plist in Resources */,
 				04DE522614FA1A6F00F8E45C /* Christmas Pack Selected.png in Resources */,
 				04DE522714FA1A6F00F8E45C /* Christmas Pack Unselected.png in Resources */,
+				040A0CA614FC7316006803F9 /* Lock Icon.png in Resources */,
+				0431B78A14FF2DD0005D6FBA /* Back Arrow.png in Resources */,
+				0431B78B14FF2DD0005D6FBA /* Loading Indicator Background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1706,6 +1732,8 @@
 				04D3E46614F358B600FB0928 /* PackMenuItem.m in Sources */,
 				04DE51EF14F9DBFC00F8E45C /* IAPHelper.m in Sources */,
 				04DE51F814FA0F6C00F8E45C /* SeatunesIAPHelper.m in Sources */,
+				0431B78214FF2080005D6FBA /* Reachability.m in Sources */,
+				0431B78714FF2C97005D6FBA /* LoadingIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1716,7 +1744,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paul Vishayanuroj (8GPS98FCV8)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1728,6 +1757,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5194E6DA-BE3C-4B01-B464-649F0A5903B3";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1736,7 +1767,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Paul Vishayanuroj";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -1744,6 +1776,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "24467915-D8EC-4199-8E94-B0AAC1310625";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

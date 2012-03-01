@@ -14,6 +14,7 @@
 
 @synthesize numID = numID_;
 @synthesize menuItems = menuItems_;
+@synthesize isClickable = isClickable_;
 @synthesize delegate = delegate_;
 
 + (id) scrollingMenu:(CGRect)menuFrame scrollSize:(CGFloat)scrollSize numID:(NSUInteger)numID
@@ -31,6 +32,7 @@
         scrollSize_ = scrollSize;
         menuFrame_ = menuFrame;
         currentMenuItem_ = nil;
+        isClickable_ = YES;
         delegate_ = nil;
         
         CGSize winSize = [[CCDirector sharedDirector] winSize];
@@ -89,11 +91,15 @@
 
 - (BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    for (ScrollingMenuItem<CCTargetedTouchDelegate>  *item in menuItems_) {
-        if ([item ccTouchBegan:touch withEvent:event]) {
-            currentMenuItem_ = [item retain];
-            return YES;
+    if (isClickable_) {
+    
+        for (ScrollingMenuItem<CCTargetedTouchDelegate>  *item in menuItems_) {
+            if ([item ccTouchBegan:touch withEvent:event]) {
+                currentMenuItem_ = [item retain];
+                return YES;
+            }
         }
+        return NO;
     }
     return NO;
 }

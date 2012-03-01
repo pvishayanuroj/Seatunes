@@ -35,9 +35,10 @@
 
 - (void) loadProductIdentifiers:(NSSet *)productIdentifiers
 {
+    [productIdentifiers_ release];
     productIdentifiers_ = [productIdentifiers retain];
     
-    NSMutableSet *purchasedProducts;
+    NSMutableSet *purchasedProducts = [NSMutableSet set];
     
     for (NSString *productIdentifier in productIdentifiers_) {
         BOOL productPurchased = [[NSUserDefaults standardUserDefaults] boolForKey:productIdentifier];
@@ -46,6 +47,7 @@
         }
     }
     
+    [purchasedProducts_ release];
     purchasedProducts_ = [purchasedProducts retain];
 }
 
@@ -65,6 +67,15 @@
     for (SKProduct *product in responseProducts) {
         [products_ setObject:product forKey:product.productIdentifier];
     }
+    
+    NSLog(@"Got products: %@", products_);
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kProductsLoadedNotification object:nil];
+}
+
+- (void) request:(SKRequest *)request didFailWithError:(NSError *)error
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:kProductsLoadedFailedNotification object:nil];
 }
 
 - (void) paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
@@ -97,10 +108,12 @@
             [[SKPaymentQueue defaultQueue] addPayment:payment];
         }
         else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kProductPurchaseFailedNotification object:nil];            
             NSLog(@"BuyProductIdentifer: Invalid product identifier: %@", productIdentifier);
         }
     }
     else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kProductPurchaseFailedNotification object:nil];                    
         NSLog(@"Cannot call buyProductIdentifier without calling request products");
     }
 }
