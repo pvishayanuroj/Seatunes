@@ -120,6 +120,8 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         
         // Make the call to request the products first
         [[SeatunesIAPHelper manager] requestProducts];   
+        
+        NSLog(@"req products");
     }
     else {
         [self showDialog:@"Error" text:@"Internet connection required to make this purchase!"];
@@ -148,7 +150,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];    
     [self finishLoading];
-    [self showDialog:@"Error" text:@"Oops! Unable to make purchase. Try again later."];    
+    [self showDialog:@"Error" text:@"Oops! Could not connect to server. Try again later."];    
     NSLog(@"PRODUCTS LOADING FAILED");
 }
 

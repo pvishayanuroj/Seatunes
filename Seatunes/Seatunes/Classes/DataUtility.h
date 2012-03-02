@@ -15,8 +15,10 @@
     
     NSArray *allPackNames_;
     
+    /* Maps pack names to pack identifiers */
     NSDictionary *packNames_;
     
+    /* Maps pack identifiers to pack names */
     NSDictionary *packIdentifiers_;
     
     NSArray *defaultPacks_;

@@ -139,7 +139,7 @@ static DataUtility *manager_ = nil;
         
         if (productName != nil && productIdentifier != nil) {
             [packNames setObject:productIdentifier forKey:productName];
-            [packIdentifiers setObject:productName forKey:productName];
+            [packIdentifiers setObject:productName forKey:productIdentifier];
             [orderedPackNames addObject:productName];
         }
     }

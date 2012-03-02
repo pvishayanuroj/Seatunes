@@ -53,6 +53,8 @@
 
 - (void) requestProducts
 {
+    NSLog(@"Requesting products with: %@", productIdentifiers_);
+    
     SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers_];
     request.delegate = self;
     [request start];
@@ -69,12 +71,18 @@
     }
     
     NSLog(@"Got products: %@", products_);
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:kProductsLoadedNotification object:nil];
+    if ([products_ count] == 0) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kProductsLoadedFailedNotification object:nil];
+    }
+    else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kProductsLoadedNotification object:nil];
+    }
 }
 
 - (void) request:(SKRequest *)request didFailWithError:(NSError *)error
 {
+    NSLog(@"request did fail: %@", error.localizedDescription);
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kProductsLoadedFailedNotification object:nil];
 }
 

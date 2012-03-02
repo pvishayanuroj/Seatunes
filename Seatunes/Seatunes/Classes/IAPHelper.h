@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
 
-@interface IAPHelper : NSObject <SKProductsRequestDelegate, SKPaymentTransactionObserver> {
+@interface IAPHelper : NSObject <SKProductsRequestDelegate, SKRequestDelegate, SKPaymentTransactionObserver> {
     
     NSSet *productIdentifiers_;
     

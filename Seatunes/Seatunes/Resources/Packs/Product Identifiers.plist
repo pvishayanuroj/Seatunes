@@ -6,25 +6,25 @@
 		<key>Product Name</key>
 		<string>Nursery Pack</string>
 		<key>Product Identifier</key>
-		<string>com.vindustries.seatunes.nursery</string>
+		<string>com.vindustries.Seatunes.nurserytest</string>
 	</dict>
 	<dict>
 		<key>Product Name</key>
 		<string>Classics Pack</string>
 		<key>Product Identifier</key>
-		<string>com.vindustries.seatunes.classics</string>
+		<string>com.vindustries.Seatunes.classicstest</string>
 	</dict>
 	<dict>
 		<key>Product Name</key>
 		<string>Christmas Pack</string>
 		<key>Product Identifier</key>
-		<string>com.vindustries.seatunes.christmas</string>
+		<string>com.vindustries.Seatunes.christmastest</string>
 	</dict>
 	<dict>
 		<key>Product Name</key>
 		<string>All Packs</string>
 		<key>Product Identifier</key>
-		<string>com.vindustries.seatunes.allpacks</string>
+		<string>com.vindustries.Seatunes.allpackstest</string>
 	</dict>
 </array>
 </plist>
