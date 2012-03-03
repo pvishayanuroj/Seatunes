@@ -37,26 +37,29 @@
     [super dealloc];
 }
 
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void) loadView
 {
-    //CocosOverlayScrollView *scrollView = [[CocosOverlayScrollView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-    CocosOverlayScrollView *scrollView = [CocosOverlayScrollView cocosOverlayScrollView];
+    scrollView_ = [[CocosOverlayScrollView cocosOverlayScrollView] retain];
     
-    scrollView.contentSize = contentSize_;
-    scrollView.frame = frame_;
-    scrollView.bounds = scrollView.frame;
-    scrollView.node = node_;
+    scrollView_.contentSize = contentSize_;
+    scrollView_.frame = frame_;
+    scrollView_.bounds = scrollView_.frame;
+    scrollView_.node = node_;
     
     // Forces scrollbar to the top (depending on parameters, it could start in the middle)
     CGPoint offset = CGPointMake(0, 0);
-    [scrollView setContentOffset:offset animated:NO];
+    [scrollView_ setContentOffset:offset animated:NO];
     
-    scrollView.delegate = scrollView;
-    [scrollView setUserInteractionEnabled:TRUE];
-    [scrollView setScrollEnabled:TRUE];
+    scrollView_.delegate = scrollView_;
+    [scrollView_ setUserInteractionEnabled:TRUE];
+    [scrollView_ setScrollEnabled:TRUE];
     
-    self.view = scrollView;
+    self.view = scrollView_;
+}
+
+- (void) setClickable:(BOOL)clickable
+{
+    scrollView_.scrollEnabled = clickable;
 }
 
 @end

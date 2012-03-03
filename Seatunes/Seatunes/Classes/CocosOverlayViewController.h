@@ -20,11 +20,13 @@
     CGSize contentSize_;
     
     CGRect frame_;
-    
+
 }
 
 + (id) cocosOverlayViewController:(CCNode *)node contentSize:(CGSize)contentSize frame:(CGRect)frame;
 
 - (id) init:(CCNode *)node contentSize:(CGSize)contentSize frame:(CGRect)frame;
+
+- (void) setClickable:(BOOL)clickable;
 
 @end

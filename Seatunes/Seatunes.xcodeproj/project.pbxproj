@@ -802,6 +802,47 @@
 			path = Resources/Packs;
 			sourceTree = "<group>";
 		};
+		04B0D4B91501D64000A4A2B8 /* Game Elements */ = {
+			isa = PBXGroup;
+			children = (
+				DAB1208D14C3099B009B60FB /* Keyboard.h */,
+				DAB1208E14C3099B009B60FB /* Keyboard.m */,
+				DAB1209614C30B87009B60FB /* KeyboardDelegate.h */,
+				DAB120E114C34FCC009B60FB /* Key.h */,
+				DAB120E214C34FCD009B60FB /* Key.m */,
+				DAB1209914C30D6D009B60FB /* KeyDelegate.h */,
+				DAB1209314C30A87009B60FB /* Instructor.h */,
+				DAB1209414C30A87009B60FB /* Instructor.m */,
+				041E5F3114DE34100084BC0A /* InstructorDelegate.h */,
+				DAB1215F14C475F2009B60FB /* Note.h */,
+				DAB1216014C475F7009B60FB /* Note.m */,
+				041E5F2C14DE206B0084BC0A /* NoteDelegate.h */,
+			);
+			name = "Game Elements";
+			sourceTree = "<group>";
+		};
+		04B0D4BA1501D65E00A4A2B8 /* Scenes & Layers */ = {
+			isa = PBXGroup;
+			children = (
+				DAB1211B14C35F2A009B60FB /* GameScene.h */,
+				DAB1211C14C35F2B009B60FB /* GameScene.m */,
+				DAB1208A14C30911009B60FB /* GameLayer.h */,
+				DAB1208B14C30911009B60FB /* GameLayer.m */,
+				DA08E0B614D4589900D1437B /* MainMenuScene.h */,
+				DA08E0B714D458B800D1437B /* MainMenuScene.m */,
+				048508D514D4D4DC008BBA10 /* PlayMenuScene.h */,
+				048508D614D4D4DC008BBA10 /* PlayMenuScene.m */,
+				042FCA4514EA082100E34155 /* DifficultyMenuScene.h */,
+				042FCA4614EA082100E34155 /* DifficultyMenuScene.m */,
+				042FCA4814EA084000E34155 /* BuyMenuScene.h */,
+				042FCA4914EA084000E34155 /* BuyMenuScene.m */,
+				042FCA9D14F14CE700E34155 /* ScoreLayer.h */,
+				042FCA9E14F14CEA00E34155 /* ScoreLayer.m */,
+				04D3E46314F2FCE100FB0928 /* ScoreLayerDelegate.h */,
+			);
+			name = "Scenes & Layers";
+			sourceTree = "<group>";
+		};
 		04D331C814E6DDD600DD82D4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -902,6 +943,8 @@
 				04DE51EE14F9DBFC00F8E45C /* IAPHelper.m */,
 				04DE51F614FA0F6C00F8E45C /* SeatunesIAPHelper.h */,
 				04DE51F714FA0F6C00F8E45C /* SeatunesIAPHelper.m */,
+				DAB120D514C30E60009B60FB /* AudioManager.h */,
+				DAB120D614C30E60009B60FB /* AudioManager.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -990,38 +1033,11 @@
 				04D3E46914F47D2300FB0928 /* UI */,
 				04D3E46814F47D1A00FB0928 /* Speech */,
 				0485A2BB14F4815300AFF338 /* Game Logic */,
+				04B0D4B91501D64000A4A2B8 /* Game Elements */,
+				04B0D4BA1501D65E00A4A2B8 /* Scenes & Layers */,
 				DAB11F2A14C1E847009B60FB /* Resources */,
 				DAB11F3E14C1E847009B60FB /* libs */,
 				DAB1207714C1E84D009B60FB /* Supporting Files */,
-				DAB1211B14C35F2A009B60FB /* GameScene.h */,
-				DAB1211C14C35F2B009B60FB /* GameScene.m */,
-				DAB120D514C30E60009B60FB /* AudioManager.h */,
-				DAB120D614C30E60009B60FB /* AudioManager.m */,
-				DAB1208D14C3099B009B60FB /* Keyboard.h */,
-				DAB1208E14C3099B009B60FB /* Keyboard.m */,
-				DAB1209614C30B87009B60FB /* KeyboardDelegate.h */,
-				DAB120E114C34FCC009B60FB /* Key.h */,
-				DAB120E214C34FCD009B60FB /* Key.m */,
-				DAB1209914C30D6D009B60FB /* KeyDelegate.h */,
-				DAB1209314C30A87009B60FB /* Instructor.h */,
-				DAB1209414C30A87009B60FB /* Instructor.m */,
-				041E5F3114DE34100084BC0A /* InstructorDelegate.h */,
-				DAB1215F14C475F2009B60FB /* Note.h */,
-				DAB1216014C475F7009B60FB /* Note.m */,
-				041E5F2C14DE206B0084BC0A /* NoteDelegate.h */,
-				DAB1208A14C30911009B60FB /* GameLayer.h */,
-				DAB1208B14C30911009B60FB /* GameLayer.m */,
-				DA08E0B614D4589900D1437B /* MainMenuScene.h */,
-				DA08E0B714D458B800D1437B /* MainMenuScene.m */,
-				048508D514D4D4DC008BBA10 /* PlayMenuScene.h */,
-				048508D614D4D4DC008BBA10 /* PlayMenuScene.m */,
-				042FCA4514EA082100E34155 /* DifficultyMenuScene.h */,
-				042FCA4614EA082100E34155 /* DifficultyMenuScene.m */,
-				042FCA4814EA084000E34155 /* BuyMenuScene.h */,
-				042FCA4914EA084000E34155 /* BuyMenuScene.m */,
-				042FCA9D14F14CE700E34155 /* ScoreLayer.h */,
-				042FCA9E14F14CEA00E34155 /* ScoreLayer.m */,
-				04D3E46314F2FCE100FB0928 /* ScoreLayerDelegate.h */,
 			);
 			path = Seatunes;
 			sourceTree = "<group>";
@@ -1796,7 +1812,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1814,7 +1830,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

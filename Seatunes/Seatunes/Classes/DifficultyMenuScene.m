@@ -7,6 +7,7 @@
 //
 
 #import "DifficultyMenuScene.h"
+#import "PlayMenuScene.h"
 #import "GameScene.h"
 #import "Button.h"
 #import "StarfishButton.h"
@@ -21,6 +22,9 @@ static const CGFloat DMS_TEXT_Y = 530.0f;
 static const CGFloat DMS_BUTTON_Y = 420.0f;
 static const CGFloat DMS_BUTTON_X = 512.0f;
 static const CGFloat DMS_BUTTON_PADDING = 200.0f;
+
+static const CGFloat DMS_BACK_BUTTON_X = 50.0f;
+static const CGFloat DMS_BACK_BUTTON_Y = 750.0f;
 
 static const CGFloat DMS_PLAY_BUTTON_X = 650.0f;
 static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
@@ -80,6 +84,12 @@ static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
         playButton.delegate = self;
         playButton.position = ccp(DMS_PLAY_BUTTON_X, DMS_PLAY_BUTTON_Y);
         [self addChild:playButton];        
+        
+        // Add back button
+        Button *backButton = [ScaledImageButton scaledImageButton:kDMSBack image:@"Back Arrow.png"];
+        backButton.delegate = self;
+        backButton.position = ccp(DMS_BACK_BUTTON_X, DMS_BACK_BUTTON_Y);
+        [self addChild:backButton];
     }
     return self;
 }
@@ -121,6 +131,9 @@ static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
         case kDMSPlay:
             [self startSong];
             break;
+        case kDMSBack:
+            [self playMenu];
+            break;
         default:
             break;
     }
@@ -131,6 +144,13 @@ static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
     CCScene *scene = [GameScene startWithDifficulty:difficulty_ songName:songName_];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
     [[AudioManager audioManager] playSoundEffect:kMenuB1];    
+}
+
+- (void) playMenu
+{
+    CCScene *scene = [PlayMenuScene node];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:YES]];
+    [[AudioManager audioManager] playSoundEffect:kMenuA1];    
 }
 
 @end

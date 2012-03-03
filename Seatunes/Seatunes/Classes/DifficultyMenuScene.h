@@ -17,7 +17,8 @@ enum {
     kDMSEasy,
     kDMSMedium,
     kDMSHard,
-    kDMSPlay
+    kDMSPlay,
+    kDMSBack
 };
 
 @interface DifficultyMenuScene : CCScene <ButtonDelegate> {
@@ -38,5 +39,7 @@ enum {
 - (id) initWithSongName:(NSString *)songName;
 
 - (void) startSong;
+
+- (void) playMenu;
 
 @end

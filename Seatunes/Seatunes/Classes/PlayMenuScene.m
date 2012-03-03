@@ -7,6 +7,7 @@
 //
 
 #import "PlayMenuScene.h"
+#import "MainMenuScene.h"
 #import "ScrollingMenu.h"
 #import "Menu.h"
 #import "StarfishButton.h"
@@ -26,6 +27,9 @@ static const CGFloat PMS_MENU_FRAME_X = 550.0f;
 static const CGFloat PMS_MENU_FRAME_Y = 400.0f;
 static const CGFloat PMS_PACK_TITLE_X = 700.0f;
 static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
+
+static const CGFloat PMS_BACK_BUTTON_X = 50.0f;
+static const CGFloat PMS_BACK_BUTTON_Y = 750.0f;
 
 static const CGFloat PMS_ALL_PACKS_BUTTON_X = 150.0f;
 static const CGFloat PMS_ALL_PACKS_BUTTON_Y = 90.0f;
@@ -82,10 +86,16 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
             [self addChild:allPacksButton_];
         }
         
+        // Add back button
+        Button *backButton = [ScaledImageButton scaledImageButton:kDMSBack image:@"Back Arrow.png"];
+        backButton.delegate = self;
+        backButton.position = ccp(PMS_BACK_BUTTON_X, PMS_BACK_BUTTON_Y);
+        [self addChild:backButton];        
+        
+        // Play the sound
         CCActionInterval *delay = [CCDelayTime actionWithDuration:0.2f];
         CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(delayedSound)];
         [self runAction:[CCSequence actions:delay, done, nil]];
-        
     }
     return self;
 }
@@ -185,6 +195,9 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
             break;
         case kButtonBuyCurrentPack:
             [self buyProduct:kStateBuyCurrentPack];         
+            break;
+        case kButtonBack:
+            [self loadMainMenu];
             break;
         default:
             break;
@@ -293,6 +306,13 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         packButton_.position = ccp(PMS_CURRENT_PACK_BUTTON_X, PMS_CURRENT_PACK_BUTTON_Y);
         [self addChild:packButton_];
     }
+}
+
+- (void) loadMainMenu
+{
+    CCScene *scene = [MainMenuScene node];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:YES]];    
+    [[AudioManager audioManager] playSoundEffect:kPageFlip];  
 }
 
 - (void) loadDifficultyMenu:(NSString *)songName

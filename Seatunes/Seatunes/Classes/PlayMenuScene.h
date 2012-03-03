@@ -20,7 +20,8 @@ enum {
     kScrollingMenuPack,
     kScrollingMenuSong,
     kButtonBuyAllPacks,
-    kButtonBuyCurrentPack
+    kButtonBuyCurrentPack,
+    kButtonBack
 };
 
 typedef enum {
@@ -66,6 +67,8 @@ typedef enum {
 - (void) loadPackMenu;
 
 - (void) loadSongMenu:(NSString *)packName;
+
+- (void) loadMainMenu;
 
 - (void) loadDifficultyMenu:(NSString *)songName;
 

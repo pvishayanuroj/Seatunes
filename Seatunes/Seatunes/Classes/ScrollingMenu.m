@@ -69,6 +69,12 @@
     [viewController_ release];    
 }
 
+- (void) setIsClickable:(BOOL)isClickable
+{
+    isClickable_ = isClickable;
+    [viewController_ setClickable:isClickable];
+}
+
 - (void) addMenuItem:(ScrollingMenuItem *)menuItem
 {
     NSUInteger count = [menuItems_ count];
