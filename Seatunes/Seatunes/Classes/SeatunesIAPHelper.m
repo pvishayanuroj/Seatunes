@@ -75,6 +75,11 @@ static SeatunesIAPHelper *manager_ = nil;
 
 - (BOOL) productPurchased:(NSString *)productIdentifier
 {
+    // Check if all packs purchased, if so, this means all products will return true
+    if ([purchasedProducts_ containsObject:[[DataUtility manager] productIdentifierFromName:kAllPacks]]) {
+        return YES;
+    }
+    
     return [purchasedProducts_ containsObject:productIdentifier];
 }
 

@@ -29,7 +29,7 @@ static const CGFloat PMS_PACK_TITLE_X = 700.0f;
 static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
 
 static const CGFloat PMS_BACK_BUTTON_X = 50.0f;
-static const CGFloat PMS_BACK_BUTTON_Y = 750.0f;
+static const CGFloat PMS_BACK_BUTTON_Y = 730.0f;
 
 static const CGFloat PMS_ALL_PACKS_BUTTON_X = 150.0f;
 static const CGFloat PMS_ALL_PACKS_BUTTON_Y = 90.0f;
@@ -49,17 +49,19 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
 
 @synthesize currentPack = currentPack_;
 
+#pragma mark - Object Lifecycle
+
 - (id) init
 {
     if ((self = [super init])) {
         
-        scrollingMenu_ = nil;
+        songMenu_ = nil;
         currentPack_ = nil;
         allPacksButton_ = nil;
         packButton_ = nil;
         songNames_ = nil;        
-        productIdentifierToBuy_ = nil;
         loadingIndicator_ = nil;
+        buyState_ = kStateNoPurchase;
         
         CCSprite *background = [CCSprite spriteWithFile:@"Menu Background.png"];
         background.anchorPoint = CGPointZero;
@@ -80,10 +82,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         
         // Check if all packs purchased. If not, add button
         if (![[SeatunesIAPHelper manager] allPacksPurchased]) {
-            allPacksButton_ = [[StarfishButton starfishButton:kButtonBuyAllPacks text:@"Buy All"] retain];
-            allPacksButton_.delegate = self;
-            allPacksButton_.position = ccp(PMS_ALL_PACKS_BUTTON_X, PMS_ALL_PACKS_BUTTON_Y);
-            [self addChild:allPacksButton_];
+            [self addBuyAllButton];
         }
         
         // Add back button
@@ -112,6 +111,8 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
     [super dealloc];
 }
 
+#pragma mark - In-App Purchase Methods
+
 - (void) buyProduct:(BuyState)buyState
 {
     // Check for a connection
@@ -121,8 +122,6 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         
         // Set the product to buy
         buyState_ = buyState;
-        [productIdentifierToBuy_ release];
-        productIdentifierToBuy_ = [[[DataUtility manager] productIdentifierFromName:kAllPacks] retain];    
         
         // Setup the notifications
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productsLoaded) name:kProductsLoadedNotification object:nil];
@@ -130,61 +129,91 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         
         // Make the call to request the products first
         [[SeatunesIAPHelper manager] requestProducts];   
-        
-        NSLog(@"req products");
     }
     else {
         [self showDialog:@"Error" text:@"Internet connection required to make this purchase!"];
-    }
-    
+    }   
 }
 
 - (void) productsLoaded
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];    
-    NSLog(@"PRODUCTS LOADED!");
     
-    switch (buyState_) {
-        case kStateBuyAllPacks:
-        case kStateBuyCurrentPack:
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:kProductPurchaseNotification object:nil];       
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchasedFailed:) name:kProductPurchaseFailedNotification object:nil];                   
-            [[SeatunesIAPHelper manager] buyProductIdentifier:productIdentifierToBuy_];            
-            break;
-        default:
-            break;
+    NSString *productIdentifier;
+    if (buyState_ == kStateBuyAllPacks) {
+        productIdentifier = [[DataUtility manager] productIdentifierFromName:kAllPacks];
     }
+    else if (buyState_ == kStateBuyCurrentPack) {
+        productIdentifier = [[DataUtility manager] productIdentifierFromName:currentPack_];                
+    }    
+    else {
+        return;
+    }
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:kProductPurchaseNotification object:nil];       
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchasedFailed:) name:kProductPurchaseFailedNotification object:nil];    
+    [[SeatunesIAPHelper manager] buyProductIdentifier:productIdentifier];      
 }
 
-- (void) productsLoadedFailed
+- (void) productsLoadedFailed:(NSNotification *)notification
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];    
+    buyState_ = kStateNoPurchase;
     [self finishLoading];
-    [self showDialog:@"Error" text:@"Oops! Could not connect to server. Try again later."];    
-    NSLog(@"PRODUCTS LOADING FAILED");
+    
+    NSString *errorText;
+    NSInteger rc = [[notification object] integerValue];
+    
+    switch (rc) {
+        case kIAPPurchasesLocked:
+            errorText = @"Oops! Purchases are locked. Go ask your parents to unlock this! (Settings > General > Restrictions)";
+            break;
+        default:
+            errorText = @"Oops! Could not connect to the server. Try again later!";
+            break;
+    }
+    [self showDialog:@"Error" text:errorText];    
+    
+#if DEBUG_IAP
+    NSLog(@"Error - Product loading failed, rc: %d", rc);
+#endif
 }
 
 - (void) productPurchased:(NSNotification *)notification
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];    
+    buyState_ = kStateNoPurchase;    
+    
     [self finishLoading];    
+    [self reloadScreen];
+
+#if DEBUG_IAP
     NSString *productIdentifier = [notification object];
-    NSLog(@"BOUGHT %@", productIdentifier);
+    NSLog(@"Successfully bought %@", productIdentifier);
+#endif
 }
 
 - (void) productPurchasedFailed:(NSNotification *)notification
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];    
+    buyState_ = kStateNoPurchase;    
     [self finishLoading];    
-    [self showDialog:@"Error" text:@"Oops! Unable to make purchase. Try again later."];        
-    NSLog(@"Product purchased FAILED");
+    
+    NSInteger rc = [[notification object] integerValue];
+    
+    if (rc != kIAPUserCancelled) {
+        [self showDialog:@"Error" text:@"Oops! Unable to make purchase. Try again later."];                
+    }
 }
 
 #pragma mark - Delegate Methods
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    
+    // Assume that all other 
+    if (buttonIndex != 0) {
+        [self buyProduct:kStateBuyCurrentPack];
+    }
 }
 
 - (void) buttonClicked:(Button *)button
@@ -210,7 +239,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
     
     switch (scrollingMenu.numID) {
         case kScrollingMenuSong:
-            [self loadDifficultyMenu:[songNames_ objectAtIndex:menuItem.numID]];
+            [self loadSong:[songNames_ objectAtIndex:menuItem.numID]];
             break;
         case kScrollingMenuPack:
             packName = [packNames_ objectAtIndex:menuItem.numID];
@@ -224,6 +253,8 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
             break; 
     }
 }
+
+#pragma mark - Helper Methods
 
 - (void) togglePackSelect:(NSUInteger)packIndex
 {
@@ -280,10 +311,10 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
     // Setup the scrolling menu for the songs
     CGRect menuFrame = CGRectMake(PMS_SONG_MENU_X, PMS_SONG_MENU_Y, PMS_SONG_MENU_WIDTH, PMS_SONG_MENU_HEIGHT);
     CGFloat scrollSize = SONG_MENU_CELL_HEIGHT * [songNames_ count];
-    scrollingMenu_ = [[ScrollingMenu scrollingMenu:menuFrame scrollSize:scrollSize numID:kScrollingMenuSong] retain]; 
+    songMenu_ = [[ScrollingMenu scrollingMenu:menuFrame scrollSize:scrollSize numID:kScrollingMenuSong] retain]; 
 
-    scrollingMenu_.delegate = self;
-    [self addChild:scrollingMenu_]; 
+    songMenu_.delegate = self;
+    [self addChild:songMenu_]; 
     
     // Get scores for songs
     NSDictionary *scores = [[DataUtility manager] loadSongScores];
@@ -296,7 +327,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         ScoreType scoreType = (score == nil) ? kScoreZeroStar : [score integerValue];
         
         ScrollingMenuItem *menuItem = [SongMenuItem songMenuItem:songName songScore:scoreType songIndex:idx++ locked:isLocked];
-        [scrollingMenu_ addMenuItem:menuItem];
+        [songMenu_ addMenuItem:menuItem];
     }    
     
     // If locked, add purchase button
@@ -308,6 +339,36 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
     }
 }
 
+- (void) reloadScreen
+{
+    // Check if all packs purchased. If not, add button
+    if (![[SeatunesIAPHelper manager] allPacksPurchased]) {
+        [self addBuyAllButton];
+    }
+    
+    // Reload the current song menu
+    [self loadSongMenu:currentPack_];
+}
+
+- (void) addBuyAllButton
+{
+    if (allPacksButton_ == nil) {
+        allPacksButton_ = [[StarfishButton starfishButton:kButtonBuyAllPacks text:@"Buy All"] retain];
+        allPacksButton_.delegate = self;
+        allPacksButton_.position = ccp(PMS_ALL_PACKS_BUTTON_X, PMS_ALL_PACKS_BUTTON_Y);
+        [self addChild:allPacksButton_];    
+    }
+}
+
+- (void) removeBuyAllButton
+{
+    if (allPacksButton_ != nil) {
+        [allPacksButton_ removeFromParentAndCleanup:YES];
+        [allPacksButton_ release];
+        allPacksButton_ = nil;   
+    }
+}
+
 - (void) loadMainMenu
 {
     CCScene *scene = [MainMenuScene node];
@@ -315,19 +376,25 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
     [[AudioManager audioManager] playSoundEffect:kPageFlip];  
 }
 
-- (void) loadDifficultyMenu:(NSString *)songName
+- (void) loadSong:(NSString *)songName
 {
-    CCScene *scene = [DifficultyMenuScene startWithSongName:songName];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
-    [[AudioManager audioManager] playSoundEffect:kPageFlip];    
+    // Check if pack is locked
+    if ([[SeatunesIAPHelper manager] packPurchased:currentPack_]) {    
+        CCScene *scene = [DifficultyMenuScene startWithSongName:songName];
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
+        [[AudioManager audioManager] playSoundEffect:kPageFlip];    
+    }
+    else {
+        [self showBuyDialog];
+    }
 }
 
 - (void) cleanupSongMenu
 {
-    [scrollingMenu_ removeFromParentAndCleanup:YES];
-    [scrollingMenu_ removeSuperview];
-    [scrollingMenu_ release];   
-    scrollingMenu_ = nil;
+    [songMenu_ removeFromParentAndCleanup:YES];
+    [songMenu_ removeSuperview];
+    [songMenu_ release];   
+    songMenu_ = nil;
     
     [packButton_ removeFromParentAndCleanup:YES];
     [packButton_ release];
@@ -353,6 +420,14 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
     [message show];
 }
 
+- (void) showBuyDialog
+{
+    NSString *title = @"Pack Not Purchased";
+    NSString *text = [NSString stringWithFormat:@"To play this song, the %@ must be purchased.\nBuy it now?", currentPack_];
+    UIAlertView *message = [[[UIAlertView alloc] initWithTitle:title message:text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil] autorelease];
+    [message show];    
+}
+
 - (void) showLoading
 {
     if (allPacksButton_) {
@@ -362,7 +437,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         packButton_.isClickable = NO;
     }
     
-    scrollingMenu_.isClickable = NO;
+    songMenu_.isClickable = NO;
     packMenu_.isClickable = NO;    
 
     loadingIndicator_ = [[LoadingIndicator loadingIndicator] retain];
@@ -382,9 +457,8 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         packButton_.isClickable = YES;
     }    
     
-    scrollingMenu_.isClickable = YES;
+    songMenu_.isClickable = YES;
     packMenu_.isClickable = YES;
-
 }
 
 @end

@@ -19,6 +19,8 @@
         productIdentifiers_ = nil;
         products_ = nil;
         purchasedProducts_ = nil;   
+        
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];        
     }
     
     return self;
@@ -53,11 +55,19 @@
 
 - (void) requestProducts
 {
+#if DEBUG_IAP
     NSLog(@"Requesting products with: %@", productIdentifiers_);
+#endif
     
-    SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers_];
-    request.delegate = self;
-    [request start];
+    // Check parental controls
+    if ([SKPaymentQueue canMakePayments]) {
+        SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers_];
+        request.delegate = self;
+        [request start];        
+    }
+    else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kProductsLoadedFailedNotification object:[NSNumber numberWithInteger:kIAPPurchasesLocked]];        
+    }
 }
 
 - (void) productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
@@ -70,9 +80,8 @@
         [products_ setObject:product forKey:product.productIdentifier];
     }
     
-    NSLog(@"Got products: %@", products_);
     if ([products_ count] == 0) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kProductsLoadedFailedNotification object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kProductsLoadedFailedNotification object:[NSNumber numberWithInteger:kIAPNoProductsReturned]];
     }
     else {
         [[NSNotificationCenter defaultCenter] postNotificationName:kProductsLoadedNotification object:nil];
@@ -81,9 +90,11 @@
 
 - (void) request:(SKRequest *)request didFailWithError:(NSError *)error
 {
-    NSLog(@"request did fail: %@", error.localizedDescription);
+#if DEBUG_IAP
+    NSLog(@"Products Request Did Fail With Error: %@", error.localizedDescription);
+#endif
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:kProductsLoadedFailedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kProductsLoadedFailedNotification object:[NSNumber numberWithInteger:kIAPNetworkError]];
 }
 
 - (void) paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
@@ -116,12 +127,12 @@
             [[SKPaymentQueue defaultQueue] addPayment:payment];
         }
         else {
-            [[NSNotificationCenter defaultCenter] postNotificationName:kProductPurchaseFailedNotification object:nil];            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kProductPurchaseFailedNotification object:[NSNumber numberWithInteger:kIAPInvalidProduct]];            
             NSLog(@"BuyProductIdentifer: Invalid product identifier: %@", productIdentifier);
         }
     }
     else {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kProductPurchaseFailedNotification object:nil];                    
+        [[NSNotificationCenter defaultCenter] postNotificationName:kProductPurchaseFailedNotification object:[NSNumber numberWithInteger:kIAPProductsNotLoaded]];                    
         NSLog(@"Cannot call buyProductIdentifier without calling request products");
     }
 }
@@ -148,13 +159,23 @@
 
 - (void) failedTransaction:(SKPaymentTransaction *)transaction
 {
-    // Only show an error it was caused by anything OTHER than the user cancelling it themselves
-    if (transaction.error.code != SKErrorPaymentCancelled) {
-        NSLog(@"Transaction failed: %@", transaction.error.localizedDescription);
-    }
+    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];        
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:kProductPurchaseFailedNotification object:transaction];
-    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];    
+    // If the error was caused by anything other than the user cancelling it themselves
+    if (transaction.error.code != SKErrorPaymentCancelled) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kProductPurchaseFailedNotification object:[NSNumber numberWithInteger:kIAPTransactionFailed]];        
+#if DEBUG_IAP
+        NSLog(@"Transaction failed: %@", transaction.error.localizedDescription);        
+#endif
+    }
+    // Else the user cancelled it
+    else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kProductPurchaseFailedNotification object:[NSNumber numberWithInteger:kIAPUserCancelled]];
+        
+#if DEBUG_IAP
+        NSLog(@"User cancelled transaction");
+#endif
+    }
 }
 
 - (void) restoreTransaction:(SKPaymentTransaction *)transaction

@@ -275,6 +275,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 - (void) pauseGame
 {
     isPaused_ = YES;
+    pastKeyboardState_ = keyboard_.isClickable;
     keyboard_.isClickable = NO;
     [gameLogic_ pauseHierarchy];
     [instructor_ pauseHierarchy];
@@ -284,6 +285,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 - (void) resumeGame
 {
     isPaused_ = NO;
+    keyboard_.isClickable = pastKeyboardState_;
     [gameLogic_ resumeHierarchy];
     [instructor_ resumeHierarchy];
     [keyboard_ resumeHierarchy];

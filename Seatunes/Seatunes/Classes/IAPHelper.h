@@ -10,6 +10,16 @@
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
 
+enum {
+    kIAPNetworkError,
+    kIAPProductsNotLoaded,
+    kIAPNoProductsReturned,
+    kIAPInvalidProduct,
+    kIAPPurchasesLocked,
+    kIAPTransactionFailed,
+    kIAPUserCancelled
+};
+
 @interface IAPHelper : NSObject <SKProductsRequestDelegate, SKRequestDelegate, SKPaymentTransactionObserver> {
     
     NSSet *productIdentifiers_;

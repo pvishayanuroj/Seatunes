@@ -54,10 +54,11 @@
 
 - (void) dealloc
 {
+#if DEBUG_SHOWDEALLOC
     NSLog(@"Scrolling Menu dealloc'd");
+#endif
     
     [menuItems_ release];
-    //[viewController_.view removeFromSuperview];
     [currentMenuItem_ release];
     
     [super dealloc];

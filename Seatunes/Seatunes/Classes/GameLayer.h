@@ -47,6 +47,8 @@
     BOOL sideMenuMoving_;
     
     BOOL isPaused_;
+    
+    BOOL pastKeyboardState_;
 }
 
 + (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName;

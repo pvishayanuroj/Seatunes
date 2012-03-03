@@ -32,7 +32,7 @@ typedef enum {
 
 @interface PlayMenuScene : CCScene <ScrollingMenuDelegate, ButtonDelegate, UIAlertViewDelegate> {
     
-    ScrollingMenu *scrollingMenu_;
+    ScrollingMenu *songMenu_;
     
     ScrollingMenu *packMenu_;
     
@@ -51,8 +51,6 @@ typedef enum {
     NSArray *packNames_;
     
     BuyState buyState_;
-    
-    NSString *productIdentifierToBuy_;
 
     LoadingIndicator *loadingIndicator_;
 
@@ -68,15 +66,23 @@ typedef enum {
 
 - (void) loadSongMenu:(NSString *)packName;
 
+- (void) reloadScreen;
+
+- (void) addBuyAllButton;
+
+- (void) removeBuyAllButton;
+
 - (void) loadMainMenu;
 
-- (void) loadDifficultyMenu:(NSString *)songName;
+- (void) loadSong:(NSString *)songName;
 
 - (void) cleanupSongMenu;
 
 - (void) cleanupPackMenu;
 
 - (void) showDialog:(NSString *)title text:(NSString *)text;
+
+- (void) showBuyDialog;
 
 - (void) showLoading;
 
