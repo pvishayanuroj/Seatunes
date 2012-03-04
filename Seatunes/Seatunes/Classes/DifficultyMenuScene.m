@@ -24,7 +24,7 @@ static const CGFloat DMS_BUTTON_X = 512.0f;
 static const CGFloat DMS_BUTTON_PADDING = 200.0f;
 
 static const CGFloat DMS_MENU_FRAME_X = 512.0f;
-static const CGFloat DMS_MENU_FRAME_Y = 384.0f;
+static const CGFloat DMS_MENU_FRAME_Y = 440.0f;
 
 static const CGFloat DMS_BACK_BUTTON_X = 50.0f;
 static const CGFloat DMS_BACK_BUTTON_Y = 730.0f;

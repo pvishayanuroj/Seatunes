@@ -19,9 +19,9 @@
     return [[[self alloc] initSpeechBubble:dim bubbleType:kBubbleClick fullScreenTap:fullScreenTap time:0] autorelease];    
 }
 
-+ (id) timedSpeechBubble:(SpeechBubbleDim)dim fullScreenTap:(BOOL)fullScreenTap time:(CGFloat)time
++ (id) timedSpeechBubble:(SpeechBubbleDim)dim time:(CGFloat)time
 {
-    return [[[self alloc] initSpeechBubble:dim bubbleType:kBubbleTimed fullScreenTap:fullScreenTap time:time] autorelease];    
+    return [[[self alloc] initSpeechBubble:dim bubbleType:kBubbleTimed fullScreenTap:NO time:time] autorelease];    
 }
 
 + (id) timedClickSpeechBubble:(SpeechBubbleDim)dim fullScreenTap:(BOOL)fullScreenTap time:(CGFloat)time

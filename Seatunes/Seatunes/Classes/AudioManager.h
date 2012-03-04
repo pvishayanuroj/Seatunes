@@ -27,6 +27,8 @@
 
 - (void) playSoundEffect:(SoundType)type;
 
+- (GLuint) playSoundEffectFile:(NSString *)filename;
+
 - (void) stopSound:(GLuint)effectNumber;
 
 - (void) stopSound;

@@ -9,6 +9,7 @@
 #import "SpeechReader.h"
 #import "SpeechBubble.h"
 #import "SpeechManager.h"
+#import "AudioManager.h"
 
 @implementation SpeechReader
 
@@ -17,6 +18,7 @@ static const NSUInteger SR_NUM_ROWS = 6;
 static const CGFloat SR_ROW_HEIGHT = 40.0f;
 static const CGFloat SR_TEXT_OFFSET_X = -180.0f;
 static const CGFloat SR_TEXT_OFFSET_Y = 80.0f;
+const static CGFloat SR_DEFAULT_DURATION = 5.0f;
 
 @synthesize delegate = delegate_;
 
@@ -37,14 +39,12 @@ static const CGFloat SR_TEXT_OFFSET_Y = 80.0f;
         tapRequired_ = tapRequired;
         
         speeches_ = [[NSMutableArray arrayWithCapacity:5] retain];
-        paths_ = [[NSMutableArray arrayWithCapacity:5] retain];
         
         for (NSNumber *speech in speeches) {
             SpeechType speechType = [speech integerValue];
             NSArray *textArray = [[SpeechManager speechManager] textFromSpeechType:speechType];
             for (NSDictionary *text in textArray) {
-                [speeches_ addObject:[text objectForKey:@"Text"]];
-                [paths_ addObject:[text objectForKey:@"Path"]];
+                [speeches_ addObject:text];
             }
         }
         
@@ -56,12 +56,9 @@ static const CGFloat SR_TEXT_OFFSET_Y = 80.0f;
 - (void) dealloc
 {
     [speeches_ release];
-    [paths_ release];
     
     [super dealloc];
 }
-
-const static CGFloat BUB_TM = 2.0f;
 
 - (void) createBubble
 {
@@ -75,29 +72,29 @@ const static CGFloat BUB_TM = 2.0f;
     if (currentSpeechIndex_ < [speeches_ count]) {
         
         SpeechBubble *speechBubble;
-        
-        speechBubble = [SpeechBubble tapSpeechBubble:bubbleDim fullScreenTap:NO];
-        
-        /*
-        // If the last text
-        if (currentSpeechIndex_ == [speeches_ count] - 1) {
-            if (tapRequired_) {
-                speechBubble = [SpeechBubble timedClickSpeechBubble:bubbleDim fullScreenTap:YES time:BUB_TM];            
-            }
-            else {
-                speechBubble = [SpeechBubble timedSpeechBubble:bubbleDim fullScreenTap:YES time:BUB_TM];
-            }
+        NSDictionary *speech = [speeches_ objectAtIndex:currentSpeechIndex_];
+        NSString *text = [speech objectForKey:@"Text"];
+        NSString *file = [speech objectForKey:@"Path"];        
+        NSNumber *duration = [speech objectForKey:@"Duration"];
+        if (duration == nil) {
+            duration = [NSNumber numberWithFloat:SR_DEFAULT_DURATION];
         }
-        // Not the last text
+        
+        if (tapRequired_) {
+            speechBubble = [SpeechBubble tapSpeechBubble:bubbleDim fullScreenTap:NO];
+        }
         else {
-            speechBubble = [SpeechBubble timedSpeechBubble:bubbleDim fullScreenTap:YES time:BUB_TM];
+            speechBubble = [SpeechBubble timedSpeechBubble:bubbleDim time:[duration floatValue]];
         }
-         */
-        
-        NSString *text = [speeches_ objectAtIndex:currentSpeechIndex_];
+
         speechBubble.delegate = self;
         [speechBubble setTextWithBMFont:text fntFile:@"Dialogue Font.fnt"];
         [self addChild:speechBubble];
+        
+        [[AudioManager audioManager] stopSound:effectID_];
+        NSLog(@"file: %@", file);
+        effectID_ = [[AudioManager audioManager] playSoundEffectFile:file];
+        
         currentSpeechIndex_++;
     }
     else {

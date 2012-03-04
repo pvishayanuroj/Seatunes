@@ -85,6 +85,12 @@ static AudioManager *_audioManager = nil;
     [engine playEffect:name];
 }
 
+- (GLuint) playSoundEffectFile:(NSString *)filename
+{
+    SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];
+    return [engine playEffect:filename];
+}
+
 - (void) stopSound
 {
     SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];

@@ -18,13 +18,13 @@
     
     NSMutableArray *speeches_;
     
-    NSMutableArray *paths_;
-    
     NSUInteger currentSpeechIndex_;
     
     NSString *remainingText_;
     
     BOOL tapRequired_;
+    
+    GLuint effectID_;
     
     SpeechType lastSpeechType_;
     

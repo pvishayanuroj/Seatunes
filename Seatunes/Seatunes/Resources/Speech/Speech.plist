@@ -7,7 +7,7 @@
 		<array>
 			<dict>
 				<key>Path</key>
-				<string>Easy Instructions00.caf</string>
+				<string>EasyInstructions00.caf</string>
 				<key>Text</key>
 				<string>Hey there, little buddy! My name is Whaleziak, I&apos;ll be your teacher while you&apos;re visiting us under the ocean.</string>
 			</dict>
@@ -74,12 +74,14 @@
 	</array>
 	<key>Easy Correct Note</key>
 	<array>
-		<dict>
-			<key>Path</key>
-			<string>EasyCorrectNote00.caf</string>
-			<key>Text</key>
-			<string>Good job! You&apos;re getting the hang of it. Let&apos;s keep going!</string>
-		</dict>
+		<array>
+			<dict>
+				<key>Text</key>
+				<string>Good job! You&apos;re getting the hang of it. Let&apos;s keep going!</string>
+				<key>Path</key>
+				<string>EasyCorrectNote00.caf</string>
+			</dict>
+		</array>
 	</array>
 	<key>Medium Instructions</key>
 	<array>

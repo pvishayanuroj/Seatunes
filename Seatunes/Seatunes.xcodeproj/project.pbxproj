@@ -47,6 +47,12 @@
 		0485A2CF14F4818500AFF338 /* Nursery Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C514F4818500AFF338 /* Nursery Pack Unselected.png */; };
 		048BBAC114D5368C0086EABC /* Exercise Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAAE14D5368B0086EABC /* Exercise Pack.plist */; };
 		048BBAD114D5368C0086EABC /* Nursery Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBABF14D5368C0086EABC /* Nursery Pack.plist */; };
+		04B0D4CC1504174100A4A2B8 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4C81504173B00A4A2B8 /* Icon-72.png */; };
+		04B0D4CD1504174100A4A2B8 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4C91504173D00A4A2B8 /* Icon-Small-50.png */; };
+		04B0D4CE1504174100A4A2B8 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4CA1504173E00A4A2B8 /* Icon-Small.png */; };
+		04B0D4CF1504174100A4A2B8 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4CB1504174000A4A2B8 /* Icon-Small@2x.png */; };
+		04B0D4D515041EEB00A4A2B8 /* EasyInstructions00.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4D215041EEB00A4A2B8 /* EasyInstructions00.caf */; };
+		04B0D4D615041EEB00A4A2B8 /* EasyInstructions01.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4D315041EEB00A4A2B8 /* EasyInstructions01.caf */; };
 		04B32C9514DDB1DB004AA98E /* GameLogicB.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9414DDB1DA004AA98E /* GameLogicB.m */; };
 		04B32C9D14DDDBF1004AA98E /* GameLogicA.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9C14DDDBF0004AA98E /* GameLogicA.m */; };
 		04B32CA014DDDC18004AA98E /* GameLogicC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9F14DDDC17004AA98E /* GameLogicC.m */; };
@@ -144,10 +150,6 @@
 		DAB11F2814C1E847009B60FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F2714C1E847009B60FB /* CoreGraphics.framework */; };
 		DAB11F2C14C1E847009B60FB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F2B14C1E847009B60FB /* Default.png */; };
 		DAB11F2E14C1E847009B60FB /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F2D14C1E847009B60FB /* fps_images.png */; };
-		DAB11F3014C1E847009B60FB /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F2F14C1E847009B60FB /* Icon-72.png */; };
-		DAB11F3214C1E847009B60FB /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F3114C1E847009B60FB /* Icon-Small-50.png */; };
-		DAB11F3414C1E847009B60FB /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F3314C1E847009B60FB /* Icon-Small.png */; };
-		DAB11F3614C1E847009B60FB /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F3514C1E847009B60FB /* Icon-Small@2x.png */; };
 		DAB11F3814C1E847009B60FB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F3714C1E847009B60FB /* Icon.png */; };
 		DAB11F3A14C1E847009B60FB /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F3914C1E847009B60FB /* Icon@2x.png */; };
 		DAB11F3D14C1E847009B60FB /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F3C14C1E847009B60FB /* iTunesArtwork */; };
@@ -329,6 +331,12 @@
 		0485A2C514F4818500AFF338 /* Nursery Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack Unselected.png"; sourceTree = "<group>"; };
 		048BBAAE14D5368B0086EABC /* Exercise Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Exercise Pack.plist"; sourceTree = "<group>"; };
 		048BBABF14D5368C0086EABC /* Nursery Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Nursery Pack.plist"; sourceTree = "<group>"; };
+		04B0D4C81504173B00A4A2B8 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
+		04B0D4C91504173D00A4A2B8 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
+		04B0D4CA1504173E00A4A2B8 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
+		04B0D4CB1504174000A4A2B8 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
+		04B0D4D215041EEB00A4A2B8 /* EasyInstructions00.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EasyInstructions00.caf; sourceTree = "<group>"; };
+		04B0D4D315041EEB00A4A2B8 /* EasyInstructions01.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EasyInstructions01.caf; sourceTree = "<group>"; };
 		04B32C9314DDB1DA004AA98E /* GameLogicB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicB.h; path = Classes/GameLogicB.h; sourceTree = "<group>"; };
 		04B32C9414DDB1DA004AA98E /* GameLogicB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicB.m; path = Classes/GameLogicB.m; sourceTree = "<group>"; };
 		04B32C9B14DDDBF0004AA98E /* GameLogicA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicA.h; path = Classes/GameLogicA.h; sourceTree = "<group>"; };
@@ -447,10 +455,6 @@
 		DAB11F2714C1E847009B60FB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DAB11F2B14C1E847009B60FB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		DAB11F2D14C1E847009B60FB /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = Resources/fps_images.png; sourceTree = "<group>"; };
-		DAB11F2F14C1E847009B60FB /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
-		DAB11F3114C1E847009B60FB /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
-		DAB11F3314C1E847009B60FB /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
-		DAB11F3514C1E847009B60FB /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
 		DAB11F3714C1E847009B60FB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
 		DAB11F3914C1E847009B60FB /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
 		DAB11F3B14C1E847009B60FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
@@ -831,6 +835,16 @@
 			name = "Scenes & Layers";
 			sourceTree = "<group>";
 		};
+		04B0D4D015041EE900A4A2B8 /* Speech Effects */ = {
+			isa = PBXGroup;
+			children = (
+				04B0D4D215041EEB00A4A2B8 /* EasyInstructions00.caf */,
+				04B0D4D315041EEB00A4A2B8 /* EasyInstructions01.caf */,
+			);
+			name = "Speech Effects";
+			path = "Resources/Speech Effects";
+			sourceTree = "<group>";
+		};
 		04D331C814E6DDD600DD82D4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1033,6 +1047,7 @@
 		DAB11F2A14C1E847009B60FB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04B0D4D015041EE900A4A2B8 /* Speech Effects */,
 				04DE51B614F7492C00F8E45C /* Sound Effects */,
 				04D331CD14E7056700DD82D4 /* Speech */,
 				04D331C814E6DDD600DD82D4 /* Fonts */,
@@ -1042,12 +1057,12 @@
 				DAB120E714C35A08009B60FB /* Notes */,
 				DAB11F2B14C1E847009B60FB /* Default.png */,
 				DAB11F2D14C1E847009B60FB /* fps_images.png */,
-				DAB11F2F14C1E847009B60FB /* Icon-72.png */,
-				DAB11F3114C1E847009B60FB /* Icon-Small-50.png */,
-				DAB11F3314C1E847009B60FB /* Icon-Small.png */,
-				DAB11F3514C1E847009B60FB /* Icon-Small@2x.png */,
 				DAB11F3714C1E847009B60FB /* Icon.png */,
 				DAB11F3914C1E847009B60FB /* Icon@2x.png */,
+				04B0D4C81504173B00A4A2B8 /* Icon-72.png */,
+				04B0D4C91504173D00A4A2B8 /* Icon-Small-50.png */,
+				04B0D4CA1504173E00A4A2B8 /* Icon-Small.png */,
+				04B0D4CB1504174000A4A2B8 /* Icon-Small@2x.png */,
 				DAB11F3B14C1E847009B60FB /* Info.plist */,
 				DAB11F3C14C1E847009B60FB /* iTunesArtwork */,
 			);
@@ -1476,10 +1491,6 @@
 			files = (
 				DAB11F2C14C1E847009B60FB /* Default.png in Resources */,
 				DAB11F2E14C1E847009B60FB /* fps_images.png in Resources */,
-				DAB11F3014C1E847009B60FB /* Icon-72.png in Resources */,
-				DAB11F3214C1E847009B60FB /* Icon-Small-50.png in Resources */,
-				DAB11F3414C1E847009B60FB /* Icon-Small.png in Resources */,
-				DAB11F3614C1E847009B60FB /* Icon-Small@2x.png in Resources */,
 				DAB11F3814C1E847009B60FB /* Icon.png in Resources */,
 				DAB11F3A14C1E847009B60FB /* Icon@2x.png in Resources */,
 				DAB11F3D14C1E847009B60FB /* iTunesArtwork in Resources */,
@@ -1591,6 +1602,12 @@
 				040A0CA614FC7316006803F9 /* Lock Icon.png in Resources */,
 				0431B78A14FF2DD0005D6FBA /* Back Arrow.png in Resources */,
 				0431B78B14FF2DD0005D6FBA /* Loading Indicator Background.png in Resources */,
+				04B0D4CC1504174100A4A2B8 /* Icon-72.png in Resources */,
+				04B0D4CD1504174100A4A2B8 /* Icon-Small-50.png in Resources */,
+				04B0D4CE1504174100A4A2B8 /* Icon-Small.png in Resources */,
+				04B0D4CF1504174100A4A2B8 /* Icon-Small@2x.png in Resources */,
+				04B0D4D515041EEB00A4A2B8 /* EasyInstructions00.caf in Resources */,
+				04B0D4D615041EEB00A4A2B8 /* EasyInstructions01.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

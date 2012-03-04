@@ -48,7 +48,7 @@ typedef enum {
 
 + (id) tapSpeechBubble:(SpeechBubbleDim)dim fullScreenTap:(BOOL)fullScreenTap;
 
-+ (id) timedSpeechBubble:(SpeechBubbleDim)dim fullScreenTap:(BOOL)fullScreenTap time:(CGFloat)time;
++ (id) timedSpeechBubble:(SpeechBubbleDim)dim time:(CGFloat)time;
 
 + (id) timedClickSpeechBubble:(SpeechBubbleDim)dim fullScreenTap:(BOOL)fullScreenTap time:(CGFloat)time;
 

@@ -34,7 +34,7 @@
         
         // If first time playing
         if (isFirstPlay_) {
-            [super runSingleSpeech:kEasyInstructions tapRequired:NO];
+            [super runSingleSpeech:kEasyInstructions tapRequired:YES];
         }
         else { 
             [super runSingleSpeech:kSongStart tapRequired:YES];
