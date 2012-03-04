@@ -14,6 +14,8 @@
 
 #define DEBUG_IAP 1
 
+#define DEBUG_ALLUNLOCK 1
+
 #define NT_CURVE1_C1_X 150  
 #define NT_CURVE1_C1_Y 0
 #define NT_CURVE1_C2_X 240

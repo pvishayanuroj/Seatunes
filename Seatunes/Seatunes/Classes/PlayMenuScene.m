@@ -378,6 +378,12 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
 
 - (void) loadSong:(NSString *)songName
 {
+#if DEBUG_ALLUNLOCK
+    CCScene *scene = [DifficultyMenuScene startWithSongName:songName];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
+    [[AudioManager audioManager] playSoundEffect:kPageFlip];    
+    
+#else
     // Check if pack is locked
     if ([[SeatunesIAPHelper manager] packPurchased:currentPack_]) {    
         CCScene *scene = [DifficultyMenuScene startWithSongName:songName];
@@ -387,6 +393,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
     else {
         [self showBuyDialog];
     }
+#endif
 }
 
 - (void) cleanupSongMenu

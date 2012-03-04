@@ -43,8 +43,6 @@
 		048508E714D4E50D008BBA10 /* ScrollingMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */; };
 		0485A2CA14F4818500AFF338 /* Exercise Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C014F4818500AFF338 /* Exercise Pack Selected.png */; };
 		0485A2CB14F4818500AFF338 /* Exercise Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C114F4818500AFF338 /* Exercise Pack Unselected.png */; };
-		0485A2CC14F4818500AFF338 /* Nursery Pack Locked Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C214F4818500AFF338 /* Nursery Pack Locked Selected.png */; };
-		0485A2CD14F4818500AFF338 /* Nursery Pack Locked Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C314F4818500AFF338 /* Nursery Pack Locked Unselected.png */; };
 		0485A2CE14F4818500AFF338 /* Nursery Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C414F4818500AFF338 /* Nursery Pack Selected.png */; };
 		0485A2CF14F4818500AFF338 /* Nursery Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0485A2C514F4818500AFF338 /* Nursery Pack Unselected.png */; };
 		048BBAC114D5368C0086EABC /* Exercise Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048BBAAE14D5368B0086EABC /* Exercise Pack.plist */; };
@@ -111,8 +109,6 @@
 		04DE51F314F9FAC000F8E45C /* Product Identifiers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51F214F9FAC000F8E45C /* Product Identifiers.plist */; };
 		04DE51F514F9FD1A00F8E45C /* Default Packs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51F414F9FD1A00F8E45C /* Default Packs.plist */; };
 		04DE51F814FA0F6C00F8E45C /* SeatunesIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE51F714FA0F6C00F8E45C /* SeatunesIAPHelper.m */; };
-		04DE51FD14FA18B800F8E45C /* Classics Pack Locked Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51F914FA18B800F8E45C /* Classics Pack Locked Selected.png */; };
-		04DE51FE14FA18B800F8E45C /* Classics Pack Locked Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51FA14FA18B800F8E45C /* Classics Pack Locked Unselected.png */; };
 		04DE51FF14FA18B800F8E45C /* Classics Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51FB14FA18B800F8E45C /* Classics Pack Selected.png */; };
 		04DE520014FA18B800F8E45C /* Classics Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51FC14FA18B800F8E45C /* Classics Pack Unselected.png */; };
 		04DE520214FA19E500F8E45C /* Classics Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520114FA19E500F8E45C /* Classics Pack.plist */; };
@@ -329,8 +325,6 @@
 		048508E614D4E50D008BBA10 /* ScrollingMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollingMenuItem.m; path = Classes/ScrollingMenuItem.m; sourceTree = "<group>"; };
 		0485A2C014F4818500AFF338 /* Exercise Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exercise Pack Selected.png"; sourceTree = "<group>"; };
 		0485A2C114F4818500AFF338 /* Exercise Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exercise Pack Unselected.png"; sourceTree = "<group>"; };
-		0485A2C214F4818500AFF338 /* Nursery Pack Locked Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack Locked Selected.png"; sourceTree = "<group>"; };
-		0485A2C314F4818500AFF338 /* Nursery Pack Locked Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack Locked Unselected.png"; sourceTree = "<group>"; };
 		0485A2C414F4818500AFF338 /* Nursery Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack Selected.png"; sourceTree = "<group>"; };
 		0485A2C514F4818500AFF338 /* Nursery Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nursery Pack Unselected.png"; sourceTree = "<group>"; };
 		048BBAAE14D5368B0086EABC /* Exercise Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Exercise Pack.plist"; sourceTree = "<group>"; };
@@ -411,8 +405,6 @@
 		04DE51F414F9FD1A00F8E45C /* Default Packs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Default Packs.plist"; sourceTree = "<group>"; };
 		04DE51F614FA0F6C00F8E45C /* SeatunesIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeatunesIAPHelper.h; path = Classes/SeatunesIAPHelper.h; sourceTree = "<group>"; };
 		04DE51F714FA0F6C00F8E45C /* SeatunesIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeatunesIAPHelper.m; path = Classes/SeatunesIAPHelper.m; sourceTree = "<group>"; };
-		04DE51F914FA18B800F8E45C /* Classics Pack Locked Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Classics Pack Locked Selected.png"; sourceTree = "<group>"; };
-		04DE51FA14FA18B800F8E45C /* Classics Pack Locked Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Classics Pack Locked Unselected.png"; sourceTree = "<group>"; };
 		04DE51FB14FA18B800F8E45C /* Classics Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Classics Pack Selected.png"; sourceTree = "<group>"; };
 		04DE51FC14FA18B800F8E45C /* Classics Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Classics Pack Unselected.png"; sourceTree = "<group>"; };
 		04DE520114FA19E500F8E45C /* Classics Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Classics Pack.plist"; sourceTree = "<group>"; };
@@ -756,14 +748,10 @@
 				040A0CA514FC7316006803F9 /* Lock Icon.png */,
 				04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */,
 				04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */,
-				04DE51F914FA18B800F8E45C /* Classics Pack Locked Selected.png */,
-				04DE51FA14FA18B800F8E45C /* Classics Pack Locked Unselected.png */,
 				04DE51FB14FA18B800F8E45C /* Classics Pack Selected.png */,
 				04DE51FC14FA18B800F8E45C /* Classics Pack Unselected.png */,
 				0485A2C014F4818500AFF338 /* Exercise Pack Selected.png */,
 				0485A2C114F4818500AFF338 /* Exercise Pack Unselected.png */,
-				0485A2C214F4818500AFF338 /* Nursery Pack Locked Selected.png */,
-				0485A2C314F4818500AFF338 /* Nursery Pack Locked Unselected.png */,
 				0485A2C414F4818500AFF338 /* Nursery Pack Selected.png */,
 				0485A2C514F4818500AFF338 /* Nursery Pack Unselected.png */,
 				04D3E46114F2EF8F00FB0928 /* Water Background.png */,
@@ -1563,8 +1551,6 @@
 				04D3E46214F2EF8F00FB0928 /* Water Background.png in Resources */,
 				0485A2CA14F4818500AFF338 /* Exercise Pack Selected.png in Resources */,
 				0485A2CB14F4818500AFF338 /* Exercise Pack Unselected.png in Resources */,
-				0485A2CC14F4818500AFF338 /* Nursery Pack Locked Selected.png in Resources */,
-				0485A2CD14F4818500AFF338 /* Nursery Pack Locked Unselected.png in Resources */,
 				0485A2CE14F4818500AFF338 /* Nursery Pack Selected.png in Resources */,
 				0485A2CF14F4818500AFF338 /* Nursery Pack Unselected.png in Resources */,
 				04DE51C314F7492C00F8E45C /* Applause 2.caf in Resources */,
@@ -1581,8 +1567,6 @@
 				04DE51EC14F895C500F8E45C /* Menu Sound G1.caf in Resources */,
 				04DE51F314F9FAC000F8E45C /* Product Identifiers.plist in Resources */,
 				04DE51F514F9FD1A00F8E45C /* Default Packs.plist in Resources */,
-				04DE51FD14FA18B800F8E45C /* Classics Pack Locked Selected.png in Resources */,
-				04DE51FE14FA18B800F8E45C /* Classics Pack Locked Unselected.png in Resources */,
 				04DE51FF14FA18B800F8E45C /* Classics Pack Selected.png in Resources */,
 				04DE520014FA18B800F8E45C /* Classics Pack Unselected.png in Resources */,
 				04DE520214FA19E500F8E45C /* Classics Pack.plist in Resources */,

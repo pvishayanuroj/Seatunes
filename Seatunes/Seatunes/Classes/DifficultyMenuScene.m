@@ -23,6 +23,9 @@ static const CGFloat DMS_BUTTON_Y = 420.0f;
 static const CGFloat DMS_BUTTON_X = 512.0f;
 static const CGFloat DMS_BUTTON_PADDING = 200.0f;
 
+static const CGFloat DMS_MENU_FRAME_X = 512.0f;
+static const CGFloat DMS_MENU_FRAME_Y = 384.0f;
+
 static const CGFloat DMS_BACK_BUTTON_X = 50.0f;
 static const CGFloat DMS_BACK_BUTTON_Y = 730.0f;
 
@@ -43,6 +46,11 @@ static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
         background.anchorPoint = CGPointZero;
         [self addChild:background];      
         songName_ = [songName retain];
+        
+        // Add the frame
+        CCSprite *menuFrame = [CCSprite spriteWithFile:@"Difficulty Menu Frame.png"];
+        menuFrame.position = ccp(DMS_MENU_FRAME_X, DMS_MENU_FRAME_Y);
+        [self addChild:menuFrame];        
         
         // Add text
         CCLabelBMFont *titleText = [CCLabelBMFont labelWithString:@"Choose Difficulty" fntFile:@"MenuFont.fnt"];

@@ -18,6 +18,8 @@
     
     NSMutableArray *speeches_;
     
+    NSMutableArray *paths_;
+    
     NSUInteger currentSpeechIndex_;
     
     NSString *remainingText_;

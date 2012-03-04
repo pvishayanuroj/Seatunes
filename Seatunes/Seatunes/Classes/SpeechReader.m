@@ -37,12 +37,14 @@ static const CGFloat SR_TEXT_OFFSET_Y = 80.0f;
         tapRequired_ = tapRequired;
         
         speeches_ = [[NSMutableArray arrayWithCapacity:5] retain];
+        paths_ = [[NSMutableArray arrayWithCapacity:5] retain];
         
         for (NSNumber *speech in speeches) {
             SpeechType speechType = [speech integerValue];
             NSArray *textArray = [[SpeechManager speechManager] textFromSpeechType:speechType];
-            for (NSString *text in textArray) {
-                [speeches_ addObject:text];
+            for (NSDictionary *text in textArray) {
+                [speeches_ addObject:[text objectForKey:@"Text"]];
+                [paths_ addObject:[text objectForKey:@"Path"]];
             }
         }
         
@@ -54,6 +56,7 @@ static const CGFloat SR_TEXT_OFFSET_Y = 80.0f;
 - (void) dealloc
 {
     [speeches_ release];
+    [paths_ release];
     
     [super dealloc];
 }
@@ -73,6 +76,9 @@ const static CGFloat BUB_TM = 2.0f;
         
         SpeechBubble *speechBubble;
         
+        speechBubble = [SpeechBubble tapSpeechBubble:bubbleDim fullScreenTap:NO];
+        
+        /*
         // If the last text
         if (currentSpeechIndex_ == [speeches_ count] - 1) {
             if (tapRequired_) {
@@ -86,6 +92,7 @@ const static CGFloat BUB_TM = 2.0f;
         else {
             speechBubble = [SpeechBubble timedSpeechBubble:bubbleDim fullScreenTap:YES time:BUB_TM];
         }
+         */
         
         NSString *text = [speeches_ objectAtIndex:currentSpeechIndex_];
         speechBubble.delegate = self;
