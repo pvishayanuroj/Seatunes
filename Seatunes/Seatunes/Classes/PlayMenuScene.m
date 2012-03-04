@@ -68,7 +68,8 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         [self addChild:background];        
         
         CCSprite *menuFrame = [CCSprite spriteWithFile:@"Menu Frame.png"];
-        menuFrame.position = ccp(PMS_MENU_FRAME_X, PMS_MENU_FRAME_Y);
+        menuFrame.anchorPoint = CGPointZero;
+        //menuFrame.position = ccp(0, PMS_MENU_FRAME_Y);
         [self addChild:menuFrame];
         
         packTitle_ = [[CCLabelBMFont labelWithString:@"" fntFile:@"MenuFont.fnt"] retain];
