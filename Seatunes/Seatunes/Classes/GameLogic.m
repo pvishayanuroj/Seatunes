@@ -9,6 +9,7 @@
 #import "GameLogic.h"
 #import "Keyboard.h"
 #import "Instructor.h"
+#import "NoteGenerator.h"
 #import "SpeechReader.h"
 #import "Utility.h"
 
@@ -61,7 +62,12 @@ static const CGFloat GL_BUBBLE_Y = 600.0f;
 - (void) setInstructor:(Instructor *)instructor
 {
     instructor_ = [instructor retain];
-    instructor_.delegate = self;
+} 
+
+- (void) setNoteGenerator:(NoteGenerator *)noteGenerator
+{
+    noteGenerator_ = [noteGenerator retain];
+    noteGenerator_.delegate = self;
 } 
 
 - (void) runSingleSpeech:(SpeechType)speechType tapRequired:(BOOL)tapRequired

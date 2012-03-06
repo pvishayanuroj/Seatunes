@@ -11,6 +11,7 @@
 #import "Keyboard.h"
 #import "Instructor.h"
 #import "AudioManager.h"
+#import "NoteGenerator.h"
 
 @implementation GameLogicC
 
@@ -80,7 +81,7 @@ static const CGFloat GLC_KEY_ANIMATION_INTERVAL = 0.75f;
             [queue_ addObject:key];
         }
         
-        [instructor_ playNote:keyType];  
+        //[instructor_ playNote:keyType];  
         [keyboard_ playNote:keyType time:GLC_KEY_ANIMATION_INTERVAL withSound:NO];            
         [[AudioManager audioManager] playSound:keyType instrument:kLowStrings];        
     } 
@@ -117,7 +118,10 @@ static const CGFloat GLC_KEY_ANIMATION_INTERVAL = 0.75f;
         
         NSNumber *key = [replayNotes_ objectAtIndex:replayNoteIndex_++];
         KeyType keyType = [key integerValue];
-        [instructor_ playNote:keyType];        
+        if (keyType != kBlankNote) {
+            [instructor_ showSing];
+            [noteGenerator_ addInstructorNote:keyType numID:replayNoteIndex_];
+        }
         [keyboard_ playNote:keyType time:GLC_KEY_ANIMATION_INTERVAL withSound:NO];            
         [[AudioManager audioManager] playSound:keyType instrument:kLowStrings];                
     } 

@@ -1,27 +1,28 @@
 //
-//  GameLogicB.m
+//  GameLogicD.m
 //  Seatunes
 //
-//  Created by Jantorn Jiambutr on 2/4/12.
+//  Created by Jantorn Jiambutr on 3/4/12.
 //  Copyright 2012 Paul Vishayanuroj. All rights reserved.
 //
 
-#import "GameLogicB.h"
+#import "GameLogicD.h"
 #import "Utility.h"
 #import "Keyboard.h"
 #import "Instructor.h"
-#import "NoteGenerator.h"
 #import "Note.h"
 #import "SpeechReader.h"
+#import "NoteGenerator.h"
+#import "AudioManager.h"
 
-@implementation GameLogicB
+@implementation GameLogicD
 
-+ (id) gameLogicB:(NSString *)songName
++ (id) gameLogicD:(NSString *)songName
 {
-    return [[[self alloc] initGameLogicB:songName] autorelease];
+    return [[[self alloc] initGameLogicD:songName] autorelease];
 }
 
-- (id) initGameLogicB:(NSString *)songName
+- (id) initGameLogicD:(NSString *)songName
 {
     if ((self = [super initGameLogic:kDifficultyMedium])) {
         
@@ -55,7 +56,6 @@
 
 - (void) start
 {
-    keyboard_.isClickable = YES;
     [self schedule:@selector(loop:) interval:1.5f];
 }
 
@@ -64,15 +64,14 @@
     if ([notes_ count] > noteIndex_) {
         
         NSNumber *key = [notes_ objectAtIndex:noteIndex_++];
-        
         KeyType keyType = [key integerValue];
         
-        // As long as not blank, play the note and store
         if (keyType != kBlankNote) {
-            [queue_ addObject:key];
-            [instructor_ showSing];
-            [noteGenerator_ addInstructorNote:keyType numID:noteIndex_];
+            [queue_ addObject:[NSNumber numberWithUnsignedInteger:noteIndex_]];
+            [noteGenerator_ addFloorNote:keyType numID:noteIndex_];
         }
+        
+        //[instructor_ playNote:keyType poppable:YES curveType:kBubbleCurve1];
         
         // Check if this is the last note
         if ([notes_ count] == noteIndex_) {
@@ -84,41 +83,39 @@
 
 #pragma mark - Delegate Methods
 
-- (void) keyboardKeyPressed:(KeyType)keyType
+- (void) noteTouched:(Note *)note
 {
-    if (!ignoreInput_) {
-        NSNumber *key = [NSNumber numberWithInteger:keyType];
+    [[AudioManager audioManager] playSound:note.keyType instrument:kPiano];
     
-        if ([queue_ count] > 0) {
+    if ([queue_ count] > 0) {
+        
+        NSNumber *key = [NSNumber numberWithUnsignedInteger:note.numID];
+        NSNumber *correctNote = [queue_ objectAtIndex:0];                    
+        
+        // Correct note played
+        if ([key isEqualToNumber:correctNote]) {
+            [queue_ removeObjectAtIndex:0];
+            [noteGenerator_ popOldestNote];
+            playerNoteIndex_++;
             
-            NSNumber *correctNote = [queue_ objectAtIndex:0];            
-            
-            // Correct note played
-            if ([key isEqualToNumber:correctNote]) {
-                [queue_ removeObjectAtIndex:0];
-                [noteGenerator_ popOldestNote];
-                playerNoteIndex_++;
-                
-                // This note is the last note in the song
-                if (onLastNote_ && [queue_ count] == 0) {
-                    keyboard_.isClickable = NO;
-                    ignoreInput_ = YES;            
-                    [self runDelayedEndSpeech];                         
-                }
-            }
-            // Incorrect note played
-            else {
-                [instructor_ showWrongNote];
-                [notesHit_ replaceObjectAtIndex:playerNoteIndex_ withObject:[NSNumber numberWithBool:NO]];            
+            // This note is the last note in the song
+            if (onLastNote_ && [queue_ count] == 0) {
+                ignoreInput_ = YES;            
+                [self runDelayedEndSpeech];                         
             }
         }
+        // Incorrect note played
+        else {
+            [instructor_ showWrongNote];
+            [notesHit_ replaceObjectAtIndex:playerNoteIndex_ withObject:[NSNumber numberWithBool:NO]];            
+        }           
     }
 }
-
+ 
 - (void) noteCrossedBoundary:(Note *)note
 {
     NSUInteger numQueued = [queue_ count];
-
+    
     for (NSUInteger i = 0; i < numQueued; ++i) {
         [noteGenerator_ popOldestNote];
     }
@@ -147,7 +144,6 @@
             [self endSong];
             break;            
         default:
-            keyboard_.isClickable = YES;
             break;
     }
 }

@@ -11,11 +11,13 @@
 #import "AudioManager.h"
 #import "Note.h"
 #import "Instructor.h"
+#import "NoteGenerator.h"
 #import "CCNode+PauseResume.h"
 #import "GameLogic.h"
 #import "GameLogicA.h"
 #import "GameLogicB.h"
 #import "GameLogicC.h"
+#import "GameLogicD.h"
 #import "ScoreLayer.h"
 #import "Menu.h"
 #import "Button.h"
@@ -84,17 +86,14 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         
         [self addChild:sideMenu_];
         
-        instructor_ = [[Instructor instructor:kWhaleInstructor] retain];
-        instructor_.position = ccp(GL_INSTRUCTOR_X, GL_INSTRUCTOR_Y);
-        [self addChild:instructor_ z:-1];
-        
-        keyboard_ = [[Keyboard keyboard:kEightKey] retain];
-        keyboard_.position = ccp(GL_KEYBOARD_X, GL_KEYBOARD_Y);
-        [self addChild:keyboard_];
-        
+        NSInteger noteGeneratorZ = -2;
+        NSInteger instructorZ = -1;
         switch (difficulty) {
             case kDifficultyEasy:
-                gameLogic_ = [[GameLogicA gameLogicA:songName] retain];
+                gameLogic_ = [[GameLogicD gameLogicD:songName] retain];
+                keyboard_.visible = NO;
+                noteGeneratorZ = -1;
+                instructorZ = -2;
                 break;
             case kDifficultyMedium:
                 gameLogic_ = [[GameLogicB gameLogicB:songName] retain];
@@ -107,9 +106,21 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
                 break;
         }
         
+        noteGenerator_ = [[NoteGenerator noteGenerator] retain];
+        [self addChild:noteGenerator_ z:noteGeneratorZ];
+        
+        instructor_ = [[Instructor instructor:kWhaleInstructor] retain];
+        instructor_.position = ccp(GL_INSTRUCTOR_X, GL_INSTRUCTOR_Y);
+        [self addChild:instructor_ z:instructorZ];
+        
+        keyboard_ = [[Keyboard keyboard:kEightKey] retain];
+        keyboard_.position = ccp(GL_KEYBOARD_X, GL_KEYBOARD_Y);
+        [self addChild:keyboard_];        
+        
         gameLogic_.delegate = self; 
         [gameLogic_ setInstructor:instructor_];
         [gameLogic_ setKeyboard:keyboard_];
+        [gameLogic_ setNoteGenerator:noteGenerator_];
         [self addChild:gameLogic_];        
     }
     return self;
@@ -120,7 +131,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     [gameLogic_ release];
     [instructor_ release];
     [keyboard_ release];
-    [processor_ release];
+    [noteGenerator_ release];
     [sideMenu_ release];
     [sideMenuButton_ release];
     [songName_ release];
@@ -280,6 +291,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     [gameLogic_ pauseHierarchy];
     [instructor_ pauseHierarchy];
     [keyboard_ pauseHierarchy];
+    [noteGenerator_ pauseHierarchy];
 }
 
 - (void) resumeGame
@@ -289,6 +301,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     [gameLogic_ resumeHierarchy];
     [instructor_ resumeHierarchy];
     [keyboard_ resumeHierarchy];
+    [noteGenerator_ resumeHierarchy];
 }
 
 @end

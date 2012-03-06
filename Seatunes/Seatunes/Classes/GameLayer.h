@@ -16,11 +16,11 @@
 
 @class Keyboard;
 @class Instructor;
-@class Processor;
 @class Menu;
 @class Button;
 @class GameLogic;
 @class ScoreLayer;
+@class NoteGenerator;
 
 @interface GameLayer : CCLayer <MenuDelegate, ButtonDelegate, GameLogicDelegate, ScoreLayerDelegate> {
  
@@ -30,7 +30,7 @@
     
     Keyboard *keyboard_;
     
-    Processor *processor_;
+    NoteGenerator *noteGenerator_;
     
     Menu *sideMenu_;
     

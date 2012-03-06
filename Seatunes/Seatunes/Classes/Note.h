@@ -11,22 +11,34 @@
 #import "cocos2d.h"
 #import "NoteDelegate.h"
 
-@interface Note : CCNode {
+@interface Note : CCNode <CCTargetedTouchDelegate> {
     
     CCSprite *sprite_;
     
+    KeyType keyType_;
+    
     BubbleCurveType curveType_;
     
+    BOOL poppable_;
+    
+    BOOL isClickable_;
+    
     BOOL boundaryCrossFlag_;
+    
+    NSUInteger numID_;        
     
     id <NoteDelegate> delegate_; 
 }
 
+@property (nonatomic, readonly) KeyType keyType;
+@property (nonatomic, readonly) NSUInteger numID;
 @property (nonatomic, assign) id <NoteDelegate> delegate;
 
-+ (id) note:(KeyType)keyType curveType:(BubbleCurveType)curveType;
++ (id) note:(KeyType)keyType curveType:(BubbleCurveType)curveType numID:(NSUInteger)numID;
 
-- (id) initNote:(KeyType)keyType curveType:(BubbleCurveType)curveType;
++ (id) note:(KeyType)keyType curveType:(BubbleCurveType)curveType poppable:(BOOL)poppable numID:(NSUInteger)numID;
+
+- (id) initNote:(KeyType)keyType curveType:(BubbleCurveType)curveType poppable:(BOOL)poppable numID:(NSUInteger)numID;
 
 - (void) destroy;
 

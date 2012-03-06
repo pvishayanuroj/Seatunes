@@ -13,11 +13,6 @@
 
 @implementation Instructor
 
-@synthesize delegate = delegate_;
-
-static const CGFloat IN_NOTE_X = 153.0f;
-static const CGFloat IN_NOTE_Y = -60.0f;
-
 #pragma mark - Object Lifecycle
 
 + (id) instructor:(InstructorType)instructorType
@@ -29,10 +24,7 @@ static const CGFloat IN_NOTE_Y = -60.0f;
 {
     if ((self = [super init])) {
         
-        delegate_ = nil;
-        clickable_ = YES;
-        curveCounter_ = 0;
-        notes_ = [[NSMutableArray arrayWithCapacity:10] retain];
+        clickable_ = NO;
         
         switch (instructorType) {
             case kWhaleInstructor:
@@ -56,7 +48,6 @@ static const CGFloat IN_NOTE_Y = -60.0f;
 
 - (void) dealloc
 {
-    [notes_ release];
     [name_ release];
     [sprite_ release];
     [idleAnimation_ release];
@@ -111,49 +102,6 @@ static const CGFloat IN_NOTE_Y = -60.0f;
     [sprite_ setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:spriteFrameName]];
 }
 
-- (void) playNote:(KeyType)keyType
-{
-    if (keyType != kBlankNote) {
-        [self showSing];
-        [self addNote:keyType];
-    }
-}
-
-- (void) addNote:(KeyType)keyType
-{
-    BubbleCurveType curveType = curveCounter_++ % 2 ? kBubbleCurve1 : kBubbleCurve2;
-    Note *note = [Note note:keyType curveType:curveType];
-    note.delegate = self;
-    note.position = ccp(IN_NOTE_X, IN_NOTE_Y);
-    [notes_ addObject:note];
-    [self addChild:note z:-2];    
-}
-
-- (void) popOldestNote
-{
-    if ([notes_ count] > 0) {   
-        [[notes_ objectAtIndex:0] destroy];
-        [notes_ removeObjectAtIndex:0];
-    }
-}
-
-- (void) popNewestNote
-{
-    if ([notes_ count] > 0) {
-        [[notes_ lastObject] destroy];
-        [notes_ removeLastObject];
-    }
-}
-
-#pragma mark - Delegate Methods
-
-- (void) noteCrossedBoundary:(Note *)note
-{
-    if (delegate_ && [delegate_ respondsToSelector:@selector(noteCrossedBoundary:)]) {
-        [delegate_ noteCrossedBoundary:note];
-    }
-}
-
 #pragma mark - Touch Methods
 
 - (void) onEnter
@@ -184,7 +132,7 @@ static const CGFloat IN_NOTE_Y = -60.0f;
 {	
     if (clickable_ && [self containsTouchLocation:touch]) {
         NSInteger note = arc4random() % 8;
-        [self playNote:note];
+        //[self playNote:note];
         return YES;
     }
     return NO;

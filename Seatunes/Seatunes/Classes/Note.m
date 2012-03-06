@@ -17,20 +17,31 @@ static const CGFloat NT_FLATTEN_SCALE_Y = 0.9f;
 static const CGFloat NT_ELONGATE_SCALE_X = 0.9f;
 static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
 
+@synthesize keyType = keyType_;
+@synthesize numID = numID_;
 @synthesize delegate = delegate_;
 
 #pragma mark - Object Lifecycle
 
-+ (id) note:(KeyType)keyType curveType:(BubbleCurveType)curveType
++ (id) note:(KeyType)keyType curveType:(BubbleCurveType)curveType numID:(NSUInteger)numID
 {
-    return [[[self alloc] initNote:keyType curveType:curveType] autorelease];
+    return [[[self alloc] initNote:keyType curveType:curveType poppable:NO numID:numID] autorelease];
 }
 
-- (id) initNote:(KeyType)keyType curveType:(BubbleCurveType)curveType
++ (id) note:(KeyType)keyType curveType:(BubbleCurveType)curveType poppable:(BOOL)poppable numID:(NSUInteger)numID
+{
+    return [[[self alloc] initNote:keyType curveType:curveType poppable:poppable numID:numID] autorelease];
+}
+
+- (id) initNote:(KeyType)keyType curveType:(BubbleCurveType)curveType poppable:(BOOL)poppable numID:(NSUInteger)numID
 {
     if ((self = [super init])) {
         
         delegate_ = nil;
+        keyType_ = keyType;
+        numID_ = numID;
+        poppable_ = poppable;
+        isClickable_ = NO;
         boundaryCrossFlag_ = NO;
         curveType_ = curveType;
         NSString *keyName = [Utility keyNameFromEnum:keyType];
@@ -83,7 +94,56 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
 
 - (void) popActionDone
 {
+    [delegate_ noteDestroyed:self];
     [self removeFromParentAndCleanup:YES];    
+}
+
+#pragma mark - Touch Handlers
+
+- (void) onEnter
+{
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:1 swallowsTouches:YES];
+	[super onEnter];
+}
+
+- (void) onExit
+{
+	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
+	[super onExit];
+}
+
+- (CGRect) rect
+{
+	CGRect r = sprite_.textureRect;    
+	return CGRectMake(sprite_.position.x - (r.size.width * sprite_.scaleX) / 2, sprite_.position.y - 
+                      (r.size.height *sprite_.scaleY ) / 2, r.size.width * sprite_.scaleX, r.size.height * sprite_.scaleY);
+}
+
+- (BOOL) containsTouchLocation:(UITouch *)touch
+{	
+	return CGRectContainsPoint([self rect], [self convertTouchToNodeSpaceAR:touch]);
+}
+
+- (BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{	
+    if (isClickable_) {
+        return [self containsTouchLocation:touch];
+    }
+    return NO;
+}
+
+- (void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    
+}
+
+- (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    if ([self containsTouchLocation:touch]) {
+        if (delegate_ && [delegate_ respondsToSelector:@selector(noteTouched:)]) {
+            [delegate_ noteTouched:self];
+        }
+    }
 }
 
 #pragma mark - Helper Methods
@@ -97,6 +157,10 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
 
 - (void) blowActionDone
 {
+    if (poppable_) {
+        isClickable_ = YES;
+    }
+    
     [self curveAction];
     [self wobbleAction];
 }
@@ -124,6 +188,11 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
             bz.controlPoint_1 = ccp(NT_CURVE2_C1_X, NT_CURVE2_C1_Y);
             bz.controlPoint_2 = ccp(NT_CURVE2_C2_X, NT_CURVE2_C2_Y);            
             break;
+        case kBubbleCurve3:
+            bz.endPosition = ccp(NT_CURVE3_END_X, NT_CURVE3_END_Y);
+            bz.controlPoint_1 = ccp(NT_CURVE3_C1_X, NT_CURVE3_C1_Y);
+            bz.controlPoint_2 = ccp(NT_CURVE3_C2_X, NT_CURVE3_C2_Y);                        
+            break;
         default:
             break;
     }
@@ -145,7 +214,9 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
     
     if (!boundaryCrossFlag_ && y > [[CCDirector sharedDirector] winSize].height) {
         boundaryCrossFlag_ = YES;
-        [delegate_ noteCrossedBoundary:self];
+        if (delegate_ && [delegate_ respondsToSelector:@selector(noteCrossedBoundary:)]) {
+            [delegate_ noteCrossedBoundary:self];
+        }
     }
     // Why doesn't this give the correct value??
     //CGPoint pt = [self convertToWorldSpace:self.position];

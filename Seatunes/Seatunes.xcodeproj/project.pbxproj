@@ -53,6 +53,8 @@
 		04B0D4CF1504174100A4A2B8 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4CB1504174000A4A2B8 /* Icon-Small@2x.png */; };
 		04B0D4D515041EEB00A4A2B8 /* EasyInstructions00.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4D215041EEB00A4A2B8 /* EasyInstructions00.caf */; };
 		04B0D4D615041EEB00A4A2B8 /* EasyInstructions01.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4D315041EEB00A4A2B8 /* EasyInstructions01.caf */; };
+		04B0D4D91504306600A4A2B8 /* GameLogicD.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4D81504306600A4A2B8 /* GameLogicD.m */; };
+		04B0D4DC1505964600A4A2B8 /* NoteGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4DB1505964500A4A2B8 /* NoteGenerator.m */; };
 		04B32C9514DDB1DB004AA98E /* GameLogicB.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9414DDB1DA004AA98E /* GameLogicB.m */; };
 		04B32C9D14DDDBF1004AA98E /* GameLogicA.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9C14DDDBF0004AA98E /* GameLogicA.m */; };
 		04B32CA014DDDC18004AA98E /* GameLogicC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9F14DDDC17004AA98E /* GameLogicC.m */; };
@@ -274,7 +276,6 @@
 /* Begin PBXFileReference section */
 		040A0CA514FC7316006803F9 /* Lock Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lock Icon.png"; sourceTree = "<group>"; };
 		041E5F2C14DE206B0084BC0A /* NoteDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteDelegate.h; path = Classes/NoteDelegate.h; sourceTree = "<group>"; };
-		041E5F3114DE34100084BC0A /* InstructorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructorDelegate.h; path = Classes/InstructorDelegate.h; sourceTree = "<group>"; };
 		041E5F3214DE39440084BC0A /* SpeechBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechBubble.h; path = Classes/SpeechBubble.h; sourceTree = "<group>"; };
 		041E5F3314DE39450084BC0A /* SpeechBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeechBubble.m; path = Classes/SpeechBubble.m; sourceTree = "<group>"; };
 		041E5F7214DF5C850084BC0A /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Menu.h; path = Classes/Menu.h; sourceTree = "<group>"; };
@@ -337,6 +338,11 @@
 		04B0D4CB1504174000A4A2B8 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
 		04B0D4D215041EEB00A4A2B8 /* EasyInstructions00.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EasyInstructions00.caf; sourceTree = "<group>"; };
 		04B0D4D315041EEB00A4A2B8 /* EasyInstructions01.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EasyInstructions01.caf; sourceTree = "<group>"; };
+		04B0D4D71504306500A4A2B8 /* GameLogicD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicD.h; path = Classes/GameLogicD.h; sourceTree = "<group>"; };
+		04B0D4D81504306600A4A2B8 /* GameLogicD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicD.m; path = Classes/GameLogicD.m; sourceTree = "<group>"; };
+		04B0D4DA1505964300A4A2B8 /* NoteGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteGenerator.h; path = Classes/NoteGenerator.h; sourceTree = "<group>"; };
+		04B0D4DB1505964500A4A2B8 /* NoteGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteGenerator.m; path = Classes/NoteGenerator.m; sourceTree = "<group>"; };
+		04B0D4DD1505965F00A4A2B8 /* NoteGeneratorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteGeneratorDelegate.h; path = Classes/NoteGeneratorDelegate.h; sourceTree = "<group>"; };
 		04B32C9314DDB1DA004AA98E /* GameLogicB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicB.h; path = Classes/GameLogicB.h; sourceTree = "<group>"; };
 		04B32C9414DDB1DA004AA98E /* GameLogicB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicB.m; path = Classes/GameLogicB.m; sourceTree = "<group>"; };
 		04B32C9B14DDDBF0004AA98E /* GameLogicA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicA.h; path = Classes/GameLogicA.h; sourceTree = "<group>"; };
@@ -740,6 +746,8 @@
 				04B32C9414DDB1DA004AA98E /* GameLogicB.m */,
 				04B32C9E14DDDC16004AA98E /* GameLogicC.h */,
 				04B32C9F14DDDC17004AA98E /* GameLogicC.m */,
+				04B0D4D71504306500A4A2B8 /* GameLogicD.h */,
+				04B0D4D81504306600A4A2B8 /* GameLogicD.m */,
 			);
 			name = "Game Logic";
 			sourceTree = "<group>";
@@ -805,10 +813,12 @@
 				DAB1209914C30D6D009B60FB /* KeyDelegate.h */,
 				DAB1209314C30A87009B60FB /* Instructor.h */,
 				DAB1209414C30A87009B60FB /* Instructor.m */,
-				041E5F3114DE34100084BC0A /* InstructorDelegate.h */,
 				DAB1215F14C475F2009B60FB /* Note.h */,
 				DAB1216014C475F7009B60FB /* Note.m */,
 				041E5F2C14DE206B0084BC0A /* NoteDelegate.h */,
+				04B0D4DA1505964300A4A2B8 /* NoteGenerator.h */,
+				04B0D4DB1505964500A4A2B8 /* NoteGenerator.m */,
+				04B0D4DD1505965F00A4A2B8 /* NoteGeneratorDelegate.h */,
 			);
 			name = "Game Elements";
 			sourceTree = "<group>";
@@ -1751,6 +1761,8 @@
 				04DE51F814FA0F6C00F8E45C /* SeatunesIAPHelper.m in Sources */,
 				0431B78214FF2080005D6FBA /* Reachability.m in Sources */,
 				0431B78714FF2C97005D6FBA /* LoadingIndicator.m in Sources */,
+				04B0D4D91504306600A4A2B8 /* GameLogicD.m in Sources */,
+				04B0D4DC1505964600A4A2B8 /* NoteGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

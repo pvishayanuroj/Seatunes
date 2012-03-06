@@ -11,6 +11,7 @@
 #import "Utility.h"
 #import "Instructor.h"
 #import "Keyboard.h"
+#import "NoteGenerator.h"
 
 #import "AudioManager.h"
 
@@ -104,7 +105,7 @@
     ignoreInput_ = YES;
     numWrongNotes_ = 0;
     
-    [instructor_ playNote:keyType];  
+    [noteGenerator_ addInstructorNote:keyType numID:0];
     //[instructor_ showSing];
     [keyboard_ playNote:keyType time:1.0f withSound:NO];    
     [[AudioManager audioManager] playSound:keyType instrument:kLowStrings];
@@ -142,7 +143,7 @@
             // Correct note played
             if ([key isEqualToNumber:correctNote]) {
                 [queue_ removeObjectAtIndex:0];
-                [instructor_ popNewestNote];
+                [noteGenerator_ popNewestNote];
                 
                 // If first time and first note, show an encouraging message
                 if (isFirstPlay_ && noteIndex_ == 1) {

@@ -68,7 +68,8 @@ typedef enum {
 
 typedef enum {
     kBubbleCurve1,
-    kBubbleCurve2
+    kBubbleCurve2,
+    kBubbleCurve3
 } BubbleCurveType;
 
 typedef enum {

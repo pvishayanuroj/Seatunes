@@ -11,10 +11,10 @@
 #import "cocos2d.h"
 #import "GameLogic.h"
 #import "KeyboardDelegate.h"
-#import "InstructorDelegate.h"
+#import "NoteGeneratorDelegate.h"
 #import "SpeechReaderDelegate.h"
 
-@interface GameLogicA : GameLogic <KeyboardDelegate, InstructorDelegate, SpeechReaderDelegate> {
+@interface GameLogicA : GameLogic <KeyboardDelegate, NoteGeneratorDelegate, SpeechReaderDelegate> {
     
     NSUInteger noteIndex_;
     

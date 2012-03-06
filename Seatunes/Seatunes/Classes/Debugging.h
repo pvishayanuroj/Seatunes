@@ -30,5 +30,12 @@
 #define NT_CURVE2_END_X 250
 #define NT_CURVE2_END_Y 500
 
+#define NT_CURVE3_C1_X 0  
+#define NT_CURVE3_C1_Y 100
+#define NT_CURVE3_C2_X 0
+#define NT_CURVE3_C2_Y 400
+#define NT_CURVE3_END_X 0
+#define NT_CURVE3_END_Y 1000
+
 #define DebugPoint(s, p) NSLog(@"%@: (%4.2f, %4.2f)", s, p.x, p.y)
 #define DebugRect(s, r) NSLog(@"%@: (%4.2f, %4.2f, %4.2f, %4.2f)", s, r.origin.x, r.origin.y, r.size.width, r.size.height)

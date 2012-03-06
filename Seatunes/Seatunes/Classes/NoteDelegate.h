@@ -10,6 +10,14 @@
 
 @protocol NoteDelegate <NSObject>
 
+@optional
+
+- (void) noteTouched:(Note *)note;
+
+@required
+
 - (void) noteCrossedBoundary:(Note *)note;
+
+- (void) noteDestroyed:(Note *)note;
 
 @end
