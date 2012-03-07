@@ -23,17 +23,17 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
 
 #pragma mark - Object Lifecycle
 
-+ (id) note:(KeyType)keyType curveType:(BubbleCurveType)curveType numID:(NSUInteger)numID
++ (id) note:(KeyType)keyType curve:(ccBezierConfig)curve numID:(NSUInteger)numID
 {
-    return [[[self alloc] initNote:keyType curveType:curveType poppable:NO numID:numID] autorelease];
+    return [[[self alloc] initNote:keyType curve:curve poppable:NO numID:numID] autorelease];
 }
 
-+ (id) note:(KeyType)keyType curveType:(BubbleCurveType)curveType poppable:(BOOL)poppable numID:(NSUInteger)numID
++ (id) note:(KeyType)keyType curve:(ccBezierConfig)curve poppable:(BOOL)poppable numID:(NSUInteger)numID
 {
-    return [[[self alloc] initNote:keyType curveType:curveType poppable:poppable numID:numID] autorelease];
+    return [[[self alloc] initNote:keyType curve:curve poppable:poppable numID:numID] autorelease];
 }
 
-- (id) initNote:(KeyType)keyType curveType:(BubbleCurveType)curveType poppable:(BOOL)poppable numID:(NSUInteger)numID
+- (id) initNote:(KeyType)keyType curve:(ccBezierConfig)curve poppable:(BOOL)poppable numID:(NSUInteger)numID
 {
     if ((self = [super init])) {
         
@@ -43,7 +43,7 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
         poppable_ = poppable;
         isClickable_ = NO;
         boundaryCrossFlag_ = NO;
-        curveType_ = curveType;
+        bezier_ = curve;
         NSString *keyName = [Utility keyNameFromEnum:keyType];
         NSString *spriteFrameName = [NSString stringWithFormat:@"Bubble %@.png", keyName];
         sprite_ = [[CCSprite spriteWithSpriteFrameName:spriteFrameName] retain]; 
@@ -175,29 +175,7 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
 
 - (void) curveAction
 {
-    ccBezierConfig bz;
-    
-    switch (curveType_) {
-        case kBubbleCurve1:
-            bz.endPosition = ccp(NT_CURVE1_END_X, NT_CURVE1_END_Y);
-            bz.controlPoint_1 = ccp(NT_CURVE1_C1_X, NT_CURVE1_C1_Y);
-            bz.controlPoint_2 = ccp(NT_CURVE1_C2_X, NT_CURVE1_C2_Y);            
-            break;
-        case kBubbleCurve2:
-            bz.endPosition = ccp(NT_CURVE2_END_X, NT_CURVE2_END_Y);
-            bz.controlPoint_1 = ccp(NT_CURVE2_C1_X, NT_CURVE2_C1_Y);
-            bz.controlPoint_2 = ccp(NT_CURVE2_C2_X, NT_CURVE2_C2_Y);            
-            break;
-        case kBubbleCurve3:
-            bz.endPosition = ccp(NT_CURVE3_END_X, NT_CURVE3_END_Y);
-            bz.controlPoint_1 = ccp(NT_CURVE3_C1_X, NT_CURVE3_C1_Y);
-            bz.controlPoint_2 = ccp(NT_CURVE3_C2_X, NT_CURVE3_C2_Y);                        
-            break;
-        default:
-            break;
-    }
-
-    CCActionInterval *curve = [CCBezierBy actionWithDuration:4.0f bezier:bz];
+    CCActionInterval *curve = [CCBezierBy actionWithDuration:4.0f bezier:bezier_];
     CCActionInterval *ease = [CCEaseOut actionWithAction:curve rate:1.0f];
     CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(curveActionDone)];
     [self runAction:[CCSequence actions:ease, done, nil]];

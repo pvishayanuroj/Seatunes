@@ -17,7 +17,7 @@
     
     KeyType keyType_;
     
-    BubbleCurveType curveType_;
+    ccBezierConfig bezier_;    
     
     BOOL poppable_;
     
@@ -34,11 +34,11 @@
 @property (nonatomic, readonly) NSUInteger numID;
 @property (nonatomic, assign) id <NoteDelegate> delegate;
 
-+ (id) note:(KeyType)keyType curveType:(BubbleCurveType)curveType numID:(NSUInteger)numID;
++ (id) note:(KeyType)keyType curve:(ccBezierConfig)curve numID:(NSUInteger)numID;
 
-+ (id) note:(KeyType)keyType curveType:(BubbleCurveType)curveType poppable:(BOOL)poppable numID:(NSUInteger)numID;
++ (id) note:(KeyType)keyType curve:(ccBezierConfig)curve poppable:(BOOL)poppable numID:(NSUInteger)numID;
 
-- (id) initNote:(KeyType)keyType curveType:(BubbleCurveType)curveType poppable:(BOOL)poppable numID:(NSUInteger)numID;
+- (id) initNote:(KeyType)keyType curve:(ccBezierConfig)curve poppable:(BOOL)poppable numID:(NSUInteger)numID;
 
 - (void) destroy;
 

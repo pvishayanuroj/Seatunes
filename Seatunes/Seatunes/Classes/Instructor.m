@@ -138,31 +138,4 @@
     return NO;
 }
 
-- (void) draw
-{
-#if DEBUG_SHOWMAPCURVES
-    glColor4f(1.0, 0, 0, 1.0);      
-    glLineWidth(3.0f);
-    
-    CGPoint start = ccp(IN_NOTE_X, IN_NOTE_Y);
-    CGPoint c1 = ccp(IN_NOTE_X + NT_CURVE1_C1_X, IN_NOTE_Y + NT_CURVE1_C1_Y);
-    CGPoint c2 = ccp(IN_NOTE_X + NT_CURVE1_C2_X, IN_NOTE_Y + NT_CURVE1_C2_Y);
-    CGPoint end = ccp(IN_NOTE_X + NT_CURVE1_END_X, IN_NOTE_Y + NT_CURVE1_END_Y);
-    
-    ccDrawCircle(start, 3, 360, 64, NO);
-    ccDrawCircle(c1, 3, 360, 64, NO);        
-    ccDrawCircle(c2, 3, 360, 64, NO);
-    ccDrawCubicBezier(start, c1, c2, end, 128);
-    
-    CGPoint c11 = ccp(IN_NOTE_X + NT_CURVE2_C1_X, IN_NOTE_Y + NT_CURVE2_C1_Y);
-    CGPoint c21 = ccp(IN_NOTE_X + NT_CURVE2_C2_X, IN_NOTE_Y + NT_CURVE2_C2_Y);
-    CGPoint end1 = ccp(IN_NOTE_X + NT_CURVE2_END_X, IN_NOTE_Y + NT_CURVE2_END_Y);
-    
-    ccDrawCircle(start, 3, 360, 64, NO);
-    ccDrawCircle(c11, 3, 360, 64, NO);        
-    ccDrawCircle(c21, 3, 360, 64, NO);
-    ccDrawCubicBezier(start, c11, c21, end1, 128);    
-#endif
-}
-
 @end

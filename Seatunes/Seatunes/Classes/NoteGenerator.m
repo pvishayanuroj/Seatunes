@@ -21,6 +21,60 @@ static const CGFloat NG_FLOOR2_Y = 150.0f;
 static const CGFloat NG_FLOOR3_X = 900.0f;
 static const CGFloat NG_FLOOR3_Y = 150.0f;
 
+static const CGFloat NG_CR1_S_X = 353.0f;
+static const CGFloat NG_CR1_S_Y = 490.0f;
+static const CGFloat NG_CR1_C1_X = 150.0f; 
+static const CGFloat NG_CR1_C1_Y = 0.0f;
+static const CGFloat NG_CR1_C2_X = 240.0f;
+static const CGFloat NG_CR1_C2_Y = 100.0f;
+static const CGFloat NG_CR1_E_X = 200.0f;
+static const CGFloat NG_CR1_E_Y = 500.0f;
+
+static const CGFloat NG_CR2_S_X = 353.0f;
+static const CGFloat NG_CR2_S_Y = 490.0f;
+static const CGFloat NG_CR2_C1_X = 180.0f; 
+static const CGFloat NG_CR2_C1_Y = 0.0f;
+static const CGFloat NG_CR2_C2_X = 270.0f;
+static const CGFloat NG_CR2_C2_Y = 100.0f;
+static const CGFloat NG_CR2_E_X = 250.0f;
+static const CGFloat NG_CR2_E_Y = 500.0f;
+
+static const CGFloat NG_CR3_S_X = 50.0f;
+static const CGFloat NG_CR3_S_Y = 200.0f;
+static const CGFloat NG_CR3_C1_X = 150.0f; 
+static const CGFloat NG_CR3_C1_Y = 150.0f;
+static const CGFloat NG_CR3_C2_X = 150.0f;
+static const CGFloat NG_CR3_C2_Y = 250.0f;
+static const CGFloat NG_CR3_E_X = 150.0f;
+static const CGFloat NG_CR3_E_Y = 1000.0f;
+
+static const CGFloat NG_CR4_S_X = 500.0f;
+static const CGFloat NG_CR4_S_Y = 150.0f;
+static const CGFloat NG_CR4_C1_X = 180.0f; 
+static const CGFloat NG_CR4_C1_Y = 0.0f;
+static const CGFloat NG_CR4_C2_X = 270.0f;
+static const CGFloat NG_CR4_C2_Y = 100.0f;
+static const CGFloat NG_CR4_E_X = 250.0f;
+static const CGFloat NG_CR4_E_Y = 500.0f;
+
+static const CGFloat NG_CR5_S_X = 900.0f;
+static const CGFloat NG_CR5_S_Y = 150.0f;
+static const CGFloat NG_CR5_C1_X = 180.0f; 
+static const CGFloat NG_CR5_C1_Y = 0.0f;
+static const CGFloat NG_CR5_C2_X = 270.0f;
+static const CGFloat NG_CR5_C2_Y = 100.0f;
+static const CGFloat NG_CR5_E_X = 250.0f;
+static const CGFloat NG_CR5_E_Y = 500.0f;
+
+static const CGFloat CR_S_X[5] = {NG_CR1_S_X, NG_CR2_S_X, NG_CR3_S_X, NG_CR4_S_X, NG_CR5_S_X};
+static const CGFloat CR_S_Y[5] = {NG_CR1_S_Y, NG_CR2_S_Y, NG_CR3_S_Y, NG_CR4_S_Y, NG_CR5_S_Y};
+static const CGFloat CR_C1_X[5] = {NG_CR1_C1_X, NG_CR2_C1_X, NG_CR3_C1_X, NG_CR4_C1_Y, NG_CR5_C1_Y};
+static const CGFloat CR_C1_Y[5] = {NG_CR1_C1_Y, NG_CR2_C1_Y, NG_CR3_C1_Y, NG_CR4_C1_Y, NG_CR5_C1_Y};
+static const CGFloat CR_C2_X[5] = {NG_CR1_C2_X, NG_CR2_C2_X, NG_CR3_C2_X, NG_CR4_C2_Y, NG_CR5_C2_Y};
+static const CGFloat CR_C2_Y[5] = {NG_CR1_C2_Y, NG_CR2_C2_Y, NG_CR3_C2_Y, NG_CR4_C2_Y, NG_CR5_C2_Y};
+static const CGFloat CR_E_X[5] = {NG_CR1_E_X, NG_CR2_E_X, NG_CR3_E_X, NG_CR4_E_X, NG_CR5_E_X};
+static const CGFloat CR_E_Y[5] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y, NG_CR5_E_Y};
+
 @synthesize delegate = delegate_;
 
 + (id) noteGenerator
@@ -50,8 +104,13 @@ static const CGFloat NG_FLOOR3_Y = 150.0f;
 - (void) addInstructorNote:(KeyType)keyType numID:(NSUInteger)numID
 {
     if (keyType != kBlankNote) {
-        BubbleCurveType curveType = curveCounter_++ % 2 ? kBubbleCurve1 : kBubbleCurve2;        
-        [self addNote:keyType poppable:NO curveType:curveType pos:ccp(NG_INSTRUCTOR_X, NG_INSTRUCTOR_Y) numID:numID];
+        int idx = curveCounter_++ % 2 ? 0 : 1;
+        ccBezierConfig curve;
+        curve.controlPoint_1 = ccp(CR_C1_X[idx], CR_C1_Y[idx]);
+        curve.controlPoint_2 = ccp(CR_C2_X[idx], CR_C2_Y[idx]);        
+        curve.endPosition = ccp(CR_E_X[idx], CR_E_Y[idx]);
+        CGPoint pos = ccp(CR_S_X[idx], CR_S_Y[idx]);
+        [self addNote:keyType poppable:NO curve:curve pos:pos numID:numID];
     }
 }
 
@@ -59,26 +118,21 @@ static const CGFloat NG_FLOOR3_Y = 150.0f;
 {
     if (keyType != kBlankNote) {
         
-        CGPoint pos;
-        switch (arc4random() % 3) {
-            case 0:
-                pos = ccp(NG_FLOOR1_X, NG_FLOOR1_Y);
-                break;
-            case 1:
-                pos = ccp(NG_FLOOR2_X, NG_FLOOR2_Y);                
-                break;
-            case 2:
-                pos = ccp(NG_FLOOR3_X, NG_FLOOR3_Y);                
-                break;
-        }
-        [self addNote: keyType poppable:YES curveType:kBubbleCurve3 pos:pos numID:numID];
+        int idx = 2;
+        ccBezierConfig curve;
+        curve.controlPoint_1 = ccp(CR_C1_X[idx], CR_C1_Y[idx]);
+        curve.controlPoint_2 = ccp(CR_C2_X[idx], CR_C2_Y[idx]);        
+        curve.endPosition = ccp(CR_E_X[idx], CR_E_Y[idx]);
+        CGPoint pos = ccp(CR_S_X[idx], CR_S_Y[idx]);        
+
+        [self addNote: keyType poppable:YES curve:curve pos:pos numID:numID];
     }
 }
 
-- (void) addNote:(KeyType)keyType poppable:(BOOL)poppable curveType:(BubbleCurveType)curveType pos:(CGPoint)pos numID:(NSUInteger)numID
+- (void) addNote:(KeyType)keyType poppable:(BOOL)poppable curve:(ccBezierConfig)curve pos:(CGPoint)pos numID:(NSUInteger)numID
 {
     if (keyType != kBlankNote) {
-        Note *note = [Note note:keyType curveType:curveType poppable:poppable numID:numID];
+        Note *note = [Note note:keyType curve:curve poppable:poppable numID:numID];
         note.delegate = self;
         note.position = pos;
         [notes_ addObject:note];
@@ -121,6 +175,27 @@ static const CGFloat NG_FLOOR3_Y = 150.0f;
 - (void) noteDestroyed:(Note *)note
 {
     [notes_ removeObject:note];
+}
+
+- (void) draw
+{
+#if DEBUG_SHOWMAPCURVES
+    glColor4f(1.0, 0, 0, 1.0);      
+    glLineWidth(3.0f);
+    
+    for (int i = 0; i < 5; i++) {
+
+        CGPoint start = ccp(CR_S_X[i], CR_S_Y[i]);
+        CGPoint c1 = ccp(start.x + CR_C1_X[i], start.y + CR_C1_Y[i]);
+        CGPoint c2 = ccp(start.x + CR_C2_X[i], start.y + CR_C2_Y[i]);
+        CGPoint end = ccp(start.x + CR_E_X[i], start.y + CR_E_Y[i]);
+        
+        ccDrawCircle(start, 3, 360, 64, NO);
+        ccDrawCircle(c1, 3, 360, 64, NO);        
+        ccDrawCircle(c2, 3, 360, 64, NO);
+        ccDrawCubicBezier(start, c1, c2, end, 128);        
+    }
+#endif
 }
 
 @end

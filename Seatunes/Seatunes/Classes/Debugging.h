@@ -10,32 +10,11 @@
 
 #define DEBUG_SHOWDEALLOC 0
 
-#define DEBUG_SHOWMAPCURVES 0
+#define DEBUG_SHOWMAPCURVES 1
 
 #define DEBUG_IAP 1
 
 #define DEBUG_ALLUNLOCK 1
-
-#define NT_CURVE1_C1_X 150  
-#define NT_CURVE1_C1_Y 0
-#define NT_CURVE1_C2_X 240
-#define NT_CURVE1_C2_Y 100
-#define NT_CURVE1_END_X 200
-#define NT_CURVE1_END_Y 500
-
-#define NT_CURVE2_C1_X 180  
-#define NT_CURVE2_C1_Y 0
-#define NT_CURVE2_C2_X 270
-#define NT_CURVE2_C2_Y 100
-#define NT_CURVE2_END_X 250
-#define NT_CURVE2_END_Y 500
-
-#define NT_CURVE3_C1_X 0  
-#define NT_CURVE3_C1_Y 100
-#define NT_CURVE3_C2_X 0
-#define NT_CURVE3_C2_Y 400
-#define NT_CURVE3_END_X 0
-#define NT_CURVE3_END_Y 1000
 
 #define DebugPoint(s, p) NSLog(@"%@: (%4.2f, %4.2f)", s, p.x, p.y)
 #define DebugRect(s, r) NSLog(@"%@: (%4.2f, %4.2f, %4.2f, %4.2f)", s, r.origin.x, r.origin.y, r.size.width, r.size.height)

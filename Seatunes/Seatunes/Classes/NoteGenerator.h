@@ -43,6 +43,6 @@ enum {
 
 - (void) addFloorNote:(KeyType)keyType numID:(NSUInteger)numID;
 
-- (void) addNote:(KeyType)keyType poppable:(BOOL)poppable curveType:(BubbleCurveType)curveType pos:(CGPoint)pos numID:(NSUInteger)numID;
+- (void) addNote:(KeyType)keyType poppable:(BOOL)poppable curve:(ccBezierConfig)curve pos:(CGPoint)pos numID:(NSUInteger)numID;
 
 @end
