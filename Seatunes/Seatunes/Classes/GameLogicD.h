@@ -12,6 +12,7 @@
 #import "GameLogic.h"
 #import "KeyboardDelegate.h"
 #import "SpeechReaderDelegate.h"
+#import "NoteGeneratorDelegate.h"
 
 @interface GameLogicD : GameLogic <KeyboardDelegate, NoteGeneratorDelegate, SpeechReaderDelegate> {
     
