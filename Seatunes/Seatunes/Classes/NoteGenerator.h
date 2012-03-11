@@ -39,6 +39,8 @@ enum {
 
 - (void) popNewestNote;
 
+- (void) popNoteWithID:(NSUInteger)numID;
+
 - (void) addInstructorNote:(KeyType)keyType numID:(NSUInteger)numID;
 
 - (void) addFloorNote:(KeyType)keyType numID:(NSUInteger)numID;

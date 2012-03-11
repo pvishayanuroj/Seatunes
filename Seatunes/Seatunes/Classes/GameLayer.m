@@ -87,6 +87,10 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         
         [self addChild:sideMenu_];
         
+        keyboard_ = [[Keyboard keyboard:kEightKey] retain];
+        keyboard_.position = ccp(GL_KEYBOARD_X, GL_KEYBOARD_Y);
+        [self addChild:keyboard_];                
+        
         NSInteger noteGeneratorZ = -2;
         NSInteger instructorZ = -1;
         switch (difficulty) {
@@ -113,10 +117,6 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         instructor_ = [[Instructor instructor:kWhaleInstructor] retain];
         instructor_.position = ccp(GL_INSTRUCTOR_X, GL_INSTRUCTOR_Y);
         [self addChild:instructor_ z:instructorZ];
-        
-        keyboard_ = [[Keyboard keyboard:kEightKey] retain];
-        keyboard_.position = ccp(GL_KEYBOARD_X, GL_KEYBOARD_Y);
-        [self addChild:keyboard_];        
         
         gameLogic_.delegate = self; 
         [gameLogic_ setInstructor:instructor_];

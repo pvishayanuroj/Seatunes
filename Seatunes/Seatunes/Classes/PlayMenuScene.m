@@ -23,8 +23,8 @@
 
 @implementation PlayMenuScene
 
-static const CGFloat PMS_MENU_FRAME_X = 550.0f;
-static const CGFloat PMS_MENU_FRAME_Y = 400.0f;
+static const CGFloat PMS_MENU_FRAME_X = 470.0f;
+static const CGFloat PMS_MENU_FRAME_Y = 350.0f;
 static const CGFloat PMS_PACK_TITLE_X = 700.0f;
 static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
 
@@ -39,12 +39,12 @@ static const CGFloat PMS_CURRENT_PACK_BUTTON_Y = 90.0f;
 
 static const CGFloat PMS_PACK_MENU_X = 100.0f;
 static const CGFloat PMS_PACK_MENU_Y = 175.0f;
-static const CGFloat PMS_PACK_MENU_WIDTH = 200.0f;
+static const CGFloat PMS_PACK_MENU_WIDTH = 230.0f;
 static const CGFloat PMS_PACK_MENU_HEIGHT = 425.0f;
 
-static const CGFloat PMS_SONG_MENU_X = 350.0f;
+static const CGFloat PMS_SONG_MENU_X = 325.0f;
 static const CGFloat PMS_SONG_MENU_Y = 175.0f;
-static const CGFloat PMS_SONG_MENU_WIDTH = 650.0f;
+static const CGFloat PMS_SONG_MENU_WIDTH = 565.0f;
 static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
 
 @synthesize currentPack = currentPack_;
@@ -68,8 +68,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         [self addChild:background];        
         
         CCSprite *menuFrame = [CCSprite spriteWithFile:@"Menu Frame.png"];
-        menuFrame.anchorPoint = CGPointZero;
-        //menuFrame.position = ccp(0, PMS_MENU_FRAME_Y);
+        menuFrame.position = ccp(PMS_MENU_FRAME_X, PMS_MENU_FRAME_Y);
         [self addChild:menuFrame];
         
         packTitle_ = [[CCLabelBMFont labelWithString:@"" fntFile:@"MenuFont.fnt"] retain];
@@ -81,10 +80,12 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         // Always show the first pack
         [self loadSongMenu:[packNames_ objectAtIndex:0]];
         
+#if IAP_ON
         // Check if all packs purchased. If not, add button
         if (![[SeatunesIAPHelper manager] allPacksPurchased]) {
             [self addBuyAllButton];
         }
+#endif
         
         // Add back button
         Button *backButton = [ScaledImageButton scaledImageButton:kDMSBack image:@"Back Arrow.png"];
@@ -307,7 +308,11 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
     [packTitle_ setString:packName];
     
     // Unlocked if either default or has been purchased 
+#if IAP_ON
     BOOL isLocked = !([[DataUtility manager] isDefaultPack:packName] || [[SeatunesIAPHelper manager] packPurchased:packName]);
+#else
+    BOOL isLocked = NO;
+#endif
     
     // Setup the scrolling menu for the songs
     CGRect menuFrame = CGRectMake(PMS_SONG_MENU_X, PMS_SONG_MENU_Y, PMS_SONG_MENU_WIDTH, PMS_SONG_MENU_HEIGHT);
@@ -331,6 +336,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         [songMenu_ addMenuItem:menuItem];
     }    
     
+#if IAP_ON    
     // If locked, add purchase button
     if (isLocked) {
         packButton_ = [[StarfishButton starfishButton:kButtonBuyCurrentPack text:@"Buy Pack"] retain];
@@ -338,6 +344,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         packButton_.position = ccp(PMS_CURRENT_PACK_BUTTON_X, PMS_CURRENT_PACK_BUTTON_Y);
         [self addChild:packButton_];
     }
+#endif
 }
 
 - (void) reloadScreen

@@ -30,10 +30,12 @@
         playerNoteIndex_ = 0;
         ignoreInput_ = NO;
         onLastNote_ = NO;
+        onBlankNote_ = NO;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
         notesHit_ = [[Utility generateBoolArray:YES size:[Utility countNumNotes:notes_]] retain];        
         staff_ = [[Staff staff] retain]; 
+        staff_.delegate = self;
         staff_.position = ccp(600, 600);
         [self addChild:staff_];
         
@@ -75,8 +77,9 @@
         // As long as not blank, play the note and store
         if (keyType != kBlankNote) {
             [queue_ addObject:key];
-            //[instructor_ showSing];
-            //[noteGenerator_ addInstructorNote:keyType numID:noteIndex_];
+        }
+        else {
+            
         }
         
         [staff_ addNote:keyType];        
@@ -103,7 +106,7 @@
             // Correct note played
             if ([key isEqualToNumber:correctNote]) {
                 [queue_ removeObjectAtIndex:0];
-                //[noteGenerator_ popOldestNote];
+                [staff_ removeOldestNote];
                 playerNoteIndex_++;
                 
                 // This note is the last note in the song
@@ -122,19 +125,17 @@
     }
 }
 
-- (void) noteCrossedBoundary:(Note *)note
+- (void) staffNoteReturned:(StaffNote *)note
 {
-    NSUInteger numQueued = [queue_ count];
+    NSUInteger numQueued = [queue_ count];    
     
-    for (NSUInteger i = 0; i < numQueued; ++i) {
-        [noteGenerator_ popOldestNote];
-    }
+    [staff_ removeAllNotes];
     
     [self unschedule:@selector(loop:)];
     keyboard_.isClickable = NO;
     noteIndex_ -= numQueued;
     [queue_ removeAllObjects];
-    [self runSingleSpeech:kMediumReplay tapRequired:YES];
+    [self runSingleSpeech:kMediumReplay tapRequired:YES];    
 }
 
 - (void) speechComplete:(SpeechType)speechType

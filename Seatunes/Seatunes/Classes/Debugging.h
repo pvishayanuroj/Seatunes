@@ -10,11 +10,13 @@
 
 #define DEBUG_SHOWDEALLOC 0
 
-#define DEBUG_SHOWMAPCURVES 1
+#define DEBUG_SHOWMAPCURVES 0
 
 #define DEBUG_IAP 1
 
 #define DEBUG_ALLUNLOCK 1
+
+#define IAP_ON 0
 
 #define DebugPoint(s, p) NSLog(@"%@: (%4.2f, %4.2f)", s, p.x, p.y)
 #define DebugRect(s, r) NSLog(@"%@: (%4.2f, %4.2f, %4.2f, %4.2f)", s, r.origin.x, r.origin.y, r.size.width, r.size.height)

@@ -308,6 +308,23 @@
     return count;
 }
 
++ (NSMutableDictionary *) generateBoolDictionary:(BOOL)val size:(NSUInteger)size
+{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:size];
+    
+    for (NSUInteger i = 0; i < size; ++i) {
+        [dict setObject:[NSNumber numberWithBool:val] forKey:[NSNumber numberWithUnsignedInteger:i]];
+    }
+    
+    return dict;
+}
+
++ (NSUInteger) countNumBoolInDictionary:(BOOL)val dictionary:(NSDictionary *)dictionary
+{
+    return [self countNumBool:val array:[dictionary allValues]];
+}
+
+
 + (BOOL) hasInternetConnection
 {
     Reachability *reachability = [Reachability reachabilityForInternetConnection];

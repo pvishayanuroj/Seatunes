@@ -36,6 +36,7 @@ static const CGFloat GL_BUBBLE_Y = 600.0f;
         delegate_ = nil;
         keyboard_ = nil;
         instructor_ = nil;      
+        noteGenerator_ = nil;
         scoreInfo_.notesHit = 0;
         scoreInfo_.notesMissed = 0;        
         scoreInfo_.score = kScoreZeroStar;
@@ -48,6 +49,7 @@ static const CGFloat GL_BUBBLE_Y = 600.0f;
 {
     [keyboard_ release];
     [instructor_ release];
+    [noteGenerator_ release];
     
     [super dealloc];
 }

@@ -21,14 +21,20 @@
     
 }
 
+@property (nonatomic, assign) id <StaffNoteDelegate> delegate;
+
 + (id) staffNote:(KeyType)keyType pos:(CGPoint)pos;
 
-- (id) initStaffNote:(KeyType)keyType pos:(CGPoint)pos;
++ (id) staticStaffNote:(KeyType)keyType pos:(CGPoint)pos;
+
+- (id) initStaffNote:(KeyType)keyType pos:(CGPoint)pos isStatic:(BOOL)isStatic;
 
 - (void) move;
 
 - (void) appear;
 
-- (void) disappear;
+- (void) staffNoteReturn;
+
+- (void) staffNoteDestroy;
 
 @end

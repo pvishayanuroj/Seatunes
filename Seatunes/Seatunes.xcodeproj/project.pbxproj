@@ -36,6 +36,9 @@
 		0431B78714FF2C97005D6FBA /* LoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431B78614FF2C97005D6FBA /* LoadingIndicator.m */; };
 		0431B78A14FF2DD0005D6FBA /* Back Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0431B78814FF2DD0005D6FBA /* Back Arrow.png */; };
 		0431B78B14FF2DD0005D6FBA /* Loading Indicator Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0431B78914FF2DD0005D6FBA /* Loading Indicator Background.png */; };
+		0478FB65150B977900B71A23 /* Seatunes Title.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB64150B977900B71A23 /* Seatunes Title.png */; };
+		0478FB69150B9D3900B71A23 /* Coral Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB67150B9D3900B71A23 /* Coral Background.png */; };
+		0478FB6A150B9D3900B71A23 /* Game Background No Coral.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB68150B9D3900B71A23 /* Game Background No Coral.png */; };
 		048508D714D4D4DC008BBA10 /* PlayMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508D614D4D4DC008BBA10 /* PlayMenuScene.m */; };
 		048508DB14D4D62D008BBA10 /* SliderBoxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */; };
 		048508DF14D4D701008BBA10 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DD14D4D701008BBA10 /* Button.m */; };
@@ -322,6 +325,9 @@
 		0431B78614FF2C97005D6FBA /* LoadingIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingIndicator.m; path = Classes/LoadingIndicator.m; sourceTree = "<group>"; };
 		0431B78814FF2DD0005D6FBA /* Back Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back Arrow.png"; sourceTree = "<group>"; };
 		0431B78914FF2DD0005D6FBA /* Loading Indicator Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading Indicator Background.png"; sourceTree = "<group>"; };
+		0478FB64150B977900B71A23 /* Seatunes Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Seatunes Title.png"; sourceTree = "<group>"; };
+		0478FB67150B9D3900B71A23 /* Coral Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coral Background.png"; sourceTree = "<group>"; };
+		0478FB68150B9D3900B71A23 /* Game Background No Coral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Background No Coral.png"; sourceTree = "<group>"; };
 		048508D514D4D4DC008BBA10 /* PlayMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMenuScene.h; path = Classes/PlayMenuScene.h; sourceTree = "<group>"; };
 		048508D614D4D4DC008BBA10 /* PlayMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMenuScene.m; path = Classes/PlayMenuScene.m; sourceTree = "<group>"; };
 		048508D914D4D62D008BBA10 /* SliderBoxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderBoxMenu.h; path = Classes/SliderBoxMenu.h; sourceTree = "<group>"; };
@@ -778,6 +784,9 @@
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0478FB67150B9D3900B71A23 /* Coral Background.png */,
+				0478FB68150B9D3900B71A23 /* Game Background No Coral.png */,
+				0478FB64150B977900B71A23 /* Seatunes Title.png */,
 				04B0D4EF15070C9800A4A2B8 /* Quarter Rest.png */,
 				04B0D4DE1507020E00A4A2B8 /* Quarter Note Black.png */,
 				04B0D4DF1507021100A4A2B8 /* Staff Frame.png */,
@@ -1657,6 +1666,9 @@
 				04B0D4E41507021800A4A2B8 /* Staff Line.png in Resources */,
 				04B0D4E51507021800A4A2B8 /* Staff.png in Resources */,
 				04B0D4F015070C9900A4A2B8 /* Quarter Rest.png in Resources */,
+				0478FB65150B977900B71A23 /* Seatunes Title.png in Resources */,
+				0478FB69150B9D3900B71A23 /* Coral Background.png in Resources */,
+				0478FB6A150B9D3900B71A23 /* Game Background No Coral.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

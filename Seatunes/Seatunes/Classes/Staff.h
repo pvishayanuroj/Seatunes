@@ -10,8 +10,9 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "StaffDelegate.h"
+#import "StaffNoteDelegate.h"
 
-@interface Staff : CCNode {
+@interface Staff : CCNode <StaffNoteDelegate> {
     
     NSMutableArray *notes_;
     

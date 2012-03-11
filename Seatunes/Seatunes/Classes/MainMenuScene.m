@@ -15,9 +15,10 @@
 
 @implementation MainMenuScene
 
+static const CGFloat MMS_TITLE_X = 700.0f;
+static const CGFloat MMS_TITLE_Y = 600.0f;
 static const CGFloat MMS_PLAY_X = 100.0f;
-//static const CGFloat MMS_PLAY_Y = 600.0f;
-static const CGFloat MMS_PLAY_Y = 100.0f;
+static const CGFloat MMS_PLAY_Y = 600.0f;
 static const CGFloat MMS_BUY_X = 200.0f;
 static const CGFloat MMS_BUY_Y = 500.0f;
 
@@ -34,7 +35,11 @@ static const CGFloat MMS_BUY_Y = 500.0f;
          
         CCSprite *background = [CCSprite spriteWithFile:@"Menu Background.png"];
         background.anchorPoint = CGPointZero;
-        [self addChild:background];                
+        [self addChild:background];          
+        
+        CCSprite *title = [CCSprite spriteWithFile:@"Seatunes Title.png"];
+        title.position = ccp(MMS_TITLE_X, MMS_TITLE_Y);
+        [self addChild:title];
         
         Button *playButton = [StarfishButton starfishButton:kPlayButton text:@"Play"];
         playButton.delegate = self;

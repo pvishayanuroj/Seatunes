@@ -10,11 +10,10 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "GameLogic.h"
-#import "KeyboardDelegate.h"
 #import "SpeechReaderDelegate.h"
 #import "NoteGeneratorDelegate.h"
 
-@interface GameLogicD : GameLogic <KeyboardDelegate, NoteGeneratorDelegate, SpeechReaderDelegate> {
+@interface GameLogicD : GameLogic <NoteGeneratorDelegate, SpeechReaderDelegate> {
     
     NSUInteger noteIndex_;
     
@@ -22,7 +21,7 @@
     
     NSMutableArray *queue_;
     
-    NSMutableArray *notesHit_;    
+    NSMutableDictionary *notesHit_;
     
     NSUInteger playerNoteIndex_;
     

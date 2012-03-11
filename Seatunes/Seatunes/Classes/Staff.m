@@ -13,6 +13,7 @@
 
 static const CGFloat ST_NOTE_OFFSET_X = 250.0f;
 static const CGFloat ST_NOTE_X_BOUNDARY = -80.0f;
+static const CGFloat ST_STATIC_NOTE_OFFSET_X = -20.0f;
 
 @synthesize delegate = delegate_;
 
@@ -55,7 +56,7 @@ static const CGFloat ST_NOTE_X_BOUNDARY = -80.0f;
 
         if (note.position.x < ST_NOTE_X_BOUNDARY) {
             [remove addIndex:index];
-            [note disappear];
+            [note staffNoteReturn];
         }
         index++;
     }
@@ -64,21 +65,44 @@ static const CGFloat ST_NOTE_X_BOUNDARY = -80.0f;
     [notes_ removeObjectsAtIndexes:remove];    
 }
 
+- (void) staffNoteReturned:(StaffNote *)note
+{
+    if (delegate_ && [delegate_ respondsToSelector:@selector(staffNoteReturned:)]) {
+        [delegate_ staffNoteReturned:note];
+    }
+}
+
 - (void) addNote:(KeyType)keyType
 {
     StaffNote *note = [StaffNote staffNote:keyType pos:ccp(ST_NOTE_OFFSET_X, 0)];
+    note.delegate = self;
     [notes_ addObject:note];
     [self addChild:note];
 }
 
+- (void) addStaticNote:(KeyType)keyType
+{
+    StaffNote *note = [StaffNote staticStaffNote:keyType pos:ccp(ST_STATIC_NOTE_OFFSET_X, 0)];
+    note.delegate = self;    
+    [notes_ addObject:note];
+    [self addChild:note];    
+}
+
 - (void) removeOldestNote
 {
-    
+    if ([notes_ count] > 0) {
+        [[notes_ objectAtIndex:0] staffNoteDestroy];
+        [notes_ removeObjectAtIndex:0];
+    }
 }
 
 - (void) removeAllNotes
 {
+    for (StaffNote *note in notes_) {
+        [note staffNoteDestroy];
+    }
     
+    [notes_ removeAllObjects];
 }
 
 @end

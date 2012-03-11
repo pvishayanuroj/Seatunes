@@ -48,32 +48,41 @@ static const CGFloat NG_CR3_C2_Y = 250.0f;
 static const CGFloat NG_CR3_E_X = 150.0f;
 static const CGFloat NG_CR3_E_Y = 1000.0f;
 
-static const CGFloat NG_CR4_S_X = 500.0f;
-static const CGFloat NG_CR4_S_Y = 150.0f;
-static const CGFloat NG_CR4_C1_X = 180.0f; 
-static const CGFloat NG_CR4_C1_Y = 0.0f;
-static const CGFloat NG_CR4_C2_X = 270.0f;
-static const CGFloat NG_CR4_C2_Y = 100.0f;
-static const CGFloat NG_CR4_E_X = 250.0f;
-static const CGFloat NG_CR4_E_Y = 500.0f;
+static const CGFloat NG_CR4_S_X = 480.0f;
+static const CGFloat NG_CR4_S_Y = 170.0f;
+static const CGFloat NG_CR4_C1_X = 150.0f; 
+static const CGFloat NG_CR4_C1_Y = 150.0f;
+static const CGFloat NG_CR4_C2_X = 150.0f;
+static const CGFloat NG_CR4_C2_Y = 250.0f;
+static const CGFloat NG_CR4_E_X = 150.0f;
+static const CGFloat NG_CR4_E_Y = 1000.0f;
 
-static const CGFloat NG_CR5_S_X = 900.0f;
-static const CGFloat NG_CR5_S_Y = 150.0f;
-static const CGFloat NG_CR5_C1_X = 180.0f; 
-static const CGFloat NG_CR5_C1_Y = 0.0f;
-static const CGFloat NG_CR5_C2_X = 270.0f;
-static const CGFloat NG_CR5_C2_Y = 100.0f;
-static const CGFloat NG_CR5_E_X = 250.0f;
-static const CGFloat NG_CR5_E_Y = 500.0f;
+static const CGFloat NG_CR5_S_X = 970.0f;
+static const CGFloat NG_CR5_S_Y = 200.0f;
+static const CGFloat NG_CR5_C1_X = -150.0f; 
+static const CGFloat NG_CR5_C1_Y = 150.0f;
+static const CGFloat NG_CR5_C2_X = -150.0f;
+static const CGFloat NG_CR5_C2_Y = 250.0f;
+static const CGFloat NG_CR5_E_X = -150.0f;
+static const CGFloat NG_CR5_E_Y = 1000.0f;
 
-static const CGFloat CR_S_X[5] = {NG_CR1_S_X, NG_CR2_S_X, NG_CR3_S_X, NG_CR4_S_X, NG_CR5_S_X};
-static const CGFloat CR_S_Y[5] = {NG_CR1_S_Y, NG_CR2_S_Y, NG_CR3_S_Y, NG_CR4_S_Y, NG_CR5_S_Y};
-static const CGFloat CR_C1_X[5] = {NG_CR1_C1_X, NG_CR2_C1_X, NG_CR3_C1_X, NG_CR4_C1_Y, NG_CR5_C1_Y};
-static const CGFloat CR_C1_Y[5] = {NG_CR1_C1_Y, NG_CR2_C1_Y, NG_CR3_C1_Y, NG_CR4_C1_Y, NG_CR5_C1_Y};
-static const CGFloat CR_C2_X[5] = {NG_CR1_C2_X, NG_CR2_C2_X, NG_CR3_C2_X, NG_CR4_C2_Y, NG_CR5_C2_Y};
-static const CGFloat CR_C2_Y[5] = {NG_CR1_C2_Y, NG_CR2_C2_Y, NG_CR3_C2_Y, NG_CR4_C2_Y, NG_CR5_C2_Y};
-static const CGFloat CR_E_X[5] = {NG_CR1_E_X, NG_CR2_E_X, NG_CR3_E_X, NG_CR4_E_X, NG_CR5_E_X};
-static const CGFloat CR_E_Y[5] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y, NG_CR5_E_Y};
+static const CGFloat NG_CR6_S_X = 480.0f;
+static const CGFloat NG_CR6_S_Y = 170.0f;
+static const CGFloat NG_CR6_C1_X = -150.0f; 
+static const CGFloat NG_CR6_C1_Y = 150.0f;
+static const CGFloat NG_CR6_C2_X = -150.0f;
+static const CGFloat NG_CR6_C2_Y = 250.0f;
+static const CGFloat NG_CR6_E_X = -150.0f;
+static const CGFloat NG_CR6_E_Y = 1000.0f;
+
+static const CGFloat CR_S_X[6] = {NG_CR1_S_X, NG_CR2_S_X, NG_CR3_S_X, NG_CR4_S_X, NG_CR5_S_X, NG_CR6_S_X};
+static const CGFloat CR_S_Y[6] = {NG_CR1_S_Y, NG_CR2_S_Y, NG_CR3_S_Y, NG_CR4_S_Y, NG_CR5_S_Y, NG_CR6_S_Y};
+static const CGFloat CR_C1_X[6] = {NG_CR1_C1_X, NG_CR2_C1_X, NG_CR3_C1_X, NG_CR4_C1_X, NG_CR5_C1_X, NG_CR6_C1_X};
+static const CGFloat CR_C1_Y[6] = {NG_CR1_C1_Y, NG_CR2_C1_Y, NG_CR3_C1_Y, NG_CR4_C1_Y, NG_CR5_C1_Y, NG_CR6_C1_Y};
+static const CGFloat CR_C2_X[6] = {NG_CR1_C2_X, NG_CR2_C2_X, NG_CR3_C2_X, NG_CR4_C2_X, NG_CR5_C2_X, NG_CR6_C2_X};
+static const CGFloat CR_C2_Y[6] = {NG_CR1_C2_Y, NG_CR2_C2_Y, NG_CR3_C2_Y, NG_CR4_C2_Y, NG_CR5_C2_Y, NG_CR6_C2_Y};
+static const CGFloat CR_E_X[6] = {NG_CR1_E_X, NG_CR2_E_X, NG_CR3_E_X, NG_CR4_E_X, NG_CR5_E_X, NG_CR6_E_X};
+static const CGFloat CR_E_Y[6] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y, NG_CR5_E_Y, NG_CR6_E_Y};
 
 @synthesize delegate = delegate_;
 
@@ -118,7 +127,7 @@ static const CGFloat CR_E_Y[5] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y
 {
     if (keyType != kBlankNote) {
         
-        int idx = 2;
+        int idx = arc4random() % 4 + 2;
         ccBezierConfig curve;
         curve.controlPoint_1 = ccp(CR_C1_X[idx], CR_C1_Y[idx]);
         curve.controlPoint_2 = ccp(CR_C2_X[idx], CR_C2_Y[idx]);        
@@ -156,6 +165,23 @@ static const CGFloat CR_E_Y[5] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y
     }
 }
 
+- (void) popNoteWithID:(NSUInteger)numID
+{
+    NSMutableIndexSet *toRemove = [NSMutableIndexSet indexSet];
+    NSUInteger idx = 0;
+    
+    for (Note *note in notes_) {
+        if (note.numID == numID) {
+            [note destroy];
+            [toRemove addIndex:idx];
+            break;
+        }
+        idx++;
+    }
+    
+    [notes_ removeObjectsAtIndexes:toRemove];
+}
+
 #pragma mark - Delegate Methods
 
 - (void) noteCrossedBoundary:(Note *)note
@@ -183,12 +209,13 @@ static const CGFloat CR_E_Y[5] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y
     glColor4f(1.0, 0, 0, 1.0);      
     glLineWidth(3.0f);
     
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 6; i++) {
 
         CGPoint start = ccp(CR_S_X[i], CR_S_Y[i]);
         CGPoint c1 = ccp(start.x + CR_C1_X[i], start.y + CR_C1_Y[i]);
         CGPoint c2 = ccp(start.x + CR_C2_X[i], start.y + CR_C2_Y[i]);
         CGPoint end = ccp(start.x + CR_E_X[i], start.y + CR_E_Y[i]);
+        //NSLog(@"%d: (%4.0f, %4.0f), (%4.0f, %4.0f), (%4.0f, %4.0f), (%4.0f, %4.0f)", i, CR_S_X[i], CR_S_Y[i], CR_C1_X[i], CR_C1_Y[i], CR_C2_X[i], CR_C2_Y[i], CR_E_X[i], CR_E_Y[i]);        
         
         ccDrawCircle(start, 3, 360, 64, NO);
         ccDrawCircle(c1, 3, 360, 64, NO);        

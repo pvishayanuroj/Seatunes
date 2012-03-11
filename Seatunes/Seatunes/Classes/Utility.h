@@ -44,6 +44,10 @@
 
 + (NSUInteger) countNumBool:(BOOL)val array:(NSArray *)array;
 
++ (NSMutableDictionary *) generateBoolDictionary:(BOOL)val size:(NSUInteger)size;
+
++ (NSUInteger) countNumBoolInDictionary:(BOOL)val dictionary:(NSDictionary *)dictionary;
+
 + (BOOL) hasInternetConnection;
 
 @end

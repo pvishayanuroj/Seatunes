@@ -12,11 +12,11 @@
 #import "GameLogic.h"
 #import "KeyboardDelegate.h"
 #import "SpeechReaderDelegate.h"
-#import "NoteGeneratorDelegate.h"
+#import "StaffDelegate.h"
 
 @class Staff;
 
-@interface GameLogicE : GameLogic <KeyboardDelegate, NoteGeneratorDelegate, SpeechReaderDelegate> {
+@interface GameLogicE : GameLogic <KeyboardDelegate, StaffDelegate, SpeechReaderDelegate> {
     
     NSUInteger noteIndex_;
     
@@ -27,6 +27,8 @@
     NSMutableArray *notesHit_;    
     
     NSUInteger playerNoteIndex_;
+    
+    BOOL onBlankNote_;
     
     BOOL ignoreInput_;
     
