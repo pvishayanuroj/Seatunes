@@ -327,12 +327,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
     
     NSUInteger idx = 0;
     for (NSString *songName in songNames_) {
-        
-        // Load score
-        NSNumber *score = [scores objectForKey:songName];
-        ScoreType scoreType = (score == nil) ? kScoreZeroStar : [score integerValue];
-        
-        ScrollingMenuItem *menuItem = [SongMenuItem songMenuItem:songName songScore:scoreType songIndex:idx++ locked:isLocked];
+        ScrollingMenuItem *menuItem = [SongMenuItem songMenuItem:songName scores:scores songIndex:idx++ locked:isLocked];
         [songMenu_ addMenuItem:menuItem];
     }    
     

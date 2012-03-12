@@ -165,12 +165,6 @@
     scoreInfo_.notesMissed = [Utility countNumBool:NO array:notesHit_];
     scoreInfo_.notesHit = [notesHit_ count] - scoreInfo_.notesMissed;
     
-    if (scoreInfo_.notesMissed == 0) {
-        scoreInfo_.score = kScoreTwoStar;
-    }
-    else {
-        scoreInfo_.score = kScoreOneStar;
-    }
     [keyboard_ applause];
 }
 

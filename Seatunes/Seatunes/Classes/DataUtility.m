@@ -77,6 +77,7 @@ static DataUtility *manager_ = nil;
 
 - (NSMutableDictionary *) loadSongScores
 {
+    [scores_ release];
     NSDictionary *loadedScores = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"Song Scores"];
         
     if (loadedScores == nil) {
@@ -91,23 +92,21 @@ static DataUtility *manager_ = nil;
     return scores_;
 }
 
-- (void) saveSongScore:(NSString *)songName score:(ScoreType)score
+- (void) saveSongScore:(NSString *)songName difficulty:(DifficultyType)difficulty
 {
     if (scores_ == nil) {
         [self loadSongScores];
     }
     
-    NSNumber *savedScore = [scores_ objectForKey:songName];
+    NSString *difficultyName = [Utility difficultyFromEnum:difficulty];
+    NSString *key = [NSString stringWithFormat:@"%@ %@", songName, difficultyName];
+    NSNumber *songScore = [scores_ objectForKey:key];
     
-    // Only save score if it is greater than saved score or if saved score doesn't exist
-    if (savedScore != nil) {
-        if (score < [savedScore integerValue]) {
-            return;
-        }
-    }
-    
-    [scores_ setObject:[NSNumber numberWithInteger:score] forKey:songName];
-    [[NSUserDefaults standardUserDefaults] setObject:scores_ forKey:@"Song Scores"];        
+    // If song hasn't been stored yet, set it as a key
+    if (songScore == nil) {
+        [scores_ setObject:[NSNumber numberWithBool:YES] forKey:key];
+        [[NSUserDefaults standardUserDefaults] setObject:scores_ forKey:@"Song Scores"];          
+    }      
 }
 
 - (void) resetSongScores

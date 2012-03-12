@@ -38,9 +38,8 @@ static const CGFloat GL_BUBBLE_Y = 600.0f;
         instructor_ = nil;      
         noteGenerator_ = nil;
         scoreInfo_.notesHit = 0;
-        scoreInfo_.notesMissed = 0;        
-        scoreInfo_.score = kScoreZeroStar;
-        
+        scoreInfo_.notesMissed = 0;      
+        scoreInfo_.difficulty = difficulty;
     }
     return self;
 }

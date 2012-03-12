@@ -167,7 +167,9 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 
 - (void) songComplete:(ScoreInfo)scoreInfo
 {
-    [[DataUtility manager] saveSongScore:songName_ score:scoreInfo.score];
+    if (scoreInfo.notesMissed == 0) {
+        [[DataUtility manager] saveSongScore:songName_ difficulty:difficulty_];
+    }
     
     NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty_];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];

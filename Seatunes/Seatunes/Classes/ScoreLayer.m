@@ -20,7 +20,7 @@ static const CGFloat SL_ROW2_Y = 210.0f;
 static const CGFloat SL_ROW3_X = 110.0f;
 static const CGFloat SL_ROW3_Y = 120.0f;
 
-static const CGFloat SL_STAR_X = 395.0f;
+static const CGFloat SL_ICON_X = 500.0f;
 static const CGFloat SL_STAR_SPACING = 80.0f;
 
 static const CGFloat SL_NEXT_X = 790.0f;
@@ -43,10 +43,10 @@ static const CGFloat SL_MENU_Y = 75.0f;
         
         delegate_ = nil;
         
-        CCSprite *sprite = [CCSprite spriteWithFile:@"Score Menu Frame.png"];
-        sprite.position = ccp(0, 0);
-        sprite.anchorPoint = CGPointZero;
-        [self addChild:sprite];
+        CCSprite *frame = [CCSprite spriteWithFile:@"Score Menu Frame.png"];
+        frame.position = ccp(0, 0);
+        frame.anchorPoint = CGPointZero;
+        [self addChild:frame];
         
         Button *nextButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Next Button.png" scale:0.75f];
         Button *replayButton = [ScaledImageButton scaledImageButton:kButtonReplay image:@"Replay Button.png" scale:0.75f];
@@ -64,32 +64,34 @@ static const CGFloat SL_MENU_Y = 75.0f;
         [self addChild:replayButton];
         [self addChild:menuButton];        
         
-        CCLabelBMFont *earnedText = [CCLabelBMFont labelWithString:@"You earned" fntFile:@"MenuFont.fnt"];
-        
-        switch (scoreInfo.score) {
-            case kScoreOneStar:
-                earnedText = [CCLabelBMFont labelWithString:@"You earned 1 star:" fntFile:@"MenuFont.fnt"]; 
-                break;
-            case kScoreTwoStar:
-                earnedText = [CCLabelBMFont labelWithString:@"You earned 2 stars:" fntFile:@"MenuFont.fnt"];                 
-                break;
-            case kScoreThreeStar:
-                earnedText = [CCLabelBMFont labelWithString:@"You earned 3 stars:" fntFile:@"MenuFont.fnt"];                                 
-                break;
-            default:
-                break;
-        }
-        
+        CCSprite *sprite;
+        CCLabelBMFont *earnedText = [CCLabelBMFont labelWithString:@"You didn't earn any badges this time, better luck next time!" fntFile:@"MenuFont.fnt"];
         earnedText.position = ccp(SL_ROW1_X, SL_ROW1_Y);
         earnedText.anchorPoint = ccp(0, 0.5f);
-        [self addChild:earnedText];
+        [self addChild:earnedText];        
         
-        // Add the stars        
-        for (NSInteger i = 0; i < scoreInfo.score; ++i) {
-            CCSprite *sprite = [CCSprite spriteWithFile:@"Full Star.png"];
-            sprite.position = ccp(SL_STAR_X + SL_STAR_SPACING * i, SL_ROW1_Y);
+        if (scoreInfo.notesMissed == 0) {
+        
+            switch (scoreInfo.difficulty) {
+                case kDifficultyEasy:
+                    earnedText.string = @"You earned the Bubble Badge:";
+                    sprite = [CCSprite spriteWithFile:@"Bubble Icon.png"];
+                    break;
+                case kDifficultyMedium:
+                    earnedText.string = @"You earned the Clam Badge:";
+                    sprite = [CCSprite spriteWithFile:@"Clam Icon.png"];                
+                    break;
+                case kDifficultyHard:
+                    earnedText.string = @"You earned the Note Badge";
+                    sprite = [CCSprite spriteWithFile:@"Music Note Icon.png"];                
+                    break;
+                default:
+                    break;
+            }
+            
+            sprite.position = ccp(SL_ICON_X, SL_ROW1_Y);
             sprite.scale = 0.5f;
-            [self addChild:sprite];
+            [self addChild:sprite];                    
         }
         
         // Add the extra score information

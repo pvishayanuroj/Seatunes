@@ -39,6 +39,12 @@
 		0478FB65150B977900B71A23 /* Seatunes Title.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB64150B977900B71A23 /* Seatunes Title.png */; };
 		0478FB69150B9D3900B71A23 /* Coral Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB67150B9D3900B71A23 /* Coral Background.png */; };
 		0478FB6A150B9D3900B71A23 /* Game Background No Coral.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB68150B9D3900B71A23 /* Game Background No Coral.png */; };
+		0478FB82150D54B900B71A23 /* Bubble Icon Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB7C150D54B900B71A23 /* Bubble Icon Unselected.png */; };
+		0478FB83150D54B900B71A23 /* Bubble Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB7D150D54B900B71A23 /* Bubble Icon.png */; };
+		0478FB84150D54B900B71A23 /* Clam Icon Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB7E150D54B900B71A23 /* Clam Icon Unselected.png */; };
+		0478FB85150D54B900B71A23 /* Clam Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB7F150D54B900B71A23 /* Clam Icon.png */; };
+		0478FB86150D54B900B71A23 /* Music Note Icon Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB80150D54B900B71A23 /* Music Note Icon Unselected.png */; };
+		0478FB87150D54B900B71A23 /* Music Note Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB81150D54B900B71A23 /* Music Note Icon.png */; };
 		048508D714D4D4DC008BBA10 /* PlayMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508D614D4D4DC008BBA10 /* PlayMenuScene.m */; };
 		048508DB14D4D62D008BBA10 /* SliderBoxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DA14D4D62D008BBA10 /* SliderBoxMenu.m */; };
 		048508DF14D4D701008BBA10 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508DD14D4D701008BBA10 /* Button.m */; };
@@ -328,6 +334,12 @@
 		0478FB64150B977900B71A23 /* Seatunes Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Seatunes Title.png"; sourceTree = "<group>"; };
 		0478FB67150B9D3900B71A23 /* Coral Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coral Background.png"; sourceTree = "<group>"; };
 		0478FB68150B9D3900B71A23 /* Game Background No Coral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Background No Coral.png"; sourceTree = "<group>"; };
+		0478FB7C150D54B900B71A23 /* Bubble Icon Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble Icon Unselected.png"; sourceTree = "<group>"; };
+		0478FB7D150D54B900B71A23 /* Bubble Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble Icon.png"; sourceTree = "<group>"; };
+		0478FB7E150D54B900B71A23 /* Clam Icon Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Clam Icon Unselected.png"; sourceTree = "<group>"; };
+		0478FB7F150D54B900B71A23 /* Clam Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Clam Icon.png"; sourceTree = "<group>"; };
+		0478FB80150D54B900B71A23 /* Music Note Icon Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music Note Icon Unselected.png"; sourceTree = "<group>"; };
+		0478FB81150D54B900B71A23 /* Music Note Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music Note Icon.png"; sourceTree = "<group>"; };
 		048508D514D4D4DC008BBA10 /* PlayMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMenuScene.h; path = Classes/PlayMenuScene.h; sourceTree = "<group>"; };
 		048508D614D4D4DC008BBA10 /* PlayMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMenuScene.m; path = Classes/PlayMenuScene.m; sourceTree = "<group>"; };
 		048508D914D4D62D008BBA10 /* SliderBoxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderBoxMenu.h; path = Classes/SliderBoxMenu.h; sourceTree = "<group>"; };
@@ -784,6 +796,12 @@
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0478FB7C150D54B900B71A23 /* Bubble Icon Unselected.png */,
+				0478FB7D150D54B900B71A23 /* Bubble Icon.png */,
+				0478FB7E150D54B900B71A23 /* Clam Icon Unselected.png */,
+				0478FB7F150D54B900B71A23 /* Clam Icon.png */,
+				0478FB80150D54B900B71A23 /* Music Note Icon Unselected.png */,
+				0478FB81150D54B900B71A23 /* Music Note Icon.png */,
 				0478FB67150B9D3900B71A23 /* Coral Background.png */,
 				0478FB68150B9D3900B71A23 /* Game Background No Coral.png */,
 				0478FB64150B977900B71A23 /* Seatunes Title.png */,
@@ -1669,6 +1687,12 @@
 				0478FB65150B977900B71A23 /* Seatunes Title.png in Resources */,
 				0478FB69150B9D3900B71A23 /* Coral Background.png in Resources */,
 				0478FB6A150B9D3900B71A23 /* Game Background No Coral.png in Resources */,
+				0478FB82150D54B900B71A23 /* Bubble Icon Unselected.png in Resources */,
+				0478FB83150D54B900B71A23 /* Bubble Icon.png in Resources */,
+				0478FB84150D54B900B71A23 /* Clam Icon Unselected.png in Resources */,
+				0478FB85150D54B900B71A23 /* Clam Icon.png in Resources */,
+				0478FB86150D54B900B71A23 /* Music Note Icon Unselected.png in Resources */,
+				0478FB87150D54B900B71A23 /* Music Note Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

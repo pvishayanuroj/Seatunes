@@ -20,6 +20,7 @@ static const CGFloat DMS_TITLE_Y = 650.0f;
 
 static const CGFloat DMS_TEXT_Y = 530.0f;
 static const CGFloat DMS_BUTTON_Y = 420.0f;
+static const CGFloat DMS_BUTTON2_Y = 430.0f;
 static const CGFloat DMS_BUTTON_X = 512.0f;
 static const CGFloat DMS_BUTTON_PADDING = 200.0f;
 
@@ -31,6 +32,9 @@ static const CGFloat DMS_BACK_BUTTON_Y = 730.0f;
 
 static const CGFloat DMS_PLAY_BUTTON_X = 650.0f;
 static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
+
+static const GLubyte DMS_FULL_OPACITY = 255;
+static const GLubyte DMS_SEMI_OPACITY = 150;
 
 + (id) startWithSongName:(NSString *)songName
 {
@@ -53,34 +57,37 @@ static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
         [self addChild:menuFrame];        
         
         // Add text
-        CCLabelBMFont *titleText = [CCLabelBMFont labelWithString:@"Choose Difficulty" fntFile:@"MenuFont.fnt"];
+        CCLabelBMFont *titleText = [CCLabelBMFont labelWithString:@"Choose Play Mode" fntFile:@"MenuFont.fnt"];
         titleText.position = ccp(DMS_TITLE_X, DMS_TITLE_Y);
         [self addChild:titleText];
         
-        CCLabelBMFont *easyText = [CCLabelBMFont labelWithString:@"Novice" fntFile:@"MenuFont.fnt"];
-        CCLabelBMFont *mediumText = [CCLabelBMFont labelWithString:@"Pro" fntFile:@"MenuFont.fnt"];
-        CCLabelBMFont *hardText = [CCLabelBMFont labelWithString:@"Master" fntFile:@"MenuFont.fnt"];        
+        easyText_ = [[CCLabelBMFont labelWithString:@"Novice" fntFile:@"MenuFont.fnt"] retain];
+        mediumText_ = [[CCLabelBMFont labelWithString:@"Pro" fntFile:@"MenuFont.fnt"] retain];
+        hardText_ = [[CCLabelBMFont labelWithString:@"Master" fntFile:@"MenuFont.fnt"] retain];        
         
-        easyText.position = ccp(DMS_BUTTON_X - DMS_BUTTON_PADDING, DMS_TEXT_Y);
-        mediumText.position = ccp(DMS_BUTTON_X, DMS_TEXT_Y);
-        hardText.position = ccp(DMS_BUTTON_X + DMS_BUTTON_PADDING, DMS_TEXT_Y);        
+        easyText_.position = ccp(DMS_BUTTON_X - DMS_BUTTON_PADDING, DMS_TEXT_Y);
+        mediumText_.position = ccp(DMS_BUTTON_X, DMS_TEXT_Y);
+        hardText_.position = ccp(DMS_BUTTON_X + DMS_BUTTON_PADDING, DMS_TEXT_Y);        
+        easyText_.opacity = DMS_FULL_OPACITY;
+        mediumText_.opacity = DMS_SEMI_OPACITY;
+        hardText_.opacity = DMS_SEMI_OPACITY;
         
-        [self addChild:easyText];
-        [self addChild:mediumText];
-        [self addChild:hardText];        
+        [self addChild:easyText_];
+        [self addChild:mediumText_];
+        [self addChild:hardText_];        
         
         // Add buttons
         difficulty_ = kDifficultyEasy;
-        easyButton_ = [[ScaledImageButton scaledImageButton:kDifficultyEasy image:@"Full Star.png"] retain];
-        mediumButton_ = [[ScaledImageButton scaledImageButton:kDifficultyMedium image:@"Empty Star.png"] retain];
-        hardButton_ = [[ScaledImageButton scaledImageButton:kDifficultyHard image:@"Empty Star.png"] retain];        
+        easyButton_ = [[ScaledImageButton scaledImageButton:kDifficultyEasy image:@"Bubble Icon.png"] retain];
+        mediumButton_ = [[ScaledImageButton scaledImageButton:kDifficultyMedium image:@"Clam Icon Unselected.png"] retain];
+        hardButton_ = [[ScaledImageButton scaledImageButton:kDifficultyHard image:@"Music Note Icon Unselected.png"] retain];        
         
         easyButton_.delegate = self;
         mediumButton_.delegate = self;
         hardButton_.delegate = self;        
         
         easyButton_.position = ccp(DMS_BUTTON_X - DMS_BUTTON_PADDING, DMS_BUTTON_Y);
-        mediumButton_.position = ccp(DMS_BUTTON_X, DMS_BUTTON_Y);
+        mediumButton_.position = ccp(DMS_BUTTON_X, DMS_BUTTON2_Y);
         hardButton_.position = ccp(DMS_BUTTON_X + DMS_BUTTON_PADDING, DMS_BUTTON_Y);        
         
         [self addChild:easyButton_];
@@ -104,6 +111,9 @@ static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
 
 - (void) dealloc
 {
+    [easyText_ release];
+    [mediumText_ release];
+    [hardText_ release];
     [songName_ release];
     [easyButton_ release];
     [mediumButton_ release];
@@ -116,23 +126,32 @@ static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
 {   
     switch (button.numID) {
         case kDMSHard:
-            [(ScaledImageButton *)hardButton_ setImage:@"Full Star.png"];
-            [(ScaledImageButton *)mediumButton_ setImage:@"Full Star.png"];                        
-            [(ScaledImageButton *)easyButton_ setImage:@"Full Star.png"];  
+            [(ScaledImageButton *)hardButton_ setImage:@"Music Note Icon.png"];
+            [(ScaledImageButton *)mediumButton_ setImage:@"Clam Icon Unselected.png"];                        
+            [(ScaledImageButton *)easyButton_ setImage:@"Bubble Icon Unselected.png"];  
+            easyText_.opacity = DMS_SEMI_OPACITY;
+            mediumText_.opacity = DMS_SEMI_OPACITY;
+            hardText_.opacity = DMS_FULL_OPACITY;            
             difficulty_ = kDifficultyHard;   
             [[AudioManager audioManager] playSoundEffect:kMenuG1];            
             break;
         case kDMSMedium:
-            [(ScaledImageButton *)hardButton_ setImage:@"Empty Star.png"];            
-            [(ScaledImageButton *)mediumButton_ setImage:@"Full Star.png"];            
-            [(ScaledImageButton *)easyButton_ setImage:@"Full Star.png"];                        
+            [(ScaledImageButton *)hardButton_ setImage:@"Music Note Icon Unselected.png"];            
+            [(ScaledImageButton *)mediumButton_ setImage:@"Clam Icon.png"];            
+            [(ScaledImageButton *)easyButton_ setImage:@"Bubble Icon Unselected.png"];    
+            easyText_.opacity = DMS_SEMI_OPACITY;
+            mediumText_.opacity = DMS_FULL_OPACITY;
+            hardText_.opacity = DMS_SEMI_OPACITY;               
             difficulty_ = kDifficultyMedium;       
             [[AudioManager audioManager] playSoundEffect:kMenuE1];            
             break;
         case kDMSEasy:
-            [(ScaledImageButton *)hardButton_ setImage:@"Empty Star.png"];            
-            [(ScaledImageButton *)mediumButton_ setImage:@"Empty Star.png"];                        
-            [(ScaledImageButton *)easyButton_ setImage:@"Full Star.png"];                        
+            [(ScaledImageButton *)hardButton_ setImage:@"Music Note Icon Unselected.png"];            
+            [(ScaledImageButton *)mediumButton_ setImage:@"Clam Icon Unselected.png"];                        
+            [(ScaledImageButton *)easyButton_ setImage:@"Bubble Icon.png"];        
+            easyText_.opacity = DMS_FULL_OPACITY;
+            mediumText_.opacity = DMS_SEMI_OPACITY;
+            hardText_.opacity = DMS_SEMI_OPACITY;                           
             difficulty_ = kDifficultyEasy;
             [[AudioManager audioManager] playSoundEffect:kMenuC1];            
             break;

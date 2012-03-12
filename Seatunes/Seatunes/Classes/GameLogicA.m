@@ -233,7 +233,6 @@
 {
     scoreInfo_.notesMissed = [Utility countNumBool:NO array:notesHit_];
     scoreInfo_.notesHit = [notesHit_ count] - scoreInfo_.notesMissed;    
-    scoreInfo_.score = kScoreOneStar;
     
     [keyboard_ applause];
 }

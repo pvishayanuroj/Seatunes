@@ -79,9 +79,9 @@ typedef enum {
 } ProcessorType;
 
 typedef enum {
-    kDifficultyEasy,
-    kDifficultyMedium,
-    kDifficultyHard
+    kDifficultyEasy = 0,
+    kDifficultyMedium = 1,
+    kDifficultyHard = 2
 } DifficultyType;
 
 typedef enum {
@@ -120,7 +120,7 @@ typedef enum {
 typedef struct {
     NSUInteger notesMissed;
     NSUInteger notesHit;
-    ScoreType score;
+    DifficultyType difficulty;
 } ScoreInfo;
 
 enum {

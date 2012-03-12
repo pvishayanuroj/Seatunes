@@ -183,6 +183,27 @@
     return name;
 }
 
++ (NSString *) difficultyFromEnum:(DifficultyType)difficulty
+{
+    NSString *name = @"";
+    
+    switch (difficulty) {
+        case kDifficultyEasy:
+            name = @"Easy"; 
+            break;
+        case kDifficultyMedium:
+            name = @"Medium";
+            break;
+        case kDifficultyHard:
+            name = @"Hard";
+            break;
+        default:
+            break;
+    }    
+    
+    return name;
+}
+
 + (NSString *) soundFileFromEnum:(SoundType)soundType
 {
     NSString *name = @"";
@@ -324,6 +345,12 @@
     return [self countNumBool:val array:[dictionary allValues]];
 }
 
++ (NSString *) songKey:(NSString *)songName difficulty:(DifficultyType)difficulty
+{
+    NSString *difficultyName = [self difficultyFromEnum:difficulty];
+    NSString *key = [NSString stringWithFormat:@"%@ %@", songName, difficultyName];    
+    return key;
+}
 
 + (BOOL) hasInternetConnection
 {

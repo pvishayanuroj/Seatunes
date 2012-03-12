@@ -32,7 +32,7 @@
 
 - (NSMutableDictionary *) loadSongScores;
 
-- (void) saveSongScore:(NSString *)songName score:(ScoreType)score;
+- (void) saveSongScore:(NSString *)songName difficulty:(DifficultyType)difficulty;
 
 - (void) resetSongScores;
 

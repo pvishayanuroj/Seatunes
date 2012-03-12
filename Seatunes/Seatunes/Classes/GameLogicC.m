@@ -211,13 +211,6 @@ static const CGFloat GLC_KEY_ANIMATION_INTERVAL = 0.75f;
     scoreInfo_.notesMissed = [Utility countNumBool:NO array:notesHit_];
     scoreInfo_.notesHit = [notesHit_ count] - scoreInfo_.notesMissed;    
     
-    if (scoreInfo_.notesMissed == 0) {
-        scoreInfo_.score = kScoreThreeStar;
-    }
-    else {
-        scoreInfo_.score = kScoreTwoStar;
-    }
-    
     [keyboard_ applause];
 }
 

@@ -24,7 +24,7 @@
 
 - (id) initGameLogicD:(NSString *)songName
 {
-    if ((self = [super initGameLogic:kDifficultyMedium])) {
+    if ((self = [super initGameLogic:kDifficultyEasy])) {
         
         noteIndex_ = 0;
         playerNoteIndex_ = 0;
@@ -149,15 +149,8 @@
 
 - (void) endSong
 {
-    [Utility countNumBoolInDictionary:NO dictionary:notesHit_];
+    scoreInfo_.notesMissed = [Utility countNumBoolInDictionary:NO dictionary:notesHit_];
     scoreInfo_.notesHit = [notesHit_ count] - scoreInfo_.notesMissed;
-    
-    if (scoreInfo_.notesMissed == 0) {
-        scoreInfo_.score = kScoreTwoStar;
-    }
-    else {
-        scoreInfo_.score = kScoreOneStar;
-    }
     [delegate_ songComplete:scoreInfo_];    
 }
 

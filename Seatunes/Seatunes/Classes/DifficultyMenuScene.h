@@ -31,6 +31,12 @@ enum {
     
     Button *hardButton_;    
     
+    CCLabelBMFont *easyText_;
+    
+    CCLabelBMFont *mediumText_;
+    
+    CCLabelBMFont *hardText_;    
+    
     DifficultyType difficulty_;
 }
 

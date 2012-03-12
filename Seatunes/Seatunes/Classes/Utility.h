@@ -30,6 +30,8 @@
 
 + (NSString *) difficultyPlayedKeyFromEnum:(DifficultyType)difficulty;
 
++ (NSString *) difficultyFromEnum:(DifficultyType)difficulty;
+
 + (NSString *) soundFileFromEnum:(SoundType)soundType;
 
 + (NSArray *) loadSectionedSong:(NSString *)songName;
@@ -47,6 +49,8 @@
 + (NSMutableDictionary *) generateBoolDictionary:(BOOL)val size:(NSUInteger)size;
 
 + (NSUInteger) countNumBoolInDictionary:(BOOL)val dictionary:(NSDictionary *)dictionary;
+
++ (NSString *) songKey:(NSString *)songName difficulty:(DifficultyType)difficulty;
 
 + (BOOL) hasInternetConnection;
 
