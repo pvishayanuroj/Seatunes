@@ -10,6 +10,7 @@
 #import "AudioManager.h"
 #import "Key.h"
 #import "Utility.h"
+#import "CCNode+PauseResume.h"
 
 @implementation Keyboard
 
@@ -226,5 +227,21 @@
         [delegate_ applauseComplete];
     }
 }
+
+- (void) pauseHierarchy
+{
+    prevClickableState_ = isClickable_;
+    isClickable_ = NO;
+    
+    [super pauseHierarchy];
+}
+
+- (void) resumeHierarchy
+{
+    isClickable_ = prevClickableState_;
+    
+    [super resumeHierarchy];
+}
+
 
 @end

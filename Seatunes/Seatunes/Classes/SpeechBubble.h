@@ -36,6 +36,8 @@ typedef enum {
     
     BOOL isClickable_;
     
+    BOOL prevClickableState_;
+    
     BubbleType bubbleType_;
     
     NSMutableArray *textContainer_;

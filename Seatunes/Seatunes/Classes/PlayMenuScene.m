@@ -88,7 +88,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
 #endif
         
         // Add back button
-        Button *backButton = [ScaledImageButton scaledImageButton:kDMSBack image:@"Back Arrow.png"];
+        Button *backButton = [ScaledImageButton scaledImageButton:kDMSBack image:@"Back Button.png"];
         backButton.delegate = self;
         backButton.position = ccp(PMS_BACK_BUTTON_X, PMS_BACK_BUTTON_Y);
         [self addChild:backButton];        

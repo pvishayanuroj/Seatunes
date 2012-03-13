@@ -33,7 +33,6 @@
 		0431B78214FF2080005D6FBA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431B78114FF2080005D6FBA /* Reachability.m */; };
 		0431B78414FF26EF005D6FBA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0431B78314FF26EF005D6FBA /* SystemConfiguration.framework */; };
 		0431B78714FF2C97005D6FBA /* LoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431B78614FF2C97005D6FBA /* LoadingIndicator.m */; };
-		0431B78A14FF2DD0005D6FBA /* Back Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0431B78814FF2DD0005D6FBA /* Back Arrow.png */; };
 		0431B78B14FF2DD0005D6FBA /* Loading Indicator Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0431B78914FF2DD0005D6FBA /* Loading Indicator Background.png */; };
 		0478FB65150B977900B71A23 /* Seatunes Title.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB64150B977900B71A23 /* Seatunes Title.png */; };
 		0478FB69150B9D3900B71A23 /* Coral Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478FB67150B9D3900B71A23 /* Coral Background.png */; };
@@ -71,6 +70,7 @@
 		04B0D4EB1507025F00A4A2B8 /* Staff.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4EA1507025E00A4A2B8 /* Staff.m */; };
 		04B0D4EE1507027400A4A2B8 /* StaffNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4ED1507027200A4A2B8 /* StaffNote.m */; };
 		04B0D4F015070C9900A4A2B8 /* Quarter Rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4EF15070C9800A4A2B8 /* Quarter Rest.png */; };
+		04B20B89150ECF71009A729F /* Back Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B20B88150ECF71009A729F /* Back Button.png */; };
 		04B32C9514DDB1DB004AA98E /* GameLogicB.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9414DDB1DA004AA98E /* GameLogicB.m */; };
 		04B32C9D14DDDBF1004AA98E /* GameLogicA.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9C14DDDBF0004AA98E /* GameLogicA.m */; };
 		04B32CA014DDDC18004AA98E /* GameLogicC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9F14DDDC17004AA98E /* GameLogicC.m */; };
@@ -327,7 +327,6 @@
 		0431B78314FF26EF005D6FBA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0431B78514FF2C97005D6FBA /* LoadingIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingIndicator.h; path = Classes/LoadingIndicator.h; sourceTree = "<group>"; };
 		0431B78614FF2C97005D6FBA /* LoadingIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingIndicator.m; path = Classes/LoadingIndicator.m; sourceTree = "<group>"; };
-		0431B78814FF2DD0005D6FBA /* Back Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back Arrow.png"; sourceTree = "<group>"; };
 		0431B78914FF2DD0005D6FBA /* Loading Indicator Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading Indicator Background.png"; sourceTree = "<group>"; };
 		0478FB64150B977900B71A23 /* Seatunes Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Seatunes Title.png"; sourceTree = "<group>"; };
 		0478FB67150B9D3900B71A23 /* Coral Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coral Background.png"; sourceTree = "<group>"; };
@@ -380,6 +379,7 @@
 		04B0D4EF15070C9800A4A2B8 /* Quarter Rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Quarter Rest.png"; sourceTree = "<group>"; };
 		04B0D4F115070DD600A4A2B8 /* StaffDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StaffDelegate.h; path = Classes/StaffDelegate.h; sourceTree = "<group>"; };
 		04B0D4F215070DEA00A4A2B8 /* StaffNoteDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StaffNoteDelegate.h; path = Classes/StaffNoteDelegate.h; sourceTree = "<group>"; };
+		04B20B88150ECF71009A729F /* Back Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back Button.png"; sourceTree = "<group>"; };
 		04B32C9314DDB1DA004AA98E /* GameLogicB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicB.h; path = Classes/GameLogicB.h; sourceTree = "<group>"; };
 		04B32C9414DDB1DA004AA98E /* GameLogicB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicB.m; path = Classes/GameLogicB.m; sourceTree = "<group>"; };
 		04B32C9B14DDDBF0004AA98E /* GameLogicA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicA.h; path = Classes/GameLogicA.h; sourceTree = "<group>"; };
@@ -794,6 +794,7 @@
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				04B20B88150ECF71009A729F /* Back Button.png */,
 				0478FB7C150D54B900B71A23 /* Bubble Icon Unselected.png */,
 				0478FB7D150D54B900B71A23 /* Bubble Icon.png */,
 				0478FB7E150D54B900B71A23 /* Clam Icon Unselected.png */,
@@ -808,7 +809,6 @@
 				04B0D4DF1507021100A4A2B8 /* Staff Frame.png */,
 				04B0D4E01507021200A4A2B8 /* Staff Line.png */,
 				04B0D4E11507021400A4A2B8 /* Staff.png */,
-				0431B78814FF2DD0005D6FBA /* Back Arrow.png */,
 				0431B78914FF2DD0005D6FBA /* Loading Indicator Background.png */,
 				040A0CA514FC7316006803F9 /* Lock Icon.png */,
 				04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */,
@@ -1119,8 +1119,8 @@
 				04DE51B614F7492C00F8E45C /* Sound Effects */,
 				04D331CD14E7056700DD82D4 /* Speech */,
 				04D331C814E6DDD600DD82D4 /* Fonts */,
-				048BBAAA14D5368B0086EABC /* Packs */,
 				048BBA7514D534780086EABC /* Images */,
+				048BBAAA14D5368B0086EABC /* Packs */,
 				DAB1216814C48B24009B60FB /* Spritesheets */,
 				DAB120E714C35A08009B60FB /* Notes */,
 				DAB11F2B14C1E847009B60FB /* Default.png */,
@@ -1667,7 +1667,6 @@
 				04DE522614FA1A6F00F8E45C /* Christmas Pack Selected.png in Resources */,
 				04DE522714FA1A6F00F8E45C /* Christmas Pack Unselected.png in Resources */,
 				040A0CA614FC7316006803F9 /* Lock Icon.png in Resources */,
-				0431B78A14FF2DD0005D6FBA /* Back Arrow.png in Resources */,
 				0431B78B14FF2DD0005D6FBA /* Loading Indicator Background.png in Resources */,
 				04B0D4CC1504174100A4A2B8 /* Icon-72.png in Resources */,
 				04B0D4CD1504174100A4A2B8 /* Icon-Small-50.png in Resources */,
@@ -1689,6 +1688,7 @@
 				0478FB85150D54B900B71A23 /* Clam Icon.png in Resources */,
 				0478FB86150D54B900B71A23 /* Music Note Icon Unselected.png in Resources */,
 				0478FB87150D54B900B71A23 /* Music Note Icon.png in Resources */,
+				04B20B89150ECF71009A729F /* Back Button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

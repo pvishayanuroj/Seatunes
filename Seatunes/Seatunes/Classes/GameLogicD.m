@@ -101,7 +101,6 @@
         // Incorrect note played
         else {
             [instructor_ showWrongNote];
-    NSLog(@"Setting %d to NO incorrect played", note.numID);            
             [notesHit_ setObject:[NSNumber numberWithBool:NO] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];
         }           
         [queue_ removeObject:[NSNumber numberWithUnsignedInteger:note.numID]];       
@@ -116,7 +115,6 @@
  
 - (void) noteCrossedBoundary:(Note *)note
 {
-    NSLog(@"Setting %d to NO", note.numID);
     [queue_ removeObject:[NSNumber numberWithUnsignedInteger:note.numID]];            
     [noteGenerator_ popNoteWithID:note.numID];
     [notesHit_ setObject:[NSNumber numberWithBool:NO] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];    

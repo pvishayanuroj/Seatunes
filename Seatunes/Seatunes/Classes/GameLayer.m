@@ -221,13 +221,11 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
             break;
         case kButtonReplay:
             scene = [GameScene startWithDifficulty:difficulty_ songName:songName_];
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];            
-            //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:scene]];                         
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                             
             break;
         case kButtonMenu:
             scene = [PlayMenuScene node];
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];            
-            //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:scene]];             
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                        
             break;
         default:
             break;
@@ -295,8 +293,6 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 - (void) pauseGame
 {
     isPaused_ = YES;
-    pastKeyboardState_ = keyboard_.isClickable;
-    keyboard_.isClickable = NO;
     [gameLogic_ pauseHierarchy];
     [instructor_ pauseHierarchy];
     [keyboard_ pauseHierarchy];
@@ -306,7 +302,6 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 - (void) resumeGame
 {
     isPaused_ = NO;
-    keyboard_.isClickable = pastKeyboardState_;
     [gameLogic_ resumeHierarchy];
     [instructor_ resumeHierarchy];
     [keyboard_ resumeHierarchy];

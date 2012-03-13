@@ -23,6 +23,8 @@
     
     BOOL isClickable_;
     
+    BOOL prevClickableState_;
+    
     BOOL boundaryCrossFlag_;
     
     NSUInteger numID_;        

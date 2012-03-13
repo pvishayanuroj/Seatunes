@@ -7,6 +7,7 @@
 //
 
 #import "SpeechBubble.h"
+#import "CCNode+PauseResume.h"
 
 @implementation SpeechBubble
 
@@ -266,6 +267,21 @@
 - (NSArray *) separateWords:(NSString *)text
 {
     return [text componentsSeparatedByString:@" "];
+}
+
+- (void) pauseHierarchy
+{
+    prevClickableState_ = isClickable_;
+    isClickable_ = NO;
+    
+    [super pauseHierarchy];
+}
+
+- (void) resumeHierarchy
+{
+    isClickable_ = prevClickableState_;
+    
+    [super resumeHierarchy];
 }
 
 @end

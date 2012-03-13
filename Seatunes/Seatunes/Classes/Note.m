@@ -8,6 +8,7 @@
 
 #import "Note.h"
 #import "Utility.h"
+#import "CCNode+PauseResume.h"
 
 @implementation Note
 
@@ -200,5 +201,21 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
     // Why doesn't this give the correct value??
     //CGPoint pt = [self convertToWorldSpace:self.position];
 }
+
+- (void) pauseHierarchy
+{
+    prevClickableState_ = isClickable_;
+    isClickable_ = NO;
+    
+    [super pauseHierarchy];
+}
+
+- (void) resumeHierarchy
+{
+    isClickable_ = prevClickableState_;
+    
+    [super resumeHierarchy];
+}
+
 
 @end

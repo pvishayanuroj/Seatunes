@@ -34,6 +34,8 @@
     
     BOOL isClickable_;
     
+    BOOL prevClickableState_;
+    
     BOOL isMuted_;
     
     id <KeyboardDelegate> delegate_;

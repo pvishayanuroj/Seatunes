@@ -101,7 +101,7 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
         [self addChild:playButton];        
         
         // Add back button
-        Button *backButton = [ScaledImageButton scaledImageButton:kDMSBack image:@"Back Arrow.png"];
+        Button *backButton = [ScaledImageButton scaledImageButton:kDMSBack image:@"Back Button.png"];
         backButton.delegate = self;
         backButton.position = ccp(DMS_BACK_BUTTON_X, DMS_BACK_BUTTON_Y);
         [self addChild:backButton];
