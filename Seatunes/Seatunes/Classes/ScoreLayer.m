@@ -20,7 +20,9 @@ static const CGFloat SL_ROW2_Y = 210.0f;
 static const CGFloat SL_ROW3_X = 110.0f;
 static const CGFloat SL_ROW3_Y = 120.0f;
 
-static const CGFloat SL_ICON_X = 500.0f;
+static const CGFloat SL_BUBBLE_ICON_X = 535.0f;
+static const CGFloat SL_CLAM_ICON_X = 520.0f;
+static const CGFloat SL_NOTE_ICON_X = 520.0f;
 static const CGFloat SL_STAR_SPACING = 80.0f;
 
 static const CGFloat SL_NEXT_X = 790.0f;
@@ -65,50 +67,60 @@ static const CGFloat SL_MENU_Y = 75.0f;
         [self addChild:menuButton];        
         
         CCSprite *sprite;
-        CCLabelBMFont *earnedText = [CCLabelBMFont labelWithString:@"You didn't earn any badges this time, better luck next time!" fntFile:@"MenuFont.fnt"];
+        CCLabelBMFont *earnedText = [CCLabelBMFont labelWithString:@"You didn't earn any badges this time,\nbetter luck next time!" fntFile:@"MenuFont.fnt"];
+        CGFloat rowOffset = -30;
         earnedText.position = ccp(SL_ROW1_X, SL_ROW1_Y);
         earnedText.anchorPoint = ccp(0, 0.5f);
         [self addChild:earnedText];        
         
         if (scoreInfo.notesMissed == 0) {
-        
             switch (scoreInfo.difficulty) {
                 case kDifficultyEasy:
                     earnedText.string = @"You earned the Bubble Badge:";
                     sprite = [CCSprite spriteWithFile:@"Bubble Icon.png"];
+                    sprite.position = ccp(SL_BUBBLE_ICON_X, SL_ROW1_Y);                    
                     break;
                 case kDifficultyMedium:
                     earnedText.string = @"You earned the Clam Badge:";
                     sprite = [CCSprite spriteWithFile:@"Clam Icon.png"];                
+                    sprite.position = ccp(SL_CLAM_ICON_X, SL_ROW1_Y);                    
                     break;
                 case kDifficultyHard:
                     earnedText.string = @"You earned the Note Badge";
-                    sprite = [CCSprite spriteWithFile:@"Music Note Icon.png"];                
+                    sprite = [CCSprite spriteWithFile:@"Music Note Icon.png"];         
+                    sprite.position = ccp(SL_NOTE_ICON_X, SL_ROW1_Y);                                        
                     break;
                 default:
                     break;
             }
             
-            sprite.position = ccp(SL_ICON_X, SL_ROW1_Y);
+            rowOffset = 0;
             sprite.scale = 0.5f;
             [self addChild:sprite];                    
         }
         
         // Add the extra score information
-        NSString *hitString = [NSString stringWithFormat:@"You hit %d notes", scoreInfo.notesHit];
+        NSString *hitString;
         NSString *missedString;
-        if (scoreInfo.notesMissed == 1) {
-            missedString = [NSString stringWithFormat:@"You missed %d note", scoreInfo.notesMissed];                    
+        
+        if (scoreInfo.notesHit == 1) {
+            hitString = [NSString stringWithFormat:@"You hit %d note!", scoreInfo.notesHit];
         }
         else {
-            missedString = [NSString stringWithFormat:@"You missed %d notes", scoreInfo.notesMissed];        
+            hitString = [NSString stringWithFormat:@"You hit %d notes!", scoreInfo.notesHit];            
+        }
+        if (scoreInfo.notesMissed == 1) {
+            missedString = [NSString stringWithFormat:@"You missed %d note!", scoreInfo.notesMissed];                    
+        }
+        else {
+            missedString = [NSString stringWithFormat:@"You missed %d notes!", scoreInfo.notesMissed];        
         }
         
         CCLabelBMFont *hitText = [CCLabelBMFont labelWithString:hitString fntFile:@"MenuFont.fnt"];
         CCLabelBMFont *missedText = [CCLabelBMFont labelWithString:missedString fntFile:@"MenuFont.fnt"];
         
-        hitText.position = ccp(SL_ROW2_X, SL_ROW2_Y);
-        missedText.position = ccp(SL_ROW3_X, SL_ROW3_Y);        
+        hitText.position = ccp(SL_ROW2_X, SL_ROW2_Y + rowOffset);
+        missedText.position = ccp(SL_ROW3_X, SL_ROW3_Y + rowOffset);        
         hitText.anchorPoint = ccp(0, 0.5f);
         missedText.anchorPoint = ccp(0, 0.5f);        
         

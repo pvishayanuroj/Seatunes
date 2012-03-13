@@ -85,20 +85,22 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         [sideMenu_ addMenuItem:replayButton];
         [sideMenu_ addMenuItem:menuButton];        
         
-        [self addChild:sideMenu_];
+        [self addChild:sideMenu_ z:0];
         
         keyboard_ = [[Keyboard keyboard:kEightKey] retain];
         keyboard_.position = ccp(GL_KEYBOARD_X, GL_KEYBOARD_Y);
         [self addChild:keyboard_];                
         
+        NSInteger coralBackgroundZ = -3;
         NSInteger noteGeneratorZ = -2;
         NSInteger instructorZ = -1;
         switch (difficulty) {
             case kDifficultyEasy:
                 gameLogic_ = [[GameLogicD gameLogicD:songName] retain];
                 keyboard_.visible = NO;
-                noteGeneratorZ = -1;
-                instructorZ = -2;
+                coralBackgroundZ = -2;
+                noteGeneratorZ = -3;
+                instructorZ = -4;
                 break;
             case kDifficultyMedium:
                 gameLogic_ = [[GameLogicB gameLogicB:songName] retain];
@@ -110,6 +112,10 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
                 gameLogic_ = nil;
                 break;
         }
+        
+        CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Background.png"];
+        coralBackground.anchorPoint = CGPointZero;
+        [self addChild:coralBackground z:coralBackgroundZ];        
         
         noteGenerator_ = [[NoteGenerator noteGenerator] retain];
         [self addChild:noteGenerator_ z:noteGeneratorZ];

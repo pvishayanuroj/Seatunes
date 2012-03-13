@@ -20,7 +20,6 @@
 		042FCAC714F1F21300E34155 /* Difficulty Menu Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAC14F1F21300E34155 /* Difficulty Menu Frame.png */; };
 		042FCACA14F1F21300E34155 /* Empty Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAAF14F1F21300E34155 /* Empty Star.png */; };
 		042FCACC14F1F21300E34155 /* Full Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB114F1F21300E34155 /* Full Star.png */; };
-		042FCACD14F1F21300E34155 /* Game Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB214F1F21300E34155 /* Game Background.png */; };
 		042FCACE14F1F21300E34155 /* Menu Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB314F1F21300E34155 /* Menu Background.png */; };
 		042FCACF14F1F21300E34155 /* Menu Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB414F1F21300E34155 /* Menu Button.png */; };
 		042FCAD014F1F21300E34155 /* Menu Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FCAB514F1F21300E34155 /* Menu Frame.png */; };
@@ -313,7 +312,6 @@
 		042FCAAC14F1F21300E34155 /* Difficulty Menu Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Difficulty Menu Frame.png"; sourceTree = "<group>"; };
 		042FCAAF14F1F21300E34155 /* Empty Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty Star.png"; sourceTree = "<group>"; };
 		042FCAB114F1F21300E34155 /* Full Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Full Star.png"; sourceTree = "<group>"; };
-		042FCAB214F1F21300E34155 /* Game Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Background.png"; sourceTree = "<group>"; };
 		042FCAB314F1F21300E34155 /* Menu Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Background.png"; sourceTree = "<group>"; };
 		042FCAB414F1F21300E34155 /* Menu Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Button.png"; sourceTree = "<group>"; };
 		042FCAB514F1F21300E34155 /* Menu Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Frame.png"; sourceTree = "<group>"; };
@@ -826,7 +824,6 @@
 				042FCAAC14F1F21300E34155 /* Difficulty Menu Frame.png */,
 				042FCAAF14F1F21300E34155 /* Empty Star.png */,
 				042FCAB114F1F21300E34155 /* Full Star.png */,
-				042FCAB214F1F21300E34155 /* Game Background.png */,
 				042FCAB314F1F21300E34155 /* Menu Background.png */,
 				042FCAB414F1F21300E34155 /* Menu Button.png */,
 				042FCAB514F1F21300E34155 /* Menu Frame.png */,
@@ -1617,7 +1614,6 @@
 				042FCAC714F1F21300E34155 /* Difficulty Menu Frame.png in Resources */,
 				042FCACA14F1F21300E34155 /* Empty Star.png in Resources */,
 				042FCACC14F1F21300E34155 /* Full Star.png in Resources */,
-				042FCACD14F1F21300E34155 /* Game Background.png in Resources */,
 				042FCACE14F1F21300E34155 /* Menu Background.png in Resources */,
 				042FCACF14F1F21300E34155 /* Menu Button.png in Resources */,
 				042FCAD014F1F21300E34155 /* Menu Frame.png in Resources */,

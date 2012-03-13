@@ -140,6 +140,7 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
 - (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
     if ([self containsTouchLocation:touch]) {
+        isClickable_ = NO;
         if (delegate_ && [delegate_ respondsToSelector:@selector(noteTouched:)]) {
             [delegate_ noteTouched:self];
         }
