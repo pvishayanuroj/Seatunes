@@ -26,7 +26,9 @@
 
 - (id) initStaff;
 
-- (void) addNote:(KeyType)keyType;
+- (void) addNote:(KeyType)keyType numID:(NSUInteger)numID;
+
+- (void) addStaticNote:(KeyType)keyType numID:(NSUInteger)numID;
  
 - (void) removeOldestNote;
 

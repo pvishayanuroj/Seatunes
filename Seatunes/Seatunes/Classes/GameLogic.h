@@ -9,16 +9,14 @@
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "KeyboardDelegate.h"
 #import "GameLogicDelegate.h"
-#import "NoteGeneratorDelegate.h"
 #import "SpeechReaderDelegate.h"
 
 @class Keyboard;
 @class Instructor;
 @class NoteGenerator;
 
-@interface GameLogic : CCNode <KeyboardDelegate, NoteGeneratorDelegate, SpeechReaderDelegate> {
+@interface GameLogic : CCNode <SpeechReaderDelegate> {
     
     Keyboard *keyboard_;
     
@@ -39,11 +37,11 @@
 
 - (id) initGameLogic:(DifficultyType)difficulty;
 
-- (void) setKeyboard:(Keyboard *)keyboard;
+- (void) touchesBegan:(NSSet *)touches;
 
-- (void) setInstructor:(Instructor *)instructor;
+- (void) touchesMoved:(NSSet *)touches;
 
-- (void) setNoteGenerator:(NoteGenerator *)noteGenerator;
+- (void) touchesEnded:(NSSet *)touches;
 
 - (void) runSingleSpeech:(SpeechType)speechType tapRequired:(BOOL)tapRequired;
 

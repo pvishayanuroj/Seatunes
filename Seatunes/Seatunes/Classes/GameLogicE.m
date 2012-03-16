@@ -70,25 +70,23 @@
 {
     if ([notes_ count] > noteIndex_) {
         
-        NSNumber *key = [notes_ objectAtIndex:noteIndex_++];
-        
+        NSNumber *key = [notes_ objectAtIndex:noteIndex_];
         KeyType keyType = [key integerValue];
         
         // As long as not blank, play the note and store
         if (keyType != kBlankNote) {
+            //[queue_ addObject:[NSNumber numberWithUnsignedInteger:noteIndex_]];            
             [queue_ addObject:key];
+            [staff_ addNote:keyType numID:noteIndex_];                    
         }
-        else {
-            
-        }
-        
-        [staff_ addNote:keyType];        
         
         // Check if this is the last note
         if ([notes_ count] == noteIndex_) {
             onLastNote_ = YES;
             [self unschedule:@selector(loop:)];                     
         }
+        
+        noteIndex_++;
     } 
 }
 
@@ -127,15 +125,15 @@
 
 - (void) staffNoteReturned:(StaffNote *)note
 {
-    NSUInteger numQueued = [queue_ count];    
+    //NSUInteger numQueued = [queue_ count];    
     
-    [staff_ removeAllNotes];
+    //[staff_ removeAllNotes];
     
-    [self unschedule:@selector(loop:)];
-    keyboard_.isClickable = NO;
-    noteIndex_ -= numQueued;
-    [queue_ removeAllObjects];
-    [self runSingleSpeech:kMediumReplay tapRequired:YES];    
+    //[self unschedule:@selector(loop:)];
+    //keyboard_.isClickable = NO;
+    //noteIndex_ -= numQueued;
+    //[queue_ removeAllObjects];
+    //[self runSingleSpeech:kMediumReplay tapRequired:YES];    
 }
 
 - (void) speechComplete:(SpeechType)speechType

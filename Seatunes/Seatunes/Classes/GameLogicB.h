@@ -25,13 +25,15 @@
     
     NSMutableArray *queue_;
     
-    NSMutableArray *notesHit_;    
-    
-    NSUInteger playerNoteIndex_;
+    NSMutableDictionary *notesHit_;    
     
     BOOL ignoreInput_;
     
     BOOL onLastNote_;
+    
+    CCSprite *fish_;
+    
+    CCSprite *spotlight_;
 }
 
 + (id) gameLogicB:(NSString *)songName;

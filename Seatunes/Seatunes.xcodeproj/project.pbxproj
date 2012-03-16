@@ -154,10 +154,15 @@
 		04DE522314FA1A2B00F8E45C /* Christmas Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */; };
 		04DE522614FA1A6F00F8E45C /* Christmas Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */; };
 		04DE522714FA1A6F00F8E45C /* Christmas Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */; };
+		DA00885B15116AA600E14BFB /* Angler Fish.png in Resources */ = {isa = PBXBuildFile; fileRef = DA00885915116AA600E14BFB /* Angler Fish.png */; };
+		DA00885C15116AA600E14BFB /* Spotlight.png in Resources */ = {isa = PBXBuildFile; fileRef = DA00885A15116AA600E14BFB /* Spotlight.png */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
 		DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B714D458B800D1437B /* MainMenuScene.m */; };
 		DA08E0C214D529CD00D1437B /* SongMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0C114D529C600D1437B /* SongMenuItem.m */; };
+		DA2D6E1015118D7F00BA02C0 /* Game Background Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2D6E0F15118D7F00BA02C0 /* Game Background Dark.png */; };
+		DA2D6E141512081600BA02C0 /* ParticleGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D6E131512081600BA02C0 /* ParticleGenerator.m */; };
+		DA2D6E171512E71000BA02C0 /* Light.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D6E161512E70F00BA02C0 /* Light.m */; };
 		DAB11F1A14C1E847009B60FB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1914C1E847009B60FB /* QuartzCore.framework */; };
 		DAB11F1C14C1E847009B60FB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1B14C1E847009B60FB /* OpenGLES.framework */; };
 		DAB11F1E14C1E847009B60FB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1D14C1E847009B60FB /* OpenAL.framework */; };
@@ -477,6 +482,8 @@
 		04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Christmas Pack.plist"; sourceTree = "<group>"; };
 		04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Pack Selected.png"; sourceTree = "<group>"; };
 		04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Pack Unselected.png"; sourceTree = "<group>"; };
+		DA00885915116AA600E14BFB /* Angler Fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Angler Fish.png"; sourceTree = "<group>"; };
+		DA00885A15116AA600E14BFB /* Spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spotlight.png; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
 		DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayViewController.m; path = Classes/CocosOverlayViewController.m; sourceTree = "<group>"; };
 		DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayScrollView.h; path = Classes/CocosOverlayScrollView.h; sourceTree = "<group>"; };
@@ -487,6 +494,11 @@
 		DA08E0BF14D5150300D1437B /* ScrollingMenuItemDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollingMenuItemDelegate.h; path = Classes/ScrollingMenuItemDelegate.h; sourceTree = "<group>"; };
 		DA08E0C014D529C000D1437B /* SongMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SongMenuItem.h; path = Classes/SongMenuItem.h; sourceTree = "<group>"; };
 		DA08E0C114D529C600D1437B /* SongMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SongMenuItem.m; path = Classes/SongMenuItem.m; sourceTree = "<group>"; };
+		DA2D6E0F15118D7F00BA02C0 /* Game Background Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Background Dark.png"; sourceTree = "<group>"; };
+		DA2D6E121512081600BA02C0 /* ParticleGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleGenerator.h; path = Classes/ParticleGenerator.h; sourceTree = "<group>"; };
+		DA2D6E131512081600BA02C0 /* ParticleGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParticleGenerator.m; path = Classes/ParticleGenerator.m; sourceTree = "<group>"; };
+		DA2D6E151512E70F00BA02C0 /* Light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Light.h; path = Classes/Light.h; sourceTree = "<group>"; };
+		DA2D6E161512E70F00BA02C0 /* Light.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Light.m; path = Classes/Light.m; sourceTree = "<group>"; };
 		DAB11F1514C1E847009B60FB /* Seatunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seatunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB11F1914C1E847009B60FB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DAB11F1B14C1E847009B60FB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -794,6 +806,9 @@
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DA2D6E0F15118D7F00BA02C0 /* Game Background Dark.png */,
+				DA00885915116AA600E14BFB /* Angler Fish.png */,
+				DA00885A15116AA600E14BFB /* Spotlight.png */,
 				04B20B88150ECF71009A729F /* Back Button.png */,
 				0478FB7C150D54B900B71A23 /* Bubble Icon Unselected.png */,
 				0478FB7D150D54B900B71A23 /* Bubble Icon.png */,
@@ -877,6 +892,8 @@
 				04B0D4EC1507027100A4A2B8 /* StaffNote.h */,
 				04B0D4ED1507027200A4A2B8 /* StaffNote.m */,
 				04B0D4F215070DEA00A4A2B8 /* StaffNoteDelegate.h */,
+				DA2D6E151512E70F00BA02C0 /* Light.h */,
+				DA2D6E161512E70F00BA02C0 /* Light.m */,
 			);
 			name = "Game Elements";
 			sourceTree = "<group>";
@@ -998,6 +1015,8 @@
 		04D3E46A14F47D2C00FB0928 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				DA2D6E121512081600BA02C0 /* ParticleGenerator.h */,
+				DA2D6E131512081600BA02C0 /* ParticleGenerator.m */,
 				042FCA4114E8C97600E34155 /* DataUtility.h */,
 				042FCA4214E8C97600E34155 /* DataUtility.m */,
 				DAB120E414C352C8009B60FB /* Utility.h */,
@@ -1689,6 +1708,9 @@
 				0478FB86150D54B900B71A23 /* Music Note Icon Unselected.png in Resources */,
 				0478FB87150D54B900B71A23 /* Music Note Icon.png in Resources */,
 				04B20B89150ECF71009A729F /* Back Button.png in Resources */,
+				DA00885B15116AA600E14BFB /* Angler Fish.png in Resources */,
+				DA00885C15116AA600E14BFB /* Spotlight.png in Resources */,
+				DA2D6E1015118D7F00BA02C0 /* Game Background Dark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1837,6 +1859,8 @@
 				04B0D4E81507024500A4A2B8 /* GameLogicE.m in Sources */,
 				04B0D4EB1507025F00A4A2B8 /* Staff.m in Sources */,
 				04B0D4EE1507027400A4A2B8 /* StaffNote.m in Sources */,
+				DA2D6E141512081600BA02C0 /* ParticleGenerator.m in Sources */,
+				DA2D6E171512E71000BA02C0 /* Light.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

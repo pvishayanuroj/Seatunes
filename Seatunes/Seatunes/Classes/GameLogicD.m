@@ -17,6 +17,9 @@
 
 @implementation GameLogicD
 
+static const CGFloat GLD_INSTRUCTOR_X = 200.0f;
+static const CGFloat GLD_INSTRUCTOR_Y = 550.0f;
+
 + (id) gameLogicD:(NSString *)songName
 {
     return [[[self alloc] initGameLogicD:songName] autorelease];
@@ -34,6 +37,22 @@
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
         notesHit_ = [[Utility generateBoolDictionary:YES size:[notes_ count]] retain];
         
+        CCSprite *background = [CCSprite spriteWithFile:@"Game Background No Coral.png"];
+        background.anchorPoint = CGPointZero;
+        [self addChild:background];         
+        
+        instructor_ = [Instructor instructor:kWhaleInstructor];
+        instructor_.position = ccp(GLD_INSTRUCTOR_X, GLD_INSTRUCTOR_Y);
+        [self addChild:instructor_];        
+        
+        noteGenerator_ = [[NoteGenerator noteGenerator] retain];
+        noteGenerator_.delegate = self;
+        [self addChild:noteGenerator_];   
+        
+        CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Background.png"];
+        coralBackground.anchorPoint = CGPointZero;
+        [self addChild:coralBackground];
+        
         // If first time playing
         if (isFirstPlay_) {
             [self runSingleSpeech:kMediumInstructions tapRequired:YES];
@@ -50,6 +69,7 @@
     [notes_ release];
     [queue_ release];
     [notesHit_ release];
+    [noteGenerator_ release];
     
     [super dealloc];
 }
@@ -72,7 +92,7 @@
         }
         
         // Check if this is the last note
-        if (([notes_ count] - 1)== noteIndex_) {
+        if (([notes_ count] - 1) == noteIndex_) {
             onLastNote_ = YES;
             [self unschedule:@selector(loop:)];                     
         }
@@ -118,7 +138,7 @@
     [queue_ removeObject:[NSNumber numberWithUnsignedInteger:note.numID]];            
     [noteGenerator_ popNoteWithID:note.numID];
     [notesHit_ setObject:[NSNumber numberWithBool:NO] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];    
-    [instructor_ showWrongNote];    
+    //[instructor_ showWrongNote];    
     
     // This note is the last note in the song
     if (onLastNote_ && [queue_ count] == 0) {
@@ -126,7 +146,6 @@
         [self runDelayedEndSpeech];                         
     }    
 }
-
 
 - (void) speechComplete:(SpeechType)speechType
 {

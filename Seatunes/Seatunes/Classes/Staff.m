@@ -8,12 +8,15 @@
 
 #import "Staff.h"
 #import "StaffNote.h"
+#import "ParticleGenerator.h"
 
 @implementation Staff
 
 static const CGFloat ST_NOTE_OFFSET_X = 250.0f;
 static const CGFloat ST_NOTE_X_BOUNDARY = -80.0f;
 static const CGFloat ST_STATIC_NOTE_OFFSET_X = -20.0f;
+static const CGFloat ST_PS_OFFSET_X = -15.0f;
+static const CGFloat ST_PS_OFFSET_Y = -15.0f;
 
 @synthesize delegate = delegate_;
 
@@ -72,17 +75,17 @@ static const CGFloat ST_STATIC_NOTE_OFFSET_X = -20.0f;
     }
 }
 
-- (void) addNote:(KeyType)keyType
+- (void) addNote:(KeyType)keyType numID:(NSUInteger)numID
 {
-    StaffNote *note = [StaffNote staffNote:keyType pos:ccp(ST_NOTE_OFFSET_X, 0)];
+    StaffNote *note = [StaffNote staffNote:keyType pos:ccp(ST_NOTE_OFFSET_X, 0) numID:numID];
     note.delegate = self;
     [notes_ addObject:note];
     [self addChild:note];
 }
 
-- (void) addStaticNote:(KeyType)keyType
+- (void) addStaticNote:(KeyType)keyType numID:(NSUInteger)numID
 {
-    StaffNote *note = [StaffNote staticStaffNote:keyType pos:ccp(ST_STATIC_NOTE_OFFSET_X, 0)];
+    StaffNote *note = [StaffNote staticStaffNote:keyType pos:ccp(ST_STATIC_NOTE_OFFSET_X, 0) numID:numID];
     note.delegate = self;    
     [notes_ addObject:note];
     [self addChild:note];    
@@ -91,8 +94,12 @@ static const CGFloat ST_STATIC_NOTE_OFFSET_X = -20.0f;
 - (void) removeOldestNote
 {
     if ([notes_ count] > 0) {
+        CGPoint pos = [[notes_ objectAtIndex:0] position];
         [[notes_ objectAtIndex:0] staffNoteDestroy];
         [notes_ removeObjectAtIndex:0];
+        ParticleGenerator *ps = [ParticleGenerator PSForNoteVanish];
+        ps.position = ccpAdd(pos, ccp(ST_PS_OFFSET_X, ST_PS_OFFSET_Y));
+        [self addChild:ps];
     }
 }
 

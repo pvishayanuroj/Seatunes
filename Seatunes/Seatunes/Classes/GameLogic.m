@@ -30,7 +30,7 @@ static const CGFloat GL_BUBBLE_Y = 600.0f;
 {
     if ((self = [super init])) {
         
-        NSString *key = [Utility difficultyPlayedKeyFromEnum:kDifficultyEasy];
+        NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty];
         isFirstPlay_ = ![[NSUserDefaults standardUserDefaults] boolForKey:key];        
         
         delegate_ = nil;
@@ -46,30 +46,29 @@ static const CGFloat GL_BUBBLE_Y = 600.0f;
 
 - (void) dealloc
 {
-    [keyboard_ release];
-    [instructor_ release];
-    [noteGenerator_ release];
-    
     [super dealloc];
 }
 
-- (void) setKeyboard:(Keyboard *)keyboard
+- (void) touchesBegan:(NSSet *)touches
 {
-    keyboard_ = [keyboard retain];
-    keyboard_.delegate = self;
-    keyboard_.isClickable = NO;
+    if (keyboard_) {
+        [keyboard_ touchesBegan:touches];
+    }
 }
 
-- (void) setInstructor:(Instructor *)instructor
+- (void) touchesMoved:(NSSet *)touches
 {
-    instructor_ = [instructor retain];
-} 
+    if (keyboard_) {
+        [keyboard_ touchesMoved:touches];
+    }
+}
 
-- (void) setNoteGenerator:(NoteGenerator *)noteGenerator
+- (void) touchesEnded:(NSSet *)touches
 {
-    noteGenerator_ = [noteGenerator retain];
-    noteGenerator_.delegate = self;
-} 
+    if (keyboard_) {
+        [keyboard_ touchesEnded:touches];    
+    }
+}
 
 - (void) runSingleSpeech:(SpeechType)speechType tapRequired:(BOOL)tapRequired
 {

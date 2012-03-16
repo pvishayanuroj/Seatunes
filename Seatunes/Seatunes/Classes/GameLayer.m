@@ -29,11 +29,6 @@
 
 @implementation GameLayer
 
-static const CGFloat GL_INSTRUCTOR_X = 200.0f;
-static const CGFloat GL_INSTRUCTOR_Y = 550.0f;
-static const CGFloat GL_KEYBOARD_X = 100.0f;
-static const CGFloat GL_KEYBOARD_Y = 100.0f;
-
 static const CGFloat GL_SIDEMENU_BUTTON_X = 970.0f;
 static const CGFloat GL_SIDEMENU_BUTTON_Y = 720.0f;
 static const CGFloat GL_SIDEMENU_ROTATION = 180.0f;
@@ -86,21 +81,10 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         [sideMenu_ addMenuItem:menuButton];        
         
         [self addChild:sideMenu_ z:0];
-        
-        keyboard_ = [[Keyboard keyboard:kEightKey] retain];
-        keyboard_.position = ccp(GL_KEYBOARD_X, GL_KEYBOARD_Y);
-        [self addChild:keyboard_];                
-        
-        NSInteger coralBackgroundZ = -3;
-        NSInteger noteGeneratorZ = -2;
-        NSInteger instructorZ = -1;
+
         switch (difficulty) {
             case kDifficultyEasy:
                 gameLogic_ = [[GameLogicD gameLogicD:songName] retain];
-                keyboard_.visible = NO;
-                coralBackgroundZ = -2;
-                noteGeneratorZ = -3;
-                instructorZ = -4;
                 break;
             case kDifficultyMedium:
                 gameLogic_ = [[GameLogicB gameLogicB:songName] retain];
@@ -112,22 +96,8 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
                 gameLogic_ = nil;
                 break;
         }
-        
-        CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Background.png"];
-        coralBackground.anchorPoint = CGPointZero;
-        [self addChild:coralBackground z:coralBackgroundZ];        
-        
-        noteGenerator_ = [[NoteGenerator noteGenerator] retain];
-        [self addChild:noteGenerator_ z:noteGeneratorZ];
-        
-        instructor_ = [[Instructor instructor:kWhaleInstructor] retain];
-        instructor_.position = ccp(GL_INSTRUCTOR_X, GL_INSTRUCTOR_Y);
-        [self addChild:instructor_ z:instructorZ];
-        
+
         gameLogic_.delegate = self; 
-        [gameLogic_ setInstructor:instructor_];
-        [gameLogic_ setKeyboard:keyboard_];
-        [gameLogic_ setNoteGenerator:noteGenerator_];
         [self addChild:gameLogic_];        
     }
     return self;
@@ -136,9 +106,6 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 - (void) dealloc
 {
     [gameLogic_ release];
-    [instructor_ release];
-    [keyboard_ release];
-    [noteGenerator_ release];
     [sideMenu_ release];
     [sideMenuButton_ release];
     [songName_ release];
@@ -151,21 +118,21 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 - (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if (!isPaused_) {
-        [keyboard_ touchesBegan:touches];
+        [gameLogic_ touchesBegan:touches];
     }
 }
 
 - (void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if (!isPaused_) {    
-        [keyboard_ touchesMoved:touches];
+        [gameLogic_ touchesMoved:touches];
     }
 }
 
 - (void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if (!isPaused_) {
-        [keyboard_ touchesEnded:touches];
+        [gameLogic_ touchesEnded:touches];
     }
 }
 
@@ -279,7 +246,6 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 - (void) showScoreMenu:(ScoreInfo)scoreInfo
 {
     sideMenuButton_.isClickable = NO;
-    keyboard_.isClickable = NO;
     
     ScoreLayer *scoreLayer = [ScoreLayer scoreLayer:scoreInfo];
     scoreLayer.delegate = self;
@@ -294,18 +260,12 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 {
     isPaused_ = YES;
     [gameLogic_ pauseHierarchy];
-    [instructor_ pauseHierarchy];
-    [keyboard_ pauseHierarchy];
-    [noteGenerator_ pauseHierarchy];
 }
 
 - (void) resumeGame
 {
     isPaused_ = NO;
     [gameLogic_ resumeHierarchy];
-    [instructor_ resumeHierarchy];
-    [keyboard_ resumeHierarchy];
-    [noteGenerator_ resumeHierarchy];
 }
 
 @end

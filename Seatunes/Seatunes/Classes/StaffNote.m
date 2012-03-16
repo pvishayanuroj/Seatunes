@@ -11,6 +11,7 @@
 
 @implementation StaffNote
 
+@synthesize numID = numID_;
 @synthesize delegate = delegate_;
 
 static const CGFloat SN_LOWC_YOFFSET = -20.0f;
@@ -19,22 +20,23 @@ static const CGFloat SN_REST_YOFFSET = 0.0f;
 static const CGFloat SN_NOTE_PADDING = 7.5f;
 static const CGFloat SN_MOVE_X = -400.0f;
 
-+ (id) staticStaffNote:(KeyType)keyType pos:(CGPoint)pos
++ (id) staticStaffNote:(KeyType)keyType pos:(CGPoint)pos numID:(NSUInteger)numID
 {
-    return [[[self alloc] initStaffNote:keyType pos:pos isStatic:YES] autorelease];
+    return [[[self alloc] initStaffNote:keyType pos:pos numID:numID isStatic:YES] autorelease];
 }
 
-+ (id) staffNote:(KeyType)keyType pos:(CGPoint)pos
++ (id) staffNote:(KeyType)keyType pos:(CGPoint)pos numID:(NSUInteger)numID
 {
-    return [[[self alloc] initStaffNote:keyType pos:pos isStatic:NO] autorelease];
+    return [[[self alloc] initStaffNote:keyType pos:pos numID:numID isStatic:NO] autorelease];
 }
 
-- (id) initStaffNote:(KeyType)keyType pos:(CGPoint)pos isStatic:(BOOL)isStatic
+- (id) initStaffNote:(KeyType)keyType pos:(CGPoint)pos numID:(NSUInteger)numID isStatic:(BOOL)isStatic
 {
     if ((self = [super init])) {
         
         delegate_ = nil;
         line_ = nil;
+        numID_ = numID;        
         self.position = pos;
         
         if (keyType == kBlankNote) {

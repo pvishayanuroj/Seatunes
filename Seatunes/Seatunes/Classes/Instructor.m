@@ -131,7 +131,7 @@
 - (BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {	
     if (clickable_ && [self containsTouchLocation:touch]) {
-        NSInteger note = arc4random() % 8;
+        //NSInteger note = arc4random() % 8;
         //[self playNote:note];
         return YES;
     }

@@ -22,22 +22,22 @@ static const CGFloat NG_FLOOR3_X = 900.0f;
 static const CGFloat NG_FLOOR3_Y = 150.0f;
 
 static const CGFloat NG_CR1_S_X = 353.0f;
-static const CGFloat NG_CR1_S_Y = 490.0f;
+static const CGFloat NG_CR1_S_Y = 205.0f;
 static const CGFloat NG_CR1_C1_X = 150.0f; 
 static const CGFloat NG_CR1_C1_Y = 0.0f;
 static const CGFloat NG_CR1_C2_X = 240.0f;
 static const CGFloat NG_CR1_C2_Y = 100.0f;
 static const CGFloat NG_CR1_E_X = 200.0f;
-static const CGFloat NG_CR1_E_Y = 500.0f;
+static const CGFloat NG_CR1_E_Y = 750.0f;
 
 static const CGFloat NG_CR2_S_X = 353.0f;
-static const CGFloat NG_CR2_S_Y = 490.0f;
+static const CGFloat NG_CR2_S_Y = 205.0f;
 static const CGFloat NG_CR2_C1_X = 180.0f; 
 static const CGFloat NG_CR2_C1_Y = 0.0f;
 static const CGFloat NG_CR2_C2_X = 270.0f;
 static const CGFloat NG_CR2_C2_Y = 100.0f;
 static const CGFloat NG_CR2_E_X = 250.0f;
-static const CGFloat NG_CR2_E_Y = 500.0f;
+static const CGFloat NG_CR2_E_Y = 750.0f;
 
 // Leftmost coral
 static const CGFloat NG_CR3_S_X = 10.0f;

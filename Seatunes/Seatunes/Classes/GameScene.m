@@ -25,10 +25,6 @@
         
         [self animationLoader:@"sheet01_animations" spriteSheetName:@"sheet01"];
         
-        CCSprite *background = [CCSprite spriteWithFile:@"Game Background No Coral.png"];
-        background.anchorPoint = CGPointZero;
-        [self addChild:background];
-        
         GameLayer *gameLayer = [GameLayer startWithDifficulty:difficulty songName:songName];
         [self addChild:gameLayer];    
         

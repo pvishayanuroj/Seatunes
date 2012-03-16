@@ -26,12 +26,6 @@
  
     GameLogic *gameLogic_;
     
-    Instructor *instructor_;
-    
-    Keyboard *keyboard_;
-    
-    NoteGenerator *noteGenerator_;
-    
     Menu *sideMenu_;
     
     Button *sideMenuButton_;

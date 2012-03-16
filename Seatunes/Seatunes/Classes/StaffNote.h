@@ -17,17 +17,20 @@
     
     CCSprite *line_;
     
+    NSUInteger numID_;
+    
     id <StaffNoteDelegate> delegate_;
     
 }
 
+@property (nonatomic, readonly) NSUInteger numID;
 @property (nonatomic, assign) id <StaffNoteDelegate> delegate;
 
-+ (id) staffNote:(KeyType)keyType pos:(CGPoint)pos;
++ (id) staffNote:(KeyType)keyType pos:(CGPoint)pos numID:(NSUInteger)numID;
 
-+ (id) staticStaffNote:(KeyType)keyType pos:(CGPoint)pos;
++ (id) staticStaffNote:(KeyType)keyType pos:(CGPoint)pos numID:(NSUInteger)numID;
 
-- (id) initStaffNote:(KeyType)keyType pos:(CGPoint)pos isStatic:(BOOL)isStatic;
+- (id) initStaffNote:(KeyType)keyType pos:(CGPoint)pos numID:(NSUInteger)numID isStatic:(BOOL)isStatic;
 
 - (void) move;
 
