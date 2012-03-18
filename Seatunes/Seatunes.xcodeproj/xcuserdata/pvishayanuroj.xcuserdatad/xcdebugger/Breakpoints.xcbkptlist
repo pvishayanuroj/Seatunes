@@ -7,13 +7,26 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Seatunes/Classes/Light.m"
-         timestampString = "353720803.284176"
+         filePath = "Seatunes/Classes/GameLogicB.m"
+         timestampString = "353769602.388445"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
-         landmarkName = "-noteIntersectLight:"
+         startingLineNumber = "115"
+         endingLineNumber = "115"
+         landmarkName = "-loop:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Seatunes/Classes/GameLogicB.m"
+         timestampString = "353769631.765906"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "210"
+         endingLineNumber = "210"
+         landmarkName = "-noteCrossedBoundary:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

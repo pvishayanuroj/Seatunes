@@ -19,13 +19,13 @@ static const CGFloat LT_SPOTLIGHT_SCALE = 0.7f;
 static const CGFloat LT_BOUNDARY_OFFSET_X = -100.0f;
 static const CGFloat LT_BOUNDARY_OFFSET_Y = 50.0f;
 static const CGFloat LT_LOWERLEFT_X = -200.0f;
-static const CGFloat LT_LOWERLEFT_Y = -50.0f;
+static const CGFloat LT_LOWERLEFT_Y = -65.0f;
 static const CGFloat LT_LOWERRIGHT_X = 0.0f;
-static const CGFloat LT_LOWERRIGHT_Y = -20.0f;
+static const CGFloat LT_LOWERRIGHT_Y = -30.0f;
 static const CGFloat LT_UPPERLEFT_X = -200.0f;
-static const CGFloat LT_UPPERLEFT_Y = 50.0f;
+static const CGFloat LT_UPPERLEFT_Y = 65.0f;
 static const CGFloat LT_UPPERRIGHT_X = 0.0f;
-static const CGFloat LT_UPPERRIGHT_Y = 20.0f;
+static const CGFloat LT_UPPERRIGHT_Y = 30.0f;
 
 + (id) light
 {
@@ -69,7 +69,16 @@ static const CGFloat LT_UPPERRIGHT_Y = 20.0f;
 
 - (void) turnOn:(KeyType)key
 {
-    spotlight_.visible = YES;
+    [spotlight_ removeFromParentAndCleanup:YES];
+    [spotlight_ release];
+    
+    NSString *spriteName = [NSString stringWithFormat:@"Spotlight %@.png", [Utility keyNameFromEnum:key]];
+    spotlight_ = [[CCSprite spriteWithFile:spriteName] retain];
+    spotlight_.scale = LT_SPOTLIGHT_SCALE;
+    spotlight_.position = ccp(LT_SPOTLIGHT_X, LT_SPOTLIGHT_Y);    
+    [self addChild:spotlight_ z:-1];      
+    
+    currentKey_ = key;
 }
 
 - (void) turnOff
@@ -79,13 +88,16 @@ static const CGFloat LT_UPPERRIGHT_Y = 20.0f;
 
 - (BOOL) noteIntersectLight:(Note *)note
 {
-    CGFloat leftBoundary = LT_LOWERLEFT_X + LT_BOUNDARY_OFFSET_X + self.position.x;
-    CGFloat rightBoundary = LT_LOWERRIGHT_X + LT_BOUNDARY_OFFSET_X + self.position.x;    
+    if (spotlight_.visible && note.keyType == currentKey_) {
     
-    if (note.position.x > leftBoundary && note.position.x < rightBoundary) {
-        CGFloat yLower = [self yLowerBoundaryForPos:note.position];
-        CGFloat yUpper = [self yUpperBoundaryForPos:note.position];
-        return (note.position.y + note.radius) > yLower && (note.position.y - note.radius) < yUpper;
+        CGFloat leftBoundary = LT_LOWERLEFT_X + LT_BOUNDARY_OFFSET_X + self.position.x;
+        CGFloat rightBoundary = LT_LOWERRIGHT_X + LT_BOUNDARY_OFFSET_X + self.position.x;    
+        
+        if (note.position.x > leftBoundary && note.position.x < rightBoundary) {
+            CGFloat yLower = [self yLowerBoundaryForPos:note.position];
+            CGFloat yUpper = [self yUpperBoundaryForPos:note.position];
+            return (note.position.y + note.radius) > yLower && (note.position.y - note.radius) < yUpper;
+        }
     }
     
     return NO;
@@ -93,13 +105,17 @@ static const CGFloat LT_UPPERRIGHT_Y = 20.0f;
 
 - (BOOL) noteWithinLight:(Note *)note
 {
-    CGFloat leftBoundary = LT_LOWERLEFT_X + LT_BOUNDARY_OFFSET_X + self.position.x;
-    CGFloat rightBoundary = LT_LOWERRIGHT_X + LT_BOUNDARY_OFFSET_X + self.position.x;    
+    if (spotlight_.visible && note.keyType == currentKey_) {    
     
-    if (note.position.x > leftBoundary && note.position.x < rightBoundary) {
-        CGFloat yLower = [self yLowerBoundaryForPos:note.position];
-        CGFloat yUpper = [self yUpperBoundaryForPos:note.position];
-        return (note.position.y - note.radius) > yLower && (note.position.y + note.radius) < yUpper;
+        CGFloat leftBoundary = LT_LOWERLEFT_X + LT_BOUNDARY_OFFSET_X + self.position.x;
+        CGFloat rightBoundary = LT_LOWERRIGHT_X + LT_BOUNDARY_OFFSET_X + self.position.x;    
+        
+        if (note.position.x > leftBoundary && note.position.x < rightBoundary) {
+            CGFloat yLower = [self yLowerBoundaryForPos:note.position];
+            CGFloat yUpper = [self yUpperBoundaryForPos:note.position];
+            return (note.position.y - note.radius) > yLower && (note.position.y + note.radius) < yUpper;
+        }
+        
     }
     
     return NO;    

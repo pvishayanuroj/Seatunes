@@ -154,6 +154,15 @@
 		04DE522314FA1A2B00F8E45C /* Christmas Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */; };
 		04DE522614FA1A6F00F8E45C /* Christmas Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */; };
 		04DE522714FA1A6F00F8E45C /* Christmas Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */; };
+		AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */; };
+		AE787164151614F6009E9614 /* Spotlight A4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78715C151614F6009E9614 /* Spotlight A4.png */; };
+		AE787165151614F6009E9614 /* Spotlight B4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78715D151614F6009E9614 /* Spotlight B4.png */; };
+		AE787166151614F6009E9614 /* Spotlight C4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78715E151614F6009E9614 /* Spotlight C4.png */; };
+		AE787167151614F6009E9614 /* Spotlight C5.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78715F151614F6009E9614 /* Spotlight C5.png */; };
+		AE787168151614F6009E9614 /* Spotlight D4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE787160151614F6009E9614 /* Spotlight D4.png */; };
+		AE787169151614F6009E9614 /* Spotlight E4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE787161151614F6009E9614 /* Spotlight E4.png */; };
+		AE78716A151614F6009E9614 /* Spotlight F4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE787162151614F6009E9614 /* Spotlight F4.png */; };
+		AE78716B151614F6009E9614 /* Spotlight G4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE787163151614F6009E9614 /* Spotlight G4.png */; };
 		AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */; };
 		DA00885B15116AA600E14BFB /* Angler Fish.png in Resources */ = {isa = PBXBuildFile; fileRef = DA00885915116AA600E14BFB /* Angler Fish.png */; };
 		DA00885C15116AA600E14BFB /* Spotlight.png in Resources */ = {isa = PBXBuildFile; fileRef = DA00885A15116AA600E14BFB /* Spotlight.png */; };
@@ -491,6 +500,15 @@
 		04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Christmas Pack.plist"; sourceTree = "<group>"; };
 		04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Pack Selected.png"; sourceTree = "<group>"; };
 		04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Pack Unselected.png"; sourceTree = "<group>"; };
+		AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
+		AE78715C151614F6009E9614 /* Spotlight A4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight A4.png"; sourceTree = "<group>"; };
+		AE78715D151614F6009E9614 /* Spotlight B4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight B4.png"; sourceTree = "<group>"; };
+		AE78715E151614F6009E9614 /* Spotlight C4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight C4.png"; sourceTree = "<group>"; };
+		AE78715F151614F6009E9614 /* Spotlight C5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight C5.png"; sourceTree = "<group>"; };
+		AE787160151614F6009E9614 /* Spotlight D4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight D4.png"; sourceTree = "<group>"; };
+		AE787161151614F6009E9614 /* Spotlight E4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight E4.png"; sourceTree = "<group>"; };
+		AE787162151614F6009E9614 /* Spotlight F4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight F4.png"; sourceTree = "<group>"; };
+		AE787163151614F6009E9614 /* Spotlight G4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight G4.png"; sourceTree = "<group>"; };
 		AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Muted.m4a"; sourceTree = "<group>"; };
 		DA00885915116AA600E14BFB /* Angler Fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Angler Fish.png"; sourceTree = "<group>"; };
 		DA00885A15116AA600E14BFB /* Spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spotlight.png; sourceTree = "<group>"; };
@@ -824,6 +842,14 @@
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AE78715C151614F6009E9614 /* Spotlight A4.png */,
+				AE78715D151614F6009E9614 /* Spotlight B4.png */,
+				AE78715E151614F6009E9614 /* Spotlight C4.png */,
+				AE78715F151614F6009E9614 /* Spotlight C5.png */,
+				AE787160151614F6009E9614 /* Spotlight D4.png */,
+				AE787161151614F6009E9614 /* Spotlight E4.png */,
+				AE787162151614F6009E9614 /* Spotlight F4.png */,
+				AE787163151614F6009E9614 /* Spotlight G4.png */,
 				DA2D6E0F15118D7F00BA02C0 /* Game Background Dark.png */,
 				DA00885915116AA600E14BFB /* Angler Fish.png */,
 				DA00885A15116AA600E14BFB /* Spotlight.png */,
@@ -1059,6 +1085,7 @@
 		04DE51B614F7492C00F8E45C /* Sound Effects */ = {
 			isa = PBXGroup;
 			children = (
+				AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */,
 				DA2D6E361514C24000BA02C0 /* Clam Hit.m4a */,
 				04DE51DB14F895C500F8E45C /* Menu Sound A1.caf */,
 				04DE51DC14F895C500F8E45C /* Menu Sound B0.caf */,
@@ -1747,6 +1774,15 @@
 				DA2D6E351514C0E500BA02C0 /* G4-Muted.m4a in Resources */,
 				DA2D6E371514C24000BA02C0 /* Clam Hit.m4a in Resources */,
 				AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */,
+				AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */,
+				AE787164151614F6009E9614 /* Spotlight A4.png in Resources */,
+				AE787165151614F6009E9614 /* Spotlight B4.png in Resources */,
+				AE787166151614F6009E9614 /* Spotlight C4.png in Resources */,
+				AE787167151614F6009E9614 /* Spotlight C5.png in Resources */,
+				AE787168151614F6009E9614 /* Spotlight D4.png in Resources */,
+				AE787169151614F6009E9614 /* Spotlight E4.png in Resources */,
+				AE78716A151614F6009E9614 /* Spotlight F4.png in Resources */,
+				AE78716B151614F6009E9614 /* Spotlight G4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

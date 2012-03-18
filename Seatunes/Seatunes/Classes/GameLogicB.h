@@ -28,6 +28,8 @@
     
     NSMutableDictionary *notesHit_;    
     
+    NSMutableArray *notesToRemove_;    
+    
     Light *light_;
     
     BOOL ignoreInput_;
@@ -41,6 +43,10 @@
 - (id) initGameLogicB:(NSString *)songName;
 
 - (void) start;
+
+- (void) noteFullyInLight:(Note *)note;
+
+- (void) notePartiallyInLight:(Note *)note;
 
 - (void) endSong;
 

@@ -220,7 +220,7 @@
             name = @"Page Flip.caf";
             break;
         case kClamHit:
-            name = @"Clam Hit.caf";
+            name = @"Clam Hit.m4a";
             break;
         case kMenuB0:
             name = @"Menu Sound B0.caf";
@@ -248,7 +248,10 @@
             break; 
         case kMenuC2:
             name = @"Menu Sound C2.caf";
-            break;             
+            break;      
+        case kBubblePop:
+            name = @"Bubble Pop.mp3";
+            break;
         default:
             break;
     }

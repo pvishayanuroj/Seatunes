@@ -18,6 +18,8 @@
     
     CCSprite *spotlight_;    
     
+    KeyType currentKey_;
+    
     CGFloat lowerBoundSlope_;
     
     CGFloat upperBoundSlope_;    

@@ -8,7 +8,6 @@
 
 #import "NoteGenerator.h"
 #import "Note.h"
-#import "Light.h"
 
 @implementation NoteGenerator
 
@@ -89,7 +88,7 @@ static const CGFloat CR_C2_Y[6] = {NG_CR1_C2_Y, NG_CR2_C2_Y, NG_CR3_C2_Y, NG_CR4
 static const CGFloat CR_E_X[6] = {NG_CR1_E_X, NG_CR2_E_X, NG_CR3_E_X, NG_CR4_E_X, NG_CR5_E_X, NG_CR6_E_X};
 static const CGFloat CR_E_Y[6] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y, NG_CR5_E_Y, NG_CR6_E_Y};
 
-@synthesize light = light_;
+@synthesize notes = notes_;
 @synthesize delegate = delegate_;
 
 + (id) noteGenerator
@@ -101,26 +100,22 @@ static const CGFloat CR_E_Y[6] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y
 {
     if ((self = [super init])) {
         
-        light_ = nil;
         delegate_ = nil;
         curveCounter_ = 0;        
         notes_ = [[NSMutableArray arrayWithCapacity:10] retain];
-        notesToRemove_ = [[NSMutableArray arrayWithCapacity:10] retain];
         
-        [self schedule:@selector(loop) interval:1.0f/60.0f];        
     }
     return self;
 }
 
 - (void) dealloc
 {
-    [light_ release];
     [notes_ release];
-    [notesToRemove_ release];
     
     [super dealloc];
 }
 
+/*
 - (void) loop
 {
     for (Note *note in notes_) {
@@ -159,6 +154,7 @@ static const CGFloat CR_E_Y[6] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y
     [notes_ removeObjectsAtIndexes:toRemove];    
     [notesToRemove_ removeAllObjects];
 }
+ */
 
 - (void) addInstructorNote:(KeyType)keyType numID:(NSUInteger)numID
 {
@@ -199,27 +195,21 @@ static const CGFloat CR_E_Y[6] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y
     }
 }
 
-/*
-- (void) popOldestNote
-{
-    if ([notes_ count] > 0) {   
-        [[notes_ objectAtIndex:0] destroy];
-        [notes_ removeObjectAtIndex:0];
-    }
-}
-
-- (void) popNewestNote
-{
-    if ([notes_ count] > 0) {
-        [[notes_ lastObject] destroy];
-        [notes_ removeLastObject];
-    }
-}
- */
-
 - (void) popNoteWithID:(NSUInteger)numID
 {
-    [notesToRemove_ addObject:[NSNumber numberWithUnsignedInteger:numID]];
+    NSMutableIndexSet *toRemove = [NSMutableIndexSet indexSet];
+    NSUInteger idx = 0;    
+    
+    for (Note *note in notes_) {
+        if (note.numID == numID) {
+            [note destroy];
+            [toRemove addIndex:idx];
+            break;
+        }
+        idx++;
+    }
+    
+    [notes_ removeObjectsAtIndexes:toRemove];  
 }
 
 #pragma mark - Delegate Methods
