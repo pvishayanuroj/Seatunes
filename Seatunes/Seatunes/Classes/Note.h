@@ -19,6 +19,8 @@
     
     ccBezierConfig bezier_;    
     
+    CGFloat radius_;
+    
     BOOL poppable_;
     
     BOOL isClickable_;
@@ -27,11 +29,15 @@
     
     BOOL boundaryCrossFlag_;
     
+    BOOL lightCrossFlag_;
+    
     NSUInteger numID_;        
     
     id <NoteDelegate> delegate_; 
 }
 
+@property (nonatomic, readonly) CGFloat radius;
+@property (nonatomic, assign) BOOL lightCrossFlag;
 @property (nonatomic, readonly) KeyType keyType;
 @property (nonatomic, readonly) NSUInteger numID;
 @property (nonatomic, assign) id <NoteDelegate> delegate;

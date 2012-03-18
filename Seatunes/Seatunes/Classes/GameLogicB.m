@@ -13,6 +13,8 @@
 #import "NoteGenerator.h"
 #import "Note.h"
 #import "SpeechReader.h"
+#import "AudioManager.h"
+#import "Light.h"
 
 @implementation GameLogicB
 
@@ -20,10 +22,8 @@ static const CGFloat GLB_INSTRUCTOR_X = 200.0f;
 static const CGFloat GLB_INSTRUCTOR_Y = 265.0f;
 static const CGFloat GLB_KEYBOARD_X = 100.0f;
 static const CGFloat GLB_KEYBOARD_Y = 100.0f;
-static const CGFloat GLB_FISH_X = 800.0f;
-static const CGFloat GLB_FISH_Y = 600.0f;
-static const CGFloat GLB_SPOTLIGHT_X = 600.0f;
-static const CGFloat GLB_SPOTLIGHT_Y = 650.0f;
+static const CGFloat GLB_LIGHT_X = 800.0f;
+static const CGFloat GLB_LIGHT_Y = 600.0f;
 static const CGFloat GLB_SPOTLIGHT_SCALE = 0.7f;
 
 + (id) gameLogicB:(NSString *)songName
@@ -48,6 +48,7 @@ static const CGFloat GLB_SPOTLIGHT_SCALE = 0.7f;
         
         keyboard_ = [[Keyboard keyboard:kEightKey] retain];
         keyboard_.delegate = self;
+        keyboard_.isKeyboardMuted = YES;
         keyboard_.position = ccp(GLB_KEYBOARD_X, GLB_KEYBOARD_Y);
         [self addChild:keyboard_];                
         
@@ -59,15 +60,11 @@ static const CGFloat GLB_SPOTLIGHT_SCALE = 0.7f;
         instructor_.position = ccp(GLB_INSTRUCTOR_X, GLB_INSTRUCTOR_Y);
         [self addChild:instructor_];        
         
-        fish_ = [[CCSprite spriteWithFile:@"Angler Fish.png"] retain];
-        fish_.position = ccp(GLB_FISH_X, GLB_FISH_Y);
-        [self addChild:fish_];
-        spotlight_ = [[CCSprite spriteWithFile:@"Spotlight.png"] retain];
-        spotlight_.scale = GLB_SPOTLIGHT_SCALE;
-        spotlight_.position = ccp(GLB_SPOTLIGHT_X, GLB_SPOTLIGHT_Y);
-        //spotlight_.visible = NO;
-        [self addChild:spotlight_];
-        
+        light_ = [Light light];
+        light_.position = ccp(GLB_LIGHT_X, GLB_LIGHT_Y);
+        [self addChild:light_];
+        noteGenerator_.light = light_;
+
         // If first time playing
         if (isFirstPlay_) {
             [self runSingleSpeech:kMediumInstructions tapRequired:YES];
@@ -86,8 +83,6 @@ static const CGFloat GLB_SPOTLIGHT_SCALE = 0.7f;
     [notesHit_ release];
     [keyboard_ release];
     [noteGenerator_ release];
-    [fish_ release];
-    [spotlight_ release];
     
     [super dealloc];
 }
@@ -126,6 +121,10 @@ static const CGFloat GLB_SPOTLIGHT_SCALE = 0.7f;
 - (void) keyboardKeyPressed:(KeyType)keyType
 {
     if (!ignoreInput_) {
+        
+        [light_ turnOn:keyType];
+        
+        /*
         NSNumber *key = [NSNumber numberWithInteger:keyType];
     
         if ([queue_ count] > 0) {
@@ -149,21 +148,40 @@ static const CGFloat GLB_SPOTLIGHT_SCALE = 0.7f;
                 [instructor_ showWrongNote];
             }
         }
+         */
     }
+}
+
+- (void) keyboardKeyDepressed:(KeyType)keyType time:(CGFloat)time
+{
+    [light_ turnOff];
 }
 
 - (void) noteCrossedBoundary:(Note *)note
 {
     [queue_ removeObject:[NSNumber numberWithUnsignedInteger:note.numID]];            
     [noteGenerator_ popNoteWithID:note.numID];
-    [notesHit_ setObject:[NSNumber numberWithBool:NO] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];    
-    [instructor_ showWrongNote];    
+    [notesHit_ setObject:[NSNumber numberWithBool:NO] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];       
     
     // This note is the last note in the song
     if (onLastNote_ && [queue_ count] == 0) {
         ignoreInput_ = YES;            
         [self runDelayedEndSpeech];                         
     }        
+}
+
+- (void) noteFullyInLight:(Note *)note
+{
+    [[AudioManager audioManager] playSound:note.keyType instrument:kPiano];
+    [queue_ removeObject:[NSNumber numberWithUnsignedInteger:note.numID]];            
+    [noteGenerator_ popNoteWithID:note.numID];    
+}
+
+- (void) notePartiallyInLight:(Note *)note
+{
+    [[AudioManager audioManager] playSound:note.keyType instrument:kMuted];
+    [queue_ removeObject:[NSNumber numberWithUnsignedInteger:note.numID]];            
+    [noteGenerator_ popNoteWithID:note.numID];    
 }
 
 - (void) speechComplete:(SpeechType)speechType

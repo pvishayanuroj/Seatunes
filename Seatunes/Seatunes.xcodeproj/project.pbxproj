@@ -154,6 +154,7 @@
 		04DE522314FA1A2B00F8E45C /* Christmas Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */; };
 		04DE522614FA1A6F00F8E45C /* Christmas Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */; };
 		04DE522714FA1A6F00F8E45C /* Christmas Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */; };
+		AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */; };
 		DA00885B15116AA600E14BFB /* Angler Fish.png in Resources */ = {isa = PBXBuildFile; fileRef = DA00885915116AA600E14BFB /* Angler Fish.png */; };
 		DA00885C15116AA600E14BFB /* Spotlight.png in Resources */ = {isa = PBXBuildFile; fileRef = DA00885A15116AA600E14BFB /* Spotlight.png */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
@@ -163,6 +164,14 @@
 		DA2D6E1015118D7F00BA02C0 /* Game Background Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2D6E0F15118D7F00BA02C0 /* Game Background Dark.png */; };
 		DA2D6E141512081600BA02C0 /* ParticleGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D6E131512081600BA02C0 /* ParticleGenerator.m */; };
 		DA2D6E171512E71000BA02C0 /* Light.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D6E161512E70F00BA02C0 /* Light.m */; };
+		DA2D6E2F1514C0E500BA02C0 /* A4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA2D6E281514C0E500BA02C0 /* A4-Muted.m4a */; };
+		DA2D6E301514C0E500BA02C0 /* B4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA2D6E291514C0E500BA02C0 /* B4-Muted.m4a */; };
+		DA2D6E311514C0E500BA02C0 /* C5-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA2D6E2A1514C0E500BA02C0 /* C5-Muted.m4a */; };
+		DA2D6E321514C0E500BA02C0 /* D4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA2D6E2B1514C0E500BA02C0 /* D4-Muted.m4a */; };
+		DA2D6E331514C0E500BA02C0 /* E4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA2D6E2C1514C0E500BA02C0 /* E4-Muted.m4a */; };
+		DA2D6E341514C0E500BA02C0 /* F4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA2D6E2D1514C0E500BA02C0 /* F4-Muted.m4a */; };
+		DA2D6E351514C0E500BA02C0 /* G4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA2D6E2E1514C0E500BA02C0 /* G4-Muted.m4a */; };
+		DA2D6E371514C24000BA02C0 /* Clam Hit.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA2D6E361514C24000BA02C0 /* Clam Hit.m4a */; };
 		DAB11F1A14C1E847009B60FB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1914C1E847009B60FB /* QuartzCore.framework */; };
 		DAB11F1C14C1E847009B60FB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1B14C1E847009B60FB /* OpenGLES.framework */; };
 		DAB11F1E14C1E847009B60FB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1D14C1E847009B60FB /* OpenAL.framework */; };
@@ -482,6 +491,7 @@
 		04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Christmas Pack.plist"; sourceTree = "<group>"; };
 		04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Pack Selected.png"; sourceTree = "<group>"; };
 		04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Pack Unselected.png"; sourceTree = "<group>"; };
+		AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Muted.m4a"; sourceTree = "<group>"; };
 		DA00885915116AA600E14BFB /* Angler Fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Angler Fish.png"; sourceTree = "<group>"; };
 		DA00885A15116AA600E14BFB /* Spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spotlight.png; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
@@ -499,6 +509,14 @@
 		DA2D6E131512081600BA02C0 /* ParticleGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParticleGenerator.m; path = Classes/ParticleGenerator.m; sourceTree = "<group>"; };
 		DA2D6E151512E70F00BA02C0 /* Light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Light.h; path = Classes/Light.h; sourceTree = "<group>"; };
 		DA2D6E161512E70F00BA02C0 /* Light.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Light.m; path = Classes/Light.m; sourceTree = "<group>"; };
+		DA2D6E281514C0E500BA02C0 /* A4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-Muted.m4a"; sourceTree = "<group>"; };
+		DA2D6E291514C0E500BA02C0 /* B4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B4-Muted.m4a"; sourceTree = "<group>"; };
+		DA2D6E2A1514C0E500BA02C0 /* C5-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C5-Muted.m4a"; sourceTree = "<group>"; };
+		DA2D6E2B1514C0E500BA02C0 /* D4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D4-Muted.m4a"; sourceTree = "<group>"; };
+		DA2D6E2C1514C0E500BA02C0 /* E4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "E4-Muted.m4a"; sourceTree = "<group>"; };
+		DA2D6E2D1514C0E500BA02C0 /* F4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "F4-Muted.m4a"; sourceTree = "<group>"; };
+		DA2D6E2E1514C0E500BA02C0 /* G4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-Muted.m4a"; sourceTree = "<group>"; };
+		DA2D6E361514C24000BA02C0 /* Clam Hit.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Clam Hit.m4a"; sourceTree = "<group>"; };
 		DAB11F1514C1E847009B60FB /* Seatunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seatunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB11F1914C1E847009B60FB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DAB11F1B14C1E847009B60FB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1041,6 +1059,7 @@
 		04DE51B614F7492C00F8E45C /* Sound Effects */ = {
 			isa = PBXGroup;
 			children = (
+				DA2D6E361514C24000BA02C0 /* Clam Hit.m4a */,
 				04DE51DB14F895C500F8E45C /* Menu Sound A1.caf */,
 				04DE51DC14F895C500F8E45C /* Menu Sound B0.caf */,
 				04DE51DD14F895C500F8E45C /* Menu Sound B1.caf */,
@@ -1470,6 +1489,14 @@
 		DAB120E714C35A08009B60FB /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */,
+				DA2D6E281514C0E500BA02C0 /* A4-Muted.m4a */,
+				DA2D6E291514C0E500BA02C0 /* B4-Muted.m4a */,
+				DA2D6E2A1514C0E500BA02C0 /* C5-Muted.m4a */,
+				DA2D6E2B1514C0E500BA02C0 /* D4-Muted.m4a */,
+				DA2D6E2C1514C0E500BA02C0 /* E4-Muted.m4a */,
+				DA2D6E2D1514C0E500BA02C0 /* F4-Muted.m4a */,
+				DA2D6E2E1514C0E500BA02C0 /* G4-Muted.m4a */,
 				04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */,
 				04C0938B14C4C7090087DA18 /* A4-Martian.m4a */,
 				04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */,
@@ -1711,6 +1738,15 @@
 				DA00885B15116AA600E14BFB /* Angler Fish.png in Resources */,
 				DA00885C15116AA600E14BFB /* Spotlight.png in Resources */,
 				DA2D6E1015118D7F00BA02C0 /* Game Background Dark.png in Resources */,
+				DA2D6E2F1514C0E500BA02C0 /* A4-Muted.m4a in Resources */,
+				DA2D6E301514C0E500BA02C0 /* B4-Muted.m4a in Resources */,
+				DA2D6E311514C0E500BA02C0 /* C5-Muted.m4a in Resources */,
+				DA2D6E321514C0E500BA02C0 /* D4-Muted.m4a in Resources */,
+				DA2D6E331514C0E500BA02C0 /* E4-Muted.m4a in Resources */,
+				DA2D6E341514C0E500BA02C0 /* F4-Muted.m4a in Resources */,
+				DA2D6E351514C0E500BA02C0 /* G4-Muted.m4a in Resources */,
+				DA2D6E371514C24000BA02C0 /* Clam Hit.m4a in Resources */,
+				AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

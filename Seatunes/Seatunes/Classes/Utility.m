@@ -111,6 +111,9 @@
         case kMetallic:
             name = @"Martian";
             break;
+        case kMuted:
+            name = @"Muted";
+            break;
         default:
             break;
     }
@@ -126,6 +129,7 @@
     [instruments addObject:[NSNumber numberWithInteger:kLowStrings]];
     [instruments addObject:[NSNumber numberWithInteger:kWarmPiano]];
     [instruments addObject:[NSNumber numberWithInteger:kMetallic]];
+    [instruments addObject:[NSNumber numberWithInteger:kMuted]];
     return instruments;
 }
 
@@ -214,6 +218,9 @@
             break;
         case kPageFlip:
             name = @"Page Flip.caf";
+            break;
+        case kClamHit:
+            name = @"Clam Hit.caf";
             break;
         case kMenuB0:
             name = @"Menu Sound B0.caf";
@@ -350,6 +357,11 @@
     NSString *difficultyName = [self difficultyFromEnum:difficulty];
     NSString *key = [NSString stringWithFormat:@"%@ %@", songName, difficultyName];    
     return key;
+}
+
++ (CGFloat) getSlope:(CGPoint)a b:(CGPoint)b
+{
+    return (a.y - b.y) / (a.x - b.x);
 }
 
 + (BOOL) hasInternetConnection

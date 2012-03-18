@@ -42,6 +42,7 @@
     
 }
 
+@property (nonatomic, assign) BOOL isKeyboardMuted;
 @property (nonatomic, assign) BOOL isClickable;
 @property (nonatomic, assign) id <KeyboardDelegate> delegate;
 

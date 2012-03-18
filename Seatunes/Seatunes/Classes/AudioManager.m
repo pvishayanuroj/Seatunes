@@ -73,7 +73,7 @@ static AudioManager *_audioManager = nil;
     NSString *keyName = [Utility keyNameFromEnum:key];
     NSString *instrumentName = [Utility instrumentNameFromEnum:instrument];
     NSString *name = [NSString stringWithFormat:@"%@-%@.m4a", keyName, instrumentName];
-    SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];
+    SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];  
     currentEffect_ = [engine playEffect:name];
     return currentEffect_;
 }

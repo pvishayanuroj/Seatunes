@@ -52,6 +52,8 @@
 
 + (NSString *) songKey:(NSString *)songName difficulty:(DifficultyType)difficulty;
 
++ (CGFloat) getSlope:(CGPoint)a b:(CGPoint)b;
+
 + (BOOL) hasInternetConnection;
 
 @end

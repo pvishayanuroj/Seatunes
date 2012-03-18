@@ -17,7 +17,10 @@ static const CGFloat NT_FLATTEN_SCALE_X = 1.1f;
 static const CGFloat NT_FLATTEN_SCALE_Y = 0.9f;
 static const CGFloat NT_ELONGATE_SCALE_X = 0.9f;
 static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
+static const CGFloat NT_RADIUS = 25.0f;
 
+@synthesize radius = radius_;
+@synthesize lightCrossFlag = lightCrossFlag_;
 @synthesize keyType = keyType_;
 @synthesize numID = numID_;
 @synthesize delegate = delegate_;
@@ -42,14 +45,16 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
         keyType_ = keyType;
         numID_ = numID;
         poppable_ = poppable;
+        radius_ = NT_RADIUS;
         isClickable_ = NO;
         boundaryCrossFlag_ = NO;
+        lightCrossFlag_ = NO;
         bezier_ = curve;
         NSString *keyName = [Utility keyNameFromEnum:keyType];
         NSString *spriteFrameName = [NSString stringWithFormat:@"Bubble %@.png", keyName];
         sprite_ = [[CCSprite spriteWithSpriteFrameName:spriteFrameName] retain]; 
         sprite_.scale = 0;
-        [self addChild:sprite_];        
+        [self addChild:sprite_ z:-1];        
         
         [self schedule:@selector(loop)];
         
@@ -177,7 +182,7 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
 
 - (void) curveAction
 {
-    CCActionInterval *curve = [CCBezierBy actionWithDuration:4.0f bezier:bezier_];
+    CCActionInterval *curve = [CCBezierBy actionWithDuration:8.0f bezier:bezier_];
     CCActionInterval *ease = [CCEaseOut actionWithAction:curve rate:1.0f];
     CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(curveActionDone)];
     [self runAction:[CCSequence actions:ease, done, nil]];
@@ -216,6 +221,16 @@ static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
     
     [super resumeHierarchy];
 }
+
+#if DEBUG_SHOWLIGHTBOUNDARY
+- (void) draw
+{
+    glColor4f(1.0, 0, 0, 1.0);      
+    glLineWidth(3.0f); 
+        
+    ccDrawCircle(CGPointZero, radius_, 360, 64, NO);      
+}
+#endif
 
 
 @end

@@ -143,7 +143,7 @@
             // Correct note played
             if ([key isEqualToNumber:correctNote]) {
                 [queue_ removeObjectAtIndex:0];
-                [noteGenerator_ popNewestNote];
+                //[noteGenerator_ popNewestNote];
                 
                 // If first time and first note, show an encouraging message
                 if (isFirstPlay_ && noteIndex_ == 1) {

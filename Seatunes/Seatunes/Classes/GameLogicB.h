@@ -16,6 +16,7 @@
 
 @class Keyboard;
 @class Instructor;
+@class Light;
 
 @interface GameLogicB : GameLogic <KeyboardDelegate, NoteGeneratorDelegate, SpeechReaderDelegate> {
  
@@ -27,13 +28,12 @@
     
     NSMutableDictionary *notesHit_;    
     
+    Light *light_;
+    
     BOOL ignoreInput_;
     
     BOOL onLastNote_;
-    
-    CCSprite *fish_;
-    
-    CCSprite *spotlight_;
+
 }
 
 + (id) gameLogicB:(NSString *)songName;

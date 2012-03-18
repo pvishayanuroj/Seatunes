@@ -8,6 +8,7 @@
 
 #import "NoteGenerator.h"
 #import "Note.h"
+#import "Light.h"
 
 @implementation NoteGenerator
 
@@ -88,6 +89,7 @@ static const CGFloat CR_C2_Y[6] = {NG_CR1_C2_Y, NG_CR2_C2_Y, NG_CR3_C2_Y, NG_CR4
 static const CGFloat CR_E_X[6] = {NG_CR1_E_X, NG_CR2_E_X, NG_CR3_E_X, NG_CR4_E_X, NG_CR5_E_X, NG_CR6_E_X};
 static const CGFloat CR_E_Y[6] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y, NG_CR5_E_Y, NG_CR6_E_Y};
 
+@synthesize light = light_;
 @synthesize delegate = delegate_;
 
 + (id) noteGenerator
@@ -99,19 +101,63 @@ static const CGFloat CR_E_Y[6] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y
 {
     if ((self = [super init])) {
         
+        light_ = nil;
         delegate_ = nil;
         curveCounter_ = 0;        
         notes_ = [[NSMutableArray arrayWithCapacity:10] retain];
+        notesToRemove_ = [[NSMutableArray arrayWithCapacity:10] retain];
         
+        [self schedule:@selector(loop) interval:1.0f/60.0f];        
     }
     return self;
 }
 
 - (void) dealloc
 {
+    [light_ release];
     [notes_ release];
+    [notesToRemove_ release];
     
     [super dealloc];
+}
+
+- (void) loop
+{
+    for (Note *note in notes_) {
+        if (light_ && [light_ isLightOn] && delegate_ && !note.lightCrossFlag) {
+            if ([light_ noteIntersectLight:note]) {
+                note.lightCrossFlag = YES;                
+                if ([light_ noteWithinLight:note]) {
+                    if ([delegate_ respondsToSelector:@selector(noteFullyInLight:)]) {
+                        [delegate_ noteFullyInLight:note];
+                    }
+
+                }
+                else {
+                    if ([delegate_ respondsToSelector:@selector(notePartiallyInLight:)]) {
+                        [delegate_ notePartiallyInLight:note];
+                    }
+                }
+            }
+        }
+    }
+    
+    NSMutableIndexSet *toRemove = [NSMutableIndexSet indexSet];
+    NSUInteger idx = 0;
+    
+    for (NSNumber *numID in notesToRemove_) {
+        for (Note *note in notes_) {
+            if (note.numID == [numID unsignedIntegerValue]) {
+                [note destroy];
+                [toRemove addIndex:idx];
+                break;
+            }
+            idx++;
+        }
+    }
+    
+    [notes_ removeObjectsAtIndexes:toRemove];    
+    [notesToRemove_ removeAllObjects];
 }
 
 - (void) addInstructorNote:(KeyType)keyType numID:(NSUInteger)numID
@@ -153,6 +199,7 @@ static const CGFloat CR_E_Y[6] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y
     }
 }
 
+/*
 - (void) popOldestNote
 {
     if ([notes_ count] > 0) {   
@@ -168,22 +215,11 @@ static const CGFloat CR_E_Y[6] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y
         [notes_ removeLastObject];
     }
 }
+ */
 
 - (void) popNoteWithID:(NSUInteger)numID
 {
-    NSMutableIndexSet *toRemove = [NSMutableIndexSet indexSet];
-    NSUInteger idx = 0;
-    
-    for (Note *note in notes_) {
-        if (note.numID == numID) {
-            [note destroy];
-            [toRemove addIndex:idx];
-            break;
-        }
-        idx++;
-    }
-    
-    [notes_ removeObjectsAtIndexes:toRemove];
+    [notesToRemove_ addObject:[NSNumber numberWithUnsignedInteger:numID]];
 }
 
 #pragma mark - Delegate Methods
@@ -207,9 +243,9 @@ static const CGFloat CR_E_Y[6] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y
     [notes_ removeObject:note];
 }
 
+#if DEBUG_SHOWMAPCURVES
 - (void) draw
 {
-#if DEBUG_SHOWMAPCURVES
     glColor4f(1.0, 0, 0, 1.0);      
     glLineWidth(3.0f);
     
@@ -226,7 +262,7 @@ static const CGFloat CR_E_Y[6] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y
         ccDrawCircle(c2, 3, 360, 64, NO);
         ccDrawCubicBezier(start, c1, c2, end, 128);        
     }
-#endif
 }
+#endif
 
 @end

@@ -19,26 +19,34 @@ enum {
     kPosRock3
 };
 
+@class Light;
+
 @interface NoteGenerator : CCNode <NoteDelegate> {
     
     NSMutableArray *notes_;    
     
+    NSMutableArray *notesToRemove_;
+    
     NSUInteger curveCounter_;    
+    
+    Light *light_;
     
     id <NoteGeneratorDelegate> delegate_;
     
 }
 
+@property (nonatomic, retain) Light *light;
 @property (nonatomic, assign) id <NoteGeneratorDelegate> delegate;
 
 + (id) noteGenerator;
 
 - (id) initNoteGenerator;
 
+/*
 - (void) popOldestNote;
 
 - (void) popNewestNote;
-
+*/
 - (void) popNoteWithID:(NSUInteger)numID;
 
 - (void) addInstructorNote:(KeyType)keyType numID:(NSUInteger)numID;

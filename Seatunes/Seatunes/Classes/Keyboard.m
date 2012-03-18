@@ -14,6 +14,7 @@
 
 @implementation Keyboard
 
+@synthesize isKeyboardMuted = isKeyboardMuted_;
 @synthesize isClickable = isClickable_;
 @synthesize delegate = delegate_;
 

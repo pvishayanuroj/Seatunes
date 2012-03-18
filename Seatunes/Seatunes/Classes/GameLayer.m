@@ -64,7 +64,6 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         sideMenuButton_ = [[ImageButton imageButton:kButtonSideMenu unselectedImage:@"Starfish Button.png" selectedImage:@"Starfish Button.png"] retain];
         sideMenuButton_.delegate = self;
         sideMenuButton_.position = ccp(GL_SIDEMENU_BUTTON_X, GL_SIDEMENU_BUTTON_Y);
-        [self addChild:sideMenuButton_];
         
         sideMenu_ = [[Menu menu:150.0f isVertical:YES offset:15.0f] retain];
         sideMenu_.delegate = self; 
@@ -79,8 +78,6 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         [sideMenu_ addMenuItem:nextButton];
         [sideMenu_ addMenuItem:replayButton];
         [sideMenu_ addMenuItem:menuButton];        
-        
-        [self addChild:sideMenu_ z:0];
 
         switch (difficulty) {
             case kDifficultyEasy:
@@ -98,7 +95,10 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         }
 
         gameLogic_.delegate = self; 
-        [self addChild:gameLogic_];        
+        [self addChild:gameLogic_];  
+        
+        [self addChild:sideMenuButton_];        
+        [self addChild:sideMenu_];        
     }
     return self;
 }

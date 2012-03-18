@@ -138,7 +138,7 @@ static const CGFloat GLD_INSTRUCTOR_Y = 550.0f;
     [queue_ removeObject:[NSNumber numberWithUnsignedInteger:note.numID]];            
     [noteGenerator_ popNoteWithID:note.numID];
     [notesHit_ setObject:[NSNumber numberWithBool:NO] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];    
-    //[instructor_ showWrongNote];    
+    [instructor_ showWrongNote];    
     
     // This note is the last note in the song
     if (onLastNote_ && [queue_ count] == 0) {

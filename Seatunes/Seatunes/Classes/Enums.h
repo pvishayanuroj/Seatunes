@@ -39,13 +39,15 @@ typedef enum {
     kFlute,
     kLowStrings,
     kWarmPiano,
-    kMetallic
+    kMetallic,
+    kMuted
 } InstrumentType;
 
 typedef enum {
     kDummy,
     kApplause,
     kPageFlip,
+    kClamHit,
     kMenuB0,
     kMenuC1,
     kMenuD1,
