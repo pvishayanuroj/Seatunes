@@ -182,7 +182,7 @@ static const CGFloat NT_RADIUS = 25.0f;
 
 - (void) curveAction
 {
-    CCActionInterval *curve = [CCBezierBy actionWithDuration:8.0f bezier:bezier_];
+    CCActionInterval *curve = [CCBezierBy actionWithDuration:4.0f bezier:bezier_];
     CCActionInterval *ease = [CCEaseOut actionWithAction:curve rate:1.0f];
     CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(curveActionDone)];
     [self runAction:[CCSequence actions:ease, done, nil]];

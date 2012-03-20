@@ -155,6 +155,7 @@
 		04DE522614FA1A6F00F8E45C /* Christmas Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */; };
 		04DE522714FA1A6F00F8E45C /* Christmas Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */; };
 		AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */; };
+		AE5839A61517FC240097EDD5 /* GameLogicF.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5839A51517FC240097EDD5 /* GameLogicF.m */; };
 		AE787164151614F6009E9614 /* Spotlight A4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78715C151614F6009E9614 /* Spotlight A4.png */; };
 		AE787165151614F6009E9614 /* Spotlight B4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78715D151614F6009E9614 /* Spotlight B4.png */; };
 		AE787166151614F6009E9614 /* Spotlight C4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78715E151614F6009E9614 /* Spotlight C4.png */; };
@@ -501,6 +502,8 @@
 		04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Pack Selected.png"; sourceTree = "<group>"; };
 		04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Pack Unselected.png"; sourceTree = "<group>"; };
 		AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
+		AE5839A41517FC240097EDD5 /* GameLogicF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicF.h; path = Classes/GameLogicF.h; sourceTree = "<group>"; };
+		AE5839A51517FC240097EDD5 /* GameLogicF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicF.m; path = Classes/GameLogicF.m; sourceTree = "<group>"; };
 		AE78715C151614F6009E9614 /* Spotlight A4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight A4.png"; sourceTree = "<group>"; };
 		AE78715D151614F6009E9614 /* Spotlight B4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight B4.png"; sourceTree = "<group>"; };
 		AE78715E151614F6009E9614 /* Spotlight C4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight C4.png"; sourceTree = "<group>"; };
@@ -835,6 +838,8 @@
 				04B0D4D81504306600A4A2B8 /* GameLogicD.m */,
 				04B0D4E61507024300A4A2B8 /* GameLogicE.h */,
 				04B0D4E71507024400A4A2B8 /* GameLogicE.m */,
+				AE5839A41517FC240097EDD5 /* GameLogicF.h */,
+				AE5839A51517FC240097EDD5 /* GameLogicF.m */,
 			);
 			name = "Game Logic";
 			sourceTree = "<group>";
@@ -1933,6 +1938,7 @@
 				04B0D4EE1507027400A4A2B8 /* StaffNote.m in Sources */,
 				DA2D6E141512081600BA02C0 /* ParticleGenerator.m in Sources */,
 				DA2D6E171512E71000BA02C0 /* Light.m in Sources */,
+				AE5839A61517FC240097EDD5 /* GameLogicF.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

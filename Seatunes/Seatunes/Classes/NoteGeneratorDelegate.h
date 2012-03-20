@@ -14,10 +14,6 @@
 
 - (void) noteCrossedBoundary:(Note *)note;
 
-- (void) notePartiallyInLight:(Note *)note;
-
-- (void) noteFullyInLight:(Note *)note;
-
 - (void) noteTouched:(Note *)note;
 
 @end

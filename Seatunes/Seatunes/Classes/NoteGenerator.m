@@ -115,47 +115,6 @@ static const CGFloat CR_E_Y[6] = {NG_CR1_E_Y, NG_CR2_E_Y, NG_CR3_E_Y, NG_CR4_E_Y
     [super dealloc];
 }
 
-/*
-- (void) loop
-{
-    for (Note *note in notes_) {
-        if (light_ && [light_ isLightOn] && delegate_ && !note.lightCrossFlag) {
-            if ([light_ noteIntersectLight:note]) {
-                note.lightCrossFlag = YES;                
-                if ([light_ noteWithinLight:note]) {
-                    if ([delegate_ respondsToSelector:@selector(noteFullyInLight:)]) {
-                        [delegate_ noteFullyInLight:note];
-                    }
-
-                }
-                else {
-                    if ([delegate_ respondsToSelector:@selector(notePartiallyInLight:)]) {
-                        [delegate_ notePartiallyInLight:note];
-                    }
-                }
-            }
-        }
-    }
-    
-    NSMutableIndexSet *toRemove = [NSMutableIndexSet indexSet];
-    NSUInteger idx = 0;
-    
-    for (NSNumber *numID in notesToRemove_) {
-        for (Note *note in notes_) {
-            if (note.numID == [numID unsignedIntegerValue]) {
-                [note destroy];
-                [toRemove addIndex:idx];
-                break;
-            }
-            idx++;
-        }
-    }
-    
-    [notes_ removeObjectsAtIndexes:toRemove];    
-    [notesToRemove_ removeAllObjects];
-}
- */
-
 - (void) addInstructorNote:(KeyType)keyType numID:(NSUInteger)numID
 {
     if (keyType != kBlankNote) {

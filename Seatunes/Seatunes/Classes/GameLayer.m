@@ -19,6 +19,7 @@
 #import "GameLogicC.h"
 #import "GameLogicD.h"
 #import "GameLogicE.h"
+#import "GameLogicF.h"
 #import "ScoreLayer.h"
 #import "Menu.h"
 #import "Button.h"
@@ -84,7 +85,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
                 gameLogic_ = [[GameLogicD gameLogicD:songName] retain];
                 break;
             case kDifficultyMedium:
-                gameLogic_ = [[GameLogicB gameLogicB:songName] retain];
+                gameLogic_ = [[GameLogicF gameLogicF:songName] retain];
                 break;
             case kDifficultyHard:
                 gameLogic_ = [[GameLogicE gameLogicE:songName] retain];
