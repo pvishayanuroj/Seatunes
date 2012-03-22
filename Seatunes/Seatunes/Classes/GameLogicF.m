@@ -18,10 +18,10 @@
 
 @implementation GameLogicF
 
-static const CGFloat GLB_INSTRUCTOR_X = 200.0f;
-static const CGFloat GLB_INSTRUCTOR_Y = 550.0f;
-static const CGFloat GLB_KEYBOARD_X = 100.0f;
-static const CGFloat GLB_KEYBOARD_Y = 100.0f;
+static const CGFloat GLF_INSTRUCTOR_X = 200.0f;
+static const CGFloat GLF_INSTRUCTOR_Y = 550.0f;
+static const CGFloat GLF_KEYBOARD_X = 100.0f;
+static const CGFloat GLF_KEYBOARD_Y = 100.0f;
 
 + (id) gameLogicF:(NSString *)songName
 {
@@ -46,7 +46,7 @@ static const CGFloat GLB_KEYBOARD_Y = 100.0f;
         [self addChild:background];            
         
         instructor_ = [Instructor instructor:kWhaleInstructor];
-        instructor_.position = ccp(GLB_INSTRUCTOR_X, GLB_INSTRUCTOR_Y);
+        instructor_.position = ccp(GLF_INSTRUCTOR_X, GLF_INSTRUCTOR_Y);
         [self addChild:instructor_];           
         
         noteGenerator_ = [[NoteGenerator noteGenerator] retain];
@@ -60,7 +60,7 @@ static const CGFloat GLB_KEYBOARD_Y = 100.0f;
         keyboard_ = [[Keyboard keyboard:kEightKey] retain];
         keyboard_.delegate = self;
         keyboard_.isKeyboardMuted = YES;
-        keyboard_.position = ccp(GLB_KEYBOARD_X, GLB_KEYBOARD_Y);
+        keyboard_.position = ccp(GLF_KEYBOARD_X, GLF_KEYBOARD_Y);
         [self addChild:keyboard_];           
         
         // If first time playing

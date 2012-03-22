@@ -62,9 +62,6 @@
 		04B0D4D615041EEB00A4A2B8 /* EasyInstructions01.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4D315041EEB00A4A2B8 /* EasyInstructions01.caf */; };
 		04B0D4D91504306600A4A2B8 /* GameLogicD.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4D81504306600A4A2B8 /* GameLogicD.m */; };
 		04B0D4DC1505964600A4A2B8 /* NoteGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4DB1505964500A4A2B8 /* NoteGenerator.m */; };
-		04B0D4E21507021800A4A2B8 /* Quarter Note Black.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4DE1507020E00A4A2B8 /* Quarter Note Black.png */; };
-		04B0D4E31507021800A4A2B8 /* Staff Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4DF1507021100A4A2B8 /* Staff Frame.png */; };
-		04B0D4E41507021800A4A2B8 /* Staff Line.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4E01507021200A4A2B8 /* Staff Line.png */; };
 		04B0D4E51507021800A4A2B8 /* Staff.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4E11507021400A4A2B8 /* Staff.png */; };
 		04B0D4E81507024500A4A2B8 /* GameLogicE.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4E71507024400A4A2B8 /* GameLogicE.m */; };
 		04B0D4EB1507025F00A4A2B8 /* Staff.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4EA1507025E00A4A2B8 /* Staff.m */; };
@@ -164,6 +161,10 @@
 		AE787169151614F6009E9614 /* Spotlight E4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE787161151614F6009E9614 /* Spotlight E4.png */; };
 		AE78716A151614F6009E9614 /* Spotlight F4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE787162151614F6009E9614 /* Spotlight F4.png */; };
 		AE78716B151614F6009E9614 /* Spotlight G4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE787163151614F6009E9614 /* Spotlight G4.png */; };
+		AE9FE90D15195C3C002A6571 /* C Note.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9FE90915195C3C002A6571 /* C Note.png */; };
+		AE9FE90E15195C3C002A6571 /* Flipped Note.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9FE90A15195C3C002A6571 /* Flipped Note.png */; };
+		AE9FE90F15195C3C002A6571 /* Note.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9FE90B15195C3C002A6571 /* Note.png */; };
+		AE9FE91015195C3C002A6571 /* Particle.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9FE90C15195C3C002A6571 /* Particle.png */; };
 		AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */; };
 		DA00885B15116AA600E14BFB /* Angler Fish.png in Resources */ = {isa = PBXBuildFile; fileRef = DA00885915116AA600E14BFB /* Angler Fish.png */; };
 		DA00885C15116AA600E14BFB /* Spotlight.png in Resources */ = {isa = PBXBuildFile; fileRef = DA00885A15116AA600E14BFB /* Spotlight.png */; };
@@ -390,9 +391,6 @@
 		04B0D4DA1505964300A4A2B8 /* NoteGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteGenerator.h; path = Classes/NoteGenerator.h; sourceTree = "<group>"; };
 		04B0D4DB1505964500A4A2B8 /* NoteGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteGenerator.m; path = Classes/NoteGenerator.m; sourceTree = "<group>"; };
 		04B0D4DD1505965F00A4A2B8 /* NoteGeneratorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteGeneratorDelegate.h; path = Classes/NoteGeneratorDelegate.h; sourceTree = "<group>"; };
-		04B0D4DE1507020E00A4A2B8 /* Quarter Note Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Quarter Note Black.png"; sourceTree = "<group>"; };
-		04B0D4DF1507021100A4A2B8 /* Staff Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Staff Frame.png"; sourceTree = "<group>"; };
-		04B0D4E01507021200A4A2B8 /* Staff Line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Staff Line.png"; sourceTree = "<group>"; };
 		04B0D4E11507021400A4A2B8 /* Staff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Staff.png; sourceTree = "<group>"; };
 		04B0D4E61507024300A4A2B8 /* GameLogicE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicE.h; path = Classes/GameLogicE.h; sourceTree = "<group>"; };
 		04B0D4E71507024400A4A2B8 /* GameLogicE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicE.m; path = Classes/GameLogicE.m; sourceTree = "<group>"; };
@@ -512,6 +510,10 @@
 		AE787161151614F6009E9614 /* Spotlight E4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight E4.png"; sourceTree = "<group>"; };
 		AE787162151614F6009E9614 /* Spotlight F4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight F4.png"; sourceTree = "<group>"; };
 		AE787163151614F6009E9614 /* Spotlight G4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight G4.png"; sourceTree = "<group>"; };
+		AE9FE90915195C3C002A6571 /* C Note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "C Note.png"; sourceTree = "<group>"; };
+		AE9FE90A15195C3C002A6571 /* Flipped Note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flipped Note.png"; sourceTree = "<group>"; };
+		AE9FE90B15195C3C002A6571 /* Note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Note.png; sourceTree = "<group>"; };
+		AE9FE90C15195C3C002A6571 /* Particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Particle.png; sourceTree = "<group>"; };
 		AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Muted.m4a"; sourceTree = "<group>"; };
 		DA00885915116AA600E14BFB /* Angler Fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Angler Fish.png"; sourceTree = "<group>"; };
 		DA00885A15116AA600E14BFB /* Spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spotlight.png; sourceTree = "<group>"; };
@@ -847,6 +849,10 @@
 		048BBA7514D534780086EABC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AE9FE90915195C3C002A6571 /* C Note.png */,
+				AE9FE90A15195C3C002A6571 /* Flipped Note.png */,
+				AE9FE90B15195C3C002A6571 /* Note.png */,
+				AE9FE90C15195C3C002A6571 /* Particle.png */,
 				AE78715C151614F6009E9614 /* Spotlight A4.png */,
 				AE78715D151614F6009E9614 /* Spotlight B4.png */,
 				AE78715E151614F6009E9614 /* Spotlight C4.png */,
@@ -869,9 +875,6 @@
 				0478FB68150B9D3900B71A23 /* Game Background No Coral.png */,
 				0478FB64150B977900B71A23 /* Seatunes Title.png */,
 				04B0D4EF15070C9800A4A2B8 /* Quarter Rest.png */,
-				04B0D4DE1507020E00A4A2B8 /* Quarter Note Black.png */,
-				04B0D4DF1507021100A4A2B8 /* Staff Frame.png */,
-				04B0D4E01507021200A4A2B8 /* Staff Line.png */,
 				04B0D4E11507021400A4A2B8 /* Staff.png */,
 				0431B78914FF2DD0005D6FBA /* Loading Indicator Background.png */,
 				040A0CA514FC7316006803F9 /* Lock Icon.png */,
@@ -1752,9 +1755,6 @@
 				04B0D4CF1504174100A4A2B8 /* Icon-Small@2x.png in Resources */,
 				04B0D4D515041EEB00A4A2B8 /* EasyInstructions00.caf in Resources */,
 				04B0D4D615041EEB00A4A2B8 /* EasyInstructions01.caf in Resources */,
-				04B0D4E21507021800A4A2B8 /* Quarter Note Black.png in Resources */,
-				04B0D4E31507021800A4A2B8 /* Staff Frame.png in Resources */,
-				04B0D4E41507021800A4A2B8 /* Staff Line.png in Resources */,
 				04B0D4E51507021800A4A2B8 /* Staff.png in Resources */,
 				04B0D4F015070C9900A4A2B8 /* Quarter Rest.png in Resources */,
 				0478FB65150B977900B71A23 /* Seatunes Title.png in Resources */,
@@ -1788,6 +1788,10 @@
 				AE787169151614F6009E9614 /* Spotlight E4.png in Resources */,
 				AE78716A151614F6009E9614 /* Spotlight F4.png in Resources */,
 				AE78716B151614F6009E9614 /* Spotlight G4.png in Resources */,
+				AE9FE90D15195C3C002A6571 /* C Note.png in Resources */,
+				AE9FE90E15195C3C002A6571 /* Flipped Note.png in Resources */,
+				AE9FE90F15195C3C002A6571 /* Note.png in Resources */,
+				AE9FE91015195C3C002A6571 /* Particle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

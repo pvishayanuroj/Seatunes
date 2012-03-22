@@ -17,6 +17,13 @@
 
 @implementation GameLogicE
 
+static const CGFloat GLE_INSTRUCTOR_X = 200.0f;
+static const CGFloat GLE_INSTRUCTOR_Y = 350.0f;
+static const CGFloat GLE_KEYBOARD_X = 100.0f;
+static const CGFloat GLE_KEYBOARD_Y = 100.0f;
+static const CGFloat GLE_STAFF_X = 512.0f;
+static const CGFloat GLE_STAFF_Y = 600.0f;
+
 + (id) gameLogicE:(NSString *)songName
 {
     return [[[self alloc] initGameLogicE:songName] autorelease];
@@ -34,10 +41,31 @@
         notes_ = [[Utility loadFlattenedSong:songName] retain];
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
         notesHit_ = [[Utility generateBoolArray:YES size:[Utility countNumNotes:notes_]] retain];        
+        
+        CCSprite *background = [CCSprite spriteWithFile:@"Game Background No Coral.png"];
+        background.anchorPoint = CGPointZero;
+        [self addChild:background];                     
+        
+      
+        
+        CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Background.png"];
+        coralBackground.anchorPoint = CGPointZero;
+        [self addChild:coralBackground];        
+
         staff_ = [[Staff staff] retain]; 
         staff_.delegate = self;
-        staff_.position = ccp(600, 600);
-        [self addChild:staff_];
+        staff_.position = ccp(GLE_STAFF_X, GLE_STAFF_Y);
+        [self addChild:staff_];  
+        
+        instructor_ = [Instructor instructor:kWhaleInstructor];
+        instructor_.position = ccp(GLE_INSTRUCTOR_X, GLE_INSTRUCTOR_Y);
+        [self addChild:instructor_];           
+        
+        keyboard_ = [[Keyboard keyboard:kEightKey] retain];
+        keyboard_.delegate = self;
+        keyboard_.isKeyboardMuted = YES;
+        keyboard_.position = ccp(GLE_KEYBOARD_X, GLE_KEYBOARD_Y);
+        [self addChild:keyboard_];          
         
         // If first time playing
         if (isFirstPlay_) {
@@ -77,7 +105,8 @@
         if (keyType != kBlankNote) {
             //[queue_ addObject:[NSNumber numberWithUnsignedInteger:noteIndex_]];            
             [queue_ addObject:key];
-            [staff_ addNote:keyType numID:noteIndex_];                    
+            [staff_ addMovingNote:keyType numID:noteIndex_];          
+            [instructor_ showSing];
         }
         
         // Check if this is the last note

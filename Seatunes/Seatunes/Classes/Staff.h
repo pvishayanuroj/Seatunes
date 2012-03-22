@@ -28,10 +28,14 @@
 
 - (void) addNote:(KeyType)keyType numID:(NSUInteger)numID;
 
+- (void) addMovingNote:(KeyType)keyType numID:(NSUInteger)numID;
+
 - (void) addStaticNote:(KeyType)keyType numID:(NSUInteger)numID;
  
 - (void) removeOldestNote;
 
 - (void) removeAllNotes;
+
+- (CGFloat) calculateNoteY:(KeyType)key;
 
 @end

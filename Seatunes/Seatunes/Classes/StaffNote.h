@@ -32,6 +32,8 @@
 
 - (id) initStaffNote:(KeyType)keyType pos:(CGPoint)pos numID:(NSUInteger)numID isStatic:(BOOL)isStatic;
 
+- (void) curvedMove;
+
 - (void) move;
 
 - (void) appear;
@@ -39,5 +41,7 @@
 - (void) staffNoteReturn;
 
 - (void) staffNoteDestroy;
+
+- (void) curvedDestroy;
 
 @end
