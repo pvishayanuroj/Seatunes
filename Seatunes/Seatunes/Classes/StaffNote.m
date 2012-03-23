@@ -14,10 +14,9 @@
 @synthesize numID = numID_;
 @synthesize delegate = delegate_;
 
-static const CGFloat SN_LOWC_YOFFSET = -20.0f;
-static const CGFloat SN_LINE_YOFFSET = -22.0f;
-static const CGFloat SN_REST_YOFFSET = 0.0f;
-static const CGFloat SN_NOTE_PADDING = 7.5f;
+static const CGFloat SN_NOTE_PADDING = 12.65f;
+static const CGFloat SN_NOTE_OFFSET_Y = 23.0f;
+static const CGFloat SN_NOTE_FLIPPED_OFFSET_Y = 75.0f;
 static const CGFloat SN_MOVE_X = -800.0f;
 
 + (id) staticStaffNote:(KeyType)keyType pos:(CGPoint)pos numID:(NSUInteger)numID
@@ -35,10 +34,10 @@ static const CGFloat SN_MOVE_X = -800.0f;
     if ((self = [super init])) {
         
         delegate_ = nil;
+        keyType_ = keyType;
         line_ = nil;
         numID_ = numID;        
         self.position = pos;
-        
         
         if (keyType == kC4) {
             sprite_ = [[CCSprite spriteWithFile:@"C Note.png"] retain];
@@ -53,11 +52,10 @@ static const CGFloat SN_MOVE_X = -800.0f;
         [self addChild:sprite_];
         
         if (!isStatic) {
-            [self curvedMove];
-            
-            sprite_.scale = 0.5f;
-[self scaleUp];            
-            //[self bounce];
+            [self runPlaySequence];         
+        }
+        else {
+
         }
     }
     return self;
@@ -71,10 +69,15 @@ static const CGFloat SN_MOVE_X = -800.0f;
     [super dealloc];
 }
              
+- (void) runPlaySequence
+{
+    [self curvedMove];
+    sprite_.scale = 0.5f;
+    [self scaleUp];      
+}
+
 - (void) scaleUp
 {
-
-    
     id scale = [CCScaleTo actionWithDuration:2.0f scale:1.0f];
     [sprite_ runAction:scale];   
 }
@@ -82,9 +85,10 @@ static const CGFloat SN_MOVE_X = -800.0f;
 - (void) curvedMove
 {
     CGPoint start = ccp(0, 0);
-    CGPoint c1 = ccp(start.x + 300, start.y - 125);
-    CGPoint c2 = ccp(start.x + 450, start.y + 125);
-    CGPoint end = ccp(start.x + 450, start.y + 300);    
+    CGPoint c1 = ccp(start.x + 275, start.y - 125);
+    CGPoint c2 = ccp(start.x + 430, start.y + 125);
+    CGPoint end = ccp(start.x + 430, start.y + 275);
+    end.y += [self calculateNoteY:keyType_];
     
     ccBezierConfig b;
     b.controlPoint_1 = c1;
@@ -92,36 +96,16 @@ static const CGFloat SN_MOVE_X = -800.0f;
     b.endPosition = end;
     
     CCActionInterval *move = [CCBezierBy actionWithDuration:5.0 bezier:b];
-    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(move)];
+    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(moveAcross)];
     [self runAction:[CCSequence actions:move, done, nil]];
 }
-- (void) move
+- (void) moveAcross
 {
-    CCActionInterval *move = [CCMoveBy actionWithDuration:2.5f position:ccp(SN_MOVE_X * 0.4f, 0)];
-    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(move2)];
-    [self runAction:[CCSequence actions:move, done, nil]];
-    //CCActionInterval *ease = [CCEaseIn actionWithAction:move rate:1.0f];
-    //[self runAction:ease];
-}
-
-- (void) move2
-{
-    CCActionInterval *move = [CCMoveBy actionWithDuration:3.5f position:ccp(SN_MOVE_X * 0.6f, 0)];    
+    CCActionInterval *move = [CCMoveBy actionWithDuration:6.0f position:ccp(SN_MOVE_X, 0)];
     [self runAction:move];
 }
 
-- (void) appear
-{
-    CCActionInterval *fadeIn = [CCFadeIn actionWithDuration:0.5f];
-    [sprite_ runAction:fadeIn];
-    
-    if (line_) {
-        CCActionInterval *lineFadeIn = [CCFadeIn actionWithDuration:0.5f];
-        [line_ runAction:lineFadeIn];        
-    }
-}
-
-- (void) staffNoteDestroy
+- (void) fadeDestroy
 {
     CCActionInterval *fadeOut = [CCFadeOut actionWithDuration:0.5f];
     CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(destroy)];
@@ -133,34 +117,20 @@ static const CGFloat SN_MOVE_X = -800.0f;
     }    
 }
 
-- (void) curvedDestroy
+- (void) jumpDestroy
 {
     [self stopAllActions];
  
-    id jump = [CCJumpBy actionWithDuration:0.45f position:ccp(0, 25) height:100 jumps:1];
-    id ease = [CCEaseOut actionWithAction:jump rate:1.0f];    
+    id jump = [CCJumpBy actionWithDuration:0.4f position:ccp(0, 25) height:100 jumps:1];
+    id ease = [CCEaseOut actionWithAction:jump rate:1.25f];    
     id done = [CCCallFunc actionWithTarget:self selector:@selector(destroy)];
     
     [self runAction:[CCSequence actions:ease, done, nil]];    
     
+    id delay = [CCDelayTime actionWithDuration:0.3f];
+    id fade = [CCFadeOut actionWithDuration:0.1f];
     
-    /*
-    ccBezierConfig b;
-    b.controlPoint_1 = ccp(-60, 100);
-    b.controlPoint_2 = ccp(-120, 120);
-    b.endPosition = ccp(-700, -250);  
-    
-    id curve = [CCBezierBy actionWithDuration:0.6f bezier:b];
-    id ease = [CCEaseOut actionWithAction:curve rate:1.5f];
-    id done = [CCCallFunc actionWithTarget:self selector:@selector(destroy)];
-    
-    [self runAction:[CCSequence actions:ease, done, nil]];
-     */
-}
-
-- (void) jumpDestroy
-{
-    
+    [sprite_ runAction:[CCSequence actions:delay, fade, nil]];
 }
 
 - (void) jump
@@ -193,6 +163,16 @@ static const CGFloat SN_MOVE_X = -800.0f;
     }
     
     [self removeFromParentAndCleanup:YES];
+}
+
+- (CGFloat) calculateNoteY:(KeyType)key
+{
+    NSInteger idx = (NSInteger)key;
+    CGFloat y = idx * SN_NOTE_PADDING - SN_NOTE_OFFSET_Y;
+    if (idx > kA4) {
+        y -= SN_NOTE_FLIPPED_OFFSET_Y;
+    }
+    return y;
 }
 
 #if !DEBUG_SHOWSTAFFCURVES

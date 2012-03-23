@@ -38,7 +38,7 @@ static const CGFloat ST_PS_OFFSET_Y = -15.0f;
         CCSprite *staff = [CCSprite spriteWithFile:@"Staff.png"];
         [self addChild:staff z:-1];
         
-        //[self schedule:@selector(loop) interval:1.0f/60.0f];
+        [self schedule:@selector(loop) interval:1.0f/60.0f];
         
         //[self drawAllNotes];
     }
@@ -88,8 +88,6 @@ static const CGFloat ST_PS_OFFSET_Y = -15.0f;
 
 - (void) addMovingNote:(KeyType)keyType numID:(NSUInteger)numID
 {
-    CGFloat y = [self calculateNoteY:keyType];
-    //CGPoint pos = ccp(ST_NOTE_OFFSET_X, y);
     CGPoint pos = ccp(-200, -275);
     StaffNote *note = [StaffNote staffNote:keyType pos:pos numID:numID];
     note.delegate = self;
@@ -122,7 +120,7 @@ static const CGFloat ST_PS_OFFSET_Y = -15.0f;
 - (void) removeOldestNote
 {
     if ([notes_ count] > 0) {
-        [[notes_ objectAtIndex:0] curvedDestroy];
+        [[notes_ objectAtIndex:0] jumpDestroy];
         [notes_ removeObjectAtIndex:0];        
     }
 }
@@ -130,7 +128,7 @@ static const CGFloat ST_PS_OFFSET_Y = -15.0f;
 - (void) removeAllNotes
 {
     for (StaffNote *note in notes_) {
-        [note staffNoteDestroy];
+        [note fadeDestroy];
     }
 
     [notes_ removeAllObjects];

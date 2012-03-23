@@ -17,6 +17,8 @@
     
     CCSprite *line_;
     
+    KeyType keyType_;
+    
     NSUInteger numID_;
     
     id <StaffNoteDelegate> delegate_;
@@ -36,12 +38,12 @@
 
 - (void) move;
 
-- (void) appear;
-
 - (void) staffNoteReturn;
 
-- (void) staffNoteDestroy;
+- (void) fadeDestroy;
 
-- (void) curvedDestroy;
+- (void) jumpDestroy;
+
+- (CGFloat) calculateNoteY:(KeyType)key;
 
 @end
