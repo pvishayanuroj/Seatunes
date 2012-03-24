@@ -6,16 +6,13 @@
 	<string>Nursery Pack</string>
 	<key>Songs</key>
 	<array>
+		<string>Hot Cross Buns</string>
 		<string>Twinkle Twinkle</string>
-		<string>Alphabet Song</string>
 		<string>Frere Jacques</string>
-		<string>Hot Cross Buns</string>        
 		<string>Itsy Bitsy Spider</string>
-		<string>Little Bo Peep</string>
 		<string>London Bridge</string>
 		<string>Mary Had A Little Lamb</string>
 		<string>Old MacDonald</string>
-		<string>Polly Wolly Doodle</string>
 		<string>Ring Around a Rosy</string>
 		<string>Row Row</string>
 		<string>Skip To My Lou</string>

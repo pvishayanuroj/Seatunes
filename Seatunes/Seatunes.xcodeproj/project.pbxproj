@@ -133,15 +133,12 @@
 		04DE51FF14FA18B800F8E45C /* Classics Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51FB14FA18B800F8E45C /* Classics Pack Selected.png */; };
 		04DE520014FA18B800F8E45C /* Classics Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51FC14FA18B800F8E45C /* Classics Pack Unselected.png */; };
 		04DE520214FA19E500F8E45C /* Classics Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520114FA19E500F8E45C /* Classics Pack.plist */; };
-		04DE521314FA19F200F8E45C /* Alphabet Song.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520414FA19F200F8E45C /* Alphabet Song.plist */; };
 		04DE521414FA19F200F8E45C /* Frere Jacques.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520514FA19F200F8E45C /* Frere Jacques.plist */; };
 		04DE521514FA19F200F8E45C /* Hot Cross Buns.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520614FA19F200F8E45C /* Hot Cross Buns.plist */; };
 		04DE521614FA19F200F8E45C /* Itsy Bitsy Spider.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520714FA19F200F8E45C /* Itsy Bitsy Spider.plist */; };
-		04DE521714FA19F200F8E45C /* Little Bo Peep.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520814FA19F200F8E45C /* Little Bo Peep.plist */; };
 		04DE521814FA19F200F8E45C /* London Bridge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520914FA19F200F8E45C /* London Bridge.plist */; };
 		04DE521914FA19F200F8E45C /* Mary Had A Little Lamb.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520A14FA19F200F8E45C /* Mary Had A Little Lamb.plist */; };
 		04DE521A14FA19F200F8E45C /* Old MacDonald.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520B14FA19F200F8E45C /* Old MacDonald.plist */; };
-		04DE521B14FA19F200F8E45C /* Polly Wolly Doodle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520C14FA19F200F8E45C /* Polly Wolly Doodle.plist */; };
 		04DE521C14FA19F200F8E45C /* Ring Around A Rosy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520D14FA19F200F8E45C /* Ring Around A Rosy.plist */; };
 		04DE521D14FA19F200F8E45C /* Row Row.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520E14FA19F200F8E45C /* Row Row.plist */; };
 		04DE521E14FA19F200F8E45C /* Skip To My Lou.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE520F14FA19F200F8E45C /* Skip To My Lou.plist */; };
@@ -153,6 +150,8 @@
 		04DE522714FA1A6F00F8E45C /* Christmas Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */; };
 		AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */; };
 		AE5839A61517FC240097EDD5 /* GameLogicF.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5839A51517FC240097EDD5 /* GameLogicF.m */; };
+		AE77D9C1151D9095002AC832 /* Jingle Bells.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE77D9BF151D9095002AC832 /* Jingle Bells.plist */; };
+		AE77D9C2151D9095002AC832 /* Silent Night.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE77D9C0151D9095002AC832 /* Silent Night.plist */; };
 		AE787164151614F6009E9614 /* Spotlight A4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78715C151614F6009E9614 /* Spotlight A4.png */; };
 		AE787165151614F6009E9614 /* Spotlight B4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78715D151614F6009E9614 /* Spotlight B4.png */; };
 		AE787166151614F6009E9614 /* Spotlight C4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78715E151614F6009E9614 /* Spotlight C4.png */; };
@@ -480,15 +479,12 @@
 		04DE51FB14FA18B800F8E45C /* Classics Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Classics Pack Selected.png"; sourceTree = "<group>"; };
 		04DE51FC14FA18B800F8E45C /* Classics Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Classics Pack Unselected.png"; sourceTree = "<group>"; };
 		04DE520114FA19E500F8E45C /* Classics Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Classics Pack.plist"; sourceTree = "<group>"; };
-		04DE520414FA19F200F8E45C /* Alphabet Song.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Alphabet Song.plist"; sourceTree = "<group>"; };
 		04DE520514FA19F200F8E45C /* Frere Jacques.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Frere Jacques.plist"; sourceTree = "<group>"; };
 		04DE520614FA19F200F8E45C /* Hot Cross Buns.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Hot Cross Buns.plist"; sourceTree = "<group>"; };
 		04DE520714FA19F200F8E45C /* Itsy Bitsy Spider.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Itsy Bitsy Spider.plist"; sourceTree = "<group>"; };
-		04DE520814FA19F200F8E45C /* Little Bo Peep.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Little Bo Peep.plist"; sourceTree = "<group>"; };
 		04DE520914FA19F200F8E45C /* London Bridge.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "London Bridge.plist"; sourceTree = "<group>"; };
 		04DE520A14FA19F200F8E45C /* Mary Had A Little Lamb.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Mary Had A Little Lamb.plist"; sourceTree = "<group>"; };
 		04DE520B14FA19F200F8E45C /* Old MacDonald.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Old MacDonald.plist"; sourceTree = "<group>"; };
-		04DE520C14FA19F200F8E45C /* Polly Wolly Doodle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Polly Wolly Doodle.plist"; sourceTree = "<group>"; };
 		04DE520D14FA19F200F8E45C /* Ring Around A Rosy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Ring Around A Rosy.plist"; sourceTree = "<group>"; };
 		04DE520E14FA19F200F8E45C /* Row Row.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Row Row.plist"; sourceTree = "<group>"; };
 		04DE520F14FA19F200F8E45C /* Skip To My Lou.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Skip To My Lou.plist"; sourceTree = "<group>"; };
@@ -501,6 +497,8 @@
 		AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
 		AE5839A41517FC240097EDD5 /* GameLogicF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicF.h; path = Classes/GameLogicF.h; sourceTree = "<group>"; };
 		AE5839A51517FC240097EDD5 /* GameLogicF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicF.m; path = Classes/GameLogicF.m; sourceTree = "<group>"; };
+		AE77D9BF151D9095002AC832 /* Jingle Bells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Jingle Bells.plist"; sourceTree = "<group>"; };
+		AE77D9C0151D9095002AC832 /* Silent Night.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Silent Night.plist"; sourceTree = "<group>"; };
 		AE78715C151614F6009E9614 /* Spotlight A4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight A4.png"; sourceTree = "<group>"; };
 		AE78715D151614F6009E9614 /* Spotlight B4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight B4.png"; sourceTree = "<group>"; };
 		AE78715E151614F6009E9614 /* Spotlight C4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotlight C4.png"; sourceTree = "<group>"; };
@@ -908,6 +906,7 @@
 		048BBAAA14D5368B0086EABC /* Packs */ = {
 			isa = PBXGroup;
 			children = (
+				AE77D9BA151D8B87002AC832 /* Christmas Pack */,
 				04DE520314FA19F200F8E45C /* Nursery Pack */,
 				04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */,
 				04DE520114FA19E500F8E45C /* Classics Pack.plist */,
@@ -1113,15 +1112,12 @@
 		04DE520314FA19F200F8E45C /* Nursery Pack */ = {
 			isa = PBXGroup;
 			children = (
-				04DE520414FA19F200F8E45C /* Alphabet Song.plist */,
 				04DE520514FA19F200F8E45C /* Frere Jacques.plist */,
 				04DE520614FA19F200F8E45C /* Hot Cross Buns.plist */,
 				04DE520714FA19F200F8E45C /* Itsy Bitsy Spider.plist */,
-				04DE520814FA19F200F8E45C /* Little Bo Peep.plist */,
 				04DE520914FA19F200F8E45C /* London Bridge.plist */,
 				04DE520A14FA19F200F8E45C /* Mary Had A Little Lamb.plist */,
 				04DE520B14FA19F200F8E45C /* Old MacDonald.plist */,
-				04DE520C14FA19F200F8E45C /* Polly Wolly Doodle.plist */,
 				04DE520D14FA19F200F8E45C /* Ring Around A Rosy.plist */,
 				04DE520E14FA19F200F8E45C /* Row Row.plist */,
 				04DE520F14FA19F200F8E45C /* Skip To My Lou.plist */,
@@ -1130,6 +1126,15 @@
 				04DE521214FA19F200F8E45C /* Twinkle Twinkle.plist */,
 			);
 			path = "Nursery Pack";
+			sourceTree = "<group>";
+		};
+		AE77D9BA151D8B87002AC832 /* Christmas Pack */ = {
+			isa = PBXGroup;
+			children = (
+				AE77D9BF151D9095002AC832 /* Jingle Bells.plist */,
+				AE77D9C0151D9095002AC832 /* Silent Night.plist */,
+			);
+			path = "Christmas Pack";
 			sourceTree = "<group>";
 		};
 		DAB11F0A14C1E847009B60FB = {
@@ -1727,15 +1732,12 @@
 				04DE51FF14FA18B800F8E45C /* Classics Pack Selected.png in Resources */,
 				04DE520014FA18B800F8E45C /* Classics Pack Unselected.png in Resources */,
 				04DE520214FA19E500F8E45C /* Classics Pack.plist in Resources */,
-				04DE521314FA19F200F8E45C /* Alphabet Song.plist in Resources */,
 				04DE521414FA19F200F8E45C /* Frere Jacques.plist in Resources */,
 				04DE521514FA19F200F8E45C /* Hot Cross Buns.plist in Resources */,
 				04DE521614FA19F200F8E45C /* Itsy Bitsy Spider.plist in Resources */,
-				04DE521714FA19F200F8E45C /* Little Bo Peep.plist in Resources */,
 				04DE521814FA19F200F8E45C /* London Bridge.plist in Resources */,
 				04DE521914FA19F200F8E45C /* Mary Had A Little Lamb.plist in Resources */,
 				04DE521A14FA19F200F8E45C /* Old MacDonald.plist in Resources */,
-				04DE521B14FA19F200F8E45C /* Polly Wolly Doodle.plist in Resources */,
 				04DE521C14FA19F200F8E45C /* Ring Around A Rosy.plist in Resources */,
 				04DE521D14FA19F200F8E45C /* Row Row.plist in Resources */,
 				04DE521E14FA19F200F8E45C /* Skip To My Lou.plist in Resources */,
@@ -1790,6 +1792,8 @@
 				AE9FE90E15195C3C002A6571 /* Flipped Note.png in Resources */,
 				AE9FE90F15195C3C002A6571 /* Note.png in Resources */,
 				AE9FE91015195C3C002A6571 /* Particle.png in Resources */,
+				AE77D9C1151D9095002AC832 /* Jingle Bells.plist in Resources */,
+				AE77D9C2151D9095002AC832 /* Silent Night.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
