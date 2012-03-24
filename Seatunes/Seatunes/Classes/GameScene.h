@@ -18,6 +18,4 @@
 
 - (id) initWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName;
 
-- (void) animationLoader:(NSString *)unitListName spriteSheetName:(NSString *)spriteSheetName;
-
 @end

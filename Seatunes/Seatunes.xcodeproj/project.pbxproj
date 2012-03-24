@@ -166,6 +166,8 @@
 		AE7A86B5151DFD23007CA48C /* Arpeggios.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86B2151DFD23007CA48C /* Arpeggios.plist */; };
 		AE7A86B6151DFD23007CA48C /* Scales.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86B3151DFD23007CA48C /* Scales.plist */; };
 		AE7A86B7151DFD23007CA48C /* Steps.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86B4151DFD23007CA48C /* Steps.plist */; };
+		AE7A86BD151E0276007CA48C /* FreePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7A86BC151E0275007CA48C /* FreePlayScene.m */; };
+		AE7A86C4151E068E007CA48C /* FreePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7A86C3151E068D007CA48C /* FreePlayLayer.m */; };
 		AE9FE90D15195C3C002A6571 /* C Note.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9FE90915195C3C002A6571 /* C Note.png */; };
 		AE9FE90E15195C3C002A6571 /* Flipped Note.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9FE90A15195C3C002A6571 /* Flipped Note.png */; };
 		AE9FE90F15195C3C002A6571 /* Note.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9FE90B15195C3C002A6571 /* Note.png */; };
@@ -519,6 +521,10 @@
 		AE7A86B2151DFD23007CA48C /* Arpeggios.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Arpeggios.plist; sourceTree = "<group>"; };
 		AE7A86B3151DFD23007CA48C /* Scales.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Scales.plist; sourceTree = "<group>"; };
 		AE7A86B4151DFD23007CA48C /* Steps.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Steps.plist; sourceTree = "<group>"; };
+		AE7A86BB151E0275007CA48C /* FreePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FreePlayScene.h; path = Classes/FreePlayScene.h; sourceTree = "<group>"; };
+		AE7A86BC151E0275007CA48C /* FreePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FreePlayScene.m; path = Classes/FreePlayScene.m; sourceTree = "<group>"; };
+		AE7A86C2151E068D007CA48C /* FreePlayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FreePlayLayer.h; path = Classes/FreePlayLayer.h; sourceTree = "<group>"; };
+		AE7A86C3151E068D007CA48C /* FreePlayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FreePlayLayer.m; path = Classes/FreePlayLayer.m; sourceTree = "<group>"; };
 		AE9FE90915195C3C002A6571 /* C Note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "C Note.png"; sourceTree = "<group>"; };
 		AE9FE90A15195C3C002A6571 /* Flipped Note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flipped Note.png"; sourceTree = "<group>"; };
 		AE9FE90B15195C3C002A6571 /* Note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Note.png; sourceTree = "<group>"; };
@@ -979,6 +985,10 @@
 				042FCA9D14F14CE700E34155 /* ScoreLayer.h */,
 				042FCA9E14F14CEA00E34155 /* ScoreLayer.m */,
 				04D3E46314F2FCE100FB0928 /* ScoreLayerDelegate.h */,
+				AE7A86BB151E0275007CA48C /* FreePlayScene.h */,
+				AE7A86BC151E0275007CA48C /* FreePlayScene.m */,
+				AE7A86C2151E068D007CA48C /* FreePlayLayer.h */,
+				AE7A86C3151E068D007CA48C /* FreePlayLayer.m */,
 			);
 			name = "Scenes & Layers";
 			sourceTree = "<group>";
@@ -1985,6 +1995,8 @@
 				DA2D6E141512081600BA02C0 /* ParticleGenerator.m in Sources */,
 				DA2D6E171512E71000BA02C0 /* Light.m in Sources */,
 				AE5839A61517FC240097EDD5 /* GameLogicF.m in Sources */,
+				AE7A86BD151E0276007CA48C /* FreePlayScene.m in Sources */,
+				AE7A86C4151E068E007CA48C /* FreePlayLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

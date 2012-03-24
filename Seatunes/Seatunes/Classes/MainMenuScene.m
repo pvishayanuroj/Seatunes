@@ -8,6 +8,7 @@
 
 #import "MainMenuScene.h"
 #import "PlayMenuScene.h"
+#import "FreePlayScene.h"
 #import "StarfishButton.h"
 #import "AudioManager.h"
 #import "DataUtility.h"
@@ -19,6 +20,8 @@ static const CGFloat MMS_TITLE_X = 700.0f;
 static const CGFloat MMS_TITLE_Y = 600.0f;
 static const CGFloat MMS_PLAY_X = 100.0f;
 static const CGFloat MMS_PLAY_Y = 600.0f;
+static const CGFloat MMS_FREEPLAY_X = 200.0f;
+static const CGFloat MMS_FREEPLAY_Y = 475.0f;
 static const CGFloat MMS_BUY_X = 200.0f;
 static const CGFloat MMS_BUY_Y = 500.0f;
 
@@ -45,7 +48,12 @@ static const CGFloat MMS_BUY_Y = 500.0f;
         playButton.delegate = self;
         playButton.position = ccp(MMS_PLAY_X, MMS_PLAY_Y);
         
+        Button *freePlayButton = [StarfishButton starfishButton:kFreePlayButton text:@"Free Play"];
+        freePlayButton.delegate = self;
+        freePlayButton.position = ccp(MMS_FREEPLAY_X, MMS_FREEPLAY_Y);        
+        
         [self addChild:playButton];
+        [self addChild:freePlayButton];        
         
     }
     return self;
@@ -63,8 +71,12 @@ static const CGFloat MMS_BUY_Y = 500.0f;
         case kPlayButton:
             scene = [PlayMenuScene node];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:NO]];
-            [[AudioManager audioManager] playSoundEffect:kMenuE1];
-            //[[CCDirector sharedDirector] replaceScene:[CCTransitionFlipY transitionWithDuration:0.5f scene:scene]];            
+            [[AudioManager audioManager] playSoundEffect:kMenuE1];        
+            break;
+        case kFreePlayButton:
+            scene = [FreePlayScene node];
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:NO]];
+            [[AudioManager audioManager] playSoundEffect:kMenuE1];            
             break;
         case kBuySongsButton:
             break;

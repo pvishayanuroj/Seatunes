@@ -8,6 +8,7 @@
 
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
 @interface DataUtility : NSObject {
  
@@ -22,6 +23,8 @@
     NSDictionary *packIdentifiers_;
     
     NSArray *defaultPacks_;
+    
+	CCSpriteBatchNode *spriteSheet_;    
 }
 
 @property (nonatomic, readonly) NSArray *allPackNames;
@@ -49,5 +52,7 @@
 - (NSArray *) loadSongNames:(NSString *)packName;
 
 - (BOOL) isDefaultPack:(NSString *)packName;
+
+- (void) animationLoader:(NSString *)unitListName spriteSheetName:(NSString *)spriteSheetName;
 
 @end

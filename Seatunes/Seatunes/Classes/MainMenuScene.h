@@ -13,6 +13,7 @@
 
 enum {
     kPlayButton,
+    kFreePlayButton,
     kBuySongsButton,
     kCreditsButton
 };
