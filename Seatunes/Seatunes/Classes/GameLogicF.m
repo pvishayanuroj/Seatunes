@@ -104,9 +104,7 @@ static const CGFloat GLF_KEYBOARD_Y = 100.0f;
         if (keyType != kBlankNote) {
             [queueByID_ addObject:[NSNumber numberWithUnsignedInteger:noteIndex_]];
             [queueByKey_ addObject:[NSNumber numberWithInteger:keyType]];
-            //[instructor_ showSing];
             [noteGenerator_ addFloorNote:keyType numID:noteIndex_];            
-            //[noteGenerator_ addInstructorNote:keyType numID:noteIndex_];
         }
         
         // Check if this is the last note

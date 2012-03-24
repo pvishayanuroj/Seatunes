@@ -9,7 +9,12 @@
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "StaffNoteDelegate.h"
+
+typedef enum {
+    kStaffNoteStart,
+    kStaffNoteActive,
+    kStaffNoteFade
+} StaffNoteState;
 
 @interface StaffNote : CCNode {
     
@@ -19,14 +24,14 @@
     
     KeyType keyType_;
     
-    NSUInteger numID_;
+    StaffNoteState state_;
     
-    id <StaffNoteDelegate> delegate_;
+    NSUInteger numID_;
     
 }
 
+@property (nonatomic, readonly) StaffNoteState state;
 @property (nonatomic, readonly) NSUInteger numID;
-@property (nonatomic, assign) id <StaffNoteDelegate> delegate;
 
 + (id) staffNote:(KeyType)keyType pos:(CGPoint)pos numID:(NSUInteger)numID;
 
@@ -35,10 +40,6 @@
 - (id) initStaffNote:(KeyType)keyType pos:(CGPoint)pos numID:(NSUInteger)numID isStatic:(BOOL)isStatic;
 
 - (void) curvedMove;
-
-- (void) move;
-
-- (void) staffNoteReturn;
 
 - (void) fadeDestroy;
 

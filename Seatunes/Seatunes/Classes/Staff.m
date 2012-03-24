@@ -62,7 +62,8 @@ static const CGFloat ST_PS_OFFSET_Y = -15.0f;
 
         if (note.position.x < ST_NOTE_X_BOUNDARY && note.position.y > -100) {
             [remove addIndex:index];
-            [note staffNoteReturn];
+            [self staffNoteReturned:note];
+            [note fadeDestroy];
         }
         index++;
     }
@@ -81,7 +82,6 @@ static const CGFloat ST_PS_OFFSET_Y = -15.0f;
 - (void) addNote:(KeyType)keyType numID:(NSUInteger)numID
 {
     StaffNote *note = [StaffNote staffNote:keyType pos:ccp(ST_NOTE_OFFSET_X, 0) numID:numID];
-    note.delegate = self;
     [notes_ addObject:note];
     [self addChild:note];
 }
@@ -90,32 +90,25 @@ static const CGFloat ST_PS_OFFSET_Y = -15.0f;
 {
     CGPoint pos = ccp(-200, -275);
     StaffNote *note = [StaffNote staffNote:keyType pos:pos numID:numID];
-    note.delegate = self;
     [notes_ addObject:note];
     [self addChild:note];    
 }
 
 - (void) addStaticNote:(KeyType)keyType numID:(NSUInteger)numID
 {
-    StaffNote *note = [StaffNote staticStaffNote:keyType pos:ccp(ST_STATIC_NOTE_OFFSET_X, 0) numID:numID];
-    note.delegate = self;    
+    StaffNote *note = [StaffNote staticStaffNote:keyType pos:ccp(ST_STATIC_NOTE_OFFSET_X, 0) numID:numID];  
     [notes_ addObject:note];
     [self addChild:note];    
 }
 
-/*
-- (void) removeOldestNote
+- (BOOL) isOldestNoteActive
 {
     if ([notes_ count] > 0) {
-        CGPoint pos = [[notes_ objectAtIndex:0] position];
-        [[notes_ objectAtIndex:0] staffNoteDestroy];
-        [notes_ removeObjectAtIndex:0];
-        ParticleGenerator *ps = [ParticleGenerator PSForNoteVanish];
-        ps.position = ccpAdd(pos, ccp(ST_PS_OFFSET_X, ST_PS_OFFSET_Y));
-        [self addChild:ps];
+        StaffNote *note = [notes_ objectAtIndex:0];
+        return note.state == kStaffNoteActive;
     }
+    return NO;
 }
- */
 
 - (void) removeOldestNote
 {

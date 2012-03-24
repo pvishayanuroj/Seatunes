@@ -22,9 +22,11 @@
     
     NSArray *notes_;
     
-    NSMutableArray *queue_;
+    NSMutableArray *queueByKey_;
     
-    NSMutableArray *notesHit_;    
+    NSMutableArray *queueByID_;    
+    
+    NSMutableDictionary *notesHit_;   
     
     NSUInteger playerNoteIndex_;
     
@@ -42,6 +44,8 @@
 - (id) initGameLogicE:(NSString *)songName;
 
 - (void) start;
+
+- (void) removeNote;
 
 - (void) endSong;
 

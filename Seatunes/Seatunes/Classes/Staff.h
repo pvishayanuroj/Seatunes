@@ -10,9 +10,8 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "StaffDelegate.h"
-#import "StaffNoteDelegate.h"
 
-@interface Staff : CCNode <StaffNoteDelegate> {
+@interface Staff : CCNode {
     
     NSMutableArray *notes_;
     
@@ -32,6 +31,8 @@
 
 - (void) addStaticNote:(KeyType)keyType numID:(NSUInteger)numID;
  
+- (BOOL) isOldestNoteActive;
+
 - (void) removeOldestNote;
 
 - (void) removeAllNotes;

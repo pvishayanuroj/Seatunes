@@ -400,7 +400,6 @@
 		04B0D4ED1507027200A4A2B8 /* StaffNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StaffNote.m; path = Classes/StaffNote.m; sourceTree = "<group>"; };
 		04B0D4EF15070C9800A4A2B8 /* Quarter Rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Quarter Rest.png"; sourceTree = "<group>"; };
 		04B0D4F115070DD600A4A2B8 /* StaffDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StaffDelegate.h; path = Classes/StaffDelegate.h; sourceTree = "<group>"; };
-		04B0D4F215070DEA00A4A2B8 /* StaffNoteDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StaffNoteDelegate.h; path = Classes/StaffNoteDelegate.h; sourceTree = "<group>"; };
 		04B20B88150ECF71009A729F /* Back Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back Button.png"; sourceTree = "<group>"; };
 		04B32C9314DDB1DA004AA98E /* GameLogicB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicB.h; path = Classes/GameLogicB.h; sourceTree = "<group>"; };
 		04B32C9414DDB1DA004AA98E /* GameLogicB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicB.m; path = Classes/GameLogicB.m; sourceTree = "<group>"; };
@@ -943,7 +942,6 @@
 				04B0D4F115070DD600A4A2B8 /* StaffDelegate.h */,
 				04B0D4EC1507027100A4A2B8 /* StaffNote.h */,
 				04B0D4ED1507027200A4A2B8 /* StaffNote.m */,
-				04B0D4F215070DEA00A4A2B8 /* StaffNoteDelegate.h */,
 				DA2D6E151512E70F00BA02C0 /* Light.h */,
 				DA2D6E161512E70F00BA02C0 /* Light.m */,
 			);

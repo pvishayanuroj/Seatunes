@@ -11,8 +11,8 @@
 
 @implementation StaffNote
 
+@synthesize state = state_;
 @synthesize numID = numID_;
-@synthesize delegate = delegate_;
 
 static const CGFloat SN_NOTE_PADDING = 12.65f;
 static const CGFloat SN_NOTE_OFFSET_Y = 23.0f;
@@ -33,10 +33,10 @@ static const CGFloat SN_MOVE_X = -800.0f;
 {
     if ((self = [super init])) {
         
-        delegate_ = nil;
         keyType_ = keyType;
         line_ = nil;
-        numID_ = numID;        
+        numID_ = numID;     
+        state_ = kStaffNoteStart;
         self.position = pos;
         
         if (keyType == kC4) {
@@ -101,20 +101,18 @@ static const CGFloat SN_MOVE_X = -800.0f;
 }
 - (void) moveAcross
 {
+    state_ = kStaffNoteActive;
     CCActionInterval *move = [CCMoveBy actionWithDuration:6.0f position:ccp(SN_MOVE_X, 0)];
     [self runAction:move];
 }
 
 - (void) fadeDestroy
 {
+    state_ = kStaffNoteFade;
+    
     CCActionInterval *fadeOut = [CCFadeOut actionWithDuration:0.5f];
     CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(destroy)];
-    [sprite_ runAction:[CCSequence actions:fadeOut, done, nil]];
-    
-    if (line_) {
-        CCActionInterval *lineFadeOut = [CCFadeOut actionWithDuration:0.5f];        
-        [line_ runAction:lineFadeOut];
-    }    
+    [sprite_ runAction:[CCSequence actions:fadeOut, done, nil]];  
 }
 
 - (void) jumpDestroy
@@ -140,28 +138,6 @@ static const CGFloat SN_MOVE_X = -800.0f;
 
 - (void) destroy
 {
-    [self removeFromParentAndCleanup:YES];
-}
-
-- (void) staffNoteReturn
-{
-    CCActionInterval *fadeOut = [CCFadeOut actionWithDuration:0.5f];
-    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(notifyStaffNoteReturn)];
-    
-    [sprite_ runAction:[CCSequence actions:fadeOut, done, nil]];
-    
-    if (line_) {
-        CCActionInterval *lineFadeOut = [CCFadeOut actionWithDuration:0.5f];        
-        [line_ runAction:lineFadeOut];
-    }
-}
-
-- (void) notifyStaffNoteReturn
-{
-    if (delegate_ && [delegate_ respondsToSelector:@selector(staffNoteReturned:)]) {
-        [delegate_ staffNoteReturned:self];
-    }
-    
     [self removeFromParentAndCleanup:YES];
 }
 

@@ -11,9 +11,10 @@
 #import "Keyboard.h"
 #import "Instructor.h"
 #import "NoteGenerator.h"
-#import "Note.h"
+#import "AudioManager.h"
 #import "SpeechReader.h"
 #import "Staff.h"
+#import "StaffNote.h"
 
 @implementation GameLogicE
 
@@ -39,14 +40,14 @@ static const CGFloat GLE_STAFF_Y = 600.0f;
         onLastNote_ = NO;
         onBlankNote_ = NO;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
-        queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
-        notesHit_ = [[Utility generateBoolArray:YES size:[Utility countNumNotes:notes_]] retain];        
+        queueByID_ = [[NSMutableArray arrayWithCapacity:5] retain];
+        queueByKey_ = [[NSMutableArray arrayWithCapacity:5] retain];        
+        
+        notesHit_ = [[Utility generateBoolDictionary:YES size:[notes_ count]] retain];          
         
         CCSprite *background = [CCSprite spriteWithFile:@"Game Background No Coral.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];                     
-        
-      
         
         CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Background.png"];
         coralBackground.anchorPoint = CGPointZero;
@@ -81,7 +82,8 @@ static const CGFloat GLE_STAFF_Y = 600.0f;
 - (void) dealloc
 {
     [notes_ release];
-    [queue_ release];
+    [queueByID_ release];
+    [queueByKey_ release];
     [notesHit_ release];
     [staff_ release];
     
@@ -103,14 +105,14 @@ static const CGFloat GLE_STAFF_Y = 600.0f;
         
         // As long as not blank, play the note and store
         if (keyType != kBlankNote) {
-            //[queue_ addObject:[NSNumber numberWithUnsignedInteger:noteIndex_]];            
-            [queue_ addObject:key];
+            [queueByID_ addObject:[NSNumber numberWithUnsignedInteger:noteIndex_]];
+            [queueByKey_ addObject:[NSNumber numberWithInteger:keyType]];            
             [staff_ addMovingNote:keyType numID:noteIndex_];          
             [instructor_ showSing];
         }
         
         // Check if this is the last note
-        if ([notes_ count] == noteIndex_) {
+        if (([notes_ count] - 1) == noteIndex_) {
             onLastNote_ = YES;
             [self unschedule:@selector(loop:)];                     
         }
@@ -119,34 +121,45 @@ static const CGFloat GLE_STAFF_Y = 600.0f;
     } 
 }
 
+- (void) removeNote
+{
+    [queueByID_ removeObjectAtIndex:0];
+    [queueByKey_ removeObjectAtIndex:0];       
+}
+
 #pragma mark - Delegate Methods
 
 - (void) keyboardKeyPressed:(KeyType)keyType
 {
     if (!ignoreInput_) {
-        NSNumber *key = [NSNumber numberWithInteger:keyType];
-        
-        if ([queue_ count] > 0) {
+
+        // As long as notes to be played
+        if ([queueByID_ count] > 0) {
             
-            NSNumber *correctNote = [queue_ objectAtIndex:0];            
-            
-            // Correct note played
-            if ([key isEqualToNumber:correctNote]) {
-                [queue_ removeObjectAtIndex:0];
-                [staff_ removeOldestNote];
-                playerNoteIndex_++;
+            // As long as note to be played is moving across the staff
+            if ([staff_ isOldestNoteActive]) {
                 
-                // This note is the last note in the song
-                if (onLastNote_ && [queue_ count] == 0) {
-                    keyboard_.isClickable = NO;
-                    ignoreInput_ = YES;            
-                    [self runDelayedEndSpeech];                         
+                NSNumber *key = [queueByKey_ objectAtIndex:0];            
+                
+                // Correct note played
+                if ([key integerValue] == keyType) {
+                    
+                    [self removeNote];
+                    [staff_ removeOldestNote];
+                    [[AudioManager audioManager] playSound:keyType instrument:kPiano];                    
+                    
+                    // This note is the last note in the song
+                    if (onLastNote_ && [queueByID_ count] == 0) {
+                        keyboard_.isClickable = NO;
+                        ignoreInput_ = YES;            
+                        [self runDelayedEndSpeech];                         
+                    }
                 }
-            }
-            // Incorrect note played
-            else {
-                [instructor_ showWrongNote];
-                [notesHit_ replaceObjectAtIndex:playerNoteIndex_ withObject:[NSNumber numberWithBool:NO]];            
+                // Incorrect note played
+                else {
+                    [instructor_ showWrongNote];
+                    [[AudioManager audioManager] playSound:keyType instrument:kMuted];          
+                }
             }
         }
     }
@@ -154,15 +167,14 @@ static const CGFloat GLE_STAFF_Y = 600.0f;
 
 - (void) staffNoteReturned:(StaffNote *)note
 {
-    //NSUInteger numQueued = [queue_ count];    
+    [self removeNote];
+    [notesHit_ setObject:[NSNumber numberWithBool:NO] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];       
     
-    //[staff_ removeAllNotes];
-    
-    //[self unschedule:@selector(loop:)];
-    //keyboard_.isClickable = NO;
-    //noteIndex_ -= numQueued;
-    //[queue_ removeAllObjects];
-    //[self runSingleSpeech:kMediumReplay tapRequired:YES];    
+    // This note is the last note in the song
+    if (onLastNote_ && [queueByID_ count] == 0) {
+        ignoreInput_ = YES;            
+        [self runDelayedEndSpeech];                         
+    }       
 }
 
 - (void) speechComplete:(SpeechType)speechType
@@ -189,9 +201,10 @@ static const CGFloat GLE_STAFF_Y = 600.0f;
 
 - (void) endSong
 {
-    scoreInfo_.notesMissed = [Utility countNumBool:NO array:notesHit_];
+    scoreInfo_.notesMissed = [Utility countNumBoolInDictionary:NO dictionary:notesHit_];
     scoreInfo_.notesHit = [notesHit_ count] - scoreInfo_.notesMissed;
     
+    keyboard_.isKeyboardMuted = NO;    
     [keyboard_ applause];
 }
 
