@@ -25,7 +25,7 @@
 
 static const CGFloat PMS_MENU_FRAME_X = 470.0f;
 static const CGFloat PMS_MENU_FRAME_Y = 350.0f;
-static const CGFloat PMS_PACK_TITLE_X = 700.0f;
+static const CGFloat PMS_PACK_TITLE_X = 615.0f;
 static const CGFloat PMS_PACK_TITLE_Y = 630.0f;
 
 static const CGFloat PMS_BACK_BUTTON_X = 50.0f;
@@ -38,12 +38,12 @@ static const CGFloat PMS_CURRENT_PACK_BUTTON_X = 450.0f;
 static const CGFloat PMS_CURRENT_PACK_BUTTON_Y = 90.0f;
 
 static const CGFloat PMS_PACK_MENU_X = 100.0f;
-static const CGFloat PMS_PACK_MENU_Y = 175.0f;
+static const CGFloat PMS_PACK_MENU_Y = 150.0f;
 static const CGFloat PMS_PACK_MENU_WIDTH = 230.0f;
 static const CGFloat PMS_PACK_MENU_HEIGHT = 425.0f;
 
 static const CGFloat PMS_SONG_MENU_X = 325.0f;
-static const CGFloat PMS_SONG_MENU_Y = 175.0f;
+static const CGFloat PMS_SONG_MENU_Y = 150.0f;
 static const CGFloat PMS_SONG_MENU_WIDTH = 565.0f;
 static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
 
