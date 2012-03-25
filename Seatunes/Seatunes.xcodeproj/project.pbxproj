@@ -149,6 +149,10 @@
 		04DE522614FA1A6F00F8E45C /* Christmas Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */; };
 		04DE522714FA1A6F00F8E45C /* Christmas Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */; };
 		AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */; };
+		AE4D78CC151F6BAF00B906ED /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4D78C4151F6BAF00B906ED /* CDAudioManager.m */; };
+		AE4D78CD151F6BAF00B906ED /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4D78C7151F6BAF00B906ED /* CDOpenALSupport.m */; };
+		AE4D78CE151F6BAF00B906ED /* CocosDenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4D78C9151F6BAF00B906ED /* CocosDenshion.m */; };
+		AE4D78CF151F6BAF00B906ED /* SimpleAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4D78CB151F6BAF00B906ED /* SimpleAudioEngine.m */; };
 		AE5839A61517FC240097EDD5 /* GameLogicF.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5839A51517FC240097EDD5 /* GameLogicF.m */; };
 		AE77D9C1151D9095002AC832 /* Jingle Bells.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE77D9BF151D9095002AC832 /* Jingle Bells.plist */; };
 		AE77D9C2151D9095002AC832 /* Silent Night.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE77D9C0151D9095002AC832 /* Silent Night.plist */; };
@@ -278,10 +282,6 @@
 		DAB1202B14C1E84C009B60FB /* TGAlib.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1202A14C1E84C009B60FB /* TGAlib.m */; };
 		DAB1202E14C1E84C009B60FB /* TransformUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1202D14C1E84C009B60FB /* TransformUtils.m */; };
 		DAB1203314C1E84C009B60FB /* ZipUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1203214C1E84C009B60FB /* ZipUtils.m */; };
-		DAB1203814C1E84C009B60FB /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1203714C1E84C009B60FB /* CDAudioManager.m */; };
-		DAB1203C14C1E84C009B60FB /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1203B14C1E84C009B60FB /* CDOpenALSupport.m */; };
-		DAB1203F14C1E84C009B60FB /* CocosDenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1203E14C1E84C009B60FB /* CocosDenshion.m */; };
-		DAB1204214C1E84C009B60FB /* SimpleAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1204114C1E84C009B60FB /* SimpleAudioEngine.m */; };
 		DAB1204714C1E84D009B60FB /* CLScoreServerPost.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1204614C1E84D009B60FB /* CLScoreServerPost.m */; };
 		DAB1204A14C1E84D009B60FB /* CLScoreServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1204914C1E84D009B60FB /* CLScoreServerRequest.m */; };
 		DAB1204D14C1E84D009B60FB /* cocoslive.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1204C14C1E84D009B60FB /* cocoslive.m */; };
@@ -502,6 +502,15 @@
 		04DE522414FA1A6F00F8E45C /* Christmas Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Pack Selected.png"; sourceTree = "<group>"; };
 		04DE522514FA1A6F00F8E45C /* Christmas Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Pack Unselected.png"; sourceTree = "<group>"; };
 		AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
+		AE4D78C3151F6BAF00B906ED /* CDAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDAudioManager.h; path = libs/CocosDenshion/CDAudioManager.h; sourceTree = "<group>"; };
+		AE4D78C4151F6BAF00B906ED /* CDAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDAudioManager.m; path = libs/CocosDenshion/CDAudioManager.m; sourceTree = "<group>"; };
+		AE4D78C5151F6BAF00B906ED /* CDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDConfig.h; path = libs/CocosDenshion/CDConfig.h; sourceTree = "<group>"; };
+		AE4D78C6151F6BAF00B906ED /* CDOpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDOpenALSupport.h; path = libs/CocosDenshion/CDOpenALSupport.h; sourceTree = "<group>"; };
+		AE4D78C7151F6BAF00B906ED /* CDOpenALSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDOpenALSupport.m; path = libs/CocosDenshion/CDOpenALSupport.m; sourceTree = "<group>"; };
+		AE4D78C8151F6BAF00B906ED /* CocosDenshion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosDenshion.h; path = libs/CocosDenshion/CocosDenshion.h; sourceTree = "<group>"; };
+		AE4D78C9151F6BAF00B906ED /* CocosDenshion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosDenshion.m; path = libs/CocosDenshion/CocosDenshion.m; sourceTree = "<group>"; };
+		AE4D78CA151F6BAF00B906ED /* SimpleAudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleAudioEngine.h; path = libs/CocosDenshion/SimpleAudioEngine.h; sourceTree = "<group>"; };
+		AE4D78CB151F6BAF00B906ED /* SimpleAudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleAudioEngine.m; path = libs/CocosDenshion/SimpleAudioEngine.m; sourceTree = "<group>"; };
 		AE5839A41517FC240097EDD5 /* GameLogicF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicF.h; path = Classes/GameLogicF.h; sourceTree = "<group>"; };
 		AE5839A51517FC240097EDD5 /* GameLogicF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicF.m; path = Classes/GameLogicF.m; sourceTree = "<group>"; };
 		AE77D9BF151D9095002AC832 /* Jingle Bells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Jingle Bells.plist"; sourceTree = "<group>"; };
@@ -733,15 +742,6 @@
 		DAB1203114C1E84C009B60FB /* ZipUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZipUtils.h; path = libs/cocos2d/Support/ZipUtils.h; sourceTree = "<group>"; };
 		DAB1203214C1E84C009B60FB /* ZipUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZipUtils.m; path = libs/cocos2d/Support/ZipUtils.m; sourceTree = "<group>"; };
 		DAB1203414C1E84C009B60FB /* LICENSE_cocos2d.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_cocos2d.txt; path = libs/LICENSE_cocos2d.txt; sourceTree = "<group>"; };
-		DAB1203614C1E84C009B60FB /* CDAudioManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CDAudioManager.h; path = libs/CocosDenshion/CDAudioManager.h; sourceTree = "<group>"; };
-		DAB1203714C1E84C009B60FB /* CDAudioManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CDAudioManager.m; path = libs/CocosDenshion/CDAudioManager.m; sourceTree = "<group>"; };
-		DAB1203914C1E84C009B60FB /* CDConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CDConfig.h; path = libs/CocosDenshion/CDConfig.h; sourceTree = "<group>"; };
-		DAB1203A14C1E84C009B60FB /* CDOpenALSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CDOpenALSupport.h; path = libs/CocosDenshion/CDOpenALSupport.h; sourceTree = "<group>"; };
-		DAB1203B14C1E84C009B60FB /* CDOpenALSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CDOpenALSupport.m; path = libs/CocosDenshion/CDOpenALSupport.m; sourceTree = "<group>"; };
-		DAB1203D14C1E84C009B60FB /* CocosDenshion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CocosDenshion.h; path = libs/CocosDenshion/CocosDenshion.h; sourceTree = "<group>"; };
-		DAB1203E14C1E84C009B60FB /* CocosDenshion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CocosDenshion.m; path = libs/CocosDenshion/CocosDenshion.m; sourceTree = "<group>"; };
-		DAB1204014C1E84C009B60FB /* SimpleAudioEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SimpleAudioEngine.h; path = libs/CocosDenshion/SimpleAudioEngine.h; sourceTree = "<group>"; };
-		DAB1204114C1E84C009B60FB /* SimpleAudioEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SimpleAudioEngine.m; path = libs/CocosDenshion/SimpleAudioEngine.m; sourceTree = "<group>"; };
 		DAB1204314C1E84C009B60FB /* LICENSE_CocosDenshion.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_CocosDenshion.txt; path = libs/LICENSE_CocosDenshion.txt; sourceTree = "<group>"; };
 		DAB1204514C1E84C009B60FB /* CLScoreServerPost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLScoreServerPost.h; path = libs/cocoslive/CLScoreServerPost.h; sourceTree = "<group>"; };
 		DAB1204614C1E84D009B60FB /* CLScoreServerPost.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CLScoreServerPost.m; path = libs/cocoslive/CLScoreServerPost.m; sourceTree = "<group>"; };
@@ -1476,15 +1476,15 @@
 		DAB1203514C1E84C009B60FB /* CocosDenshion */ = {
 			isa = PBXGroup;
 			children = (
-				DAB1203614C1E84C009B60FB /* CDAudioManager.h */,
-				DAB1203714C1E84C009B60FB /* CDAudioManager.m */,
-				DAB1203914C1E84C009B60FB /* CDConfig.h */,
-				DAB1203A14C1E84C009B60FB /* CDOpenALSupport.h */,
-				DAB1203B14C1E84C009B60FB /* CDOpenALSupport.m */,
-				DAB1203D14C1E84C009B60FB /* CocosDenshion.h */,
-				DAB1203E14C1E84C009B60FB /* CocosDenshion.m */,
-				DAB1204014C1E84C009B60FB /* SimpleAudioEngine.h */,
-				DAB1204114C1E84C009B60FB /* SimpleAudioEngine.m */,
+				AE4D78C3151F6BAF00B906ED /* CDAudioManager.h */,
+				AE4D78C4151F6BAF00B906ED /* CDAudioManager.m */,
+				AE4D78C5151F6BAF00B906ED /* CDConfig.h */,
+				AE4D78C6151F6BAF00B906ED /* CDOpenALSupport.h */,
+				AE4D78C7151F6BAF00B906ED /* CDOpenALSupport.m */,
+				AE4D78C8151F6BAF00B906ED /* CocosDenshion.h */,
+				AE4D78C9151F6BAF00B906ED /* CocosDenshion.m */,
+				AE4D78CA151F6BAF00B906ED /* SimpleAudioEngine.h */,
+				AE4D78CB151F6BAF00B906ED /* SimpleAudioEngine.m */,
 			);
 			name = CocosDenshion;
 			sourceTree = "<group>";
@@ -1926,10 +1926,6 @@
 				DAB1202B14C1E84C009B60FB /* TGAlib.m in Sources */,
 				DAB1202E14C1E84C009B60FB /* TransformUtils.m in Sources */,
 				DAB1203314C1E84C009B60FB /* ZipUtils.m in Sources */,
-				DAB1203814C1E84C009B60FB /* CDAudioManager.m in Sources */,
-				DAB1203C14C1E84C009B60FB /* CDOpenALSupport.m in Sources */,
-				DAB1203F14C1E84C009B60FB /* CocosDenshion.m in Sources */,
-				DAB1204214C1E84C009B60FB /* SimpleAudioEngine.m in Sources */,
 				DAB1204714C1E84D009B60FB /* CLScoreServerPost.m in Sources */,
 				DAB1204A14C1E84D009B60FB /* CLScoreServerRequest.m in Sources */,
 				DAB1204D14C1E84D009B60FB /* cocoslive.m in Sources */,
@@ -1993,6 +1989,10 @@
 				AE5839A61517FC240097EDD5 /* GameLogicF.m in Sources */,
 				AE7A86BD151E0276007CA48C /* FreePlayScene.m in Sources */,
 				AE7A86C4151E068E007CA48C /* FreePlayLayer.m in Sources */,
+				AE4D78CC151F6BAF00B906ED /* CDAudioManager.m in Sources */,
+				AE4D78CD151F6BAF00B906ED /* CDOpenALSupport.m in Sources */,
+				AE4D78CE151F6BAF00B906ED /* CocosDenshion.m in Sources */,
+				AE4D78CF151F6BAF00B906ED /* SimpleAudioEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
