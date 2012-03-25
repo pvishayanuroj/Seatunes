@@ -46,8 +46,6 @@
 
 - (void) hideSideMenu;
 
-- (void) showScoreMenu:(ScoreInfo)scoreInfo;
-
 - (void) pauseGame;
 
 - (void) resumeGame;

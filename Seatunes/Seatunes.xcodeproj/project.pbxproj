@@ -171,7 +171,6 @@
 		AE9FE90D15195C3C002A6571 /* C Note.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9FE90915195C3C002A6571 /* C Note.png */; };
 		AE9FE90E15195C3C002A6571 /* Flipped Note.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9FE90A15195C3C002A6571 /* Flipped Note.png */; };
 		AE9FE90F15195C3C002A6571 /* Note.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9FE90B15195C3C002A6571 /* Note.png */; };
-		AE9FE91015195C3C002A6571 /* Particle.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9FE90C15195C3C002A6571 /* Particle.png */; };
 		AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */; };
 		DA00885B15116AA600E14BFB /* Angler Fish.png in Resources */ = {isa = PBXBuildFile; fileRef = DA00885915116AA600E14BFB /* Angler Fish.png */; };
 		DA00885C15116AA600E14BFB /* Spotlight.png in Resources */ = {isa = PBXBuildFile; fileRef = DA00885A15116AA600E14BFB /* Spotlight.png */; };
@@ -528,7 +527,6 @@
 		AE9FE90915195C3C002A6571 /* C Note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "C Note.png"; sourceTree = "<group>"; };
 		AE9FE90A15195C3C002A6571 /* Flipped Note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flipped Note.png"; sourceTree = "<group>"; };
 		AE9FE90B15195C3C002A6571 /* Note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Note.png; sourceTree = "<group>"; };
-		AE9FE90C15195C3C002A6571 /* Particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Particle.png; sourceTree = "<group>"; };
 		AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Muted.m4a"; sourceTree = "<group>"; };
 		DA00885915116AA600E14BFB /* Angler Fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Angler Fish.png"; sourceTree = "<group>"; };
 		DA00885A15116AA600E14BFB /* Spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spotlight.png; sourceTree = "<group>"; };
@@ -867,7 +865,6 @@
 				AE9FE90915195C3C002A6571 /* C Note.png */,
 				AE9FE90A15195C3C002A6571 /* Flipped Note.png */,
 				AE9FE90B15195C3C002A6571 /* Note.png */,
-				AE9FE90C15195C3C002A6571 /* Particle.png */,
 				AE78715C151614F6009E9614 /* Spotlight A4.png */,
 				AE78715D151614F6009E9614 /* Spotlight B4.png */,
 				AE78715E151614F6009E9614 /* Spotlight C4.png */,
@@ -1835,7 +1832,6 @@
 				AE9FE90D15195C3C002A6571 /* C Note.png in Resources */,
 				AE9FE90E15195C3C002A6571 /* Flipped Note.png in Resources */,
 				AE9FE90F15195C3C002A6571 /* Note.png in Resources */,
-				AE9FE91015195C3C002A6571 /* Particle.png in Resources */,
 				AE77D9C1151D9095002AC832 /* Jingle Bells.plist in Resources */,
 				AE77D9C2151D9095002AC832 /* Silent Night.plist in Resources */,
 				AE7A86A8151DF5C6007CA48C /* Deck The Halls.plist in Resources */,
@@ -2007,8 +2003,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paul Vishayanuroj (8GPS98FCV8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Vishayanuroj (5FZQ8D9467)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paul Vishayanuroj (5FZQ8D9467)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2020,8 +2016,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5194E6DA-BE3C-4B01-B464-649F0A5903B3";
+				PROVISIONING_PROFILE = "DAD4730E-DA1A-4E51-898F-0CF5A806C639";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EA384E03-00F7-42B9-9951-C53DD3193E8A";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2030,8 +2026,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Paul Vishayanuroj";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Vishayanuroj (5FZQ8D9467)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paul Vishayanuroj (5FZQ8D9467)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -2039,8 +2035,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "24467915-D8EC-4199-8E94-B0AAC1310625";
+				PROVISIONING_PROFILE = "DAD4730E-DA1A-4E51-898F-0CF5A806C639";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DAD4730E-DA1A-4E51-898F-0CF5A806C639";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
