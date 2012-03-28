@@ -45,14 +45,14 @@ static const CGFloat SL_MENU_Y = 75.0f;
         
         delegate_ = nil;
         
-        CCSprite *frame = [CCSprite spriteWithFile:@"Score Menu Frame.png"];
+        CCSprite *frame = [CCSprite spriteWithFile:@"Score Parchment.png"];
         frame.position = ccp(0, 0);
         frame.anchorPoint = CGPointZero;
         [self addChild:frame];
         
         Button *nextButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Next Button.png" scale:0.75f];
-        Button *replayButton = [ScaledImageButton scaledImageButton:kButtonReplay image:@"Replay Button.png" scale:0.75f];
-        Button *menuButton = [ScaledImageButton scaledImageButton:kButtonMenu image:@"Menu Button.png" scale:0.75f];           
+        Button *replayButton = [ScaledImageButton scaledImageButton:kButtonReplay image:@"Restart Button.png" scale:0.75f];
+        Button *menuButton = [ScaledImageButton scaledImageButton:kButtonMenu image:@"Home Button.png" scale:0.75f];           
         
         nextButton.position = ccp(SL_NEXT_X, SL_NEXT_Y);
         replayButton.position = ccp(SL_REPLAY_X, SL_REPLAY_Y);
@@ -77,17 +77,17 @@ static const CGFloat SL_MENU_Y = 75.0f;
             switch (scoreInfo.difficulty) {
                 case kDifficultyEasy:
                     earnedText.string = @"You earned the Bubble Badge:";
-                    sprite = [CCSprite spriteWithFile:@"Bubble Icon.png"];
+                    sprite = [CCSprite spriteWithFile:@"Bubble Button.png"];
                     sprite.position = ccp(SL_BUBBLE_ICON_X, SL_ROW1_Y);                    
                     break;
                 case kDifficultyMedium:
                     earnedText.string = @"You earned the Clam Badge:";
-                    sprite = [CCSprite spriteWithFile:@"Clam Icon.png"];                
+                    sprite = [CCSprite spriteWithFile:@"Clam Button.png"];                
                     sprite.position = ccp(SL_CLAM_ICON_X, SL_ROW1_Y);                    
                     break;
                 case kDifficultyHard:
                     earnedText.string = @"You earned the Note Badge";
-                    sprite = [CCSprite spriteWithFile:@"Music Note Icon.png"];         
+                    sprite = [CCSprite spriteWithFile:@"Music Note Button.png"];         
                     sprite.position = ccp(SL_NOTE_ICON_X, SL_ROW1_Y);                                        
                     break;
                 default:

@@ -45,11 +45,11 @@ static const CGFloat GLE_STAFF_Y = 600.0f;
         
         notesHit_ = [[Utility generateBoolDictionary:YES size:[notes_ count]] retain];          
         
-        CCSprite *background = [CCSprite spriteWithFile:@"Game Background No Coral.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];                     
         
-        CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Background.png"];
+        CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Foreground.png"];
         coralBackground.anchorPoint = CGPointZero;
         [self addChild:coralBackground];        
 

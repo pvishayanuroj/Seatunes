@@ -85,7 +85,7 @@
     CGPoint dragPt = [scrollView contentOffset];
     CGFloat newY = dragPt.y + originalPos_.y;
     
-    //NSLog(@"OrigY: %4.2f, Prev pt: %4.2f, new pt: %4.2f", originalPos_.y, node_.position.y, newY);
+    NSLog(@"OrigY: %4.2f, Prev pt: %4.2f, new pt: %4.2f", originalPos_.y, node_.position.y, newY);
     node_.position = CGPointMake(node_.position.x, newY);
 }
 

@@ -44,29 +44,29 @@ static const CGFloat SMI_ICON_SCALE = 0.25f;
         NSString *hardKey = [Utility songKey:songName difficulty:kDifficultyHard];        
 
         if ([scores objectForKey:easyKey]) {
-            easySprite = [CCSprite spriteWithFile:@"Bubble Icon.png"];                                    
+            easySprite = [CCSprite spriteWithFile:@"Bubble Button Small.png"];                                    
         }
         else {
-            easySprite = [CCSprite spriteWithFile:@"Bubble Icon Unselected.png"];                                    
+            easySprite = [CCSprite spriteWithFile:@"Bubble Button Small Unselected.png"];                                    
         }                
         
         if ([scores objectForKey:mediumKey]) {
-            mediumSprite = [CCSprite spriteWithFile:@"Clam Icon.png"];            
+            mediumSprite = [CCSprite spriteWithFile:@"Clam Button Small.png"];            
         }
         else {
-            mediumSprite = [CCSprite spriteWithFile:@"Clam Icon Unselected.png"];                        
+            mediumSprite = [CCSprite spriteWithFile:@"Clam Button Small Unselected.png"];                        
         }         
         
         if ([scores objectForKey:hardKey]) {
-            hardSprite = [CCSprite spriteWithFile:@"Music Note Icon.png"];
+            hardSprite = [CCSprite spriteWithFile:@"Music Note Button Small.png"];
         }
         else {
-            hardSprite = [CCSprite spriteWithFile:@"Music Note Icon Unselected.png"];
+            hardSprite = [CCSprite spriteWithFile:@"Music Note Button Small Unselected.png"];
         }
 
-        easySprite.scale = SMI_ICON_SCALE;
-        mediumSprite.scale = SMI_ICON_SCALE;
-        hardSprite.scale = SMI_ICON_SCALE;        
+        //easySprite.scale = SMI_ICON_SCALE;
+        //mediumSprite.scale = SMI_ICON_SCALE;
+        //hardSprite.scale = SMI_ICON_SCALE;        
         easySprite.position = ccp(SMI_STAR_X + 0 * SMI_STAR_PADDING, 0);        
         mediumSprite.position = ccp(SMI_STAR_X + 1 * SMI_STAR_PADDING, 3);        
         hardSprite.position = ccp(SMI_STAR_X + 2 * SMI_STAR_PADDING, 0);

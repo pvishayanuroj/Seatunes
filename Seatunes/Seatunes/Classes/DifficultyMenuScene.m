@@ -46,13 +46,13 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
     if ((self = [super init])) {
         
         // Add background
-        CCSprite *background = [CCSprite spriteWithFile:@"Menu Background.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];      
         songName_ = [songName retain];
         
         // Add the frame
-        CCSprite *menuFrame = [CCSprite spriteWithFile:@"Difficulty Menu Frame.png"];
+        CCSprite *menuFrame = [CCSprite spriteWithFile:@"Small Parchment.png"];
         menuFrame.position = ccp(DMS_MENU_FRAME_X, DMS_MENU_FRAME_Y);
         [self addChild:menuFrame];        
         
@@ -78,9 +78,9 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
         
         // Add buttons
         difficulty_ = kDifficultyEasy;
-        easyButton_ = [[ScaledImageButton scaledImageButton:kDifficultyEasy image:@"Bubble Icon.png"] retain];
-        mediumButton_ = [[ScaledImageButton scaledImageButton:kDifficultyMedium image:@"Clam Icon Unselected.png"] retain];
-        hardButton_ = [[ScaledImageButton scaledImageButton:kDifficultyHard image:@"Music Note Icon Unselected.png"] retain];        
+        easyButton_ = [[ScaledImageButton scaledImageButton:kDifficultyEasy image:@"Bubble Button.png"] retain];
+        mediumButton_ = [[ScaledImageButton scaledImageButton:kDifficultyMedium image:@"Clam Button Unselected.png"] retain];
+        hardButton_ = [[ScaledImageButton scaledImageButton:kDifficultyHard image:@"Music Note Button Unselected.png"] retain];        
         
         easyButton_.delegate = self;
         mediumButton_.delegate = self;
@@ -126,9 +126,9 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
 {   
     switch (button.numID) {
         case kDMSHard:
-            [(ScaledImageButton *)hardButton_ setImage:@"Music Note Icon.png"];
-            [(ScaledImageButton *)mediumButton_ setImage:@"Clam Icon Unselected.png"];                        
-            [(ScaledImageButton *)easyButton_ setImage:@"Bubble Icon Unselected.png"];  
+            [(ScaledImageButton *)hardButton_ setImage:@"Music Note Button.png"];
+            [(ScaledImageButton *)mediumButton_ setImage:@"Clam Button Unselected.png"];                        
+            [(ScaledImageButton *)easyButton_ setImage:@"Bubble Button Unselected.png"];  
             easyText_.opacity = DMS_SEMI_OPACITY;
             mediumText_.opacity = DMS_SEMI_OPACITY;
             hardText_.opacity = DMS_FULL_OPACITY;            
@@ -136,9 +136,9 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
             [[AudioManager audioManager] playSoundEffect:kMenuG1];            
             break;
         case kDMSMedium:
-            [(ScaledImageButton *)hardButton_ setImage:@"Music Note Icon Unselected.png"];            
-            [(ScaledImageButton *)mediumButton_ setImage:@"Clam Icon.png"];            
-            [(ScaledImageButton *)easyButton_ setImage:@"Bubble Icon Unselected.png"];    
+            [(ScaledImageButton *)hardButton_ setImage:@"Music Note Button Unselected.png"];            
+            [(ScaledImageButton *)mediumButton_ setImage:@"Clam Button.png"];            
+            [(ScaledImageButton *)easyButton_ setImage:@"Bubble Button Unselected.png"];    
             easyText_.opacity = DMS_SEMI_OPACITY;
             mediumText_.opacity = DMS_FULL_OPACITY;
             hardText_.opacity = DMS_SEMI_OPACITY;               
@@ -146,9 +146,9 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
             [[AudioManager audioManager] playSoundEffect:kMenuE1];            
             break;
         case kDMSEasy:
-            [(ScaledImageButton *)hardButton_ setImage:@"Music Note Icon Unselected.png"];            
-            [(ScaledImageButton *)mediumButton_ setImage:@"Clam Icon Unselected.png"];                        
-            [(ScaledImageButton *)easyButton_ setImage:@"Bubble Icon.png"];        
+            [(ScaledImageButton *)hardButton_ setImage:@"Music Note Button Unselected.png"];            
+            [(ScaledImageButton *)mediumButton_ setImage:@"Clam Button Unselected.png"];                        
+            [(ScaledImageButton *)easyButton_ setImage:@"Bubble Button.png"];        
             easyText_.opacity = DMS_FULL_OPACITY;
             mediumText_.opacity = DMS_SEMI_OPACITY;
             hardText_.opacity = DMS_SEMI_OPACITY;                           

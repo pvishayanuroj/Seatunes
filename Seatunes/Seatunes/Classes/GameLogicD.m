@@ -37,7 +37,7 @@ static const CGFloat GLD_INSTRUCTOR_Y = 550.0f;
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
         notesHit_ = [[Utility generateBoolDictionary:YES size:[notes_ count]] retain];
         
-        CCSprite *background = [CCSprite spriteWithFile:@"Game Background No Coral.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];         
         
@@ -49,7 +49,7 @@ static const CGFloat GLD_INSTRUCTOR_Y = 550.0f;
         noteGenerator_.delegate = self;
         [self addChild:noteGenerator_];   
         
-        CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Background.png"];
+        CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Foreground.png"];
         coralBackground.anchorPoint = CGPointZero;
         [self addChild:coralBackground];
         

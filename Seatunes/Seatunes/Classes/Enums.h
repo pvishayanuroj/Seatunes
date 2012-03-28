@@ -14,6 +14,8 @@
 #define kAllPacks @"All Packs"
 #define PACK_MENU_CELL_HEIGHT 160
 #define SONG_MENU_CELL_HEIGHT 55
+//#define PACK_MENU_CELL_HEIGHT 320
+//#define SONG_MENU_CELL_HEIGHT 110
 
 typedef enum {
     kC4 = 0,

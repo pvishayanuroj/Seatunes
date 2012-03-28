@@ -36,9 +36,13 @@ static const CGFloat MMS_BUY_Y = 500.0f;
         NSSet *productIdentifiers = [NSSet setWithArray:[[DataUtility manager] allProductIdentifiers]];
         [[SeatunesIAPHelper manager] loadProductIdentifiers:productIdentifiers];
          
-        CCSprite *background = [CCSprite spriteWithFile:@"Menu Background.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];          
+
+        CCSprite *foreground = [CCSprite spriteWithFile:@"Coral Foreground.png"];
+        foreground.anchorPoint = CGPointZero;
+        [self addChild:foreground];                  
         
         CCSprite *title = [CCSprite spriteWithFile:@"Seatunes Title.png"];
         title.position = ccp(MMS_TITLE_X, MMS_TITLE_Y);

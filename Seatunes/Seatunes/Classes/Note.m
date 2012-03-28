@@ -90,7 +90,7 @@ static const CGFloat NT_RADIUS = 25.0f;
 {
     [self stopAllActions];    
     [sprite_ removeFromParentAndCleanup:YES]; 
-    CCSprite *sprite = [CCSprite spriteWithFile:@"Bubble Burst.png"];
+    CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:@"Bubble Burst.png"];
     [self addChild:sprite];
     
     CCActionInterval *delay = [CCDelayTime actionWithDuration:0.1f];

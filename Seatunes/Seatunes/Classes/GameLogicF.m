@@ -41,7 +41,7 @@ static const CGFloat GLF_KEYBOARD_Y = 100.0f;
         
         notesHit_ = [[Utility generateBoolDictionary:YES size:[notes_ count]] retain];   
         
-        CCSprite *background = [CCSprite spriteWithFile:@"Game Background No Coral.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];            
         
@@ -53,7 +53,7 @@ static const CGFloat GLF_KEYBOARD_Y = 100.0f;
         noteGenerator_.delegate = self;        
         [self addChild:noteGenerator_];  
         
-        CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Background.png"];
+        CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Foreground.png"];
         coralBackground.anchorPoint = CGPointZero;
         [self addChild:coralBackground];        
 

@@ -162,6 +162,7 @@ NSInteger ccLoadFileIntoMemory(const char *filename, unsigned char **out)
 		// Retina Display ?
 		if( CC_CONTENT_SCALE_FACTOR() == 2 ) {
 			ret = [self getPath:fullpath forSuffix:__suffixiPadRetinaDisplay];
+            NSLog(@"%@", ret);
 			*resolutionType = kCCResolutioniPadRetinaDisplay;
 		}
 		else

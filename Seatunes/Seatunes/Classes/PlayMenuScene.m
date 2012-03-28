@@ -37,6 +37,7 @@ static const CGFloat PMS_ALL_PACKS_BUTTON_Y = 90.0f;
 static const CGFloat PMS_CURRENT_PACK_BUTTON_X = 450.0f;
 static const CGFloat PMS_CURRENT_PACK_BUTTON_Y = 90.0f;
 
+
 static const CGFloat PMS_PACK_MENU_X = 100.0f;
 static const CGFloat PMS_PACK_MENU_Y = 150.0f;
 static const CGFloat PMS_PACK_MENU_WIDTH = 230.0f;
@@ -47,6 +48,17 @@ static const CGFloat PMS_SONG_MENU_Y = 150.0f;
 static const CGFloat PMS_SONG_MENU_WIDTH = 565.0f;
 static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
 
+/*
+static const CGFloat PMS_PACK_MENU_X = 200.0f;
+static const CGFloat PMS_PACK_MENU_Y = 300.0f;
+static const CGFloat PMS_PACK_MENU_WIDTH = 460.0f;
+static const CGFloat PMS_PACK_MENU_HEIGHT = 850.0f;
+
+static const CGFloat PMS_SONG_MENU_X = 650.0f;
+static const CGFloat PMS_SONG_MENU_Y = 300.0f;
+static const CGFloat PMS_SONG_MENU_WIDTH = 1130.0f;
+static const CGFloat PMS_SONG_MENU_HEIGHT = 850.0f;
+*/
 @synthesize currentPack = currentPack_;
 
 #pragma mark - Object Lifecycle
@@ -63,11 +75,11 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         loadingIndicator_ = nil;
         buyState_ = kStateNoPurchase;
         
-        CCSprite *background = [CCSprite spriteWithFile:@"Menu Background.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];        
         
-        CCSprite *menuFrame = [CCSprite spriteWithFile:@"Menu Frame.png"];
+        CCSprite *menuFrame = [CCSprite spriteWithFile:@"Main Parchment.png"];
         menuFrame.position = ccp(PMS_MENU_FRAME_X, PMS_MENU_FRAME_Y);
         [self addChild:menuFrame];
         
