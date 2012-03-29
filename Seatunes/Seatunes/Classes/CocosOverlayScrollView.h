@@ -16,6 +16,9 @@
     CGPoint originalPos_;
     
     BOOL firstScroll_;
+    
+    NSTimer *timer_;
+
 }
 
 @property (nonatomic, retain) CCNode *node;

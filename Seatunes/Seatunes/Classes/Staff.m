@@ -35,7 +35,7 @@ static const CGFloat ST_PS_OFFSET_Y = -15.0f;
         delegate_ = nil;
         notes_ = [[NSMutableArray arrayWithCapacity:6] retain];
         
-        CCSprite *staff = [CCSprite spriteWithFile:@"Staff.png"];
+        CCSprite *staff = [CCSprite spriteWithFile:@"Staff Parchment.png"];
         [self addChild:staff z:-1];
         
         [self schedule:@selector(loop) interval:1.0f/60.0f];

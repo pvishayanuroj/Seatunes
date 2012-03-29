@@ -38,7 +38,7 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         sideMenuMoving_ = NO;
         isPaused_ = NO;        
         
-        CCSprite *background = [CCSprite spriteWithFile:@"Game Background No Coral.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];            
         
@@ -49,7 +49,7 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         noteGenerator_ = [[NoteGenerator noteGenerator] retain];       
         [self addChild:noteGenerator_];  
         
-        CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Background.png"];
+        CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Foreground.png"];
         coralBackground.anchorPoint = CGPointZero;
         [self addChild:coralBackground];        
         
@@ -66,9 +66,9 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         sideMenu_.delegate = self; 
         sideMenu_.position = ccp(FPL_SIDEMENU_X, FPL_SIDEMENU_Y);
         
-        [sideMenu_ addMenuBackground:@"Side Menu.png" pos:ccp(0, -140.0f)];
+        [sideMenu_ addMenuBackground:@"Side Parchment.png" pos:ccp(0, -140.0f)];
         
-        Button *menuButton = [ScaledImageButton scaledImageButton:kButtonMenu image:@"Menu Button.png" scale:0.9f];        
+        Button *menuButton = [ScaledImageButton scaledImageButton:kButtonMenu image:@"Home Button.png" scale:0.9f];        
         
         [sideMenu_ addMenuItem:menuButton];         
         [self addChild:sideMenuButton_];        

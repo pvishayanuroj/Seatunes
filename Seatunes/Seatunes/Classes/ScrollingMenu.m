@@ -38,6 +38,7 @@
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         
         // Convert to cocos coordinate system
+        
         CGFloat yOrigin = winSize.height - (menuFrame.origin.y + menuFrame.size.height);
         
         CGSize contentSize = CGSizeMake(menuFrame.size.width, scrollSize);
@@ -90,7 +91,10 @@
 {
     glEnable(GL_SCISSOR_TEST);
     
-    glScissor(menuFrame_.origin.x, menuFrame_.origin.y, menuFrame_.size.width, menuFrame_.size.height);
+    // Note: Apparently for glScissor, coordinates are in pixels, and not points. Account for this via the scale factor
+    int factor = CC_CONTENT_SCALE_FACTOR();
+    glScissor(menuFrame_.origin.x * factor, menuFrame_.origin.y * factor, menuFrame_.size.width * factor, menuFrame_.size.height * factor);
+    
     [super visit];
     
     glDisable(GL_SCISSOR_TEST);    

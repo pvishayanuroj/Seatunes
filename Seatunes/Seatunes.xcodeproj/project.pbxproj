@@ -199,6 +199,8 @@
 		AE7774831522979700CE9332 /* Bubble Button.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7774821522979700CE9332 /* Bubble Button.png */; };
 		AE77D9C1151D9095002AC832 /* Jingle Bells.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE77D9BF151D9095002AC832 /* Jingle Bells.plist */; };
 		AE77D9C2151D9095002AC832 /* Silent Night.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE77D9C0151D9095002AC832 /* Silent Night.plist */; };
+		AE78F3CF1523DABF00D970B5 /* MenuFont-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AE78F3CD1523DABF00D970B5 /* MenuFont-ipadhd.fnt */; };
+		AE78F3D01523DABF00D970B5 /* MenuFont-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78F3CE1523DABF00D970B5 /* MenuFont-ipadhd.png */; };
 		AE7A86A8151DF5C6007CA48C /* Deck The Halls.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86A7151DF5C6007CA48C /* Deck The Halls.plist */; };
 		AE7A86AE151DF8CD007CA48C /* O Susanna.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86AB151DF8CD007CA48C /* O Susanna.plist */; };
 		AE7A86B0151DF8CD007CA48C /* Yankee Doodle.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86AD151DF8CD007CA48C /* Yankee Doodle.plist */; };
@@ -587,6 +589,8 @@
 		AE7774821522979700CE9332 /* Bubble Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble Button.png"; sourceTree = "<group>"; };
 		AE77D9BF151D9095002AC832 /* Jingle Bells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Jingle Bells.plist"; sourceTree = "<group>"; };
 		AE77D9C0151D9095002AC832 /* Silent Night.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Silent Night.plist"; sourceTree = "<group>"; };
+		AE78F3CD1523DABF00D970B5 /* MenuFont-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MenuFont-ipadhd.fnt"; sourceTree = "<group>"; };
+		AE78F3CE1523DABF00D970B5 /* MenuFont-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuFont-ipadhd.png"; sourceTree = "<group>"; };
 		AE7A86A7151DF5C6007CA48C /* Deck The Halls.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Deck The Halls.plist"; sourceTree = "<group>"; };
 		AE7A86AB151DF8CD007CA48C /* O Susanna.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "O Susanna.plist"; sourceTree = "<group>"; };
 		AE7A86AD151DF8CD007CA48C /* Yankee Doodle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Yankee Doodle.plist"; sourceTree = "<group>"; };
@@ -1013,6 +1017,8 @@
 		04D331C814E6DDD600DD82D4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				AE78F3CD1523DABF00D970B5 /* MenuFont-ipadhd.fnt */,
+				AE78F3CE1523DABF00D970B5 /* MenuFont-ipadhd.png */,
 				04D3E45A14F2025300FB0928 /* Dialogue Font.fnt */,
 				04D3E45B14F2025300FB0928 /* Dialogue Font.png */,
 				042FCAA414F155FF00E34155 /* MenuFont.fnt */,
@@ -1980,6 +1986,8 @@
 				AE7774831522979700CE9332 /* Bubble Button.png in Resources */,
 				AE5F926715229F140024F0BC /* sheet01-ipadhd.plist in Resources */,
 				AE5F926815229F140024F0BC /* sheet01-ipadhd.png in Resources */,
+				AE78F3CF1523DABF00D970B5 /* MenuFont-ipadhd.fnt in Resources */,
+				AE78F3D01523DABF00D970B5 /* MenuFont-ipadhd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
