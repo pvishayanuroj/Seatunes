@@ -40,7 +40,7 @@
     if (!self.dragging) {
         
         UITouch *touch = [[touches allObjects] objectAtIndex:0];
-        CGPoint p = [touch locationInView:[touch view]];
+        //CGPoint p = [touch locationInView:[touch view]];
         //NSLog(@"p.y: %4.2f", p.y);
         
         CCNode<CCTargetedTouchDelegate> *node = (CCNode<CCTargetedTouchDelegate> *)node_;

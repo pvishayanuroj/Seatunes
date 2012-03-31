@@ -36,9 +36,6 @@
 		04B0D4E81507024500A4A2B8 /* GameLogicE.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4E71507024400A4A2B8 /* GameLogicE.m */; };
 		04B0D4EB1507025F00A4A2B8 /* Staff.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4EA1507025E00A4A2B8 /* Staff.m */; };
 		04B0D4EE1507027400A4A2B8 /* StaffNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4ED1507027200A4A2B8 /* StaffNote.m */; };
-		04B32C9514DDB1DB004AA98E /* GameLogicB.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9414DDB1DA004AA98E /* GameLogicB.m */; };
-		04B32C9D14DDDBF1004AA98E /* GameLogicA.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9C14DDDBF0004AA98E /* GameLogicA.m */; };
-		04B32CA014DDDC18004AA98E /* GameLogicC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B32C9F14DDDC17004AA98E /* GameLogicC.m */; };
 		04C093AA14C4C7090087DA18 /* A4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */; };
 		04C093AB14C4C7090087DA18 /* A4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938B14C4C7090087DA18 /* A4-Martian.m4a */; };
 		04C093AC14C4C7090087DA18 /* A4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */; };
@@ -406,12 +403,6 @@
 		04B0D4EC1507027100A4A2B8 /* StaffNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StaffNote.h; path = Classes/StaffNote.h; sourceTree = "<group>"; };
 		04B0D4ED1507027200A4A2B8 /* StaffNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StaffNote.m; path = Classes/StaffNote.m; sourceTree = "<group>"; };
 		04B0D4F115070DD600A4A2B8 /* StaffDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StaffDelegate.h; path = Classes/StaffDelegate.h; sourceTree = "<group>"; };
-		04B32C9314DDB1DA004AA98E /* GameLogicB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicB.h; path = Classes/GameLogicB.h; sourceTree = "<group>"; };
-		04B32C9414DDB1DA004AA98E /* GameLogicB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicB.m; path = Classes/GameLogicB.m; sourceTree = "<group>"; };
-		04B32C9B14DDDBF0004AA98E /* GameLogicA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicA.h; path = Classes/GameLogicA.h; sourceTree = "<group>"; };
-		04B32C9C14DDDBF0004AA98E /* GameLogicA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicA.m; path = Classes/GameLogicA.m; sourceTree = "<group>"; };
-		04B32C9E14DDDC16004AA98E /* GameLogicC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicC.h; path = Classes/GameLogicC.h; sourceTree = "<group>"; };
-		04B32C9F14DDDC17004AA98E /* GameLogicC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicC.m; path = Classes/GameLogicC.m; sourceTree = "<group>"; };
 		04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-LunarStrings.m4a"; sourceTree = "<group>"; };
 		04C0938B14C4C7090087DA18 /* A4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-Martian.m4a"; sourceTree = "<group>"; };
 		04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-PopFlute.m4a"; sourceTree = "<group>"; };
@@ -905,12 +896,6 @@
 				04D331D014E7506F00DD82D4 /* GameLogic.h */,
 				04D331D114E7507100DD82D4 /* GameLogic.m */,
 				042FCA4B14EA096700E34155 /* GameLogicDelegate.h */,
-				04B32C9B14DDDBF0004AA98E /* GameLogicA.h */,
-				04B32C9C14DDDBF0004AA98E /* GameLogicA.m */,
-				04B32C9314DDB1DA004AA98E /* GameLogicB.h */,
-				04B32C9414DDB1DA004AA98E /* GameLogicB.m */,
-				04B32C9E14DDDC16004AA98E /* GameLogicC.h */,
-				04B32C9F14DDDC17004AA98E /* GameLogicC.m */,
 				04B0D4D71504306500A4A2B8 /* GameLogicD.h */,
 				04B0D4D81504306600A4A2B8 /* GameLogicD.m */,
 				04B0D4E61507024300A4A2B8 /* GameLogicE.h */,
@@ -2108,9 +2093,6 @@
 				048508E414D4E4E6008BBA10 /* ScrollingMenu.m in Sources */,
 				048508E714D4E50D008BBA10 /* ScrollingMenuItem.m in Sources */,
 				DA08E0C214D529CD00D1437B /* SongMenuItem.m in Sources */,
-				04B32C9514DDB1DB004AA98E /* GameLogicB.m in Sources */,
-				04B32C9D14DDDBF1004AA98E /* GameLogicA.m in Sources */,
-				04B32CA014DDDC18004AA98E /* GameLogicC.m in Sources */,
 				041E5F3414DE39460084BC0A /* SpeechBubble.m in Sources */,
 				041E5F7414DF5C8A0084BC0A /* Menu.m in Sources */,
 				04D3318E14E2212200DD82D4 /* SpeechReader.m in Sources */,
