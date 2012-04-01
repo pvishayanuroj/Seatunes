@@ -212,6 +212,7 @@
         label.position = ccp(dim_.textOffset.x, -rowNum * dim_.rowHeight + dim_.textOffset.y);
         label.anchorPoint = ccp(0, 0.5f);
         [self addChild:label];
+        NSLog(@"%@ - width: %4.2f", text, label.contentSize.width);
         
         rowNum++;
     }    

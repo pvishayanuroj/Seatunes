@@ -10,6 +10,7 @@
 #import "SpeechBubble.h"
 #import "SpeechManager.h"
 #import "AudioManager.h"
+#import "Text.h"
 
 @implementation SpeechReader
 
@@ -76,6 +77,13 @@ const static CGFloat SR_DEFAULT_DURATION = 5.0f;
         NSString *text = [speech objectForKey:@"Text"];
         NSString *file = [speech objectForKey:@"Path"];        
         NSNumber *duration = [speech objectForKey:@"Duration"];
+        
+        Text *t = [Text text:text fntFile:@"Dialogue Font.fnt"];
+        [t addFntFile:@"MenuFont.fnt" textType:kTextBold];
+        [self addChild:t];
+        //t.position = ccp(300, 300);
+        
+        
         if (duration == nil) {
             duration = [NSNumber numberWithFloat:SR_DEFAULT_DURATION];
         }
@@ -89,10 +97,9 @@ const static CGFloat SR_DEFAULT_DURATION = 5.0f;
 
         speechBubble.delegate = self;
         [speechBubble setTextWithBMFont:text fntFile:@"Dialogue Font.fnt"];
-        [self addChild:speechBubble];
+        //[self addChild:speechBubble];
         
         [[AudioManager audioManager] stopSound:effectID_];
-        NSLog(@"file: %@", file);
         effectID_ = [[AudioManager audioManager] playSoundEffectFile:file];
         
         currentSpeechIndex_++;

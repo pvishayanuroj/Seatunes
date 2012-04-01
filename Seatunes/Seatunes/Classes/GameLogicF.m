@@ -14,7 +14,6 @@
 #import "Note.h"
 #import "SpeechReader.h"
 #import "AudioManager.h"
-#import "Light.h"
 
 @implementation GameLogicF
 

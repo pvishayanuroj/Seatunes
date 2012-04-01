@@ -198,6 +198,8 @@
 		AE77D9C2151D9095002AC832 /* Silent Night.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE77D9C0151D9095002AC832 /* Silent Night.plist */; };
 		AE78F3CF1523DABF00D970B5 /* MenuFont-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AE78F3CD1523DABF00D970B5 /* MenuFont-ipadhd.fnt */; };
 		AE78F3D01523DABF00D970B5 /* MenuFont-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78F3CE1523DABF00D970B5 /* MenuFont-ipadhd.png */; };
+		AE7944AF152758AC009B0D09 /* MusicNoteTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7944AE152758AC009B0D09 /* MusicNoteTutorial.m */; };
+		AE7944B21527EF31009B0D09 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7944B11527EF31009B0D09 /* Text.m */; };
 		AE7A86A8151DF5C6007CA48C /* Deck The Halls.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86A7151DF5C6007CA48C /* Deck The Halls.plist */; };
 		AE7A86AE151DF8CD007CA48C /* O Susanna.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86AB151DF8CD007CA48C /* O Susanna.plist */; };
 		AE7A86B0151DF8CD007CA48C /* Yankee Doodle.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86AD151DF8CD007CA48C /* Yankee Doodle.plist */; };
@@ -582,6 +584,10 @@
 		AE77D9C0151D9095002AC832 /* Silent Night.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Silent Night.plist"; sourceTree = "<group>"; };
 		AE78F3CD1523DABF00D970B5 /* MenuFont-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MenuFont-ipadhd.fnt"; sourceTree = "<group>"; };
 		AE78F3CE1523DABF00D970B5 /* MenuFont-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuFont-ipadhd.png"; sourceTree = "<group>"; };
+		AE7944AD152758AC009B0D09 /* MusicNoteTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicNoteTutorial.h; path = Classes/MusicNoteTutorial.h; sourceTree = "<group>"; };
+		AE7944AE152758AC009B0D09 /* MusicNoteTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicNoteTutorial.m; path = Classes/MusicNoteTutorial.m; sourceTree = "<group>"; };
+		AE7944B01527EF31009B0D09 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Text.h; path = Classes/Text.h; sourceTree = "<group>"; };
+		AE7944B11527EF31009B0D09 /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Text.m; path = Classes/Text.m; sourceTree = "<group>"; };
 		AE7A86A7151DF5C6007CA48C /* Deck The Halls.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Deck The Halls.plist"; sourceTree = "<group>"; };
 		AE7A86AB151DF8CD007CA48C /* O Susanna.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "O Susanna.plist"; sourceTree = "<group>"; };
 		AE7A86AD151DF8CD007CA48C /* Yankee Doodle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Yankee Doodle.plist"; sourceTree = "<group>"; };
@@ -902,6 +908,8 @@
 				04B0D4E71507024400A4A2B8 /* GameLogicE.m */,
 				AE5839A41517FC240097EDD5 /* GameLogicF.h */,
 				AE5839A51517FC240097EDD5 /* GameLogicF.m */,
+				AE7944AD152758AC009B0D09 /* MusicNoteTutorial.h */,
+				AE7944AE152758AC009B0D09 /* MusicNoteTutorial.m */,
 			);
 			name = "Game Logic";
 			sourceTree = "<group>";
@@ -959,6 +967,8 @@
 				04B0D4ED1507027200A4A2B8 /* StaffNote.m */,
 				DA2D6E151512E70F00BA02C0 /* Light.h */,
 				DA2D6E161512E70F00BA02C0 /* Light.m */,
+				AE7944B01527EF31009B0D09 /* Text.h */,
+				AE7944B11527EF31009B0D09 /* Text.m */,
 			);
 			name = "Game Elements";
 			sourceTree = "<group>";
@@ -2123,6 +2133,8 @@
 				AE4D78CD151F6BAF00B906ED /* CDOpenALSupport.m in Sources */,
 				AE4D78CE151F6BAF00B906ED /* CocosDenshion.m in Sources */,
 				AE4D78CF151F6BAF00B906ED /* SimpleAudioEngine.m in Sources */,
+				AE7944AF152758AC009B0D09 /* MusicNoteTutorial.m in Sources */,
+				AE7944B21527EF31009B0D09 /* Text.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
