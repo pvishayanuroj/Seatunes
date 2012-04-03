@@ -31,7 +31,8 @@ static const CGFloat GL_BUBBLE_Y = 600.0f;
     if ((self = [super init])) {
         
         NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty];
-        isFirstPlay_ = ![[NSUserDefaults standardUserDefaults] boolForKey:key];        
+        isDifficultyFirstPlay_ = ![[NSUserDefaults standardUserDefaults] boolForKey:key];        
+        isFirstPlay_ = ![[NSUserDefaults standardUserDefaults] boolForKey:kFirstPlay];
         
         delegate_ = nil;
         keyboard_ = nil;
@@ -93,7 +94,7 @@ static const CGFloat GL_BUBBLE_Y = 600.0f;
 
 - (void) endSpeech
 {
-    [self runSingleSpeech:kSongComplete tapRequired:NO];    
+    //[self runSingleSpeech:kSongComplete tapRequired:NO];    
 }
 
 @end

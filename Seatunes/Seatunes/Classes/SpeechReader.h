@@ -10,13 +10,14 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "SpeechReaderDelegate.h"
-#import "SpeechBubbleDelegate.h"
 
 @class SpeechBubble;
 
-@interface SpeechReader : CCNode <SpeechBubbleDelegate> {
+@interface SpeechReader : CCNode <CCTargetedTouchDelegate> {
     
-    NSMutableArray *speeches_;
+    CCSprite *sprite_;
+    
+    NSDictionary *data_;
     
     NSUInteger currentSpeechIndex_;
     
@@ -24,11 +25,11 @@
     
     BOOL tapRequired_;
     
+    BOOL isClickable_;
+    
     GLuint effectID_;
     
     SpeechType lastSpeechType_;
-    
-    SpeechBubble *currentBubble_;
     
     id <SpeechReaderDelegate> delegate_;
     
@@ -40,6 +41,6 @@
 
 - (id) initSpeechReader:(NSArray *)speeches tapRequired:(BOOL)tapRequired;
 
-- (void) createBubble;
+- (void) nextDialogue;
 
 @end

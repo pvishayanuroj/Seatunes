@@ -11,7 +11,7 @@
 
 @interface SpeechManager : NSObject {
     
-    NSDictionary *speechText_;
+    NSMutableDictionary *speechText_;
     
 }
 
@@ -19,8 +19,12 @@
 
 + (void) purgeSpeechManager;
 
-- (NSDictionary *) loadSpeechText;
+- (void) loadSpeechText:(NSString *)filename;
+
+- (void) loadFlatSpeechText:(NSString *)filename;
 
 - (NSArray *) textFromSpeechType:(SpeechType)speechType;
+
+- (NSDictionary *) textAndAudioFromSpeechTypes:(NSArray *)speechTypes;
 
 @end

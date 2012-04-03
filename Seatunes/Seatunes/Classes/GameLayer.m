@@ -144,6 +144,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     
     NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty_];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kFirstPlay];
     
     [self showScoreMenu:scoreInfo];
 }

@@ -14,8 +14,8 @@
 #define kAllPacks @"All Packs"
 #define PACK_MENU_CELL_HEIGHT 160
 #define SONG_MENU_CELL_HEIGHT 55
-//#define PACK_MENU_CELL_HEIGHT 320
-//#define SONG_MENU_CELL_HEIGHT 110
+
+#define kFirstPlay @"First Play"
 
 typedef enum {
     kC4 = 0,
@@ -97,29 +97,29 @@ typedef enum {
 } ScoreType;
 
 typedef enum {
-    kEasyInstructions,
-    kEasyInstructions2,    
-    kEasyReplay,    
-    kEasyWrongNote,
-    kEasyCorrectNote,
-    kMediumInstructions,
-    kHardInstructions,
-
-    kMediumReplay,
-    kHardReplay,
-    kSongStart,
-    kPlayedTooFast,
-    kFellBehind,
-    kWrongNote,
-    kEasyLoss,
-    kEasyFinish,
-    kMediumLoss,
-    kMediumFinish,
-    kHardLoss,
-    kHardFinish,
-    kNextSection,
-    kHardPlay,
-    kSongComplete
+    kSpeechIntroduction,
+    kSpeechEasyTutorial,
+    kSpeechMediumTutorial,
+    kSpeechGreetings,
+    kTutorialIntroduction,
+    kTutorialStaff,
+    kTutorialNotes,
+    kTutorialNotes2,
+    kTutorialLetters,
+    kTutorialLearnC,
+    kTutorialPlayC,
+    kTutorialPlayDE,
+    kTutorialPlayFG,
+    kTutorialPlayABC,
+    kTutorialMnemonic,
+    kTutorialEvery,
+    kTutorialGood,
+    kTutorialBoy,
+    kTutorialFace,
+    kTutorialF,
+    kTutorialA,
+    kTutorialC,
+    kTutorialComplete    
 } SpeechType;
 
 typedef struct {

@@ -42,7 +42,9 @@ static SpeechManager *_speechManager = nil;
 {
 	if ((self = [super init])) {
     
-        speechText_ = [[self loadSpeechText] retain];
+        speechText_ = [[NSMutableDictionary dictionaryWithCapacity:100] retain];
+        [self loadSpeechText:@"Speech"];
+        [self loadFlatSpeechText:@"Music Tutorial"];
         
 	}
 	return self;
@@ -55,11 +57,35 @@ static SpeechManager *_speechManager = nil;
 	[super dealloc];
 }
 
-- (NSDictionary *) loadSpeechText
+- (void) loadSpeechText:(NSString *)filename
 {
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"Speech" ofType:@"plist"];
+	NSString *path = [[NSBundle mainBundle] pathForResource:filename ofType:@"plist"];
     NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:path];
-    return data;
+
+    for (NSString *key in data) {
+        
+        NSAssert([speechText_ objectForKey:key] == nil, @"Duplicate key: %@ in speech text file: %@", key, filename);
+
+        [speechText_ setObject:[data objectForKey:key] forKey:key];
+    }
+}
+         
+- (void) loadFlatSpeechText:(NSString *)filename
+{
+	NSString *path = [[NSBundle mainBundle] pathForResource:filename ofType:@"plist"];
+    NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    for (NSString *key in data) {
+        
+        NSAssert([speechText_ objectForKey:key] == nil, @"Duplicate key: %@ in speech text file: %@", key, filename);
+        
+        NSMutableArray *choiceArray = [NSMutableArray arrayWithCapacity:1];
+        NSMutableArray *textArray = [NSMutableArray arrayWithCapacity:1];
+        
+        [textArray addObject:[data objectForKey:key]];
+        [choiceArray addObject:textArray];
+        [speechText_ setObject:choiceArray forKey:key];
+    }
 }
 
 - (NSString *) keyFromSpeechType:(SpeechType)speechType
@@ -67,52 +93,116 @@ static SpeechManager *_speechManager = nil;
     NSString *key = @"";
     
     switch (speechType) {
-        case kEasyInstructions:
-            key = @"Easy Instructions";
+        case kSpeechIntroduction:
+            key = @"Introduction";
             break;
-        case kEasyInstructions2:
-            key = @"Easy Instructions 2";            
+        case kSpeechEasyTutorial:
+            key = @"Easy Tutorial";
             break;
-        case kMediumInstructions:
-            key = @"Medium Instructions";
+        case kSpeechMediumTutorial:
+            key = @"Medium Tutorial";
             break;
-        case kHardInstructions:
-            key = @"Hard Instructions";
+        case kSpeechGreetings:
+            key = @"Greetings";
             break;
-        case kSongStart:
-            key = @"Song Start";
+        case kTutorialIntroduction:
+            key = @"Tutorial Introduction";
             break;
-        case kWrongNote:
-            key = @"Wrong Note";
+        case kTutorialStaff:
+            key = @"Tutorial Staff";
             break;
-        case kEasyWrongNote:
-            key = @"Easy Wrong Note";
+        case kTutorialNotes:
+            key = @"Tutorial Notes";
             break;
-        case kEasyCorrectNote:
-            key = @"Easy Correct Note";
+        case kTutorialNotes2:
+            key = @"Tutorial Notes 2";
             break;
-        case kEasyReplay:
-            key = @"Easy Replay";
+        case kTutorialLetters:
+            key = @"Tutorial Letters";
             break;
-        case kMediumReplay:
-            key = @"Medium Replay";
+        case kTutorialLearnC:
+            key = @"Tutorial Learn C";
             break;
-        case kHardReplay:
-            key = @"Hard Replay";
+        case kTutorialPlayC:
+            key = @"Tutorial Play C";
             break;
-        case kNextSection:
-            key = @"Next Section";
+        case kTutorialPlayDE:
+            key = @"Tutorial Play DE";
             break;
-        case kHardPlay:
-            key = @"Hard Play";
+        case kTutorialPlayFG:
+            key = @"Tutorial Play FG";
             break;
-        case kSongComplete:
-            key = @"Song Complete";
+        case kTutorialPlayABC:
+            key = @"Tutorial Play ABC";
+            break;
+        case kTutorialMnemonic:
+            key = @"Tutorial Mnemonic";
+            break;
+        case kTutorialEvery:
+            key = @"Tutorial Every";
+            break;
+        case kTutorialGood:
+            key = @"Tutorial Good";
+            break;
+        case kTutorialBoy:
+            key = @"Tutorial Boy";
+            break;
+        case kTutorialFace:
+            key = @"Tutorial Face";
+            break;
+        case kTutorialF:
+            key = @"Tutorial F";
+            break;
+        case kTutorialA:
+            key = @"Tutorial A";
+            break;
+        case kTutorialC:
+            key = @"Tutorial C";
+            break;
+        case kTutorialComplete:
+            key = @"Tutorial Complete";
             break;
         default:
             break;
     }
     return key;
+}
+
+- (NSDictionary *) textAndAudioFromSpeechTypes:(NSArray *)speechTypes
+{
+    NSMutableDictionary *data = [NSMutableDictionary dictionaryWithCapacity:2];
+    NSMutableArray *text = [NSMutableArray arrayWithCapacity:10];
+    NSMutableArray *audio = [NSMutableArray arrayWithCapacity:10];
+
+    // For all speech types
+    for (NSNumber *speech in speechTypes) {
+
+        // Get the choices for this speech type
+        SpeechType speechType = [speech integerValue];
+        NSString *key = [self keyFromSpeechType:speechType];
+        NSArray *choices = [speechText_ objectForKey:key];
+        
+        // Make a random selection
+        NSUInteger numChoices = [choices count];
+        NSInteger choice = arc4random() % numChoices;
+        NSArray *lines = [choices objectAtIndex:choice];        
+        
+        // For each line, store the text and determine the audio file path
+        NSInteger lineNum = 0;
+        for (NSString *line in lines) {
+            
+            NSString *path = [NSString stringWithFormat:@"%@ %02d-%02d.caf", key, choice, lineNum];
+            [text addObject:line];
+            [audio addObject:path];
+            
+            lineNum++;
+        }   
+    }
+    
+    [data setObject:text forKey:@"Text"];
+    [data setObject:audio forKey:@"Audio"];
+    
+    return data;
 }
 
 - (NSArray *) textFromSpeechType:(SpeechType)speechType

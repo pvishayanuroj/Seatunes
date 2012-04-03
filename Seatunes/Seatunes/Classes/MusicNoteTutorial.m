@@ -56,14 +56,6 @@ static const CGFloat MNT_KEYBOARD_Y = 100.0f;
         keyboard_.isKeyboardMuted = YES;
         keyboard_.position = ccp(MNT_KEYBOARD_X, MNT_KEYBOARD_Y);
         [self addChild:keyboard_];           
-        
-        // If first time playing
-        if (isFirstPlay_) {
-            [self runSingleSpeech:kMediumInstructions tapRequired:YES];
-        }
-        else { 
-            [self runSingleSpeech:kSongStart tapRequired:YES];
-        }
     }
     return self;
 }

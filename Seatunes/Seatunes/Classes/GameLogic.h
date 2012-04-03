@@ -28,6 +28,8 @@
     
     BOOL isFirstPlay_;
     
+    BOOL isDifficultyFirstPlay_;
+    
     id <GameLogicDelegate> delegate_;
 }
 

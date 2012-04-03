@@ -7,19 +7,11 @@
 //
 
 #import "SpeechReader.h"
-#import "SpeechBubble.h"
 #import "SpeechManager.h"
 #import "AudioManager.h"
 #import "Text.h"
 
 @implementation SpeechReader
-
-static const NSUInteger SR_CHARS_PER_ROW = 35;
-static const NSUInteger SR_NUM_ROWS = 6;
-static const CGFloat SR_ROW_HEIGHT = 40.0f;
-static const CGFloat SR_TEXT_OFFSET_X = -180.0f;
-static const CGFloat SR_TEXT_OFFSET_Y = 80.0f;
-const static CGFloat SR_DEFAULT_DURATION = 5.0f;
 
 @synthesize delegate = delegate_;
 
@@ -32,75 +24,46 @@ const static CGFloat SR_DEFAULT_DURATION = 5.0f;
 {
     if ((self = [super init])) {
         
+        sprite_ = [[CCSprite spriteWithFile:@"Speech Bubble Large.png"] retain];
         delegate_ = nil;
-        currentBubble_ = nil;
         currentSpeechIndex_ = 0;
         lastSpeechType_ = [[speeches lastObject] integerValue];
-        
+        isClickable_ = YES;
         tapRequired_ = tapRequired;
         
-        speeches_ = [[NSMutableArray arrayWithCapacity:5] retain];
+        data_ = [[[SpeechManager speechManager] textAndAudioFromSpeechTypes:speeches] retain];
         
-        for (NSNumber *speech in speeches) {
-            SpeechType speechType = [speech integerValue];
-            NSArray *textArray = [[SpeechManager speechManager] textFromSpeechType:speechType];
-            for (NSDictionary *text in textArray) {
-                [speeches_ addObject:text];
-            }
-        }
-        
-        [self createBubble];
+        [self nextDialogue];
     }
     return self;
 }
 
 - (void) dealloc
 {
-    [speeches_ release];
+    [sprite_ release];
+    [data_ release];
     
     [super dealloc];
 }
 
-- (void) createBubble
+- (void) nextDialogue
 {
-    SpeechBubbleDim bubbleDim;
-    bubbleDim.numChars = SR_CHARS_PER_ROW;
-    bubbleDim.numRows = SR_NUM_ROWS;
-    bubbleDim.rowHeight = SR_ROW_HEIGHT;
-    bubbleDim.textOffset = ccp(SR_TEXT_OFFSET_X, SR_TEXT_OFFSET_Y);
+    // Get references to the text and audio path arrays
+    NSArray *lines = [data_ objectForKey:@"Text"];
+    NSArray *paths = [data_ objectForKey:@"Audio"];    
     
     // If text remaining
-    if (currentSpeechIndex_ < [speeches_ count]) {
+    if (currentSpeechIndex_ < [lines count]) {
         
-        SpeechBubble *speechBubble;
-        NSDictionary *speech = [speeches_ objectAtIndex:currentSpeechIndex_];
-        NSString *text = [speech objectForKey:@"Text"];
-        NSString *file = [speech objectForKey:@"Path"];        
-        NSNumber *duration = [speech objectForKey:@"Duration"];
+        NSString *line = [lines objectAtIndex:currentSpeechIndex_];
+        NSString *path =  [paths objectAtIndex:currentSpeechIndex_];
         
-        Text *t = [Text text:text fntFile:@"Dialogue Font.fnt"];
-        [t addFntFile:@"MenuFont.fnt" textType:kTextBold];
-        [self addChild:t];
-        //t.position = ccp(300, 300);
-        
-        
-        if (duration == nil) {
-            duration = [NSNumber numberWithFloat:SR_DEFAULT_DURATION];
-        }
-        
-        if (tapRequired_) {
-            speechBubble = [SpeechBubble tapSpeechBubble:bubbleDim fullScreenTap:NO];
-        }
-        else {
-            speechBubble = [SpeechBubble timedSpeechBubble:bubbleDim time:[duration floatValue]];
-        }
-
-        speechBubble.delegate = self;
-        [speechBubble setTextWithBMFont:text fntFile:@"Dialogue Font.fnt"];
-        //[self addChild:speechBubble];
+        Text *text = [Text text:line fntFile:@"Dialogue Font.fnt"];
+        [text addFntFile:@"MenuFont.fnt" textType:kTextBold];
+        [self addChild:text];
         
         [[AudioManager audioManager] stopSound:effectID_];
-        effectID_ = [[AudioManager audioManager] playSoundEffectFile:file];
+        effectID_ = [[AudioManager audioManager] playSoundEffectFile:path];
         
         currentSpeechIndex_++;
     }
@@ -112,10 +75,51 @@ const static CGFloat SR_DEFAULT_DURATION = 5.0f;
     }
 }
 
-- (void) bubbleComplete:(SpeechBubble *)speechBubble
+
+#pragma mark - Touch Handlers
+
+- (void) onEnter
 {
-    [speechBubble removeFromParentAndCleanup:YES];
-    [self createBubble];
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:1 swallowsTouches:YES];
+	[super onEnter];
+}
+
+- (void) onExit
+{
+	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
+	[super onExit];
+}
+
+- (CGRect) rect
+{
+	CGRect r = sprite_.textureRect;    
+	return CGRectMake(sprite_.position.x - r.size.width / 2, sprite_.position.y - r.size.height / 2, r.size.width, r.size.height);
+}
+
+- (BOOL) containsTouchLocation:(UITouch *)touch
+{	
+	return CGRectContainsPoint([self rect], [self convertTouchToNodeSpaceAR:touch]);
+}
+
+- (BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{	
+    if (isClickable_) {
+        return [self containsTouchLocation:touch];
+    }
+    
+    return NO;
+}
+
+- (void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    
+}
+
+- (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    if ([self containsTouchLocation:touch]) {
+        [self nextDialogue];
+    }
 }
 
 

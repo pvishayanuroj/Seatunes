@@ -62,13 +62,6 @@ static const CGFloat GLF_KEYBOARD_Y = 100.0f;
         keyboard_.position = ccp(GLF_KEYBOARD_X, GLF_KEYBOARD_Y);
         [self addChild:keyboard_];           
         
-        // If first time playing
-        if (isFirstPlay_) {
-            [self runSingleSpeech:kMediumInstructions tapRequired:YES];
-        }
-        else { 
-            [self runSingleSpeech:kSongStart tapRequired:YES];
-        }
     }
     return self;
 }
@@ -169,6 +162,7 @@ static const CGFloat GLF_KEYBOARD_Y = 100.0f;
 
 - (void) speechComplete:(SpeechType)speechType
 {
+    /*
     switch (speechType) {
             // From start speech, go to directly to gameplay or test play
         case kMediumInstructions:
@@ -187,6 +181,7 @@ static const CGFloat GLF_KEYBOARD_Y = 100.0f;
             keyboard_.isClickable = YES;
             break;
     }
+     */
 }
 
 - (void) endSong

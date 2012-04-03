@@ -53,13 +53,26 @@ static const CGFloat GLD_INSTRUCTOR_Y = 550.0f;
         coralBackground.anchorPoint = CGPointZero;
         [self addChild:coralBackground];
         
-        // If first time playing
+        NSMutableArray *dialogue = [NSMutableArray array];
+        
+        // If first time playing entire game, play game introduction
         if (isFirstPlay_) {
-            [self runSingleSpeech:kMediumInstructions tapRequired:YES];
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechIntroduction]];
         }
+        // Otherwise, play normal greeting
         else { 
-            [self runSingleSpeech:kSongStart tapRequired:YES];
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechGreetings]];
         }
+        
+        // If first time playing difficulty level, play tutorial
+        if (isDifficultyFirstPlay_) {
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechEasyTutorial]];
+        }
+        else {
+            
+        }
+        
+        
     }
     return self;
 }
@@ -149,6 +162,7 @@ static const CGFloat GLD_INSTRUCTOR_Y = 550.0f;
 
 - (void) speechComplete:(SpeechType)speechType
 {
+    /*
     switch (speechType) {
             // From start speech, go to directly to gameplay or test play
         case kMediumInstructions:
@@ -166,6 +180,7 @@ static const CGFloat GLD_INSTRUCTOR_Y = 550.0f;
         default:
             break;
     }
+    */
 }
 
 - (void) endSong

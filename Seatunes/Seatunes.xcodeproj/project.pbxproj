@@ -29,8 +29,6 @@
 		04B0D4CD1504174100A4A2B8 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4C91504173D00A4A2B8 /* Icon-Small-50.png */; };
 		04B0D4CE1504174100A4A2B8 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4CA1504173E00A4A2B8 /* Icon-Small.png */; };
 		04B0D4CF1504174100A4A2B8 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4CB1504174000A4A2B8 /* Icon-Small@2x.png */; };
-		04B0D4D515041EEB00A4A2B8 /* EasyInstructions00.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4D215041EEB00A4A2B8 /* EasyInstructions00.caf */; };
-		04B0D4D615041EEB00A4A2B8 /* EasyInstructions01.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0D4D315041EEB00A4A2B8 /* EasyInstructions01.caf */; };
 		04B0D4D91504306600A4A2B8 /* GameLogicD.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4D81504306600A4A2B8 /* GameLogicD.m */; };
 		04B0D4DC1505964600A4A2B8 /* NoteGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4DB1505964500A4A2B8 /* NoteGenerator.m */; };
 		04B0D4E81507024500A4A2B8 /* GameLogicE.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4E71507024400A4A2B8 /* GameLogicE.m */; };
@@ -208,6 +206,7 @@
 		AE7A86B7151DFD23007CA48C /* Steps.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86B4151DFD23007CA48C /* Steps.plist */; };
 		AE7A86BD151E0276007CA48C /* FreePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7A86BC151E0275007CA48C /* FreePlayScene.m */; };
 		AE7A86C4151E068E007CA48C /* FreePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7A86C3151E068D007CA48C /* FreePlayLayer.m */; };
+		AE91464315294004007E75F9 /* Music Tutorial.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE91464215294004007E75F9 /* Music Tutorial.plist */; };
 		AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
@@ -391,8 +390,6 @@
 		04B0D4C91504173D00A4A2B8 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
 		04B0D4CA1504173E00A4A2B8 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
 		04B0D4CB1504174000A4A2B8 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
-		04B0D4D215041EEB00A4A2B8 /* EasyInstructions00.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EasyInstructions00.caf; sourceTree = "<group>"; };
-		04B0D4D315041EEB00A4A2B8 /* EasyInstructions01.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EasyInstructions01.caf; sourceTree = "<group>"; };
 		04B0D4D71504306500A4A2B8 /* GameLogicD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLogicD.h; path = Classes/GameLogicD.h; sourceTree = "<group>"; };
 		04B0D4D81504306600A4A2B8 /* GameLogicD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicD.m; path = Classes/GameLogicD.m; sourceTree = "<group>"; };
 		04B0D4DA1505964300A4A2B8 /* NoteGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteGenerator.h; path = Classes/NoteGenerator.h; sourceTree = "<group>"; };
@@ -598,6 +595,7 @@
 		AE7A86BC151E0275007CA48C /* FreePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FreePlayScene.m; path = Classes/FreePlayScene.m; sourceTree = "<group>"; };
 		AE7A86C2151E068D007CA48C /* FreePlayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FreePlayLayer.h; path = Classes/FreePlayLayer.h; sourceTree = "<group>"; };
 		AE7A86C3151E068D007CA48C /* FreePlayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FreePlayLayer.m; path = Classes/FreePlayLayer.m; sourceTree = "<group>"; };
+		AE91464215294004007E75F9 /* Music Tutorial.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Music Tutorial.plist"; sourceTree = "<group>"; };
 		AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Muted.m4a"; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
 		DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayViewController.m; path = Classes/CocosOverlayViewController.m; sourceTree = "<group>"; };
@@ -1002,8 +1000,6 @@
 		04B0D4D015041EE900A4A2B8 /* Speech Effects */ = {
 			isa = PBXGroup;
 			children = (
-				04B0D4D215041EEB00A4A2B8 /* EasyInstructions00.caf */,
-				04B0D4D315041EEB00A4A2B8 /* EasyInstructions01.caf */,
 			);
 			name = "Speech Effects";
 			path = "Resources/Speech Effects";
@@ -1026,6 +1022,7 @@
 		04D331CD14E7056700DD82D4 /* Speech */ = {
 			isa = PBXGroup;
 			children = (
+				AE91464215294004007E75F9 /* Music Tutorial.plist */,
 				04D331CE14E7056700DD82D4 /* Speech.plist */,
 			);
 			name = Speech;
@@ -1881,8 +1878,6 @@
 				04B0D4CD1504174100A4A2B8 /* Icon-Small-50.png in Resources */,
 				04B0D4CE1504174100A4A2B8 /* Icon-Small.png in Resources */,
 				04B0D4CF1504174100A4A2B8 /* Icon-Small@2x.png in Resources */,
-				04B0D4D515041EEB00A4A2B8 /* EasyInstructions00.caf in Resources */,
-				04B0D4D615041EEB00A4A2B8 /* EasyInstructions01.caf in Resources */,
 				DA2D6E2F1514C0E500BA02C0 /* A4-Muted.m4a in Resources */,
 				DA2D6E301514C0E500BA02C0 /* B4-Muted.m4a in Resources */,
 				DA2D6E311514C0E500BA02C0 /* C5-Muted.m4a in Resources */,
@@ -1983,6 +1978,7 @@
 				AE5F926815229F140024F0BC /* sheet01-ipadhd.png in Resources */,
 				AE78F3CF1523DABF00D970B5 /* MenuFont-ipadhd.fnt in Resources */,
 				AE78F3D01523DABF00D970B5 /* MenuFont-ipadhd.png in Resources */,
+				AE91464315294004007E75F9 /* Music Tutorial.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

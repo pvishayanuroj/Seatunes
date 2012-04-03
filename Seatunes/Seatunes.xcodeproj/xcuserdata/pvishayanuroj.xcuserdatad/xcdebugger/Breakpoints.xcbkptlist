@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/GameLogicE.m"
-         timestampString = "354248333.335205"
+         timestampString = "355113280.974928"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "134"
-         endingLineNumber = "134"
+         startingLineNumber = "127"
+         endingLineNumber = "127"
          landmarkName = "-keyboardKeyPressed:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/GameLogicE.m"
-         timestampString = "354248351.796185"
+         timestampString = "355113280.974928"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "142"
-         endingLineNumber = "142"
+         startingLineNumber = "135"
+         endingLineNumber = "135"
          landmarkName = "-keyboardKeyPressed:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/Text.m"
-         timestampString = "354984459.80174"
+         timestampString = "354999619.482216"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "76"
-         endingLineNumber = "76"
+         startingLineNumber = "101"
+         endingLineNumber = "101"
          landmarkName = "-updateText"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,12 +164,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/Text.m"
-         timestampString = "354996088.286842"
+         timestampString = "354999619.482216"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "86"
-         endingLineNumber = "86"
+         startingLineNumber = "111"
+         endingLineNumber = "111"
          landmarkName = "-updateText"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Seatunes/Classes/SpeechManager.m"
+         timestampString = "355060489.968974"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "70"
+         endingLineNumber = "70"
+         landmarkName = "-loadSpeechText:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

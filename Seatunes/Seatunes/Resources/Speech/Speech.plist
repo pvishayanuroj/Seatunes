@@ -2,274 +2,36 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Easy Instructions</key>
+	<key>Introduction</key>
 	<array>
 		<array>
-			<dict>
-				<key>Path</key>
-				<string>EasyInstructions00.caf</string>
-				<key>Text</key>
-				<string>Hey there, little buddy! My name is Whaleziak, I&apos;ll be your teacher while you&apos;re visiting us under the ocean.</string>
-			</dict>
-			<dict>
-				<key>Text</key>
-				<string>If you look down there, you&apos;ll see my friends, the Crazy Clams, they make music when you touch them. Why don&apos;t you give it a try? Just tap any of them with your finger. Go ahead!</string>
-				<key>Path</key>
-				<string>EasyInstructions01.caf</string>
-			</dict>
+			<string>Oh look, it&apos;s a new face. I haven&apos;t seen you down here before. My name is &lt;b&gt;Whalezart&lt;/b&gt; and this is where I live. It&apos;s called the &lt;b&gt;Tiny Barrier Reef.&lt;/b&gt; </string>
+			<string>Do you see those pretty rocks? Those are called &lt;b&gt;coral.&lt;/b&gt; It&apos;s a very colorful place, but sometimes it gets too quiet. </string>
+			<string>Wait, you&apos;re not from the sea, are you? Oh! I can see your fingers! I only have &lt;b&gt;flippers&lt;/b&gt;. That means you can help us make some music. </string>
 		</array>
 	</array>
-	<key>Easy Instructions 2</key>
+	<key>Easy Tutorial</key>
 	<array>
 		<array>
-			<dict>
-				<key>Path</key>
-				<string>EasyInstructions2_00.caf</string>
-				<key>Text</key>
-				<string>Now that you got the hang of it, we&apos;re going to play a little game to make some more music. </string>
-			</dict>
-			<dict>
-				<key>Path</key>
-				<string>EasyInstructions2_01.caf</string>
-				<key>Text</key>
-				<string>I&apos;m going to blow a bubble, and you&apos;ll see one of the clams open his mouth to sing.</string>
-			</dict>
-			<dict>
-				<key>Path</key>
-				<string>EasyInstructions2_02.caf</string>
-				<key>Text</key>
-				<string>After we&apos;re done, then it&apos;s your turn to play the same note! OK, are you ready yet?  You can tell me you&apos;re ready by poking me, but not too hard!</string>
-			</dict>
+			<string>The sea is always singing, we just have to be clever enough to hear it. I think it’s all in the &lt;b&gt;bubbles.&lt;/b&gt;</string>
+			<string>If you see any &lt;b&gt;bubbles&lt;/b&gt; floating up, make sure you pop them. But you have to pop them in the right order, otherwise it won’t sound very good.</string>
 		</array>
 	</array>
-	<key>Easy Wrong Note</key>
+	<key>Medium Tutorial</key>
 	<array>
 		<array>
-			<dict>
-				<key>Path</key>
-				<string>EasyWrongNote00.caf</string>
-				<key>Text</key>
-				<string>Oh that&apos;s not right. Remember, you have to play the same note that we play. Why don&apos;t you try again?</string>
-			</dict>
+			<string>My friends, &lt;b&gt;The Clams&lt;/b&gt;, heard you were visiting, and they wanted to come out and play too!</string>
+			<string>They’re really good at making music, but they don’t know how to work together. It’s up to you to help.</string>
+			<string>What ever color bubble you see, you have to touch the clam that has that color, so if you see a red bubble, touch the red clam! But you can’t be too slow, otherwise the bubbles will float away.</string>
 		</array>
 	</array>
-	<key>Easy Replay</key>
+	<key>Greetings</key>
 	<array>
 		<array>
-			<dict>
-				<key>Path</key>
-				<string>EasyReplay00.caf</string>
-				<key>Text</key>
-				<string>I&apos;m going to show you the note again. Don&apos;t forget it!</string>
-			</dict>
+			<string>Hello, it’s me, Whalezart.</string>
 		</array>
 		<array>
-			<dict>
-				<key>Path</key>
-				<string>EasyReplay01.caf</string>
-				<key>Text</key>
-				<string>Here&apos;s a hint:</string>
-			</dict>
-		</array>
-	</array>
-	<key>Easy Correct Note</key>
-	<array>
-		<array>
-			<dict>
-				<key>Text</key>
-				<string>Good job! You&apos;re getting the hang of it. Let&apos;s keep going!</string>
-				<key>Path</key>
-				<string>EasyCorrectNote00.caf</string>
-			</dict>
-		</array>
-	</array>
-	<key>Medium Instructions</key>
-	<array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>MediumInstructions00.caf</string>
-				<key>Text</key>
-				<string>Hi again &lt;b&gt;HELLO&lt;/b&gt; bla lbha blah &lt;b&gt;hihi hahaha hohoho&lt;/b&gt; end</string>
-			</dict>
-			<dict>
-				<key>Path</key>
-				<string>MediumInstructions01.caf</string>
-				<key>Text</key>
-				<string>I got up today, and I can&apos;t sing anymore. I called my friends, the Clams, over to help, but they don&apos;t know my songs. Maybe you can help. I don&apos;t know if you&apos;re ready for this yet...</string>
-			</dict>
-			<dict>
-				<key>Path</key>
-				<string>MediumInstructions02.caf</string>
-				<key>Text</key>
-				<string>Well, maybe you are, little buddy. But you can&apos;t let me down! I&apos;m going to blow all the notes out, and you have to follow along. If I blow a red bubble, you have to play the red clam.</string>
-			</dict>
-			<dict>
-				<key>Path</key>
-				<string>MediumInstructions03.caf</string>
-				<key>Text</key>
-				<string>Don&apos;t fall behind. If you can&apos;t let any of my bubbles float away, we have to start over again, otherwise everybody will think I&apos;m a bad singer.</string>
-			</dict>
-		</array>
-	</array>
-	<key>Medium Replay</key>
-	<array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>MediumReplay00.caf</string>
-				<key>Text</key>
-				<string>Oh no, you let one of my bubbles reach the surface. You&apos;ll have to be faster. Tell me when you&apos;re ready, and we&apos;ll try again.</string>
-			</dict>
-		</array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>MediumReplay01.caf</string>
-				<key>Text</key>
-				<string>Remember, you can&apos;t let the bubbles get away from you. Are you ready to try again?</string>
-			</dict>
-		</array>
-	</array>
-	<key>Hard Instructions</key>
-	<array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>HardInstructions00.caf</string>
-				<key>Text</key>
-				<string>You&apos;ve been getting really good at this, whale done! Ha ha, get it? Are you up for the final challenege?</string>
-			</dict>
-			<dict>
-				<key>Path</key>
-				<string>HardInstructions01.caf</string>
-				<key>Text</key>
-				<string>Everybody&apos;s been hearing about you, they want to hear you play on your own. I can show you how each part goes before you start, but you&apos;ll have to use your memory after that!</string>
-			</dict>
-			<dict>
-				<key>Path</key>
-				<string>HardInstructions02.caf</string>
-				<key>Text</key>
-				<string>Remember, you even if you get a wrong note, make sure you hit the right one before going on. If you get too many notes wrong, we&apos;ll have to stop.</string>
-			</dict>
-			<dict>
-				<key>Path</key>
-				<string>HardInstructions03.caf</string>
-				<key>Text</key>
-				<string>Are you ready?</string>
-			</dict>
-		</array>
-	</array>
-	<key>Hard Replay</key>
-	<array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>HardReplay00.caf</string>
-				<key>Text</key>
-				<string>That&apos;s not how it went. It goes like this -</string>
-			</dict>
-			<dict>
-				<key>Path</key>
-				<string>HardReplay01.caf</string>
-				<key>Text</key>
-				<string>I remember it sounded different, kind of like this -</string>
-			</dict>
-		</array>
-	</array>
-	<key>Next Section</key>
-	<array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>NextSection00.caf</string>
-				<key>Text</key>
-				<string>Good job! This is what the next section sounds like.</string>
-			</dict>
-		</array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>NextSection01.caf</string>
-				<key>Text</key>
-				<string>Keep up the good work. There&apos;s still more song left!</string>
-			</dict>
-		</array>
-	</array>
-	<key>Hard Play</key>
-	<array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>HardPlay00.caf</string>
-				<key>Text</key>
-				<string>Ok, it&apos;s your turn!</string>
-			</dict>
-		</array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>HardPlay01.caf</string>
-				<key>Text</key>
-				<string>Take a deep breath, concentrate, and play!</string>
-			</dict>
-		</array>
-	</array>
-	<key>Wrong Note</key>
-	<array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>WrongNote00.caf</string>
-				<key>Text</key>
-				<string>Oh, that doesn&apos;t sound right</string>
-			</dict>
-		</array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>WrongNote01.caf</string>
-				<key>Text</key>
-				<string>Hmm...that&apos;s not the right note</string>
-			</dict>
-		</array>
-	</array>
-	<key>Song Start</key>
-	<array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>SongStart00.caf</string>
-				<key>Text</key>
-				<string>Here we go! Are you ready?</string>
-			</dict>
-		</array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>SongStart01.caf</string>
-				<key>Text</key>
-				<string>Ok, I&apos;m ready when you are!</string>
-			</dict>
-		</array>
-	</array>
-	<key>Song Complete</key>
-	<array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>SongComplete00.caf</string>
-				<key>Text</key>
-				<string>You made it through the song, good job!</string>
-			</dict>
-		</array>
-		<array>
-			<dict>
-				<key>Path</key>
-				<string>SongComplete01.caf</string>
-				<key>Text</key>
-				<string>I knew you could do it!</string>
-			</dict>
+			<string>Hi, remember me, Whalezart?</string>
 		</array>
 	</array>
 </dict>
