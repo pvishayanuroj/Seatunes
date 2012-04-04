@@ -19,6 +19,8 @@
 
 static const CGFloat GLD_INSTRUCTOR_X = 200.0f;
 static const CGFloat GLD_INSTRUCTOR_Y = 550.0f;
+static const CGFloat GLD_READER_OFFSET_X = 225.0f;
+static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
 
 + (id) gameLogicD:(NSString *)songName
 {
@@ -72,7 +74,10 @@ static const CGFloat GLD_INSTRUCTOR_Y = 550.0f;
             
         }
         
-        
+        SpeechReader *reader = [SpeechReader speechReader:dialogue tapRequired:YES];
+        reader.delegate = self;
+        reader.position = ccp(GLD_INSTRUCTOR_X + GLD_READER_OFFSET_X, GLD_INSTRUCTOR_Y + GLD_READER_OFFSET_Y);
+        [self addChild:reader];          
     }
     return self;
 }

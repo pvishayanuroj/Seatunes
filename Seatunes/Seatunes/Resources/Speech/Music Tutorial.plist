@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Tutorial Introduction</key>
+	<string>Bubbles are fun, but what I really want to teach you about are &lt;b&gt;notes&lt;/b&gt;. If you want to grow up and play the piano, the violin, or guitar, you have to learn to read notes. But don’t worry, it’s really easy!</string>
+	<key>Tutorial Staff</key>
+	<string>This is called a &lt;b&gt;staff.&lt;/b&gt; This is where all the notes will go.</string>
+	<key>Tutorial Notes</key>
+	<string>Notes are those funny black circles with tails. They can go &lt;b&gt;on&lt;/b&gt; the lines like this… </string>
+	<key>Tutorial Notes 2</key>
+	<string>…or &lt;b&gt;in between&lt;/b&gt; the lines like this...</string>
+	<key>Tutorial Letters</key>
+	<string>Do you remember your ABC’s? Because that’s how we remember which clam to play when you see a note.  Each clam has it’s own letter, see? </string>
+	<key>Tutorial Learn C</key>
+	<string>The first note we’re going to learn is a &lt;b&gt;Low C.&lt;/b&gt; It looks this.</string>
+	<key>Tutorial Play C</key>
+	<string>It has that line through it. Try playing it! </string>
+	<key>Tutorial Play DE</key>
+	<string>The next note is a &lt;b&gt;D,&lt;/b&gt; and then an &lt;b&gt;E&lt;/b&gt;. Try them. </string>
+	<key>Tutorial Play FG</key>
+	<string>Good job! Next are &lt;b&gt;F&lt;/b&gt; and &lt;b&gt;G.&lt;/b&gt; Go for it!</string>
+	<key>Tutorial Play ABC</key>
+	<string>Wow! You’re on a roll. Now we go back to &lt;b&gt;A,&lt;/b&gt; &lt;b&gt;B,&lt;/b&gt; and &lt;b&gt;C.&lt;/b&gt; </string>
+	<key>Tutorial Mnemonic</key>
+	<string>Don’t worry, I have trouble remembering everything too. I think of all the notes on the lines like &lt;b&gt;‘Every Good Boy Does Fine’.&lt;/b&gt; Try playing it now.</string>
+	<key>Tutorial Every</key>
+	<string>Every</string>
+	<key>Tutorial Good</key>
+	<string>Good</string>
+	<key>Tutorial Boy</key>
+	<string>Boy</string>
+	<key>Tutorial Face</key>
+	<string>And for the notes in spaces, I think of &lt;b&gt;‘FACE’.&lt;/b&gt; Like your face or my face. Try playing those.</string>
+	<key>Tutorial F</key>
+	<string>F</string>
+	<key>Tutorial A</key>
+	<string>A</string>
+	<key>Tutorial C</key>
+	<string>C</string>
+	<key>Tutorial Complete</key>
+	<string>Well done! I think you’re getting the hang of this. Remember, there’s more lessons you can try after this if you want more practice. Goodbye for now.</string>
+</dict>
+</plist>

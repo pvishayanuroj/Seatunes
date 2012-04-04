@@ -194,6 +194,9 @@
 		AE7774831522979700CE9332 /* Bubble Button.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7774821522979700CE9332 /* Bubble Button.png */; };
 		AE77D9C1151D9095002AC832 /* Jingle Bells.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE77D9BF151D9095002AC832 /* Jingle Bells.plist */; };
 		AE77D9C2151D9095002AC832 /* Silent Night.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE77D9C0151D9095002AC832 /* Silent Night.plist */; };
+		AE78EA7E152BF94600982DC2 /* Introduction 00-00.caf in Resources */ = {isa = PBXBuildFile; fileRef = AE78EA7B152BF94600982DC2 /* Introduction 00-00.caf */; };
+		AE78EA7F152BF94600982DC2 /* Introduction 00-01.caf in Resources */ = {isa = PBXBuildFile; fileRef = AE78EA7C152BF94600982DC2 /* Introduction 00-01.caf */; };
+		AE78EA80152BF94600982DC2 /* Introduction 00-02.caf in Resources */ = {isa = PBXBuildFile; fileRef = AE78EA7D152BF94600982DC2 /* Introduction 00-02.caf */; };
 		AE78F3CF1523DABF00D970B5 /* MenuFont-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AE78F3CD1523DABF00D970B5 /* MenuFont-ipadhd.fnt */; };
 		AE78F3D01523DABF00D970B5 /* MenuFont-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78F3CE1523DABF00D970B5 /* MenuFont-ipadhd.png */; };
 		AE7944AF152758AC009B0D09 /* MusicNoteTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7944AE152758AC009B0D09 /* MusicNoteTutorial.m */; };
@@ -579,6 +582,9 @@
 		AE7774821522979700CE9332 /* Bubble Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble Button.png"; sourceTree = "<group>"; };
 		AE77D9BF151D9095002AC832 /* Jingle Bells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Jingle Bells.plist"; sourceTree = "<group>"; };
 		AE77D9C0151D9095002AC832 /* Silent Night.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Silent Night.plist"; sourceTree = "<group>"; };
+		AE78EA7B152BF94600982DC2 /* Introduction 00-00.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Introduction 00-00.caf"; sourceTree = "<group>"; };
+		AE78EA7C152BF94600982DC2 /* Introduction 00-01.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Introduction 00-01.caf"; sourceTree = "<group>"; };
+		AE78EA7D152BF94600982DC2 /* Introduction 00-02.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Introduction 00-02.caf"; sourceTree = "<group>"; };
 		AE78F3CD1523DABF00D970B5 /* MenuFont-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MenuFont-ipadhd.fnt"; sourceTree = "<group>"; };
 		AE78F3CE1523DABF00D970B5 /* MenuFont-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuFont-ipadhd.png"; sourceTree = "<group>"; };
 		AE7944AD152758AC009B0D09 /* MusicNoteTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicNoteTutorial.h; path = Classes/MusicNoteTutorial.h; sourceTree = "<group>"; };
@@ -997,14 +1003,6 @@
 			name = "Scenes & Layers";
 			sourceTree = "<group>";
 		};
-		04B0D4D015041EE900A4A2B8 /* Speech Effects */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Speech Effects";
-			path = "Resources/Speech Effects";
-			sourceTree = "<group>";
-		};
 		04D331C814E6DDD600DD82D4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1266,6 +1264,17 @@
 			path = "Christmas Pack";
 			sourceTree = "<group>";
 		};
+		AE78EA78152BF7DC00982DC2 /* Speech Audio */ = {
+			isa = PBXGroup;
+			children = (
+				AE78EA7B152BF94600982DC2 /* Introduction 00-00.caf */,
+				AE78EA7C152BF94600982DC2 /* Introduction 00-01.caf */,
+				AE78EA7D152BF94600982DC2 /* Introduction 00-02.caf */,
+			);
+			name = "Speech Audio";
+			path = "Resources/Speech Audio";
+			sourceTree = "<group>";
+		};
 		AE7A86AA151DF8CD007CA48C /* Classics Pack */ = {
 			isa = PBXGroup;
 			children = (
@@ -1339,7 +1348,7 @@
 		DAB11F2A14C1E847009B60FB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				04B0D4D015041EE900A4A2B8 /* Speech Effects */,
+				AE78EA78152BF7DC00982DC2 /* Speech Audio */,
 				04DE51B614F7492C00F8E45C /* Sound Effects */,
 				04D331CD14E7056700DD82D4 /* Speech */,
 				04D331C814E6DDD600DD82D4 /* Fonts */,
@@ -1979,6 +1988,9 @@
 				AE78F3CF1523DABF00D970B5 /* MenuFont-ipadhd.fnt in Resources */,
 				AE78F3D01523DABF00D970B5 /* MenuFont-ipadhd.png in Resources */,
 				AE91464315294004007E75F9 /* Music Tutorial.plist in Resources */,
+				AE78EA7E152BF94600982DC2 /* Introduction 00-00.caf in Resources */,
+				AE78EA7F152BF94600982DC2 /* Introduction 00-01.caf in Resources */,
+				AE78EA80152BF94600982DC2 /* Introduction 00-02.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

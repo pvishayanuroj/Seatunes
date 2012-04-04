@@ -12,10 +12,13 @@
 #import "SpeechReaderDelegate.h"
 
 @class SpeechBubble;
+@class Text;
 
 @interface SpeechReader : CCNode <CCTargetedTouchDelegate> {
     
     CCSprite *sprite_;
+    
+    Text *text_;
     
     NSDictionary *data_;
     

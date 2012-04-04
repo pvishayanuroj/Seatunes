@@ -13,6 +13,9 @@
 
 @implementation SpeechReader
 
+static const CGFloat SR_BUBBLE_OFFSET_X = 210.0f;
+static const CGFloat SR_BUBBLE_OFFSET_Y = -50.0f;
+
 @synthesize delegate = delegate_;
 
 + (id) speechReader:(NSArray *)speeches tapRequired:(BOOL)tapRequired
@@ -24,7 +27,6 @@
 {
     if ((self = [super init])) {
         
-        sprite_ = [[CCSprite spriteWithFile:@"Speech Bubble Large.png"] retain];
         delegate_ = nil;
         currentSpeechIndex_ = 0;
         lastSpeechType_ = [[speeches lastObject] integerValue];
@@ -32,6 +34,14 @@
         tapRequired_ = tapRequired;
         
         data_ = [[[SpeechManager speechManager] textAndAudioFromSpeechTypes:speeches] retain];
+        
+        sprite_ = [[CCSprite spriteWithFile:@"Speech Bubble Large.png"] retain];        
+        sprite_.position = ccp(SR_BUBBLE_OFFSET_X, SR_BUBBLE_OFFSET_Y);
+        [self addChild:sprite_];
+        
+        text_ = [[Text text:@"" fntFile:@"Dialogue Font.fnt"] retain];
+        [text_ addFntFile:@"MenuFont.fnt" textType:kTextBold];
+        [self addChild:text_];        
         
         [self nextDialogue];
     }
@@ -58,11 +68,10 @@
         NSString *line = [lines objectAtIndex:currentSpeechIndex_];
         NSString *path =  [paths objectAtIndex:currentSpeechIndex_];
         
-        Text *text = [Text text:line fntFile:@"Dialogue Font.fnt"];
-        [text addFntFile:@"MenuFont.fnt" textType:kTextBold];
-        [self addChild:text];
+        [text_ setString:line];
         
         [[AudioManager audioManager] stopSound:effectID_];
+        NSLog(@"%@", path);
         effectID_ = [[AudioManager audioManager] playSoundEffectFile:path];
         
         currentSpeechIndex_++;
