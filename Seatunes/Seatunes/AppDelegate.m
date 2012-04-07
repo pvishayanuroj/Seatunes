@@ -14,6 +14,8 @@
 #import "MainMenuScene.h"
 #import "RootViewController.h"
 
+#import "DataUtility.h"
+
 @implementation AppDelegate
 
 @synthesize window;
@@ -114,8 +116,10 @@
 	
 	// Run the intro Scene
     [glView setMultipleTouchEnabled:YES];
-	[[CCDirector sharedDirector] runWithScene: [MainMenuScene node]];
-    //[[CCDirector sharedDirector] runWithScene: [GameScene startWithDifficulty:kDifficultyHard songName:@"Twinkle Twinkle"]];
+	//[[CCDirector sharedDirector] runWithScene: [MainMenuScene node]];
+    
+    [DataUtility manager];
+    [[CCDirector sharedDirector] runWithScene: [GameScene startWithDifficulty:kDifficultyHard songName:@"Twinkle Twinkle"]];
 }
 
 

@@ -12,27 +12,26 @@
 #import "GameLogic.h"
 #import "KeyboardDelegate.h"
 #import "SpeechReaderDelegate.h"
+#import "StaffDelegate.h"
 
-@interface MusicNoteTutorial : GameLogic <KeyboardDelegate,SpeechReaderDelegate> {
+@class Staff;
+
+@interface MusicNoteTutorial : GameLogic <KeyboardDelegate, StaffDelegate, SpeechReaderDelegate> {
     
     NSUInteger noteIndex_;
     
     NSArray *notes_;
     
-    NSMutableArray *queueByKey_;
-    
-    NSMutableArray *queueByID_;
-    
-    NSMutableDictionary *notesHit_;     
-    
     BOOL ignoreInput_;
     
     BOOL onLastNote_;
+    
+    Staff *staff_;    
 }
 
-+ (id) gameLogicF:(NSString *)songName;
++ (id) musicNoteTutorial;
 
-- (id) initGameLogicF:(NSString *)songName;
+- (id) initMusicNoteTutorial;
 
 - (void) start;
 

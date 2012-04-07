@@ -14,6 +14,9 @@
 @synthesize state = state_;
 @synthesize numID = numID_;
 
+static const CGFloat SN_FADE_IN_DURATION = 0.15f;
+static const CGFloat SN_FADE_OUT_DURATION = 0.15f;
+
 static const CGFloat SN_NOTE_PADDING = 12.65f;
 static const CGFloat SN_NOTE_OFFSET_Y = 23.0f;
 static const CGFloat SN_NOTE_FLIPPED_OFFSET_Y = 75.0f;
@@ -55,7 +58,8 @@ static const CGFloat SN_MOVE_X = -800.0f;
             [self runPlaySequence];         
         }
         else {
-
+            sprite_.opacity = 0;
+            [self fadeIn];
         }
     }
     return self;
@@ -69,6 +73,12 @@ static const CGFloat SN_MOVE_X = -800.0f;
     [super dealloc];
 }
              
+- (void) fadeIn
+{
+    CCActionInterval *fadeIn = [CCFadeIn actionWithDuration:SN_FADE_IN_DURATION];
+    [sprite_ runAction:fadeIn];
+}
+
 - (void) runPlaySequence
 {
     [self curvedMove];
@@ -99,6 +109,7 @@ static const CGFloat SN_MOVE_X = -800.0f;
     CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(moveAcross)];
     [self runAction:[CCSequence actions:move, done, nil]];
 }
+
 - (void) moveAcross
 {
     state_ = kStaffNoteActive;
@@ -110,7 +121,7 @@ static const CGFloat SN_MOVE_X = -800.0f;
 {
     state_ = kStaffNoteFade;
     
-    CCActionInterval *fadeOut = [CCFadeOut actionWithDuration:0.5f];
+    CCActionInterval *fadeOut = [CCFadeOut actionWithDuration:SN_FADE_OUT_DURATION];
     CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(destroy)];
     [sprite_ runAction:[CCSequence actions:fadeOut, done, nil]];  
 }

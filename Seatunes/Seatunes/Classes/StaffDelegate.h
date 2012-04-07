@@ -14,4 +14,8 @@
 
 - (void) staffNoteReturned:(StaffNote *)note;
 
+- (void) notesInSequenceAdded;
+
+- (void) notesInSequenceDestroyed;
+
 @end

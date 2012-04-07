@@ -26,7 +26,10 @@ typedef enum {
     kA4 = 5,
     kB4 = 6,
     kC5 = 7,
-    kBlankNote = 8
+    kD5 = 8,
+    kE5 = 9,
+    kF5 = 10,    
+    kBlankNote = 11
 } KeyType;
 
 typedef enum {

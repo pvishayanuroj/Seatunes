@@ -25,7 +25,13 @@
 
 - (id) initStaff;
 
+- (void) disableLoop;
+
 - (void) addNote:(KeyType)keyType numID:(NSUInteger)numID;
+
+- (void) addNotesInSequence:(NSArray *)notes;
+
+- (void) destroyNotesInSequence;
 
 - (void) addMovingNote:(KeyType)keyType numID:(NSUInteger)numID;
 

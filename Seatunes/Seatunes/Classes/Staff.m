@@ -17,9 +17,10 @@ static const CGFloat ST_NOTE_OFFSET_Y = 23.0f;
 static const CGFloat ST_NOTE_FLIPPED_OFFSET_Y = 75.0f;
 static const CGFloat ST_NOTE_OFFSET_X = 600.0f;
 static const CGFloat ST_NOTE_X_BOUNDARY = -80.0f;
-static const CGFloat ST_STATIC_NOTE_OFFSET_X = -20.0f;
-static const CGFloat ST_PS_OFFSET_X = -15.0f;
-static const CGFloat ST_PS_OFFSET_Y = -15.0f;
+static const CGFloat ST_STATIC_NOTE_CENTER_OFFSET_X = 40.0f;
+static const CGFloat ST_STATIC_NOTE_SPACE = 520.0f;
+static const CGFloat ST_SEQUENCE_ADD_INTERVAL = 0.75f;
+static const CGFloat ST_SEQUENCE_DESTROY_INTERVAL = 0.75f;
 
 @synthesize delegate = delegate_;
 
@@ -72,6 +73,11 @@ static const CGFloat ST_PS_OFFSET_Y = -15.0f;
     [notes_ removeObjectsAtIndexes:remove];    
 }
 
+- (void) disableLoop
+{
+    [self unschedule:@selector(loop)];
+}
+
 - (void) staffNoteReturned:(StaffNote *)note
 {
     if (delegate_ && [delegate_ respondsToSelector:@selector(staffNoteReturned:)]) {
@@ -79,11 +85,82 @@ static const CGFloat ST_PS_OFFSET_Y = -15.0f;
     }
 }
 
-- (void) addNote:(KeyType)keyType numID:(NSUInteger)numID
+- (void) addNotesInSequence:(NSArray *)notes
 {
-    StaffNote *note = [StaffNote staffNote:keyType pos:ccp(ST_NOTE_OFFSET_X, 0) numID:numID];
-    [notes_ addObject:note];
-    [self addChild:note];
+    // Guard against empty arrays
+    if ([notes count] == 0) {
+        return;
+    }
+    
+    // Starting location and padding
+    CGFloat xOffset = ST_STATIC_NOTE_CENTER_OFFSET_X - ST_STATIC_NOTE_SPACE * 0.5f;
+    CGFloat xPadding = (ST_STATIC_NOTE_SPACE / (CGFloat)([notes count] + 1));
+    
+    NSMutableArray *actions = [NSMutableArray array];
+    
+    NSInteger index = 0;
+    for (NSNumber *note in notes) {
+        KeyType keyType = [note integerValue];
+        CCActionInstant *add =[CCCallBlock actionWithBlock:^{
+            CGFloat x = xOffset + xPadding * (index + 1);
+            CGFloat y = [self calculateNoteY:keyType];
+            CGPoint pos = ccp(x, y);
+            StaffNote *note = [StaffNote staticStaffNote:keyType pos:pos numID:index];
+            [notes_ addObject:note];
+            [self addChild:note];
+        }];
+        
+        CCActionInterval *delay = [CCDelayTime actionWithDuration:ST_SEQUENCE_ADD_INTERVAL];        
+        
+        [actions addObject:add];
+        [actions addObject:delay];
+        
+        index++;
+    }
+    
+    // Add notification upon finish
+    CCCallFunc *done = [CCCallFunc actionWithTarget:self selector:@selector(doneAddingNotesInSequence)];
+    [actions addObject:done];
+    
+    [self runAction:[CCSequence actionsWithArray:actions]];
+}
+
+- (void) doneAddingNotesInSequence
+{
+    if (delegate_ && [delegate_ respondsToSelector:@selector(notesInSequenceAdded)]) {
+        [delegate_ notesInSequenceAdded];
+    }
+}
+                        
+- (void) destroyNotesInSequence
+{
+    NSMutableArray *actions = [NSMutableArray array];    
+    
+    for (StaffNote *note in notes_) {
+        CCActionInstant *destroy = [CCCallFunc actionWithTarget:note selector:@selector(fadeDestroy)];
+        CCActionInterval *delay = [CCDelayTime actionWithDuration:ST_SEQUENCE_DESTROY_INTERVAL];
+        [actions addObject:destroy];
+        [actions addObject:delay];
+    }
+    
+    // Add notification upon finish
+    CCCallFunc *done = [CCCallFunc actionWithTarget:self selector:@selector(doneDestroyingNotesInSequence)];
+    [actions addObject:done];
+    
+    [self runAction:[CCSequence actionsWithArray:actions]];    
+    [notes_ removeAllObjects];
+}
+
+- (void) doneDestroyingNotesInSequence
+{
+    if (delegate_ && [delegate_ respondsToSelector:@selector(notesInSequenceDestroyed)]) {
+        [delegate_ notesInSequenceDestroyed];
+    }
+}
+
+- (void) toggleStaffBlink:(BOOL)blink
+{
+    
 }
 
 - (void) addMovingNote:(KeyType)keyType numID:(NSUInteger)numID
@@ -94,11 +171,14 @@ static const CGFloat ST_PS_OFFSET_Y = -15.0f;
     [self addChild:note];    
 }
 
+- (void) addNote:(KeyType)keyType numID:(NSUInteger)numID
+{
+    
+}
+
 - (void) addStaticNote:(KeyType)keyType numID:(NSUInteger)numID
 {
-    StaffNote *note = [StaffNote staticStaffNote:keyType pos:ccp(ST_STATIC_NOTE_OFFSET_X, 0) numID:numID];  
-    [notes_ addObject:note];
-    [self addChild:note];    
+ 
 }
 
 - (BOOL) isOldestNoteActive
