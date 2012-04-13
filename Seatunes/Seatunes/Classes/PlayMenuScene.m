@@ -48,17 +48,6 @@ static const CGFloat PMS_SONG_MENU_Y = 150.0f;
 static const CGFloat PMS_SONG_MENU_WIDTH = 565.0f;
 static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
 
-/*
-static const CGFloat PMS_PACK_MENU_X = 200.0f;
-static const CGFloat PMS_PACK_MENU_Y = 300.0f;
-static const CGFloat PMS_PACK_MENU_WIDTH = 460.0f;
-static const CGFloat PMS_PACK_MENU_HEIGHT = 850.0f;
-
-static const CGFloat PMS_SONG_MENU_X = 650.0f;
-static const CGFloat PMS_SONG_MENU_Y = 300.0f;
-static const CGFloat PMS_SONG_MENU_WIDTH = 1130.0f;
-static const CGFloat PMS_SONG_MENU_HEIGHT = 850.0f;
-*/
 @synthesize currentPack = currentPack_;
 
 #pragma mark - Object Lifecycle
@@ -339,7 +328,8 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 850.0f;
     
     NSUInteger idx = 0;
     for (NSString *songName in songNames_) {
-        ScrollingMenuItem *menuItem = [SongMenuItem songMenuItem:songName scores:scores songIndex:idx++ locked:isLocked];
+        BOOL hasScore = [[DataUtility manager] hasScore:songName];
+        ScrollingMenuItem *menuItem = [SongMenuItem songMenuItem:songName scores:scores songIndex:idx++ hasScore:hasScore locked:isLocked];
         [songMenu_ addMenuItem:menuItem];
     }    
     

@@ -26,12 +26,16 @@
     
     BOOL onLastNote_;
     
+    NSArray *dialogue_;
+    
     Staff *staff_;    
 }
 
 + (id) musicNoteTutorial;
 
 - (id) initMusicNoteTutorial;
+
+- (NSArray *) addDialogue;
 
 - (void) start;
 

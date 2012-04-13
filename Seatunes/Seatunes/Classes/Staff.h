@@ -13,7 +13,13 @@
 
 @interface Staff : CCNode {
     
+    CCSprite *staffBackground_;
+    
+    CCSprite *staffForeground_;
+    
     NSMutableArray *notes_;
+    
+    CCAction *action_;
     
     id <StaffDelegate> delegate_;
     
@@ -25,7 +31,11 @@
 
 - (id) initStaff;
 
+- (void) blinkStaff:(BOOL)blink;
+
 - (void) disableLoop;
+
+- (void) staffNoteReturned:(StaffNote *)note;
 
 - (void) addNote:(KeyType)keyType numID:(NSUInteger)numID;
 

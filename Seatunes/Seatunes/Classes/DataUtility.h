@@ -24,6 +24,9 @@
     
     NSArray *defaultPacks_;
     
+    /* Songs which have no scores kept */
+    NSSet *trainingSongs_;
+    
 	CCSpriteBatchNode *spriteSheet_;    
 }
 
@@ -51,7 +54,11 @@
 
 - (NSArray *) loadSongNames:(NSString *)packName;
 
+- (void) loadTrainingSongs;
+
 - (BOOL) isDefaultPack:(NSString *)packName;
+
+- (BOOL) hasScore:(NSString *)songName;
 
 - (void) animationLoader:(NSString *)unitListName spriteSheetName:(NSString *)spriteSheetName;
 

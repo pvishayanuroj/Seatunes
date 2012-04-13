@@ -15,8 +15,14 @@
 
 static const CGFloat SR_BUBBLE_OFFSET_X = 210.0f;
 static const CGFloat SR_BUBBLE_OFFSET_Y = -50.0f;
+static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 
 @synthesize delegate = delegate_;
+
++ (id) speechReader
+{
+    return [[[self alloc] initSpeechReader:nil tapRequired:NO] autorelease];
+}
 
 + (id) speechReader:(NSArray *)speeches tapRequired:(BOOL)tapRequired
 {
@@ -28,13 +34,18 @@ static const CGFloat SR_BUBBLE_OFFSET_Y = -50.0f;
     if ((self = [super init])) {
         
         delegate_ = nil;
+        data_ = nil;
         currentSpeechIndex_ = 0;
-        lastSpeechType_ = [[speeches lastObject] integerValue];
         isClickable_ = YES;
         tapRequired_ = tapRequired;
         
-        data_ = [[[SpeechManager speechManager] textAndAudioFromSpeechTypes:speeches] retain];
-        
+        if (speeches) {
+            speechTypes_ = [speeches retain];
+        }
+        else {
+            speechTypes_ = nil;
+        }
+                
         sprite_ = [[CCSprite spriteWithFile:@"Speech Bubble Large.png"] retain];        
         sprite_.position = ccp(SR_BUBBLE_OFFSET_X, SR_BUBBLE_OFFSET_Y);
         [self addChild:sprite_];
@@ -43,7 +54,7 @@ static const CGFloat SR_BUBBLE_OFFSET_Y = -50.0f;
         [text_ addFntFile:@"MenuFont.fnt" textType:kTextBold];
         [self addChild:text_];        
         
-        [self nextDialogue];
+        [self loadDialogue:speeches];
     }
     return self;
 }
@@ -52,8 +63,22 @@ static const CGFloat SR_BUBBLE_OFFSET_Y = -50.0f;
 {
     [sprite_ release];
     [data_ release];
+    [speechTypes_ release];
     
     [super dealloc];
+}
+
+- (void) loadDialogue:(NSArray *)speeches
+{
+    if (speeches != nil) {
+    
+        [speechTypes_ release];
+        [data_ release];
+        speechTypes_ = [speeches retain];
+        lastSpeechType_ = [[speeches lastObject] integerValue];            
+        data_ = [[[SpeechManager speechManager] textAndAudioFromSpeechTypes:speeches] retain];
+        [self nextDialogue];    
+    }
 }
 
 - (void) nextDialogue
@@ -71,19 +96,24 @@ static const CGFloat SR_BUBBLE_OFFSET_Y = -50.0f;
         [text_ setString:line];
         
         [[AudioManager audioManager] stopSound:effectID_];
-        NSLog(@"%@", path);
         effectID_ = [[AudioManager audioManager] playSoundEffectFile:path];
         
         currentSpeechIndex_++;
     }
+    // No text remaining
     else {
         if (delegate_ && [delegate_ respondsToSelector:@selector(speechComplete:)]) {
             [delegate_ speechComplete:lastSpeechType_];
-            [self removeFromParentAndCleanup:YES];
         }
     }
 }
 
+- (void) dialogueComplete
+{
+    if (delegate_ && [delegate_ respondsToSelector:@selector(speechComplete:)]) {
+        [delegate_ speechComplete:lastSpeechType_];
+    }
+}
 
 #pragma mark - Touch Handlers
 
@@ -127,7 +157,12 @@ static const CGFloat SR_BUBBLE_OFFSET_Y = -50.0f;
 - (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
     if ([self containsTouchLocation:touch]) {
-        [self nextDialogue];
+        if (delegate_ && [delegate_ respondsToSelector:@selector(speechClicked:)]) {
+            if (currentSpeechIndex_ > 0) {
+                SpeechType currentSpeechType = [[speechTypes_ objectAtIndex:(currentSpeechIndex_ - 1)] integerValue];
+                [delegate_ speechClicked:currentSpeechType];
+            }
+        }
     }
 }
 

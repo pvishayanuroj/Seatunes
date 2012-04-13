@@ -70,6 +70,7 @@ static DataUtility *manager_ = nil;
     [packNames_ release];
     [packIdentifiers_ release];
     [defaultPacks_ release];
+    [trainingSongs_ release];
     [spriteSheet_ release];
     
     [super dealloc];
@@ -207,9 +208,20 @@ static DataUtility *manager_ = nil;
     return songs;
 }
 
+- (void) loadTrainingSongs
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Training Songs" ofType:@"plist"];
+    trainingSongs_ = [[NSSet setWithArray:[NSArray arrayWithContentsOfFile:path]] retain];
+}
+
 - (BOOL) isDefaultPack:(NSString *)packName
 {
     return [defaultPacks_ containsObject:packName];
+}
+
+- (BOOL) hasScore:(NSString *)songName
+{
+    return [trainingSongs_ containsObject:songName];
 }
          
 #pragma mark - Animations

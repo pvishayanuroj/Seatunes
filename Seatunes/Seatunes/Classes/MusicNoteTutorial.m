@@ -61,8 +61,10 @@ static const CGFloat MNT_STAFF_Y = 600.0f;
         keyboard_.position = ccp(MNT_KEYBOARD_X, MNT_KEYBOARD_Y);
         [self addChild:keyboard_];        
         
-        [self test];
-    }
+        //[self test];
+        
+        dialogue_ = [[self addDialogue] retain];
+    } 
     return self;
 }
 
@@ -70,19 +72,36 @@ static const CGFloat MNT_STAFF_Y = 600.0f;
 {
     [notes_ release];
     [keyboard_ release];
+    [dialogue_ release];
     
     [super dealloc];
 }
 
-- (void) test
+- (NSArray *) addDialogue
 {
-    NSMutableArray *a = [NSMutableArray array];
-    [a addObject:[NSNumber numberWithInteger:kE4]];
-    [a addObject:[NSNumber numberWithInteger:kG4]];
-    [a addObject:[NSNumber numberWithInteger:kB4]];    
-    [a addObject:[NSNumber numberWithInteger:kD5]];    
-    [a addObject:[NSNumber numberWithInteger:kF5]];        
-    [staff_ addNotesInSequence:a];
+    NSMutableArray *dialogue = [NSMutableArray arrayWithCapacity:12];
+    
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialIntroduction]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialStaff]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialNotes]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialNotes2]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialLetters]];    
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialLearnC]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialPlayC]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialPlayDE]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialPlayFG]];    
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialPlayABC]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialMnemonic]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialEvery]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialGood]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialBoy]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialFace]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialF]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialA]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialC]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialComplete]];
+    
+    return dialogue;
 }
 
 - (void) notesInSequenceAdded
@@ -93,6 +112,77 @@ static const CGFloat MNT_STAFF_Y = 600.0f;
 - (void) notesInSequenceDestroyed
 {
     NSLog(@"notes destroyed");
+}
+
+- (void) blinkStaff
+{
+    
+}
+
+- (void) showLineNotes
+{
+    
+}
+
+- (void) showSpaceNotes
+{
+    
+}
+
+- (void) showKeyboardLetters
+{
+    
+}
+
+- (void) speechClicked:(SpeechType)speechType
+{
+    
+}
+
+- (void) speechComplete:(SpeechType)speechType
+{
+    switch (speechType) {
+        case kTutorialIntroduction:
+            break;
+        case kTutorialStaff:
+            break;
+        case kTutorialNotes:
+            break;
+        case kTutorialNotes2:
+            break;
+        case kTutorialLetters:
+            break;
+        case kTutorialLearnC:
+            break;
+        case kTutorialPlayC:
+            break;
+        case kTutorialPlayDE:
+            break;
+        case kTutorialPlayFG:
+            break;
+        case kTutorialPlayABC:
+            break;
+        case kTutorialMnemonic:
+            break;
+        case kTutorialEvery:
+            break;
+        case kTutorialGood:
+            break;
+        case kTutorialBoy:
+            break;
+        case kTutorialFace:
+            break;
+        case kTutorialF:
+            break;
+        case kTutorialA:
+            break;
+        case kTutorialC:
+            break;
+        case kTutorialComplete:
+            break;            
+        default:
+            break;
+    }      
 }
 
 @end

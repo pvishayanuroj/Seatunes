@@ -17,8 +17,8 @@
     
 }
 
-+ (id) songMenuItem:(NSString *)songName scores:(NSDictionary *)scores songIndex:(NSUInteger)songIndex locked:(BOOL)locked;
++ (id) songMenuItem:(NSString *)songName scores:(NSDictionary *)scores songIndex:(NSUInteger)songIndex hasScore:(BOOL)hasScore locked:(BOOL)locked;
 
-- (id) initSongMenuItem:(NSString *)songName scores:(NSDictionary *)scores songIndex:(NSUInteger)songIndex locked:(BOOL)locked;
+- (id) initSongMenuItem:(NSString *)songName scores:(NSDictionary *)scores songIndex:(NSUInteger)songIndex hasScore:(BOOL)hasScore locked:(BOOL)locked;
 
 @end

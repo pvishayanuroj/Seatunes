@@ -15,6 +15,7 @@
 @class Keyboard;
 @class Instructor;
 @class NoteGenerator;
+@class SpeechReader;
 
 @interface GameLogic : CCNode <SpeechReaderDelegate> {
     
@@ -23,6 +24,8 @@
     Instructor *instructor_;    
     
     NoteGenerator *noteGenerator_;
+    
+    SpeechReader *reader_;
     
     ScoreInfo scoreInfo_;
     

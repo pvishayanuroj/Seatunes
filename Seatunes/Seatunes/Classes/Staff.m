@@ -34,10 +34,14 @@ static const CGFloat ST_SEQUENCE_DESTROY_INTERVAL = 0.75f;
     if ((self = [super init])) {
      
         delegate_ = nil;
+        action_ = nil;
         notes_ = [[NSMutableArray arrayWithCapacity:6] retain];
         
-        CCSprite *staff = [CCSprite spriteWithFile:@"Staff Parchment.png"];
-        [self addChild:staff z:-1];
+        staffBackground_ = [[CCSprite spriteWithFile:@"Staff Parchment.png"] retain];
+        [self addChild:staffBackground_ z:-2];
+         
+        staffForeground_ = [[CCSprite spriteWithFile:@"Staff.png"] retain];
+        [self addChild:staffForeground_ z:-1];
         
         [self schedule:@selector(loop) interval:1.0f/60.0f];
         
@@ -49,6 +53,9 @@ static const CGFloat ST_SEQUENCE_DESTROY_INTERVAL = 0.75f;
 - (void) dealloc
 {
     [notes_ release];
+    [staffBackground_ release];
+    [staffForeground_ release];
+    [action_ release];
     
     [super dealloc];
 }
@@ -71,6 +78,19 @@ static const CGFloat ST_SEQUENCE_DESTROY_INTERVAL = 0.75f;
     
     // For the removal of cat bullets
     [notes_ removeObjectsAtIndexes:remove];    
+}
+
+- (void) blinkStaff:(BOOL)blink
+{
+    if (blink && action_ == nil) {
+        CCActionInterval *blinkAction = [CCBlink actionWithDuration:0.5f blinks:1];
+        action_ = [[CCRepeatForever actionWithAction:blinkAction] retain];
+        [staffForeground_ runAction:action_];
+    }
+    else if (!blink && action_ != nil) {
+        [action_ stop];
+        [action_ release];
+    }
 }
 
 - (void) disableLoop

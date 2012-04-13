@@ -35,6 +35,8 @@
 
 - (id) initGameLogicF:(NSString *)songName;
 
+- (void) removeNote;
+
 - (void) start;
 
 - (void) endSong;

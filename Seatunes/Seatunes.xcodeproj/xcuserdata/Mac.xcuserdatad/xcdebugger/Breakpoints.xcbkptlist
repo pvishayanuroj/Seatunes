@@ -28,8 +28,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "296"
          endingLineNumber = "296"
-         landmarkName = "@implementation PlayMenuScene"
-         landmarkType = "3">
+         landmarkName = "-loadPackMenu"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -98,8 +98,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "110"
          endingLineNumber = "110"
-         landmarkName = "-bubbleComplete:"
-         landmarkType = "5">
+         landmarkName = "@implementation SpeechReader"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -262,7 +262,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "41"
          endingLineNumber = "41"
-         landmarkName = "-initStaffNote:pos:isStatic:"
+         landmarkName = "-initStaffNote:pos:numID:isStatic:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

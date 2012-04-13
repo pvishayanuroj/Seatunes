@@ -72,18 +72,18 @@ static const CGFloat SN_MOVE_X = -800.0f;
     
     [super dealloc];
 }
-             
-- (void) fadeIn
-{
-    CCActionInterval *fadeIn = [CCFadeIn actionWithDuration:SN_FADE_IN_DURATION];
-    [sprite_ runAction:fadeIn];
-}
 
 - (void) runPlaySequence
 {
     [self curvedMove];
     sprite_.scale = 0.5f;
     [self scaleUp];      
+}
+             
+- (void) fadeIn
+{
+    CCActionInterval *fadeIn = [CCFadeIn actionWithDuration:SN_FADE_IN_DURATION];
+    [sprite_ runAction:fadeIn];
 }
 
 - (void) scaleUp

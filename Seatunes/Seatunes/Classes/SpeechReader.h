@@ -22,6 +22,8 @@
     
     NSDictionary *data_;
     
+    NSArray *speechTypes_;
+    
     NSUInteger currentSpeechIndex_;
     
     NSString *remainingText_;
@@ -40,9 +42,13 @@
 
 @property (nonatomic, assign) id <SpeechReaderDelegate> delegate;
 
++ (id) speechReader;
+
 + (id) speechReader:(NSArray *)speeches tapRequired:(BOOL)tapRequired;
 
 - (id) initSpeechReader:(NSArray *)speeches tapRequired:(BOOL)tapRequired;
+
+- (void) loadDialogue:(NSArray *)speeches;
 
 - (void) nextDialogue;
 
