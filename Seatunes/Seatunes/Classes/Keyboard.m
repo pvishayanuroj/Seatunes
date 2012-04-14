@@ -14,6 +14,8 @@
 
 @implementation Keyboard
 
+static const CGFloat KB_KEY_PADDING = 110.0f;
+
 @synthesize isKeyboardMuted = isKeyboardMuted_;
 @synthesize isClickable = isClickable_;
 @synthesize delegate = delegate_;
@@ -70,7 +72,7 @@
         KeyType keyType = [keyName integerValue];
         Key *key = [Key key:keyType creature:creature];    
         key.delegate = self;
-        key.position = ccp(i * 110, 0);
+        key.position = ccp(i * KB_KEY_PADDING, 0);
         [self addChild:key];
         [keys_ setObject:key forKey:keyName];
         i++;
@@ -227,6 +229,16 @@
     if (delegate_ && [delegate_ respondsToSelector:@selector(applauseComplete)]) {
         [delegate_ applauseComplete];
     }
+}
+
+- (void) showLetters
+{
+    
+}
+
+- (void) hideLetters
+{
+
 }
 
 - (void) pauseHierarchy

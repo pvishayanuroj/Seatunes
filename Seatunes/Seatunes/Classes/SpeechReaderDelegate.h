@@ -12,8 +12,10 @@
 
 @optional
 
-- (void) speechClicked:(SpeechType)speechType;
-
 - (void) speechComplete:(SpeechType)speechType;
+
+- (void) bubbleComplete:(SpeechType)speechType;
+
+- (void) bubbleClicked:(SpeechType)speechType;
 
 @end

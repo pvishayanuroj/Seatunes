@@ -19,8 +19,14 @@ static const CGFloat ST_NOTE_OFFSET_X = 600.0f;
 static const CGFloat ST_NOTE_X_BOUNDARY = -80.0f;
 static const CGFloat ST_STATIC_NOTE_CENTER_OFFSET_X = 40.0f;
 static const CGFloat ST_STATIC_NOTE_SPACE = 520.0f;
+
+// Duration between notes being shown added and destroyed
 static const CGFloat ST_SEQUENCE_ADD_INTERVAL = 0.75f;
 static const CGFloat ST_SEQUENCE_DESTROY_INTERVAL = 0.75f;
+
+// Duration for when staff is visible and invisible when blinking
+static const CGFloat ST_BLINK_SHOW = 0.8f;
+static const CGFloat ST_BLINK_HIDE = 0.35f;
 
 @synthesize delegate = delegate_;
 
@@ -83,7 +89,13 @@ static const CGFloat ST_SEQUENCE_DESTROY_INTERVAL = 0.75f;
 - (void) blinkStaff:(BOOL)blink
 {
     if (blink && action_ == nil) {
-        CCActionInterval *blinkAction = [CCBlink actionWithDuration:0.5f blinks:1];
+        
+        CCActionInterval *hide = [CCFadeOut actionWithDuration:0.0f];
+        CCActionInterval *hideDuration = [CCDelayTime actionWithDuration:ST_BLINK_SHOW];        
+        CCActionInterval *show = [CCFadeIn actionWithDuration:0.0f];
+        CCActionInterval *showDuration = [CCDelayTime actionWithDuration:ST_BLINK_SHOW];        
+
+        CCActionInterval *blinkAction = [CCSequence actions:hide, hideDuration, show, showDuration, nil];
         action_ = [[CCRepeatForever actionWithAction:blinkAction] retain];
         [staffForeground_ runAction:action_];
     }
@@ -176,11 +188,6 @@ static const CGFloat ST_SEQUENCE_DESTROY_INTERVAL = 0.75f;
     if (delegate_ && [delegate_ respondsToSelector:@selector(notesInSequenceDestroyed)]) {
         [delegate_ notesInSequenceDestroyed];
     }
-}
-
-- (void) toggleStaffBlink:(BOOL)blink
-{
-    
 }
 
 - (void) addMovingNote:(KeyType)keyType numID:(NSUInteger)numID

@@ -261,12 +261,14 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 {
     isPaused_ = YES;
     [gameLogic_ pauseHierarchy];
+    [[AudioManager audioManager] pause];
 }
 
 - (void) resumeGame
 {
     isPaused_ = NO;
     [gameLogic_ resumeHierarchy];
+    [[AudioManager audioManager] resume];
 }
 
 @end

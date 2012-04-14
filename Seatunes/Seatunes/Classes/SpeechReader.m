@@ -21,15 +21,15 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 
 + (id) speechReader
 {
-    return [[[self alloc] initSpeechReader:nil tapRequired:NO] autorelease];
+    return [[[self alloc] initSpeechReader:nil prompt:NO] autorelease];
 }
 
-+ (id) speechReader:(NSArray *)speeches tapRequired:(BOOL)tapRequired
++ (id) speechReader:(NSArray *)speeches prompt:(BOOL)prompt
 {
-    return [[[self alloc] initSpeechReader:speeches tapRequired:tapRequired] autorelease];
+    return [[[self alloc] initSpeechReader:speeches prompt:prompt] autorelease];
 }
 
-- (id) initSpeechReader:(NSArray *)speeches tapRequired:(BOOL)tapRequired
+- (id) initSpeechReader:(NSArray *)speeches prompt:(BOOL)prompt
 {
     if ((self = [super init])) {
         
@@ -37,7 +37,7 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
         data_ = nil;
         currentSpeechIndex_ = 0;
         isClickable_ = YES;
-        tapRequired_ = tapRequired;
+        prompt_ = prompt;
         
         if (speeches) {
             speechTypes_ = [speeches retain];
@@ -68,6 +68,28 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
     [super dealloc];
 }
 
+#pragma - Delegate Methods
+
+- (void) narrationComplete:(SpeechType)speechType
+{
+    NSLog(@"narration complete");
+    if (prompt_) {
+        if (delegate_ && [delegate_ respondsToSelector:@selector(bubbleComplete:)]) {
+            [delegate_ bubbleComplete:speechType];
+        }
+    }
+    else {
+        [self nextDialogue];
+    }
+}
+
+#pragma - Helper Methods
+
+- (void) loadSingleDialogue:(SpeechType)speechType
+{
+    [self loadDialogue:[NSArray arrayWithObject:[NSNumber numberWithInteger:speechType]]];
+}
+
 - (void) loadDialogue:(NSArray *)speeches
 {
     if (speeches != nil) {
@@ -79,6 +101,11 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
         data_ = [[[SpeechManager speechManager] textAndAudioFromSpeechTypes:speeches] retain];
         [self nextDialogue];    
     }
+}
+
+- (void) playSecondaryDialogue:(SpeechType)speechType
+{
+    
 }
 
 - (void) nextDialogue
@@ -93,10 +120,12 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
         NSString *line = [lines objectAtIndex:currentSpeechIndex_];
         NSString *path =  [paths objectAtIndex:currentSpeechIndex_];
         
+        // Set the text
         [text_ setString:line];
         
-        [[AudioManager audioManager] stopSound:effectID_];
-        effectID_ = [[AudioManager audioManager] playSoundEffectFile:path];
+        // Play the audio
+        SpeechType speechType = [[speechTypes_ objectAtIndex:currentSpeechIndex_] integerValue];
+        [[AudioManager audioManager] playNarration:speechType path:path delegate:self];
         
         currentSpeechIndex_++;
     }
@@ -113,6 +142,14 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
     if (delegate_ && [delegate_ respondsToSelector:@selector(speechComplete:)]) {
         [delegate_ speechComplete:lastSpeechType_];
     }
+}
+
+- (SpeechType) currentSpeech
+{
+    if (currentSpeechIndex_ > 0) {          
+        return [[speechTypes_ objectAtIndex:(currentSpeechIndex_ - 1)] integerValue];
+    }    
+    return 0;
 }
 
 #pragma mark - Touch Handlers
@@ -159,8 +196,9 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
     if ([self containsTouchLocation:touch]) {
         if (delegate_ && [delegate_ respondsToSelector:@selector(speechClicked:)]) {
             if (currentSpeechIndex_ > 0) {
+                [[AudioManager audioManager] stopNarration];                
                 SpeechType currentSpeechType = [[speechTypes_ objectAtIndex:(currentSpeechIndex_ - 1)] integerValue];
-                [delegate_ speechClicked:currentSpeechType];
+                [delegate_ bubbleClicked:currentSpeechType];
             }
         }
     }

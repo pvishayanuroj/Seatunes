@@ -9,6 +9,8 @@
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 
+#define kSpeechFileType @"wav"
+
 @interface SpeechManager : NSObject {
     
     NSMutableDictionary *speechText_;

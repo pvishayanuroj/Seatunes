@@ -11,6 +11,8 @@
 
 @implementation Key
 
+static const CGFloat KEY_SCALE = 1.0f;
+
 @synthesize delegate = delegate_;
 @synthesize keyType = keyType_;
 @synthesize soundID = soundID_;
@@ -41,6 +43,8 @@
         
         sprite_.visible = YES;
         selected_.visible = NO;
+        sprite_.scale = KEY_SCALE;
+        selected_.scale = KEY_SCALE;
         
         [self addChild:sprite_];
         [self addChild:selected_];

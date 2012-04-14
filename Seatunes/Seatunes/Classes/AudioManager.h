@@ -7,25 +7,47 @@
 //
 
 #import "CommonHeaders.h"
+#import "AudioManagerDelegate.h"
+#import "CDAudioManager.h"
 
-@class CDSoundSource;
+@class CDAudioManager;
+@class SimpleAudioEngine;
 
-@interface AudioManager : NSObject {
+@interface AudioManager : NSObject <CDLongAudioSourceDelegate> {
     
-    CDSoundSource *engineSound_;    
+    /* For background music and narration */
+    CDAudioManager *manager_;
     
-    BOOL backgroundMusicPlaying_;
+    /* For sound effects */
+    SimpleAudioEngine *sae_;
     
+    /* Delegate object */
+    id <AudioManagerDelegate> delegate_;
+    
+    /* Current speech type playing on CDAudioManager */
+    SpeechType currentSpeech_;
+    
+    /* Current effect number */
     GLuint currentEffect_;
+    
+    /* State variable for pause */
+    BOOL backgroundMusicWasPlaying_;
+    
+    /* State variable for pause */    
+    BOOL narrationWasPlaying_;
 }
+
+@property (nonatomic, assign) id <AudioManagerDelegate> delegate;
 
 + (AudioManager *) audioManager;
 
 + (void) purgeAudioManager;
 
+- (void) preloadEffects;
+
 - (GLuint) playSound:(KeyType)key instrument:(InstrumentType)instrument;
 
-- (void) playSoundEffect:(SoundType)type;
+- (GLuint) playSoundEffect:(SoundType)type;
 
 - (GLuint) playSoundEffectFile:(NSString *)filename;
 
@@ -33,10 +55,18 @@
 
 - (void) stopSound;
 
-- (void) stopMusic;
+- (void) playNarration:(SpeechType)speechType path:(NSString *)path delegate:(id <AudioManagerDelegate>)delegate;
 
-- (void) pauseSound;
+- (void) stopNarration;
 
-- (void) resumeSound;
+- (void) preloadBackgroundMusic:(NSString *)path;
+
+- (void) playBackgroundMusic:(NSString *)path;
+
+- (void) stopBackgroundMusic;
+
+- (void) pause;
+
+- (void) resume;
 
 @end

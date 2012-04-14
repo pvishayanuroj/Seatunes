@@ -14,6 +14,10 @@
 
 - (void) keyboardKeyDepressed:(KeyType)keyType time:(CGFloat)time;
 
+- (void) showLettersComplete;
+
+- (void) hideLettersComplete;
+
 - (void) applauseComplete;
 
 @end

@@ -7,13 +7,17 @@
 //
 
 #import "AudioManager.h"
+#import "CDAudioManager.h"
 #import "SimpleAudioEngine.h"
+#import "CocosDenshion.h"
 #import "Utility.h"
 
 // For singleton
 static AudioManager *_audioManager = nil;
 
 @implementation AudioManager
+
+@synthesize delegate = delegate_;
 
 #pragma mark - Object Lifecycle
 
@@ -40,87 +44,156 @@ static AudioManager *_audioManager = nil;
 - (id) init
 {
 	if ((self = [super init])) {
+
+        delegate_ = nil;        
+        manager_ = [[CDAudioManager sharedManager] retain];
+        sae_ = [[SimpleAudioEngine sharedEngine] retain];
         
-        SimpleAudioEngine *sae = [SimpleAudioEngine sharedEngine];
-        
-        NSArray *keyNames = [Utility allKeyNames];
-        NSArray *instrumentNames = [Utility allInstrumentNames];
-        
-        for (NSNumber *key in keyNames) {
-            NSString *keyName = [Utility keyNameFromEnum:[key integerValue]];
-            for (NSNumber *instrument in instrumentNames) {
-                NSString *instrumentName = [Utility instructorNameFromEnum:[instrument integerValue]];
-                NSString *fileName = [NSString stringWithFormat:@"%@-%@.m4a", keyName, instrumentName];
-                [sae preloadEffect:fileName];
-            }
-        }     
-        backgroundMusicPlaying_ = NO;
+        [self preloadEffects];
 	}
 	return self;
 }
 
 - (void) dealloc
 {	
-    [engineSound_ release];
+    [manager_ release];
+    [sae_ release];
     
 	[super dealloc];
 }
 
-#pragma mark - Sound Methods
+#pragma mark - Delegate Methods
+
+- (void) cdAudioSourceDidFinishPlaying:(CDLongAudioSource *)audioSource
+{
+    if (delegate_ && [delegate_ respondsToSelector:@selector(narrationComplete:)]) {
+        [delegate_ narrationComplete:currentSpeech_];
+    }
+}
+
+#pragma mark - Initialization Methods
+
+- (void) preloadEffects
+{   
+    NSArray *keyNames = [Utility allKeyNames];
+    NSArray *instrumentNames = [Utility allInstrumentNames];
+    
+    for (NSNumber *key in keyNames) {
+        NSString *keyName = [Utility keyNameFromEnum:[key integerValue]];
+        for (NSNumber *instrument in instrumentNames) {
+            NSString *instrumentName = [Utility instructorNameFromEnum:[instrument integerValue]];
+            NSString *path = [NSString stringWithFormat:@"%@-%@.m4a", keyName, instrumentName];
+            [sae_ preloadEffect:path];
+        }
+    }       
+}
+
+#pragma mark - Sound Effect Methods
 
 - (GLuint) playSound:(KeyType)key instrument:(InstrumentType)instrument
 {
     NSString *keyName = [Utility keyNameFromEnum:key];
     NSString *instrumentName = [Utility instrumentNameFromEnum:instrument];
-    NSString *name = [NSString stringWithFormat:@"%@-%@.m4a", keyName, instrumentName];
-    SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];  
-    currentEffect_ = [engine playEffect:name];
+    NSString *name = [NSString stringWithFormat:@"%@-%@.m4a", keyName, instrumentName];  
+    currentEffect_ = [sae_ playEffect:name];
     return currentEffect_;
 }
 
-- (void) playSoundEffect:(SoundType)type
+- (GLuint) playSoundEffect:(SoundType)type
 {
-    SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];
     NSString *name = [Utility soundFileFromEnum:type];
-    [engine playEffect:name];
+    currentEffect_ = [sae_ playEffect:name];
+    return currentEffect_;
 }
 
 - (GLuint) playSoundEffectFile:(NSString *)filename
 {
-    SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];
-    return [engine playEffect:filename];
+    currentEffect_ = [sae_ playEffect:filename];
+    return currentEffect_;
 }
 
 - (void) stopSound
 {
-    SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];
-    [engine stopEffect:currentEffect_];
+    [sae_ stopEffect:currentEffect_];
 }
 
 - (void) stopSound:(GLuint)effectNumber
 {
-    SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];    
-    [engine stopEffect:effectNumber];
+    [sae_ stopEffect:effectNumber];
 }
 
-- (void) stopMusic
+#pragma mark - Narration Methods
+
+- (void) playNarration:(SpeechType)speechType path:(NSString *)path delegate:(id <AudioManagerDelegate>)delegate;
+{
+    CDLongAudioSource *narration = [manager_ audioSourceLoad:path channel:kASC_Right];
+    
+    if ([narration isPlaying]) {
+        [narration stop];
+    }    
+    
+    self.delegate = delegate;
+    currentSpeech_ = speechType;
+    narration.delegate = self;
+    [narration play];
+}
+
+- (void) stopNarration
+{
+    CDLongAudioSource *narration = [manager_ audioSourceForChannel:kASC_Right];
+    if ([narration isPlaying]) {
+        [narration stop];
+    }
+}
+
+#pragma mark - Background Music Methods
+
+- (void) preloadBackgroundMusic:(NSString *)path
+{
+    [sae_ preloadBackgroundMusic:path];
+}
+
+- (void) playBackgroundMusic:(NSString *)path
+{
+    [sae_ playBackgroundMusic:path];
+}
+
+- (void) stopBackgroundMusic
 {
     [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
 }
 
-- (void) pauseSound
+- (void) pause
 {
-    SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];
-
-    [engine pauseBackgroundMusic];
+    // Pause narration
+    CDLongAudioSource *narration = [manager_ audioSourceForChannel:kASC_Right];
+ 
+    narrationWasPlaying_ = [narration isPlaying];
+    if (narrationWasPlaying_) {
+        [narration pause];
+    }
+    
+    // Pause background music
+    backgroundMusicWasPlaying_ = [sae_ isBackgroundMusicPlaying];
+    if (backgroundMusicWasPlaying_) {
+        [sae_ stopBackgroundMusic];
+    }
+    
+    // Stop all sound effects
+    [manager_.soundEngine stopAllSounds];
 }
 
-- (void) resumeSound
+- (void) resume
 {
-    SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];    
+    // Resume background music
+    if (backgroundMusicWasPlaying_) {
+        [sae_ resumeBackgroundMusic];
+    }
     
-    if (backgroundMusicPlaying_) {
-        [engine resumeBackgroundMusic];
+    // Resume narration
+    CDLongAudioSource *narration = [manager_ audioSourceForChannel:kASC_Right];    
+    if (narrationWasPlaying_) {
+        [narration resume];
     }
 }
 

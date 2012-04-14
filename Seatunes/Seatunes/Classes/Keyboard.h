@@ -62,4 +62,8 @@
 
 - (void) applause;
 
+- (void) showLetters;
+
+- (void) hideLetters;
+
 @end

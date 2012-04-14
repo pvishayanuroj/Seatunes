@@ -20,9 +20,11 @@
 static const CGFloat MNT_INSTRUCTOR_X = 200.0f;
 static const CGFloat MNT_INSTRUCTOR_Y = 350.0f;
 static const CGFloat MNT_KEYBOARD_X = 100.0f;
-static const CGFloat MNT_KEYBOARD_Y = 100.0f;
+static const CGFloat MNT_KEYBOARD_Y = 80.0f;
 static const CGFloat MNT_STAFF_X = 512.0f;
 static const CGFloat MNT_STAFF_Y = 600.0f;
+static const CGFloat MNT_READER_OFFSET_X = 225.0f;
+static const CGFloat MNT_READER_OFFSET_Y = 75.0f;
 
 + (id) musicNoteTutorial
 {
@@ -34,8 +36,8 @@ static const CGFloat MNT_STAFF_Y = 600.0f;
     if ((self = [super initGameLogic:kDifficultyMedium])) {
         
         noteIndex_ = 0;
-        ignoreInput_ = NO;
-        onLastNote_ = NO;       
+        ignoreInput_ = NO;  
+        bubbleClickable_ = YES;
 
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
@@ -61,9 +63,12 @@ static const CGFloat MNT_STAFF_Y = 600.0f;
         keyboard_.position = ccp(MNT_KEYBOARD_X, MNT_KEYBOARD_Y);
         [self addChild:keyboard_];        
         
-        //[self test];
-        
         dialogue_ = [[self addDialogue] retain];
+        
+        reader_ = [[SpeechReader speechReader:dialogue_ prompt:YES] retain];
+        reader_.delegate = self;
+        reader_.position = ccp(MNT_INSTRUCTOR_X + MNT_READER_OFFSET_X, MNT_INSTRUCTOR_Y + MNT_READER_OFFSET_Y);
+        [self addChild:reader_];          
     } 
     return self;
 }
@@ -73,13 +78,16 @@ static const CGFloat MNT_STAFF_Y = 600.0f;
     [notes_ release];
     [keyboard_ release];
     [dialogue_ release];
+    [reader_ release];
     
     [super dealloc];
 }
 
+#pragma mark - Initialization Methods
+
 - (NSArray *) addDialogue
 {
-    NSMutableArray *dialogue = [NSMutableArray arrayWithCapacity:12];
+    NSMutableArray *dialogue = [NSMutableArray arrayWithCapacity:20];
     
     [dialogue addObject:[NSNumber numberWithInteger:kTutorialIntroduction]];
     [dialogue addObject:[NSNumber numberWithInteger:kTutorialStaff]];
@@ -104,29 +112,91 @@ static const CGFloat MNT_STAFF_Y = 600.0f;
     return dialogue;
 }
 
+#pragma mark - Delegate Methods
+
+- (void) bubbleComplete:(SpeechType)speechType
+{
+    [self eventComplete:speechType];
+}
+
+- (void) bubbleClicked:(SpeechType)speechType
+{
+    if (bubbleClickable_) {
+        [self eventComplete:speechType];    
+    }
+}
+
 - (void) notesInSequenceAdded
 {
-    [staff_ destroyNotesInSequence];
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:3.0f];
+    CCActionInstant *destroy = [CCCallFunc actionWithTarget:staff_ selector:@selector(destroyNotesInSequence)];
+    [self runAction:[CCSequence actions:delay, destroy, nil]];
 }
 
 - (void) notesInSequenceDestroyed
 {
-    NSLog(@"notes destroyed");
+    NSLog(@"notes destroyed");    
+    
+    switch (reader_.currentSpeech) {
+        // Lined notes
+        case kTutorialNotes:
+            [reader_ nextDialogue];
+            break;
+        case kTutorialNotes2:
+            [reader_ nextDialogue];
+            break;
+        default:
+            break;
+    }
+
+    bubbleClickable_ = YES;
 }
+
+#pragma mark - Helper Methods
 
 - (void) blinkStaff
 {
+    CCActionInstant *start = [CCCallBlock actionWithBlock:^{
+        [staff_ blinkStaff:YES];
+    }];
     
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:3.0f];
+    
+    CCActionInstant *stop = [CCCallBlock actionWithBlock:^{
+        [staff_ blinkStaff:NO];
+    }];    
+    
+    CCActionInstant *done = [CCCallBlock actionWithBlock:^{
+        [self eventComplete:reader_.currentSpeech];
+    }];
+    
+    [self runAction:[CCSequence actions:start, delay, stop, done, nil]];
 }
 
 - (void) showLineNotes
 {
+    bubbleClickable_ = NO;
     
+    NSMutableArray *notes = [NSMutableArray arrayWithCapacity:5];
+    [notes addObject:[NSNumber numberWithInteger:kE4]];
+    [notes addObject:[NSNumber numberWithInteger:kG4]];    
+    [notes addObject:[NSNumber numberWithInteger:kB4]];
+    [notes addObject:[NSNumber numberWithInteger:kD5]];
+    [notes addObject:[NSNumber numberWithInteger:kF5]];    
+    [staff_ addNotesInSequence:notes];
 }
 
 - (void) showSpaceNotes
 {
+    bubbleClickable_ = NO;    
     
+    NSMutableArray *notes = [NSMutableArray arrayWithCapacity:5];
+    [notes addObject:[NSNumber numberWithInteger:kD4]];
+    [notes addObject:[NSNumber numberWithInteger:kF4]];    
+    [notes addObject:[NSNumber numberWithInteger:kA4]];
+    [notes addObject:[NSNumber numberWithInteger:kC5]];
+    [notes addObject:[NSNumber numberWithInteger:kE5]];    
+    [staff_ addNotesInSequence:notes];    
 }
 
 - (void) showKeyboardLetters
@@ -139,18 +209,26 @@ static const CGFloat MNT_STAFF_Y = 600.0f;
     
 }
 
-- (void) speechComplete:(SpeechType)speechType
+- (void) eventComplete:(SpeechType)speechType
 {
+    NSLog(@"event complete: %d", speechType);
     switch (speechType) {
         case kTutorialIntroduction:
+            [staff_ blinkStaff:YES];
+            [reader_ nextDialogue];
             break;
         case kTutorialStaff:
+            [staff_ blinkStaff:NO];
+            [reader_ nextDialogue];
             break;
         case kTutorialNotes:
+            [self showLineNotes];            
             break;
         case kTutorialNotes2:
+            [self showSpaceNotes];             
             break;
         case kTutorialLetters:
+            [self showKeyboardLetters];
             break;
         case kTutorialLearnC:
             break;

@@ -191,7 +191,7 @@ static SpeechManager *_speechManager = nil;
         NSInteger lineNum = 0;
         for (NSString *line in lines) {
             
-            NSString *path = [NSString stringWithFormat:@"%@ %02d-%02d.caf", key, choice, lineNum];
+            NSString *path = [NSString stringWithFormat:@"%@ %02d-%02d.%@", key, choice, lineNum, kSpeechFileType];
             [text addObject:line];
             [audio addObject:path];
             

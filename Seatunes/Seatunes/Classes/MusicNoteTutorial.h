@@ -26,9 +26,11 @@
     
     BOOL onLastNote_;
     
+    BOOL bubbleClickable_;
+    
     NSArray *dialogue_;
     
-    Staff *staff_;    
+    Staff *staff_;   
 }
 
 + (id) musicNoteTutorial;
@@ -37,8 +39,8 @@
 
 - (NSArray *) addDialogue;
 
-- (void) start;
+- (void) blinkStaff;
 
-- (void) endSong;
+- (void) eventComplete:(SpeechType)speechType;
 
 @end
