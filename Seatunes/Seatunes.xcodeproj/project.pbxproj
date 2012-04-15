@@ -243,6 +243,8 @@
 		AE792B95153B0698002A8A18 /* Tutorial Play DE 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B68153B0698002A8A18 /* Tutorial Play DE 00-00.wav */; };
 		AE792B96153B0698002A8A18 /* Tutorial Play FG 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B69153B0698002A8A18 /* Tutorial Play FG 00-00.wav */; };
 		AE792B97153B0698002A8A18 /* Tutorial Staff 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B6A153B0698002A8A18 /* Tutorial Staff 00-00.wav */; };
+		AE792BA8153B233A002A8A18 /* Dialogue Font-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AE792BA6153B233A002A8A18 /* Dialogue Font-ipadhd.fnt */; };
+		AE792BA9153B233A002A8A18 /* Dialogue Font-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE792BA7153B233A002A8A18 /* Dialogue Font-ipadhd.png */; };
 		AE7944AF152758AC009B0D09 /* MusicNoteTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7944AE152758AC009B0D09 /* MusicNoteTutorial.m */; };
 		AE7944B21527EF31009B0D09 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7944B11527EF31009B0D09 /* Text.m */; };
 		AE7A5DF71539FDAC00A77A8C /* KeyboardLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7A5DF61539FDAC00A77A8C /* KeyboardLetter.m */; };
@@ -676,6 +678,8 @@
 		AE792B68153B0698002A8A18 /* Tutorial Play DE 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Play DE 00-00.wav"; sourceTree = "<group>"; };
 		AE792B69153B0698002A8A18 /* Tutorial Play FG 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Play FG 00-00.wav"; sourceTree = "<group>"; };
 		AE792B6A153B0698002A8A18 /* Tutorial Staff 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Staff 00-00.wav"; sourceTree = "<group>"; };
+		AE792BA6153B233A002A8A18 /* Dialogue Font-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Dialogue Font-ipadhd.fnt"; sourceTree = "<group>"; };
+		AE792BA7153B233A002A8A18 /* Dialogue Font-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dialogue Font-ipadhd.png"; sourceTree = "<group>"; };
 		AE7944AD152758AC009B0D09 /* MusicNoteTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicNoteTutorial.h; path = Classes/MusicNoteTutorial.h; sourceTree = "<group>"; };
 		AE7944AE152758AC009B0D09 /* MusicNoteTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicNoteTutorial.m; path = Classes/MusicNoteTutorial.m; sourceTree = "<group>"; };
 		AE7944B01527EF31009B0D09 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Text.h; path = Classes/Text.h; sourceTree = "<group>"; };
@@ -1103,6 +1107,8 @@
 		04D331C814E6DDD600DD82D4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				AE792BA6153B233A002A8A18 /* Dialogue Font-ipadhd.fnt */,
+				AE792BA7153B233A002A8A18 /* Dialogue Font-ipadhd.png */,
 				AE78F3CD1523DABF00D970B5 /* MenuFont-ipadhd.fnt */,
 				AE78F3CE1523DABF00D970B5 /* MenuFont-ipadhd.png */,
 				04D3E45A14F2025300FB0928 /* Dialogue Font.fnt */,
@@ -2179,6 +2185,8 @@
 				AE792B95153B0698002A8A18 /* Tutorial Play DE 00-00.wav in Resources */,
 				AE792B96153B0698002A8A18 /* Tutorial Play FG 00-00.wav in Resources */,
 				AE792B97153B0698002A8A18 /* Tutorial Staff 00-00.wav in Resources */,
+				AE792BA8153B233A002A8A18 /* Dialogue Font-ipadhd.fnt in Resources */,
+				AE792BA9153B233A002A8A18 /* Dialogue Font-ipadhd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

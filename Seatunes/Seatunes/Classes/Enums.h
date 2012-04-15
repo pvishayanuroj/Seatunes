@@ -89,7 +89,8 @@ typedef enum {
 typedef enum {
     kDifficultyEasy = 0,
     kDifficultyMedium = 1,
-    kDifficultyHard = 2
+    kDifficultyHard = 2,
+    kDifficultyMusicNoteTutorial = 3
 } DifficultyType;
 
 typedef enum {
@@ -110,6 +111,7 @@ typedef enum {
     kSpeechSongCompleteBad,
     kSpeechRandomSaying,
     kSpeechScoreExplanation,
+    kSpeechTutorialPrompt,
     kTutorialIntroduction,
     kTutorialStaff,
     kTutorialNotes,

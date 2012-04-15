@@ -85,7 +85,7 @@
 	<key>Score Explanation</key>
 	<array>
 		<array>
-			<string>This is the score screen. It tells you how well you did. You can even see how many notes you missed. If you played well enough, you’ll earn a badge for each difficulty.</string>
+			<string>This is the score screen. It tells you how well you did. You can even see how many notes you missed. If you played well enough, you’ll earn a &lt;b&gt;badge&lt;/b&gt; for each difficulty.</string>
 		</array>
 	</array>
 	<key>Random Saying</key>
@@ -94,10 +94,16 @@
 			<string>There&apos;s always music around us, you just have to know where to find it.</string>
 		</array>
 		<array>
-			<string>Have you been to the Great Barrier Reef? I heard it’s almost as nice as this.</string>
+			<string>Have you been to the &lt;b&gt;Great Barrier Reef?&lt;/b&gt; I heard it’s almost as nice as this.</string>
 		</array>
 		<array>
-			<string>Did you know some whales such as humpback whales, can sing too?</string>
+			<string>Did you know some whales, such as &lt;b&gt;humpback whales,&lt;/b&gt; can sing too?</string>
+		</array>
+	</array>
+	<key>Tutorial Prompt</key>
+	<array>
+		<array>
+			<string>Oh, I see you this is your first time playing this mode. Do you want to have a lesson first? I can teach you how to read &lt;b&gt;musical notation.&lt;/b&gt;</string>
 		</array>
 	</array>
 </dict>

@@ -8,6 +8,7 @@
 
 #import "GameLogicE.h"
 #import "Utility.h"
+#import "DataUtility.h"
 #import "Keyboard.h"
 #import "Instructor.h"
 #import "NoteGenerator.h"
@@ -70,6 +71,21 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
         keyboard_.position = ccp(GLE_KEYBOARD_X, GLE_KEYBOARD_Y);
         [self addChild:keyboard_];          
          
+        NSMutableArray *dialogue = [NSMutableArray array];        
+        
+        // If first time playing entire game, play game introduction
+        if ([[DataUtility manager] isFirstPlay]) {
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechIntroduction]];
+        }
+        // Otherwise, play normal greeting
+        else { 
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechGreetings]];
+        }        
+        
+        reader_ = [[SpeechReader speechReader:dialogue prompt:NO] retain];
+        reader_.delegate = self;
+        reader_.position = ccp(GLE_INSTRUCTOR_X + GLE_READER_OFFSET_X, GLE_INSTRUCTOR_Y + GLE_READER_OFFSET_Y);
+        [self addChild:reader_];             
     }
     return self;
 }
@@ -124,6 +140,26 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
 
 #pragma mark - Delegate Methods
 
+- (void) speechComplete:(SpeechType)speechType
+{
+    NSMutableArray *dialogue = [NSMutableArray arrayWithCapacity:3];
+    
+    // Beginning speech
+    if (speechType == kSpeechIntroduction || speechType == kSpeechGreetings) {
+        
+        // Check if hard difficulty has ever been played. If not, prompt to play tutorial
+        if ([[DataUtility manager] isFirstPlayForDifficulty:kDifficultyHard]) {
+            
+        }
+        else {
+            [reader_ loadDialogue:dialogue]; 
+        }
+    }
+    else if (speechType == kSpeechSongStart) {
+       
+    }
+}
+
 - (void) keyboardKeyPressed:(KeyType)keyType
 {
     if (!ignoreInput_) {
@@ -170,30 +206,6 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
         ignoreInput_ = YES;            
         [self runDelayedEndSpeech];                         
     }       
-}
-
-- (void) speechComplete:(SpeechType)speechType
-{
-    /*
-    switch (speechType) {
-            // From start speech, go to directly to gameplay or test play
-        case kMediumInstructions:
-            [self start];
-            break;
-        case kSongStart:
-            [self start];
-            break;
-        case kMediumReplay:
-            [self start];
-            break;
-        case kSongComplete:
-            [self endSong];
-            break;            
-        default:
-            keyboard_.isClickable = YES;
-            break;
-    }
-     */
 }
 
 - (void) endSong

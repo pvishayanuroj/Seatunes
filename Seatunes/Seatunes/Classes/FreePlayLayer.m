@@ -202,13 +202,11 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 - (void) pauseGame
 {
     isPaused_ = YES;
-    //[gameLogic_ pauseHierarchy];
 }
 
 - (void) resumeGame
 {
     isPaused_ = NO;
-    //[gameLogic_ resumeHierarchy];
 }
 
 @end

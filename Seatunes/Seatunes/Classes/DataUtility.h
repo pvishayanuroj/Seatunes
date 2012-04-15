@@ -58,7 +58,11 @@
 
 - (BOOL) isDefaultPack:(NSString *)packName;
 
-- (BOOL) hasScore:(NSString *)songName;
+- (BOOL) isTrainingSong:(NSString *)songName;
+
+- (BOOL) isFirstPlay;
+
+- (BOOL) isFirstPlayForDifficulty:(DifficultyType)difficulty;
 
 - (void) animationLoader:(NSString *)unitListName spriteSheetName:(NSString *)spriteSheetName;
 

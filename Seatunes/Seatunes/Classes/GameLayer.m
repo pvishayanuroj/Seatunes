@@ -86,8 +86,10 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
                 gameLogic_ = [[GameLogicF gameLogicF:songName] retain];
                 break;
             case kDifficultyHard:
-                //gameLogic_ = [[GameLogicE gameLogicE:songName] retain];
-                gameLogic_ = [[MusicNoteTutorial musicNoteTutorial] retain];                
+                gameLogic_ = [[GameLogicE gameLogicE:songName] retain];            
+                break;
+            case kDifficultyMusicNoteTutorial:
+                gameLogic_ = [[MusicNoteTutorial musicNoteTutorial] retain];    
                 break;
             default:
                 gameLogic_ = nil;

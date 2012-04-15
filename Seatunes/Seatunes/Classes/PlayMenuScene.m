@@ -8,6 +8,7 @@
 
 #import "PlayMenuScene.h"
 #import "MainMenuScene.h"
+#import "GameScene.h"
 #import "ScrollingMenu.h"
 #import "Menu.h"
 #import "StarfishButton.h"
@@ -328,7 +329,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
     
     NSUInteger idx = 0;
     for (NSString *songName in songNames_) {
-        BOOL hasScore = [[DataUtility manager] hasScore:songName];
+        BOOL hasScore = ![[DataUtility manager] isTrainingSong:songName];
         ScrollingMenuItem *menuItem = [SongMenuItem songMenuItem:songName scores:scores songIndex:idx++ hasScore:hasScore locked:isLocked];
         [songMenu_ addMenuItem:menuItem];
     }    
@@ -384,9 +385,18 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
 - (void) loadSong:(NSString *)songName
 {
 #if DEBUG_ALLUNLOCK
-    CCScene *scene = [DifficultyMenuScene startWithSongName:songName];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
-    [[AudioManager audioManager] playSoundEffect:kPageFlip];    
+    
+    // Check if song is a training song
+    if ([[DataUtility manager] isTrainingSong:songName]) {
+        CCScene *scene = [GameScene startWithDifficulty:kDifficultyMusicNoteTutorial songName:songName];
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];        
+    }
+    else {
+    
+        CCScene *scene = [DifficultyMenuScene startWithSongName:songName];
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
+        [[AudioManager audioManager] playSoundEffect:kPageFlip];    
+    }
     
 #else
     // Check if pack is locked

@@ -112,10 +112,10 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
         NSString *path =  [paths objectAtIndex:currentSpeechIndex_];
         SpeechType speechType = [[types objectAtIndex:currentSpeechIndex_] integerValue];
         
+        NSLog(@"%@", line);
+        
         // Set the text
         [text_ setString:line];
-        
-        NSLog(@"playing %@", path);
         
         // Play the audio
         [[AudioManager audioManager] playNarration:speechType path:path delegate:self];

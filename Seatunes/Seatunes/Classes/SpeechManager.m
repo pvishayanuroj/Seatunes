@@ -123,6 +123,9 @@ static SpeechManager *_speechManager = nil;
         case kSpeechScoreExplanation:
             key = @"Score Explanation";
             break;
+        case kSpeechTutorialPrompt:
+            key = @"Tutorial Prompt";
+            break;
         case kTutorialIntroduction:
             key = @"Tutorial Introduction";
             break;

@@ -59,6 +59,7 @@ static DataUtility *manager_ = nil;
         
         [self animationLoader:@"sheet01_animations" spriteSheetName:@"sheet01"];        
         [self loadPackInfo];
+        [self loadTrainingSongs];
     }
     return self;
 }
@@ -219,9 +220,20 @@ static DataUtility *manager_ = nil;
     return [defaultPacks_ containsObject:packName];
 }
 
-- (BOOL) hasScore:(NSString *)songName
+- (BOOL) isTrainingSong:(NSString *)songName
 {
-    return ![trainingSongs_ containsObject:songName];
+    return [trainingSongs_ containsObject:songName];
+}
+
+- (BOOL) isFirstPlay
+{
+    return ![[NSUserDefaults standardUserDefaults] boolForKey:kFirstPlay];
+}
+
+- (BOOL) isFirstPlayForDifficulty:(DifficultyType)difficulty
+{
+    NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty];
+    return ![[NSUserDefaults standardUserDefaults] boolForKey:key];   
 }
          
 #pragma mark - Animations

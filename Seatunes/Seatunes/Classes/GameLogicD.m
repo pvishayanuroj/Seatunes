@@ -8,6 +8,7 @@
 
 #import "GameLogicD.h"
 #import "Utility.h"
+#import "DataUtility.h"
 #import "Keyboard.h"
 #import "Instructor.h"
 #import "Note.h"
@@ -58,7 +59,7 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
         NSMutableArray *dialogue = [NSMutableArray array];
         
         // If first time playing entire game, play game introduction
-        if (isFirstPlay_) {
+        if ([[DataUtility manager] isFirstPlay]) {
             [dialogue addObject:[NSNumber numberWithInteger:kSpeechIntroduction]];
         }
         // Otherwise, play normal greeting
@@ -67,7 +68,7 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
         }
         
         // If first time playing difficulty level, play tutorial
-        if (isDifficultyFirstPlay_) {
+        if ([[DataUtility manager] isFirstPlayForDifficulty:kDifficultyEasy]) {
             [dialogue addObject:[NSNumber numberWithInteger:kSpeechEasyTutorial]];
         }
         else {

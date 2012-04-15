@@ -29,10 +29,6 @@
     
     ScoreInfo scoreInfo_;
     
-    BOOL isFirstPlay_;
-    
-    BOOL isDifficultyFirstPlay_;
-    
     id <GameLogicDelegate> delegate_;
 }
 

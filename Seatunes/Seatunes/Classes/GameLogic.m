@@ -30,10 +30,6 @@ static const CGFloat GL_BUBBLE_Y = 600.0f;
 {
     if ((self = [super init])) {
         
-        NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty];
-        isDifficultyFirstPlay_ = ![[NSUserDefaults standardUserDefaults] boolForKey:key];        
-        isFirstPlay_ = ![[NSUserDefaults standardUserDefaults] boolForKey:kFirstPlay];
-        
         delegate_ = nil;
         keyboard_ = nil;
         instructor_ = nil;      
