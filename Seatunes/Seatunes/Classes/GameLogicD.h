@@ -13,6 +13,7 @@
 #import "SpeechReaderDelegate.h"
 #import "NoteGeneratorDelegate.h"
 
+/* Easy mode game logic */
 @interface GameLogicD : GameLogic <NoteGeneratorDelegate, SpeechReaderDelegate> {
     
     NSUInteger noteIndex_;

@@ -24,6 +24,8 @@ static const CGFloat GLE_KEYBOARD_X = 100.0f;
 static const CGFloat GLE_KEYBOARD_Y = 100.0f;
 static const CGFloat GLE_STAFF_X = 512.0f;
 static const CGFloat GLE_STAFF_Y = 600.0f;
+static const CGFloat GLE_READER_OFFSET_X = 225.0f;
+static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
 
 + (id) gameLogicE:(NSString *)songName
 {
@@ -67,7 +69,7 @@ static const CGFloat GLE_STAFF_Y = 600.0f;
         keyboard_.isKeyboardMuted = YES;
         keyboard_.position = ccp(GLE_KEYBOARD_X, GLE_KEYBOARD_Y);
         [self addChild:keyboard_];          
-        
+         
     }
     return self;
 }

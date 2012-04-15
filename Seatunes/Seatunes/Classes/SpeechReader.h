@@ -23,8 +23,6 @@
     
     NSDictionary *data_;
     
-    NSArray *speechTypes_;
-    
     NSUInteger currentSpeechIndex_;
     
     NSString *remainingText_;
@@ -33,11 +31,14 @@
     
     BOOL isClickable_;
     
+    SpeechType currentSpeechType_;
+    
     SpeechType lastSpeechType_;
     
     id <SpeechReaderDelegate> delegate_;
 }
 
+@property (nonatomic, assign) BOOL isClickable;
 @property (nonatomic, assign) id <SpeechReaderDelegate> delegate;
 
 + (id) speechReader;

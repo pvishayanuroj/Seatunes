@@ -14,6 +14,7 @@
 #import "SpeechReaderDelegate.h"
 #import "NoteGeneratorDelegate.h"
 
+/* Medium mode game logic */
 @interface GameLogicF : GameLogic <KeyboardDelegate, NoteGeneratorDelegate, SpeechReaderDelegate> {
     
     NSUInteger noteIndex_;

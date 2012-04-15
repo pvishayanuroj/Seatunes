@@ -105,6 +105,24 @@ static SpeechManager *_speechManager = nil;
         case kSpeechGreetings:
             key = @"Greetings";
             break;
+        case kSpeechSongStart:
+            key = @"Song Start";            
+            break;
+        case kSpeechScolding:
+            key = @"Scolding";            
+            break;
+        case kSpeechSongCompleteGood:
+            key = @"Song Complete Good";            
+            break;
+        case kSpeechSongCompleteBad:
+            key = @"Song Complete Bad";
+            break;
+        case kSpeechRandomSaying:
+            key = @"Random Saying";
+            break;
+        case kSpeechScoreExplanation:
+            key = @"Score Explanation";
+            break;
         case kTutorialIntroduction:
             key = @"Tutorial Introduction";
             break;
@@ -173,6 +191,7 @@ static SpeechManager *_speechManager = nil;
     NSMutableDictionary *data = [NSMutableDictionary dictionaryWithCapacity:2];
     NSMutableArray *text = [NSMutableArray arrayWithCapacity:10];
     NSMutableArray *audio = [NSMutableArray arrayWithCapacity:10];
+    NSMutableArray *types = [NSMutableArray arrayWithCapacity:10];
 
     // For all speech types
     for (NSNumber *speech in speechTypes) {
@@ -194,6 +213,7 @@ static SpeechManager *_speechManager = nil;
             NSString *path = [NSString stringWithFormat:@"%@ %02d-%02d.%@", key, choice, lineNum, kSpeechFileType];
             [text addObject:line];
             [audio addObject:path];
+            [types addObject:speech];
             
             lineNum++;
         }   
@@ -201,6 +221,7 @@ static SpeechManager *_speechManager = nil;
     
     [data setObject:text forKey:@"Text"];
     [data setObject:audio forKey:@"Audio"];
+    [data setObject:types forKey:@"Types"];             
     
     return data;
 }

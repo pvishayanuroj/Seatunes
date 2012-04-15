@@ -138,6 +138,12 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 
 #pragma mark - Delegate Methods
 
+- (void) exerciseComplete
+{
+    CCScene *scene = [PlayMenuScene node];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];     
+}
+
 - (void) songComplete:(ScoreInfo)scoreInfo
 {
     if (scoreInfo.notesMissed == 0) {

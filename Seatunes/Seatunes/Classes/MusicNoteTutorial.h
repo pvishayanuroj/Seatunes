@@ -20,8 +20,6 @@
     
     NSMutableArray *notes_;
     
-    BOOL bubbleClickable_;
-    
     NSArray *dialogue_;
     
     Staff *staff_;   

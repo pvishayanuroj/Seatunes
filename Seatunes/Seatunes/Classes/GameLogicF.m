@@ -21,6 +21,8 @@ static const CGFloat GLF_INSTRUCTOR_X = 200.0f;
 static const CGFloat GLF_INSTRUCTOR_Y = 550.0f;
 static const CGFloat GLF_KEYBOARD_X = 100.0f;
 static const CGFloat GLF_KEYBOARD_Y = 100.0f;
+static const CGFloat GLF_READER_OFFSET_X = 225.0f;
+static const CGFloat GLF_READER_OFFSET_Y = 75.0f;
 
 + (id) gameLogicF:(NSString *)songName
 {
@@ -62,6 +64,31 @@ static const CGFloat GLF_KEYBOARD_Y = 100.0f;
         keyboard_.position = ccp(GLF_KEYBOARD_X, GLF_KEYBOARD_Y);
         [self addChild:keyboard_];           
         
+        NSMutableArray *dialogue = [NSMutableArray array];
+        
+        // If first time playing entire game, play game introduction
+        if (isFirstPlay_) {
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechIntroduction]];
+        }
+        // Otherwise, play normal greeting
+        else { 
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechGreetings]];
+        }
+        
+        // If first time playing difficulty level, play tutorial
+        if (isDifficultyFirstPlay_) {
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechMediumTutorial]];
+        }
+        else {
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechRandomSaying]];            
+        }
+        
+        [dialogue addObject:[NSNumber numberWithInteger:kSpeechSongStart]];
+        
+        reader_ = [[SpeechReader speechReader:dialogue prompt:NO] retain];
+        reader_.delegate = self;
+        reader_.position = ccp(GLF_INSTRUCTOR_X + GLF_READER_OFFSET_X, GLF_INSTRUCTOR_Y + GLF_READER_OFFSET_Y);
+        [self addChild:reader_];         
     }
     return self;
 }
@@ -74,6 +101,7 @@ static const CGFloat GLF_KEYBOARD_Y = 100.0f;
     [notesHit_ release];
     [keyboard_ release];
     [noteGenerator_ release];
+    [reader_ release];    
     
     [super dealloc];
 }
@@ -110,6 +138,18 @@ static const CGFloat GLF_KEYBOARD_Y = 100.0f;
 }
 
 #pragma mark - Delegate Methods
+
+- (void) speechComplete:(SpeechType)speechType
+{
+    switch (speechType) {
+        case kSpeechSongStart:
+            reader_.visible = NO;
+            [self start];
+            break;
+        default:
+            break;
+    }
+}
 
 - (void) keyboardKeyPressed:(KeyType)keyType
 {
@@ -158,30 +198,6 @@ static const CGFloat GLF_KEYBOARD_Y = 100.0f;
     [queueByID_ removeObjectAtIndex:0];
     [queueByKey_ removeObjectAtIndex:0];       
     [noteGenerator_ popNoteWithID:numID];
-}
-
-- (void) speechComplete:(SpeechType)speechType
-{
-    /*
-    switch (speechType) {
-            // From start speech, go to directly to gameplay or test play
-        case kMediumInstructions:
-            [self start];
-            break;
-        case kSongStart:
-            [self start]; 
-            break;
-        case kMediumReplay:
-            [self start];
-            break;
-        case kSongComplete:
-            [self endSong];
-            break;            
-        default:
-            keyboard_.isClickable = YES;
-            break;
-    }
-     */
 }
 
 - (void) endSong

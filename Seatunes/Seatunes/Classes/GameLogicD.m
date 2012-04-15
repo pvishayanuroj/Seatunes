@@ -71,8 +71,10 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
             [dialogue addObject:[NSNumber numberWithInteger:kSpeechEasyTutorial]];
         }
         else {
-            
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechRandomSaying]];            
         }
+        
+        [dialogue addObject:[NSNumber numberWithInteger:kSpeechSongStart]];
         
         reader_ = [[SpeechReader speechReader:dialogue prompt:NO] retain];
         reader_.delegate = self;
@@ -122,6 +124,18 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
 
 #pragma mark - Delegate Methods
 
+- (void) speechComplete:(SpeechType)speechType
+{
+    switch (speechType) {
+        case kSpeechSongStart:
+            reader_.visible = NO;
+            [self start];
+            break;
+        default:
+            break;
+    }
+}
+
 - (void) noteTouched:(Note *)note
 {
     [[AudioManager audioManager] playSound:note.keyType instrument:kPiano];
@@ -164,29 +178,6 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
         ignoreInput_ = YES;            
         [self runDelayedEndSpeech];                         
     }    
-}
-
-- (void) speechComplete:(SpeechType)speechType
-{
-    /*
-    switch (speechType) {
-            // From start speech, go to directly to gameplay or test play
-        case kMediumInstructions:
-            [self start];
-            break;
-        case kSongStart:
-            [self start];
-            break;
-        case kMediumReplay:
-            [self start];
-            break;
-        case kSongComplete:
-            [self endSong];
-            break;            
-        default:
-            break;
-    }
-    */
 }
 
 - (void) endSong

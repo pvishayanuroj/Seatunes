@@ -39,7 +39,6 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
     if ((self = [super initGameLogic:kDifficultyMedium])) {
         
         notes_ = [[NSMutableArray arrayWithCapacity:8] retain];
-        bubbleClickable_ = YES;
 
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
@@ -123,9 +122,7 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
 
 - (void) bubbleClicked:(SpeechType)speechType
 {
-    if (bubbleClickable_) {
-        [self eventComplete:speechType];    
-    }
+    [self eventComplete:speechType];    
 }
 
 - (void) notesInSequenceAdded
@@ -149,7 +146,7 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
             break;
     }
 
-    bubbleClickable_ = YES;
+    reader_.isClickable = YES;
 }
 
 - (void) showLettersComplete
@@ -164,6 +161,8 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
 
 - (void) keyboardKeyPressed:(KeyType)keyType
 {
+    NSLog(@"Keyboard clicked");
+    
     if ([notes_ count] > 0) {
         
         // Check if correct note played
@@ -172,8 +171,26 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
             [notes_ removeObjectAtIndex:0];
             [staff_ removeOldestNote];
             
+            // Exceptions where we can continue to the next dialogue without having
+            // played all queued notes
+            if (reader_.currentSpeech == kTutorialEvery ||
+                reader_.currentSpeech == kTutorialGood ||
+                reader_.currentSpeech == kTutorialF ||
+                reader_.currentSpeech == kTutorialA) {
+                NSLog(@"case 1");
+                keyboard_.isClickable = NO;             
+                [reader_ nextDialogue];    
+            }
+            else if (reader_.currentSpeech == kTutorialBoy ||
+                     reader_.currentSpeech == kTutorialC) {
+                NSLog(@"case 2");                
+                [staff_ removeAllNotes];
+                keyboard_.isClickable = NO;              
+                [reader_ nextDialogue];                
+            }
             // If this is the last note
-            if ([notes_ count] == 0) {
+            else if ([notes_ count] == 0) {
+                NSLog(@"case 3");                                
                 keyboard_.isClickable = NO;
                 [reader_ nextDialogue];
             }
@@ -208,7 +225,7 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
 
 - (void) showLineNotes
 {
-    bubbleClickable_ = NO;
+    reader_.isClickable = NO;
     
     NSMutableArray *notes = [NSMutableArray arrayWithCapacity:5];
     [notes addObject:[NSNumber numberWithInteger:kE4]];
@@ -221,7 +238,7 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
 
 - (void) showSpaceNotes
 {
-    bubbleClickable_ = NO;    
+    reader_.isClickable = NO;  
     
     NSMutableArray *notes = [NSMutableArray arrayWithCapacity:5];
     [notes addObject:[NSNumber numberWithInteger:kD4]];
@@ -239,12 +256,16 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
 
 - (void) showFirstSet
 {
+    reader_.isClickable = NO;
+    
     [notes_ addObject:[NSNumber numberWithInteger:kC4]];  
     [staff_ addNotes:notes_];
 }
 
 - (void) showSecondSet
 {
+    reader_.isClickable = NO;
+    
     [notes_ addObject:[NSNumber numberWithInteger:kD4]];  
     [notes_ addObject:[NSNumber numberWithInteger:kE4]];      
     [staff_ addNotes:notes_];    
@@ -252,6 +273,8 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
 
 - (void) showThirdSet
 {
+    reader_.isClickable = NO; 
+    
     [notes_ addObject:[NSNumber numberWithInteger:kF4]];  
     [notes_ addObject:[NSNumber numberWithInteger:kG4]];      
     [staff_ addNotes:notes_];    
@@ -259,6 +282,8 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
 
 - (void) showFourthSet
 {
+    reader_.isClickable = NO;  
+    
     [notes_ addObject:[NSNumber numberWithInteger:kA4]];  
     [notes_ addObject:[NSNumber numberWithInteger:kB4]];  
     [notes_ addObject:[NSNumber numberWithInteger:kC5]];      
@@ -267,19 +292,34 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
 
 - (void) showLineNotesWithText
 {
-    [notes_ addObject:[NSNumber numberWithInteger:kE4]];  
-    [notes_ addObject:[NSNumber numberWithInteger:kG4]];  
-    [notes_ addObject:[NSNumber numberWithInteger:kB4]];      
-    [notes_ addObject:[NSNumber numberWithInteger:kD5]];      
-    [notes_ addObject:[NSNumber numberWithInteger:kF5]];          
-    [staff_ addNotes:notes_];
+    NSMutableArray *notes = [NSMutableArray arrayWithCapacity:5];
+    [notes addObject:[NSNumber numberWithInteger:kE4]];  
+    [notes addObject:[NSNumber numberWithInteger:kG4]];  
+    [notes addObject:[NSNumber numberWithInteger:kB4]];      
+    
+    [notes_ addObjectsFromArray:notes];
+    
+    [notes addObject:[NSNumber numberWithInteger:kD5]];      
+    [notes addObject:[NSNumber numberWithInteger:kF5]];   
+    
+    [staff_ addNotes:notes];
     [staff_ showAlternateNoteNames];
     [reader_ nextDialogue];
 }
 
 - (void) showSpaceNotesWithText
 {
+    NSMutableArray *notes = [NSMutableArray arrayWithCapacity:4];    
+    [notes addObject:[NSNumber numberWithInteger:kF4]];  
+    [notes addObject:[NSNumber numberWithInteger:kA4]];  
+    [notes addObject:[NSNumber numberWithInteger:kC5]];      
     
+    [notes_ addObjectsFromArray:notes];    
+    
+    [notes_ addObject:[NSNumber numberWithInteger:kE5]];      
+    
+    [staff_ addNotes:notes];
+    [staff_ showAlternateNoteNames];   
     [reader_ nextDialogue];    
 }
 
@@ -332,7 +372,7 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
             keyboard_.isClickable = YES;            
             break;
         case kTutorialBoy:
-            keyboard_.isClickable = YES;            
+            keyboard_.isClickable = YES;    
             break;
         case kTutorialFace:
             [self showSpaceNotesWithText];
@@ -344,9 +384,10 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
             keyboard_.isClickable = YES;            
             break;
         case kTutorialC:
-            keyboard_.isClickable = YES;            
+            keyboard_.isClickable = YES;                     
             break;
         case kTutorialComplete:
+            [delegate_ exerciseComplete];
             break;            
         default:
             break;

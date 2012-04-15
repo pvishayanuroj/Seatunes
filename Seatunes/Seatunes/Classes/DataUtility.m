@@ -221,7 +221,7 @@ static DataUtility *manager_ = nil;
 
 - (BOOL) hasScore:(NSString *)songName
 {
-    return [trainingSongs_ containsObject:songName];
+    return ![trainingSongs_ containsObject:songName];
 }
          
 #pragma mark - Animations

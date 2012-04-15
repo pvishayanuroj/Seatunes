@@ -28,6 +28,10 @@ static const CGFloat ST_SEQUENCE_DESTROY_INTERVAL = 0.75f;
 static const CGFloat ST_BLINK_SHOW = 0.8f;
 static const CGFloat ST_BLINK_HIDE = 0.35f;
 
+// Position of alternate note names
+static const CGFloat ST_NOTE_NAME_HIGH = 110.0f;
+static const CGFloat ST_NOTE_NAME_LOW = -70.0f;
+
 @synthesize delegate = delegate_;
 
 + (id) staff
@@ -125,7 +129,13 @@ static const CGFloat ST_BLINK_HIDE = 0.35f;
      
         NSString *name = [Utility alternateNameFromEnum:note.keyType];
         CCLabelBMFont *label = [CCLabelBMFont labelWithString:name fntFile:@"Dialogue Font.fnt"];
-        label.position = ccp(note.position.x, -50.0f);
+        
+        if (note.keyType > kA4) {
+            label.position = ccp(note.position.x, ST_NOTE_NAME_HIGH);
+        }
+        else {
+            label.position = ccp(note.position.x, ST_NOTE_NAME_LOW);
+        }
         [self addChild:label];
         [labels_ addObject:label];
     }

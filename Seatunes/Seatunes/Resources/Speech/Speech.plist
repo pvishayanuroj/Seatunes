@@ -33,6 +33,72 @@
 		<array>
 			<string>Hi, remember me, Whalezart?</string>
 		</array>
+		<array>
+			<string>It is I, Whalezart! Whale composer extraordinaire.</string>
+		</array>
+	</array>
+	<key>Song Start</key>
+	<array>
+		<array>
+			<string>Ok, here goes nothing. Get ready!</string>
+		</array>
+		<array>
+			<string>On your mark, get set, go!</string>
+		</array>
+		<array>
+			<string>Ears perked, fingers forward. Are you ready?</string>
+		</array>
+		<array>
+			<string>Oh, I can&apos;t wait to hear you play. Here we go!</string>
+		</array>
+	</array>
+	<key>Scoldings</key>
+	<array>
+		<array>
+			<string>Oh no, that&apos;s not right. Try again.</string>
+		</array>
+		<array>
+			<string>No, I don&apos;t think that&apos;s correct.</string>
+		</array>
+		<array>
+			<string>That sounds weird. Why don&apos;t you try again?</string>
+		</array>
+	</array>
+	<key>Song Complete Good</key>
+	<array>
+		<array>
+			<string>That sounded great, I knew you could do it!</string>
+		</array>
+		<array>
+			<string>That was music to my ears! Good job!</string>
+		</array>
+	</array>
+	<key>Song Complete Bad</key>
+	<array>
+		<array>
+			<string>Hmm… I think you need more practice. Remember, practice makes perfect.</string>
+		</array>
+		<array>
+			<string>You’ll do better next time, I know it. Just remember to practice.</string>
+		</array>
+	</array>
+	<key>Score Explanation</key>
+	<array>
+		<array>
+			<string>This is the score screen. It tells you how well you did. You can even see how many notes you missed. If you played well enough, you’ll earn a badge for each difficulty.</string>
+		</array>
+	</array>
+	<key>Random Saying</key>
+	<array>
+		<array>
+			<string>There&apos;s always music around us, you just have to know where to find it.</string>
+		</array>
+		<array>
+			<string>Have you been to the Great Barrier Reef? I heard it’s almost as nice as this.</string>
+		</array>
+		<array>
+			<string>Did you know some whales such as humpback whales, can sing too?</string>
+		</array>
 	</array>
 </dict>
 </plist>

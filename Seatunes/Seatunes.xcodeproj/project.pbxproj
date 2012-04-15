@@ -198,6 +198,51 @@
 		AE77D9C2151D9095002AC832 /* Silent Night.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE77D9C0151D9095002AC832 /* Silent Night.plist */; };
 		AE78F3CF1523DABF00D970B5 /* MenuFont-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AE78F3CD1523DABF00D970B5 /* MenuFont-ipadhd.fnt */; };
 		AE78F3D01523DABF00D970B5 /* MenuFont-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78F3CE1523DABF00D970B5 /* MenuFont-ipadhd.png */; };
+		AE792B6B153B0698002A8A18 /* Easy Tutorial 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B3E153B0698002A8A18 /* Easy Tutorial 00-00.wav */; };
+		AE792B6C153B0698002A8A18 /* Easy Tutorial 00-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B3F153B0698002A8A18 /* Easy Tutorial 00-01.wav */; };
+		AE792B6D153B0698002A8A18 /* Greetings 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B40153B0698002A8A18 /* Greetings 00-00.wav */; };
+		AE792B6E153B0698002A8A18 /* Greetings 01-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B41153B0698002A8A18 /* Greetings 01-00.wav */; };
+		AE792B6F153B0698002A8A18 /* Greetings 02-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B42153B0698002A8A18 /* Greetings 02-00.wav */; };
+		AE792B70153B0698002A8A18 /* Introduction 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B43153B0698002A8A18 /* Introduction 00-00.wav */; };
+		AE792B71153B0698002A8A18 /* Introduction 00-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B44153B0698002A8A18 /* Introduction 00-01.wav */; };
+		AE792B72153B0698002A8A18 /* Introduction 00-02.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B45153B0698002A8A18 /* Introduction 00-02.wav */; };
+		AE792B73153B0698002A8A18 /* Medium Tutorial 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B46153B0698002A8A18 /* Medium Tutorial 00-00.wav */; };
+		AE792B74153B0698002A8A18 /* Medium Tutorial 00-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B47153B0698002A8A18 /* Medium Tutorial 00-01.wav */; };
+		AE792B75153B0698002A8A18 /* Medium Tutorial 00-02.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B48153B0698002A8A18 /* Medium Tutorial 00-02.wav */; };
+		AE792B76153B0698002A8A18 /* Random Saying 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B49153B0698002A8A18 /* Random Saying 00-00.wav */; };
+		AE792B77153B0698002A8A18 /* Random Saying 01-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B4A153B0698002A8A18 /* Random Saying 01-00.wav */; };
+		AE792B78153B0698002A8A18 /* Random Saying 02-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B4B153B0698002A8A18 /* Random Saying 02-00.wav */; };
+		AE792B79153B0698002A8A18 /* Scolding 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B4C153B0698002A8A18 /* Scolding 00-00.wav */; };
+		AE792B7A153B0698002A8A18 /* Scolding 01-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B4D153B0698002A8A18 /* Scolding 01-00.wav */; };
+		AE792B7B153B0698002A8A18 /* Scolding 02-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B4E153B0698002A8A18 /* Scolding 02-00.wav */; };
+		AE792B7C153B0698002A8A18 /* Score Explanation 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B4F153B0698002A8A18 /* Score Explanation 00-00.wav */; };
+		AE792B7D153B0698002A8A18 /* Song Complete Bad 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B50153B0698002A8A18 /* Song Complete Bad 00-00.wav */; };
+		AE792B7E153B0698002A8A18 /* Song Complete Bad 01-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B51153B0698002A8A18 /* Song Complete Bad 01-00.wav */; };
+		AE792B7F153B0698002A8A18 /* Song Complete Good 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B52153B0698002A8A18 /* Song Complete Good 00-00.wav */; };
+		AE792B80153B0698002A8A18 /* Song Complete Good 01-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B53153B0698002A8A18 /* Song Complete Good 01-00.wav */; };
+		AE792B81153B0698002A8A18 /* Song Start 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B54153B0698002A8A18 /* Song Start 00-00.wav */; };
+		AE792B82153B0698002A8A18 /* Song Start 01-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B55153B0698002A8A18 /* Song Start 01-00.wav */; };
+		AE792B83153B0698002A8A18 /* Song Start 02-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B56153B0698002A8A18 /* Song Start 02-00.wav */; };
+		AE792B84153B0698002A8A18 /* Song Start 03-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B57153B0698002A8A18 /* Song Start 03-00.wav */; };
+		AE792B85153B0698002A8A18 /* Tutorial A 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B58153B0698002A8A18 /* Tutorial A 00-00.wav */; };
+		AE792B86153B0698002A8A18 /* Tutorial Boy 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B59153B0698002A8A18 /* Tutorial Boy 00-00.wav */; };
+		AE792B87153B0698002A8A18 /* Tutorial C 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B5A153B0698002A8A18 /* Tutorial C 00-00.wav */; };
+		AE792B88153B0698002A8A18 /* Tutorial Complete 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B5B153B0698002A8A18 /* Tutorial Complete 00-00.wav */; };
+		AE792B89153B0698002A8A18 /* Tutorial Every 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B5C153B0698002A8A18 /* Tutorial Every 00-00.wav */; };
+		AE792B8A153B0698002A8A18 /* Tutorial F 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B5D153B0698002A8A18 /* Tutorial F 00-00.wav */; };
+		AE792B8B153B0698002A8A18 /* Tutorial Face 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B5E153B0698002A8A18 /* Tutorial Face 00-00.wav */; };
+		AE792B8C153B0698002A8A18 /* Tutorial Good 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B5F153B0698002A8A18 /* Tutorial Good 00-00.wav */; };
+		AE792B8D153B0698002A8A18 /* Tutorial Introduction 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B60153B0698002A8A18 /* Tutorial Introduction 00-00.wav */; };
+		AE792B8E153B0698002A8A18 /* Tutorial Learn C 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B61153B0698002A8A18 /* Tutorial Learn C 00-00.wav */; };
+		AE792B8F153B0698002A8A18 /* Tutorial Letters 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B62153B0698002A8A18 /* Tutorial Letters 00-00.wav */; };
+		AE792B90153B0698002A8A18 /* Tutorial Mnemonic 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B63153B0698002A8A18 /* Tutorial Mnemonic 00-00.wav */; };
+		AE792B91153B0698002A8A18 /* Tutorial Notes 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B64153B0698002A8A18 /* Tutorial Notes 00-00.wav */; };
+		AE792B92153B0698002A8A18 /* Tutorial Notes 2 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B65153B0698002A8A18 /* Tutorial Notes 2 00-00.wav */; };
+		AE792B93153B0698002A8A18 /* Tutorial Play ABC 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B66153B0698002A8A18 /* Tutorial Play ABC 00-00.wav */; };
+		AE792B94153B0698002A8A18 /* Tutorial Play C 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B67153B0698002A8A18 /* Tutorial Play C 00-00.wav */; };
+		AE792B95153B0698002A8A18 /* Tutorial Play DE 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B68153B0698002A8A18 /* Tutorial Play DE 00-00.wav */; };
+		AE792B96153B0698002A8A18 /* Tutorial Play FG 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B69153B0698002A8A18 /* Tutorial Play FG 00-00.wav */; };
+		AE792B97153B0698002A8A18 /* Tutorial Staff 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE792B6A153B0698002A8A18 /* Tutorial Staff 00-00.wav */; };
 		AE7944AF152758AC009B0D09 /* MusicNoteTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7944AE152758AC009B0D09 /* MusicNoteTutorial.m */; };
 		AE7944B21527EF31009B0D09 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7944B11527EF31009B0D09 /* Text.m */; };
 		AE7A5DF71539FDAC00A77A8C /* KeyboardLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7A5DF61539FDAC00A77A8C /* KeyboardLetter.m */; };
@@ -213,33 +258,6 @@
 		AE7A86C4151E068E007CA48C /* FreePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7A86C3151E068D007CA48C /* FreePlayLayer.m */; };
 		AE91464315294004007E75F9 /* Music Tutorial.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE91464215294004007E75F9 /* Music Tutorial.plist */; };
 		AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */; };
-		AED018E31538F9950090CEE1 /* Easy Tutorial 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018C81538F9950090CEE1 /* Easy Tutorial 00-00.wav */; };
-		AED018E41538F9950090CEE1 /* Easy Tutorial 00-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018C91538F9950090CEE1 /* Easy Tutorial 00-01.wav */; };
-		AED018E51538F9950090CEE1 /* Introduction 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018CA1538F9950090CEE1 /* Introduction 00-00.wav */; };
-		AED018E61538F9950090CEE1 /* Introduction 00-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018CB1538F9950090CEE1 /* Introduction 00-01.wav */; };
-		AED018E71538F9950090CEE1 /* Introduction 00-02.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018CC1538F9950090CEE1 /* Introduction 00-02.wav */; };
-		AED018E81538F9950090CEE1 /* Medium Tutorial 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018CD1538F9950090CEE1 /* Medium Tutorial 00-00.wav */; };
-		AED018E91538F9950090CEE1 /* Medium Tutorial 00-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018CE1538F9950090CEE1 /* Medium Tutorial 00-01.wav */; };
-		AED018EA1538F9950090CEE1 /* Medium Tutorial 00-02.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018CF1538F9950090CEE1 /* Medium Tutorial 00-02.wav */; };
-		AED018EB1538F9950090CEE1 /* Tutorial A 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018D01538F9950090CEE1 /* Tutorial A 00-00.wav */; };
-		AED018EC1538F9950090CEE1 /* Tutorial Boy 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018D11538F9950090CEE1 /* Tutorial Boy 00-00.wav */; };
-		AED018ED1538F9950090CEE1 /* Tutorial C 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018D21538F9950090CEE1 /* Tutorial C 00-00.wav */; };
-		AED018EE1538F9950090CEE1 /* Tutorial Complete 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018D31538F9950090CEE1 /* Tutorial Complete 00-00.wav */; };
-		AED018EF1538F9950090CEE1 /* Tutorial Every 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018D41538F9950090CEE1 /* Tutorial Every 00-00.wav */; };
-		AED018F01538F9950090CEE1 /* Tutorial F 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018D51538F9950090CEE1 /* Tutorial F 00-00.wav */; };
-		AED018F11538F9950090CEE1 /* Tutorial Face 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018D61538F9950090CEE1 /* Tutorial Face 00-00.wav */; };
-		AED018F21538F9950090CEE1 /* Tutorial Good 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018D71538F9950090CEE1 /* Tutorial Good 00-00.wav */; };
-		AED018F31538F9950090CEE1 /* Tutorial Introduction 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018D81538F9950090CEE1 /* Tutorial Introduction 00-00.wav */; };
-		AED018F41538F9950090CEE1 /* Tutorial Learn C 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018D91538F9950090CEE1 /* Tutorial Learn C 00-00.wav */; };
-		AED018F51538F9950090CEE1 /* Tutorial Letters 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018DA1538F9950090CEE1 /* Tutorial Letters 00-00.wav */; };
-		AED018F61538F9950090CEE1 /* Tutorial Mnemonic 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018DB1538F9950090CEE1 /* Tutorial Mnemonic 00-00.wav */; };
-		AED018F71538F9950090CEE1 /* Tutorial Notes 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018DC1538F9950090CEE1 /* Tutorial Notes 00-00.wav */; };
-		AED018F81538F9950090CEE1 /* Tutorial Notes 2 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018DD1538F9950090CEE1 /* Tutorial Notes 2 00-00.wav */; };
-		AED018F91538F9950090CEE1 /* Tutorial Play ABC 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018DE1538F9950090CEE1 /* Tutorial Play ABC 00-00.wav */; };
-		AED018FA1538F9950090CEE1 /* Tutorial Play C 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018DF1538F9950090CEE1 /* Tutorial Play C 00-00.wav */; };
-		AED018FB1538F9950090CEE1 /* Tutorial Play DE 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018E01538F9950090CEE1 /* Tutorial Play DE 00-00.wav */; };
-		AED018FC1538F9950090CEE1 /* Tutorial Play FG 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018E11538F9950090CEE1 /* Tutorial Play FG 00-00.wav */; };
-		AED018FD1538F9950090CEE1 /* Tutorial Staff 00-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = AED018E21538F9950090CEE1 /* Tutorial Staff 00-00.wav */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
 		DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B714D458B800D1437B /* MainMenuScene.m */; };
@@ -613,6 +631,51 @@
 		AE77D9C0151D9095002AC832 /* Silent Night.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Silent Night.plist"; sourceTree = "<group>"; };
 		AE78F3CD1523DABF00D970B5 /* MenuFont-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MenuFont-ipadhd.fnt"; sourceTree = "<group>"; };
 		AE78F3CE1523DABF00D970B5 /* MenuFont-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuFont-ipadhd.png"; sourceTree = "<group>"; };
+		AE792B3E153B0698002A8A18 /* Easy Tutorial 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Easy Tutorial 00-00.wav"; sourceTree = "<group>"; };
+		AE792B3F153B0698002A8A18 /* Easy Tutorial 00-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Easy Tutorial 00-01.wav"; sourceTree = "<group>"; };
+		AE792B40153B0698002A8A18 /* Greetings 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Greetings 00-00.wav"; sourceTree = "<group>"; };
+		AE792B41153B0698002A8A18 /* Greetings 01-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Greetings 01-00.wav"; sourceTree = "<group>"; };
+		AE792B42153B0698002A8A18 /* Greetings 02-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Greetings 02-00.wav"; sourceTree = "<group>"; };
+		AE792B43153B0698002A8A18 /* Introduction 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Introduction 00-00.wav"; sourceTree = "<group>"; };
+		AE792B44153B0698002A8A18 /* Introduction 00-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Introduction 00-01.wav"; sourceTree = "<group>"; };
+		AE792B45153B0698002A8A18 /* Introduction 00-02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Introduction 00-02.wav"; sourceTree = "<group>"; };
+		AE792B46153B0698002A8A18 /* Medium Tutorial 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Medium Tutorial 00-00.wav"; sourceTree = "<group>"; };
+		AE792B47153B0698002A8A18 /* Medium Tutorial 00-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Medium Tutorial 00-01.wav"; sourceTree = "<group>"; };
+		AE792B48153B0698002A8A18 /* Medium Tutorial 00-02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Medium Tutorial 00-02.wav"; sourceTree = "<group>"; };
+		AE792B49153B0698002A8A18 /* Random Saying 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Random Saying 00-00.wav"; sourceTree = "<group>"; };
+		AE792B4A153B0698002A8A18 /* Random Saying 01-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Random Saying 01-00.wav"; sourceTree = "<group>"; };
+		AE792B4B153B0698002A8A18 /* Random Saying 02-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Random Saying 02-00.wav"; sourceTree = "<group>"; };
+		AE792B4C153B0698002A8A18 /* Scolding 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Scolding 00-00.wav"; sourceTree = "<group>"; };
+		AE792B4D153B0698002A8A18 /* Scolding 01-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Scolding 01-00.wav"; sourceTree = "<group>"; };
+		AE792B4E153B0698002A8A18 /* Scolding 02-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Scolding 02-00.wav"; sourceTree = "<group>"; };
+		AE792B4F153B0698002A8A18 /* Score Explanation 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Score Explanation 00-00.wav"; sourceTree = "<group>"; };
+		AE792B50153B0698002A8A18 /* Song Complete Bad 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Song Complete Bad 00-00.wav"; sourceTree = "<group>"; };
+		AE792B51153B0698002A8A18 /* Song Complete Bad 01-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Song Complete Bad 01-00.wav"; sourceTree = "<group>"; };
+		AE792B52153B0698002A8A18 /* Song Complete Good 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Song Complete Good 00-00.wav"; sourceTree = "<group>"; };
+		AE792B53153B0698002A8A18 /* Song Complete Good 01-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Song Complete Good 01-00.wav"; sourceTree = "<group>"; };
+		AE792B54153B0698002A8A18 /* Song Start 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Song Start 00-00.wav"; sourceTree = "<group>"; };
+		AE792B55153B0698002A8A18 /* Song Start 01-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Song Start 01-00.wav"; sourceTree = "<group>"; };
+		AE792B56153B0698002A8A18 /* Song Start 02-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Song Start 02-00.wav"; sourceTree = "<group>"; };
+		AE792B57153B0698002A8A18 /* Song Start 03-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Song Start 03-00.wav"; sourceTree = "<group>"; };
+		AE792B58153B0698002A8A18 /* Tutorial A 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial A 00-00.wav"; sourceTree = "<group>"; };
+		AE792B59153B0698002A8A18 /* Tutorial Boy 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Boy 00-00.wav"; sourceTree = "<group>"; };
+		AE792B5A153B0698002A8A18 /* Tutorial C 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial C 00-00.wav"; sourceTree = "<group>"; };
+		AE792B5B153B0698002A8A18 /* Tutorial Complete 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Complete 00-00.wav"; sourceTree = "<group>"; };
+		AE792B5C153B0698002A8A18 /* Tutorial Every 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Every 00-00.wav"; sourceTree = "<group>"; };
+		AE792B5D153B0698002A8A18 /* Tutorial F 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial F 00-00.wav"; sourceTree = "<group>"; };
+		AE792B5E153B0698002A8A18 /* Tutorial Face 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Face 00-00.wav"; sourceTree = "<group>"; };
+		AE792B5F153B0698002A8A18 /* Tutorial Good 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Good 00-00.wav"; sourceTree = "<group>"; };
+		AE792B60153B0698002A8A18 /* Tutorial Introduction 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Introduction 00-00.wav"; sourceTree = "<group>"; };
+		AE792B61153B0698002A8A18 /* Tutorial Learn C 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Learn C 00-00.wav"; sourceTree = "<group>"; };
+		AE792B62153B0698002A8A18 /* Tutorial Letters 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Letters 00-00.wav"; sourceTree = "<group>"; };
+		AE792B63153B0698002A8A18 /* Tutorial Mnemonic 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Mnemonic 00-00.wav"; sourceTree = "<group>"; };
+		AE792B64153B0698002A8A18 /* Tutorial Notes 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Notes 00-00.wav"; sourceTree = "<group>"; };
+		AE792B65153B0698002A8A18 /* Tutorial Notes 2 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Notes 2 00-00.wav"; sourceTree = "<group>"; };
+		AE792B66153B0698002A8A18 /* Tutorial Play ABC 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Play ABC 00-00.wav"; sourceTree = "<group>"; };
+		AE792B67153B0698002A8A18 /* Tutorial Play C 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Play C 00-00.wav"; sourceTree = "<group>"; };
+		AE792B68153B0698002A8A18 /* Tutorial Play DE 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Play DE 00-00.wav"; sourceTree = "<group>"; };
+		AE792B69153B0698002A8A18 /* Tutorial Play FG 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Play FG 00-00.wav"; sourceTree = "<group>"; };
+		AE792B6A153B0698002A8A18 /* Tutorial Staff 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Staff 00-00.wav"; sourceTree = "<group>"; };
 		AE7944AD152758AC009B0D09 /* MusicNoteTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicNoteTutorial.h; path = Classes/MusicNoteTutorial.h; sourceTree = "<group>"; };
 		AE7944AE152758AC009B0D09 /* MusicNoteTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicNoteTutorial.m; path = Classes/MusicNoteTutorial.m; sourceTree = "<group>"; };
 		AE7944B01527EF31009B0D09 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Text.h; path = Classes/Text.h; sourceTree = "<group>"; };
@@ -634,33 +697,6 @@
 		AE91464215294004007E75F9 /* Music Tutorial.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Music Tutorial.plist"; sourceTree = "<group>"; };
 		AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Muted.m4a"; sourceTree = "<group>"; };
 		AED018C61538ECAD0090CEE1 /* AudioManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudioManagerDelegate.h; path = Classes/AudioManagerDelegate.h; sourceTree = "<group>"; };
-		AED018C81538F9950090CEE1 /* Easy Tutorial 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Easy Tutorial 00-00.wav"; sourceTree = "<group>"; };
-		AED018C91538F9950090CEE1 /* Easy Tutorial 00-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Easy Tutorial 00-01.wav"; sourceTree = "<group>"; };
-		AED018CA1538F9950090CEE1 /* Introduction 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Introduction 00-00.wav"; sourceTree = "<group>"; };
-		AED018CB1538F9950090CEE1 /* Introduction 00-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Introduction 00-01.wav"; sourceTree = "<group>"; };
-		AED018CC1538F9950090CEE1 /* Introduction 00-02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Introduction 00-02.wav"; sourceTree = "<group>"; };
-		AED018CD1538F9950090CEE1 /* Medium Tutorial 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Medium Tutorial 00-00.wav"; sourceTree = "<group>"; };
-		AED018CE1538F9950090CEE1 /* Medium Tutorial 00-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Medium Tutorial 00-01.wav"; sourceTree = "<group>"; };
-		AED018CF1538F9950090CEE1 /* Medium Tutorial 00-02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Medium Tutorial 00-02.wav"; sourceTree = "<group>"; };
-		AED018D01538F9950090CEE1 /* Tutorial A 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial A 00-00.wav"; sourceTree = "<group>"; };
-		AED018D11538F9950090CEE1 /* Tutorial Boy 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Boy 00-00.wav"; sourceTree = "<group>"; };
-		AED018D21538F9950090CEE1 /* Tutorial C 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial C 00-00.wav"; sourceTree = "<group>"; };
-		AED018D31538F9950090CEE1 /* Tutorial Complete 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Complete 00-00.wav"; sourceTree = "<group>"; };
-		AED018D41538F9950090CEE1 /* Tutorial Every 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Every 00-00.wav"; sourceTree = "<group>"; };
-		AED018D51538F9950090CEE1 /* Tutorial F 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial F 00-00.wav"; sourceTree = "<group>"; };
-		AED018D61538F9950090CEE1 /* Tutorial Face 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Face 00-00.wav"; sourceTree = "<group>"; };
-		AED018D71538F9950090CEE1 /* Tutorial Good 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Good 00-00.wav"; sourceTree = "<group>"; };
-		AED018D81538F9950090CEE1 /* Tutorial Introduction 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Introduction 00-00.wav"; sourceTree = "<group>"; };
-		AED018D91538F9950090CEE1 /* Tutorial Learn C 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Learn C 00-00.wav"; sourceTree = "<group>"; };
-		AED018DA1538F9950090CEE1 /* Tutorial Letters 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Letters 00-00.wav"; sourceTree = "<group>"; };
-		AED018DB1538F9950090CEE1 /* Tutorial Mnemonic 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Mnemonic 00-00.wav"; sourceTree = "<group>"; };
-		AED018DC1538F9950090CEE1 /* Tutorial Notes 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Notes 00-00.wav"; sourceTree = "<group>"; };
-		AED018DD1538F9950090CEE1 /* Tutorial Notes 2 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Notes 2 00-00.wav"; sourceTree = "<group>"; };
-		AED018DE1538F9950090CEE1 /* Tutorial Play ABC 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Play ABC 00-00.wav"; sourceTree = "<group>"; };
-		AED018DF1538F9950090CEE1 /* Tutorial Play C 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Play C 00-00.wav"; sourceTree = "<group>"; };
-		AED018E01538F9950090CEE1 /* Tutorial Play DE 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Play DE 00-00.wav"; sourceTree = "<group>"; };
-		AED018E11538F9950090CEE1 /* Tutorial Play FG 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Play FG 00-00.wav"; sourceTree = "<group>"; };
-		AED018E21538F9950090CEE1 /* Tutorial Staff 00-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tutorial Staff 00-00.wav"; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
 		DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayViewController.m; path = Classes/CocosOverlayViewController.m; sourceTree = "<group>"; };
 		DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayScrollView.h; path = Classes/CocosOverlayScrollView.h; sourceTree = "<group>"; };
@@ -1330,33 +1366,51 @@
 		AE78EA78152BF7DC00982DC2 /* Speech Audio */ = {
 			isa = PBXGroup;
 			children = (
-				AED018C81538F9950090CEE1 /* Easy Tutorial 00-00.wav */,
-				AED018C91538F9950090CEE1 /* Easy Tutorial 00-01.wav */,
-				AED018CA1538F9950090CEE1 /* Introduction 00-00.wav */,
-				AED018CB1538F9950090CEE1 /* Introduction 00-01.wav */,
-				AED018CC1538F9950090CEE1 /* Introduction 00-02.wav */,
-				AED018CD1538F9950090CEE1 /* Medium Tutorial 00-00.wav */,
-				AED018CE1538F9950090CEE1 /* Medium Tutorial 00-01.wav */,
-				AED018CF1538F9950090CEE1 /* Medium Tutorial 00-02.wav */,
-				AED018D01538F9950090CEE1 /* Tutorial A 00-00.wav */,
-				AED018D11538F9950090CEE1 /* Tutorial Boy 00-00.wav */,
-				AED018D21538F9950090CEE1 /* Tutorial C 00-00.wav */,
-				AED018D31538F9950090CEE1 /* Tutorial Complete 00-00.wav */,
-				AED018D41538F9950090CEE1 /* Tutorial Every 00-00.wav */,
-				AED018D51538F9950090CEE1 /* Tutorial F 00-00.wav */,
-				AED018D61538F9950090CEE1 /* Tutorial Face 00-00.wav */,
-				AED018D71538F9950090CEE1 /* Tutorial Good 00-00.wav */,
-				AED018D81538F9950090CEE1 /* Tutorial Introduction 00-00.wav */,
-				AED018D91538F9950090CEE1 /* Tutorial Learn C 00-00.wav */,
-				AED018DA1538F9950090CEE1 /* Tutorial Letters 00-00.wav */,
-				AED018DB1538F9950090CEE1 /* Tutorial Mnemonic 00-00.wav */,
-				AED018DC1538F9950090CEE1 /* Tutorial Notes 00-00.wav */,
-				AED018DD1538F9950090CEE1 /* Tutorial Notes 2 00-00.wav */,
-				AED018DE1538F9950090CEE1 /* Tutorial Play ABC 00-00.wav */,
-				AED018DF1538F9950090CEE1 /* Tutorial Play C 00-00.wav */,
-				AED018E01538F9950090CEE1 /* Tutorial Play DE 00-00.wav */,
-				AED018E11538F9950090CEE1 /* Tutorial Play FG 00-00.wav */,
-				AED018E21538F9950090CEE1 /* Tutorial Staff 00-00.wav */,
+				AE792B3E153B0698002A8A18 /* Easy Tutorial 00-00.wav */,
+				AE792B3F153B0698002A8A18 /* Easy Tutorial 00-01.wav */,
+				AE792B40153B0698002A8A18 /* Greetings 00-00.wav */,
+				AE792B41153B0698002A8A18 /* Greetings 01-00.wav */,
+				AE792B42153B0698002A8A18 /* Greetings 02-00.wav */,
+				AE792B43153B0698002A8A18 /* Introduction 00-00.wav */,
+				AE792B44153B0698002A8A18 /* Introduction 00-01.wav */,
+				AE792B45153B0698002A8A18 /* Introduction 00-02.wav */,
+				AE792B46153B0698002A8A18 /* Medium Tutorial 00-00.wav */,
+				AE792B47153B0698002A8A18 /* Medium Tutorial 00-01.wav */,
+				AE792B48153B0698002A8A18 /* Medium Tutorial 00-02.wav */,
+				AE792B49153B0698002A8A18 /* Random Saying 00-00.wav */,
+				AE792B4A153B0698002A8A18 /* Random Saying 01-00.wav */,
+				AE792B4B153B0698002A8A18 /* Random Saying 02-00.wav */,
+				AE792B4C153B0698002A8A18 /* Scolding 00-00.wav */,
+				AE792B4D153B0698002A8A18 /* Scolding 01-00.wav */,
+				AE792B4E153B0698002A8A18 /* Scolding 02-00.wav */,
+				AE792B4F153B0698002A8A18 /* Score Explanation 00-00.wav */,
+				AE792B50153B0698002A8A18 /* Song Complete Bad 00-00.wav */,
+				AE792B51153B0698002A8A18 /* Song Complete Bad 01-00.wav */,
+				AE792B52153B0698002A8A18 /* Song Complete Good 00-00.wav */,
+				AE792B53153B0698002A8A18 /* Song Complete Good 01-00.wav */,
+				AE792B54153B0698002A8A18 /* Song Start 00-00.wav */,
+				AE792B55153B0698002A8A18 /* Song Start 01-00.wav */,
+				AE792B56153B0698002A8A18 /* Song Start 02-00.wav */,
+				AE792B57153B0698002A8A18 /* Song Start 03-00.wav */,
+				AE792B58153B0698002A8A18 /* Tutorial A 00-00.wav */,
+				AE792B59153B0698002A8A18 /* Tutorial Boy 00-00.wav */,
+				AE792B5A153B0698002A8A18 /* Tutorial C 00-00.wav */,
+				AE792B5B153B0698002A8A18 /* Tutorial Complete 00-00.wav */,
+				AE792B5C153B0698002A8A18 /* Tutorial Every 00-00.wav */,
+				AE792B5D153B0698002A8A18 /* Tutorial F 00-00.wav */,
+				AE792B5E153B0698002A8A18 /* Tutorial Face 00-00.wav */,
+				AE792B5F153B0698002A8A18 /* Tutorial Good 00-00.wav */,
+				AE792B60153B0698002A8A18 /* Tutorial Introduction 00-00.wav */,
+				AE792B61153B0698002A8A18 /* Tutorial Learn C 00-00.wav */,
+				AE792B62153B0698002A8A18 /* Tutorial Letters 00-00.wav */,
+				AE792B63153B0698002A8A18 /* Tutorial Mnemonic 00-00.wav */,
+				AE792B64153B0698002A8A18 /* Tutorial Notes 00-00.wav */,
+				AE792B65153B0698002A8A18 /* Tutorial Notes 2 00-00.wav */,
+				AE792B66153B0698002A8A18 /* Tutorial Play ABC 00-00.wav */,
+				AE792B67153B0698002A8A18 /* Tutorial Play C 00-00.wav */,
+				AE792B68153B0698002A8A18 /* Tutorial Play DE 00-00.wav */,
+				AE792B69153B0698002A8A18 /* Tutorial Play FG 00-00.wav */,
+				AE792B6A153B0698002A8A18 /* Tutorial Staff 00-00.wav */,
 			);
 			name = "Speech Audio";
 			path = "Resources/Speech Audio";
@@ -2078,35 +2132,53 @@
 				0458994C153722DB00C4B26F /* Staff-ipadhd.png in Resources */,
 				0458994D153722DB00C4B26F /* Staff.png in Resources */,
 				0419ED801537A6740021F84F /* Training Songs.plist in Resources */,
-				AED018E31538F9950090CEE1 /* Easy Tutorial 00-00.wav in Resources */,
-				AED018E41538F9950090CEE1 /* Easy Tutorial 00-01.wav in Resources */,
-				AED018E51538F9950090CEE1 /* Introduction 00-00.wav in Resources */,
-				AED018E61538F9950090CEE1 /* Introduction 00-01.wav in Resources */,
-				AED018E71538F9950090CEE1 /* Introduction 00-02.wav in Resources */,
-				AED018E81538F9950090CEE1 /* Medium Tutorial 00-00.wav in Resources */,
-				AED018E91538F9950090CEE1 /* Medium Tutorial 00-01.wav in Resources */,
-				AED018EA1538F9950090CEE1 /* Medium Tutorial 00-02.wav in Resources */,
-				AED018EB1538F9950090CEE1 /* Tutorial A 00-00.wav in Resources */,
-				AED018EC1538F9950090CEE1 /* Tutorial Boy 00-00.wav in Resources */,
-				AED018ED1538F9950090CEE1 /* Tutorial C 00-00.wav in Resources */,
-				AED018EE1538F9950090CEE1 /* Tutorial Complete 00-00.wav in Resources */,
-				AED018EF1538F9950090CEE1 /* Tutorial Every 00-00.wav in Resources */,
-				AED018F01538F9950090CEE1 /* Tutorial F 00-00.wav in Resources */,
-				AED018F11538F9950090CEE1 /* Tutorial Face 00-00.wav in Resources */,
-				AED018F21538F9950090CEE1 /* Tutorial Good 00-00.wav in Resources */,
-				AED018F31538F9950090CEE1 /* Tutorial Introduction 00-00.wav in Resources */,
-				AED018F41538F9950090CEE1 /* Tutorial Learn C 00-00.wav in Resources */,
-				AED018F51538F9950090CEE1 /* Tutorial Letters 00-00.wav in Resources */,
-				AED018F61538F9950090CEE1 /* Tutorial Mnemonic 00-00.wav in Resources */,
-				AED018F71538F9950090CEE1 /* Tutorial Notes 00-00.wav in Resources */,
-				AED018F81538F9950090CEE1 /* Tutorial Notes 2 00-00.wav in Resources */,
-				AED018F91538F9950090CEE1 /* Tutorial Play ABC 00-00.wav in Resources */,
-				AED018FA1538F9950090CEE1 /* Tutorial Play C 00-00.wav in Resources */,
-				AED018FB1538F9950090CEE1 /* Tutorial Play DE 00-00.wav in Resources */,
-				AED018FC1538F9950090CEE1 /* Tutorial Play FG 00-00.wav in Resources */,
-				AED018FD1538F9950090CEE1 /* Tutorial Staff 00-00.wav in Resources */,
 				AE7A5DFB153A3E9700A77A8C /* Letter Parchment-ipadhd.png in Resources */,
 				AE7A5DFC153A3E9700A77A8C /* Letter Parchment.png in Resources */,
+				AE792B6B153B0698002A8A18 /* Easy Tutorial 00-00.wav in Resources */,
+				AE792B6C153B0698002A8A18 /* Easy Tutorial 00-01.wav in Resources */,
+				AE792B6D153B0698002A8A18 /* Greetings 00-00.wav in Resources */,
+				AE792B6E153B0698002A8A18 /* Greetings 01-00.wav in Resources */,
+				AE792B6F153B0698002A8A18 /* Greetings 02-00.wav in Resources */,
+				AE792B70153B0698002A8A18 /* Introduction 00-00.wav in Resources */,
+				AE792B71153B0698002A8A18 /* Introduction 00-01.wav in Resources */,
+				AE792B72153B0698002A8A18 /* Introduction 00-02.wav in Resources */,
+				AE792B73153B0698002A8A18 /* Medium Tutorial 00-00.wav in Resources */,
+				AE792B74153B0698002A8A18 /* Medium Tutorial 00-01.wav in Resources */,
+				AE792B75153B0698002A8A18 /* Medium Tutorial 00-02.wav in Resources */,
+				AE792B76153B0698002A8A18 /* Random Saying 00-00.wav in Resources */,
+				AE792B77153B0698002A8A18 /* Random Saying 01-00.wav in Resources */,
+				AE792B78153B0698002A8A18 /* Random Saying 02-00.wav in Resources */,
+				AE792B79153B0698002A8A18 /* Scolding 00-00.wav in Resources */,
+				AE792B7A153B0698002A8A18 /* Scolding 01-00.wav in Resources */,
+				AE792B7B153B0698002A8A18 /* Scolding 02-00.wav in Resources */,
+				AE792B7C153B0698002A8A18 /* Score Explanation 00-00.wav in Resources */,
+				AE792B7D153B0698002A8A18 /* Song Complete Bad 00-00.wav in Resources */,
+				AE792B7E153B0698002A8A18 /* Song Complete Bad 01-00.wav in Resources */,
+				AE792B7F153B0698002A8A18 /* Song Complete Good 00-00.wav in Resources */,
+				AE792B80153B0698002A8A18 /* Song Complete Good 01-00.wav in Resources */,
+				AE792B81153B0698002A8A18 /* Song Start 00-00.wav in Resources */,
+				AE792B82153B0698002A8A18 /* Song Start 01-00.wav in Resources */,
+				AE792B83153B0698002A8A18 /* Song Start 02-00.wav in Resources */,
+				AE792B84153B0698002A8A18 /* Song Start 03-00.wav in Resources */,
+				AE792B85153B0698002A8A18 /* Tutorial A 00-00.wav in Resources */,
+				AE792B86153B0698002A8A18 /* Tutorial Boy 00-00.wav in Resources */,
+				AE792B87153B0698002A8A18 /* Tutorial C 00-00.wav in Resources */,
+				AE792B88153B0698002A8A18 /* Tutorial Complete 00-00.wav in Resources */,
+				AE792B89153B0698002A8A18 /* Tutorial Every 00-00.wav in Resources */,
+				AE792B8A153B0698002A8A18 /* Tutorial F 00-00.wav in Resources */,
+				AE792B8B153B0698002A8A18 /* Tutorial Face 00-00.wav in Resources */,
+				AE792B8C153B0698002A8A18 /* Tutorial Good 00-00.wav in Resources */,
+				AE792B8D153B0698002A8A18 /* Tutorial Introduction 00-00.wav in Resources */,
+				AE792B8E153B0698002A8A18 /* Tutorial Learn C 00-00.wav in Resources */,
+				AE792B8F153B0698002A8A18 /* Tutorial Letters 00-00.wav in Resources */,
+				AE792B90153B0698002A8A18 /* Tutorial Mnemonic 00-00.wav in Resources */,
+				AE792B91153B0698002A8A18 /* Tutorial Notes 00-00.wav in Resources */,
+				AE792B92153B0698002A8A18 /* Tutorial Notes 2 00-00.wav in Resources */,
+				AE792B93153B0698002A8A18 /* Tutorial Play ABC 00-00.wav in Resources */,
+				AE792B94153B0698002A8A18 /* Tutorial Play C 00-00.wav in Resources */,
+				AE792B95153B0698002A8A18 /* Tutorial Play DE 00-00.wav in Resources */,
+				AE792B96153B0698002A8A18 /* Tutorial Play FG 00-00.wav in Resources */,
+				AE792B97153B0698002A8A18 /* Tutorial Staff 00-00.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

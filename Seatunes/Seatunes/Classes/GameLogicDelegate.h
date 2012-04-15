@@ -10,6 +10,8 @@
 
 @protocol GameLogicDelegate <NSObject>
 
+- (void) exerciseComplete;
+
 - (void) songComplete:(ScoreInfo)scoreInfo;
 
 @end

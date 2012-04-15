@@ -17,6 +17,7 @@ static const CGFloat SR_BUBBLE_OFFSET_X = 210.0f;
 static const CGFloat SR_BUBBLE_OFFSET_Y = -50.0f;
 static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 
+@synthesize isClickable = isClickable_;
 @synthesize delegate = delegate_;
 
 + (id) speechReader
@@ -38,13 +39,6 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
         currentSpeechIndex_ = 0;
         isClickable_ = YES;
         prompt_ = prompt;
-        
-        if (speeches) {
-            speechTypes_ = [speeches retain];
-        }
-        else {
-            speechTypes_ = nil;
-        }
                 
         sprite_ = [[CCSprite spriteWithFile:@"Speech Bubble Large.png"] retain];        
         sprite_.position = ccp(SR_BUBBLE_OFFSET_X, SR_BUBBLE_OFFSET_Y);
@@ -63,7 +57,6 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 {
     [sprite_ release];
     [data_ release];
-    [speechTypes_ release];
     
     [super dealloc];
 }
@@ -72,7 +65,6 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 
 - (void) narrationComplete:(SpeechType)speechType
 {
-    NSLog(@"narration complete");
     if (prompt_) {
         if (delegate_ && [delegate_ respondsToSelector:@selector(bubbleComplete:)]) {
             [delegate_ bubbleComplete:speechType];
@@ -94,9 +86,7 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 {
     if (speeches != nil) {
     
-        [speechTypes_ release];
         [data_ release];
-        speechTypes_ = [speeches retain];
         lastSpeechType_ = [[speeches lastObject] integerValue];            
         data_ = [[[SpeechManager speechManager] textAndAudioFromSpeechTypes:speeches] retain];
         [self nextDialogue];    
@@ -113,20 +103,24 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
     // Get references to the text and audio path arrays
     NSArray *lines = [data_ objectForKey:@"Text"];
     NSArray *paths = [data_ objectForKey:@"Audio"];    
+    NSArray *types = [data_ objectForKey:@"Types"];
     
     // If text remaining
     if (currentSpeechIndex_ < [lines count]) {
         
         NSString *line = [lines objectAtIndex:currentSpeechIndex_];
         NSString *path =  [paths objectAtIndex:currentSpeechIndex_];
+        SpeechType speechType = [[types objectAtIndex:currentSpeechIndex_] integerValue];
         
         // Set the text
         [text_ setString:line];
         
+        NSLog(@"playing %@", path);
+        
         // Play the audio
-        SpeechType speechType = [[speechTypes_ objectAtIndex:currentSpeechIndex_] integerValue];
         [[AudioManager audioManager] playNarration:speechType path:path delegate:self];
         
+        currentSpeechType_ = speechType;
         currentSpeechIndex_++;
     }
     // No text remaining
@@ -146,10 +140,7 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 
 - (SpeechType) currentSpeech
 {
-    if (currentSpeechIndex_ > 0) {          
-        return [[speechTypes_ objectAtIndex:(currentSpeechIndex_ - 1)] integerValue];
-    }    
-    return 0;
+    return currentSpeechType_;
 }
 
 #pragma mark - Touch Handlers
@@ -194,12 +185,18 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 - (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
     if ([self containsTouchLocation:touch]) {
+        
+        [[AudioManager audioManager] stopNarration];   
+        
+        // Check delegate wants to be notified about clicks
         if (delegate_ && [delegate_ respondsToSelector:@selector(bubbleClicked:)]) {
-            if (currentSpeechIndex_ > 0) {
-                [[AudioManager audioManager] stopNarration];                
-                SpeechType currentSpeechType = [[speechTypes_ objectAtIndex:(currentSpeechIndex_ - 1)] integerValue];
-                [delegate_ bubbleClicked:currentSpeechType];
+            if (currentSpeechIndex_ > 0) {             
+                [delegate_ bubbleClicked:currentSpeechType_];
             }
+        }
+        // Otherwise, just automatically go on to the next dialogue
+        else {
+            [self nextDialogue];
         }
     }
 }

@@ -100,10 +100,16 @@ typedef enum {
 } ScoreType;
 
 typedef enum {
-    kSpeechIntroduction,
+    kSpeechIntroduction = 0,
     kSpeechEasyTutorial,
     kSpeechMediumTutorial,
     kSpeechGreetings,
+    kSpeechSongStart,
+    kSpeechScolding,
+    kSpeechSongCompleteGood,
+    kSpeechSongCompleteBad,
+    kSpeechRandomSaying,
+    kSpeechScoreExplanation,
     kTutorialIntroduction,
     kTutorialStaff,
     kTutorialNotes,
