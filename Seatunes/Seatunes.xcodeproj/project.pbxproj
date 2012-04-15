@@ -200,6 +200,9 @@
 		AE78F3D01523DABF00D970B5 /* MenuFont-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78F3CE1523DABF00D970B5 /* MenuFont-ipadhd.png */; };
 		AE7944AF152758AC009B0D09 /* MusicNoteTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7944AE152758AC009B0D09 /* MusicNoteTutorial.m */; };
 		AE7944B21527EF31009B0D09 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7944B11527EF31009B0D09 /* Text.m */; };
+		AE7A5DF71539FDAC00A77A8C /* KeyboardLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7A5DF61539FDAC00A77A8C /* KeyboardLetter.m */; };
+		AE7A5DFB153A3E9700A77A8C /* Letter Parchment-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7A5DF9153A3E9700A77A8C /* Letter Parchment-ipadhd.png */; };
+		AE7A5DFC153A3E9700A77A8C /* Letter Parchment.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7A5DFA153A3E9700A77A8C /* Letter Parchment.png */; };
 		AE7A86A8151DF5C6007CA48C /* Deck The Halls.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86A7151DF5C6007CA48C /* Deck The Halls.plist */; };
 		AE7A86AE151DF8CD007CA48C /* O Susanna.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86AB151DF8CD007CA48C /* O Susanna.plist */; };
 		AE7A86B0151DF8CD007CA48C /* Yankee Doodle.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86AD151DF8CD007CA48C /* Yankee Doodle.plist */; };
@@ -614,6 +617,10 @@
 		AE7944AE152758AC009B0D09 /* MusicNoteTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicNoteTutorial.m; path = Classes/MusicNoteTutorial.m; sourceTree = "<group>"; };
 		AE7944B01527EF31009B0D09 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Text.h; path = Classes/Text.h; sourceTree = "<group>"; };
 		AE7944B11527EF31009B0D09 /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Text.m; path = Classes/Text.m; sourceTree = "<group>"; };
+		AE7A5DF51539FDAC00A77A8C /* KeyboardLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyboardLetter.h; path = Classes/KeyboardLetter.h; sourceTree = "<group>"; };
+		AE7A5DF61539FDAC00A77A8C /* KeyboardLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyboardLetter.m; path = Classes/KeyboardLetter.m; sourceTree = "<group>"; };
+		AE7A5DF9153A3E9700A77A8C /* Letter Parchment-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Letter Parchment-ipadhd.png"; sourceTree = "<group>"; };
+		AE7A5DFA153A3E9700A77A8C /* Letter Parchment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Letter Parchment.png"; sourceTree = "<group>"; };
 		AE7A86A7151DF5C6007CA48C /* Deck The Halls.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Deck The Halls.plist"; sourceTree = "<group>"; };
 		AE7A86AB151DF8CD007CA48C /* O Susanna.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "O Susanna.plist"; sourceTree = "<group>"; };
 		AE7A86AD151DF8CD007CA48C /* Yankee Doodle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Yankee Doodle.plist"; sourceTree = "<group>"; };
@@ -1005,6 +1012,8 @@
 				DAB1208D14C3099B009B60FB /* Keyboard.h */,
 				DAB1208E14C3099B009B60FB /* Keyboard.m */,
 				DAB1209614C30B87009B60FB /* KeyboardDelegate.h */,
+				AE7A5DF51539FDAC00A77A8C /* KeyboardLetter.h */,
+				AE7A5DF61539FDAC00A77A8C /* KeyboardLetter.m */,
 				DAB120E114C34FCC009B60FB /* Key.h */,
 				DAB120E214C34FCD009B60FB /* Key.m */,
 				DAB1209914C30D6D009B60FB /* KeyDelegate.h */,
@@ -1208,6 +1217,8 @@
 		AE7773E31522823500CE9332 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				AE7A5DF9153A3E9700A77A8C /* Letter Parchment-ipadhd.png */,
+				AE7A5DFA153A3E9700A77A8C /* Letter Parchment.png */,
 				AE7773E41522823500CE9332 /* Coral Foreground-ipadhd.png */,
 				AE7773E51522823500CE9332 /* Coral Foreground.png */,
 				AE7773E61522823500CE9332 /* Main Parchment-ipadhd.png */,
@@ -2094,6 +2105,8 @@
 				AED018FB1538F9950090CEE1 /* Tutorial Play DE 00-00.wav in Resources */,
 				AED018FC1538F9950090CEE1 /* Tutorial Play FG 00-00.wav in Resources */,
 				AED018FD1538F9950090CEE1 /* Tutorial Staff 00-00.wav in Resources */,
+				AE7A5DFB153A3E9700A77A8C /* Letter Parchment-ipadhd.png in Resources */,
+				AE7A5DFC153A3E9700A77A8C /* Letter Parchment.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2245,6 +2258,7 @@
 				AE4D78CF151F6BAF00B906ED /* SimpleAudioEngine.m in Sources */,
 				AE7944AF152758AC009B0D09 /* MusicNoteTutorial.m in Sources */,
 				AE7944B21527EF31009B0D09 /* Text.m in Sources */,
+				AE7A5DF71539FDAC00A77A8C /* KeyboardLetter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

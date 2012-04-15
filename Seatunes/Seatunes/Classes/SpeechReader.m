@@ -194,7 +194,7 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 - (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
     if ([self containsTouchLocation:touch]) {
-        if (delegate_ && [delegate_ respondsToSelector:@selector(speechClicked:)]) {
+        if (delegate_ && [delegate_ respondsToSelector:@selector(bubbleClicked:)]) {
             if (currentSpeechIndex_ > 0) {
                 [[AudioManager audioManager] stopNarration];                
                 SpeechType currentSpeechType = [[speechTypes_ objectAtIndex:(currentSpeechIndex_ - 1)] integerValue];

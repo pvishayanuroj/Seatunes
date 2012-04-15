@@ -26,6 +26,8 @@
     
     NSArray *sequence_;
     
+    NSMutableArray *letters_;
+    
     NSUInteger currentIndex_;
     
     BOOL isKeyboardMuted_;

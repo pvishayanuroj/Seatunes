@@ -18,4 +18,6 @@
 
 - (void) notesInSequenceDestroyed;
 
+- (void) notesAdded;
+
 @end

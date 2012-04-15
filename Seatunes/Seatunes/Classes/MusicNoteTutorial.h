@@ -18,13 +18,7 @@
 
 @interface MusicNoteTutorial : GameLogic <KeyboardDelegate, StaffDelegate, SpeechReaderDelegate> {
     
-    NSUInteger noteIndex_;
-    
-    NSArray *notes_;
-    
-    BOOL ignoreInput_;
-    
-    BOOL onLastNote_;
+    NSMutableArray *notes_;
     
     BOOL bubbleClickable_;
     

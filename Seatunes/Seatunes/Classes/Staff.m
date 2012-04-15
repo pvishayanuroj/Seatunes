@@ -8,7 +8,7 @@
 
 #import "Staff.h"
 #import "StaffNote.h"
-#import "ParticleGenerator.h"
+#import "Utility.h"
 
 @implementation Staff
 
@@ -42,6 +42,7 @@ static const CGFloat ST_BLINK_HIDE = 0.35f;
         delegate_ = nil;
         action_ = nil;
         notes_ = [[NSMutableArray arrayWithCapacity:6] retain];
+        labels_ = [[NSMutableArray arrayWithCapacity:6] retain];        
         
         staffBackground_ = [[CCSprite spriteWithFile:@"Staff Parchment.png"] retain];
         [self addChild:staffBackground_ z:-2];
@@ -62,6 +63,7 @@ static const CGFloat ST_BLINK_HIDE = 0.35f;
     [staffBackground_ release];
     [staffForeground_ release];
     [action_ release];
+    [labels_ release];
     
     [super dealloc];
 }
@@ -115,6 +117,43 @@ static const CGFloat ST_BLINK_HIDE = 0.35f;
     if (delegate_ && [delegate_ respondsToSelector:@selector(staffNoteReturned:)]) {
         [delegate_ staffNoteReturned:note];
     }
+}
+
+- (void) showAlternateNoteNames
+{
+    for (StaffNote *note in notes_) {
+     
+        NSString *name = [Utility alternateNameFromEnum:note.keyType];
+        CCLabelBMFont *label = [CCLabelBMFont labelWithString:name fntFile:@"Dialogue Font.fnt"];
+        label.position = ccp(note.position.x, -50.0f);
+        [self addChild:label];
+        [labels_ addObject:label];
+    }
+}
+
+- (void) addNotes:(NSArray *)notes
+{
+    // Guard against empty arrays
+    if ([notes count] == 0) {
+        return;
+    }
+    
+    // Starting location and padding
+    CGFloat xOffset = ST_STATIC_NOTE_CENTER_OFFSET_X - ST_STATIC_NOTE_SPACE * 0.5f;
+    CGFloat xPadding = (ST_STATIC_NOTE_SPACE / (CGFloat)([notes count] + 1));
+
+    NSInteger index = 0;
+    for (NSNumber *note in notes) {
+        KeyType keyType = [note integerValue];
+        CGFloat x = xOffset + xPadding * (index + 1);
+        CGFloat y = [self calculateNoteY:keyType];
+        CGPoint pos = ccp(x, y);
+        StaffNote *note = [StaffNote staticStaffNote:keyType pos:pos numID:index];
+        [notes_ addObject:note];
+        [self addChild:note];        
+        
+        index++;
+    }    
 }
 
 - (void) addNotesInSequence:(NSArray *)notes
@@ -198,16 +237,6 @@ static const CGFloat ST_BLINK_HIDE = 0.35f;
     [self addChild:note];    
 }
 
-- (void) addNote:(KeyType)keyType numID:(NSUInteger)numID
-{
-    
-}
-
-- (void) addStaticNote:(KeyType)keyType numID:(NSUInteger)numID
-{
- 
-}
-
 - (BOOL) isOldestNoteActive
 {
     if ([notes_ count] > 0) {
@@ -223,6 +252,11 @@ static const CGFloat ST_BLINK_HIDE = 0.35f;
         [[notes_ objectAtIndex:0] jumpDestroy];
         [notes_ removeObjectAtIndex:0];        
     }
+    
+    if ([labels_ count] > 0) {
+        [[labels_ objectAtIndex:0] removeFromParentAndCleanup:YES];
+        [labels_ removeObjectAtIndex:0];
+    }
 }
 
 - (void) removeAllNotes
@@ -230,8 +264,13 @@ static const CGFloat ST_BLINK_HIDE = 0.35f;
     for (StaffNote *note in notes_) {
         [note fadeDestroy];
     }
+    
+    for (CCLabelBMFont *label in labels_) {
+        [label removeFromParentAndCleanup:YES];
+    }
 
     [notes_ removeAllObjects];
+    [labels_ removeAllObjects];
 }
 
 - (void) drawAllNotes

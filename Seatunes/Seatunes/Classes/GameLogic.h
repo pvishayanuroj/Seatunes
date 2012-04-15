@@ -48,10 +48,4 @@
 
 - (void) touchesEnded:(NSSet *)touches;
 
-- (void) runSingleSpeech:(SpeechType)speechType tapRequired:(BOOL)tapRequired;
-
-- (void) runSpeech:(NSArray *)speeches tapRequired:(BOOL)tapRequired;
-
-- (void) runDelayedEndSpeech;
-
 @end

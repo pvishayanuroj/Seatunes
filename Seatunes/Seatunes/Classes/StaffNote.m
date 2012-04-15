@@ -11,6 +11,7 @@
 
 @implementation StaffNote
 
+@synthesize keyType = keyType_;
 @synthesize state = state_;
 @synthesize numID = numID_;
 

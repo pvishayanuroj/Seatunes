@@ -46,6 +46,86 @@
     return name;
 }
 
++ (NSString *) noteFromEnum:(KeyType)key
+{
+    NSString *name = @"";
+    
+    switch (key) {
+        case kC4:
+            name = @"C";
+            break;
+        case kD4:
+            name = @"D";
+            break;
+        case kE4:
+            name = @"E";
+            break;
+        case kF4:
+            name = @"F";
+            break;
+        case kG4:
+            name = @"G";
+            break;
+        case kA4:
+            name = @"A";
+            break;
+        case kB4:
+            name = @"B";
+            break;
+        case kC5:
+            name = @"C";
+            break;      
+        default:
+            break;
+    }
+    return name;    
+}
+
++ (NSString *) alternateNameFromEnum:(KeyType)key
+{
+    NSString *name = @"";
+    
+    switch (key) {
+        case kC4:
+            name = @"C";
+            break;
+        case kD4:
+            name = @"D";
+            break;
+        case kE4:
+            name = @"Every";
+            break;
+        case kF4:
+            name = @"F";
+            break;
+        case kG4:
+            name = @"Good";
+            break;
+        case kA4:
+            name = @"A";
+            break;
+        case kB4:
+            name = @"Boy";
+            break;
+        case kC5:
+            name = @"C";
+            break;      
+        case kD5:
+            name = @"Does";
+            break; 
+        case kE5:
+            name = @"E";
+            break;  
+        case kF5:
+            name = @"Fine";
+            break;                
+        default:
+            break;
+    }    
+    
+    return name;
+}
+
 + (KeyType) keyEnumFromName:(NSString *)name
 {
     if ([name isEqualToString:@"C4"]) {

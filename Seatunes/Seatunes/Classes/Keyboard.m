@@ -9,12 +9,16 @@
 #import "Keyboard.h"
 #import "AudioManager.h"
 #import "Key.h"
+#import "KeyboardLetter.h"
 #import "Utility.h"
 #import "CCNode+PauseResume.h"
 
 @implementation Keyboard
 
 static const CGFloat KB_KEY_PADDING = 110.0f;
+static const CGFloat KB_LETTER_MOVE_TIME = 1.0f;
+static const CGFloat KB_LETTER_X = 1200.0f;
+static const CGFloat KB_LETTER_Y = 90.0f;
 
 @synthesize isKeyboardMuted = isKeyboardMuted_;
 @synthesize isClickable = isClickable_;
@@ -40,6 +44,7 @@ static const CGFloat KB_KEY_PADDING = 110.0f;
         keyTimer_ = [[NSMutableDictionary dictionaryWithCapacity:10] retain];
         touches_ = CFDictionaryCreateMutable(kCFAllocatorDefault, 24, nil, nil);
         sequence_ = nil;
+        letters_ = nil;
         
         switch (keyboardType) {
             case kEightKey:
@@ -59,6 +64,7 @@ static const CGFloat KB_KEY_PADDING = 110.0f;
     [keyTimer_ release];
     CFRelease(touches_);
     [sequence_ release];
+    [letters_ release];
     
     [super dealloc];
 }
@@ -233,7 +239,37 @@ static const CGFloat KB_KEY_PADDING = 110.0f;
 
 - (void) showLetters
 {
+    // If letters haven't been generated yet, create them
+    if (letters_ == nil) {
+        letters_ = [[NSMutableArray arrayWithCapacity:8] retain];
+        NSArray *strings = [NSArray arrayWithObjects:@"C", @"D", @"E", @"F", @"G", @"A", @"B", @"C", nil];
+        
+        for (NSString *str in strings) {
+            KeyboardLetter *letter = [KeyboardLetter keyboardLetter:str];
+            letter.position = ccp(KB_LETTER_X, KB_LETTER_Y);
+            [letters_ addObject:letter];
+            [self addChild:letter];
+        }
+    }
     
+    // Move each letter to assigned positions
+    NSInteger count = 0;
+    for (KeyboardLetter *keyboardLetter in letters_) {
+        CGPoint pos = ccp(count * KB_KEY_PADDING, KB_LETTER_Y);
+        CCActionInterval *move = [CCMoveTo actionWithDuration:KB_LETTER_MOVE_TIME position:pos];
+        [keyboardLetter runAction:move];
+        count++;
+    }
+
+    // Let delegate know when move is complete
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:KB_LETTER_MOVE_TIME];
+    CCActionInstant *done = [CCCallBlock actionWithBlock:^{
+        if (delegate_ && [delegate_ respondsToSelector:@selector(showLettersComplete)]) {
+            [delegate_ showLettersComplete];
+        }
+    }];
+    
+    [self runAction:[CCSequence actions:delay, done, nil]];
 }
 
 - (void) hideLetters

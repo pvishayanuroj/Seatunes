@@ -16,6 +16,10 @@
 
 + (NSString *) keyNameFromEnum:(KeyType)key;
 
++ (NSString *) noteFromEnum:(KeyType)key;
+
++ (NSString *) alternateNameFromEnum:(KeyType)key;
+
 + (KeyType) keyEnumFromName:(NSString *)name;
 
 + (NSArray *) allKeyNames;

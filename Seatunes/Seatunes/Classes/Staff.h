@@ -19,6 +19,8 @@
     
     NSMutableArray *notes_;
     
+    NSMutableArray *labels_;
+    
     CCAction *action_;
     
     id <StaffDelegate> delegate_;
@@ -37,15 +39,15 @@
 
 - (void) staffNoteReturned:(StaffNote *)note;
 
-- (void) addNote:(KeyType)keyType numID:(NSUInteger)numID;
+- (void) showAlternateNoteNames;
+
+- (void) addNotes:(NSArray *)notes;
 
 - (void) addNotesInSequence:(NSArray *)notes;
 
 - (void) destroyNotesInSequence;
 
 - (void) addMovingNote:(KeyType)keyType numID:(NSUInteger)numID;
-
-- (void) addStaticNote:(KeyType)keyType numID:(NSUInteger)numID;
  
 - (BOOL) isOldestNoteActive;
 

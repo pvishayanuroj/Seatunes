@@ -30,6 +30,7 @@ typedef enum {
     
 }
 
+@property (nonatomic, readonly) KeyType keyType;
 @property (nonatomic, readonly) StaffNoteState state;
 @property (nonatomic, readonly) NSUInteger numID;
 

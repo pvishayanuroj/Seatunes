@@ -74,10 +74,10 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
             
         }
         
-        SpeechReader *reader = [SpeechReader speechReader:dialogue tapRequired:YES];
-        reader.delegate = self;
-        reader.position = ccp(GLD_INSTRUCTOR_X + GLD_READER_OFFSET_X, GLD_INSTRUCTOR_Y + GLD_READER_OFFSET_Y);
-        [self addChild:reader];          
+        reader_ = [[SpeechReader speechReader:dialogue prompt:NO] retain];
+        reader_.delegate = self;
+        reader_.position = ccp(GLD_INSTRUCTOR_X + GLD_READER_OFFSET_X, GLD_INSTRUCTOR_Y + GLD_READER_OFFSET_Y);
+        [self addChild:reader_];          
     }
     return self;
 }
@@ -88,6 +88,7 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
     [queue_ release];
     [notesHit_ release];
     [noteGenerator_ release];
+    [reader_ release];
     
     [super dealloc];
 }

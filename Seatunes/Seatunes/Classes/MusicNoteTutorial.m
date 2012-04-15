@@ -26,6 +26,9 @@ static const CGFloat MNT_STAFF_Y = 600.0f;
 static const CGFloat MNT_READER_OFFSET_X = 225.0f;
 static const CGFloat MNT_READER_OFFSET_Y = 75.0f;
 
+static const CGFloat MNT_NOTE_ADD_DESTROY_DELAY = 1.5f;
+static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
+
 + (id) musicNoteTutorial
 {
     return [[[self alloc] initMusicNoteTutorial] autorelease];
@@ -35,8 +38,7 @@ static const CGFloat MNT_READER_OFFSET_Y = 75.0f;
 {
     if ((self = [super initGameLogic:kDifficultyMedium])) {
         
-        noteIndex_ = 0;
-        ignoreInput_ = NO;  
+        notes_ = [[NSMutableArray arrayWithCapacity:8] retain];
         bubbleClickable_ = YES;
 
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
@@ -59,7 +61,7 @@ static const CGFloat MNT_READER_OFFSET_Y = 75.0f;
         
         keyboard_ = [[Keyboard keyboard:kEightKey] retain];
         keyboard_.delegate = self;
-        keyboard_.isKeyboardMuted = YES;
+        keyboard_.isClickable = NO;        
         keyboard_.position = ccp(MNT_KEYBOARD_X, MNT_KEYBOARD_Y);
         [self addChild:keyboard_];        
         
@@ -128,17 +130,15 @@ static const CGFloat MNT_READER_OFFSET_Y = 75.0f;
 
 - (void) notesInSequenceAdded
 {
-    CCActionInterval *delay = [CCDelayTime actionWithDuration:3.0f];
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:MNT_NOTE_ADD_DESTROY_DELAY];
     CCActionInstant *destroy = [CCCallFunc actionWithTarget:staff_ selector:@selector(destroyNotesInSequence)];
     [self runAction:[CCSequence actions:delay, destroy, nil]];
 }
 
 - (void) notesInSequenceDestroyed
 {
-    NSLog(@"notes destroyed");    
-    
     switch (reader_.currentSpeech) {
-        // Lined notes
+        // Lined notes 
         case kTutorialNotes:
             [reader_ nextDialogue];
             break;
@@ -150,6 +150,39 @@ static const CGFloat MNT_READER_OFFSET_Y = 75.0f;
     }
 
     bubbleClickable_ = YES;
+}
+
+- (void) showLettersComplete
+{
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:MNT_LETTER_SHOW_DELAY];    
+    CCActionInstant *next = [CCCallBlock actionWithBlock:^{
+        [reader_ nextDialogue];
+    }];
+    
+    [self runAction:[CCSequence actions:delay, next, nil]];
+}
+
+- (void) keyboardKeyPressed:(KeyType)keyType
+{
+    if ([notes_ count] > 0) {
+        
+        // Check if correct note played
+        KeyType correctNote = [[notes_ objectAtIndex:0] integerValue];
+        if (correctNote == keyType) {
+            [notes_ removeObjectAtIndex:0];
+            [staff_ removeOldestNote];
+            
+            // If this is the last note
+            if ([notes_ count] == 0) {
+                keyboard_.isClickable = NO;
+                [reader_ nextDialogue];
+            }
+        }
+        // Else incorrect note played
+        else {
+            
+        }
+    }
 }
 
 #pragma mark - Helper Methods
@@ -201,17 +234,57 @@ static const CGFloat MNT_READER_OFFSET_Y = 75.0f;
 
 - (void) showKeyboardLetters
 {
-    
+    [keyboard_ showLetters];
 }
 
-- (void) speechClicked:(SpeechType)speechType
+- (void) showFirstSet
+{
+    [notes_ addObject:[NSNumber numberWithInteger:kC4]];  
+    [staff_ addNotes:notes_];
+}
+
+- (void) showSecondSet
+{
+    [notes_ addObject:[NSNumber numberWithInteger:kD4]];  
+    [notes_ addObject:[NSNumber numberWithInteger:kE4]];      
+    [staff_ addNotes:notes_];    
+}
+
+- (void) showThirdSet
+{
+    [notes_ addObject:[NSNumber numberWithInteger:kF4]];  
+    [notes_ addObject:[NSNumber numberWithInteger:kG4]];      
+    [staff_ addNotes:notes_];    
+}
+
+- (void) showFourthSet
+{
+    [notes_ addObject:[NSNumber numberWithInteger:kA4]];  
+    [notes_ addObject:[NSNumber numberWithInteger:kB4]];  
+    [notes_ addObject:[NSNumber numberWithInteger:kC5]];      
+    [staff_ addNotes:notes_];
+}
+
+- (void) showLineNotesWithText
+{
+    [notes_ addObject:[NSNumber numberWithInteger:kE4]];  
+    [notes_ addObject:[NSNumber numberWithInteger:kG4]];  
+    [notes_ addObject:[NSNumber numberWithInteger:kB4]];      
+    [notes_ addObject:[NSNumber numberWithInteger:kD5]];      
+    [notes_ addObject:[NSNumber numberWithInteger:kF5]];          
+    [staff_ addNotes:notes_];
+    [staff_ showAlternateNoteNames];
+    [reader_ nextDialogue];
+}
+
+- (void) showSpaceNotesWithText
 {
     
+    [reader_ nextDialogue];    
 }
 
 - (void) eventComplete:(SpeechType)speechType
 {
-    NSLog(@"event complete: %d", speechType);
     switch (speechType) {
         case kTutorialIntroduction:
             [staff_ blinkStaff:YES];
@@ -231,30 +304,47 @@ static const CGFloat MNT_READER_OFFSET_Y = 75.0f;
             [self showKeyboardLetters];
             break;
         case kTutorialLearnC:
+            [self showFirstSet];
+            [reader_ nextDialogue];
             break;
         case kTutorialPlayC:
+            keyboard_.isClickable = YES;
             break;
         case kTutorialPlayDE:
+            [self showSecondSet];          
+            keyboard_.isClickable = YES;
             break;
         case kTutorialPlayFG:
+            [self showThirdSet];
+            keyboard_.isClickable = YES;
             break;
         case kTutorialPlayABC:
+            [self showFourthSet];
+            keyboard_.isClickable = YES;
             break;
         case kTutorialMnemonic:
+            [self showLineNotesWithText];
             break;
         case kTutorialEvery:
+            keyboard_.isClickable = YES;            
             break;
         case kTutorialGood:
+            keyboard_.isClickable = YES;            
             break;
         case kTutorialBoy:
+            keyboard_.isClickable = YES;            
             break;
         case kTutorialFace:
+            [self showSpaceNotesWithText];
             break;
         case kTutorialF:
+            keyboard_.isClickable = YES;            
             break;
         case kTutorialA:
+            keyboard_.isClickable = YES;            
             break;
         case kTutorialC:
+            keyboard_.isClickable = YES;            
             break;
         case kTutorialComplete:
             break;            
