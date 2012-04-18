@@ -17,7 +17,7 @@
 @class Staff;
 
 /* Hard mode game logic */
-@interface GameLogicE : GameLogic <KeyboardDelegate, StaffDelegate, SpeechReaderDelegate> {
+@interface GameLogicE : GameLogic <KeyboardDelegate, StaffDelegate, SpeechReaderDelegate, UIAlertViewDelegate> {
     
     NSUInteger noteIndex_;
     

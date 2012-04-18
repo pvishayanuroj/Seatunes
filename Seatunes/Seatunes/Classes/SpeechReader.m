@@ -89,6 +89,7 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
         [data_ release];
         lastSpeechType_ = [[speeches lastObject] integerValue];            
         data_ = [[[SpeechManager speechManager] textAndAudioFromSpeechTypes:speeches] retain];
+        currentSpeechIndex_ = 0;
         [self nextDialogue];    
     }
 }

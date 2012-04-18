@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/GameLogicE.m"
-         timestampString = "356226918.615882"
+         timestampString = "356411689.919708"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "171"
-         endingLineNumber = "171"
+         startingLineNumber = "190"
+         endingLineNumber = "190"
          landmarkName = "-keyboardKeyPressed:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/GameLogicE.m"
-         timestampString = "356226918.615882"
+         timestampString = "356411689.919708"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "179"
-         endingLineNumber = "179"
+         startingLineNumber = "198"
+         endingLineNumber = "198"
          landmarkName = "-keyboardKeyPressed:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/GameLogicE.m"
-         timestampString = "356221602.996355"
+         timestampString = "356410201.244261"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "45"
-         endingLineNumber = "45"
+         startingLineNumber = "46"
+         endingLineNumber = "46"
          landmarkName = "-initGameLogicE:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/SpeechReader.m"
-         timestampString = "356226918.615882"
+         timestampString = "356413480.766983"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "171"
-         endingLineNumber = "171"
+         startingLineNumber = "172"
+         endingLineNumber = "172"
          landmarkName = "-ccTouchBegan:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/SpeechReader.m"
-         timestampString = "356226918.615882"
+         timestampString = "356413480.766983"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "187"
-         endingLineNumber = "187"
+         startingLineNumber = "188"
+         endingLineNumber = "188"
          landmarkName = "-ccTouchEnded:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,11 +216,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/SpeechReader.m"
-         timestampString = "356226918.615882"
+         timestampString = "356413480.766983"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "116"
-         endingLineNumber = "116"
+         startingLineNumber = "117"
+         endingLineNumber = "117"
          landmarkName = "-nextDialogue"
          landmarkType = "5">
       </FileBreakpoint>
@@ -248,6 +248,32 @@
          startingLineNumber = "186"
          endingLineNumber = "186"
          landmarkName = "-endSong"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Seatunes/Classes/SpeechReader.m"
+         timestampString = "356413480.766983"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
+         landmarkName = "-loadDialogue:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Seatunes/libs/cocos2d/Platforms/iOS/CCTouchDispatcher.m"
+         timestampString = "356411063.160148"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1427"
+         endingLineNumber = "1427"
+         landmarkName = "-processTargetedHandlers:withEvent:withTouchType:localData:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -16,6 +16,7 @@
 #import "SpeechReader.h"
 #import "Staff.h"
 #import "StaffNote.h"
+#import "GameScene.h"
 
 @implementation GameLogicE
 
@@ -82,6 +83,15 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
             [dialogue addObject:[NSNumber numberWithInteger:kSpeechGreetings]];
         }        
         
+        // Check if hard difficulty has ever been played. If not, prompt to play tutorial
+        if ([[DataUtility manager] isFirstPlayForDifficulty:kDifficultyHard]) {
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechTutorialPrompt]];
+        }
+        else {
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechRandomSaying]];
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechSongStart]];            
+        }        
+        
         reader_ = [[SpeechReader speechReader:dialogue prompt:NO] retain];
         reader_.delegate = self;
         reader_.position = ccp(GLE_INSTRUCTOR_X + GLE_READER_OFFSET_X, GLE_INSTRUCTOR_Y + GLE_READER_OFFSET_Y);
@@ -97,6 +107,7 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
     [queueByKey_ release];
     [notesHit_ release];
     [staff_ release];
+    [reader_ release];
     
     [super dealloc];
 }
@@ -138,31 +149,39 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
     [queueByKey_ removeObjectAtIndex:0];       
 }
 
+- (void) showPrompt
+{
+    NSString *title = @"Hey!";
+    NSString *text = [NSString stringWithFormat:@"Take the music lesson?"];
+    UIAlertView *message = [[[UIAlertView alloc] initWithTitle:title message:text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil] autorelease];
+    [message show];    
+}
+
 #pragma mark - Delegate Methods
 
 - (void) speechComplete:(SpeechType)speechType
 {
-    NSMutableArray *dialogue = [NSMutableArray arrayWithCapacity:3];
-    
-    // Beginning speech
-    if (speechType == kSpeechIntroduction || speechType == kSpeechGreetings) {
-        
-        // Check if hard difficulty has ever been played. If not, prompt to play tutorial
-        if ([[DataUtility manager] isFirstPlayForDifficulty:kDifficultyHard]) {
-            [dialogue addObject:[NSNumber numberWithInteger:kSpeechTutorialPrompt]];
-        }
-        else {
-            [dialogue addObject:[NSNumber numberWithInteger:kSpeechRandomSaying]];
-            [dialogue addObject:[NSNumber numberWithInteger:kSpeechSongStart]];            
-        }
-        [reader_ loadDialogue:dialogue];         
-    }
-    // Prompt the user
-    else if (speechType == kSpeechTutorialPrompt) {
-        
+    if (speechType == kSpeechTutorialPrompt) {
+        [self showPrompt];
     }
     else if (speechType == kSpeechSongStart) {
+        reader_.visible = NO;        
         [self start];
+    }
+}
+         
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // Cancel
+    if (buttonIndex == 0) {
+        NSMutableArray *dialogue = [NSMutableArray arrayWithCapacity:1];
+        [dialogue addObject:[NSNumber numberWithInteger:kSpeechSongStart]];      
+        [reader_ loadDialogue:dialogue];        
+    }
+    // OK
+    else if (buttonIndex == 1) {
+        CCScene *scene = [GameScene startWithDifficulty:kDifficultyMusicNoteTutorial songName:@""];
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];          
     }
 }
 
