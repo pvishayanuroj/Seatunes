@@ -106,7 +106,8 @@ static const CGFloat SN_MOVE_X = -800.0f;
     b.controlPoint_2 = c2;
     b.endPosition = end;
     
-    CCActionInterval *move = [CCBezierBy actionWithDuration:5.0 bezier:b];
+    CCActionInterval *move = [CCBezierBy actionWithDuration:2.5f bezier:b];
+    //CCActionInterval *ease = [CCEaseIn actionWithAction:move rate:1.4f];
     CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(moveAcross)];
     [self runAction:[CCSequence actions:move, done, nil]];
 }
