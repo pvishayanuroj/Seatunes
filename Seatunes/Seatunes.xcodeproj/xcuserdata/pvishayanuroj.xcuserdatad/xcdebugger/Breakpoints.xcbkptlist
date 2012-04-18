@@ -34,12 +34,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/GameLogicE.m"
-         timestampString = "356221602.996355"
+         timestampString = "356226918.615882"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "165"
-         endingLineNumber = "165"
-         landmarkName = "-speechComplete:"
+         startingLineNumber = "171"
+         endingLineNumber = "171"
+         landmarkName = "-keyboardKeyPressed:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -47,12 +47,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/GameLogicE.m"
-         timestampString = "356221602.996355"
+         timestampString = "356226918.615882"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "173"
-         endingLineNumber = "173"
-         landmarkName = "-speechComplete:"
+         startingLineNumber = "179"
+         endingLineNumber = "179"
+         landmarkName = "-keyboardKeyPressed:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/SpeechReader.m"
-         timestampString = "356189685.589767"
+         timestampString = "356226918.615882"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "173"
-         endingLineNumber = "173"
+         startingLineNumber = "171"
+         endingLineNumber = "171"
          landmarkName = "-ccTouchBegan:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/SpeechReader.m"
-         timestampString = "356189685.589767"
+         timestampString = "356226918.615882"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "189"
-         endingLineNumber = "189"
+         startingLineNumber = "187"
+         endingLineNumber = "187"
          landmarkName = "-ccTouchEnded:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,11 +216,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/SpeechReader.m"
-         timestampString = "356222752.985578"
+         timestampString = "356226918.615882"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "118"
-         endingLineNumber = "118"
+         startingLineNumber = "116"
+         endingLineNumber = "116"
          landmarkName = "-nextDialogue"
          landmarkType = "5">
       </FileBreakpoint>
@@ -235,6 +235,19 @@
          startingLineNumber = "217"
          endingLineNumber = "217"
          landmarkName = "-textAndAudioFromSpeechTypes:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Seatunes/Classes/GameLogicD.m"
+         timestampString = "356226973.120482"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "186"
+         endingLineNumber = "186"
+         landmarkName = "-endSong"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

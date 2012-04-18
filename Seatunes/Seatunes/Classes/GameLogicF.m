@@ -169,7 +169,7 @@ static const CGFloat GLF_READER_OFFSET_Y = 75.0f;
                 // This note is the last note in the song
                 if (onLastNote_ && [queueByID_ count] == 0) {
                     ignoreInput_ = YES;            
-                    [self runDelayedEndSpeech];                         
+                    [self endSong];                         
                 }                  
             }
             // Else incorrect note played
@@ -189,7 +189,7 @@ static const CGFloat GLF_READER_OFFSET_Y = 75.0f;
     // This note is the last note in the song
     if (onLastNote_ && [queueByID_ count] == 0) {
         ignoreInput_ = YES;            
-        [self runDelayedEndSpeech];                         
+        [self endSong];                         
     }        
 }
 
@@ -205,6 +205,7 @@ static const CGFloat GLF_READER_OFFSET_Y = 75.0f;
 {
     scoreInfo_.notesMissed = [Utility countNumBoolInDictionary:NO dictionary:notesHit_];
     scoreInfo_.notesHit = [notesHit_ count] - scoreInfo_.notesMissed;
+    scoreInfo_.percentage = (NSUInteger)(ceil(scoreInfo_.notesHit / (scoreInfo_.notesHit + scoreInfo_.notesMissed)));    
     
     keyboard_.isKeyboardMuted = NO;
     [keyboard_ applause];

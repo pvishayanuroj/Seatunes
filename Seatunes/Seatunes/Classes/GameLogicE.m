@@ -149,14 +149,20 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
         
         // Check if hard difficulty has ever been played. If not, prompt to play tutorial
         if ([[DataUtility manager] isFirstPlayForDifficulty:kDifficultyHard]) {
-            
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechTutorialPrompt]];
         }
         else {
-            [reader_ loadDialogue:dialogue]; 
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechRandomSaying]];
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechSongStart]];            
         }
+        [reader_ loadDialogue:dialogue];         
+    }
+    // Prompt the user
+    else if (speechType == kSpeechTutorialPrompt) {
+        
     }
     else if (speechType == kSpeechSongStart) {
-       
+        [self start];
     }
 }
 
@@ -183,7 +189,7 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
                     if (onLastNote_ && [queueByID_ count] == 0) {
                         keyboard_.isClickable = NO;
                         ignoreInput_ = YES;            
-                        [self runDelayedEndSpeech];                         
+                        [self endSong];                         
                     }
                 }
                 // Incorrect note played
@@ -204,7 +210,7 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
     // This note is the last note in the song
     if (onLastNote_ && [queueByID_ count] == 0) {
         ignoreInput_ = YES;            
-        [self runDelayedEndSpeech];                         
+        [self endSong];                              
     }       
 }
 
@@ -212,6 +218,7 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
 {
     scoreInfo_.notesMissed = [Utility countNumBoolInDictionary:NO dictionary:notesHit_];
     scoreInfo_.notesHit = [notesHit_ count] - scoreInfo_.notesMissed;
+    scoreInfo_.percentage = (NSUInteger)(ceil(scoreInfo_.notesHit / (scoreInfo_.notesHit + scoreInfo_.notesMissed)));    
     
     keyboard_.isKeyboardMuted = NO;    
     [keyboard_ applause];

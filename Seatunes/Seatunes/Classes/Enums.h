@@ -136,6 +136,7 @@ typedef enum {
 typedef struct {
     NSUInteger notesMissed;
     NSUInteger notesHit;
+    NSUInteger percentage;
     DifficultyType difficulty;
 } ScoreInfo;
 

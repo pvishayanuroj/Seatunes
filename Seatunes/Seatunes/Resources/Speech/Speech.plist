@@ -5,36 +5,36 @@
 	<key>Introduction</key>
 	<array>
 		<array>
-			<string>Oh look, it&apos;s a new face. I haven&apos;t seen you down here before. My name is &lt;b&gt;Whalezart&lt;/b&gt; and this is where I live. It&apos;s called the &lt;b&gt;Tiny Barrier Reef.&lt;/b&gt; </string>
+			<string>Oh look, it&apos;s a new face. I haven&apos;t seen you down here before. My name is &lt;b&gt;Willy the Whale&lt;/b&gt; and this is where I live. It&apos;s called the &lt;b&gt;Tiny Barrier Reef.&lt;/b&gt; </string>
 			<string>Do you see those pretty rocks? Those are called &lt;b&gt;coral.&lt;/b&gt; It&apos;s a very colorful place, but sometimes it gets too quiet. </string>
-			<string>Wait, you&apos;re not from the sea, are you? Oh! I can see your fingers! I only have &lt;b&gt;flippers&lt;/b&gt;. That means you can help us make some music. </string>
+			<string>Wait, you&apos;re not from the sea, are you? Oh! I can see your fingers! I only have &lt;b&gt;flippers&lt;/b&gt;. That means you can help us make some music. Come on!</string>
 		</array>
 	</array>
 	<key>Easy Tutorial</key>
 	<array>
 		<array>
-			<string>The sea is always singing, we just have to be clever enough to hear it. I think it’s all in the &lt;b&gt;bubbles.&lt;/b&gt;</string>
-			<string>If you see any &lt;b&gt;bubbles&lt;/b&gt; floating up, make sure you pop them. But you have to pop them in the right order, otherwise it won’t sound very good.</string>
+			<string>The sea is always singing, we just have to be clever enough to hear it. I think it&apos;s all in the &lt;b&gt;bubbles.&lt;/b&gt;</string>
+			<string>If you see any floating up, make sure you pop them. Make sure to pop them in the right order though, otherwise it won&apos;t sound very good.</string>
 		</array>
 	</array>
 	<key>Medium Tutorial</key>
 	<array>
 		<array>
 			<string>My friends, &lt;b&gt;The Clams&lt;/b&gt;, heard you were visiting, and they wanted to come out and play too!</string>
-			<string>They’re really good at making music, but they don’t know how to work together. It’s up to you to help.</string>
-			<string>What ever color bubble you see, you have to touch the clam that has that color, so if you see a red bubble, touch the red clam! But you can’t be too slow, otherwise the bubbles will float away.</string>
+			<string>They&apos;re really good at making music, but they don&apos;t know how to work together. It&apos;s up to you to help.</string>
+			<string>When you see a colored bubble, touch the clam with the &lt;b&gt;same color&lt;/b&gt; before the bubble floats away. So, if you see a red bubble, touch the red clam!</string>
 		</array>
 	</array>
 	<key>Greetings</key>
 	<array>
 		<array>
-			<string>Hello, it’s me, Whalezart.</string>
+			<string>Hello, it&apos;s me, Willy.</string>
 		</array>
 		<array>
-			<string>Hi, remember me, Whalezart?</string>
+			<string>Hi, remember me, Willy?</string>
 		</array>
 		<array>
-			<string>It is I, Whalezart! Whale composer extraordinaire.</string>
+			<string>It is I, Willy! Whale composer extraordinaire.</string>
 		</array>
 	</array>
 	<key>Song Start</key>
@@ -79,13 +79,13 @@
 			<string>Hmm… I think you need more practice. Remember, practice makes perfect.</string>
 		</array>
 		<array>
-			<string>You’ll do better next time, I know it. Just remember to practice.</string>
+			<string>You&apos;ll do better next time, I know it. Just remember to practice.</string>
 		</array>
 	</array>
 	<key>Score Explanation</key>
 	<array>
 		<array>
-			<string>This is the score screen. It tells you how well you did. You can even see how many notes you missed. If you played well enough, you’ll earn a &lt;b&gt;badge&lt;/b&gt; for each difficulty.</string>
+			<string>This is the score screen. It tells you how well you did. You can even see how many notes you missed. If you played well enough, you&apos;ll earn a &lt;b&gt;badge&lt;/b&gt; for each difficulty.</string>
 		</array>
 	</array>
 	<key>Random Saying</key>
@@ -94,7 +94,7 @@
 			<string>There&apos;s always music around us, you just have to know where to find it.</string>
 		</array>
 		<array>
-			<string>Have you been to the &lt;b&gt;Great Barrier Reef?&lt;/b&gt; I heard it’s almost as nice as this.</string>
+			<string>Have you been to the &lt;b&gt;Great Barrier Reef?&lt;/b&gt; I heard it&apos;s almost as nice as this.</string>
 		</array>
 		<array>
 			<string>Did you know some whales, such as &lt;b&gt;humpback whales,&lt;/b&gt; can sing too?</string>

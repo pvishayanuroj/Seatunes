@@ -9,7 +9,7 @@
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 
-#define kSpeechFileType @"wav"
+#define kSpeechFileType @"mp3"
 
 @interface SpeechManager : NSObject {
     
