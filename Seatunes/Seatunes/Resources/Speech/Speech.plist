@@ -106,5 +106,23 @@
 			<string>Oh, I see you this is your first time playing this mode. Do you want to have a lesson first? I can teach you how to read &lt;b&gt;musical notation.&lt;/b&gt;</string>
 		</array>
 	</array>
+	<key>Bubble Badge</key>
+	<array>
+		<array>
+			<string>I award you &lt;b&gt;The Bubble Badge&lt;/b&gt;</string>
+		</array>
+	</array>
+	<key>Clam Badge</key>
+	<array>
+		<array>
+			<string>I award you &lt;b&gt;The Clam Badge&lt;/b&gt;</string>
+		</array>
+	</array>
+	<key>Note Badge</key>
+	<array>
+		<array>
+			<string>I award you &lt;b&gt;The Note Badge&lt;/b&gt;</string>
+		</array>
+	</array>
 </dict>
 </plist>

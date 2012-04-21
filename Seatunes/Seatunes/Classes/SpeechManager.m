@@ -123,6 +123,15 @@ static SpeechManager *_speechManager = nil;
         case kSpeechScoreExplanation:
             key = @"Score Explanation";
             break;
+        case kSpeechBubbleBadge:
+            key = @"Bubble Badge";            
+            break;
+        case kSpeechClamBadge:
+            key = @"Clam Badge";
+            break;
+        case kSpeechNoteBadge:
+            key = @"Note Badge";
+            break;
         case kSpeechTutorialPrompt:
             key = @"Tutorial Prompt";
             break;

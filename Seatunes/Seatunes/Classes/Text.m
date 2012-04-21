@@ -10,6 +10,8 @@
 
 @implementation Text
 
+@synthesize string = text_;
+
 static const CGFloat TXT_DEFAULT_WIDTH = 415.0f;
 static const CGFloat TXT_DEFAULT_HEIGHT = 30.0f;
 static const CGFloat TXT_DEFAULT_SPACE_WIDTH = 10.0f;

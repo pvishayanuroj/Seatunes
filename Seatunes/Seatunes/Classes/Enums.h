@@ -56,6 +56,10 @@ typedef enum {
     kPageFlip,
     kBubblePop,
     kClamHit,
+    kDing,
+    kSuccess,
+    kThud,
+    kWahWah,
     kMenuB0,
     kMenuC1,
     kMenuD1,
@@ -103,6 +107,12 @@ typedef enum {
 } ScoreType;
 
 typedef enum {
+    kBadgeBubble,
+    kBadgeClam,
+    kBadgeNote
+} BadgeType;
+
+typedef enum {
     kSpeechIntroduction = 0,
     kSpeechEasyTutorial,
     kSpeechMediumTutorial,
@@ -113,6 +123,9 @@ typedef enum {
     kSpeechSongCompleteBad,
     kSpeechRandomSaying,
     kSpeechScoreExplanation,
+    kSpeechBubbleBadge,
+    kSpeechClamBadge,
+    kSpeechNoteBadge,
     kSpeechTutorialPrompt,
     kTutorialIntroduction,
     kTutorialStaff,

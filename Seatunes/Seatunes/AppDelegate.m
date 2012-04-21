@@ -12,9 +12,11 @@
 #import "GameConfig.h"
 #import "GameScene.h"
 #import "MainMenuScene.h"
+#import "ScoreScene.h"
 #import "RootViewController.h"
 
 #import "DataUtility.h"
+#import "AudioManager.h"
 
 @implementation AppDelegate
 
@@ -116,7 +118,15 @@
 	
 	// Run the intro Scene
     [glView setMultipleTouchEnabled:YES];
-	[[CCDirector sharedDirector] runWithScene: [MainMenuScene node]];
+	//[[CCDirector sharedDirector] runWithScene: [MainMenuScene node]];
+
+    [AudioManager audioManager];
+    [DataUtility manager];
+    ScoreInfo score;
+    score.difficulty = kDifficultyEasy;
+    score.notesHit = 9;
+    score.notesMissed = 1;
+    [[CCDirector sharedDirector] runWithScene:[ScoreScene scoreScene:score songName:@"Twinkle Twinkle" nextSong:@""]];
     
     //[DataUtility manager];
     //[[CCDirector sharedDirector] runWithScene: [GameScene startWithDifficulty:kDifficultyHard songName:@"Twinkle Twinkle"]];

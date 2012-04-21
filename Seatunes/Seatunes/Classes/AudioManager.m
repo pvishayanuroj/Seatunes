@@ -86,6 +86,13 @@ static AudioManager *_audioManager = nil;
             [sae_ preloadEffect:path];
         }
     }       
+    
+    NSArray *soundEffects = [Utility allSoundEffects];
+    
+    for (NSNumber *effect in soundEffects) {
+        NSString *path = [Utility soundFileFromEnum:[effect integerValue]];
+        [sae_ preloadEffect:path];
+    }
 }
 
 #pragma mark - Sound Effect Methods

@@ -10,17 +10,26 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "ButtonDelegate.h"
+#import "SpeechReaderDelegate.h"
+#import "IncrementingTextDelegate.h"
 
 @class Instructor;
 @class SpeechReader;
+@class Text;
 
-@interface ScoreLayer : CCLayer <ButtonDelegate> {
+@interface ScoreLayer : CCLayer <ButtonDelegate, SpeechReaderDelegate, IncrementingTextDelegate> {
     
     Instructor *instructor_;
     
     SpeechReader *reader_;    
     
     DifficultyType difficulty_;    
+    
+    CCParticleSystem *particles_;
+    
+    ScoreInfo scoreInfo_;
+    
+    Text *statsLabel_;
     
     NSString *songName_;
     
@@ -30,5 +39,13 @@
 + (id) scoreLayer:(ScoreInfo)scoreInfo songName:(NSString *)songName nextSong:(NSString *)nextSong;
 
 - (id) initScoreLayer:(ScoreInfo)scoreInfo songName:(NSString *)songName nextSong:(NSString *)nextSong;
+
+- (void) placeIncrementingPercentage;
+
+- (void) placeFirstStats;
+
+- (void) placeSecondStats;
+
+- (CCParticleSystem *) createPS;
 
 @end

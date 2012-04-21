@@ -38,10 +38,12 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
         data_ = nil;
         currentSpeechIndex_ = 0;
         isClickable_ = YES;
+        internalClickFlag_ = NO;
         prompt_ = prompt;
                 
         sprite_ = [[CCSprite spriteWithFile:@"Speech Bubble Large.png"] retain];        
         sprite_.position = ccp(SR_BUBBLE_OFFSET_X, SR_BUBBLE_OFFSET_Y);
+        sprite_.visible = NO;
         [self addChild:sprite_];
         
         text_ = [[Text text:@"" fntFile:@"Dialogue Font.fnt"] retain];
@@ -65,6 +67,8 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 
 - (void) narrationComplete:(SpeechType)speechType
 {
+    internalClickFlag_ = NO;   
+    
     if (prompt_) {
         if (delegate_ && [delegate_ respondsToSelector:@selector(bubbleComplete:)]) {
             [delegate_ bubbleComplete:speechType];
@@ -109,6 +113,9 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
     // If text remaining
     if (currentSpeechIndex_ < [lines count]) {
         
+        internalClickFlag_ = YES;
+        sprite_.visible = YES;
+        
         NSString *line = [lines objectAtIndex:currentSpeechIndex_];
         NSString *path =  [paths objectAtIndex:currentSpeechIndex_];
         SpeechType speechType = [[types objectAtIndex:currentSpeechIndex_] integerValue];
@@ -124,16 +131,11 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
     }
     // No text remaining
     else {
+        internalClickFlag_ = NO;        
+        
         if (delegate_ && [delegate_ respondsToSelector:@selector(speechComplete:)]) {
             [delegate_ speechComplete:lastSpeechType_];
         }
-    }
-}
-
-- (void) dialogueComplete
-{
-    if (delegate_ && [delegate_ respondsToSelector:@selector(speechComplete:)]) {
-        [delegate_ speechComplete:lastSpeechType_];
     }
 }
 
@@ -169,7 +171,7 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 
 - (BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {	
-    if (isClickable_) {
+    if (isClickable_ && internalClickFlag_) {
         return [self containsTouchLocation:touch];
     }
     
@@ -185,6 +187,7 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 {
     if ([self containsTouchLocation:touch]) {
         
+        internalClickFlag_ = NO;     
         [[AudioManager audioManager] stopNarration];   
         
         // Check delegate wants to be notified about clicks

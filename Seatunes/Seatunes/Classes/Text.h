@@ -35,6 +35,8 @@ typedef enum {
     
 }
 
+@property (nonatomic, readonly) NSString *string;
+
 + (id) text:(NSString *)text fntFile:(NSString *)fntFile;
 
 + (id) text:(NSString *)text fntFile:(NSString *)fntFile width:(CGFloat)width;

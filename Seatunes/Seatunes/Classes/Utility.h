@@ -38,6 +38,8 @@
 
 + (NSString *) soundFileFromEnum:(SoundType)soundType;
 
++ (NSArray *) allSoundEffects;
+
 + (NSArray *) loadSectionedSong:(NSString *)songName;
 
 + (NSArray *) loadFlattenedSong:(NSString *)songName;

@@ -302,6 +302,18 @@
         case kClamHit:
             name = @"Clam Hit.m4a";
             break;
+        case kDing:
+            name = @"Ding.mp3";
+            break;
+        case kSuccess:
+            name = @"Success.mp3";
+            break;
+        case kThud:
+            name = @"Thud.mp3";
+            break;
+        case kWahWah:
+            name = @"Wah Wah.mp3";
+            break;
         case kMenuB0:
             name = @"Menu Sound B0.caf";
             break;
@@ -337,6 +349,30 @@
     }
     
     return name;
+}
+
++ (NSArray *) allSoundEffects
+{
+    NSMutableArray *sounds = [NSMutableArray arrayWithCapacity:8];
+    [sounds addObject:[NSNumber numberWithInteger:kApplause]];
+    [sounds addObject:[NSNumber numberWithInteger:kPageFlip]];
+    [sounds addObject:[NSNumber numberWithInteger:kClamHit]];
+    [sounds addObject:[NSNumber numberWithInteger:kDing]];
+    [sounds addObject:[NSNumber numberWithInteger:kSuccess]];    
+    [sounds addObject:[NSNumber numberWithInteger:kThud]];
+    [sounds addObject:[NSNumber numberWithInteger:kWahWah]];    
+    [sounds addObject:[NSNumber numberWithInteger:kMenuB0]];
+    [sounds addObject:[NSNumber numberWithInteger:kMenuC1]];
+    [sounds addObject:[NSNumber numberWithInteger:kMenuD1]];
+    [sounds addObject:[NSNumber numberWithInteger:kMenuE1]];
+    [sounds addObject:[NSNumber numberWithInteger:kMenuF1]];
+    [sounds addObject:[NSNumber numberWithInteger:kMenuG1]];
+    [sounds addObject:[NSNumber numberWithInteger:kMenuA1]];
+    [sounds addObject:[NSNumber numberWithInteger:kMenuB1]];
+    [sounds addObject:[NSNumber numberWithInteger:kMenuC2]];    
+    [sounds addObject:[NSNumber numberWithInteger:kBubblePop]];    
+    
+    return sounds;
 }
 
 + (NSArray *) loadSectionedSong:(NSString *)songName

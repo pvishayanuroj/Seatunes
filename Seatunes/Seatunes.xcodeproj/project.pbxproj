@@ -111,6 +111,16 @@
 		04DE522114FA19F200F8E45C /* Twinkle Twinkle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE521214FA19F200F8E45C /* Twinkle Twinkle.plist */; };
 		04DE522314FA1A2B00F8E45C /* Christmas Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */; };
 		AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */; };
+		AE48ED1C1543142000747910 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = AE48ED1B1543142000747910 /* Badge.m */; };
+		AE48ED1F1543156700747910 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED1E1543156700747910 /* Star.png */; };
+		AE48ED221543289100747910 /* IncrementingText.m in Sources */ = {isa = PBXBuildFile; fileRef = AE48ED211543289100747910 /* IncrementingText.m */; };
+		AE48ED2515432B6000747910 /* Ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED2415432B6000747910 /* Ding.mp3 */; };
+		AE48ED28154351EB00747910 /* Thud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED26154351EB00747910 /* Thud.mp3 */; };
+		AE48ED29154351EB00747910 /* Wah Wah.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED27154351EB00747910 /* Wah Wah.mp3 */; };
+		AE48ED2D15435E1700747910 /* Bubble Badge 00-00.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED2A15435E1700747910 /* Bubble Badge 00-00.mp3 */; };
+		AE48ED2E15435E1700747910 /* Clam Badge 00-00.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED2B15435E1700747910 /* Clam Badge 00-00.mp3 */; };
+		AE48ED2F15435E1700747910 /* Note Badge 00-00.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED2C15435E1700747910 /* Note Badge 00-00.mp3 */; };
+		AE48ED311543648900747910 /* Success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED301543648900747910 /* Success.mp3 */; };
 		AE4D78CC151F6BAF00B906ED /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4D78C4151F6BAF00B906ED /* CDAudioManager.m */; };
 		AE4D78CD151F6BAF00B906ED /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4D78C7151F6BAF00B906ED /* CDOpenALSupport.m */; };
 		AE4D78CE151F6BAF00B906ED /* CocosDenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4D78C9151F6BAF00B906ED /* CocosDenshion.m */; };
@@ -543,6 +553,19 @@
 		04DE521214FA19F200F8E45C /* Twinkle Twinkle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Twinkle Twinkle.plist"; sourceTree = "<group>"; };
 		04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Christmas Pack.plist"; sourceTree = "<group>"; };
 		AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
+		AE48ED1A1543142000747910 /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Badge.h; path = Classes/Badge.h; sourceTree = "<group>"; };
+		AE48ED1B1543142000747910 /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Badge.m; path = Classes/Badge.m; sourceTree = "<group>"; };
+		AE48ED1E1543156700747910 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
+		AE48ED201543289100747910 /* IncrementingText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IncrementingText.h; path = Classes/IncrementingText.h; sourceTree = "<group>"; };
+		AE48ED211543289100747910 /* IncrementingText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IncrementingText.m; path = Classes/IncrementingText.m; sourceTree = "<group>"; };
+		AE48ED23154328B600747910 /* IncrementingTextDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IncrementingTextDelegate.h; path = Classes/IncrementingTextDelegate.h; sourceTree = "<group>"; };
+		AE48ED2415432B6000747910 /* Ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ding.mp3; sourceTree = "<group>"; };
+		AE48ED26154351EB00747910 /* Thud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Thud.mp3; sourceTree = "<group>"; };
+		AE48ED27154351EB00747910 /* Wah Wah.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Wah Wah.mp3"; sourceTree = "<group>"; };
+		AE48ED2A15435E1700747910 /* Bubble Badge 00-00.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Badge 00-00.mp3"; sourceTree = "<group>"; };
+		AE48ED2B15435E1700747910 /* Clam Badge 00-00.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Clam Badge 00-00.mp3"; sourceTree = "<group>"; };
+		AE48ED2C15435E1700747910 /* Note Badge 00-00.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Note Badge 00-00.mp3"; sourceTree = "<group>"; };
+		AE48ED301543648900747910 /* Success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Success.mp3; sourceTree = "<group>"; };
 		AE4D78C3151F6BAF00B906ED /* CDAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDAudioManager.h; path = libs/CocosDenshion/CDAudioManager.h; sourceTree = "<group>"; };
 		AE4D78C4151F6BAF00B906ED /* CDAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDAudioManager.m; path = libs/CocosDenshion/CDAudioManager.m; sourceTree = "<group>"; };
 		AE4D78C5151F6BAF00B906ED /* CDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDConfig.h; path = libs/CocosDenshion/CDConfig.h; sourceTree = "<group>"; };
@@ -1055,6 +1078,9 @@
 		04B0D4B91501D64000A4A2B8 /* Game Elements */ = {
 			isa = PBXGroup;
 			children = (
+				AE48ED23154328B600747910 /* IncrementingTextDelegate.h */,
+				AE48ED201543289100747910 /* IncrementingText.h */,
+				AE48ED211543289100747910 /* IncrementingText.m */,
 				DAB1208D14C3099B009B60FB /* Keyboard.h */,
 				DAB1208E14C3099B009B60FB /* Keyboard.m */,
 				DAB1209614C30B87009B60FB /* KeyboardDelegate.h */,
@@ -1080,6 +1106,8 @@
 				DA2D6E161512E70F00BA02C0 /* Light.m */,
 				AE7944B01527EF31009B0D09 /* Text.h */,
 				AE7944B11527EF31009B0D09 /* Text.m */,
+				AE48ED1A1543142000747910 /* Badge.h */,
+				AE48ED1B1543142000747910 /* Badge.m */,
 			);
 			name = "Game Elements";
 			sourceTree = "<group>";
@@ -1225,6 +1253,10 @@
 		04DE51B614F7492C00F8E45C /* Sound Effects */ = {
 			isa = PBXGroup;
 			children = (
+				AE48ED301543648900747910 /* Success.mp3 */,
+				AE48ED26154351EB00747910 /* Thud.mp3 */,
+				AE48ED27154351EB00747910 /* Wah Wah.mp3 */,
+				AE48ED2415432B6000747910 /* Ding.mp3 */,
 				AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */,
 				DA2D6E361514C24000BA02C0 /* Clam Hit.m4a */,
 				04DE51DB14F895C500F8E45C /* Menu Sound A1.caf */,
@@ -1350,6 +1382,7 @@
 		AE7774281522823500CE9332 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				AE48ED1E1543156700747910 /* Star.png */,
 				0458994A153722DB00C4B26F /* Staff-ipadhd.png */,
 				0458994B153722DB00C4B26F /* Staff.png */,
 				AE7774291522823500CE9332 /* C Note-ipadhd.png */,
@@ -1379,6 +1412,9 @@
 		AE78EA78152BF7DC00982DC2 /* Speech Audio */ = {
 			isa = PBXGroup;
 			children = (
+				AE48ED2A15435E1700747910 /* Bubble Badge 00-00.mp3 */,
+				AE48ED2B15435E1700747910 /* Clam Badge 00-00.mp3 */,
+				AE48ED2C15435E1700747910 /* Note Badge 00-00.mp3 */,
 				AE781A0C153E420900067B48 /* Tutorial Mnemonic 00-00.mp3 */,
 				AE7819B2153E40A100067B48 /* Easy Tutorial 00-00.mp3 */,
 				AE7819B3153E40A100067B48 /* Easy Tutorial 00-01.mp3 */,
@@ -2198,6 +2234,14 @@
 				AE781A0B153E40A100067B48 /* Tutorial Staff 00-00.mp3 in Resources */,
 				AE781A0D153E420900067B48 /* Tutorial Mnemonic 00-00.mp3 in Resources */,
 				044791821542DC8C00817F20 /* Test.plist in Resources */,
+				AE48ED1F1543156700747910 /* Star.png in Resources */,
+				AE48ED2515432B6000747910 /* Ding.mp3 in Resources */,
+				AE48ED28154351EB00747910 /* Thud.mp3 in Resources */,
+				AE48ED29154351EB00747910 /* Wah Wah.mp3 in Resources */,
+				AE48ED2D15435E1700747910 /* Bubble Badge 00-00.mp3 in Resources */,
+				AE48ED2E15435E1700747910 /* Clam Badge 00-00.mp3 in Resources */,
+				AE48ED2F15435E1700747910 /* Note Badge 00-00.mp3 in Resources */,
+				AE48ED311543648900747910 /* Success.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2351,6 +2395,8 @@
 				AE7944B21527EF31009B0D09 /* Text.m in Sources */,
 				AE7A5DF71539FDAC00A77A8C /* KeyboardLetter.m in Sources */,
 				0447917F1542D8A400817F20 /* ScoreScene.m in Sources */,
+				AE48ED1C1543142000747910 /* Badge.m in Sources */,
+				AE48ED221543289100747910 /* IncrementingText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

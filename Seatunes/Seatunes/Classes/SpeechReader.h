@@ -31,6 +31,8 @@
     
     BOOL isClickable_;
     
+    BOOL internalClickFlag_;
+    
     SpeechType currentSpeechType_;
     
     SpeechType lastSpeechType_;
