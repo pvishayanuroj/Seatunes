@@ -18,13 +18,13 @@
 #import "GameLogicE.h"
 #import "GameLogicF.h"
 #import "MusicNoteTutorial.h"
-#import "ScoreLayer.h"
 #import "Menu.h"
 #import "Button.h"
 #import "Utility.h"
 #import "DataUtility.h"
 #import "GameScene.h"
 #import "PlayMenuScene.h"
+#import "ScoreScene.h"
 
 @implementation GameLayer
 
@@ -182,11 +182,6 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     [self menuSelection:button];
 }
 
-- (void) scoreLayerMenuItemSelected:(Button *)button
-{
-    [self menuSelection:button];    
-}
-
 #pragma mark - Helper Methods
 
 - (void) menuSelection:(Button *)button
@@ -252,17 +247,10 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     sideMenuOpen_ = NO;    
 }
 
-- (void) showScoreMenu:(ScoreInfo)scoreInfo
+- (void) showScoreMenu:(ScoreInfo)scoreInfo 
 {
-    sideMenuButton_.isClickable = NO;
-    
-    ScoreLayer *scoreLayer = [ScoreLayer scoreLayer:scoreInfo];
-    scoreLayer.delegate = self;
-    scoreLayer.position = ccp(GL_SCOREMENU_X, GL_SCOREMENU_Y);
-    [self addChild:scoreLayer];
-    
-    CCActionInterval *move = [CCMoveBy actionWithDuration:GL_SCOREMENU_MOVE_TIME position:ccp(GL_SCOREMENU_X, -GL_SCOREMENU_Y)];
-    [scoreLayer runAction:[CCSequence actions:move, nil]];    
+    CCScene *scene = [ScoreScene scoreScene:scoreInfo songName:songName_ nextSong:@""];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                            
 }
 
 - (void) pauseGame

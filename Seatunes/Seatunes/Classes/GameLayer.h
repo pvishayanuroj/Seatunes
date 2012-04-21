@@ -12,7 +12,6 @@
 #import "MenuDelegate.h"
 #import "ButtonDelegate.h"
 #import "GameLogicDelegate.h"
-#import "ScoreLayerDelegate.h"
 
 @class Keyboard;
 @class Instructor;
@@ -22,7 +21,7 @@
 @class ScoreLayer;
 @class NoteGenerator;
 
-@interface GameLayer : CCLayer <MenuDelegate, ButtonDelegate, GameLogicDelegate, ScoreLayerDelegate> {
+@interface GameLayer : CCLayer <MenuDelegate, ButtonDelegate, GameLogicDelegate> {
  
     GameLogic *gameLogic_;
     

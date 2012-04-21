@@ -98,8 +98,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "110"
          endingLineNumber = "110"
-         landmarkName = "@implementation SpeechReader"
-         landmarkType = "3">
+         landmarkName = "-nextDialogue"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"

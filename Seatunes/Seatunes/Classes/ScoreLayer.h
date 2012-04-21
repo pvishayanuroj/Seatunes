@@ -10,18 +10,25 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "ButtonDelegate.h"
-#import "ScoreLayerDelegate.h"
+
+@class Instructor;
+@class SpeechReader;
 
 @interface ScoreLayer : CCLayer <ButtonDelegate> {
     
-    id <ScoreLayerDelegate> delegate_;
+    Instructor *instructor_;
     
+    SpeechReader *reader_;    
+    
+    DifficultyType difficulty_;    
+    
+    NSString *songName_;
+    
+    NSString *nextSong_;
 }
 
-@property (nonatomic, assign) id <ScoreLayerDelegate> delegate;
++ (id) scoreLayer:(ScoreInfo)scoreInfo songName:(NSString *)songName nextSong:(NSString *)nextSong;
 
-+ (id) scoreLayer:(ScoreInfo)scoreInfo;
-
-- (id) initScoreLayer:(ScoreInfo)scoreInfo;
+- (id) initScoreLayer:(ScoreInfo)scoreInfo songName:(NSString *)songName nextSong:(NSString *)nextSong;
 
 @end

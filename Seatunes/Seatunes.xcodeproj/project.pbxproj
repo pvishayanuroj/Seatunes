@@ -18,6 +18,8 @@
 		0431B78214FF2080005D6FBA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431B78114FF2080005D6FBA /* Reachability.m */; };
 		0431B78414FF26EF005D6FBA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0431B78314FF26EF005D6FBA /* SystemConfiguration.framework */; };
 		0431B78714FF2C97005D6FBA /* LoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431B78614FF2C97005D6FBA /* LoadingIndicator.m */; };
+		0447917F1542D8A400817F20 /* ScoreScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447917E1542D8A400817F20 /* ScoreScene.m */; };
+		044791821542DC8C00817F20 /* Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044791811542DC8C00817F20 /* Test.plist */; };
 		0458994C153722DB00C4B26F /* Staff-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0458994A153722DB00C4B26F /* Staff-ipadhd.png */; };
 		0458994D153722DB00C4B26F /* Staff.png in Resources */ = {isa = PBXBuildFile; fileRef = 0458994B153722DB00C4B26F /* Staff.png */; };
 		048508D714D4D4DC008BBA10 /* PlayMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 048508D614D4D4DC008BBA10 /* PlayMenuScene.m */; };
@@ -424,6 +426,9 @@
 		0431B78314FF26EF005D6FBA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0431B78514FF2C97005D6FBA /* LoadingIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingIndicator.h; path = Classes/LoadingIndicator.h; sourceTree = "<group>"; };
 		0431B78614FF2C97005D6FBA /* LoadingIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingIndicator.m; path = Classes/LoadingIndicator.m; sourceTree = "<group>"; };
+		0447917D1542D8A400817F20 /* ScoreScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreScene.h; path = Classes/ScoreScene.h; sourceTree = "<group>"; };
+		0447917E1542D8A400817F20 /* ScoreScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreScene.m; path = Classes/ScoreScene.m; sourceTree = "<group>"; };
+		044791811542DC8C00817F20 /* Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Test.plist; sourceTree = "<group>"; };
 		0458994A153722DB00C4B26F /* Staff-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Staff-ipadhd.png"; sourceTree = "<group>"; };
 		0458994B153722DB00C4B26F /* Staff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Staff.png; sourceTree = "<group>"; };
 		048508D514D4D4DC008BBA10 /* PlayMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMenuScene.h; path = Classes/PlayMenuScene.h; sourceTree = "<group>"; };
@@ -502,7 +507,6 @@
 		04D3E45B14F2025300FB0928 /* Dialogue Font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dialogue Font.png"; sourceTree = "<group>"; };
 		04D3E45E14F2DECA00FB0928 /* StarfishButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarfishButton.h; path = Classes/StarfishButton.h; sourceTree = "<group>"; };
 		04D3E45F14F2DECC00FB0928 /* StarfishButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarfishButton.m; path = Classes/StarfishButton.m; sourceTree = "<group>"; };
-		04D3E46314F2FCE100FB0928 /* ScoreLayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreLayerDelegate.h; path = Classes/ScoreLayerDelegate.h; sourceTree = "<group>"; };
 		04D3E46414F358B000FB0928 /* PackMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PackMenuItem.h; path = Classes/PackMenuItem.h; sourceTree = "<group>"; };
 		04D3E46514F358B200FB0928 /* PackMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PackMenuItem.m; path = Classes/PackMenuItem.m; sourceTree = "<group>"; };
 		04DE51B914F7492C00F8E45C /* Applause 2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Applause 2.caf"; sourceTree = "<group>"; };
@@ -1095,9 +1099,10 @@
 				042FCA4614EA082100E34155 /* DifficultyMenuScene.m */,
 				042FCA4814EA084000E34155 /* BuyMenuScene.h */,
 				042FCA4914EA084000E34155 /* BuyMenuScene.m */,
+				0447917D1542D8A400817F20 /* ScoreScene.h */,
+				0447917E1542D8A400817F20 /* ScoreScene.m */,
 				042FCA9D14F14CE700E34155 /* ScoreLayer.h */,
 				042FCA9E14F14CEA00E34155 /* ScoreLayer.m */,
-				04D3E46314F2FCE100FB0928 /* ScoreLayerDelegate.h */,
 				AE7A86BB151E0275007CA48C /* FreePlayScene.h */,
 				AE7A86BC151E0275007CA48C /* FreePlayScene.m */,
 				AE7A86C2151E068D007CA48C /* FreePlayLayer.h */,
@@ -1437,6 +1442,7 @@
 		AE7A86B1151DFD22007CA48C /* Exercise Pack */ = {
 			isa = PBXGroup;
 			children = (
+				044791811542DC8C00817F20 /* Test.plist */,
 				AE7A86B2151DFD23007CA48C /* Arpeggios.plist */,
 				AE7A86B3151DFD23007CA48C /* Scales.plist */,
 				AE7A86B4151DFD23007CA48C /* Steps.plist */,
@@ -2191,6 +2197,7 @@
 				AE781A0A153E40A100067B48 /* Tutorial Prompt 00-00.mp3 in Resources */,
 				AE781A0B153E40A100067B48 /* Tutorial Staff 00-00.mp3 in Resources */,
 				AE781A0D153E420900067B48 /* Tutorial Mnemonic 00-00.mp3 in Resources */,
+				044791821542DC8C00817F20 /* Test.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2343,6 +2350,7 @@
 				AE7944AF152758AC009B0D09 /* MusicNoteTutorial.m in Sources */,
 				AE7944B21527EF31009B0D09 /* Text.m in Sources */,
 				AE7A5DF71539FDAC00A77A8C /* KeyboardLetter.m in Sources */,
+				0447917F1542D8A400817F20 /* ScoreScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

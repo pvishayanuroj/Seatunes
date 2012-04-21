@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Song Name</key>
+	<string>Test</string>
+	<key>Type</key>
+	<string>Song</string>
+	<key>Difficulty</key>
+	<string>Easy</string>
+	<key>Speed</key>
+	<integer>0</integer>
+	<key>Chords</key>
+	<false/>
+	<key>Notes</key>
+	<array>
+		<array>
+			<string>C4</string>
+			<string>Blank</string>
+			<string>E4</string>
+		</array>
+	</array>
+</dict>
+</plist>
