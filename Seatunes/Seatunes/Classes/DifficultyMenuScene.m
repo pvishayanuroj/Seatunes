@@ -18,9 +18,9 @@
 static const CGFloat DMS_TITLE_X = 512.0f;
 static const CGFloat DMS_TITLE_Y = 650.0f;
 
-static const CGFloat DMS_TEXT_Y = 530.0f;
-static const CGFloat DMS_BUTTON_Y = 420.0f;
-static const CGFloat DMS_BUTTON2_Y = 430.0f;
+static const CGFloat DMS_TEXT_Y = 400.0f;
+static const CGFloat DMS_BUTTON_Y = 500.0f;
+static const CGFloat DMS_BUTTON2_Y = 490.0f;
 static const CGFloat DMS_BUTTON_X = 512.0f;
 static const CGFloat DMS_BUTTON_PADDING = 200.0f;
 
@@ -57,13 +57,13 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
         [self addChild:menuFrame];        
         
         // Add text
-        CCLabelBMFont *titleText = [CCLabelBMFont labelWithString:@"Choose Play Mode" fntFile:@"MenuFont.fnt"];
+        CCLabelBMFont *titleText = [CCLabelBMFont labelWithString:@"Choose Play Mode" fntFile:@"BoldMenuFont.fnt"];
         titleText.position = ccp(DMS_TITLE_X, DMS_TITLE_Y);
         [self addChild:titleText];
         
-        easyText_ = [[CCLabelBMFont labelWithString:@"Novice" fntFile:@"MenuFont.fnt"] retain];
-        mediumText_ = [[CCLabelBMFont labelWithString:@"Pro" fntFile:@"MenuFont.fnt"] retain];
-        hardText_ = [[CCLabelBMFont labelWithString:@"Master" fntFile:@"MenuFont.fnt"] retain];        
+        easyText_ = [[CCLabelBMFont labelWithString:@"Bubble" fntFile:@"MenuFont.fnt"] retain];
+        mediumText_ = [[CCLabelBMFont labelWithString:@"Clam" fntFile:@"MenuFont.fnt"] retain];
+        hardText_ = [[CCLabelBMFont labelWithString:@"Note" fntFile:@"MenuFont.fnt"] retain];        
         
         easyText_.position = ccp(DMS_BUTTON_X - DMS_BUTTON_PADDING, DMS_TEXT_Y);
         mediumText_.position = ccp(DMS_BUTTON_X, DMS_TEXT_Y);

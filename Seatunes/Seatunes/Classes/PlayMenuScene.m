@@ -73,7 +73,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         menuFrame.position = ccp(PMS_MENU_FRAME_X, PMS_MENU_FRAME_Y);
         [self addChild:menuFrame];
         
-        packTitle_ = [[CCLabelBMFont labelWithString:@"" fntFile:@"MenuFont.fnt"] retain];
+        packTitle_ = [[CCLabelBMFont labelWithString:@"" fntFile:@"BoldMenuFont.fnt"] retain];
         packTitle_.position = ccp(PMS_PACK_TITLE_X, PMS_PACK_TITLE_Y);
         [self addChild:packTitle_];
         

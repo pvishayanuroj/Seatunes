@@ -273,6 +273,10 @@
 		AE7A86C4151E068E007CA48C /* FreePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7A86C3151E068D007CA48C /* FreePlayLayer.m */; };
 		AE91464315294004007E75F9 /* Music Tutorial.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE91464215294004007E75F9 /* Music Tutorial.plist */; };
 		AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */; };
+		AEE3D628154445240099ADC8 /* BoldMenuFont-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D624154445240099ADC8 /* BoldMenuFont-ipadhd.fnt */; };
+		AEE3D629154445240099ADC8 /* BoldMenuFont-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D625154445240099ADC8 /* BoldMenuFont-ipadhd.png */; };
+		AEE3D62A154445240099ADC8 /* BoldMenuFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D626154445240099ADC8 /* BoldMenuFont.fnt */; };
+		AEE3D62B154445240099ADC8 /* BoldMenuFont.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D627154445240099ADC8 /* BoldMenuFont.png */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
 		DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B714D458B800D1437B /* MainMenuScene.m */; };
@@ -730,6 +734,10 @@
 		AE91464215294004007E75F9 /* Music Tutorial.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Music Tutorial.plist"; sourceTree = "<group>"; };
 		AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Muted.m4a"; sourceTree = "<group>"; };
 		AED018C61538ECAD0090CEE1 /* AudioManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudioManagerDelegate.h; path = Classes/AudioManagerDelegate.h; sourceTree = "<group>"; };
+		AEE3D624154445240099ADC8 /* BoldMenuFont-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BoldMenuFont-ipadhd.fnt"; sourceTree = "<group>"; };
+		AEE3D625154445240099ADC8 /* BoldMenuFont-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoldMenuFont-ipadhd.png"; sourceTree = "<group>"; };
+		AEE3D626154445240099ADC8 /* BoldMenuFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BoldMenuFont.fnt; sourceTree = "<group>"; };
+		AEE3D627154445240099ADC8 /* BoldMenuFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoldMenuFont.png; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
 		DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayViewController.m; path = Classes/CocosOverlayViewController.m; sourceTree = "<group>"; };
 		DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayScrollView.h; path = Classes/CocosOverlayScrollView.h; sourceTree = "<group>"; };
@@ -1142,6 +1150,10 @@
 		04D331C814E6DDD600DD82D4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				AEE3D624154445240099ADC8 /* BoldMenuFont-ipadhd.fnt */,
+				AEE3D625154445240099ADC8 /* BoldMenuFont-ipadhd.png */,
+				AEE3D626154445240099ADC8 /* BoldMenuFont.fnt */,
+				AEE3D627154445240099ADC8 /* BoldMenuFont.png */,
 				AE792BA6153B233A002A8A18 /* Dialogue Font-ipadhd.fnt */,
 				AE792BA7153B233A002A8A18 /* Dialogue Font-ipadhd.png */,
 				AE78F3CD1523DABF00D970B5 /* MenuFont-ipadhd.fnt */,
@@ -2242,6 +2254,10 @@
 				AE48ED2E15435E1700747910 /* Clam Badge 00-00.mp3 in Resources */,
 				AE48ED2F15435E1700747910 /* Note Badge 00-00.mp3 in Resources */,
 				AE48ED311543648900747910 /* Success.mp3 in Resources */,
+				AEE3D628154445240099ADC8 /* BoldMenuFont-ipadhd.fnt in Resources */,
+				AEE3D629154445240099ADC8 /* BoldMenuFont-ipadhd.png in Resources */,
+				AEE3D62A154445240099ADC8 /* BoldMenuFont.fnt in Resources */,
+				AEE3D62B154445240099ADC8 /* BoldMenuFont.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

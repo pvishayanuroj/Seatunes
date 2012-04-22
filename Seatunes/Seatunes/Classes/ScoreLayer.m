@@ -69,7 +69,7 @@ static const CGFloat SL_MENU_Y = 420.0f;
         [self addChild:background];              
         
         CCSprite *frame = [CCSprite spriteWithFile:@"Score Parchment.png"];
-        frame.position = ccp(0, 0);
+        frame.position = ccp(35, 40);
         frame.anchorPoint = CGPointZero;
         [self addChild:frame];
         
@@ -82,7 +82,8 @@ static const CGFloat SL_MENU_Y = 420.0f;
         reader_.position = ccp(SL_INSTRUCTOR_X + SL_READER_OFFSET_X, SL_INSTRUCTOR_Y + SL_READER_OFFSET_Y);
         [self addChild:reader_];           
         
-        CCLabelBMFont *songText = [CCLabelBMFont labelWithString:songName fntFile:@"MenuFont.fnt"];
+        NSString *titleText = [NSString stringWithFormat:@"%@ Score", songName];
+        CCLabelBMFont *songText = [CCLabelBMFont labelWithString:titleText fntFile:@"BoldMenuFont.fnt"];
         songText.position = ccp(SL_TITLE_LABEL_X, SL_TITLE_LABEL_Y);
         [self addChild:songText];
         
