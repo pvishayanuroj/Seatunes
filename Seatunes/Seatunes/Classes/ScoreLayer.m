@@ -346,6 +346,9 @@ static const CGFloat SL_MENU_Y = 420.0f;
     [[AudioManager audioManager] playSoundEffect:kSuccess];
     CCActionInterval *fadeIn = [CCFadeIn actionWithDuration:1.5f];
     [sprite runAction:fadeIn];
+    
+    particles_ = [[self createPS] retain];
+    [self addChild:particles_];
 }
 
 - (CCParticleSystem *) createBadgePS
@@ -399,7 +402,7 @@ static const CGFloat SL_MENU_Y = 420.0f;
     ///////**** Assignment Texture Filename!  ****///////
     CCTexture2D *texture=[[CCTextureCache sharedTextureCache] addImage:@"Star.png"];
     particle.texture=texture;
-    particle.emissionRate=200.00;
+    particle.emissionRate=400.00;
     particle.angle=90.0;
     particle.angleVar=20.0;
     ccBlendFunc blendFunc={GL_SRC_ALPHA,GL_SRC_ALPHA_SATURATE};
@@ -426,7 +429,7 @@ static const CGFloat SL_MENU_Y = 420.0f;
     particle.tangentialAccel= 0;
     particle.tangentialAccelVar= 0;
     particle.totalParticles=700;
-    particle.life=3.50;
+    particle.life=6.50;
     particle.lifeVar=1.00;
     particle.startSpin=0.00;
     particle.startSpinVar=0.00;
