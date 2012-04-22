@@ -57,6 +57,10 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 
 - (void) dealloc
 {
+    NSLog(@"Speech Reader dealloc'd");
+    
+    [[AudioManager audioManager] stopNarration];       
+    
     [sprite_ release];
     [data_ release];
     
@@ -124,7 +128,17 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
         [text_ setString:line];
         
         // Play the audio
-        [[AudioManager audioManager] playNarration:speechType path:path delegate:self];
+        CCActionInterval *delay = [CCDelayTime actionWithDuration:1.0f];
+        CCActionInstant *audio = [CCCallBlock actionWithBlock:^{
+            [[AudioManager audioManager] playNarration:speechType path:path delegate:self];
+        }];
+        CCActionInstant *notify = [CCCallBlock actionWithBlock:^{
+            if (delegate_ && [delegate_ respondsToSelector:@selector(narrationStarting:)]) {
+                [delegate_ narrationStarting:speechType];
+            }
+        }];        
+        [self runAction:[CCSequence actions:delay, audio, notify, nil]];
+
         
         currentSpeechType_ = speechType;
         currentSpeechIndex_++;
@@ -191,13 +205,14 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
         [[AudioManager audioManager] stopNarration];   
         
         // Check delegate wants to be notified about clicks
-        if (delegate_ && [delegate_ respondsToSelector:@selector(bubbleClicked:)]) {
-            if (currentSpeechIndex_ > 0) {             
-                [delegate_ bubbleClicked:currentSpeechType_];
-            }
+        if (delegate_ && [delegate_ respondsToSelector:@selector(bubbleClicked:)]) {          
+            [delegate_ bubbleClicked:currentSpeechType_];
         }
         // Otherwise, just automatically go on to the next dialogue
         else {
+            if (delegate_ && [delegate_ respondsToSelector:@selector(narrationStopped:)]) {          
+                [delegate_ narrationStopped:currentSpeechType_];
+            }            
             [self nextDialogue];
         }
     }

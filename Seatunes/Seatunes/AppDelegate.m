@@ -125,7 +125,7 @@
     ScoreInfo score;
     score.difficulty = kDifficultyEasy;
     score.notesHit = 9;
-    score.notesMissed = 1;
+    score.notesMissed = 10;
     [[CCDirector sharedDirector] runWithScene:[ScoreScene scoreScene:score songName:@"Twinkle Twinkle" nextSong:@""]];
     
     //[DataUtility manager];

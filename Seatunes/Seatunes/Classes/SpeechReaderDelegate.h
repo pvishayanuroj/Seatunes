@@ -12,6 +12,10 @@
 
 @optional
 
+- (void) narrationStarting:(SpeechType)speechType;
+
+- (void) narrationStopped:(SpeechType)speechType;
+
 - (void) speechComplete:(SpeechType)speechType;
 
 - (void) bubbleComplete:(SpeechType)speechType;

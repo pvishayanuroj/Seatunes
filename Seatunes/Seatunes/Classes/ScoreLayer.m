@@ -112,7 +112,7 @@ static const CGFloat SL_MENU_Y = 420.0f;
         
         // If first time seeing score screen
         if ([[DataUtility manager] isFirstPlay]) {
-            [reader_ loadSingleDialogue:kSpeechScoreExplanation];
+            [reader_ loadSingleDialogue:kSpeechScoreExplanation];           
         }
         else {
             [self placeIncrementingPercentage];
@@ -128,6 +128,7 @@ static const CGFloat SL_MENU_Y = 420.0f;
     [songName_ release];
     [nextSong_ release];
     [particles_ release];
+    [reader_ release];
     
     [super dealloc];
 }
@@ -156,8 +157,15 @@ static const CGFloat SL_MENU_Y = 420.0f;
     }
 }
 
+- (void) narrationStarting:(SpeechType)speechType
+{
+    [instructor_ showTalk];     
+}
+
 - (void) speechComplete:(SpeechType)speechType
 {
+    [instructor_ resetIdleFrame];
+    
     switch (speechType) {
         case kSpeechScoreExplanation:
             [self placeIncrementingPercentage];

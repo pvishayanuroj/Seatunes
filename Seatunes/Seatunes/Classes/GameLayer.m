@@ -70,11 +70,11 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         
         [sideMenu_ addMenuBackground:@"Side Parchment.png" pos:ccp(0, -140.0f)];
         
-        Button *nextButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Next Button.png" scale:0.9f];
+        //Button *nextButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Next Button.png" scale:0.9f];
         Button *replayButton = [ScaledImageButton scaledImageButton:kButtonReplay image:@"Restart Button.png" scale:0.9f];
         Button *menuButton = [ScaledImageButton scaledImageButton:kButtonMenu image:@"Home Button.png" scale:0.9f];        
         
-        [sideMenu_ addMenuItem:nextButton];
+        //[sideMenu_ addMenuItem:nextButton];
         [sideMenu_ addMenuItem:replayButton];
         [sideMenu_ addMenuItem:menuButton];        
 

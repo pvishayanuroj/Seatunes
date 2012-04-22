@@ -159,8 +159,20 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
 
 #pragma mark - Delegate Methods
 
+- (void) narrationStarting:(SpeechType)speechType
+{
+    [instructor_ showTalk];     
+}
+
+- (void) narrationStopped:(SpeechType)speechType
+{
+    [instructor_ resetIdleFrame];    
+}
+
 - (void) speechComplete:(SpeechType)speechType
 {
+    [instructor_ resetIdleFrame];
+    
     if (speechType == kSpeechTutorialPrompt) {
         [self showPrompt];
     }

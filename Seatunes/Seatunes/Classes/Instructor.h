@@ -21,6 +21,8 @@
     
     CCAction *idleAnimation_;
     
+    CCAction *talkAnimation_;
+    
     CCAction *wrongAnimation_;
     
     CCAction *singingAnimation_;
@@ -34,10 +36,14 @@
 
 - (void) initAnimations;
 
+- (void) showTalk;
+
 - (void) showIdle;
 
 - (void) showWrongNote;
 
 - (void) showSing;
+
+- (void) resetIdleFrame;
 
 @end

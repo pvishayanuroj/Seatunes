@@ -115,13 +115,22 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
 
 #pragma mark - Delegate Methods
 
+- (void) narrationStarting:(SpeechType)speechType
+{
+    [instructor_ showTalk];     
+}
+
 - (void) bubbleComplete:(SpeechType)speechType
 {
+    [instructor_ resetIdleFrame];
+    
     [self eventComplete:speechType];
 }
 
 - (void) bubbleClicked:(SpeechType)speechType
 {
+    [instructor_ resetIdleFrame];    
+    
     [self eventComplete:speechType];    
 }
 

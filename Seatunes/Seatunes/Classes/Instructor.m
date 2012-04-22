@@ -72,11 +72,21 @@
     wrongAnimation_ = [[CCAnimate actionWithAnimation:animation] retain];    
 }
 
+- (void) showTalk
+{
+    [sprite_ stopAllActions];
+    
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:0.5f];
+    CCActionInterval *talk = [CCRepeat actionWithAction:(CCFiniteTimeAction *)idleAnimation_ times:3];
+    CCActionInterval *action = [CCSequence actions:talk, delay, nil];
+    [sprite_ runAction:[CCRepeatForever actionWithAction:action]];
+}
+
 - (void) showIdle
 {
     [sprite_ stopAllActions];
-    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(resetIdleFrame)];
     
+    CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(resetIdleFrame)];
     [sprite_ runAction:[CCSequence actions:(CCFiniteTimeAction *)idleAnimation_, done, nil]];
 }
 
@@ -98,6 +108,8 @@
 
 - (void) resetIdleFrame
 {
+    [sprite_ stopAllActions];
+    
     NSString *spriteFrameName = [NSString stringWithFormat:@"%@ Idle 01.png", name_];
     [sprite_ setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:spriteFrameName]];
 }
