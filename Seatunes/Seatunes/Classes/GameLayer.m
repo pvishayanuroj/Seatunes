@@ -142,6 +142,9 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 
 - (void) exerciseComplete
 {
+    NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty_];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];    
+    
     CCScene *scene = [PlayMenuScene node];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];     
 }

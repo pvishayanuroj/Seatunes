@@ -84,7 +84,7 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
         }        
         
         // Check if hard difficulty has ever been played. If not, prompt to play tutorial
-        if ([[DataUtility manager] isFirstPlayForDifficulty:kDifficultyHard]) {
+        if ([[DataUtility manager] isFirstPlayForDifficulty:kDifficultyMusicNoteTutorial]) {
             [dialogue addObject:[NSNumber numberWithInteger:kSpeechTutorialPrompt]];
         }
         else {

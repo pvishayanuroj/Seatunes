@@ -248,23 +248,7 @@
 
 + (NSString *) difficultyPlayedKeyFromEnum:(DifficultyType)difficulty
 {
-    NSString *name = @"";
-    
-    switch (difficulty) {
-        case kDifficultyEasy:
-            name = @"Easy Played"; 
-            break;
-        case kDifficultyMedium:
-            name = @"Medium Played";
-            break;
-        case kDifficultyHard:
-            name = @"Hard Played";
-            break;
-        default:
-            break;
-    }
-    
-    return name;
+    return [NSString stringWithFormat:@"%@ Played", [self difficultyFromEnum:difficulty]];    
 }
 
 + (NSString *) difficultyFromEnum:(DifficultyType)difficulty
@@ -281,6 +265,9 @@
         case kDifficultyHard:
             name = @"Hard";
             break;
+        case kDifficultyMusicNoteTutorial:
+            name = @"Music Note Tutorial";
+            break;            
         default:
             break;
     }    

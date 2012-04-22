@@ -14,7 +14,7 @@
 @implementation SpeechReader
 
 static const CGFloat SR_BUBBLE_OFFSET_X = 210.0f;
-static const CGFloat SR_BUBBLE_OFFSET_Y = -50.0f;
+static const CGFloat SR_BUBBLE_OFFSET_Y = -65.0f;
 static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 
 @synthesize isClickable = isClickable_;

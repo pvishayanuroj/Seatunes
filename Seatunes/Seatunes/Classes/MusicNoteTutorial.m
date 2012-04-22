@@ -91,6 +91,7 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
     NSMutableArray *dialogue = [NSMutableArray arrayWithCapacity:20];
     
     [dialogue addObject:[NSNumber numberWithInteger:kTutorialIntroduction]];
+    [dialogue addObject:[NSNumber numberWithInteger:kTutorialIntroduction2]];    
     [dialogue addObject:[NSNumber numberWithInteger:kTutorialStaff]];
     [dialogue addObject:[NSNumber numberWithInteger:kTutorialNotes]];
     [dialogue addObject:[NSNumber numberWithInteger:kTutorialNotes2]];
@@ -336,9 +337,12 @@ static const CGFloat MNT_LETTER_SHOW_DELAY = 1.5f;
 {
     switch (speechType) {
         case kTutorialIntroduction:
-            [staff_ blinkStaff:YES];
             [reader_ nextDialogue];
             break;
+        case kTutorialIntroduction2:
+            [staff_ blinkStaff:YES];
+            [reader_ nextDialogue];
+            break;            
         case kTutorialStaff:
             [staff_ blinkStaff:NO];
             [reader_ nextDialogue];

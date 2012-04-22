@@ -128,6 +128,7 @@ typedef enum {
     kSpeechNoteBadge,
     kSpeechTutorialPrompt,
     kTutorialIntroduction,
+    kTutorialIntroduction2,    
     kTutorialStaff,
     kTutorialNotes,
     kTutorialNotes2,

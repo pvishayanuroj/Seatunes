@@ -128,6 +128,11 @@
 		AE5839A61517FC240097EDD5 /* GameLogicF.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5839A51517FC240097EDD5 /* GameLogicF.m */; };
 		AE5F926715229F140024F0BC /* sheet01-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE5F926415229F140024F0BC /* sheet01-ipadhd.plist */; };
 		AE5F926815229F140024F0BC /* sheet01-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5F926515229F140024F0BC /* sheet01-ipadhd.png */; };
+		AE6E6DE61544994A008AD9AD /* Tutorial Introduction 2 00-00.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE6E6DE51544994A008AD9AD /* Tutorial Introduction 2 00-00.mp3 */; };
+		AE7569E91544A59700B072E1 /* Checkmark-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7569E71544A59700B072E1 /* Checkmark-ipadhd.png */; };
+		AE7569EA1544A59700B072E1 /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7569E81544A59700B072E1 /* Checkmark.png */; };
+		AE7569EE1544A8AA00B072E1 /* Checkmark Unselected-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7569EC1544A8AA00B072E1 /* Checkmark Unselected-ipadhd.png */; };
+		AE7569EF1544A8AA00B072E1 /* Checkmark Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7569ED1544A8AA00B072E1 /* Checkmark Unselected.png */; };
 		AE7774331522823500CE9332 /* Coral Foreground-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7773E41522823500CE9332 /* Coral Foreground-ipadhd.png */; };
 		AE7774341522823500CE9332 /* Coral Foreground.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7773E51522823500CE9332 /* Coral Foreground.png */; };
 		AE7774351522823500CE9332 /* Main Parchment-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7773E61522823500CE9332 /* Main Parchment-ipadhd.png */; };
@@ -277,6 +282,11 @@
 		AEE3D629154445240099ADC8 /* BoldMenuFont-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D625154445240099ADC8 /* BoldMenuFont-ipadhd.png */; };
 		AEE3D62A154445240099ADC8 /* BoldMenuFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D626154445240099ADC8 /* BoldMenuFont.fnt */; };
 		AEE3D62B154445240099ADC8 /* BoldMenuFont.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D627154445240099ADC8 /* BoldMenuFont.png */; };
+		AEE3D631154480610099ADC8 /* Lesson Pack Selected-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D62D154480610099ADC8 /* Lesson Pack Selected-ipadhd.png */; };
+		AEE3D632154480610099ADC8 /* Lesson Pack Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D62E154480610099ADC8 /* Lesson Pack Selected.png */; };
+		AEE3D633154480610099ADC8 /* Lesson Pack Unselected-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D62F154480610099ADC8 /* Lesson Pack Unselected-ipadhd.png */; };
+		AEE3D634154480610099ADC8 /* Lesson Pack Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D630154480610099ADC8 /* Lesson Pack Unselected.png */; };
+		AEE3D636154480DD0099ADC8 /* Lesson Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D635154480DD0099ADC8 /* Lesson Pack.plist */; };
 		DA08E0A614CC889B00D1437B /* CocosOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */; };
 		DA08E0A914CC88F100D1437B /* CocosOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0A814CC88EE00D1437B /* CocosOverlayScrollView.m */; };
 		DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B714D458B800D1437B /* MainMenuScene.m */; };
@@ -583,6 +593,11 @@
 		AE5839A51517FC240097EDD5 /* GameLogicF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogicF.m; path = Classes/GameLogicF.m; sourceTree = "<group>"; };
 		AE5F926415229F140024F0BC /* sheet01-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "sheet01-ipadhd.plist"; path = "Resources/Spritesheets/sheet01-ipadhd.plist"; sourceTree = "<group>"; };
 		AE5F926515229F140024F0BC /* sheet01-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sheet01-ipadhd.png"; path = "Resources/Spritesheets/sheet01-ipadhd.png"; sourceTree = "<group>"; };
+		AE6E6DE51544994A008AD9AD /* Tutorial Introduction 2 00-00.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Tutorial Introduction 2 00-00.mp3"; sourceTree = "<group>"; };
+		AE7569E71544A59700B072E1 /* Checkmark-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkmark-ipadhd.png"; sourceTree = "<group>"; };
+		AE7569E81544A59700B072E1 /* Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checkmark.png; sourceTree = "<group>"; };
+		AE7569EC1544A8AA00B072E1 /* Checkmark Unselected-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkmark Unselected-ipadhd.png"; sourceTree = "<group>"; };
+		AE7569ED1544A8AA00B072E1 /* Checkmark Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkmark Unselected.png"; sourceTree = "<group>"; };
 		AE7773E41522823500CE9332 /* Coral Foreground-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coral Foreground-ipadhd.png"; sourceTree = "<group>"; };
 		AE7773E51522823500CE9332 /* Coral Foreground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coral Foreground.png"; sourceTree = "<group>"; };
 		AE7773E61522823500CE9332 /* Main Parchment-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Main Parchment-ipadhd.png"; sourceTree = "<group>"; };
@@ -738,6 +753,11 @@
 		AEE3D625154445240099ADC8 /* BoldMenuFont-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoldMenuFont-ipadhd.png"; sourceTree = "<group>"; };
 		AEE3D626154445240099ADC8 /* BoldMenuFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BoldMenuFont.fnt; sourceTree = "<group>"; };
 		AEE3D627154445240099ADC8 /* BoldMenuFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoldMenuFont.png; sourceTree = "<group>"; };
+		AEE3D62D154480610099ADC8 /* Lesson Pack Selected-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lesson Pack Selected-ipadhd.png"; sourceTree = "<group>"; };
+		AEE3D62E154480610099ADC8 /* Lesson Pack Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lesson Pack Selected.png"; sourceTree = "<group>"; };
+		AEE3D62F154480610099ADC8 /* Lesson Pack Unselected-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lesson Pack Unselected-ipadhd.png"; sourceTree = "<group>"; };
+		AEE3D630154480610099ADC8 /* Lesson Pack Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lesson Pack Unselected.png"; sourceTree = "<group>"; };
+		AEE3D635154480DD0099ADC8 /* Lesson Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Lesson Pack.plist"; sourceTree = "<group>"; };
 		DA08E0A414CC889500D1437B /* CocosOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayViewController.h; path = Classes/CocosOverlayViewController.h; sourceTree = "<group>"; };
 		DA08E0A514CC889900D1437B /* CocosOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocosOverlayViewController.m; path = Classes/CocosOverlayViewController.m; sourceTree = "<group>"; };
 		DA08E0A714CC88EC00D1437B /* CocosOverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosOverlayScrollView.h; path = Classes/CocosOverlayScrollView.h; sourceTree = "<group>"; };
@@ -1077,6 +1097,7 @@
 				04DE51F214F9FAC000F8E45C /* Product Identifiers.plist */,
 				048BBAAE14D5368B0086EABC /* Exercise Pack.plist */,
 				0419ED7F1537A6740021F84F /* Training Songs.plist */,
+				AEE3D635154480DD0099ADC8 /* Lesson Pack.plist */,
 				048BBABF14D5368C0086EABC /* Nursery Pack.plist */,
 			);
 			name = Packs;
@@ -1335,6 +1356,10 @@
 		AE7773F41522823500CE9332 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				AEE3D62D154480610099ADC8 /* Lesson Pack Selected-ipadhd.png */,
+				AEE3D62E154480610099ADC8 /* Lesson Pack Selected.png */,
+				AEE3D62F154480610099ADC8 /* Lesson Pack Unselected-ipadhd.png */,
+				AEE3D630154480610099ADC8 /* Lesson Pack Unselected.png */,
 				AE7774821522979700CE9332 /* Bubble Button.png */,
 				AE777480152293FF00CE9332 /* Clam Button Small Unselected.png */,
 				AE7773F51522823500CE9332 /* Back Button-ipadhd.png */,
@@ -1394,6 +1419,10 @@
 		AE7774281522823500CE9332 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				AE7569EC1544A8AA00B072E1 /* Checkmark Unselected-ipadhd.png */,
+				AE7569ED1544A8AA00B072E1 /* Checkmark Unselected.png */,
+				AE7569E71544A59700B072E1 /* Checkmark-ipadhd.png */,
+				AE7569E81544A59700B072E1 /* Checkmark.png */,
 				AE48ED1E1543156700747910 /* Star.png */,
 				0458994A153722DB00C4B26F /* Staff-ipadhd.png */,
 				0458994B153722DB00C4B26F /* Staff.png */,
@@ -1463,6 +1492,7 @@
 				AE7819D2153E40A100067B48 /* Tutorial Face 00-00.mp3 */,
 				AE7819D3153E40A100067B48 /* Tutorial Good 00-00.mp3 */,
 				AE7819D4153E40A100067B48 /* Tutorial Introduction 00-00.mp3 */,
+				AE6E6DE51544994A008AD9AD /* Tutorial Introduction 2 00-00.mp3 */,
 				AE7819D5153E40A100067B48 /* Tutorial Learn C 00-00.mp3 */,
 				AE7819D6153E40A100067B48 /* Tutorial Letters 00-00.mp3 */,
 				AE7819D7153E40A100067B48 /* Tutorial Notes 00-00.mp3 */,
@@ -2258,6 +2288,16 @@
 				AEE3D629154445240099ADC8 /* BoldMenuFont-ipadhd.png in Resources */,
 				AEE3D62A154445240099ADC8 /* BoldMenuFont.fnt in Resources */,
 				AEE3D62B154445240099ADC8 /* BoldMenuFont.png in Resources */,
+				AEE3D631154480610099ADC8 /* Lesson Pack Selected-ipadhd.png in Resources */,
+				AEE3D632154480610099ADC8 /* Lesson Pack Selected.png in Resources */,
+				AEE3D633154480610099ADC8 /* Lesson Pack Unselected-ipadhd.png in Resources */,
+				AEE3D634154480610099ADC8 /* Lesson Pack Unselected.png in Resources */,
+				AEE3D636154480DD0099ADC8 /* Lesson Pack.plist in Resources */,
+				AE6E6DE61544994A008AD9AD /* Tutorial Introduction 2 00-00.mp3 in Resources */,
+				AE7569E91544A59700B072E1 /* Checkmark-ipadhd.png in Resources */,
+				AE7569EA1544A59700B072E1 /* Checkmark.png in Resources */,
+				AE7569EE1544A8AA00B072E1 /* Checkmark Unselected-ipadhd.png in Resources */,
+				AE7569EF1544A8AA00B072E1 /* Checkmark Unselected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

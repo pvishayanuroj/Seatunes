@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Tutorial Introduction</key>
-	<string>Bubbles are fun, but what I really want to teach you about are &lt;b&gt;notes&lt;/b&gt;. If you want to grow up and play the piano, the violin, or guitar, you have to learn to read notes. But don&apos;t worry, it&apos;s really easy!</string>
+	<string>Bubbles are fun, but what I really want to teach you about are &lt;b&gt;notes&lt;/b&gt;. If you want to grow up and play the piano, the violin, or guitar, you have to learn to read notes.</string>
+	<key>Tutorial Introduction 2</key>
+	<string>But don&apos;t worry, it&apos;s really easy!</string>
 	<key>Tutorial Staff</key>
 	<string>This is called a &lt;b&gt;staff.&lt;/b&gt; This is where all the notes will go.</string>
 	<key>Tutorial Notes</key>

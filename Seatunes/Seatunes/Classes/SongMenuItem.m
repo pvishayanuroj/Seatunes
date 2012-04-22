@@ -8,6 +8,7 @@
 
 #import "SongMenuItem.h"
 #import "Utility.h"
+#import "DataUtility.h"
 
 @implementation SongMenuItem
 
@@ -72,6 +73,21 @@ static const CGFloat SMI_LOCK_SCALE = 0.25f;
             [self addChild:easySprite];        
             [self addChild:mediumSprite];                
             [self addChild:hardSprite];      
+        }
+        else {
+            
+            // Change this check for later tutorials
+            NSString *spriteName;
+            if ([[DataUtility manager] isFirstPlayForDifficulty:kDifficultyMusicNoteTutorial]) {
+                spriteName = @"Checkmark Unselected.png";
+            }
+            else {
+                spriteName = @"Checkmark.png";
+            }
+            
+            CCSprite *sprite = [CCSprite spriteWithFile:spriteName];            
+            sprite.position = ccp(SMI_STAR_X + 1 * SMI_STAR_PADDING, 0);
+            [self addChild:sprite];            
         }
     }
     return self;
