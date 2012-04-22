@@ -36,7 +36,7 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
 
 - (id) initGameLogicE:(NSString *)songName
 {
-    if ((self = [super initGameLogic:kDifficultyMedium])) {
+    if ((self = [super initGameLogic:kDifficultyHard])) {
         
         noteIndex_ = 0;
         playerNoteIndex_ = 0;

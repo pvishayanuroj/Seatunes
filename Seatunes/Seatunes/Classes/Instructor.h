@@ -34,6 +34,8 @@
 
 - (id) initInstructor:(InstructorType)instructorType;
 
+- (void) runBobbingAction;
+
 - (void) initAnimations;
 
 - (void) showTalk;

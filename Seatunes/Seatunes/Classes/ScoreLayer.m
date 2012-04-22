@@ -46,6 +46,8 @@ static const CGFloat SL_REPLAY_Y = 550.0f;
 static const CGFloat SL_MENU_X = 810.0f;
 static const CGFloat SL_MENU_Y = 420.0f;
 
+#pragma mark - Object Lifecycle
+
 + (id) scoreLayer:(ScoreInfo)scoreInfo songName:(NSString *)songName nextSong:(NSString *)nextSong
 {
     return [[[self alloc] initScoreLayer:scoreInfo songName:songName nextSong:nextSong] autorelease];
@@ -115,7 +117,11 @@ static const CGFloat SL_MENU_Y = 420.0f;
             [reader_ loadSingleDialogue:kSpeechScoreExplanation];           
         }
         else {
-            [self placeIncrementingPercentage];
+            CCActionInterval *delay = [CCDelayTime actionWithDuration:1.0f];
+            CCActionInstant *start = [CCCallBlock actionWithBlock:^{
+                [self placeIncrementingPercentage];
+            }];
+            [self runAction:[CCSequence actions:delay, start, nil]];
         }        
     }
     return self;

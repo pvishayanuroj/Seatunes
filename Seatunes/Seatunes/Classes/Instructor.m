@@ -42,6 +42,7 @@
         [self addChild:sprite_ z:-1];
         
         [self initAnimations];
+        [self runBobbingAction];
     }
     return self;
 }
@@ -56,6 +57,19 @@
 }
 
 #pragma mark - Helper Methods
+
+- (void) runBobbingAction
+{
+    // create move actions for the button
+    CCMoveBy *moveUp = [CCMoveBy actionWithDuration:1.5f position:ccp(0, 10)];
+    CCEaseOut *easeUp = [CCEaseIn actionWithAction:moveUp rate:1.5f];
+    CCMoveBy *moveDown = [CCMoveBy actionWithDuration:1.25f position:ccp(0, -10)];
+    CCSequence *moveUpDown = [CCSequence actions:easeUp, moveDown, nil];
+    CCRepeatForever *repeatMove = [CCRepeatForever actionWithAction:moveUpDown];
+    
+    // run the action so the button moves up and down forever.
+    [self runAction:repeatMove];    
+}
 
 - (void) initAnimations
 {
