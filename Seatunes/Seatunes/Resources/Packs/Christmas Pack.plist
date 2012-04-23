@@ -7,8 +7,12 @@
 	<key>Songs</key>
 	<array>
 		<string>Jingle Bells</string>
+		<string>Jingle Bell Rock</string>
+		<string>Joy To The World</string>
 		<string>Silent Night</string>
 		<string>Deck The Halls</string>
+		<string>Santa Claus Is Coming</string>
+		<string>Rudolph The Reindeer</string>
 	</array>
 </dict>
 </plist>

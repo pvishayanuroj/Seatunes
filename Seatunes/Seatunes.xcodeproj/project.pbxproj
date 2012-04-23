@@ -133,6 +133,11 @@
 		AE7569EA1544A59700B072E1 /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7569E81544A59700B072E1 /* Checkmark.png */; };
 		AE7569EE1544A8AA00B072E1 /* Checkmark Unselected-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7569EC1544A8AA00B072E1 /* Checkmark Unselected-ipadhd.png */; };
 		AE7569EF1544A8AA00B072E1 /* Checkmark Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7569ED1544A8AA00B072E1 /* Checkmark Unselected.png */; };
+		AE7569F11544D41200B072E1 /* O When The Saints.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7569F01544D41200B072E1 /* O When The Saints.plist */; };
+		AE7569F31544D52300B072E1 /* Joy To The World.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7569F21544D52300B072E1 /* Joy To The World.plist */; };
+		AE7569F91544F12B00B072E1 /* Jingle Bell Rock.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7569F81544F12B00B072E1 /* Jingle Bell Rock.plist */; };
+		AE7569FC1544F29C00B072E1 /* Rudolph The Reindeer.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7569FA1544F29C00B072E1 /* Rudolph The Reindeer.plist */; };
+		AE7569FD1544F29C00B072E1 /* Santa Claus Is Coming.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7569FB1544F29C00B072E1 /* Santa Claus Is Coming.plist */; };
 		AE7774331522823500CE9332 /* Coral Foreground-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7773E41522823500CE9332 /* Coral Foreground-ipadhd.png */; };
 		AE7774341522823500CE9332 /* Coral Foreground.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7773E51522823500CE9332 /* Coral Foreground.png */; };
 		AE7774351522823500CE9332 /* Main Parchment-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7773E61522823500CE9332 /* Main Parchment-ipadhd.png */; };
@@ -598,6 +603,11 @@
 		AE7569E81544A59700B072E1 /* Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checkmark.png; sourceTree = "<group>"; };
 		AE7569EC1544A8AA00B072E1 /* Checkmark Unselected-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkmark Unselected-ipadhd.png"; sourceTree = "<group>"; };
 		AE7569ED1544A8AA00B072E1 /* Checkmark Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkmark Unselected.png"; sourceTree = "<group>"; };
+		AE7569F01544D41200B072E1 /* O When The Saints.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "O When The Saints.plist"; sourceTree = "<group>"; };
+		AE7569F21544D52300B072E1 /* Joy To The World.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Joy To The World.plist"; sourceTree = "<group>"; };
+		AE7569F81544F12B00B072E1 /* Jingle Bell Rock.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Jingle Bell Rock.plist"; sourceTree = "<group>"; };
+		AE7569FA1544F29C00B072E1 /* Rudolph The Reindeer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Rudolph The Reindeer.plist"; sourceTree = "<group>"; };
+		AE7569FB1544F29C00B072E1 /* Santa Claus Is Coming.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Santa Claus Is Coming.plist"; sourceTree = "<group>"; };
 		AE7773E41522823500CE9332 /* Coral Foreground-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coral Foreground-ipadhd.png"; sourceTree = "<group>"; };
 		AE7773E51522823500CE9332 /* Coral Foreground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coral Foreground.png"; sourceTree = "<group>"; };
 		AE7773E61522823500CE9332 /* Main Parchment-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Main Parchment-ipadhd.png"; sourceTree = "<group>"; };
@@ -1443,6 +1453,10 @@
 		AE77D9BA151D8B87002AC832 /* Christmas Pack */ = {
 			isa = PBXGroup;
 			children = (
+				AE7569FA1544F29C00B072E1 /* Rudolph The Reindeer.plist */,
+				AE7569FB1544F29C00B072E1 /* Santa Claus Is Coming.plist */,
+				AE7569F81544F12B00B072E1 /* Jingle Bell Rock.plist */,
+				AE7569F21544D52300B072E1 /* Joy To The World.plist */,
 				AE7A86A7151DF5C6007CA48C /* Deck The Halls.plist */,
 				AE77D9BF151D9095002AC832 /* Jingle Bells.plist */,
 				AE77D9C0151D9095002AC832 /* Silent Night.plist */,
@@ -1511,6 +1525,7 @@
 		AE7A86AA151DF8CD007CA48C /* Classics Pack */ = {
 			isa = PBXGroup;
 			children = (
+				AE7569F01544D41200B072E1 /* O When The Saints.plist */,
 				AE7A86AB151DF8CD007CA48C /* O Susanna.plist */,
 				AE7A86AD151DF8CD007CA48C /* Yankee Doodle.plist */,
 			);
@@ -2298,6 +2313,11 @@
 				AE7569EA1544A59700B072E1 /* Checkmark.png in Resources */,
 				AE7569EE1544A8AA00B072E1 /* Checkmark Unselected-ipadhd.png in Resources */,
 				AE7569EF1544A8AA00B072E1 /* Checkmark Unselected.png in Resources */,
+				AE7569F11544D41200B072E1 /* O When The Saints.plist in Resources */,
+				AE7569F31544D52300B072E1 /* Joy To The World.plist in Resources */,
+				AE7569F91544F12B00B072E1 /* Jingle Bell Rock.plist in Resources */,
+				AE7569FC1544F29C00B072E1 /* Rudolph The Reindeer.plist in Resources */,
+				AE7569FD1544F29C00B072E1 /* Santa Claus Is Coming.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

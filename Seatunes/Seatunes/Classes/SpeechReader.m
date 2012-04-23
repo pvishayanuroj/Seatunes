@@ -57,7 +57,9 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
 
 - (void) dealloc
 {
+#if DEBUG_SHOWDEALLOC
     NSLog(@"Speech Reader dealloc'd");
+#endif
     
     [[AudioManager audioManager] stopNarration];       
     
@@ -202,6 +204,7 @@ static const CGFloat SR_DEFAULT_WAIT_TIME = 5.0f;
     if ([self containsTouchLocation:touch]) {
         
         internalClickFlag_ = NO;     
+        [self stopAllActions];
         [[AudioManager audioManager] stopNarration];   
         
         // Check delegate wants to be notified about clicks

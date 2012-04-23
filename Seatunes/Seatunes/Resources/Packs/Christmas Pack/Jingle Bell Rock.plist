@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Song Name</key>
+	<string>Twinkle, Twinkle Little Star</string>
+	<key>Type</key>
+	<string>Song</string>
+	<key>Difficulty</key>
+	<string>Easy</string>
+	<key>Speed</key>
+	<integer>0</integer>
+	<key>Chords</key>
+	<false/>
+	<key>Notes</key>
+	<array>
+		<array>
+			<string>C5</string>
+			<string>C5</string>
+			<string>C5</string>
+			<string>B4</string>
+			<string>B4</string>
+			<string>B4</string>
+			<string>A4</string>
+			<string>B4</string>
+			<string>A4</string>
+			<string>E4</string>
+			<string>Blank</string>
+			<string>A4</string>
+			<string>B4</string>
+			<string>A4</string>
+			<string>E4</string>
+			<string>G4</string>
+			<string>A4</string>
+			<string>B4</string>
+			<string>A4</string>
+			<string>F4</string>
+			<string>Blank</string>
+		</array>
+		<array>
+			<string>D4</string>
+			<string>E4</string>
+			<string>F4</string>
+			<string>G4</string>
+			<string>A4</string>
+			<string>G4</string>
+			<string>D4</string>
+			<string>E4</string>
+			<string>F4</string>
+			<string>G4</string>
+			<string>A4</string>
+			<string>G4</string>
+			<string>A4</string>
+			<string>G4</string>
+			<string>E4</string>
+			<string>C5</string>
+		</array>
+	</array>
+</dict>
+</plist>
