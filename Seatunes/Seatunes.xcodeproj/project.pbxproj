@@ -281,6 +281,8 @@
 		AE7A86B7151DFD23007CA48C /* Steps.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7A86B4151DFD23007CA48C /* Steps.plist */; };
 		AE7A86BD151E0276007CA48C /* FreePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7A86BC151E0275007CA48C /* FreePlayScene.m */; };
 		AE7A86C4151E068E007CA48C /* FreePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7A86C3151E068D007CA48C /* FreePlayLayer.m */; };
+		AE7B301C15451D6300A98D82 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7B301A15451D6300A98D82 /* Default-Landscape.png */; };
+		AE7B301F15451DC600A98D82 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7B301D15451DC600A98D82 /* Default-Landscape@2x.png */; };
 		AE91464315294004007E75F9 /* Music Tutorial.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE91464215294004007E75F9 /* Music Tutorial.plist */; };
 		AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */; };
 		AEE3D628154445240099ADC8 /* BoldMenuFont-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D624154445240099ADC8 /* BoldMenuFont-ipadhd.fnt */; };
@@ -314,7 +316,6 @@
 		DAB11F2414C1E847009B60FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F2314C1E847009B60FB /* UIKit.framework */; };
 		DAB11F2614C1E847009B60FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F2514C1E847009B60FB /* Foundation.framework */; };
 		DAB11F2814C1E847009B60FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F2714C1E847009B60FB /* CoreGraphics.framework */; };
-		DAB11F2C14C1E847009B60FB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F2B14C1E847009B60FB /* Default.png */; };
 		DAB11F2E14C1E847009B60FB /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F2D14C1E847009B60FB /* fps_images.png */; };
 		DAB11F3814C1E847009B60FB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F3714C1E847009B60FB /* Icon.png */; };
 		DAB11F3A14C1E847009B60FB /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F3914C1E847009B60FB /* Icon@2x.png */; };
@@ -756,6 +757,8 @@
 		AE7A86BC151E0275007CA48C /* FreePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FreePlayScene.m; path = Classes/FreePlayScene.m; sourceTree = "<group>"; };
 		AE7A86C2151E068D007CA48C /* FreePlayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FreePlayLayer.h; path = Classes/FreePlayLayer.h; sourceTree = "<group>"; };
 		AE7A86C3151E068D007CA48C /* FreePlayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FreePlayLayer.m; path = Classes/FreePlayLayer.m; sourceTree = "<group>"; };
+		AE7B301A15451D6300A98D82 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "Resources/Default-Landscape.png"; sourceTree = "<group>"; };
+		AE7B301D15451DC600A98D82 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x.png"; path = "Resources/Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		AE91464215294004007E75F9 /* Music Tutorial.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Music Tutorial.plist"; sourceTree = "<group>"; };
 		AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Muted.m4a"; sourceTree = "<group>"; };
 		AED018C61538ECAD0090CEE1 /* AudioManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudioManagerDelegate.h; path = Classes/AudioManagerDelegate.h; sourceTree = "<group>"; };
@@ -799,7 +802,6 @@
 		DAB11F2314C1E847009B60FB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DAB11F2514C1E847009B60FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DAB11F2714C1E847009B60FB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DAB11F2B14C1E847009B60FB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		DAB11F2D14C1E847009B60FB /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = Resources/fps_images.png; sourceTree = "<group>"; };
 		DAB11F3714C1E847009B60FB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
 		DAB11F3914C1E847009B60FB /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
@@ -1605,7 +1607,8 @@
 				048BBAAA14D5368B0086EABC /* Packs */,
 				DAB1216814C48B24009B60FB /* Spritesheets */,
 				DAB120E714C35A08009B60FB /* Notes */,
-				DAB11F2B14C1E847009B60FB /* Default.png */,
+				AE7B301A15451D6300A98D82 /* Default-Landscape.png */,
+				AE7B301D15451DC600A98D82 /* Default-Landscape@2x.png */,
 				DAB11F2D14C1E847009B60FB /* fps_images.png */,
 				DAB11F3714C1E847009B60FB /* Icon.png */,
 				DAB11F3914C1E847009B60FB /* Icon@2x.png */,
@@ -2049,7 +2052,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAB11F2C14C1E847009B60FB /* Default.png in Resources */,
 				DAB11F2E14C1E847009B60FB /* fps_images.png in Resources */,
 				DAB11F3814C1E847009B60FB /* Icon.png in Resources */,
 				DAB11F3A14C1E847009B60FB /* Icon@2x.png in Resources */,
@@ -2318,6 +2320,8 @@
 				AE7569F91544F12B00B072E1 /* Jingle Bell Rock.plist in Resources */,
 				AE7569FC1544F29C00B072E1 /* Rudolph The Reindeer.plist in Resources */,
 				AE7569FD1544F29C00B072E1 /* Santa Claus Is Coming.plist in Resources */,
+				AE7B301C15451D6300A98D82 /* Default-Landscape.png in Resources */,
+				AE7B301F15451DC600A98D82 /* Default-Landscape@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
