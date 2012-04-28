@@ -290,10 +290,6 @@
 		AE7CACD81548F0BA002DB944 /* Help Button.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7CACD61548F0BA002DB944 /* Help Button.png */; };
 		AE91464315294004007E75F9 /* Music Tutorial.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE91464215294004007E75F9 /* Music Tutorial.plist */; };
 		AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */; };
-		AEE1EC541546527A00D8B161 /* Help Off Button-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE1EC501546527A00D8B161 /* Help Off Button-ipadhd.png */; };
-		AEE1EC551546527A00D8B161 /* Help Off Button.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE1EC511546527A00D8B161 /* Help Off Button.png */; };
-		AEE1EC561546527A00D8B161 /* Help On Button-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE1EC521546527A00D8B161 /* Help On Button-ipadhd.png */; };
-		AEE1EC59154652E500D8B161 /* Help On Button.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE1EC58154652E500D8B161 /* Help On Button.png */; };
 		AEE3D628154445240099ADC8 /* BoldMenuFont-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D624154445240099ADC8 /* BoldMenuFont-ipadhd.fnt */; };
 		AEE3D629154445240099ADC8 /* BoldMenuFont-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D625154445240099ADC8 /* BoldMenuFont-ipadhd.png */; };
 		AEE3D62A154445240099ADC8 /* BoldMenuFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D626154445240099ADC8 /* BoldMenuFont.fnt */; };
@@ -777,10 +773,6 @@
 		AE91464215294004007E75F9 /* Music Tutorial.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Music Tutorial.plist"; sourceTree = "<group>"; };
 		AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Muted.m4a"; sourceTree = "<group>"; };
 		AED018C61538ECAD0090CEE1 /* AudioManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudioManagerDelegate.h; path = Classes/AudioManagerDelegate.h; sourceTree = "<group>"; };
-		AEE1EC501546527A00D8B161 /* Help Off Button-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Help Off Button-ipadhd.png"; sourceTree = "<group>"; };
-		AEE1EC511546527A00D8B161 /* Help Off Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Help Off Button.png"; sourceTree = "<group>"; };
-		AEE1EC521546527A00D8B161 /* Help On Button-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Help On Button-ipadhd.png"; sourceTree = "<group>"; };
-		AEE1EC58154652E500D8B161 /* Help On Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Help On Button.png"; sourceTree = "<group>"; };
 		AEE3D624154445240099ADC8 /* BoldMenuFont-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BoldMenuFont-ipadhd.fnt"; sourceTree = "<group>"; };
 		AEE3D625154445240099ADC8 /* BoldMenuFont-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoldMenuFont-ipadhd.png"; sourceTree = "<group>"; };
 		AEE3D626154445240099ADC8 /* BoldMenuFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BoldMenuFont.fnt; sourceTree = "<group>"; };
@@ -1391,10 +1383,6 @@
 			children = (
 				AE7CACD51548F0BA002DB944 /* Help Button-ipadhd.png */,
 				AE7CACD61548F0BA002DB944 /* Help Button.png */,
-				AEE1EC58154652E500D8B161 /* Help On Button.png */,
-				AEE1EC501546527A00D8B161 /* Help Off Button-ipadhd.png */,
-				AEE1EC511546527A00D8B161 /* Help Off Button.png */,
-				AEE1EC521546527A00D8B161 /* Help On Button-ipadhd.png */,
 				AEE3D62D154480610099ADC8 /* Lesson Pack Selected-ipadhd.png */,
 				AEE3D62E154480610099ADC8 /* Lesson Pack Selected.png */,
 				AEE3D62F154480610099ADC8 /* Lesson Pack Unselected-ipadhd.png */,
@@ -2351,10 +2339,6 @@
 				AE7569FD1544F29C00B072E1 /* Santa Claus Is Coming.plist in Resources */,
 				AE7B301C15451D6300A98D82 /* Default-Landscape.png in Resources */,
 				AE7B301F15451DC600A98D82 /* Default-Landscape@2x.png in Resources */,
-				AEE1EC541546527A00D8B161 /* Help Off Button-ipadhd.png in Resources */,
-				AEE1EC551546527A00D8B161 /* Help Off Button.png in Resources */,
-				AEE1EC561546527A00D8B161 /* Help On Button-ipadhd.png in Resources */,
-				AEE1EC59154652E500D8B161 /* Help On Button.png in Resources */,
 				AE7647B21547A8C5003C6B05 /* Ode To Joy.plist in Resources */,
 				AE7647B51547AD78003C6B05 /* Camptown Races.plist in Resources */,
 				AE7CACD71548F0BA002DB944 /* Help Button-ipadhd.png in Resources */,
