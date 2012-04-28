@@ -23,10 +23,13 @@
     
     CCAction *action_;
     
+    BOOL showName_;
+    
     id <StaffDelegate> delegate_;
     
 }
 
+@property (nonatomic, assign) BOOL showName;
 @property (nonatomic, assign) id <StaffDelegate> delegate;
 
 + (id) staff;

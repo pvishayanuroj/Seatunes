@@ -26,10 +26,15 @@ typedef enum {
     
     StaffNoteState state_;
     
+    BOOL showName_;
+    
+    CCLabelBMFont *name_;
+    
     NSUInteger numID_;
     
 }
 
+@property (nonatomic, assign) BOOL showName;
 @property (nonatomic, readonly) KeyType keyType;
 @property (nonatomic, readonly) StaffNoteState state;
 @property (nonatomic, readonly) NSUInteger numID;

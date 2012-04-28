@@ -14,4 +14,8 @@
 
 - (void) songComplete:(ScoreInfo)scoreInfo;
 
+- (void) showKeyboardLettersComplete;
+
+- (void) hideKeyboardLettersComplete;
+
 @end

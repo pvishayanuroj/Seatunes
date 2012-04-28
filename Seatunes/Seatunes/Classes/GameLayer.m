@@ -12,6 +12,7 @@
 #import "Note.h"
 #import "Instructor.h"
 #import "NoteGenerator.h"
+#import "Staff.h"
 #import "CCNode+PauseResume.h"
 #import "GameLogic.h"
 #import "GameLogicD.h"
@@ -30,9 +31,11 @@
 
 static const CGFloat GL_SIDEMENU_BUTTON_X = 970.0f;
 static const CGFloat GL_SIDEMENU_BUTTON_Y = 720.0f;
+static const CGFloat GL_HELP_BUTTON_X = 870.0f;
+static const CGFloat GL_HELP_BUTTON_Y = 720.0f;
 static const CGFloat GL_SIDEMENU_ROTATION = 180.0f;
 static const CGFloat GL_SIDEMENU_X = 1130.0f;
-static const CGFloat GL_SIDEMENU_Y = 550.0f;
+static const CGFloat GL_SIDEMENU_Y = 450.0f;
 static const CGFloat GL_SIDEMENU_MOVE_TIME = 0.5f;
 static const CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 
@@ -52,12 +55,14 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     if ((self = [super init])) {
         
         self.isTouchEnabled = YES;
+        helpOn_ = NO;
         sideMenuOpen_ = NO;
         sideMenuLocked_ = NO;
         sideMenuMoving_ = NO;
         isPaused_ = NO;
         songName_ = [songName retain];
         difficulty_ = difficulty;
+        helpButton_ = nil;
         [AudioManager audioManager];
         
         sideMenuButton_ = [[ImageButton imageButton:kButtonSideMenu unselectedImage:@"Starfish Button.png" selectedImage:@"Starfish Button.png"] retain];
@@ -70,14 +75,12 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         
         [sideMenu_ addMenuBackground:@"Side Parchment.png" pos:ccp(0, -140.0f)];
         
-        //Button *nextButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Next Button.png" scale:0.9f];
         Button *replayButton = [ScaledImageButton scaledImageButton:kButtonReplay image:@"Restart Button.png" scale:0.9f];
         Button *menuButton = [ScaledImageButton scaledImageButton:kButtonMenu image:@"Home Button.png" scale:0.9f];        
         
-        //[sideMenu_ addMenuItem:nextButton];
         [sideMenu_ addMenuItem:replayButton];
         [sideMenu_ addMenuItem:menuButton];        
-
+        
         switch (difficulty) {
             case kDifficultyEasy:
                 gameLogic_ = [[GameLogicD gameLogicD:songName] retain];
@@ -86,6 +89,9 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
                 gameLogic_ = [[GameLogicF gameLogicF:songName] retain];
                 break;
             case kDifficultyHard:
+                helpButton_ = [[ScaledImageButton scaledImageButton:kButtonHelp image:@"Help Button.png" scale:1.0f] retain];
+                helpButton_.position = ccp(GL_HELP_BUTTON_X, GL_HELP_BUTTON_Y);
+                helpButton_.delegate = self;                
                 gameLogic_ = [[GameLogicE gameLogicE:songName] retain];            
                 break;
             case kDifficultyMusicNoteTutorial:
@@ -99,8 +105,18 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         gameLogic_.delegate = self; 
         [self addChild:gameLogic_];  
         
+        if (helpButton_) {
+            [self addChild:helpButton_];   
+            CCLabelBMFont *helpLabel = [CCLabelBMFont labelWithString:@"Help" fntFile:@"MenuFont.fnt"];
+            helpLabel.position = ccp(870, 670);
+            [self addChild:helpLabel];            
+        }
         [self addChild:sideMenuButton_];        
-        [self addChild:sideMenu_];        
+        [self addChild:sideMenu_];         
+        
+        CCLabelBMFont *menuLabel = [CCLabelBMFont labelWithString:@"Menu" fntFile:@"MenuFont.fnt"];
+        menuLabel.position = ccp(970, 670);
+        [self addChild:menuLabel];
     }
     return self;
 }
@@ -111,6 +127,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     [sideMenu_ release];
     [sideMenuButton_ release];
     [songName_ release];
+    [helpButton_ release];
     
     [super dealloc];
 }
@@ -165,6 +182,16 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 - (void) buttonClicked:(Button *)button
 {
     switch (button.numID) {
+        case kButtonHelp:
+            if (!gameLogic_.keyboard.isHelpMoving) {
+                if (helpOn_) {
+                    [self helpOff];
+                }
+                else {
+                    [self helpOn];
+                }
+            }
+            break;
         case kButtonSideMenu:
             if (!sideMenuLocked_) {
                 if (sideMenuOpen_) {
@@ -185,14 +212,28 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     [self menuSelection:button];
 }
 
+- (void) showKeyboardLettersComplete
+{
+    /*
+    NSString *text = @"Practice Mode On!\nBadges Disabled";
+    CCLabelBMFont *msg = [CCLabelBMFont labelWithString:text fntFile:@"MenuFont.fnt"];
+    CGSize size = [[CCDirector sharedDirector] winSize];
+    msg.position = ccp(size.width * 0.5f, size.height * 0.5f);
+    [self addChild:msg];
+     */
+}
+
+- (void) hideKeyboardLettersComplete
+{
+    
+}
+
 #pragma mark - Helper Methods
 
 - (void) menuSelection:(Button *)button
 {
     CCScene *scene;
     switch (button.numID) {
-        case kButtonNext:
-            break;
         case kButtonReplay:
             scene = [GameScene startWithDifficulty:difficulty_ songName:songName_];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                             
@@ -254,6 +295,22 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 {
     CCScene *scene = [ScoreScene scoreScene:scoreInfo songName:songName_ nextSong:@""];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                            
+}
+
+- (void) helpOn
+{
+    //[helpButton_ setImage:@"Help On Button.png"];
+    [gameLogic_.keyboard showLetters];
+    gameLogic_.staff.showName = YES;
+    helpOn_ = YES;
+}
+
+- (void) helpOff
+{
+    //[helpButton_ setImage:@"Help Off Button.png"];
+    [gameLogic_.keyboard hideLetters];
+    gameLogic_.staff.showName = NO;
+    helpOn_ = NO;
 }
 
 - (void) pauseGame

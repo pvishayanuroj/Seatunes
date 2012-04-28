@@ -18,6 +18,8 @@
 static const CGFloat GL_BUBBLE_X = 630.0f;
 static const CGFloat GL_BUBBLE_Y = 600.0f;
 
+@synthesize staff = staff_;
+@synthesize keyboard = keyboard_;
 @synthesize delegate = delegate_;
 
 + (id) gameLogic
@@ -34,6 +36,7 @@ static const CGFloat GL_BUBBLE_Y = 600.0f;
         keyboard_ = nil;
         instructor_ = nil;      
         noteGenerator_ = nil;
+        staff_ = nil;
         scoreInfo_.notesHit = 0;
         scoreInfo_.notesMissed = 0;      
         scoreInfo_.difficulty = difficulty;

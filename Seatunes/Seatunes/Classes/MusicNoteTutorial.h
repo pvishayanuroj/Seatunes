@@ -14,15 +14,11 @@
 #import "SpeechReaderDelegate.h"
 #import "StaffDelegate.h"
 
-@class Staff;
-
 @interface MusicNoteTutorial : GameLogic <KeyboardDelegate, StaffDelegate, SpeechReaderDelegate> {
     
     NSMutableArray *notes_;
     
-    NSArray *dialogue_;
-    
-    Staff *staff_;   
+    NSArray *dialogue_;  
 }
 
 + (id) musicNoteTutorial;

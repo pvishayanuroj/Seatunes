@@ -12,14 +12,17 @@
 #import "KeyboardLetter.h"
 #import "Utility.h"
 #import "CCNode+PauseResume.h"
+#import "ModEaseBackIn.h"
 
 @implementation Keyboard
 
 static const CGFloat KB_KEY_PADDING = 110.0f;
-static const CGFloat KB_LETTER_MOVE_TIME = 1.0f;
+static const CGFloat KB_LETTER_MOVE_OUT_TIME = 1.5f;
+static const CGFloat KB_LETTER_MOVE_IN_TIME = 0.75f;
 static const CGFloat KB_LETTER_X = 1200.0f;
 static const CGFloat KB_LETTER_Y = 90.0f;
 
+@synthesize isHelpMoving = isHelpMoving_;
 @synthesize isKeyboardMuted = isKeyboardMuted_;
 @synthesize isClickable = isClickable_;
 @synthesize delegate = delegate_;
@@ -244,37 +247,87 @@ static const CGFloat KB_LETTER_Y = 90.0f;
         letters_ = [[NSMutableArray arrayWithCapacity:8] retain];
         NSArray *strings = [NSArray arrayWithObjects:@"C", @"D", @"E", @"F", @"G", @"A", @"B", @"C", nil];
         
+        NSInteger count = 0;
         for (NSString *str in strings) {
             KeyboardLetter *letter = [KeyboardLetter keyboardLetter:str];
-            letter.position = ccp(KB_LETTER_X, KB_LETTER_Y);
+            letter.position = ccp(KB_LETTER_X + KB_KEY_PADDING * count, KB_LETTER_Y);
             [letters_ addObject:letter];
             [self addChild:letter];
+            count++;
         }
     }
     
     // Move each letter to assigned positions
+    isHelpMoving_ = YES;
     NSInteger count = 0;
+    NSMutableArray *actions = [NSMutableArray arrayWithCapacity:20];
     for (KeyboardLetter *keyboardLetter in letters_) {
         CGPoint pos = ccp(count * KB_KEY_PADDING, KB_LETTER_Y);
-        CCActionInterval *move = [CCMoveTo actionWithDuration:KB_LETTER_MOVE_TIME position:pos];
-        [keyboardLetter runAction:move];
+        
+        CCActionInstant *letterMove = [CCCallBlock actionWithBlock:^{
+            CCActionInterval *move = [CCMoveTo actionWithDuration:KB_LETTER_MOVE_OUT_TIME position:pos];       
+            CCActionInterval *ease = [CCEaseElasticOut actionWithAction:move period:0.8f];
+            [keyboardLetter runAction:ease];
+        }];
+        CCActionInterval *delay = [CCDelayTime actionWithDuration:0.1f];        
+        
+        [actions addObject:letterMove];
+        [actions addObject:delay];
         count++;
     }
 
     // Let delegate know when move is complete
-    CCActionInterval *delay = [CCDelayTime actionWithDuration:KB_LETTER_MOVE_TIME];
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:KB_LETTER_MOVE_OUT_TIME];
     CCActionInstant *done = [CCCallBlock actionWithBlock:^{
+        isHelpMoving_ = NO;
         if (delegate_ && [delegate_ respondsToSelector:@selector(showLettersComplete)]) {
             [delegate_ showLettersComplete];
         }
     }];
     
-    [self runAction:[CCSequence actions:delay, done, nil]];
+    [actions addObject:delay];
+    [actions addObject:done];
+    
+    [self runAction:[CCSequence actionsWithArray:actions]];
 }
 
 - (void) hideLetters
 {
-
+    if (letters_) {
+        
+        // Move each letter to assigned positions
+        isHelpMoving_ = YES;        
+        NSInteger count = 0;
+        NSMutableArray *actions = [NSMutableArray arrayWithCapacity:20];        
+        for (KeyboardLetter *keyboardLetter in [letters_ reverseObjectEnumerator]) {
+            CGPoint pos = ccp(KB_LETTER_X + KB_KEY_PADDING * count, KB_LETTER_Y);
+            
+            CCActionInstant *letterMove = [CCCallBlock actionWithBlock:^{
+                CCActionInterval *move = [CCMoveTo actionWithDuration:KB_LETTER_MOVE_IN_TIME position:pos];       
+                CCActionInterval *ease = [ModEaseBackIn actionWithAction:move];                
+                [keyboardLetter runAction:ease];
+            }];
+            CCActionInterval *delay = [CCDelayTime actionWithDuration:0.15f];        
+            
+            [actions addObject:letterMove];
+            [actions addObject:delay];
+            count++;            
+        }
+        
+        // Let delegate know when move is complete
+        CCActionInterval *delay = [CCDelayTime actionWithDuration:KB_LETTER_MOVE_IN_TIME];
+        CCActionInstant *done = [CCCallBlock actionWithBlock:^{
+            isHelpMoving_ = NO;
+            if (delegate_ && [delegate_ respondsToSelector:@selector(hideLettersComplete)]) {
+                [delegate_ hideLettersComplete];
+            }
+        }];
+        
+        [actions addObject:delay];
+        [actions addObject:done];
+        
+        [self runAction:[CCSequence actionsWithArray:actions]];        
+    }
 }
 
 - (void) pauseHierarchy

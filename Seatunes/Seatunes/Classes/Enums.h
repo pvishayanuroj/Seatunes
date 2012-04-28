@@ -160,5 +160,6 @@ enum {
     kButtonSideMenu,
     kButtonNext,
     kButtonReplay,
-    kButtonMenu
+    kButtonMenu,
+    kButtonHelp
 };

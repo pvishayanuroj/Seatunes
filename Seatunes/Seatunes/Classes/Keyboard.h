@@ -40,12 +40,15 @@
     
     BOOL isMuted_;
     
+    BOOL isHelpMoving_;
+    
     id <KeyboardDelegate> delegate_;
     
 }
 
 @property (nonatomic, assign) BOOL isKeyboardMuted;
 @property (nonatomic, assign) BOOL isClickable;
+@property (nonatomic, readonly) BOOL isHelpMoving;
 @property (nonatomic, assign) id <KeyboardDelegate> delegate;
 
 + (id) keyboard:(KeyboardType)keyboardType;

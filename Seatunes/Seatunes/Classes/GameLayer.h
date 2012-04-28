@@ -17,6 +17,7 @@
 @class Instructor;
 @class Menu;
 @class Button;
+@class ScaledImageButton;
 @class GameLogic;
 @class ScoreLayer;
 @class NoteGenerator;
@@ -29,9 +30,13 @@
     
     Button *sideMenuButton_;
     
+    ScaledImageButton *helpButton_;
+    
     NSString *songName_;
     
     DifficultyType difficulty_;
+    
+    BOOL helpOn_;
     
     BOOL sideMenuOpen_;
     

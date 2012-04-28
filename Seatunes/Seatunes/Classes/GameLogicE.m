@@ -260,5 +260,14 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
     [delegate_ songComplete:scoreInfo_];
 }
 
+- (void) showLettersComplete
+{
+    [delegate_ showKeyboardLettersComplete];
+}
+
+- (void) hideLettersComplete
+{
+    [delegate_ hideKeyboardLettersComplete];
+}
 
 @end

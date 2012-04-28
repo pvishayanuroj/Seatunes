@@ -7,10 +7,11 @@
 //
 
 #import "StaffNote.h"
-
+#import "Utility.h"
 
 @implementation StaffNote
 
+@synthesize showName = showName_;
 @synthesize keyType = keyType_;
 @synthesize state = state_;
 @synthesize numID = numID_;
@@ -22,6 +23,8 @@ static const CGFloat SN_NOTE_PADDING = 12.65f;
 static const CGFloat SN_NOTE_OFFSET_Y = 23.0f;
 static const CGFloat SN_NOTE_FLIPPED_OFFSET_Y = 75.0f;
 static const CGFloat SN_MOVE_X = -800.0f;
+
+static const CGFloat SN_NAME_Y = 90.0f;
 
 + (id) staticStaffNote:(KeyType)keyType pos:(CGPoint)pos numID:(NSUInteger)numID
 {
@@ -39,8 +42,10 @@ static const CGFloat SN_MOVE_X = -800.0f;
         
         keyType_ = keyType;
         line_ = nil;
+        name_ = nil;
         numID_ = numID;     
         state_ = kStaffNoteStart;
+        showName_ = NO;
         self.position = pos;
         
         if (keyType == kC4) {
@@ -70,6 +75,7 @@ static const CGFloat SN_MOVE_X = -800.0f;
 {
     [sprite_ release];
     [line_ release];
+    [name_ release];
     
     [super dealloc];
 }
@@ -117,6 +123,10 @@ static const CGFloat SN_MOVE_X = -800.0f;
     state_ = kStaffNoteActive;
     CCActionInterval *move = [CCMoveBy actionWithDuration:6.0f position:ccp(SN_MOVE_X, 0)];
     [self runAction:move];
+    
+    if (showName_) {
+        [self setShowName:YES];
+    }
 }
 
 - (void) fadeDestroy
@@ -126,6 +136,11 @@ static const CGFloat SN_MOVE_X = -800.0f;
     CCActionInterval *fadeOut = [CCFadeOut actionWithDuration:SN_FADE_OUT_DURATION];
     CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(destroy)];
     [sprite_ runAction:[CCSequence actions:fadeOut, done, nil]];  
+    
+    if (name_) {
+        id nameFade = [CCFadeOut actionWithDuration:SN_FADE_OUT_DURATION];
+        [name_ runAction:nameFade];
+    }    
 }
 
 - (void) jumpDestroy
@@ -142,11 +157,11 @@ static const CGFloat SN_MOVE_X = -800.0f;
     id fade = [CCFadeOut actionWithDuration:0.1f];
     
     [sprite_ runAction:[CCSequence actions:delay, fade, nil]];
-}
-
-- (void) jump
-{
     
+    if (name_) {
+        id nameFade = [CCFadeOut actionWithDuration:0.1f];
+        [name_ runAction:nameFade];
+    }
 }
 
 - (void) destroy
@@ -162,6 +177,30 @@ static const CGFloat SN_MOVE_X = -800.0f;
         y -= SN_NOTE_FLIPPED_OFFSET_Y;
     }
     return y;
+}
+
+- (void) setShowName:(BOOL)showName
+{
+    showName_ = showName;
+
+    // Show name
+    if (showName) {
+        if (name_ == nil && state_ == kStaffNoteActive) {
+            NSString *text = [Utility nameFromEnum:keyType_];
+            name_ = [[CCLabelBMFont labelWithString:text fntFile:@"Dialogue Font.fnt"] retain];
+            CGFloat yPos = -[self calculateNoteY:keyType_] - SN_NAME_Y;
+            name_.position = ccp(0, yPos);
+            [self addChild:name_];             
+        }
+    }
+    // Hide name
+    else {
+        if (name_) {
+            [name_ removeFromParentAndCleanup:YES];
+            [name_ release];
+            name_ = nil;
+        }        
+    }
 }
 
 #if !DEBUG_SHOWSTAFFCURVES

@@ -32,6 +32,7 @@ static const CGFloat ST_BLINK_HIDE = 0.35f;
 static const CGFloat ST_NOTE_NAME_HIGH = 110.0f;
 static const CGFloat ST_NOTE_NAME_LOW = -70.0f;
 
+@synthesize showName = showName_;
 @synthesize delegate = delegate_;
 
 + (id) staff
@@ -45,6 +46,7 @@ static const CGFloat ST_NOTE_NAME_LOW = -70.0f;
      
         delegate_ = nil;
         action_ = nil;
+        showName_ = NO;
         notes_ = [[NSMutableArray arrayWithCapacity:6] retain];
         labels_ = [[NSMutableArray arrayWithCapacity:6] retain];        
         
@@ -243,6 +245,7 @@ static const CGFloat ST_NOTE_NAME_LOW = -70.0f;
 {
     CGPoint pos = ccp(-200, -275);
     StaffNote *note = [StaffNote staffNote:keyType pos:pos numID:numID];
+    note.showName = showName_;
     [notes_ addObject:note];
     [self addChild:note];    
 }
@@ -304,6 +307,16 @@ static const CGFloat ST_NOTE_NAME_LOW = -70.0f;
     }
     return y;
 }
+
+- (void) setShowName:(BOOL)showName
+{
+    showName_ = showName;    
+    
+    for (StaffNote *note in notes_) {
+        note.showName = showName;
+    }
+}
+
 
 #if DEBUG_SHOWSTAFFCURVES
 - (void) draw

@@ -16,6 +16,7 @@
 @class Instructor;
 @class NoteGenerator;
 @class SpeechReader;
+@class Staff;
 
 @interface GameLogic : CCNode <SpeechReaderDelegate> {
     
@@ -27,11 +28,15 @@
     
     SpeechReader *reader_;
     
+    Staff *staff_;    
+    
     ScoreInfo scoreInfo_;
     
     id <GameLogicDelegate> delegate_;
 }
 
+@property (nonatomic, readonly) Staff *staff;
+@property (nonatomic, readonly) Keyboard *keyboard;
 @property (nonatomic, assign) id <GameLogicDelegate> delegate;
 
 + (id) gameLogic;

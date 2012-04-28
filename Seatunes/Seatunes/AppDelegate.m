@@ -118,7 +118,7 @@
 	
 	// Run the intro Scene
     [glView setMultipleTouchEnabled:YES];
-	[[CCDirector sharedDirector] runWithScene: [MainMenuScene node]];
+	//[[CCDirector sharedDirector] runWithScene: [MainMenuScene node]];
 
     /*
     [AudioManager audioManager];
@@ -131,8 +131,8 @@
     */
     
     
-    //[DataUtility manager];
-    //[[CCDirector sharedDirector] runWithScene: [GameScene startWithDifficulty:kDifficultyHard songName:@"Twinkle Twinkle"]];
+    [DataUtility manager];
+    [[CCDirector sharedDirector] runWithScene: [GameScene startWithDifficulty:kDifficultyHard songName:@"Twinkle Twinkle"]];
 }
 
 

@@ -46,7 +46,7 @@
     return name;
 }
 
-+ (NSString *) noteFromEnum:(KeyType)key
++ (NSString *) nameFromEnum:(KeyType)key
 {
     NSString *name = @"";
     

@@ -14,8 +14,6 @@
 #import "SpeechReaderDelegate.h"
 #import "StaffDelegate.h"
 
-@class Staff;
-
 /* Hard mode game logic */
 @interface GameLogicE : GameLogic <KeyboardDelegate, StaffDelegate, SpeechReaderDelegate, UIAlertViewDelegate> {
     
@@ -37,7 +35,6 @@
     
     BOOL onLastNote_;
     
-    Staff *staff_;
 }
 
 + (id) gameLogicE:(NSString *)songName;
