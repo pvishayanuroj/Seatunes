@@ -34,9 +34,9 @@ static const CGFloat GL_SIDEMENU_BUTTON_Y = 720.0f;
 static const CGFloat GL_SIDEMENU_BUTTON_LABEL_X = 970.0f;
 static const CGFloat GL_SIDEMENU_BUTTON_LABEL_Y = 670.0f;
 static const CGFloat GL_HELP_BUTTON_X = 850.0f;
-static const CGFloat GL_HELP_BUTTON_Y = 720.0f;
+static const CGFloat GL_HELP_BUTTON_Y = 730.0f;
 static const CGFloat GL_HELP_BUTTON_LABEL_X = 850.0f;
-static const CGFloat GL_HELP_BUTTON_LABEL_Y = 670.0f;
+static const CGFloat GL_HELP_BUTTON_LABEL_Y = 690.0f;
 
 static const CGFloat GL_SIDEMENU_ROTATION = 180.0f;
 static const CGFloat GL_SIDEMENU_ITEM_PADDING = 150.0f;

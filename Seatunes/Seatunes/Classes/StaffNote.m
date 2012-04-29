@@ -190,15 +190,21 @@ static const CGFloat SN_NAME_Y = 90.0f;
             name_ = [[CCLabelBMFont labelWithString:text fntFile:@"Dialogue Font.fnt"] retain];
             CGFloat yPos = -[self calculateNoteY:keyType_] - SN_NAME_Y;
             name_.position = ccp(0, yPos);
+            name_.opacity = 0;
             [self addChild:name_];             
+            CCActionInterval *fade = [CCFadeIn actionWithDuration:0.1f];            
+            [name_ runAction:fade];
         }
     }
     // Hide name
     else {
         if (name_) {
+            CCActionInterval *fade = [CCFadeOut actionWithDuration:0.1f];
+            [name_ runAction:fade];
+            /*
             [name_ removeFromParentAndCleanup:YES];
             [name_ release];
-            name_ = nil;
+            name_ = nil;*/
         }        
     }
 }
