@@ -16,22 +16,21 @@
 @implementation DifficultyMenuScene
 
 static const CGFloat DMS_TITLE_X = 512.0f;
-static const CGFloat DMS_TITLE_Y = 650.0f;
+static const CGFloat DMS_TITLE_Y = 610.0f;
 
-static const CGFloat DMS_TEXT_Y = 400.0f;
-static const CGFloat DMS_BUTTON_Y = 500.0f;
-static const CGFloat DMS_BUTTON2_Y = 490.0f;
+static const CGFloat DMS_TEXT_Y = 360.0f;
 static const CGFloat DMS_BUTTON_X = 512.0f;
+static const CGFloat DMS_BUTTON_Y = 460.0f;
 static const CGFloat DMS_BUTTON_PADDING = 200.0f;
 
 static const CGFloat DMS_MENU_FRAME_X = 512.0f;
-static const CGFloat DMS_MENU_FRAME_Y = 440.0f;
+static const CGFloat DMS_MENU_FRAME_Y = 480.0f;
 
 static const CGFloat DMS_BACK_BUTTON_X = 50.0f;
 static const CGFloat DMS_BACK_BUTTON_Y = 730.0f;
 
 static const CGFloat DMS_PLAY_BUTTON_X = 650.0f;
-static const CGFloat DMS_PLAY_BUTTON_Y = 250.0f;
+static const CGFloat DMS_PLAY_BUTTON_Y = 200.0f;
 
 static const GLubyte DMS_FULL_OPACITY = 255;
 static const GLubyte DMS_SEMI_OPACITY = 150;
@@ -87,7 +86,7 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
         hardButton_.delegate = self;        
         
         easyButton_.position = ccp(DMS_BUTTON_X - DMS_BUTTON_PADDING, DMS_BUTTON_Y);
-        mediumButton_.position = ccp(DMS_BUTTON_X, DMS_BUTTON2_Y);
+        mediumButton_.position = ccp(DMS_BUTTON_X, DMS_BUTTON_Y);
         hardButton_.position = ccp(DMS_BUTTON_X + DMS_BUTTON_PADDING, DMS_BUTTON_Y);        
         
         [self addChild:easyButton_];

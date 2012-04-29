@@ -94,21 +94,25 @@ static const CGFloat IT_DURATION = 2.0f;
         }
         [self unschedule:@selector(update:)];
     }
-    
-    [[AudioManager audioManager] playSoundEffect:kDing];
-    
+
+    NSString *scoreText;    
     switch (incrementType_) {
         case kIncrementTime:
-            [scoreLabel_ setString:[self convertToFormattedTime:score_]];
+            scoreText = [self convertToFormattedTime:score_];
             break;
         case kIncrementInteger:
-            [scoreLabel_ setString:[NSString stringWithFormat:@"%d", score_]];
+            scoreText = [NSString stringWithFormat:@"%d", score_];
             break;
         case kIncrementPercentage:
-            [scoreLabel_ setString:[NSString stringWithFormat:@"%d%%", score_]];
+            scoreText = [NSString stringWithFormat:@"%d%%", score_];
             break;
         default:
             break;
+    }
+    
+    if (![scoreLabel_.string isEqualToString:scoreText]) {
+        [[AudioManager audioManager] playSoundEffect:kDing];        
+        [scoreLabel_ setString:scoreText];
     }
 }
 

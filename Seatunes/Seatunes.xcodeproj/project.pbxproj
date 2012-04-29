@@ -286,6 +286,8 @@
 		AE7AFCC0154CB40D00544A0E /* Swoosh 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE7AFCBF154CB40D00544A0E /* Swoosh 1.mp3 */; };
 		AE7AFCC3154CB59500544A0E /* Swoosh 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE7AFCC1154CB59500544A0E /* Swoosh 2.mp3 */; };
 		AE7AFCC4154CB59500544A0E /* Swoosh 3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE7AFCC2154CB59500544A0E /* Swoosh 3.mp3 */; };
+		AE7AFCC7154CC2FF00544A0E /* Restart Button Disabled-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7AFCC5154CC2FF00544A0E /* Restart Button Disabled-ipadhd.png */; };
+		AE7AFCC8154CC2FF00544A0E /* Restart Button Disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7AFCC6154CC2FF00544A0E /* Restart Button Disabled.png */; };
 		AE7B301C15451D6300A98D82 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7B301A15451D6300A98D82 /* Default-Landscape.png */; };
 		AE7B301F15451DC600A98D82 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7B301D15451DC600A98D82 /* Default-Landscape@2x.png */; };
 		AE7CACD71548F0BA002DB944 /* Help Button-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7CACD51548F0BA002DB944 /* Help Button-ipadhd.png */; };
@@ -770,6 +772,8 @@
 		AE7AFCBF154CB40D00544A0E /* Swoosh 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Swoosh 1.mp3"; sourceTree = "<group>"; };
 		AE7AFCC1154CB59500544A0E /* Swoosh 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Swoosh 2.mp3"; sourceTree = "<group>"; };
 		AE7AFCC2154CB59500544A0E /* Swoosh 3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Swoosh 3.mp3"; sourceTree = "<group>"; };
+		AE7AFCC5154CC2FF00544A0E /* Restart Button Disabled-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Restart Button Disabled-ipadhd.png"; sourceTree = "<group>"; };
+		AE7AFCC6154CC2FF00544A0E /* Restart Button Disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Restart Button Disabled.png"; sourceTree = "<group>"; };
 		AE7B301A15451D6300A98D82 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "Resources/Default-Landscape.png"; sourceTree = "<group>"; };
 		AE7B301D15451DC600A98D82 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x.png"; path = "Resources/Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		AE7CACD51548F0BA002DB944 /* Help Button-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Help Button-ipadhd.png"; sourceTree = "<group>"; };
@@ -1379,6 +1383,8 @@
 		AE7773F41522823500CE9332 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				AE7AFCC5154CC2FF00544A0E /* Restart Button Disabled-ipadhd.png */,
+				AE7AFCC6154CC2FF00544A0E /* Restart Button Disabled.png */,
 				AE7CACD51548F0BA002DB944 /* Help Button-ipadhd.png */,
 				AE7CACD61548F0BA002DB944 /* Help Button.png */,
 				AEE3D62D154480610099ADC8 /* Lesson Pack Selected-ipadhd.png */,
@@ -2351,6 +2357,8 @@
 				AE7AFCC0154CB40D00544A0E /* Swoosh 1.mp3 in Resources */,
 				AE7AFCC3154CB59500544A0E /* Swoosh 2.mp3 in Resources */,
 				AE7AFCC4154CB59500544A0E /* Swoosh 3.mp3 in Resources */,
+				AE7AFCC7154CC2FF00544A0E /* Restart Button Disabled-ipadhd.png in Resources */,
+				AE7AFCC8154CC2FF00544A0E /* Restart Button Disabled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

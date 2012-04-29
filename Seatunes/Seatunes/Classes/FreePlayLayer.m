@@ -23,9 +23,13 @@ static const CGFloat FPL_KEYBOARD_X = 100.0f;
 static const CGFloat FPL_KEYBOARD_Y = 100.0f;
 static const CGFloat FPL_SIDEMENU_BUTTON_X = 970.0f;
 static const CGFloat FPL_SIDEMENU_BUTTON_Y = 720.0f;
+static const CGFloat FPL_SIDEMENU_BUTTON_LABEL_X = 970.0f;
+static const CGFloat FPL_SIDEMENU_BUTTON_LABEL_Y = 670.0f;
 static const CGFloat FPL_SIDEMENU_ROTATION = 180.0f;
-static const CGFloat FPL_SIDEMENU_X = 1130.0f;
-static const CGFloat FPL_SIDEMENU_Y = 550.0f;
+static const CGFloat FPL_SIDEMENU_ITEM_PADDING = 150.0f;
+static const CGFloat FPL_SIDEMENU_X = 1150.0f;
+static const CGFloat FPL_SIDEMENU_Y = 450.0f;
+static const CGFloat FPL_SIDEMENU_SPRITE_Y = -70.0f;
 static const CGFloat FPL_SIDEMENU_MOVE_TIME = 0.5f;
 static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 
@@ -63,17 +67,24 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         sideMenuButton_.delegate = self;
         sideMenuButton_.position = ccp(FPL_SIDEMENU_BUTTON_X, FPL_SIDEMENU_BUTTON_Y);
         
-        sideMenu_ = [[Menu menu:150.0f isVertical:YES offset:15.0f] retain];
+        sideMenu_ = [[Menu menu:FPL_SIDEMENU_ITEM_PADDING isVertical:YES offset:0.0f] retain];
         sideMenu_.delegate = self; 
         sideMenu_.position = ccp(FPL_SIDEMENU_X, FPL_SIDEMENU_Y);
         
-        [sideMenu_ addMenuBackground:@"Side Parchment.png" pos:ccp(0, -140.0f)];
-        
+        [sideMenu_ addMenuBackground:@"Side Parchment.png" pos:ccp(0, FPL_SIDEMENU_SPRITE_Y)];
+           
+        Button *replayButton = [ScaledImageButton scaledImageButton:kButtonReplay image:@"Restart Button Disabled.png" scale:0.9f];
         Button *menuButton = [ScaledImageButton scaledImageButton:kButtonMenu image:@"Home Button.png" scale:0.9f];        
         
-        [sideMenu_ addMenuItem:menuButton];         
+        [sideMenu_ addMenuItem:replayButton];        
+        [sideMenu_ addMenuItem:menuButton];  
+        
         [self addChild:sideMenuButton_];        
         [self addChild:sideMenu_];           
+        
+        CCLabelBMFont *menuLabel = [CCLabelBMFont labelWithString:@"Menu" fntFile:@"MenuFont.fnt"];
+        menuLabel.position = ccp(FPL_SIDEMENU_BUTTON_LABEL_X, FPL_SIDEMENU_BUTTON_LABEL_Y);
+        [self addChild:menuLabel];        
     }
     return self;
 }
@@ -143,6 +154,9 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 {
     CCScene *scene;
     switch (button.numID) {
+        case kButtonReplay:
+            [[AudioManager audioManager] playSound:kE4 instrument:kMuted];               
+            break;
         case kButtonMenu:
             [[AudioManager audioManager] playSound:kE4 instrument:kMenu];               
             scene = [MainMenuScene node];

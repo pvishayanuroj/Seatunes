@@ -31,11 +31,18 @@
 
 static const CGFloat GL_SIDEMENU_BUTTON_X = 970.0f;
 static const CGFloat GL_SIDEMENU_BUTTON_Y = 720.0f;
+static const CGFloat GL_SIDEMENU_BUTTON_LABEL_X = 970.0f;
+static const CGFloat GL_SIDEMENU_BUTTON_LABEL_Y = 670.0f;
 static const CGFloat GL_HELP_BUTTON_X = 870.0f;
 static const CGFloat GL_HELP_BUTTON_Y = 720.0f;
+static const CGFloat GL_HELP_BUTTON_LABEL_X = 870.0f;
+static const CGFloat GL_HELP_BUTTON_LABEL_Y = 670.0f;
+
 static const CGFloat GL_SIDEMENU_ROTATION = 180.0f;
-static const CGFloat GL_SIDEMENU_X = 1130.0f;
+static const CGFloat GL_SIDEMENU_ITEM_PADDING = 150.0f;
+static const CGFloat GL_SIDEMENU_X = 1150.0f;
 static const CGFloat GL_SIDEMENU_Y = 450.0f;
+static const CGFloat GL_SIDEMENU_SPRITE_Y = -70.0f;
 static const CGFloat GL_SIDEMENU_MOVE_TIME = 0.5f;
 static const CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 
@@ -68,11 +75,11 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         sideMenuButton_.delegate = self;
         sideMenuButton_.position = ccp(GL_SIDEMENU_BUTTON_X, GL_SIDEMENU_BUTTON_Y);
         
-        sideMenu_ = [[Menu menu:150.0f isVertical:YES offset:15.0f] retain];
+        sideMenu_ = [[Menu menu:GL_SIDEMENU_ITEM_PADDING isVertical:YES offset:0.0f] retain];
         sideMenu_.delegate = self; 
         sideMenu_.position = ccp(GL_SIDEMENU_X, GL_SIDEMENU_Y);
         
-        [sideMenu_ addMenuBackground:@"Side Parchment.png" pos:ccp(0, -140.0f)];
+        [sideMenu_ addMenuBackground:@"Side Parchment.png" pos:ccp(0, GL_SIDEMENU_SPRITE_Y)];
         
         Button *replayButton = [ScaledImageButton scaledImageButton:kButtonReplay image:@"Restart Button.png" scale:0.9f];
         Button *menuButton = [ScaledImageButton scaledImageButton:kButtonMenu image:@"Home Button.png" scale:0.9f];        
@@ -107,14 +114,14 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         if (helpButton_) {
             [self addChild:helpButton_];   
             CCLabelBMFont *helpLabel = [CCLabelBMFont labelWithString:@"Help" fntFile:@"MenuFont.fnt"];
-            helpLabel.position = ccp(870, 670);
+            helpLabel.position = ccp(GL_HELP_BUTTON_LABEL_X, GL_HELP_BUTTON_LABEL_Y);
             [self addChild:helpLabel];            
         }
         [self addChild:sideMenuButton_];        
         [self addChild:sideMenu_];         
         
         CCLabelBMFont *menuLabel = [CCLabelBMFont labelWithString:@"Menu" fntFile:@"MenuFont.fnt"];
-        menuLabel.position = ccp(970, 670);
+        menuLabel.position = ccp(GL_SIDEMENU_BUTTON_LABEL_X, GL_SIDEMENU_BUTTON_LABEL_Y);
         [self addChild:menuLabel];
     }
     return self;

@@ -60,7 +60,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/PlayMenuScene.m"
-         timestampString = "357349598.81525"
+         timestampString = "357352627.225657"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "412"
@@ -281,7 +281,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/ScoreLayer.m"
-         timestampString = "356760680.137217"
+         timestampString = "357354448.744707"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "60"
@@ -294,7 +294,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/ScoreLayer.m"
-         timestampString = "356760680.137217"
+         timestampString = "357354448.744707"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "61"
@@ -346,11 +346,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/GameLayer.m"
-         timestampString = "357349497.903925"
+         timestampString = "357351909.737521"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "109"
-         endingLineNumber = "109"
+         startingLineNumber = "116"
+         endingLineNumber = "116"
          landmarkName = "-initWithDifficulty:songName:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -365,6 +365,19 @@
          startingLineNumber = "284"
          endingLineNumber = "284"
          landmarkName = "-showLetters"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Seatunes/Classes/ScoreLayer.m"
+         timestampString = "357354448.744707"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
+         landmarkName = "-initScoreLayer:songName:nextSong:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -21,15 +21,17 @@
 
 @implementation ScoreLayer
 
+static const CGFloat SL_MENU_FRAME_X = 70.0f;
+static const CGFloat SL_MENU_FRAME_Y = 350.0f;
 static const CGFloat SL_TITLE_LABEL_X = 512.0f; 
-static const CGFloat SL_TITLE_LABEL_Y = 660.0f;
-static const CGFloat SL_PERCENT_LABEL_X = 75.0f; 
+static const CGFloat SL_TITLE_LABEL_Y = 680.0f;
+static const CGFloat SL_PERCENT_LABEL_X = 95.0f; 
 static const CGFloat SL_PERCENT_LABEL_Y = 600.0f;
 static const CGFloat SL_NOTES_LABEL_X = 250.0f; 
 static const CGFloat SL_NOTES_LABEL_Y = 600.0f;
-static const CGFloat SL_EARNED_LABEL_X = 70.0f;
+static const CGFloat SL_EARNED_LABEL_X = 95.0f;
 static const CGFloat SL_EARNED_LABEL_Y = 500.0f;
-static const CGFloat SL_BADGE_LABEL_X = 70.0f;
+static const CGFloat SL_BADGE_LABEL_X = 95.0f;
 static const CGFloat SL_BADGE_LABEL_Y = 450.0f;
 static const CGFloat SL_BADGE_X = 420.0f;
 static const CGFloat SL_BADGE_Y = 480.0f;
@@ -39,12 +41,10 @@ static const CGFloat SL_INSTRUCTOR_Y = 200.0f;
 static const CGFloat SL_READER_OFFSET_X = 225.0f;
 static const CGFloat SL_READER_OFFSET_Y = 75.0f;
 
-static const CGFloat SL_NEXT_X = 790.0f;
-static const CGFloat SL_NEXT_Y = 330.0f;
-static const CGFloat SL_REPLAY_X = 800.0f;
-static const CGFloat SL_REPLAY_Y = 550.0f;
-static const CGFloat SL_MENU_X = 810.0f;
-static const CGFloat SL_MENU_Y = 420.0f;
+static const CGFloat SL_REPLAY_X = 840.0f;
+static const CGFloat SL_REPLAY_Y = 560.0f;
+static const CGFloat SL_MENU_X = 840.0f;
+static const CGFloat SL_MENU_Y = 430.0f;
 
 #pragma mark - Object Lifecycle
 
@@ -69,7 +69,7 @@ static const CGFloat SL_MENU_Y = 420.0f;
         [self addChild:background];              
         
         CCSprite *frame = [CCSprite spriteWithFile:@"Score Parchment.png"];
-        frame.position = ccp(35, 40);
+        frame.position = ccp(SL_MENU_FRAME_X, SL_MENU_FRAME_Y);
         frame.anchorPoint = CGPointZero;
         [self addChild:frame];
         
@@ -148,16 +148,14 @@ static const CGFloat SL_MENU_Y = 420.0f;
     
     switch (button.numID) {
         case kButtonMenu:
+            [[AudioManager audioManager] playSound:kE4 instrument:kMenu];            
             scene = [PlayMenuScene node];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                                    
             break;
         case kButtonReplay:
+            [[AudioManager audioManager] playSound:kE4 instrument:kMenu];            
             scene = [GameScene startWithDifficulty:difficulty_ songName:songName_];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                                         
-            break;
-        case kButtonNext:
-            scene = [GameScene startWithDifficulty:difficulty_ songName:nextSong_];
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                                                     
             break;
         default:
             break;
