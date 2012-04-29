@@ -194,6 +194,9 @@
         case kMuted:
             name = @"Muted";
             break;
+        case kMenu:
+            name = @"Menu";
+            break;
         default:
             break;
     }
@@ -210,6 +213,7 @@
     [instruments addObject:[NSNumber numberWithInteger:kWarmPiano]];
     [instruments addObject:[NSNumber numberWithInteger:kMetallic]];
     [instruments addObject:[NSNumber numberWithInteger:kMuted]];
+    [instruments addObject:[NSNumber numberWithInteger:kMenu]];    
     return instruments;
 }
 
@@ -300,37 +304,19 @@
             break;
         case kWahWah:
             name = @"Wah Wah.mp3";
-            break;
-        case kMenuB0:
-            name = @"Menu Sound B0.caf";
-            break;
-        case kMenuC1:
-            name = @"Menu Sound C1.caf";
-            break;
-        case kMenuD1:
-            name = @"Menu Sound D1.caf";
-            break;
-        case kMenuE1:
-            name = @"Menu Sound E1.caf";
-            break;
-        case kMenuF1:
-            name = @"Menu Sound F1.caf";
-            break;            
-        case kMenuG1:
-            name = @"Menu Sound G1.caf";
-            break; 
-        case kMenuA1:
-            name = @"Menu Sound A1.caf";
-            break; 
-        case kMenuB1:
-            name = @"Menu Sound B1.caf";
-            break; 
-        case kMenuC2:
-            name = @"Menu Sound C2.caf";
-            break;      
+            break;    
         case kBubblePop:
             name = @"Bubble Pop.mp3";
             break;
+        case kSwoosh1:
+            name = @"Swoosh 1.mp3";
+            break;
+        case kSwoosh2:
+            name = @"Swoosh 2.mp3";
+            break;
+        case kSwoosh3:
+            name = @"Swoosh 3.mp3";
+            break;            
         default:
             break;
     }
@@ -340,24 +326,18 @@
 
 + (NSArray *) allSoundEffects
 {
-    NSMutableArray *sounds = [NSMutableArray arrayWithCapacity:8];
+    NSMutableArray *sounds = [NSMutableArray arrayWithCapacity:12];
     [sounds addObject:[NSNumber numberWithInteger:kApplause]];
     [sounds addObject:[NSNumber numberWithInteger:kPageFlip]];
     [sounds addObject:[NSNumber numberWithInteger:kClamHit]];
     [sounds addObject:[NSNumber numberWithInteger:kDing]];
     [sounds addObject:[NSNumber numberWithInteger:kSuccess]];    
     [sounds addObject:[NSNumber numberWithInteger:kThud]];
-    [sounds addObject:[NSNumber numberWithInteger:kWahWah]];    
-    [sounds addObject:[NSNumber numberWithInteger:kMenuB0]];
-    [sounds addObject:[NSNumber numberWithInteger:kMenuC1]];
-    [sounds addObject:[NSNumber numberWithInteger:kMenuD1]];
-    [sounds addObject:[NSNumber numberWithInteger:kMenuE1]];
-    [sounds addObject:[NSNumber numberWithInteger:kMenuF1]];
-    [sounds addObject:[NSNumber numberWithInteger:kMenuG1]];
-    [sounds addObject:[NSNumber numberWithInteger:kMenuA1]];
-    [sounds addObject:[NSNumber numberWithInteger:kMenuB1]];
-    [sounds addObject:[NSNumber numberWithInteger:kMenuC2]];    
+    [sounds addObject:[NSNumber numberWithInteger:kWahWah]];       
     [sounds addObject:[NSNumber numberWithInteger:kBubblePop]];    
+    [sounds addObject:[NSNumber numberWithInteger:kSwoosh1]];    
+    [sounds addObject:[NSNumber numberWithInteger:kSwoosh2]];   
+    [sounds addObject:[NSNumber numberWithInteger:kSwoosh3]];       
     
     return sounds;
 }

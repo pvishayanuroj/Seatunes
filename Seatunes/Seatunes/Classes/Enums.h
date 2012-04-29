@@ -47,7 +47,8 @@ typedef enum {
     kLowStrings,
     kWarmPiano,
     kMetallic,
-    kMuted
+    kMuted,
+    kMenu
 } InstrumentType;
 
 typedef enum {
@@ -60,15 +61,9 @@ typedef enum {
     kSuccess,
     kThud,
     kWahWah,
-    kMenuB0,
-    kMenuC1,
-    kMenuD1,
-    kMenuE1,
-    kMenuF1,
-    kMenuG1,
-    kMenuA1,
-    kMenuB1,
-    kMenuC2,    
+    kSwoosh1,
+    kSwoosh2,
+    kSwoosh3    
 } SoundType;
 
 typedef enum {

@@ -63,7 +63,6 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         songName_ = [songName retain];
         difficulty_ = difficulty;
         helpButton_ = nil;
-        [AudioManager audioManager];
         
         sideMenuButton_ = [[ImageButton imageButton:kButtonSideMenu unselectedImage:@"Starfish Button.png" selectedImage:@"Starfish Button.png"] retain];
         sideMenuButton_.delegate = self;
@@ -184,12 +183,16 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     switch (button.numID) {
         case kButtonHelp:
             if (!gameLogic_.keyboard.isHelpMoving) {
+                [[AudioManager audioManager] playSound:kC4 instrument:kMenu];                
                 if (helpOn_) {
                     [self helpOff];
                 }
                 else {
                     [self helpOn];
                 }
+            }
+            else {
+                [[AudioManager audioManager] playSound:kC4 instrument:kMuted];
             }
             break;
         case kButtonSideMenu:
@@ -235,10 +238,12 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     CCScene *scene;
     switch (button.numID) {
         case kButtonReplay:
+            [[AudioManager audioManager] playSound:kE4 instrument:kMenu];
             scene = [GameScene startWithDifficulty:difficulty_ songName:songName_];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                             
             break;
         case kButtonMenu:
+            [[AudioManager audioManager] playSound:kE4 instrument:kMenu];            
             scene = [PlayMenuScene node];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                        
             break;
@@ -260,6 +265,25 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         
         CCActionInterval *spin = [CCRotateBy actionWithDuration:GL_SIDEMENU_MOVE_TIME angle:-GL_SIDEMENU_ROTATION];
         [sideMenuButton_ runAction:spin];
+        
+        NSMutableArray *actions = [NSMutableArray arrayWithCapacity:8];
+        NSMutableArray *tones = [NSMutableArray arrayWithCapacity:4];
+        
+        [tones addObject:[NSNumber numberWithInteger:kC4]];
+        [tones addObject:[NSNumber numberWithInteger:kE4]];
+        [tones addObject:[NSNumber numberWithInteger:kG4]];
+        [tones addObject:[NSNumber numberWithInteger:kC5]];        
+        
+        for (NSNumber *tone in tones) {
+            CCActionInstant *sound = [CCCallBlock actionWithBlock:^{
+                [[AudioManager audioManager] playSound:[tone integerValue] instrument:kMenu];
+            }];
+            CCActionInterval *delay = [CCDelayTime actionWithDuration:0.1f];
+            [actions addObject:sound];
+            [actions addObject:delay];
+        }
+        
+        [self runAction:[CCSequence actionsWithArray:actions]];
     }
 }
 
@@ -281,7 +305,26 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         [sideMenu_ runAction:[CCSequence actions:move, done, nil]];    
         
         CCActionInterval *spin = [CCRotateBy actionWithDuration:GL_SIDEMENU_MOVE_TIME angle: GL_SIDEMENU_ROTATION];
-        [sideMenuButton_ runAction:spin];        
+        [sideMenuButton_ runAction:spin];     
+        
+        NSMutableArray *actions = [NSMutableArray arrayWithCapacity:8];
+        NSMutableArray *tones = [NSMutableArray arrayWithCapacity:4];
+        
+        [tones addObject:[NSNumber numberWithInteger:kC5]];
+        [tones addObject:[NSNumber numberWithInteger:kG4]];
+        [tones addObject:[NSNumber numberWithInteger:kE4]];
+        [tones addObject:[NSNumber numberWithInteger:kC4]];        
+        
+        for (NSNumber *tone in tones) {
+            CCActionInstant *sound = [CCCallBlock actionWithBlock:^{
+                [[AudioManager audioManager] playSound:[tone integerValue] instrument:kMenu];
+            }];
+            CCActionInterval *delay = [CCDelayTime actionWithDuration:0.1f];
+            [actions addObject:sound];
+            [actions addObject:delay];
+        }
+        
+        [self runAction:[CCSequence actionsWithArray:actions]];        
     }
 }
 

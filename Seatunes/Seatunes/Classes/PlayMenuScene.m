@@ -96,9 +96,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
         [self addChild:backButton];        
         
         // Play the sound
-        CCActionInterval *delay = [CCDelayTime actionWithDuration:0.2f];
-        CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(delayedSound)];
-        [self runAction:[CCSequence actions:delay, done, nil]];
+        [[AudioManager audioManager] playSoundEffect:kPageFlip];
     }
     return self;
 }
@@ -250,7 +248,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
             if (![packName isEqualToString:currentPack_]) {
                 [self togglePackSelect:menuItem.numID];
                 [self loadSongMenu:packName];
-                [[AudioManager audioManager] playSoundEffect:kMenuB1];
+                [[AudioManager audioManager] playSound:kB4 instrument:kMenu];
             }
             break;
         default:
@@ -377,6 +375,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
 
 - (void) loadMainMenu
 {
+    [[AudioManager audioManager] playSound:kA4 instrument:kMenu];       
     CCScene *scene = [MainMenuScene node];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:YES]];    
     [[AudioManager audioManager] playSoundEffect:kPageFlip];  
@@ -385,7 +384,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
 - (void) loadSong:(NSString *)songName
 {
 #if DEBUG_ALLUNLOCK
-    
+    [[AudioManager audioManager] playSound:kF4 instrument:kMenu];      
     // Check if song is a training song
     if ([[DataUtility manager] isTrainingSong:songName]) {
         CCScene *scene = [GameScene startWithDifficulty:kDifficultyMusicNoteTutorial songName:songName];
@@ -429,11 +428,6 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 425.0f;
     [packMenu_ removeSuperview];
     [packMenu_ release];
     packMenu_ = nil;
-}
-
-- (void) delayedSound
-{
-    [[AudioManager audioManager] playSoundEffect:kPageFlip];
 }
 
 - (void) showDialog:(NSString *)title text:(NSString *)text

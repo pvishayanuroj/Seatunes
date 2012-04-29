@@ -13,6 +13,7 @@
 #import "MainMenuScene.h"
 #import "Menu.h"
 #import "Button.h"
+#import "AudioManager.h"
 
 @implementation FreePlayLayer
 
@@ -142,13 +143,11 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 {
     CCScene *scene;
     switch (button.numID) {
-        case kButtonNext:
-            break;
-        case kButtonReplay:                            
-            break;
         case kButtonMenu:
+            [[AudioManager audioManager] playSound:kE4 instrument:kMenu];               
             scene = [MainMenuScene node];
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                        
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];        
+            [[AudioManager audioManager] playSoundEffect:kPageFlip];
             break;
         default:
             break;
@@ -168,6 +167,25 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         
         CCActionInterval *spin = [CCRotateBy actionWithDuration:FPL_SIDEMENU_MOVE_TIME angle:-FPL_SIDEMENU_ROTATION];
         [sideMenuButton_ runAction:spin];
+        
+        NSMutableArray *actions = [NSMutableArray arrayWithCapacity:8];
+        NSMutableArray *tones = [NSMutableArray arrayWithCapacity:4];
+        
+        [tones addObject:[NSNumber numberWithInteger:kC4]];
+        [tones addObject:[NSNumber numberWithInteger:kE4]];
+        [tones addObject:[NSNumber numberWithInteger:kG4]];
+        [tones addObject:[NSNumber numberWithInteger:kC5]];        
+        
+        for (NSNumber *tone in tones) {
+            CCActionInstant *sound = [CCCallBlock actionWithBlock:^{
+                [[AudioManager audioManager] playSound:[tone integerValue] instrument:kMenu];
+            }];
+            CCActionInterval *delay = [CCDelayTime actionWithDuration:0.1f];
+            [actions addObject:sound];
+            [actions addObject:delay];
+        }
+        
+        [self runAction:[CCSequence actionsWithArray:actions]];        
     }
 }
 
@@ -189,7 +207,26 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         [sideMenu_ runAction:[CCSequence actions:move, done, nil]];    
         
         CCActionInterval *spin = [CCRotateBy actionWithDuration:FPL_SIDEMENU_MOVE_TIME angle: FPL_SIDEMENU_ROTATION];
-        [sideMenuButton_ runAction:spin];        
+        [sideMenuButton_ runAction:spin];     
+        
+        NSMutableArray *actions = [NSMutableArray arrayWithCapacity:8];
+        NSMutableArray *tones = [NSMutableArray arrayWithCapacity:4];
+        
+        [tones addObject:[NSNumber numberWithInteger:kC5]];
+        [tones addObject:[NSNumber numberWithInteger:kG4]];
+        [tones addObject:[NSNumber numberWithInteger:kE4]];
+        [tones addObject:[NSNumber numberWithInteger:kC4]];        
+        
+        for (NSNumber *tone in tones) {
+            CCActionInstant *sound = [CCCallBlock actionWithBlock:^{
+                [[AudioManager audioManager] playSound:[tone integerValue] instrument:kMenu];
+            }];
+            CCActionInterval *delay = [CCDelayTime actionWithDuration:0.1f];
+            [actions addObject:sound];
+            [actions addObject:delay];
+        }
+        
+        [self runAction:[CCSequence actionsWithArray:actions]];               
     }
 }
 

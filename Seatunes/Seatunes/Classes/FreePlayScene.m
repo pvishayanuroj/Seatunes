@@ -19,9 +19,7 @@
         FreePlayLayer *freePlayLayer = [FreePlayLayer node];
         [self addChild:freePlayLayer];    
         
-        CCActionInterval *delay = [CCDelayTime actionWithDuration:0.2f];
-        CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(delayedSound)];
-        [self runAction:[CCSequence actions:delay, done, nil]];        
+        [[AudioManager audioManager] playSoundEffect:kPageFlip];            
     }
     return self;
 }
@@ -29,11 +27,6 @@
 - (void) dealloc
 {
     [super dealloc];
-}
-
-- (void) delayedSound
-{
-    [[AudioManager audioManager] playSoundEffect:kPageFlip];
 }
 
 @end

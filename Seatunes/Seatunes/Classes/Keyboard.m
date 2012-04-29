@@ -265,6 +265,7 @@ static const CGFloat KB_LETTER_Y = 90.0f;
         CGPoint pos = ccp(count * KB_KEY_PADDING, KB_LETTER_Y);
         
         CCActionInstant *letterMove = [CCCallBlock actionWithBlock:^{
+            [[AudioManager audioManager] playSoundEffect:kSwoosh3];
             CCActionInterval *move = [CCMoveTo actionWithDuration:KB_LETTER_MOVE_OUT_TIME position:pos];       
             CCActionInterval *ease = [CCEaseElasticOut actionWithAction:move period:0.8f];
             [keyboardLetter runAction:ease];
@@ -298,19 +299,23 @@ static const CGFloat KB_LETTER_Y = 90.0f;
         // Move each letter to assigned positions
         isHelpMoving_ = YES;        
         NSInteger count = 0;
-        NSMutableArray *actions = [NSMutableArray arrayWithCapacity:20];        
+        NSMutableArray *actions = [NSMutableArray arrayWithCapacity:30];        
         for (KeyboardLetter *keyboardLetter in [letters_ reverseObjectEnumerator]) {
             CGPoint pos = ccp(KB_LETTER_X + KB_KEY_PADDING * count, KB_LETTER_Y);
             
-            CCActionInstant *letterMove = [CCCallBlock actionWithBlock:^{
+            CCActionInstant *letterMove = [CCCallBlock actionWithBlock:^{             
                 CCActionInterval *move = [CCMoveTo actionWithDuration:KB_LETTER_MOVE_IN_TIME position:pos];       
                 CCActionInterval *ease = [ModEaseBackIn actionWithAction:move];                
                 [keyboardLetter runAction:ease];
             }];
-            CCActionInterval *delay = [CCDelayTime actionWithDuration:0.15f];        
+            CCActionInterval *delay = [CCDelayTime actionWithDuration:0.15f];      
+            CCActionInstant *sound = [CCCallBlock actionWithBlock:^{
+                [[AudioManager audioManager] playSoundEffect:kSwoosh2];   
+            }];
             
             [actions addObject:letterMove];
             [actions addObject:delay];
+            [actions addObject:sound];
             count++;            
         }
         

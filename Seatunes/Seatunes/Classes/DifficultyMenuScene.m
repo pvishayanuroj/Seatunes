@@ -133,7 +133,7 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
             mediumText_.opacity = DMS_SEMI_OPACITY;
             hardText_.opacity = DMS_FULL_OPACITY;            
             difficulty_ = kDifficultyHard;   
-            [[AudioManager audioManager] playSoundEffect:kMenuG1];            
+            [[AudioManager audioManager] playSound:kG4 instrument:kMenu];            
             break;
         case kDMSMedium:
             [(ScaledImageButton *)hardButton_ setImage:@"Music Note Button Unselected.png"];            
@@ -143,7 +143,7 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
             mediumText_.opacity = DMS_FULL_OPACITY;
             hardText_.opacity = DMS_SEMI_OPACITY;               
             difficulty_ = kDifficultyMedium;       
-            [[AudioManager audioManager] playSoundEffect:kMenuE1];            
+            [[AudioManager audioManager] playSound:kE4 instrument:kMenu];             
             break;
         case kDMSEasy:
             [(ScaledImageButton *)hardButton_ setImage:@"Music Note Button Unselected.png"];            
@@ -153,7 +153,7 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
             mediumText_.opacity = DMS_SEMI_OPACITY;
             hardText_.opacity = DMS_SEMI_OPACITY;                           
             difficulty_ = kDifficultyEasy;
-            [[AudioManager audioManager] playSoundEffect:kMenuC1];            
+            [[AudioManager audioManager] playSound:kC4 instrument:kMenu];            
             break;
         case kDMSPlay:
             [self startSong];
@@ -170,14 +170,14 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
 {
     CCScene *scene = [GameScene startWithDifficulty:difficulty_ songName:songName_];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
-    [[AudioManager audioManager] playSoundEffect:kMenuB1];    
+            [[AudioManager audioManager] playSound:kC5 instrument:kMenu];  
 }
 
 - (void) playMenu
 {
     CCScene *scene = [PlayMenuScene node];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:YES]];
-    [[AudioManager audioManager] playSoundEffect:kMenuA1];    
+    [[AudioManager audioManager] playSound:kA4 instrument:kMenu];   
 }
 
 @end

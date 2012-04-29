@@ -8,8 +8,6 @@
 
 #import "GameScene.h"
 #import "GameLayer.h"
-#import "ScrollingMenu.h"
-#import "ScrollingMenuItem.h"
 #import "AudioManager.h"
 
 @implementation GameScene
@@ -26,9 +24,7 @@
         GameLayer *gameLayer = [GameLayer startWithDifficulty:difficulty songName:songName];
         [self addChild:gameLayer];    
         
-        CCActionInterval *delay = [CCDelayTime actionWithDuration:0.2f];
-        CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(delayedSound)];
-        [self runAction:[CCSequence actions:delay, done, nil]];        
+        [[AudioManager audioManager] playSoundEffect:kPageFlip];               
     }
     return self;
 }
@@ -37,11 +33,5 @@
 {
     [super dealloc];
 }
-
-- (void) delayedSound
-{
-    [[AudioManager audioManager] playSoundEffect:kPageFlip];
-}
-
 
 @end

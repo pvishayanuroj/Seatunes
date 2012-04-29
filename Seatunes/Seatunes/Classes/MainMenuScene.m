@@ -75,12 +75,12 @@ static const CGFloat MMS_BUY_Y = 500.0f;
         case kPlayButton:
             scene = [PlayMenuScene node];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:NO]];
-            [[AudioManager audioManager] playSoundEffect:kMenuE1];        
+            [[AudioManager audioManager] playSound:kC4 instrument:kMenu];        
             break;
         case kFreePlayButton:
             scene = [FreePlayScene node];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:NO]];
-            [[AudioManager audioManager] playSoundEffect:kMenuE1];            
+            [[AudioManager audioManager] playSound:kD4 instrument:kMenu];        
             break;
         case kBuySongsButton:
             break;
