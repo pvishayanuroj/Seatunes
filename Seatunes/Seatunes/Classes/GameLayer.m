@@ -349,7 +349,6 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 
 - (void) helpOn
 {
-    //[helpButton_ setImage:@"Help On Button.png"];
     [gameLogic_.keyboard showLetters];
     gameLogic_.staff.showName = YES;
     helpOn_ = YES;
@@ -357,7 +356,6 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 
 - (void) helpOff
 {
-    //[helpButton_ setImage:@"Help Off Button.png"];
     [gameLogic_.keyboard hideLetters];
     gameLogic_.staff.showName = NO;
     helpOn_ = NO;
@@ -366,6 +364,9 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 - (void) pauseGame
 {
     isPaused_ = YES;
+    if (helpButton_) {
+        helpButton_.isClickable = NO;
+    }
     [gameLogic_ pauseHierarchy];
     [[AudioManager audioManager] pause];
 }
@@ -373,6 +374,9 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 - (void) resumeGame
 {
     isPaused_ = NO;
+    if (helpButton_) {
+        helpButton_.isClickable = YES;
+    }
     [gameLogic_ resumeHierarchy];
     [[AudioManager audioManager] resume];
 }

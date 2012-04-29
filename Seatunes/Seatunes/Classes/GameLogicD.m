@@ -98,7 +98,7 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
 
 - (void) start
 {
-    [self schedule:@selector(loop:) interval:1.5f];
+    [self schedule:@selector(loop:) interval:1.25f];
 }
 
 - (void) loop:(ccTime)dt
@@ -150,9 +150,7 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
 }
 
 - (void) noteTouched:(Note *)note
-{
-    [[AudioManager audioManager] playSound:note.keyType instrument:kPiano];
-    
+{   
     if ([queue_ count] > 0) {
         
         NSNumber *key = [NSNumber numberWithUnsignedInteger:note.numID];
@@ -162,10 +160,11 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
         
         // Correct note played
         if ([key isEqualToNumber:correctNote]) {
-
+            [[AudioManager audioManager] playSound:note.keyType instrument:kPiano];
         }
         // Incorrect note played
         else {
+            [[AudioManager audioManager] playSoundEffect:kBubblePop];
             [instructor_ showWrongNote];
             [notesHit_ setObject:[NSNumber numberWithBool:NO] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];
         }           
@@ -181,6 +180,7 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
  
 - (void) noteCrossedBoundary:(Note *)note
 {
+    [[AudioManager audioManager] playSoundEffect:kBubblePop];
     [queue_ removeObject:[NSNumber numberWithUnsignedInteger:note.numID]];            
     [noteGenerator_ popNoteWithID:note.numID];
     [notesHit_ setObject:[NSNumber numberWithBool:NO] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];    

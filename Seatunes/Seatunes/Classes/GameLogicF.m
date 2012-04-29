@@ -110,7 +110,7 @@ static const CGFloat GLF_READER_OFFSET_Y = 75.0f;
 - (void) start
 {
     keyboard_.isClickable = YES;
-    [self schedule:@selector(loop:) interval:1.5f];
+    [self schedule:@selector(loop:) interval:1.25f];
 }
 
 - (void) loop:(ccTime)dt

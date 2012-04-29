@@ -40,17 +40,17 @@ static const CGFloat NG_CR2_E_X = 250.0f;
 static const CGFloat NG_CR2_E_Y = 750.0f;
 
 // Leftmost coral
-static const CGFloat NG_CR3_S_X = 10.0f;
-static const CGFloat NG_CR3_S_Y = 210.0f;
-static const CGFloat NG_CR3_C1_X = 170.0f; 
+static const CGFloat NG_CR3_S_X = 160.0f;
+static const CGFloat NG_CR3_S_Y = 300.0f;
+static const CGFloat NG_CR3_C1_X = 100.0f; 
 static const CGFloat NG_CR3_C1_Y = 150.0f;
-static const CGFloat NG_CR3_C2_X = 170.0f;
+static const CGFloat NG_CR3_C2_X = 100.0f;
 static const CGFloat NG_CR3_C2_Y = 250.0f;
 static const CGFloat NG_CR3_E_X = 170.0f;
 static const CGFloat NG_CR3_E_Y = 1000.0f;
 
 // Middle coral to the right
-static const CGFloat NG_CR4_S_X = 480.0f;
+static const CGFloat NG_CR4_S_X = 570.0f;
 static const CGFloat NG_CR4_S_Y = 200.0f;
 static const CGFloat NG_CR4_C1_X = 150.0f; 
 static const CGFloat NG_CR4_C1_Y = 150.0f;
@@ -60,17 +60,17 @@ static const CGFloat NG_CR4_E_X = 150.0f;
 static const CGFloat NG_CR4_E_Y = 1000.0f;
 
 // Rightmost coral
-static const CGFloat NG_CR5_S_X = 970.0f;
-static const CGFloat NG_CR5_S_Y = 230.0f;
+static const CGFloat NG_CR5_S_X = 900.0f;
+static const CGFloat NG_CR5_S_Y = 190.0f;
 static const CGFloat NG_CR5_C1_X = -150.0f; 
 static const CGFloat NG_CR5_C1_Y = 150.0f;
-static const CGFloat NG_CR5_C2_X = -150.0f;
+static const CGFloat NG_CR5_C2_X = -130.0f;
 static const CGFloat NG_CR5_C2_Y = 250.0f;
-static const CGFloat NG_CR5_E_X = -150.0f;
+static const CGFloat NG_CR5_E_X = -130.0f;
 static const CGFloat NG_CR5_E_Y = 1000.0f;
 
 // Middle coral to the left
-static const CGFloat NG_CR6_S_X = 480.0f;
+static const CGFloat NG_CR6_S_X = 570.0f;
 static const CGFloat NG_CR6_S_Y = 200.0f;
 static const CGFloat NG_CR6_C1_X = -150.0f; 
 static const CGFloat NG_CR6_C1_Y = 150.0f;

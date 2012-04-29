@@ -120,7 +120,7 @@
     [glView setMultipleTouchEnabled:YES];
 	//[[CCDirector sharedDirector] runWithScene: [MainMenuScene node]];
 
-    
+    /*
     [AudioManager audioManager];
     [DataUtility manager];
     ScoreInfo score;
@@ -128,11 +128,11 @@
     score.notesHit = 90;
     score.notesMissed = 10;
     [[CCDirector sharedDirector] runWithScene:[ScoreScene scoreScene:score songName:@"Twinkle Twinkle" nextSong:@""]];
+    */
     
     
-    
-    //[DataUtility manager];
-    //[[CCDirector sharedDirector] runWithScene: [GameScene startWithDifficulty:kDifficultyHard songName:@"Twinkle Twinkle"]];
+    [DataUtility manager];
+    [[CCDirector sharedDirector] runWithScene: [GameScene startWithDifficulty:kDifficultyEasy songName:@"Twinkle Twinkle"]];
 }
 
 
