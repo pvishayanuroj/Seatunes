@@ -16,7 +16,7 @@
 
 @implementation Keyboard
 
-static const CGFloat KB_KEY_PADDING = 110.0f;
+static const CGFloat KB_KEY_PADDING = 115.0f;
 static const CGFloat KB_LETTER_MOVE_OUT_TIME = 1.5f;
 static const CGFloat KB_LETTER_MOVE_IN_TIME = 0.75f;
 static const CGFloat KB_LETTER_X = 1200.0f;

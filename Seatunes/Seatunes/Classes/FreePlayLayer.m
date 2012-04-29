@@ -20,7 +20,7 @@
 static const CGFloat FPL_INSTRUCTOR_X = 200.0f;
 static const CGFloat FPL_INSTRUCTOR_Y = 550.0f;
 static const CGFloat FPL_KEYBOARD_X = 100.0f;
-static const CGFloat FPL_KEYBOARD_Y = 100.0f;
+static const CGFloat FPL_KEYBOARD_Y = 75.0f;
 static const CGFloat FPL_SIDEMENU_BUTTON_X = 970.0f;
 static const CGFloat FPL_SIDEMENU_BUTTON_Y = 720.0f;
 static const CGFloat FPL_SIDEMENU_BUTTON_LABEL_X = 970.0f;

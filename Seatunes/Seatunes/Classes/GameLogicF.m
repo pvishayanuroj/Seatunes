@@ -21,7 +21,7 @@
 static const CGFloat GLF_INSTRUCTOR_X = 200.0f;
 static const CGFloat GLF_INSTRUCTOR_Y = 550.0f;
 static const CGFloat GLF_KEYBOARD_X = 100.0f;
-static const CGFloat GLF_KEYBOARD_Y = 100.0f;
+static const CGFloat GLF_KEYBOARD_Y = 75.0f;
 static const CGFloat GLF_READER_OFFSET_X = 225.0f;
 static const CGFloat GLF_READER_OFFSET_Y = 75.0f;
 

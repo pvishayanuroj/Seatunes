@@ -23,7 +23,7 @@
 static const CGFloat GLE_INSTRUCTOR_X = 200.0f;
 static const CGFloat GLE_INSTRUCTOR_Y = 350.0f;
 static const CGFloat GLE_KEYBOARD_X = 100.0f;
-static const CGFloat GLE_KEYBOARD_Y = 100.0f;
+static const CGFloat GLE_KEYBOARD_Y = 75.0f;
 static const CGFloat GLE_STAFF_X = 512.0f;
 static const CGFloat GLE_STAFF_Y = 600.0f;
 static const CGFloat GLE_READER_OFFSET_X = 225.0f;

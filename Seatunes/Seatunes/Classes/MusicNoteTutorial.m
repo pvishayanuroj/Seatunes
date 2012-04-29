@@ -20,7 +20,7 @@
 static const CGFloat MNT_INSTRUCTOR_X = 200.0f;
 static const CGFloat MNT_INSTRUCTOR_Y = 350.0f;
 static const CGFloat MNT_KEYBOARD_X = 100.0f;
-static const CGFloat MNT_KEYBOARD_Y = 80.0f;
+static const CGFloat MNT_KEYBOARD_Y = 75.0f;
 static const CGFloat MNT_STAFF_X = 512.0f;
 static const CGFloat MNT_STAFF_Y = 600.0f;
 static const CGFloat MNT_READER_OFFSET_X = 225.0f;
