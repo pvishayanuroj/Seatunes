@@ -33,9 +33,9 @@ static const CGFloat GL_SIDEMENU_BUTTON_X = 970.0f;
 static const CGFloat GL_SIDEMENU_BUTTON_Y = 720.0f;
 static const CGFloat GL_SIDEMENU_BUTTON_LABEL_X = 970.0f;
 static const CGFloat GL_SIDEMENU_BUTTON_LABEL_Y = 670.0f;
-static const CGFloat GL_HELP_BUTTON_X = 870.0f;
+static const CGFloat GL_HELP_BUTTON_X = 850.0f;
 static const CGFloat GL_HELP_BUTTON_Y = 720.0f;
-static const CGFloat GL_HELP_BUTTON_LABEL_X = 870.0f;
+static const CGFloat GL_HELP_BUTTON_LABEL_X = 850.0f;
 static const CGFloat GL_HELP_BUTTON_LABEL_Y = 670.0f;
 
 static const CGFloat GL_SIDEMENU_ROTATION = 180.0f;
@@ -95,7 +95,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
                 gameLogic_ = [[GameLogicF gameLogicF:songName] retain];
                 break;
             case kDifficultyHard:
-                helpButton_ = [[ScaledImageButton scaledImageButton:kButtonHelp image:@"Help Button.png" scale:1.0f] retain];
+                helpButton_ = [[ScaledImageButton scaledImageButton:kButtonHelp image:@"Help Button.png" scale:0.8f] retain];
                 helpButton_.position = ccp(GL_HELP_BUTTON_X, GL_HELP_BUTTON_Y);
                 helpButton_.delegate = self;                
                 gameLogic_ = [[GameLogicE gameLogicE:songName] retain];            

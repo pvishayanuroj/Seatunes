@@ -257,6 +257,7 @@
 		AE781A0A153E40A100067B48 /* Tutorial Prompt 00-00.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE7819DD153E40A100067B48 /* Tutorial Prompt 00-00.mp3 */; };
 		AE781A0B153E40A100067B48 /* Tutorial Staff 00-00.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE7819DE153E40A100067B48 /* Tutorial Staff 00-00.mp3 */; };
 		AE781A0D153E420900067B48 /* Tutorial Mnemonic 00-00.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE781A0C153E420900067B48 /* Tutorial Mnemonic 00-00.mp3 */; };
+		AE78CAC1154D7A6900D90582 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78CAC0154D7A6900D90582 /* Icon-72@2x.png */; };
 		AE78F3CF1523DABF00D970B5 /* MenuFont-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AE78F3CD1523DABF00D970B5 /* MenuFont-ipadhd.fnt */; };
 		AE78F3D01523DABF00D970B5 /* MenuFont-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE78F3CE1523DABF00D970B5 /* MenuFont-ipadhd.png */; };
 		AE792BA8153B233A002A8A18 /* Dialogue Font-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AE792BA6153B233A002A8A18 /* Dialogue Font-ipadhd.fnt */; };
@@ -737,6 +738,7 @@
 		AE7819DD153E40A100067B48 /* Tutorial Prompt 00-00.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Tutorial Prompt 00-00.mp3"; sourceTree = "<group>"; };
 		AE7819DE153E40A100067B48 /* Tutorial Staff 00-00.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Tutorial Staff 00-00.mp3"; sourceTree = "<group>"; };
 		AE781A0C153E420900067B48 /* Tutorial Mnemonic 00-00.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Tutorial Mnemonic 00-00.mp3"; sourceTree = "<group>"; };
+		AE78CAC0154D7A6900D90582 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "Resources/Icon-72@2x.png"; sourceTree = "<group>"; };
 		AE78F3CD1523DABF00D970B5 /* MenuFont-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MenuFont-ipadhd.fnt"; sourceTree = "<group>"; };
 		AE78F3CE1523DABF00D970B5 /* MenuFont-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuFont-ipadhd.png"; sourceTree = "<group>"; };
 		AE792BA6153B233A002A8A18 /* Dialogue Font-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Dialogue Font-ipadhd.fnt"; sourceTree = "<group>"; };
@@ -1634,6 +1636,7 @@
 				DAB11F3714C1E847009B60FB /* Icon.png */,
 				DAB11F3914C1E847009B60FB /* Icon@2x.png */,
 				04B0D4C81504173B00A4A2B8 /* Icon-72.png */,
+				AE78CAC0154D7A6900D90582 /* Icon-72@2x.png */,
 				04B0D4C91504173D00A4A2B8 /* Icon-Small-50.png */,
 				04B0D4CA1504173E00A4A2B8 /* Icon-Small.png */,
 				04B0D4CB1504174000A4A2B8 /* Icon-Small@2x.png */,
@@ -2359,6 +2362,7 @@
 				AE7AFCC4154CB59500544A0E /* Swoosh 3.mp3 in Resources */,
 				AE7AFCC7154CC2FF00544A0E /* Restart Button Disabled-ipadhd.png in Resources */,
 				AE7AFCC8154CC2FF00544A0E /* Restart Button Disabled.png in Resources */,
+				AE78CAC1154D7A6900D90582 /* Icon-72@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
