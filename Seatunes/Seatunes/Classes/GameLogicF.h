@@ -25,7 +25,7 @@
     
     NSMutableArray *queueByID_;
     
-    NSMutableDictionary *notesHit_;     
+    NSMutableDictionary *score_;     
     
     BOOL ignoreInput_;
     

@@ -59,7 +59,6 @@ static const CGFloat SL_MENU_Y = 430.0f;
         
         difficulty_ = scoreInfo.difficulty;
         scoreInfo_ = scoreInfo;
-        scoreInfo_.percentage = round(100.0f * (CGFloat)scoreInfo.notesHit / (CGFloat)(scoreInfo.notesHit + scoreInfo.notesMissed));
         songName_ = [songName retain];
         nextSong_ = [nextSong retain];
         

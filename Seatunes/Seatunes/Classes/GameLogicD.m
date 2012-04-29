@@ -38,7 +38,7 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
         onLastNote_ = NO;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
         queue_ = [[NSMutableArray arrayWithCapacity:5] retain];
-        notesHit_ = [[Utility generateBoolDictionary:YES size:[notes_ count]] retain];
+        score_ = [[Utility initializeScoreDictionary:notes_] retain];
         
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
@@ -89,7 +89,7 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
 {
     [notes_ release];
     [queue_ release];
-    [notesHit_ release];
+    [score_ release];
     [noteGenerator_ release];
     [reader_ release];
     
@@ -166,7 +166,7 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
         else {
             [[AudioManager audioManager] playSoundEffect:kBubblePop];
             [instructor_ showWrongNote];
-            [notesHit_ setObject:[NSNumber numberWithBool:NO] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];
+            [score_ setObject:[NSNumber numberWithInteger:kNoteMissed] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];
         }           
         [queue_ removeObject:[NSNumber numberWithUnsignedInteger:note.numID]];       
         
@@ -183,7 +183,7 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
     [[AudioManager audioManager] playSoundEffect:kBubblePop];
     [queue_ removeObject:[NSNumber numberWithUnsignedInteger:note.numID]];            
     [noteGenerator_ popNoteWithID:note.numID];
-    [notesHit_ setObject:[NSNumber numberWithBool:NO] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];    
+    [score_ setObject:[NSNumber numberWithInteger:kNoteMissed] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];    
     [instructor_ showWrongNote];    
     
     // This note is the last note in the song
@@ -195,9 +195,10 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
 
 - (void) endSong
 {
-    scoreInfo_.notesMissed = [Utility countNumBoolInDictionary:NO dictionary:notesHit_];
-    scoreInfo_.notesHit = [notesHit_ count] - scoreInfo_.notesMissed;
-    scoreInfo_.percentage = (NSUInteger)(ceil(scoreInfo_.notesHit / (scoreInfo_.notesHit + scoreInfo_.notesMissed)));        
+    ScoreInfo results = [Utility tallyScoreDictionary:score_];   
+    scoreInfo_.notesHit = results.notesHit;
+    scoreInfo_.notesMissed = results.notesMissed;
+    scoreInfo_.percentage = results.percentage;
     
     [delegate_ songComplete:scoreInfo_];    
 }

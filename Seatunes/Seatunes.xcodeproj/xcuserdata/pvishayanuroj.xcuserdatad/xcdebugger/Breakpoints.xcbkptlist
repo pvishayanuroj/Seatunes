@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/GameLogicE.m"
-         timestampString = "356758132.847251"
+         timestampString = "357364580.948499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "202"
-         endingLineNumber = "202"
+         startingLineNumber = "201"
+         endingLineNumber = "201"
          landmarkName = "-keyboardKeyPressed:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/GameLogicE.m"
-         timestampString = "356758132.847251"
+         timestampString = "357364580.948499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "210"
-         endingLineNumber = "210"
+         startingLineNumber = "209"
+         endingLineNumber = "209"
          landmarkName = "-keyboardKeyPressed:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -241,19 +241,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Seatunes/Classes/GameLogicD.m"
-         timestampString = "357362746.012175"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "198"
-         endingLineNumber = "198"
-         landmarkName = "-endSong"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/SpeechReader.m"
          timestampString = "356840872.183745"
          startingColumnNumber = "9223372036854775807"
@@ -346,7 +333,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Seatunes/Classes/GameLayer.m"
-         timestampString = "357351909.737521"
+         timestampString = "357365748.206805"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "116"
@@ -365,19 +352,6 @@
          startingLineNumber = "284"
          endingLineNumber = "284"
          landmarkName = "-showLetters"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Seatunes/Classes/ScoreLayer.m"
-         timestampString = "357354448.744707"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
-         landmarkName = "-initScoreLayer:songName:nextSong:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -47,14 +47,10 @@
 + (NSUInteger) countNumNotes:(NSArray *)notes;
 
 + (NSUInteger) countNumNotesFromSections:(NSArray *)sections;
+ 
++ (NSMutableDictionary *) initializeScoreDictionary:(NSArray *)notes;
 
-+ (NSMutableArray *) generateBoolArray:(BOOL)val size:(NSUInteger)size;
-
-+ (NSUInteger) countNumBool:(BOOL)val array:(NSArray *)array;
-
-+ (NSMutableDictionary *) generateBoolDictionary:(BOOL)val size:(NSUInteger)size;
-
-+ (NSUInteger) countNumBoolInDictionary:(BOOL)val dictionary:(NSDictionary *)dictionary;
++ (ScoreInfo) tallyScoreDictionary:(NSDictionary *)dictionary;
 
 + (NSString *) songKey:(NSString *)songName difficulty:(DifficultyType)difficulty;
 

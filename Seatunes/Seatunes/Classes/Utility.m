@@ -402,40 +402,49 @@
     return count;
 }
 
-+ (NSMutableArray *) generateBoolArray:(BOOL)val size:(NSUInteger)size
++ (NSMutableDictionary *) initializeScoreDictionary:(NSArray *)notes
 {
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:size];
-    for (NSUInteger i = 0; i < size; ++i) {
-        [array addObject:[NSNumber numberWithBool:val]];
-    }
-    return array;
-}
-
-+ (NSUInteger) countNumBool:(BOOL)val array:(NSArray *)array
-{
-    NSUInteger count = 0;
-    for (NSNumber *number in array) {
-        if ([number boolValue] == val) {
-            count++;
-        }
-    }
-    return count;
-}
-
-+ (NSMutableDictionary *) generateBoolDictionary:(BOOL)val size:(NSUInteger)size
-{
-    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:size];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:[notes count]];
     
-    for (NSUInteger i = 0; i < size; ++i) {
-        [dict setObject:[NSNumber numberWithBool:val] forKey:[NSNumber numberWithUnsignedInteger:i]];
+    NSUInteger i = 0;
+    for (NSNumber *note in notes) {    
+        
+        switch ([note integerValue]) {
+            case kBlankNote:
+                [dict setObject:[NSNumber numberWithInteger:kNoteBlank] forKey:[NSNumber numberWithUnsignedInteger:i]];
+                break;
+            default:
+                [dict setObject:[NSNumber numberWithInteger:kNoteHit] forKey:[NSNumber numberWithUnsignedInteger:i]];
+                break;
+        }
+        i++;
     }
     
     return dict;
 }
 
-+ (NSUInteger) countNumBoolInDictionary:(BOOL)val dictionary:(NSDictionary *)dictionary
++ (ScoreInfo) tallyScoreDictionary:(NSDictionary *)dictionary
 {
-    return [self countNumBool:val array:[dictionary allValues]];
+    ScoreInfo scoreInfo;
+    scoreInfo.notesHit = 0;
+    scoreInfo.notesMissed = 0;
+    
+    for (NSNumber *number in [dictionary allValues]) {
+        switch ([number integerValue]) {
+            case kNoteHit:
+                scoreInfo.notesHit++;
+                break;
+            case kNoteMissed:
+                scoreInfo.notesMissed++;
+                break;
+            default:
+                break;
+        }
+    }
+    
+    scoreInfo.percentage = round(100.0f * (CGFloat)scoreInfo.notesHit / (CGFloat)(scoreInfo.notesHit + scoreInfo.notesMissed));    
+    
+    return scoreInfo;
 }
 
 + (NSString *) songKey:(NSString *)songName difficulty:(DifficultyType)difficulty

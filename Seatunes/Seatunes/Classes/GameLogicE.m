@@ -46,8 +46,7 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
         notes_ = [[Utility loadFlattenedSong:songName] retain];
         queueByID_ = [[NSMutableArray arrayWithCapacity:5] retain];
         queueByKey_ = [[NSMutableArray arrayWithCapacity:5] retain];        
-        
-        notesHit_ = [[Utility generateBoolDictionary:YES size:[notes_ count]] retain];          
+        score_ = [[Utility initializeScoreDictionary:notes_] retain];        
         
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
@@ -105,7 +104,7 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
     [notes_ release];
     [queueByID_ release];
     [queueByKey_ release];
-    [notesHit_ release];
+    [score_ release];
     [staff_ release];
     [reader_ release];
     
@@ -236,7 +235,7 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
 - (void) staffNoteReturned:(StaffNote *)note
 {
     [self removeNote];
-    [notesHit_ setObject:[NSNumber numberWithBool:NO] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];       
+    [score_ setObject:[NSNumber numberWithInteger:kNoteMissed] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];       
     
     // This note is the last note in the song
     if (onLastNote_ && [queueByID_ count] == 0) {
@@ -247,9 +246,10 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
 
 - (void) endSong
 {
-    scoreInfo_.notesMissed = [Utility countNumBoolInDictionary:NO dictionary:notesHit_];
-    scoreInfo_.notesHit = [notesHit_ count] - scoreInfo_.notesMissed;
-    scoreInfo_.percentage = (NSUInteger)(ceil(scoreInfo_.notesHit / (scoreInfo_.notesHit + scoreInfo_.notesMissed)));    
+    ScoreInfo results = [Utility tallyScoreDictionary:score_];   
+    scoreInfo_.notesHit = results.notesHit;
+    scoreInfo_.notesMissed = results.notesMissed;
+    scoreInfo_.percentage = results.percentage;    
     
     keyboard_.isKeyboardMuted = NO;    
     [keyboard_ applause];

@@ -95,10 +95,9 @@ typedef enum {
 } DifficultyType;
 
 typedef enum {
-    kScoreZeroStar = 0,
-    kScoreOneStar = 1,
-    kScoreTwoStar = 2,
-    kScoreThreeStar = 3
+    kNoteMissed,
+    kNoteHit,
+    kNoteBlank
 } ScoreType;
 
 typedef enum {

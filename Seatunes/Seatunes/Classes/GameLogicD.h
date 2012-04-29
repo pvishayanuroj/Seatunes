@@ -22,7 +22,7 @@
     
     NSMutableArray *queue_;
     
-    NSMutableDictionary *notesHit_;
+    NSMutableDictionary *score_;
     
     NSUInteger playerNoteIndex_;
     
