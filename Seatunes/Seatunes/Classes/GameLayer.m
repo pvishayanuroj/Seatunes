@@ -175,10 +175,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 
 - (void) songComplete:(ScoreInfo)scoreInfo
 {
-    if (scoreInfo.notesMissed == 0) {
-        [[DataUtility manager] saveSongScore:songName_ difficulty:difficulty_];
-    }
-    
+    // Record that this difficulty has been played, and record that at least the first song has been played
     NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty_];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kFirstPlay];

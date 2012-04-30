@@ -108,6 +108,11 @@ static const CGFloat SL_MENU_Y = 430.0f;
         statsLabel_.position = ccp(SL_NOTES_LABEL_X, SL_NOTES_LABEL_Y);
         [self addChild:statsLabel_];
         
+        // Record the score if it is good enough
+        if (scoreInfo.percentage >= PERCENT_FOR_BADGE) {
+            [[DataUtility manager] saveSongScore:songName difficulty:scoreInfo.difficulty];            
+        }
+        
         //CCParticleSystem *ps = [self createBadgePS];
         //ps.position = ccp(SL_BADGE_X, SL_BADGE_Y);
         //[self addChild:ps];        
