@@ -11,6 +11,8 @@
 
 @implementation CocosOverlayViewController
 
+@synthesize scrollView = scrollView_;
+
 + (id) cocosOverlayViewController:(CCNode *)node contentSize:(CGSize)contentSize frame:(CGRect)frame
 {
     return [[[self alloc] init:node contentSize:contentSize frame:frame] autorelease];

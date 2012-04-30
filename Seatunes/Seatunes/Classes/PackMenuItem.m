@@ -34,12 +34,15 @@ static const CGFloat PMI_SPRITE_X = 100.0f;
             filename = [NSString stringWithFormat:@"%@", packName];
         }
         
+        /*
         if (packIndex == 0) {
             filename = [filename stringByAppendingFormat:@" Selected.png"];
         }
         else {
             filename = [filename stringByAppendingFormat:@" Unselected.png"];
         }
+         */
+        filename = [filename stringByAppendingFormat:@" Unselected.png"];        
         
         sprite_ = [[CCSprite spriteWithFile:filename] retain];
         sprite_.position = ccp(PMI_SPRITE_X, 0);

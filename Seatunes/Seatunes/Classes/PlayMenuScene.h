@@ -42,7 +42,9 @@ typedef enum {
     
     Button *packButton_;
     
-    NSString *currentPack_;
+    NSUInteger currentPack_;
+    
+    //NSString *currentPack_;
     
     /* Maps song menu item IDs to song names */
     NSArray *songNames_;
@@ -56,7 +58,14 @@ typedef enum {
 
 }
 
-@property (nonatomic, retain) NSString *currentPack;
+//@property (nonatomic, retain) NSString *currentPack;
+@property (nonatomic, readonly) NSUInteger currentPack;
+
++ (id) playMenuScene;
+
++ (id) playMenuScene:(NSUInteger)packIndex;
+
+- (id) initPlayMenuScene:(NSUInteger)packIndex;
 
 - (void) buyProduct:(BuyState)buyState;
 
@@ -64,7 +73,7 @@ typedef enum {
 
 - (void) loadPackMenu;
 
-- (void) loadSongMenu:(NSString *)packName;
+- (void) loadSongMenu:(NSUInteger)packIndex;
 
 - (void) reloadScreen;
 

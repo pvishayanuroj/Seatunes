@@ -25,6 +25,8 @@ enum {
     
     NSString *songName_;
     
+    NSUInteger packIndex_;
+    
     Button *easyButton_;
     
     Button *mediumButton_;
@@ -40,9 +42,9 @@ enum {
     DifficultyType difficulty_;
 }
 
-+ (id) startWithSongName:(NSString *)songName;
++ (id) startWithSongName:(NSString *)songName packIndex:(NSUInteger)packIndex;
 
-- (id) initWithSongName:(NSString *)songName;
+- (id) initWithSongName:(NSString *)songName packIndex:(NSUInteger)packIndex;
 
 - (void) startSong;
 

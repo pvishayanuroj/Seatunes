@@ -48,19 +48,19 @@ static const CGFloat SL_MENU_Y = 430.0f;
 
 #pragma mark - Object Lifecycle
 
-+ (id) scoreLayer:(ScoreInfo)scoreInfo songName:(NSString *)songName nextSong:(NSString *)nextSong
++ (id) scoreLayer:(ScoreInfo)scoreInfo songName:(NSString *)songName packIndex:(NSUInteger)packIndex
 {
-    return [[[self alloc] initScoreLayer:scoreInfo songName:songName nextSong:nextSong] autorelease];
+    return [[[self alloc] initScoreLayer:scoreInfo songName:songName packIndex:packIndex] autorelease];
 }
 
-- (id) initScoreLayer:(ScoreInfo)scoreInfo songName:(NSString *)songName nextSong:(NSString *)nextSong
+- (id) initScoreLayer:(ScoreInfo)scoreInfo songName:(NSString *)songName packIndex:(NSUInteger)packIndex
 {
     if ((self = [super init])) {
         
         difficulty_ = scoreInfo.difficulty;
         scoreInfo_ = scoreInfo;
         songName_ = [songName retain];
-        nextSong_ = [nextSong retain];
+        packIndex_ = packIndex;
         
         // Add background
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
@@ -132,7 +132,6 @@ static const CGFloat SL_MENU_Y = 430.0f;
     [instructor_ release];
     [statsLabel_ release];
     [songName_ release];
-    [nextSong_ release];
     [particles_ release];
     [reader_ release];
     
@@ -148,12 +147,12 @@ static const CGFloat SL_MENU_Y = 430.0f;
     switch (button.numID) {
         case kButtonMenu:
             [[AudioManager audioManager] playSound:kE4 instrument:kMenu];            
-            scene = [PlayMenuScene node];
+            scene = [PlayMenuScene playMenuScene:packIndex_];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                                    
             break;
         case kButtonReplay:
             [[AudioManager audioManager] playSound:kE4 instrument:kMenu];            
-            scene = [GameScene startWithDifficulty:difficulty_ songName:songName_];
+            scene = [GameScene startWithDifficulty:difficulty_ songName:songName_ packIndex:packIndex_];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                                         
             break;
         default:

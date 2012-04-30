@@ -33,12 +33,12 @@
     
     NSString *songName_;
     
-    NSString *nextSong_;
+    NSUInteger packIndex_;
 }
 
-+ (id) scoreLayer:(ScoreInfo)scoreInfo songName:(NSString *)songName nextSong:(NSString *)nextSong;
++ (id) scoreLayer:(ScoreInfo)scoreInfo songName:(NSString *)songName packIndex:(NSUInteger)packIndex;
 
-- (id) initScoreLayer:(ScoreInfo)scoreInfo songName:(NSString *)songName nextSong:(NSString *)nextSong;
+- (id) initScoreLayer:(ScoreInfo)scoreInfo songName:(NSString *)songName packIndex:(NSUInteger)packIndex;
 
 - (void) placeIncrementingPercentage;
 

@@ -23,6 +23,8 @@
 
 }
 
+@property (nonatomic, readonly) CocosOverlayScrollView *scrollView;
+
 + (id) cocosOverlayViewController:(CCNode *)node contentSize:(CGSize)contentSize frame:(CGRect)frame;
 
 - (id) init:(CCNode *)node contentSize:(CGSize)contentSize frame:(CGRect)frame;

@@ -11,16 +11,16 @@
 
 @implementation ScoreScene
 
-+ (id) scoreScene:(ScoreInfo)scoreInfo songName:(NSString *)songName nextSong:(NSString *)nextSong
++ (id) scoreScene:(ScoreInfo)scoreInfo songName:(NSString *)songName packIndex:(NSUInteger)packIndex
 {
-    return [[[self alloc] initScoreScene:scoreInfo songName:songName nextSong:nextSong] autorelease];
+    return [[[self alloc] initScoreScene:scoreInfo songName:songName packIndex:packIndex] autorelease];
 }
 
-- (id) initScoreScene:(ScoreInfo)scoreInfo songName:(NSString *)songName nextSong:(NSString *)nextSong
+- (id) initScoreScene:(ScoreInfo)scoreInfo songName:(NSString *)songName packIndex:(NSUInteger)packIndex
 {
     if ((self = [super init])) {
         
-        ScoreLayer *scoreLayer = [ScoreLayer scoreLayer:scoreInfo songName:songName nextSong:nextSong];
+        ScoreLayer *scoreLayer = [ScoreLayer scoreLayer:scoreInfo songName:songName packIndex:packIndex];
         [self addChild:scoreLayer];            
         
     }

@@ -44,6 +44,8 @@
 
 - (void) addMenuItem:(ScrollingMenuItem *)menuItem;
 
+- (void) setMenuOffset:(NSUInteger)index;
+
 /* 
  * This method MUST be called prior to releasing Scrolling Menu,
  * because the view controller holds a reference to self

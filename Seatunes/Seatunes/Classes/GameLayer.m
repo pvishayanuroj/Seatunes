@@ -52,12 +52,12 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 
 #pragma mark - Object Lifecycle
 
-+ (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName
++ (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName packIndex:(NSUInteger)packIndex
 {
-    return [[[self alloc] initWithDifficulty:difficulty songName:songName] autorelease];
+    return [[[self alloc] initWithDifficulty:difficulty songName:songName packIndex:packIndex] autorelease];
 }
 
-- (id) initWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName
+- (id) initWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName packIndex:(NSUInteger)packIndex
 {
     if ((self = [super init])) {
         
@@ -68,6 +68,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         sideMenuMoving_ = NO;
         isPaused_ = NO;
         songName_ = [songName retain];
+        packIndex_ = packIndex;
         difficulty_ = difficulty;
         helpButton_ = nil;
         
@@ -246,12 +247,12 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     switch (button.numID) {
         case kButtonReplay:
             [[AudioManager audioManager] playSound:kE4 instrument:kMenu];
-            scene = [GameScene startWithDifficulty:difficulty_ songName:songName_];
+            scene = [GameScene startWithDifficulty:difficulty_ songName:songName_ packIndex:packIndex_];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                             
             break;
         case kButtonMenu:
             [[AudioManager audioManager] playSound:kE4 instrument:kMenu];            
-            scene = [PlayMenuScene node];
+            scene = [PlayMenuScene playMenuScene:packIndex_];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                        
             break;
         default:
@@ -343,7 +344,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 
 - (void) showScoreMenu:(ScoreInfo)scoreInfo 
 {
-    CCScene *scene = [ScoreScene scoreScene:scoreInfo songName:songName_ nextSong:@""];
+    CCScene *scene = [ScoreScene scoreScene:scoreInfo songName:songName_ packIndex:packIndex_];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                            
 }
 

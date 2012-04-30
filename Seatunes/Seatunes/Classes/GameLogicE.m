@@ -191,7 +191,7 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
     }
     // OK
     else if (buttonIndex == 1) {
-        CCScene *scene = [GameScene startWithDifficulty:kDifficultyMusicNoteTutorial songName:@""];
+        CCScene *scene = [GameScene startWithDifficulty:kDifficultyMusicNoteTutorial songName:@"" packIndex:0];
         [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];          
     }
 }

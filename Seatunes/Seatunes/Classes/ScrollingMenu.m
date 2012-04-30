@@ -138,4 +138,28 @@
     }
 }
 
+- (void) setMenuOffset:(NSUInteger)index
+{
+    if ([menuItems_ count] > 0) {
+    
+        NSUInteger idx = index;
+        if (index >= [menuItems_ count]) {
+            idx = [menuItems_ count] - 1;
+        }
+        
+        CGFloat offset = 0;
+        for (NSUInteger i = 0; i < index; ++i) {
+            ScrollingMenuItem *item = [menuItems_ objectAtIndex:i];
+            offset += item.height;
+        }
+    
+        CGFloat maxOffset = scrollSize_ - menuFrame_.size.height;
+        if (offset > maxOffset) {
+            offset = maxOffset;
+        }
+        
+        [viewController_.scrollView setContentOffset:ccp(0, offset) animated:YES];
+    }
+}
+
 @end

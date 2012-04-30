@@ -14,8 +14,8 @@
     
 }
 
-+ (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName;
++ (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName packIndex:(NSUInteger)packIndex;
 
-- (id) initWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName;
+- (id) initWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName packIndex:(NSUInteger)packIndex;
 
 @end

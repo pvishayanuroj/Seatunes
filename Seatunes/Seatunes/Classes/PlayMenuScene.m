@@ -53,12 +53,22 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
 
 #pragma mark - Object Lifecycle
 
-- (id) init
++ (id) playMenuScene
+{
+    return [[[self alloc] initPlayMenuScene:0] autorelease];
+}
+
++ (id) playMenuScene:(NSUInteger)packIndex
+{
+    return [[[self alloc] initPlayMenuScene:packIndex] autorelease];
+}
+
+- (id) initPlayMenuScene:(NSUInteger)packIndex
 {
     if ((self = [super init])) {
         
         songMenu_ = nil;
-        currentPack_ = nil;
+        //currentPack_ = nil;
         allPacksButton_ = nil;
         packButton_ = nil;
         songNames_ = nil;        
@@ -80,7 +90,9 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
         [self loadPackMenu];        
         
         // Always show the first pack
-        [self loadSongMenu:[packNames_ objectAtIndex:0]];
+        [self togglePackSelect:packIndex];
+        [self loadSongMenu:packIndex];
+        [packMenu_ setMenuOffset:packIndex];
         
 #if IAP_ON
         // Check if all packs purchased. If not, add button
@@ -98,7 +110,7 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
         // Play the sound
         [[AudioManager audioManager] playSoundEffect:kPageFlip];
     }
-    return self;
+    return self;    
 }
 
 - (void) dealloc
@@ -146,7 +158,8 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
         productIdentifier = [[DataUtility manager] productIdentifierFromName:kAllPacks];
     }
     else if (buyState_ == kStateBuyCurrentPack) {
-        productIdentifier = [[DataUtility manager] productIdentifierFromName:currentPack_];                
+        NSString *packName = [packNames_ objectAtIndex:currentPack_];
+        productIdentifier = [[DataUtility manager] productIdentifierFromName:packName];                
     }    
     else {
         return;
@@ -245,9 +258,9 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
             break;
         case kScrollingMenuPack:
             packName = [packNames_ objectAtIndex:menuItem.numID];
-            if (![packName isEqualToString:currentPack_]) {
+            if (currentPack_ != menuItem.numID) {
                 [self togglePackSelect:menuItem.numID];
-                [self loadSongMenu:packName];
+                [self loadSongMenu:menuItem.numID];
                 [[AudioManager audioManager] playSound:kB4 instrument:kMenu];
             }
             break;
@@ -294,17 +307,20 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
     }
 }
 
-- (void) loadSongMenu:(NSString *)packName
+- (void) loadSongMenu:(NSUInteger)packIndex
 {
     // Cleanup any existing menu
     [self cleanupSongMenu];
+    
+    NSString *packName = [packNames_ objectAtIndex:packIndex];    
     
     // Get songs for pack
     [songNames_ release];
     songNames_ = [[[DataUtility manager] loadSongNames:packName] retain];    
     
     // Store this as the current pack
-    self.currentPack = packName;
+    
+    currentPack_ = packIndex;
     [packTitle_ setString:packName];
     
     // Unlocked if either default or has been purchased 
@@ -387,12 +403,12 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
     [[AudioManager audioManager] playSound:kF4 instrument:kMenu];      
     // Check if song is a training song
     if ([[DataUtility manager] isTrainingSong:songName]) {
-        CCScene *scene = [GameScene startWithDifficulty:kDifficultyMusicNoteTutorial songName:songName];
+        CCScene *scene = [GameScene startWithDifficulty:kDifficultyMusicNoteTutorial songName:songName packIndex:currentPack_];
         [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];        
     }
     else {
     
-        CCScene *scene = [DifficultyMenuScene startWithSongName:songName];
+        CCScene *scene = [DifficultyMenuScene startWithSongName:songName packIndex:currentPack_];
         [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
         [[AudioManager audioManager] playSoundEffect:kPageFlip];    
     }

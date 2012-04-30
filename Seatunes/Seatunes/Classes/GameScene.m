@@ -12,16 +12,16 @@
 
 @implementation GameScene
 
-+ (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName
++ (id) startWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName packIndex:(NSUInteger)packIndex
 {
-    return [[[self alloc] initWithDifficulty:difficulty songName:songName] autorelease];
+    return [[[self alloc] initWithDifficulty:difficulty songName:songName packIndex:packIndex] autorelease];
 }
 
-- (id) initWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName
+- (id) initWithDifficulty:(DifficultyType)difficulty songName:(NSString *)songName packIndex:(NSUInteger)packIndex
 {
     if ((self = [super init])) {
         
-        GameLayer *gameLayer = [GameLayer startWithDifficulty:difficulty songName:songName];
+        GameLayer *gameLayer = [GameLayer startWithDifficulty:difficulty songName:songName packIndex:packIndex];
         [self addChild:gameLayer];    
         
         [[AudioManager audioManager] playSoundEffect:kPageFlip];               

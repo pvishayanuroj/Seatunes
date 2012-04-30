@@ -14,8 +14,8 @@
     
 }
 
-+ (id) scoreScene:(ScoreInfo)scoreInfo songName:(NSString *)songName nextSong:(NSString *)nextSong;
++ (id) scoreScene:(ScoreInfo)scoreInfo songName:(NSString *)songName packIndex:(NSUInteger)packIndex;
 
-- (id) initScoreScene:(ScoreInfo)scoreInfo songName:(NSString *)songName nextSong:(NSString *)nextSong;
+- (id) initScoreScene:(ScoreInfo)scoreInfo songName:(NSString *)songName packIndex:(NSUInteger)packIndex;
 
 @end

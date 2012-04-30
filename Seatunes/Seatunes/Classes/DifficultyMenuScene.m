@@ -35,12 +35,12 @@ static const CGFloat DMS_PLAY_BUTTON_Y = 200.0f;
 static const GLubyte DMS_FULL_OPACITY = 255;
 static const GLubyte DMS_SEMI_OPACITY = 150;
 
-+ (id) startWithSongName:(NSString *)songName
++ (id) startWithSongName:(NSString *)songName packIndex:(NSUInteger)packIndex
 {
-    return [[[self alloc] initWithSongName:songName] autorelease];
+    return [[[self alloc] initWithSongName:songName packIndex:packIndex] autorelease];
 }
 
-- (id) initWithSongName:(NSString *)songName
+- (id) initWithSongName:(NSString *)songName packIndex:(NSUInteger)packIndex
 {
     if ((self = [super init])) {
         
@@ -49,6 +49,7 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
         background.anchorPoint = CGPointZero;
         [self addChild:background];      
         songName_ = [songName retain];
+        packIndex_ = packIndex;
         
         // Add the frame
         CCSprite *menuFrame = [CCSprite spriteWithFile:@"Small Parchment.png"];
@@ -167,14 +168,14 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
 
 - (void) startSong
 {
-    CCScene *scene = [GameScene startWithDifficulty:difficulty_ songName:songName_];
+    CCScene *scene = [GameScene startWithDifficulty:difficulty_ songName:songName_ packIndex:packIndex_];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
             [[AudioManager audioManager] playSound:kC5 instrument:kMenu];  
 }
 
 - (void) playMenu
 {
-    CCScene *scene = [PlayMenuScene node];
+    CCScene *scene = [PlayMenuScene playMenuScene:packIndex_];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:YES]];
     [[AudioManager audioManager] playSound:kA4 instrument:kMenu];   
 }
