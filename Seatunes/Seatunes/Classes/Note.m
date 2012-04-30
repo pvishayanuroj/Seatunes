@@ -47,6 +47,7 @@ static const CGFloat NT_RADIUS = 25.0f;
         poppable_ = poppable;
         radius_ = NT_RADIUS;
         isClickable_ = NO;
+        isDestroyed_ = NO;
         boundaryCrossFlag_ = NO;
         lightCrossFlag_ = NO;
         bezier_ = curve;
@@ -76,6 +77,7 @@ static const CGFloat NT_RADIUS = 25.0f;
 
 - (void) destroy
 {    
+    isDestroyed_ = YES;
     [self scaleAction];
 }
 
@@ -196,11 +198,15 @@ static const CGFloat NT_RADIUS = 25.0f;
 - (void) loop
 {
     CGFloat y = [self parent].position.y + self.position.y;
-    
-    if (!boundaryCrossFlag_ && y > [[CCDirector sharedDirector] winSize].height) {
-        boundaryCrossFlag_ = YES;
-        if (delegate_ && [delegate_ respondsToSelector:@selector(noteCrossedBoundary:)]) {
-            [delegate_ noteCrossedBoundary:self];
+
+    // To account for corner case where note is destroyed but crosses boundary will performing destroy animation
+    if (!isDestroyed_) {
+        // Can only trip the boundary flag once
+        if (!boundaryCrossFlag_ && y > [[CCDirector sharedDirector] winSize].height) {
+            boundaryCrossFlag_ = YES;
+            if (delegate_ && [delegate_ respondsToSelector:@selector(noteCrossedBoundary:)]) {
+                [delegate_ noteCrossedBoundary:self];
+            }
         }
     }
     // Why doesn't this give the correct value??

@@ -200,7 +200,7 @@ static const CGFloat GLF_READER_OFFSET_Y = 75.0f;
     // This note is the last note in the song
     if (onLastNote_ && [queueByID_ count] == 0) {
         ignoreInput_ = YES;            
-        [self endSong];                         
+        [self endSong];     
     }        
 }
 

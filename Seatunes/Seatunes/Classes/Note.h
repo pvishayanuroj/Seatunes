@@ -25,6 +25,8 @@
     
     BOOL isClickable_;
     
+    BOOL isDestroyed_;
+    
     BOOL prevClickableState_;
     
     BOOL boundaryCrossFlag_;
