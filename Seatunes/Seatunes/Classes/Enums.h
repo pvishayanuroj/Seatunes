@@ -67,6 +67,10 @@ typedef enum {
 } SoundType;
 
 typedef enum {
+    kHappyJumper
+} MusicType;
+
+typedef enum {
     kSeaAnemone,
     kClam
 } CreatureType;

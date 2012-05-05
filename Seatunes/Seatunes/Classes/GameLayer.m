@@ -61,6 +61,15 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 {
     if ((self = [super init])) {
         
+        [[AudioManager audioManager] pauseBackgroundMusic];
+        
+        if ([[AudioManager audioManager] isBackgroundMusicPlaying]) {
+            NSLog(@"YEs");
+        }
+        else {
+            NSLog(@"NO");
+        }
+        
         self.isTouchEnabled = YES;
         helpOn_ = NO;
         sideMenuOpen_ = NO;
@@ -166,15 +175,19 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 
 - (void) exerciseComplete
 {
+    [[AudioManager audioManager] resumeBackgroundMusic];
+    
     NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty_];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];    
     
-    CCScene *scene = [PlayMenuScene node];
+    CCScene *scene = [PlayMenuScene playMenuScene:1];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];     
 }
 
 - (void) songComplete:(ScoreInfo)scoreInfo
 {
+    [[AudioManager audioManager] resumeBackgroundMusic];    
+    
     // Record that this difficulty has been played, and record that at least the first song has been played
     NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty_];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];

@@ -101,6 +101,7 @@
 		04DE522014FA19F200F8E45C /* Three Blind Mice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE521114FA19F200F8E45C /* Three Blind Mice.plist */; };
 		04DE522114FA19F200F8E45C /* Twinkle Twinkle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE521214FA19F200F8E45C /* Twinkle Twinkle.plist */; };
 		04DE522314FA1A2B00F8E45C /* Christmas Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */; };
+		A507EFA51555C38100FE5724 /* Happy Jumper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A507EFA41555C38100FE5724 /* Happy Jumper.mp3 */; };
 		AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */; };
 		AE48ED1C1543142000747910 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = AE48ED1B1543142000747910 /* Badge.m */; };
 		AE48ED1F1543156700747910 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED1E1543156700747910 /* Star.png */; };
@@ -573,6 +574,7 @@
 		04DE521114FA19F200F8E45C /* Three Blind Mice.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Three Blind Mice.plist"; sourceTree = "<group>"; };
 		04DE521214FA19F200F8E45C /* Twinkle Twinkle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Twinkle Twinkle.plist"; sourceTree = "<group>"; };
 		04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Christmas Pack.plist"; sourceTree = "<group>"; };
+		A507EFA41555C38100FE5724 /* Happy Jumper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Happy Jumper.mp3"; sourceTree = "<group>"; };
 		AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
 		AE48ED1A1543142000747910 /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Badge.h; path = Classes/Badge.h; sourceTree = "<group>"; };
 		AE48ED1B1543142000747910 /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Badge.m; path = Classes/Badge.m; sourceTree = "<group>"; };
@@ -1357,6 +1359,15 @@
 			path = "Nursery Pack";
 			sourceTree = "<group>";
 		};
+		A507EFA31555C38100FE5724 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				A507EFA41555C38100FE5724 /* Happy Jumper.mp3 */,
+			);
+			name = Music;
+			path = Resources/Music;
+			sourceTree = "<group>";
+		};
 		AE7773E31522823500CE9332 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -1622,6 +1633,7 @@
 		DAB11F2A14C1E847009B60FB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A507EFA31555C38100FE5724 /* Music */,
 				AE78EA78152BF7DC00982DC2 /* Speech Audio */,
 				04DE51B614F7492C00F8E45C /* Sound Effects */,
 				04D331CD14E7056700DD82D4 /* Speech */,
@@ -2363,6 +2375,7 @@
 				AE7AFCC7154CC2FF00544A0E /* Restart Button Disabled-ipadhd.png in Resources */,
 				AE7AFCC8154CC2FF00544A0E /* Restart Button Disabled.png in Resources */,
 				AE78CAC1154D7A6900D90582 /* Icon-72@2x.png in Resources */,
+				A507EFA51555C38100FE5724 /* Happy Jumper.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

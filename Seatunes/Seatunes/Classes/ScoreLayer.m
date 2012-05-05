@@ -61,7 +61,7 @@ static const CGFloat SL_MENU_Y = 430.0f;
         scoreInfo_ = scoreInfo;
         songName_ = [songName retain];
         packIndex_ = packIndex;
-        
+
         // Add background
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;

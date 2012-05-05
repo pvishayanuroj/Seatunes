@@ -342,6 +342,29 @@
     return sounds;
 }
 
++ (NSString *) musicFileFromEnum:(MusicType)musicType
+{
+    NSString *name = @"";
+    
+    switch (musicType) {
+        case kHappyJumper:
+            name = @"Happy Jumper.mp3";
+            break;        
+        default:
+            break;
+    }
+    
+    return name;    
+}
+
++ (NSArray *) allMusic
+{
+    NSMutableArray *music = [NSMutableArray arrayWithCapacity:5];
+    [music addObject:[NSNumber numberWithInteger:kHappyJumper]];     
+    
+    return music;    
+}
+
 + (NSArray *) loadSectionedSong:(NSString *)songName
 {
     NSMutableArray *sections = [NSMutableArray array];

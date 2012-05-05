@@ -45,6 +45,8 @@
 
 - (void) preloadEffects;
 
+- (void) preloadMusic;
+
 - (GLuint) playSound:(KeyType)key instrument:(InstrumentType)instrument;
 
 - (GLuint) playSoundEffect:(SoundType)type;
@@ -59,11 +61,17 @@
 
 - (void) stopNarration;
 
-- (void) preloadBackgroundMusic:(NSString *)path;
+- (void) preloadBackgroundMusic:(MusicType)musicType;
 
-- (void) playBackgroundMusic:(NSString *)path;
+- (void) playBackgroundMusic:(MusicType)musicType;
+
+- (void) pauseBackgroundMusic;
+
+- (void) resumeBackgroundMusic;
 
 - (void) stopBackgroundMusic;
+
+- (BOOL) isBackgroundMusicPlaying;
 
 - (void) pause;
 

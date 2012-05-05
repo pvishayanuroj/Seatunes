@@ -43,6 +43,8 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         sideMenuMoving_ = NO;
         isPaused_ = NO;        
         
+        [[AudioManager audioManager] pauseBackgroundMusic];
+        
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];            
@@ -162,6 +164,7 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
             scene = [MainMenuScene node];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];        
             [[AudioManager audioManager] playSoundEffect:kPageFlip];
+            [[AudioManager audioManager] resumeBackgroundMusic];
             break;
         default:
             break;

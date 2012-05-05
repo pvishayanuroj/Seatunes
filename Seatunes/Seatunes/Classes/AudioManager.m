@@ -50,6 +50,7 @@ static AudioManager *_audioManager = nil;
         sae_ = [[SimpleAudioEngine sharedEngine] retain];
         
         [self preloadEffects];
+        [self preloadMusic];
 	}
 	return self;
 }
@@ -92,6 +93,15 @@ static AudioManager *_audioManager = nil;
     for (NSNumber *effect in soundEffects) {
         NSString *path = [Utility soundFileFromEnum:[effect integerValue]];
         [sae_ preloadEffect:path];
+    }
+}
+
+- (void) preloadMusic
+{
+    NSArray *musicNames = [Utility allMusic];
+    
+    for (NSNumber *music in musicNames) {
+        [self preloadBackgroundMusic:[music integerValue]];
     }
 }
 
@@ -155,19 +165,36 @@ static AudioManager *_audioManager = nil;
 
 #pragma mark - Background Music Methods
 
-- (void) preloadBackgroundMusic:(NSString *)path
+- (void) preloadBackgroundMusic:(MusicType)musicType
 {
+    NSString *path = [Utility musicFileFromEnum:musicType];
     [sae_ preloadBackgroundMusic:path];
 }
 
-- (void) playBackgroundMusic:(NSString *)path
+- (void) playBackgroundMusic:(MusicType)musicType
 {
+    NSString *path = [Utility musicFileFromEnum:musicType];
     [sae_ playBackgroundMusic:path];
+}
+
+- (void) pauseBackgroundMusic
+{
+    [sae_ pauseBackgroundMusic];
+}
+
+- (void) resumeBackgroundMusic
+{
+    [sae_ resumeBackgroundMusic];
 }
 
 - (void) stopBackgroundMusic
 {
     [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+}
+
+- (BOOL) isBackgroundMusicPlaying
+{
+    return [sae_ isBackgroundMusicPlaying];
 }
 
 - (void) pause

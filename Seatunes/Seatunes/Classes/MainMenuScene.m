@@ -59,6 +59,7 @@ static const CGFloat MMS_BUY_Y = 500.0f;
         [self addChild:playButton];
         [self addChild:freePlayButton];        
         
+        [[AudioManager audioManager] playBackgroundMusic:kHappyJumper];
     }
     return self;
 }
