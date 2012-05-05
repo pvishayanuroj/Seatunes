@@ -86,19 +86,15 @@ static const CGFloat SL_MENU_Y = 430.0f;
         songText.position = ccp(SL_TITLE_LABEL_X, SL_TITLE_LABEL_Y);
         [self addChild:songText];
         
-        //Button *nextButton = [ScaledImageButton scaledImageButton:kButtonNext image:@"Next Button.png" scale:0.75f];
         Button *replayButton = [ScaledImageButton scaledImageButton:kButtonReplay image:@"Restart Button.png" scale:0.75f];
         Button *menuButton = [ScaledImageButton scaledImageButton:kButtonMenu image:@"Home Button.png" scale:0.75f];           
         
-        //nextButton.position = ccp(SL_NEXT_X, SL_NEXT_Y);
         replayButton.position = ccp(SL_REPLAY_X, SL_REPLAY_Y);
         menuButton.position = ccp(SL_MENU_X, SL_MENU_Y);        
         
-        //nextButton.delegate = self;
         replayButton.delegate = self;
         menuButton.delegate = self;
         
-        //[self addChild:nextButton];
         [self addChild:replayButton];
         [self addChild:menuButton];        
         

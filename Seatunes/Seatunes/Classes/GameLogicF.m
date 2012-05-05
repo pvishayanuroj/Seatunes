@@ -217,7 +217,13 @@ static const CGFloat GLF_READER_OFFSET_Y = 75.0f;
     scoreInfo_ = [Utility tallyScoreDictionary:score_ scoreInfo:scoreInfo_];   
     
     keyboard_.isKeyboardMuted = NO;
-    [keyboard_ applause];
+    keyboard_.isClickable = NO;
+    
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:2.0f];
+    CCActionInstant *done = [CCCallBlock actionWithBlock:^{
+        [keyboard_ applause];
+    }];
+    [self runAction:[CCSequence actions:delay, done, nil]];
 }
 
 - (void) applauseComplete

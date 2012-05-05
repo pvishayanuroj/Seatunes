@@ -197,7 +197,12 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
 {
     scoreInfo_ = [Utility tallyScoreDictionary:score_ scoreInfo:scoreInfo_];   
     
-    [delegate_ songComplete:scoreInfo_];    
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:2.0f];
+    CCActionInstant *done = [CCCallBlock actionWithBlock:^{
+        [delegate_ songComplete:scoreInfo_];    
+    }];
+    
+    [self runAction:[CCSequence actions:delay, done, nil]];    
 }
 
 @end

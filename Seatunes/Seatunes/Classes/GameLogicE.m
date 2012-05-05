@@ -82,8 +82,9 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
             [dialogue addObject:[NSNumber numberWithInteger:kSpeechGreetings]];
         }        
         
-        // Check if hard difficulty has ever been played. If not, prompt to play tutorial
-        if ([[DataUtility manager] isFirstPlayForDifficulty:kDifficultyMusicNoteTutorial]) {
+        // Check if hard difficulty or music tutorial has ever been played. If not, prompt to play tutorial
+        if ([[DataUtility manager] isFirstPlayForDifficulty:kDifficultyMusicNoteTutorial] &&
+            [[DataUtility manager] isFirstPlayForDifficulty:kDifficultyHard]) {
             [dialogue addObject:[NSNumber numberWithInteger:kSpeechTutorialPrompt]];
         }
         else {
@@ -248,8 +249,15 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
 {
     scoreInfo_ = [Utility tallyScoreDictionary:score_ scoreInfo:scoreInfo_];   
     
+    
     keyboard_.isKeyboardMuted = NO;    
-    [keyboard_ applause];
+    keyboard_.isClickable = NO;
+    
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:2.0f];
+    CCActionInstant *done = [CCCallBlock actionWithBlock:^{
+        [keyboard_ applause];
+    }];
+    [self runAction:[CCSequence actions:delay, done, nil]];
 }
 
 - (void) applauseComplete
