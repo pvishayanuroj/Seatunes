@@ -184,6 +184,9 @@ static const CGFloat SL_MENU_Y = 430.0f;
             reader_.visible = NO;            
             [self placeNoBadge];
             break;
+        case kSpeechSongCompleteGood:
+            reader_.visible = NO;
+            break;
         default:
             break;
     }
@@ -276,7 +279,13 @@ static const CGFloat SL_MENU_Y = 430.0f;
 - (void) doneStats
 {
     if (scoreInfo_.helpUsed) {
-        [self placeNoBadgeFromHelp];
+        if (scoreInfo_.percentage >= PERCENT_FOR_BADGE) {
+            [reader_ loadSingleDialogue:kSpeechSongCompleteGood];
+            [self placeNoBadgeFromHelp];
+        }
+        else {
+            [reader_ loadSingleDialogue:kSpeechSongCompleteBad];
+        }
     }
     else {
         if (scoreInfo_.percentage >= PERCENT_FOR_BADGE) {
