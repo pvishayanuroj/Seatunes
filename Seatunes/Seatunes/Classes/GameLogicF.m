@@ -214,10 +214,7 @@ static const CGFloat GLF_READER_OFFSET_Y = 75.0f;
 
 - (void) endSong
 {
-    ScoreInfo results = [Utility tallyScoreDictionary:score_];   
-    scoreInfo_.notesHit = results.notesHit;
-    scoreInfo_.notesMissed = results.notesMissed;
-    scoreInfo_.percentage = results.percentage;    
+    scoreInfo_ = [Utility tallyScoreDictionary:score_ scoreInfo:scoreInfo_];   
     
     keyboard_.isKeyboardMuted = NO;
     [keyboard_ applause];

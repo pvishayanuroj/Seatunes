@@ -40,6 +40,7 @@ static const CGFloat GL_BUBBLE_Y = 600.0f;
         scoreInfo_.notesHit = 0;
         scoreInfo_.notesMissed = 0;      
         scoreInfo_.difficulty = difficulty;
+        scoreInfo_.helpUsed = NO;
     }
     return self;
 }

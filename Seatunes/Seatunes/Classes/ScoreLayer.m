@@ -184,6 +184,10 @@ static const CGFloat SL_MENU_Y = 430.0f;
             reader_.visible = NO;
             [self placeBadge];
             break;
+        case kSpeechSongCompleteBad:
+            reader_.visible = NO;            
+            [self placeNoBadge];
+            break;
         default:
             break;
     }
@@ -275,23 +279,31 @@ static const CGFloat SL_MENU_Y = 430.0f;
 
 - (void) doneStats
 {
-    if (scoreInfo_.percentage >= PERCENT_FOR_BADGE) {
-        switch (scoreInfo_.difficulty) {
-            case kDifficultyEasy:
-                [reader_ loadSingleDialogue:kSpeechBubbleBadge];
-                break;
-            case kDifficultyMedium:
-                [reader_ loadSingleDialogue:kSpeechClamBadge];
-                break;
-            case kDifficultyHard:
-                [reader_ loadSingleDialogue:kSpeechNoteBadge];
-                break;
-            default:
-                break;
-        }
+    if (scoreInfo_.helpUsed) {
+        [self placeNoBadgeFromHelp];
     }
     else {
-        [self placeNoBadge];
+        if (scoreInfo_.percentage >= PERCENT_FOR_BADGE) {
+            NSMutableArray *dialogue = [NSMutableArray arrayWithCapacity:2];
+            [dialogue addObject:[NSNumber numberWithInteger:kSpeechSongCompleteGood]];
+            switch (scoreInfo_.difficulty) {
+                case kDifficultyEasy:
+                    [dialogue addObject:[NSNumber numberWithInteger:kSpeechBubbleBadge]];
+                    break;
+                case kDifficultyMedium:
+                    [dialogue addObject:[NSNumber numberWithInteger:kSpeechClamBadge]];
+                    break;
+                case kDifficultyHard:
+                    [dialogue addObject:[NSNumber numberWithInteger:kSpeechNoteBadge]];
+                    break;
+                default:
+                    break;
+            }
+            [reader_ loadDialogue:dialogue];
+        }
+        else {
+            [reader_ loadSingleDialogue:kSpeechSongCompleteBad];
+        }
     }
 }
 
@@ -302,6 +314,14 @@ static const CGFloat SL_MENU_Y = 430.0f;
     earnedText.anchorPoint = ccp(0, 0.5f);
     [self addChild:earnedText];    
     [[AudioManager audioManager] playSoundEffect:kWahWah];
+}
+
+- (void) placeNoBadgeFromHelp
+{
+    CCLabelBMFont *earnedText = [CCLabelBMFont labelWithString:@"Leave help OFF to earn a badge next time" fntFile:@"MenuFont.fnt"];
+    earnedText.position = ccp(SL_EARNED_LABEL_X, SL_EARNED_LABEL_Y);
+    earnedText.anchorPoint = ccp(0, 0.5f);
+    [self addChild:earnedText];    
 }
 
 - (void) placeBadge

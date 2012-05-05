@@ -46,6 +46,10 @@
 
 - (void) placeSecondStats;
 
+- (void) placeNoBadge;
+
+- (void) placeNoBadgeFromHelp;
+
 - (CCParticleSystem *) createPS;
 
 @end

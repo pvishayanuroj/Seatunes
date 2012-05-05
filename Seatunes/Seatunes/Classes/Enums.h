@@ -148,6 +148,7 @@ typedef struct {
     NSUInteger notesHit;
     NSUInteger percentage;
     DifficultyType difficulty;
+    BOOL helpUsed;
 } ScoreInfo;
 
 enum {

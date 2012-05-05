@@ -423,9 +423,8 @@
     return dict;
 }
 
-+ (ScoreInfo) tallyScoreDictionary:(NSDictionary *)dictionary
++ (ScoreInfo) tallyScoreDictionary:(NSDictionary *)dictionary scoreInfo:(ScoreInfo)scoreInfo
 {
-    ScoreInfo scoreInfo;
     scoreInfo.notesHit = 0;
     scoreInfo.notesMissed = 0;
     

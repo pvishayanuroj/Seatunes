@@ -50,7 +50,7 @@
  
 + (NSMutableDictionary *) initializeScoreDictionary:(NSArray *)notes;
 
-+ (ScoreInfo) tallyScoreDictionary:(NSDictionary *)dictionary;
++ (ScoreInfo) tallyScoreDictionary:(NSDictionary *)dictionary scoreInfo:(ScoreInfo)scoreInfo;
 
 + (NSString *) songKey:(NSString *)songName difficulty:(DifficultyType)difficulty;
 
