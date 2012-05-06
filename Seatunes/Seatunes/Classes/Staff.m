@@ -12,9 +12,9 @@
 
 @implementation Staff
 
-static const CGFloat ST_NOTE_PADDING = 12.65f;
-static const CGFloat ST_NOTE_OFFSET_Y = 23.0f;
-static const CGFloat ST_NOTE_FLIPPED_OFFSET_Y = 75.0f;
+static const CGFloat ST_NOTE_PADDING = 10.65f;
+static const CGFloat ST_NOTE_OFFSET_Y = 18.0f;
+static const CGFloat ST_NOTE_FLIPPED_OFFSET_Y = 77.0f;
 static const CGFloat ST_NOTE_OFFSET_X = 600.0f;
 static const CGFloat ST_NOTE_X_BOUNDARY = -80.0f;
 static const CGFloat ST_STATIC_NOTE_CENTER_OFFSET_X = 40.0f;

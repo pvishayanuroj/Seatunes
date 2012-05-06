@@ -19,9 +19,9 @@
 static const CGFloat SN_FADE_IN_DURATION = 0.15f;
 static const CGFloat SN_FADE_OUT_DURATION = 0.15f;
 
-static const CGFloat SN_NOTE_PADDING = 12.65f;
-static const CGFloat SN_NOTE_OFFSET_Y = 23.0f;
-static const CGFloat SN_NOTE_FLIPPED_OFFSET_Y = 75.0f;
+static const CGFloat SN_NOTE_PADDING = 10.65f;
+static const CGFloat SN_NOTE_OFFSET_Y = 18.0f;
+static const CGFloat SN_NOTE_FLIPPED_OFFSET_Y = 77.0f;
 static const CGFloat SN_MOVE_X = -800.0f;
 
 static const CGFloat SN_NAME_Y = 90.0f;

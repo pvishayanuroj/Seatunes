@@ -130,9 +130,10 @@
     [[CCDirector sharedDirector] runWithScene:[ScoreScene scoreScene:score songName:@"Twinkle Twinkle" nextSong:@""]];
     */
     
-    
-    //[DataUtility manager];
-    //[[CCDirector sharedDirector] runWithScene: [GameScene startWithDifficulty:kDifficultyEasy songName:@"Twinkle Twinkle"]];
+    /*
+    [DataUtility manager];
+    [[CCDirector sharedDirector] runWithScene: [GameScene startWithDifficulty:kDifficultyHard songName:@"Twinkle Twinkle" packIndex:0]];
+     */
 }
 
 
