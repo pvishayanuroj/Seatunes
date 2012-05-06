@@ -102,6 +102,10 @@
 		04DE522114FA19F200F8E45C /* Twinkle Twinkle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE521214FA19F200F8E45C /* Twinkle Twinkle.plist */; };
 		04DE522314FA1A2B00F8E45C /* Christmas Pack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */; };
 		A507EFA51555C38100FE5724 /* Happy Jumper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A507EFA41555C38100FE5724 /* Happy Jumper.mp3 */; };
+		A507EFAB1556B80700FE5724 /* Down Arrow-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = A507EFA71556B80700FE5724 /* Down Arrow-ipadhd.png */; };
+		A507EFAC1556B80700FE5724 /* Down Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A507EFA81556B80700FE5724 /* Down Arrow.png */; };
+		A507EFAD1556B80700FE5724 /* Up Arrow-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = A507EFA91556B80700FE5724 /* Up Arrow-ipadhd.png */; };
+		A507EFAE1556B80700FE5724 /* Up Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A507EFAA1556B80700FE5724 /* Up Arrow.png */; };
 		AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */; };
 		AE48ED1C1543142000747910 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = AE48ED1B1543142000747910 /* Badge.m */; };
 		AE48ED1F1543156700747910 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED1E1543156700747910 /* Star.png */; };
@@ -575,6 +579,10 @@
 		04DE521214FA19F200F8E45C /* Twinkle Twinkle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Twinkle Twinkle.plist"; sourceTree = "<group>"; };
 		04DE522214FA1A2B00F8E45C /* Christmas Pack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Christmas Pack.plist"; sourceTree = "<group>"; };
 		A507EFA41555C38100FE5724 /* Happy Jumper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Happy Jumper.mp3"; sourceTree = "<group>"; };
+		A507EFA71556B80700FE5724 /* Down Arrow-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Down Arrow-ipadhd.png"; sourceTree = "<group>"; };
+		A507EFA81556B80700FE5724 /* Down Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Down Arrow.png"; sourceTree = "<group>"; };
+		A507EFA91556B80700FE5724 /* Up Arrow-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Up Arrow-ipadhd.png"; sourceTree = "<group>"; };
+		A507EFAA1556B80700FE5724 /* Up Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Up Arrow.png"; sourceTree = "<group>"; };
 		AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
 		AE48ED1A1543142000747910 /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Badge.h; path = Classes/Badge.h; sourceTree = "<group>"; };
 		AE48ED1B1543142000747910 /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Badge.m; path = Classes/Badge.m; sourceTree = "<group>"; };
@@ -1463,6 +1471,10 @@
 		AE7774281522823500CE9332 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				A507EFA71556B80700FE5724 /* Down Arrow-ipadhd.png */,
+				A507EFA81556B80700FE5724 /* Down Arrow.png */,
+				A507EFA91556B80700FE5724 /* Up Arrow-ipadhd.png */,
+				A507EFAA1556B80700FE5724 /* Up Arrow.png */,
 				AE7569EC1544A8AA00B072E1 /* Checkmark Unselected-ipadhd.png */,
 				AE7569ED1544A8AA00B072E1 /* Checkmark Unselected.png */,
 				AE7569E71544A59700B072E1 /* Checkmark-ipadhd.png */,
@@ -2376,6 +2388,10 @@
 				AE7AFCC8154CC2FF00544A0E /* Restart Button Disabled.png in Resources */,
 				AE78CAC1154D7A6900D90582 /* Icon-72@2x.png in Resources */,
 				A507EFA51555C38100FE5724 /* Happy Jumper.mp3 in Resources */,
+				A507EFAB1556B80700FE5724 /* Down Arrow-ipadhd.png in Resources */,
+				A507EFAC1556B80700FE5724 /* Down Arrow.png in Resources */,
+				A507EFAD1556B80700FE5724 /* Up Arrow-ipadhd.png in Resources */,
+				A507EFAE1556B80700FE5724 /* Up Arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,6 +30,8 @@
     
     NSUInteger numID_;    
     
+    CGPoint prevOffset_;
+    
     id <ScrollingMenuDelegate> delegate_;
 }
 
@@ -45,6 +47,8 @@
 - (void) addMenuItem:(ScrollingMenuItem *)menuItem;
 
 - (void) setMenuOffset:(NSUInteger)index;
+
+- (void) menuScrolled:(CGPoint)offset;
 
 /* 
  * This method MUST be called prior to releasing Scrolling Menu,

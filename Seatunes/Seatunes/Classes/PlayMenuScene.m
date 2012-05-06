@@ -68,7 +68,6 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
     if ((self = [super init])) {
         
         songMenu_ = nil;
-        //currentPack_ = nil;
         allPacksButton_ = nil;
         packButton_ = nil;
         songNames_ = nil;        
@@ -82,6 +81,18 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
         CCSprite *menuFrame = [CCSprite spriteWithFile:@"Main Parchment.png"];
         menuFrame.position = ccp(PMS_MENU_FRAME_X, PMS_MENU_FRAME_Y);
         [self addChild:menuFrame];
+        
+        packUpArrow_ = [[CCSprite spriteWithFile:@"Up Arrow.png"] retain];
+        packUpArrow_.position = ccp(130, 600);
+        packUpArrow_.visible = NO;
+        packUpArrow_.scale = 0.3f;
+        [self addChild:packUpArrow_];
+        
+        packDownArrow_ = [[CCSprite spriteWithFile:@"Down Arrow.png"] retain];
+        packDownArrow_.position = ccp(130, 120);
+        packDownArrow_.visible = YES;
+        packDownArrow_.scale = 0.3f;
+        [self addChild:packDownArrow_];        
         
         packTitle_ = [[CCLabelBMFont labelWithString:@"" fntFile:@"BoldMenuFont.fnt"] retain];
         packTitle_.position = ccp(PMS_PACK_TITLE_X, PMS_PACK_TITLE_Y);
@@ -120,7 +131,9 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
     [songNames_ release];
     [packNames_ release];
     [packTitle_ release];
-    [allPacksButton_ release];  
+    [allPacksButton_ release];
+    [packUpArrow_ release];
+    [packDownArrow_ release];
     
     [super dealloc];
 }
@@ -267,6 +280,26 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
         default:
             break; 
     }
+}
+
+- (void) scrollingMenuTopLeft
+{
+    //packUpArrow_.visible = YES;
+}
+
+- (void) scrollingMenuBottomLeft
+{
+    packDownArrow_.visible = YES;
+}
+
+- (void) scrollingMenuTopReached
+{
+    //packUpArrow_.visible = NO;
+}
+
+- (void) scrollingMenuBottomReached
+{
+    packDownArrow_.visible = NO;    
 }
 
 #pragma mark - Helper Methods

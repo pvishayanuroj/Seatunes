@@ -8,6 +8,7 @@
 
 #import "CocosOverlayScrollView.h"
 #import "cocos2d.h"
+#import "ScrollingMenu.h"
 
 @implementation CocosOverlayScrollView
 
@@ -23,7 +24,7 @@
     if ((self = [self initWithFrame:[UIScreen mainScreen].applicationFrame])) {
      
         firstScroll_ = YES;
-    
+
     }
     return self;
 }
@@ -85,12 +86,16 @@
     CGPoint dragPt = [scrollView contentOffset];
     CGFloat newY = dragPt.y + originalPos_.y;
     
+    //NSLog(@"drag: %4.2f", dragPt.y);
     //NSLog(@"OrigY: %4.2f, Prev pt: %4.2f, new pt: %4.2f", originalPos_.y, node_.position.y, newY);
     node_.position = CGPointMake(node_.position.x, newY);
+    
+    // This is bad code, but I'm lazy
+    [(ScrollingMenu *)node_ menuScrolled:dragPt];
 }
 
 // Override
-- (void)setContentOffset:(CGPoint)contentOffset {
+- (void) setContentOffset:(CGPoint)contentOffset {
 	// UIScrollView uses UITrackingRunLoopMode.
 	// NSLog([[NSRunLoop currentRunLoop] currentMode]);
     
@@ -123,7 +128,7 @@
 	[super setContentOffset:contentOffset];
 }
 
-- (void)animateWhileDragging {
+- (void) animateWhileDragging {
     
 	// Draw.
 	[[CCDirector sharedDirector] drawScene];
@@ -136,7 +141,7 @@
 	}
 }
 
-- (void)animateWhileDecellerating {
+- (void) animateWhileDecellerating {
     
 	// Draw.
 	[[CCDirector sharedDirector] drawScene];

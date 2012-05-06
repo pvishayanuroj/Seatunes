@@ -12,6 +12,8 @@
 
 @implementation ScrollingMenu
 
+static const CGFloat SM_EPSILON = 0.001f;
+
 @synthesize numID = numID_;
 @synthesize menuItems = menuItems_;
 @synthesize isClickable = isClickable_;
@@ -33,6 +35,7 @@
         menuFrame_ = menuFrame;
         currentMenuItem_ = nil;
         isClickable_ = YES;
+        prevOffset_ = CGPointZero;
         delegate_ = nil;
         
         CGSize winSize = [[CCDirector sharedDirector] winSize];
@@ -160,6 +163,41 @@
         
         [viewController_.scrollView setContentOffset:ccp(0, offset) animated:YES];
     }
+}
+
+- (void) menuScrolled:(CGPoint)offset
+{
+    CGFloat top = 0 + SM_EPSILON;
+    CGFloat bottom = scrollSize_ - menuFrame_.size.height - SM_EPSILON;
+    //NSLog(@"bottom: %4.2f, prev: %4.2f, offset: %4.2f", bottom, prevOffset_.y, offset.y);
+    
+    // If leaving the top
+    if (prevOffset_.y < top && offset.y > top) {
+        if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuTopLeft)]) {
+            [delegate_ scrollingMenuTopLeft];
+        }
+    }
+    // If leaving the bottom
+    else if (prevOffset_.y > bottom && offset.y < bottom) {
+        if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuBottomLeft)]) {
+            [delegate_ scrollingMenuBottomLeft];
+        }        
+    }
+    
+    // If reaching the top
+    if (prevOffset_.y > top && offset.y < top) {
+        if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuTopReached)]) {
+            [delegate_ scrollingMenuTopReached];
+        }        
+    }
+    // If reaching the bottom
+    else if (prevOffset_.y < bottom && offset.y > bottom) {
+        if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuBottomReached)]) {
+            [delegate_ scrollingMenuBottomReached];
+        }      
+    }
+    
+    prevOffset_ = offset;
 }
 
 @end
