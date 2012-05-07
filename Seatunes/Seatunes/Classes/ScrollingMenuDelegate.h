@@ -17,12 +17,12 @@
 
 - (void) scrollingMenuItemClicked:(ScrollingMenu *)scrollingMenu menuItem:(ScrollingMenuItem *)menuItem;
 
-- (void) scrollingMenuTopReached;
+- (void) scrollingMenuTopReached:(ScrollingMenu *)scrollingMenu;
 
-- (void) scrollingMenuBottomReached;
+- (void) scrollingMenuBottomReached:(ScrollingMenu *)scrollingMenu;
 
-- (void) scrollingMenuTopLeft;
+- (void) scrollingMenuTopLeft:(ScrollingMenu *)scrollingMenu;
 
-- (void) scrollingMenuBottomLeft;
+- (void) scrollingMenuBottomLeft:(ScrollingMenu *)scrollingMenu;
 
 @end

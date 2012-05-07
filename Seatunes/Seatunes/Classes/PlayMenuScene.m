@@ -43,11 +43,15 @@ static const CGFloat PMS_PACK_MENU_X = 145.0f;
 static const CGFloat PMS_PACK_MENU_Y = 125.0f;
 static const CGFloat PMS_PACK_MENU_WIDTH = 230.0f;
 static const CGFloat PMS_PACK_MENU_HEIGHT = 450.0f;
+static const CGFloat PMS_PACK_DOWN_ARROW_X = 245.0f;
+static const CGFloat PMS_PACK_DOWN_ARROW_Y = 110.0f;
 
 static const CGFloat PMS_SONG_MENU_X = 370.0f;
 static const CGFloat PMS_SONG_MENU_Y = 125.0f;
 static const CGFloat PMS_SONG_MENU_WIDTH = 560.0f;
 static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
+static const CGFloat PMS_SONG_DOWN_ARROW_X = 650.0f;
+static const CGFloat PMS_SONG_DOWN_ARROW_Y = 110.0f;
 
 @synthesize currentPack = currentPack_;
 
@@ -82,17 +86,16 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
         menuFrame.position = ccp(PMS_MENU_FRAME_X, PMS_MENU_FRAME_Y);
         [self addChild:menuFrame];
         
-        packUpArrow_ = [[CCSprite spriteWithFile:@"Up Arrow.png"] retain];
-        packUpArrow_.position = ccp(130, 600);
-        packUpArrow_.visible = NO;
-        packUpArrow_.scale = 0.3f;
-        [self addChild:packUpArrow_];
-        
         packDownArrow_ = [[CCSprite spriteWithFile:@"Down Arrow.png"] retain];
-        packDownArrow_.position = ccp(130, 120);
+        packDownArrow_.position = ccp(PMS_PACK_DOWN_ARROW_X, PMS_PACK_DOWN_ARROW_Y);
         packDownArrow_.visible = YES;
-        packDownArrow_.scale = 0.3f;
+        packDownArrow_.scaleX = 0.6f;
         [self addChild:packDownArrow_];        
+
+        songDownArrow_ = [[CCSprite spriteWithFile:@"Small Down Arrow.png"] retain];
+        songDownArrow_.position = ccp(PMS_SONG_DOWN_ARROW_X, PMS_SONG_DOWN_ARROW_Y);
+        songDownArrow_.visible = YES;
+        [self addChild:songDownArrow_];                
         
         packTitle_ = [[CCLabelBMFont labelWithString:@"" fntFile:@"BoldMenuFont.fnt"] retain];
         packTitle_.position = ccp(PMS_PACK_TITLE_X, PMS_PACK_TITLE_Y);
@@ -132,8 +135,8 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
     [packNames_ release];
     [packTitle_ release];
     [allPacksButton_ release];
-    [packUpArrow_ release];
     [packDownArrow_ release];
+    [songDownArrow_ release];
     
     [super dealloc];
 }
@@ -282,24 +285,32 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
     }
 }
 
-- (void) scrollingMenuTopLeft
+- (void) scrollingMenuBottomLeft:(ScrollingMenu *)scrollingMenu
 {
-    //packUpArrow_.visible = YES;
+    switch (scrollingMenu.numID) {
+        case kScrollingMenuSong:
+            songDownArrow_.visible = YES;
+            break;
+        case kScrollingMenuPack:
+            packDownArrow_.visible = YES;            
+            break;
+        default:
+            break;
+    }
 }
 
-- (void) scrollingMenuBottomLeft
+- (void) scrollingMenuBottomReached:(ScrollingMenu *)scrollingMenu
 {
-    packDownArrow_.visible = YES;
-}
-
-- (void) scrollingMenuTopReached
-{
-    //packUpArrow_.visible = NO;
-}
-
-- (void) scrollingMenuBottomReached
-{
-    packDownArrow_.visible = NO;    
+    switch (scrollingMenu.numID) {
+        case kScrollingMenuSong:
+            songDownArrow_.visible = NO;
+            break;
+        case kScrollingMenuPack:
+            packDownArrow_.visible = NO;            
+            break;
+        default:
+            break;
+    }    
 }
 
 #pragma mark - Helper Methods
@@ -380,6 +391,8 @@ static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
         ScrollingMenuItem *menuItem = [SongMenuItem songMenuItem:songName scores:scores songIndex:idx++ hasScore:hasScore locked:isLocked];
         [songMenu_ addMenuItem:menuItem];
     }    
+    
+    songDownArrow_.visible = [songMenu_ isDownArrowNeeded];
     
 #if IAP_ON    
     // If locked, add purchase button

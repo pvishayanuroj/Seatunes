@@ -173,31 +173,36 @@ static const CGFloat SM_EPSILON = 0.001f;
     
     // If leaving the top
     if (prevOffset_.y < top && offset.y > top) {
-        if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuTopLeft)]) {
-            [delegate_ scrollingMenuTopLeft];
+        if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuTopLeft:)]) {
+            [delegate_ scrollingMenuTopLeft:self];
         }
     }
     // If leaving the bottom
     else if (prevOffset_.y > bottom && offset.y < bottom) {
-        if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuBottomLeft)]) {
-            [delegate_ scrollingMenuBottomLeft];
+        if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuBottomLeft:)]) {
+            [delegate_ scrollingMenuBottomLeft:self];
         }        
     }
     
     // If reaching the top
     if (prevOffset_.y > top && offset.y < top) {
-        if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuTopReached)]) {
-            [delegate_ scrollingMenuTopReached];
+        if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuTopReached:)]) {
+            [delegate_ scrollingMenuTopReached:self];
         }        
     }
     // If reaching the bottom
     else if (prevOffset_.y < bottom && offset.y > bottom) {
-        if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuBottomReached)]) {
-            [delegate_ scrollingMenuBottomReached];
+        if (delegate_ && [delegate_ respondsToSelector:@selector(scrollingMenuBottomReached:)]) {
+            [delegate_ scrollingMenuBottomReached:self];
         }      
     }
     
     prevOffset_ = offset;
+}
+
+- (BOOL) isDownArrowNeeded
+{
+    return scrollSize_ > menuFrame_.size.height && prevOffset_.y < SM_EPSILON;
 }
 
 @end

@@ -50,6 +50,8 @@
 
 - (void) menuScrolled:(CGPoint)offset;
 
+- (BOOL) isDownArrowNeeded;
+
 /* 
  * This method MUST be called prior to releasing Scrolling Menu,
  * because the view controller holds a reference to self

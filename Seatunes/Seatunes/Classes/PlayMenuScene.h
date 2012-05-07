@@ -56,9 +56,9 @@ typedef enum {
 
     LoadingIndicator *loadingIndicator_;
 
-    CCSprite *packUpArrow_;
-    
     CCSprite *packDownArrow_;
+    
+    CCSprite *songDownArrow_;
 }
 
 //@property (nonatomic, retain) NSString *currentPack;
