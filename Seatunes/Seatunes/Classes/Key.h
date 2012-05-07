@@ -13,11 +13,15 @@
 
 @interface Key : CCNode {
  
+    NSString *fullName_;
+    
     CCSprite *sprite_;
     
     CCSprite *selected_;
     
     CCSprite *disabled_;
+    
+    CCAction *blinkAnimation_;    
     
     KeyType keyType_;
     
@@ -39,6 +43,8 @@
 + (id) key:(KeyType)keyType creature:(CreatureType)creature;
 
 - (id) initKey:(KeyType)keyType creature:(CreatureType)creature;
+
+- (void) initAnimations;
 
 - (BOOL) containsTouchLocation:(UITouch *)touch;
 

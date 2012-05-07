@@ -32,7 +32,9 @@ static const CGFloat KEY_SCALE = 1.0f;
         isSelected_ = NO;
         
         NSString *keyName = [Utility keyNameFromEnum:keyType];
-        NSString *creatureName = [Utility creatureNameFromEnum:creature];
+        NSString *creatureName = [[Utility creatureNameFromEnum:creature] retain];
+        
+        fullName_ = [[NSString stringWithFormat:@"%@ %@", creatureName, keyName] retain];
         
         NSString *spriteName = [NSString stringWithFormat:@"%@ %@.png", creatureName, keyName];
         NSString *selectedName = [NSString stringWithFormat:@"%@ %@ Selected.png", creatureName, keyName];
@@ -48,17 +50,29 @@ static const CGFloat KEY_SCALE = 1.0f;
         
         [self addChild:sprite_];
         [self addChild:selected_];
+        
+        //[self initAnimations];
+        //[self scheduleBlink];
     }
     return self;
 }
 
 - (void) dealloc
 {
+    [fullName_ release];
+    [blinkAnimation_ release];
     [sprite_ release];
     [selected_ release];
     //[disabled_ release];
     
     [super dealloc];
+}
+
+- (void) initAnimations
+{
+    NSString *animationName = [NSString stringWithFormat:@"%@ Blink", fullName_];    
+	CCAnimation *animation = [[CCAnimationCache sharedAnimationCache] animationByName:animationName];
+	blinkAnimation_ = [[CCAnimate actionWithAnimation:animation] retain];    
 }
 
 - (CGRect) rect
@@ -71,6 +85,36 @@ static const CGFloat KEY_SCALE = 1.0f;
 - (BOOL) containsTouchLocation:(UITouch *)touch
 {	
 	return CGRectContainsPoint([self rect], [self convertTouchToNodeSpaceAR:touch]);
+}
+
+- (void) showBlink
+{
+    [sprite_ stopAllActions];
+    CCActionInstant *done = [CCCallBlock actionWithBlock:^{
+        [self resetIdleFrame];
+        [self scheduleBlink];
+    }];
+    
+    [sprite_ runAction:[CCSequence actions:(CCFiniteTimeAction *)blinkAnimation_, done, nil]];
+}
+
+- (void) scheduleBlink
+{
+    CGFloat delayTime = 3.0f;
+    CCActionInterval *delay = [CCDelayTime actionWithDuration:delayTime];
+    CCActionInstant *blink = [CCCallBlock actionWithBlock:^{
+        [self showBlink];
+    }];
+    
+    [self runAction:[CCSequence actions:delay, blink, nil]];
+}
+
+- (void) resetIdleFrame
+{
+    [sprite_ stopAllActions];
+    
+    NSString *spriteFrameName = [NSString stringWithFormat:@"%@.png", fullName_];
+    [sprite_ setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:spriteFrameName]];
 }
 
 - (void) selectButton
