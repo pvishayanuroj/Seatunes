@@ -149,7 +149,8 @@ static const CGFloat SL_MENU_Y = 430.0f;
         case kButtonMenu:
             [[AudioManager audioManager] playSound:kE4 instrument:kMenu];            
             scene = [PlayMenuScene playMenuScene:packIndex_];
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                                    
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];      
+            [[AudioManager audioManager] resumeBackgroundMusic];                
             break;
         case kButtonReplay:
             [[AudioManager audioManager] playSound:kE4 instrument:kMenu];            

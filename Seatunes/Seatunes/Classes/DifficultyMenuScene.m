@@ -170,7 +170,7 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
 {
     CCScene *scene = [GameScene startWithDifficulty:difficulty_ songName:songName_ packIndex:packIndex_];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
-            [[AudioManager audioManager] playSound:kC5 instrument:kMenu];  
+    [[AudioManager audioManager] playSound:kC5 instrument:kMenu];  
 }
 
 - (void) playMenu

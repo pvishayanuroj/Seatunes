@@ -8,6 +8,7 @@
 
 #import "ScoreScene.h"
 #import "ScoreLayer.h"
+#import "AudioManager.h"
 
 @implementation ScoreScene
 
@@ -23,6 +24,7 @@
         ScoreLayer *scoreLayer = [ScoreLayer scoreLayer:scoreInfo songName:songName packIndex:packIndex];
         [self addChild:scoreLayer];            
         
+        [[AudioManager audioManager] playSoundEffect:kPageFlip];
     }
     return self;
 }

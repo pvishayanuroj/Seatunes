@@ -63,13 +63,6 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         
         [[AudioManager audioManager] pauseBackgroundMusic];
         
-        if ([[AudioManager audioManager] isBackgroundMusicPlaying]) {
-            NSLog(@"YEs");
-        }
-        else {
-            NSLog(@"NO");
-        }
-        
         self.isTouchEnabled = YES;
         helpOn_ = NO;
         sideMenuOpen_ = NO;
@@ -184,10 +177,8 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];     
 }
 
-- (void) songComplete:(ScoreInfo)scoreInfo
-{
-    [[AudioManager audioManager] resumeBackgroundMusic];    
-    
+- (void) songComplete:(ScoreInfo)scoreInfo 
+{    
     // Record that this difficulty has been played, and record that at least the first song has been played
     NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty_];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];
@@ -263,7 +254,8 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         case kButtonMenu:
             [[AudioManager audioManager] playSound:kE4 instrument:kMenu];            
             scene = [PlayMenuScene playMenuScene:packIndex_];
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];                        
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];   
+            [[AudioManager audioManager] resumeBackgroundMusic];            
             break;
         default:
             break;
