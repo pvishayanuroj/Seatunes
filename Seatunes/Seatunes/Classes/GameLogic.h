@@ -17,6 +17,7 @@
 @class NoteGenerator;
 @class SpeechReader;
 @class Staff;
+@class BubbleGroup;
 
 @interface GameLogic : CCNode <SpeechReaderDelegate> {
     
@@ -31,6 +32,8 @@
     Staff *staff_;    
     
     ScoreInfo scoreInfo_;
+    
+    BubbleGroup *bubbles_;
     
     id <GameLogicDelegate> delegate_;
 }

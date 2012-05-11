@@ -14,6 +14,8 @@
 #import "Menu.h"
 #import "Button.h"
 #import "AudioManager.h"
+#import "BubbleGroup.h"
+#import "CCNode+PauseResume.h"
 
 @implementation FreePlayLayer
 
@@ -32,6 +34,8 @@ static const CGFloat FPL_SIDEMENU_Y = 450.0f;
 static const CGFloat FPL_SIDEMENU_SPRITE_Y = -70.0f;
 static const CGFloat FPL_SIDEMENU_MOVE_TIME = 0.5f;
 static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
+static const CGFloat FPL_BUBBLE_X = 550.0f;
+static const CGFloat FPL_BUBBLE_Y = 150.0f;
 
 - (id) init
 {
@@ -55,6 +59,10 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         
         noteGenerator_ = [[NoteGenerator noteGenerator] retain];       
         [self addChild:noteGenerator_];  
+        
+        bubbles_ = [[BubbleGroup bubbleGroupWithBubbles:0.02f] retain];
+        bubbles_.position = ccp(FPL_BUBBLE_X, FPL_BUBBLE_Y);
+        [self addChild:bubbles_];        
         
         CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Foreground.png"];
         coralBackground.anchorPoint = CGPointZero;
@@ -86,7 +94,7 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         
         CCLabelBMFont *menuLabel = [CCLabelBMFont labelWithString:@"Menu" fntFile:@"MenuFont.fnt"];
         menuLabel.position = ccp(FPL_SIDEMENU_BUTTON_LABEL_X, FPL_SIDEMENU_BUTTON_LABEL_Y);
-        [self addChild:menuLabel];        
+        [self addChild:menuLabel];       
     }
     return self;
 }
@@ -98,6 +106,7 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
     [keyboard_ release];
     [sideMenu_ release];
     [sideMenuButton_ release];
+    [bubbles_ release];
     
     [super dealloc];
 }
@@ -256,10 +265,12 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 - (void) pauseGame
 {
     isPaused_ = YES;
+    [bubbles_ pauseHierarchy];
 }
 
 - (void) resumeGame
 {
+    [bubbles_ resumeHierarchy];
     isPaused_ = NO;
 }
 

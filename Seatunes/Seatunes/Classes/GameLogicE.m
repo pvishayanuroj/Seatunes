@@ -17,6 +17,7 @@
 #import "Staff.h"
 #import "StaffNote.h"
 #import "GameScene.h"
+#import "BubbleGroup.h"
 
 @implementation GameLogicE
 
@@ -28,6 +29,8 @@ static const CGFloat GLE_STAFF_X = 512.0f;
 static const CGFloat GLE_STAFF_Y = 600.0f;
 static const CGFloat GLE_READER_OFFSET_X = 225.0f;
 static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
+static const CGFloat GLE_BUBBLE_X = 150.0f;
+static const CGFloat GLE_BUBBLE_Y = 250.0f;
 
 + (id) gameLogicE:(NSString *)songName
 {
@@ -51,6 +54,10 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];                     
+        
+        bubbles_ = [[BubbleGroup bubbleGroupWithBubbles:0.02f] retain];
+        bubbles_.position = ccp(GLE_BUBBLE_X, GLE_BUBBLE_Y);
+        [self addChild:bubbles_];           
         
         CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Foreground.png"];
         coralBackground.anchorPoint = CGPointZero;
@@ -108,6 +115,7 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
     [score_ release];
     [staff_ release];
     [reader_ release];
+    [bubbles_ release];
     
     [super dealloc];
 }

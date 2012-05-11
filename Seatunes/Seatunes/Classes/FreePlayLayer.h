@@ -17,6 +17,7 @@
 @class NoteGenerator;
 @class Menu;
 @class Button;
+@class BubbleGroup;
 
 @interface FreePlayLayer : CCLayer <MenuDelegate, ButtonDelegate> {
     
@@ -29,6 +30,8 @@
     Menu *sideMenu_;
     
     Button *sideMenuButton_;    
+    
+    BubbleGroup *bubbles_;
     
     BOOL sideMenuOpen_;
     

@@ -106,6 +106,9 @@
 		A507EFAC1556B80700FE5724 /* Down Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A507EFA81556B80700FE5724 /* Down Arrow.png */; };
 		A5C3CF1615583D0A00373415 /* Small Down Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C3CF1515583D0A00373415 /* Small Down Arrow.png */; };
 		A5C3CF181558725E00373415 /* Small Down Arrow-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C3CF171558725E00373415 /* Small Down Arrow-ipadhd.png */; };
+		A5C65347155D4167008A5689 /* Bubble.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C65344155D4167008A5689 /* Bubble.m */; };
+		A5C65348155D4167008A5689 /* BubbleGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C65346155D4167008A5689 /* BubbleGroup.m */; };
+		A5C6534B155D4204008A5689 /* Bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6534A155D4204008A5689 /* Bubble.png */; };
 		AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */; };
 		AE48ED1C1543142000747910 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = AE48ED1B1543142000747910 /* Badge.m */; };
 		AE48ED1F1543156700747910 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED1E1543156700747910 /* Star.png */; };
@@ -583,6 +586,11 @@
 		A507EFA81556B80700FE5724 /* Down Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Down Arrow.png"; sourceTree = "<group>"; };
 		A5C3CF1515583D0A00373415 /* Small Down Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Small Down Arrow.png"; sourceTree = "<group>"; };
 		A5C3CF171558725E00373415 /* Small Down Arrow-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Small Down Arrow-ipadhd.png"; sourceTree = "<group>"; };
+		A5C65343155D4167008A5689 /* Bubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bubble.h; path = Classes/Bubble.h; sourceTree = "<group>"; };
+		A5C65344155D4167008A5689 /* Bubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bubble.m; path = Classes/Bubble.m; sourceTree = "<group>"; };
+		A5C65345155D4167008A5689 /* BubbleGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BubbleGroup.h; path = Classes/BubbleGroup.h; sourceTree = "<group>"; };
+		A5C65346155D4167008A5689 /* BubbleGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BubbleGroup.m; path = Classes/BubbleGroup.m; sourceTree = "<group>"; };
+		A5C6534A155D4204008A5689 /* Bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bubble.png; sourceTree = "<group>"; };
 		AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
 		AE48ED1A1543142000747910 /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Badge.h; path = Classes/Badge.h; sourceTree = "<group>"; };
 		AE48ED1B1543142000747910 /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Badge.m; path = Classes/Badge.m; sourceTree = "<group>"; };
@@ -1150,6 +1158,10 @@
 		04B0D4B91501D64000A4A2B8 /* Game Elements */ = {
 			isa = PBXGroup;
 			children = (
+				A5C65343155D4167008A5689 /* Bubble.h */,
+				A5C65344155D4167008A5689 /* Bubble.m */,
+				A5C65345155D4167008A5689 /* BubbleGroup.h */,
+				A5C65346155D4167008A5689 /* BubbleGroup.m */,
 				AE48ED23154328B600747910 /* IncrementingTextDelegate.h */,
 				AE48ED201543289100747910 /* IncrementingText.h */,
 				AE48ED211543289100747910 /* IncrementingText.m */,
@@ -1471,6 +1483,7 @@
 		AE7774281522823500CE9332 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				A5C6534A155D4204008A5689 /* Bubble.png */,
 				A5C3CF171558725E00373415 /* Small Down Arrow-ipadhd.png */,
 				A5C3CF1515583D0A00373415 /* Small Down Arrow.png */,
 				A507EFA71556B80700FE5724 /* Down Arrow-ipadhd.png */,
@@ -2392,6 +2405,7 @@
 				A507EFAC1556B80700FE5724 /* Down Arrow.png in Resources */,
 				A5C3CF1615583D0A00373415 /* Small Down Arrow.png in Resources */,
 				A5C3CF181558725E00373415 /* Small Down Arrow-ipadhd.png in Resources */,
+				A5C6534B155D4204008A5689 /* Bubble.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2548,6 +2562,8 @@
 				AE48ED1C1543142000747910 /* Badge.m in Sources */,
 				AE48ED221543289100747910 /* IncrementingText.m in Sources */,
 				AE7AFCAD154C350500544A0E /* ModEaseBackIn.m in Sources */,
+				A5C65347155D4167008A5689 /* Bubble.m in Sources */,
+				A5C65348155D4167008A5689 /* BubbleGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

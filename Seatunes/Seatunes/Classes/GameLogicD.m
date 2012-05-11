@@ -15,6 +15,7 @@
 #import "SpeechReader.h"
 #import "NoteGenerator.h"
 #import "AudioManager.h"
+#import "BubbleGroup.h"
 
 @implementation GameLogicD
 
@@ -22,6 +23,8 @@ static const CGFloat GLD_INSTRUCTOR_X = 200.0f;
 static const CGFloat GLD_INSTRUCTOR_Y = 550.0f;
 static const CGFloat GLD_READER_OFFSET_X = 225.0f;
 static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
+static const CGFloat GLD_BUBBLE_X = 350.0f;
+static const CGFloat GLD_BUBBLE_Y = 200.0f;
 
 + (id) gameLogicD:(NSString *)songName
 {
@@ -47,6 +50,10 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
         instructor_ = [Instructor instructor:kWhaleInstructor];
         instructor_.position = ccp(GLD_INSTRUCTOR_X, GLD_INSTRUCTOR_Y);
         [self addChild:instructor_];        
+        
+        bubbles_ = [[BubbleGroup bubbleGroupWithBubbles:0.02f] retain];
+        bubbles_.position = ccp(GLD_BUBBLE_X, GLD_BUBBLE_Y);
+        [self addChild:bubbles_];               
         
         noteGenerator_ = [[NoteGenerator noteGenerator] retain];
         noteGenerator_.delegate = self;
@@ -92,6 +99,7 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
     [score_ release];
     [noteGenerator_ release];
     [reader_ release];
+    [bubbles_ release];
     
     [super dealloc];
 }
