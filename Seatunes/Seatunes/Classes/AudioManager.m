@@ -173,8 +173,10 @@ static AudioManager *_audioManager = nil;
 
 - (void) playBackgroundMusic:(MusicType)musicType
 {
-    NSString *path = [Utility musicFileFromEnum:musicType];
-    [sae_ playBackgroundMusic:path];
+    if (![sae_ isBackgroundMusicPlaying]) {
+        NSString *path = [Utility musicFileFromEnum:musicType];
+        [sae_ playBackgroundMusic:path];
+    }
 }
 
 - (void) pauseBackgroundMusic

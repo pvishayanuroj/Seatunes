@@ -308,6 +308,9 @@
         case kBubblePop:
             name = @"Bubble Pop.mp3";
             break;
+        case kBubblePop2:
+            name = @"Bubble Pop 2.mp3";
+            break;            
         case kSwoosh1:
             name = @"Swoosh 1.mp3";
             break;
@@ -335,6 +338,7 @@
     [sounds addObject:[NSNumber numberWithInteger:kThud]];
     [sounds addObject:[NSNumber numberWithInteger:kWahWah]];       
     [sounds addObject:[NSNumber numberWithInteger:kBubblePop]];    
+    [sounds addObject:[NSNumber numberWithInteger:kBubblePop2]];        
     [sounds addObject:[NSNumber numberWithInteger:kSwoosh1]];    
     [sounds addObject:[NSNumber numberWithInteger:kSwoosh2]];   
     [sounds addObject:[NSNumber numberWithInteger:kSwoosh3]];       

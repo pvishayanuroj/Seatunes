@@ -16,6 +16,7 @@
 #import "AudioManager.h"
 #import "BubbleGroup.h"
 #import "CCNode+PauseResume.h"
+#import "DataUtility.h"
 
 @implementation FreePlayLayer
 
@@ -173,7 +174,11 @@ static const CGFloat FPL_BUBBLE_Y = 150.0f;
             scene = [MainMenuScene node];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];        
             [[AudioManager audioManager] playSoundEffect:kPageFlip];
-            [[AudioManager audioManager] resumeBackgroundMusic];
+            
+            if ([DataUtility manager].backgroundMusicOn) {
+                [[AudioManager audioManager] resumeBackgroundMusic];            
+            }
+            
             break;
         default:
             break;

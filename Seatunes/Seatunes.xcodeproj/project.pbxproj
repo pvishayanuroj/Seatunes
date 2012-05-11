@@ -109,6 +109,11 @@
 		A5C65347155D4167008A5689 /* Bubble.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C65344155D4167008A5689 /* Bubble.m */; };
 		A5C65348155D4167008A5689 /* BubbleGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C65346155D4167008A5689 /* BubbleGroup.m */; };
 		A5C6534B155D4204008A5689 /* Bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6534A155D4204008A5689 /* Bubble.png */; };
+		A5C65350155D793C008A5689 /* Music Off Button-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6534C155D793C008A5689 /* Music Off Button-ipadhd.png */; };
+		A5C65351155D793C008A5689 /* Music Off Button.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6534D155D793C008A5689 /* Music Off Button.png */; };
+		A5C65352155D793C008A5689 /* Music On Button-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6534E155D793C008A5689 /* Music On Button-ipadhd.png */; };
+		A5C65353155D793C008A5689 /* Music On Button.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6534F155D793C008A5689 /* Music On Button.png */; };
+		A5C65355155D7CDE008A5689 /* Bubble Pop 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A5C65354155D7CDE008A5689 /* Bubble Pop 2.mp3 */; };
 		AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */; };
 		AE48ED1C1543142000747910 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = AE48ED1B1543142000747910 /* Badge.m */; };
 		AE48ED1F1543156700747910 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED1E1543156700747910 /* Star.png */; };
@@ -591,6 +596,11 @@
 		A5C65345155D4167008A5689 /* BubbleGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BubbleGroup.h; path = Classes/BubbleGroup.h; sourceTree = "<group>"; };
 		A5C65346155D4167008A5689 /* BubbleGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BubbleGroup.m; path = Classes/BubbleGroup.m; sourceTree = "<group>"; };
 		A5C6534A155D4204008A5689 /* Bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bubble.png; sourceTree = "<group>"; };
+		A5C6534C155D793C008A5689 /* Music Off Button-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music Off Button-ipadhd.png"; sourceTree = "<group>"; };
+		A5C6534D155D793C008A5689 /* Music Off Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music Off Button.png"; sourceTree = "<group>"; };
+		A5C6534E155D793C008A5689 /* Music On Button-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music On Button-ipadhd.png"; sourceTree = "<group>"; };
+		A5C6534F155D793C008A5689 /* Music On Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music On Button.png"; sourceTree = "<group>"; };
+		A5C65354155D7CDE008A5689 /* Bubble Pop 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop 2.mp3"; sourceTree = "<group>"; };
 		AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
 		AE48ED1A1543142000747910 /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Badge.h; path = Classes/Badge.h; sourceTree = "<group>"; };
 		AE48ED1B1543142000747910 /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Badge.m; path = Classes/Badge.m; sourceTree = "<group>"; };
@@ -1343,6 +1353,7 @@
 		04DE51B614F7492C00F8E45C /* Sound Effects */ = {
 			isa = PBXGroup;
 			children = (
+				A5C65354155D7CDE008A5689 /* Bubble Pop 2.mp3 */,
 				AE7AFCC1154CB59500544A0E /* Swoosh 2.mp3 */,
 				AE7AFCC2154CB59500544A0E /* Swoosh 3.mp3 */,
 				AE7AFCBF154CB40D00544A0E /* Swoosh 1.mp3 */,
@@ -1416,6 +1427,10 @@
 		AE7773F41522823500CE9332 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				A5C6534C155D793C008A5689 /* Music Off Button-ipadhd.png */,
+				A5C6534D155D793C008A5689 /* Music Off Button.png */,
+				A5C6534E155D793C008A5689 /* Music On Button-ipadhd.png */,
+				A5C6534F155D793C008A5689 /* Music On Button.png */,
 				AE7AFCC5154CC2FF00544A0E /* Restart Button Disabled-ipadhd.png */,
 				AE7AFCC6154CC2FF00544A0E /* Restart Button Disabled.png */,
 				AE7CACD51548F0BA002DB944 /* Help Button-ipadhd.png */,
@@ -2406,6 +2421,11 @@
 				A5C3CF1615583D0A00373415 /* Small Down Arrow.png in Resources */,
 				A5C3CF181558725E00373415 /* Small Down Arrow-ipadhd.png in Resources */,
 				A5C6534B155D4204008A5689 /* Bubble.png in Resources */,
+				A5C65350155D793C008A5689 /* Music Off Button-ipadhd.png in Resources */,
+				A5C65351155D793C008A5689 /* Music Off Button.png in Resources */,
+				A5C65352155D793C008A5689 /* Music On Button-ipadhd.png in Resources */,
+				A5C65353155D793C008A5689 /* Music On Button.png in Resources */,
+				A5C65355155D7CDE008A5689 /* Bubble Pop 2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

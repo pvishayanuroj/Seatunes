@@ -56,6 +56,7 @@ typedef enum {
     kApplause,
     kPageFlip,
     kBubblePop,
+    kBubblePop2,
     kClamHit,
     kDing,
     kSuccess,

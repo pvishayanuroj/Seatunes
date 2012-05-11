@@ -15,12 +15,15 @@ enum {
     kPlayButton,
     kFreePlayButton,
     kBuySongsButton,
-    kCreditsButton
+    kCreditsButton,
+    kMusicButton
 };
 
-@class Button;
+@class ScaledImageButton;
 
 @interface MainMenuScene : CCScene <ButtonDelegate> {
+ 
+    ScaledImageButton *musicButton_;
     
 }
 

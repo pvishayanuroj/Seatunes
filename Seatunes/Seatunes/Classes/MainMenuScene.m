@@ -24,10 +24,15 @@ static const CGFloat MMS_FREEPLAY_X = 200.0f;
 static const CGFloat MMS_FREEPLAY_Y = 475.0f;
 static const CGFloat MMS_BUY_X = 200.0f;
 static const CGFloat MMS_BUY_Y = 500.0f;
+static const CGFloat MMS_MUSIC_X = 1000.0f;
+static const CGFloat MMS_MUSIC_Y = 740.0f;
 
 - (id) init
 {
     if ((self = [super init])) {
+        
+        // Initialze the data manager
+        [DataUtility manager];
         
         // Initialize the audio engine and all preload sounds
         [AudioManager audioManager];        
@@ -59,13 +64,25 @@ static const CGFloat MMS_BUY_Y = 500.0f;
         [self addChild:playButton];
         [self addChild:freePlayButton];        
         
-        [[AudioManager audioManager] playBackgroundMusic:kHappyJumper];
+        if ([DataUtility manager].backgroundMusicOn) {
+            musicButton_ = [[ScaledImageButton scaledImageButton:kMusicButton image:@"Music On Button.png"] retain];    
+            [[AudioManager audioManager] playBackgroundMusic:kHappyJumper];                        
+        }
+        else {
+            musicButton_ = [[ScaledImageButton scaledImageButton:kMusicButton image:@"Music Off Button.png"] retain];            
+        }
+        
+        musicButton_.delegate = self;
+        musicButton_.position = ccp(MMS_MUSIC_X, MMS_MUSIC_Y);
+        [self addChild:musicButton_];
     }
     return self;
 }
 
 - (void) dealloc
 {
+    [musicButton_ release];
+    
     [super dealloc];
 }
 
@@ -84,6 +101,24 @@ static const CGFloat MMS_BUY_Y = 500.0f;
             [[AudioManager audioManager] playSound:kD4 instrument:kMenu];        
             break;
         case kBuySongsButton:
+            break;
+        case kCreditsButton:
+            break;
+        case kMusicButton:
+            // If music was playing
+            if ([DataUtility manager].backgroundMusicOn) {
+                [[AudioManager audioManager] playSound:kE4 instrument:kMenu];
+                [DataUtility manager].backgroundMusicOn = NO;
+                [[AudioManager audioManager] pauseBackgroundMusic];
+                [musicButton_ setImage:@"Music Off Button.png"];
+            }
+            // Else music was off
+            else {
+                [[AudioManager audioManager] playSound:kG4 instrument:kMenu];                
+                [DataUtility manager].backgroundMusicOn = YES;
+                [[AudioManager audioManager] resumeBackgroundMusic];
+                [musicButton_ setImage:@"Music On Button.png"];
+            }
             break;
         default:
             break;

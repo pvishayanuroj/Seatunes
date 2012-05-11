@@ -255,7 +255,9 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
             [[AudioManager audioManager] playSound:kE4 instrument:kMenu];            
             scene = [PlayMenuScene playMenuScene:packIndex_];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];   
-            [[AudioManager audioManager] resumeBackgroundMusic];            
+            if ([DataUtility manager].backgroundMusicOn) {
+                [[AudioManager audioManager] resumeBackgroundMusic];            
+            }
             break;
         default:
             break;

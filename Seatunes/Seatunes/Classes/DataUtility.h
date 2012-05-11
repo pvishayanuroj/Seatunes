@@ -28,8 +28,11 @@
     NSSet *trainingSongs_;
     
 	CCSpriteBatchNode *spriteSheet_;    
+    
+    BOOL backgroundMusicOn_;    
 }
 
+@property (nonatomic, assign) BOOL backgroundMusicOn;
 @property (nonatomic, readonly) NSArray *allPackNames;
 
 + (DataUtility *) manager;

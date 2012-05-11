@@ -100,7 +100,7 @@
     [self stopAllActions];
     
     [self scaleAction];
-    //[[AudioManager audioManager] playSoundEffect:@"bubble-pop.mp3"];
+    [[AudioManager audioManager] playSoundEffect:kBubblePop2];
 }
 
 - (void) scaleAction

@@ -11,6 +11,7 @@
 
 @implementation DataUtility
 
+@synthesize backgroundMusicOn = backgroundMusicOn_;
 @synthesize allPackNames = allPackNames_;
 
 // For singleton
@@ -56,6 +57,7 @@ static DataUtility *manager_ = nil;
         packNames_ = nil;
         packIdentifiers_ = nil;
         defaultPacks_ = nil;
+        backgroundMusicOn_ = YES;
         
         [self animationLoader:@"sheet01_animations" spriteSheetName:@"sheet01"];        
         [self loadPackInfo];
