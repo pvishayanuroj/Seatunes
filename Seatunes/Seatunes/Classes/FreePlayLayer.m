@@ -17,6 +17,7 @@
 #import "BubbleGroup.h"
 #import "CCNode+PauseResume.h"
 #import "DataUtility.h"
+#import "Sunbeams.h"
 
 @implementation FreePlayLayer
 
@@ -53,6 +54,10 @@ static const CGFloat FPL_BUBBLE_Y = 150.0f;
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];            
+        
+        sunbeams_ = [[Sunbeams sunbeamsCycling:2] retain];
+        //sunbeams_ = [[Sunbeams sunbeamsStatic:2] retain];
+        [self addChild:sunbeams_];        
         
         instructor_ = [[Instructor instructor:kWhaleInstructor] retain];
         instructor_.position = ccp(FPL_INSTRUCTOR_X, FPL_INSTRUCTOR_Y);
@@ -108,6 +113,7 @@ static const CGFloat FPL_BUBBLE_Y = 150.0f;
     [sideMenu_ release];
     [sideMenuButton_ release];
     [bubbles_ release];
+    [sunbeams_ release];
     
     [super dealloc];
 }

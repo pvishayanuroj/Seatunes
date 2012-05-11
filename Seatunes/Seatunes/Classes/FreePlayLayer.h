@@ -18,6 +18,7 @@
 @class Menu;
 @class Button;
 @class BubbleGroup;
+@class Sunbeams;
 
 @interface FreePlayLayer : CCLayer <MenuDelegate, ButtonDelegate> {
     
@@ -32,6 +33,8 @@
     Button *sideMenuButton_;    
     
     BubbleGroup *bubbles_;
+    
+    Sunbeams *sunbeams_;
     
     BOOL sideMenuOpen_;
     
