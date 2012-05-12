@@ -56,4 +56,8 @@
 
 - (void) selectButtonTimed:(CGFloat)time;
 
+- (void) scheduleBlink;
+
+- (void) resetIdleFrame;
+
 @end

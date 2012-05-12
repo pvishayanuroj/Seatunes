@@ -26,6 +26,13 @@ static const CGFloat GLD_READER_OFFSET_Y = 75.0f;
 static const CGFloat GLD_BUBBLE_X = 350.0f;
 static const CGFloat GLD_BUBBLE_Y = 200.0f;
 
+static const NSInteger GLD_BACKGROUND_Z = 1;
+static const NSInteger GLD_BUBBLES_Z = 2;
+static const NSInteger GLD_INSTRUCTOR_Z = 3;
+static const NSInteger GLD_NOTE_Z = 4;
+static const NSInteger GLD_FOREGROUND_Z = 5;
+static const NSInteger GLD_READER_Z = 6;
+
 + (id) gameLogicD:(NSString *)songName
 {
     return [[[self alloc] initGameLogicD:songName] autorelease];
@@ -45,23 +52,23 @@ static const CGFloat GLD_BUBBLE_Y = 200.0f;
         
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
-        [self addChild:background];         
+        [self addChild:background z:GLD_BACKGROUND_Z];
         
         instructor_ = [Instructor instructor:kWhaleInstructor];
         instructor_.position = ccp(GLD_INSTRUCTOR_X, GLD_INSTRUCTOR_Y);
-        [self addChild:instructor_];        
+        [self addChild:instructor_ z:GLD_INSTRUCTOR_Z];        
         
         bubbles_ = [[BubbleGroup bubbleGroupWithBubbles:0.02f] retain];
         bubbles_.position = ccp(GLD_BUBBLE_X, GLD_BUBBLE_Y);
-        [self addChild:bubbles_];               
+        [self addChild:bubbles_ z:GLD_BUBBLES_Z];               
         
         noteGenerator_ = [[NoteGenerator noteGenerator] retain];
         noteGenerator_.delegate = self;
-        [self addChild:noteGenerator_];   
+        [self addChild:noteGenerator_ z:GLD_NOTE_Z];   
         
         CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Foreground.png"];
         coralBackground.anchorPoint = CGPointZero;
-        [self addChild:coralBackground];
+        [self addChild:coralBackground z:GLD_FOREGROUND_Z];
         
         NSMutableArray *dialogue = [NSMutableArray array];
         
@@ -87,7 +94,7 @@ static const CGFloat GLD_BUBBLE_Y = 200.0f;
         reader_ = [[SpeechReader speechReader:dialogue prompt:NO] retain];
         reader_.delegate = self;
         reader_.position = ccp(GLD_INSTRUCTOR_X + GLD_READER_OFFSET_X, GLD_INSTRUCTOR_Y + GLD_READER_OFFSET_Y);
-        [self addChild:reader_];          
+        [self addChild:reader_ z:GLD_READER_Z];          
     }
     return self;
 }

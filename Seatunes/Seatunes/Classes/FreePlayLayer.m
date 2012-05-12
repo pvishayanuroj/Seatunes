@@ -39,6 +39,17 @@ static const CGFloat FPL_SIDEMENU_MOVE_AMOUNT = 200.0f;
 static const CGFloat FPL_BUBBLE_X = 550.0f;
 static const CGFloat FPL_BUBBLE_Y = 150.0f;
 
+static const NSInteger FPL_BACKGROUND_Z = 1;
+static const NSInteger FPL_SUNBEAMS_Z = 2;
+static const NSInteger FPL_BUBBLES_Z = 3;
+static const NSInteger FPL_INSTRUCTOR_Z = 4;
+static const NSInteger FPL_NOTE_Z = 5;
+static const NSInteger FPL_FOREGROUND_Z = 6;
+static const NSInteger FPL_KEYBOARD_Z = 7;
+static const NSInteger FPL_SIDEMENU_BUTTON_Z = 8;
+static const NSInteger FPL_SIDEMENU_Z = 9;
+static const NSInteger FPL_MENU_LABEL_Z = 10;
+
 - (id) init
 {
     if ((self = [super init])) {
@@ -53,31 +64,31 @@ static const CGFloat FPL_BUBBLE_Y = 150.0f;
         
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
-        [self addChild:background];            
+        [self addChild:background z:FPL_BACKGROUND_Z];            
         
         sunbeams_ = [[Sunbeams sunbeamsCycling:2] retain];
         //sunbeams_ = [[Sunbeams sunbeamsStatic:2] retain];
-        [self addChild:sunbeams_];        
-        
-        instructor_ = [[Instructor instructor:kWhaleInstructor] retain];
-        instructor_.position = ccp(FPL_INSTRUCTOR_X, FPL_INSTRUCTOR_Y);
-        [self addChild:instructor_];           
-        
-        noteGenerator_ = [[NoteGenerator noteGenerator] retain];       
-        [self addChild:noteGenerator_];  
+        [self addChild:sunbeams_ z:FPL_SUNBEAMS_Z];        
         
         bubbles_ = [[BubbleGroup bubbleGroupWithBubbles:0.02f] retain];
         bubbles_.position = ccp(FPL_BUBBLE_X, FPL_BUBBLE_Y);
-        [self addChild:bubbles_];        
+        [self addChild:bubbles_ z:FPL_BUBBLES_Z];            
+        
+        instructor_ = [[Instructor instructor:kWhaleInstructor] retain];
+        instructor_.position = ccp(FPL_INSTRUCTOR_X, FPL_INSTRUCTOR_Y);
+        [self addChild:instructor_ z:FPL_INSTRUCTOR_Z];           
+        
+        noteGenerator_ = [[NoteGenerator noteGenerator] retain];       
+        [self addChild:noteGenerator_ z:FPL_NOTE_Z];  
         
         CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Foreground.png"];
         coralBackground.anchorPoint = CGPointZero;
-        [self addChild:coralBackground];        
+        [self addChild:coralBackground z:FPL_FOREGROUND_Z];        
         
         keyboard_ = [[Keyboard keyboard:kEightKey] retain];
         keyboard_.isKeyboardMuted = NO;
         keyboard_.position = ccp(FPL_KEYBOARD_X, FPL_KEYBOARD_Y);
-        [self addChild:keyboard_];         
+        [self addChild:keyboard_ z:FPL_KEYBOARD_Z];         
         
         sideMenuButton_ = [[ImageButton imageButton:kButtonSideMenu unselectedImage:@"Starfish Button.png" selectedImage:@"Starfish Button.png"] retain];
         sideMenuButton_.delegate = self;
@@ -95,12 +106,12 @@ static const CGFloat FPL_BUBBLE_Y = 150.0f;
         [sideMenu_ addMenuItem:replayButton];        
         [sideMenu_ addMenuItem:menuButton];  
         
-        [self addChild:sideMenuButton_];        
-        [self addChild:sideMenu_];           
+        [self addChild:sideMenuButton_ z:FPL_SIDEMENU_BUTTON_Z];        
+        [self addChild:sideMenu_ z:FPL_SIDEMENU_Z];           
         
         CCLabelBMFont *menuLabel = [CCLabelBMFont labelWithString:@"Menu" fntFile:@"MenuFont.fnt"];
         menuLabel.position = ccp(FPL_SIDEMENU_BUTTON_LABEL_X, FPL_SIDEMENU_BUTTON_LABEL_Y);
-        [self addChild:menuLabel];       
+        [self addChild:menuLabel z:FPL_MENU_LABEL_Z];       
     }
     return self;
 }

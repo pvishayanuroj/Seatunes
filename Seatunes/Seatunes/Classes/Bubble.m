@@ -64,7 +64,7 @@
     CGSize size = [[CCDirector sharedDirector] winSize];
     
     // Calculate how much the duration should be reduced by in order to adjust for start position.
-    CGFloat durationMultiplier = 1.0f - (self.position.y / ((size.height + 50) / self.scale));
+    //CGFloat durationMultiplier = 1.0f - (self.position.y / ((size.height + 50) / self.scale));
     
     CGFloat duration = 3.0f + 7.5f * self.scale;
     CCMoveTo *move = [CCMoveTo actionWithDuration:duration position:ccp(self.position.x, size.height + 50)];    

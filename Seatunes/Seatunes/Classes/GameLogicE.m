@@ -32,6 +32,14 @@ static const CGFloat GLE_READER_OFFSET_Y = 75.0f;
 static const CGFloat GLE_BUBBLE_X = 150.0f;
 static const CGFloat GLE_BUBBLE_Y = 250.0f;
 
+static const NSInteger GLE_BACKGROUND_Z = 1;
+static const NSInteger GLE_BUBBLES_Z = 2;
+static const NSInteger GLE_FOREGROUND_Z = 3;
+static const NSInteger GLE_STAFF_Z = 4;
+static const NSInteger GLE_INSTRUCTOR_Z = 5;
+static const NSInteger GLE_KEYBOARD_Z = 6;
+static const NSInteger GLE_READER_Z = 7;
+
 + (id) gameLogicE:(NSString *)songName
 {
     return [[[self alloc] initGameLogicE:songName] autorelease];
@@ -53,30 +61,30 @@ static const CGFloat GLE_BUBBLE_Y = 250.0f;
         
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
-        [self addChild:background];                     
+        [self addChild:background z:GLE_BACKGROUND_Z];                     
         
         bubbles_ = [[BubbleGroup bubbleGroupWithBubbles:0.02f] retain];
         bubbles_.position = ccp(GLE_BUBBLE_X, GLE_BUBBLE_Y);
-        [self addChild:bubbles_];           
+        [self addChild:bubbles_ z:GLE_BUBBLES_Z];           
         
         CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Foreground.png"];
         coralBackground.anchorPoint = CGPointZero;
-        [self addChild:coralBackground];        
+        [self addChild:coralBackground z:GLE_FOREGROUND_Z];        
 
         staff_ = [[Staff staff] retain]; 
         staff_.delegate = self;
         staff_.position = ccp(GLE_STAFF_X, GLE_STAFF_Y);
-        [self addChild:staff_];  
+        [self addChild:staff_ z:GLE_STAFF_Z];  
         
         instructor_ = [Instructor instructor:kWhaleInstructor];
         instructor_.position = ccp(GLE_INSTRUCTOR_X, GLE_INSTRUCTOR_Y);
-        [self addChild:instructor_];           
+        [self addChild:instructor_ z:GLE_INSTRUCTOR_Z];           
         
         keyboard_ = [[Keyboard keyboard:kEightKey] retain];
         keyboard_.delegate = self;
         keyboard_.isKeyboardMuted = YES;
         keyboard_.position = ccp(GLE_KEYBOARD_X, GLE_KEYBOARD_Y);
-        [self addChild:keyboard_];          
+        [self addChild:keyboard_ z:GLE_KEYBOARD_Z];          
          
         NSMutableArray *dialogue = [NSMutableArray array];        
         
@@ -102,7 +110,7 @@ static const CGFloat GLE_BUBBLE_Y = 250.0f;
         reader_ = [[SpeechReader speechReader:dialogue prompt:NO] retain];
         reader_.delegate = self;
         reader_.position = ccp(GLE_INSTRUCTOR_X + GLE_READER_OFFSET_X, GLE_INSTRUCTOR_Y + GLE_READER_OFFSET_Y);
-        [self addChild:reader_];             
+        [self addChild:reader_ z:GLE_READER_Z];             
     }
     return self;
 }

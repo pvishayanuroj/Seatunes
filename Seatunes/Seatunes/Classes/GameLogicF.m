@@ -28,6 +28,14 @@ static const CGFloat GLF_READER_OFFSET_Y = 75.0f;
 static const CGFloat GLF_BUBBLE_X = 350.0f;
 static const CGFloat GLF_BUBBLE_Y = 200.0f;
 
+static const NSInteger GLF_BACKGROUND_Z = 1;
+static const NSInteger GLF_BUBBLES_Z = 2;
+static const NSInteger GLF_INSTRUCTOR_Z = 3;
+static const NSInteger GLF_NOTE_Z = 4;
+static const NSInteger GLF_FOREGROUND_Z = 5;
+static const NSInteger GLF_KEYBOARD_Z = 6;
+static const NSInteger GLF_READER_Z = 7;
+
 + (id) gameLogicF:(NSString *)songName
 {
     return [[[self alloc] initGameLogicF:songName] autorelease];
@@ -47,29 +55,29 @@ static const CGFloat GLF_BUBBLE_Y = 200.0f;
         
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
-        [self addChild:background];            
+        [self addChild:background z:GLF_BACKGROUND_Z];            
         
         instructor_ = [Instructor instructor:kWhaleInstructor];
         instructor_.position = ccp(GLF_INSTRUCTOR_X, GLF_INSTRUCTOR_Y);
-        [self addChild:instructor_];           
+        [self addChild:instructor_ z:GLF_INSTRUCTOR_Z];           
         
         bubbles_ = [[BubbleGroup bubbleGroupWithBubbles:0.02f] retain];
         bubbles_.position = ccp(GLF_BUBBLE_X, GLF_BUBBLE_Y);
-        [self addChild:bubbles_];            
+        [self addChild:bubbles_ z:GLF_BUBBLES_Z];            
         
         noteGenerator_ = [[NoteGenerator noteGenerator] retain];
         noteGenerator_.delegate = self;        
-        [self addChild:noteGenerator_];  
+        [self addChild:noteGenerator_ z:GLF_NOTE_Z];  
         
         CCSprite *coralBackground = [CCSprite spriteWithFile:@"Coral Foreground.png"];
         coralBackground.anchorPoint = CGPointZero;
-        [self addChild:coralBackground];        
+        [self addChild:coralBackground z:GLF_FOREGROUND_Z];        
 
         keyboard_ = [[Keyboard keyboard:kEightKey] retain];
         keyboard_.delegate = self;
         keyboard_.isKeyboardMuted = YES;
         keyboard_.position = ccp(GLF_KEYBOARD_X, GLF_KEYBOARD_Y);
-        [self addChild:keyboard_];           
+        [self addChild:keyboard_ z:GLF_KEYBOARD_Z];           
         
         NSMutableArray *dialogue = [NSMutableArray array];
         
@@ -95,7 +103,7 @@ static const CGFloat GLF_BUBBLE_Y = 200.0f;
         reader_ = [[SpeechReader speechReader:dialogue prompt:NO] retain];
         reader_.delegate = self;
         reader_.position = ccp(GLF_INSTRUCTOR_X + GLF_READER_OFFSET_X, GLF_INSTRUCTOR_Y + GLF_READER_OFFSET_Y);
-        [self addChild:reader_];         
+        [self addChild:reader_ z:GLF_READER_Z];         
     }
     return self;
 }

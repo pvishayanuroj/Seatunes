@@ -50,6 +50,10 @@
 
 - (void) placeNoBadgeFromHelp;
 
+- (void) placeBadge;
+
 - (CCParticleSystem *) createPS;
+
+- (CCParticleSystem *) createBadgePS;
 
 @end

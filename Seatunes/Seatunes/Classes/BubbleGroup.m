@@ -102,9 +102,9 @@
 - (void) playBubbleSound
 {
     if (bubbleSoundPlaying_) {
-        CGSize size = [[CCDirector sharedDirector] winSize];
+        //CGSize size = [[CCDirector sharedDirector] winSize];
         
-        CGFloat pan = -1.0f + (2.0f * (float)self.position.x / (float)size.width);
+        //CGFloat pan = -1.0f + (2.0f * (float)self.position.x / (float)size.width);
         
         //bubbleSoundEffect_ = [[AudioManager audioManager] playSoundEffect:@"bubbles.mp3" pitch:0.2f + (0.5f* masterScale_) pan:pan gain:0.6f * masterScale_];
         

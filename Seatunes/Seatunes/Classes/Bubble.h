@@ -28,4 +28,8 @@
 
 - (void) floatUp;
 
+- (void) bubblePopAction;
+
+- (void) scaleAction;
+
 @end

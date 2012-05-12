@@ -23,4 +23,6 @@
 
 - (id) initSunbeams:(NSUInteger)numbeams showAll:(BOOL)showAll;
 
+- (void) scheduleCycle;
+
 @end
