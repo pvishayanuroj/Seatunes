@@ -65,6 +65,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
         
         self.isTouchEnabled = YES;
         helpOn_ = NO;
+        helpClickable_ = YES;
         sideMenuOpen_ = NO;
         sideMenuLocked_ = NO;
         sideMenuMoving_ = NO;
@@ -177,6 +178,11 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];     
 }
 
+- (void) lastNotePlayed
+{
+    helpClickable_ = NO;
+}
+
 - (void) songComplete:(ScoreInfo)scoreInfo 
 {    
     // Record that this difficulty has been played, and record that at least the first song has been played
@@ -191,7 +197,7 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 {
     switch (button.numID) {
         case kButtonHelp:
-            if (!gameLogic_.keyboard.isHelpMoving) {
+            if (!gameLogic_.keyboard.isHelpMoving && helpClickable_) {
                 [[AudioManager audioManager] playSound:kC4 instrument:kMenu];                
                 if (helpOn_) {
                     [self helpOff];

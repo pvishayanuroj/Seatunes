@@ -12,6 +12,8 @@
 
 - (void) exerciseComplete;
 
+- (void) lastNotePlayed; 
+
 - (void) songComplete:(ScoreInfo)scoreInfo;
 
 - (void) showKeyboardLettersComplete;

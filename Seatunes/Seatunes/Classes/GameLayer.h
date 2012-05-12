@@ -40,6 +40,8 @@
     
     BOOL helpOn_;
     
+    BOOL helpClickable_;
+    
     BOOL sideMenuOpen_;
     
     BOOL sideMenuLocked_;
@@ -62,6 +64,10 @@
 - (void) hideSideMenu;
 
 - (void) showScoreMenu:(ScoreInfo)scoreInfo;
+
+- (void) helpOn;
+
+- (void) helpOff;
 
 - (void) pauseGame;
 

@@ -255,8 +255,8 @@ static const CGFloat GLE_BUBBLE_Y = 250.0f;
 
 - (void) endSong
 {
+    [delegate_ lastNotePlayed];
     scoreInfo_ = [Utility tallyScoreDictionary:score_ scoreInfo:scoreInfo_];   
-    
     
     keyboard_.isKeyboardMuted = NO;    
     keyboard_.isClickable = NO;
