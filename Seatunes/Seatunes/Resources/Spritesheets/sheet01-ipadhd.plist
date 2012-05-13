@@ -22,7 +22,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1520, 730}, {132, 132}}</string>
+			<string>{{1058, 949}, {132, 132}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -44,7 +44,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{924, 587}, {132, 132}}</string>
+			<string>{{1520, 730}, {132, 132}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -88,7 +88,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{924, 855}, {132, 132}}</string>
+			<string>{{1289, 1114}, {132, 132}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -110,7 +110,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1289, 1114}, {132, 132}}</string>
+			<string>{{924, 989}, {132, 132}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -132,7 +132,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{924, 989}, {132, 132}}</string>
+			<string>{{924, 855}, {132, 132}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -154,7 +154,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1058, 949}, {132, 132}}</string>
+			<string>{{924, 1123}, {132, 132}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -176,7 +176,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{924, 1123}, {132, 132}}</string>
+			<string>{{924, 587}, {132, 132}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -203,7 +203,7 @@
 			<false/>
 		</dict>
 		
-		<key>Clam A4 Blink.png</key>
+		<key>Clam A4 Blink 01.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
@@ -220,7 +220,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1382, 384}, {229, 171}}</string>
+			<string>{{1382, 557}, {229, 171}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -242,7 +242,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{693, 0}, {227, 201}}</string>
+			<string>{{1380, 181}, {227, 201}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -264,12 +264,12 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1151, 384}, {229, 179}}</string>
+			<string>{{1153, 0}, {229, 179}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
 		
-		<key>Clam B4 Blink.png</key>
+		<key>Clam B4 Blink 01.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
@@ -286,7 +286,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1289, 941}, {229, 171}}</string>
+			<string>{{1289, 768}, {229, 171}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -308,7 +308,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{922, 384}, {227, 201}}</string>
+			<string>{{1151, 181}, {227, 201}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -330,12 +330,12 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{693, 790}, {229, 179}}</string>
+			<string>{{1058, 768}, {229, 179}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
 		
-		<key>Clam C4 Blink.png</key>
+		<key>Clam C4 Blink 01.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
@@ -352,7 +352,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1312, 1248}, {229, 171}}</string>
+			<string>{{1289, 941}, {229, 171}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -374,7 +374,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1151, 565}, {227, 201}}</string>
+			<string>{{922, 181}, {227, 201}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -396,12 +396,12 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1058, 768}, {229, 179}}</string>
+			<string>{{693, 971}, {229, 179}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
 		
-		<key>Clam C5 Blink.png</key>
+		<key>Clam C5 Blink 01.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
@@ -418,7 +418,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1615, 0}, {229, 171}}</string>
+			<string>{{1312, 1248}, {229, 171}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -440,7 +440,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{922, 181}, {227, 201}}</string>
+			<string>{{1151, 565}, {227, 201}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -462,12 +462,12 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1153, 0}, {229, 179}}</string>
+			<string>{{1384, 0}, {229, 179}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
 		
-		<key>Clam D4 Blink.png</key>
+		<key>Clam D4 Blink 01.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
@@ -484,7 +484,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1609, 181}, {229, 171}}</string>
+			<string>{{1615, 0}, {229, 171}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -506,7 +506,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1151, 181}, {227, 201}}</string>
+			<string>{{693, 406}, {227, 201}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -528,12 +528,12 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{693, 971}, {229, 179}}</string>
+			<string>{{693, 790}, {229, 179}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
 		
-		<key>Clam E4 Blink.png</key>
+		<key>Clam E4 Blink 01.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
@@ -550,7 +550,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1289, 768}, {229, 171}}</string>
+			<string>{{1609, 181}, {229, 171}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -572,7 +572,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{693, 406}, {227, 201}}</string>
+			<string>{{693, 203}, {227, 201}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -594,12 +594,12 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{693, 609}, {229, 179}}</string>
+			<string>{{922, 0}, {229, 179}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
 		
-		<key>Clam F4 Blink.png</key>
+		<key>Clam F4 Blink 01.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
@@ -616,7 +616,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1382, 557}, {229, 171}}</string>
+			<string>{{1382, 384}, {229, 171}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -638,7 +638,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{693, 203}, {227, 201}}</string>
+			<string>{{922, 384}, {227, 201}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -660,12 +660,12 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{922, 0}, {229, 179}}</string>
+			<string>{{693, 609}, {229, 179}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
 		
-		<key>Clam G4 Blink.png</key>
+		<key>Clam G4 Blink 01.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
@@ -704,7 +704,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1380, 181}, {227, 201}}</string>
+			<string>{{693, 0}, {227, 201}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -726,7 +726,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{1384, 0}, {229, 179}}</string>
+			<string>{{1151, 384}, {229, 179}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -748,7 +748,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{0, 852}, {691, 424}}</string>
+			<string>{{0, 0}, {691, 424}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -770,7 +770,7 @@
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{0, 0}, {691, 424}}</string>
+			<string>{{0, 852}, {691, 424}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>

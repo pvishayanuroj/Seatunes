@@ -51,8 +51,8 @@ static const CGFloat KEY_SCALE = 1.0f;
         [self addChild:sprite_];
         [self addChild:selected_];
         
-        //[self initAnimations];
-        //[self scheduleBlink];
+        [self initAnimations];
+        [self scheduleBlink];
     }
     return self;
 }
@@ -100,7 +100,7 @@ static const CGFloat KEY_SCALE = 1.0f;
 
 - (void) scheduleBlink
 {
-    CGFloat delayTime = 3.0f;
+    CGFloat delayTime = [Utility randomIncl:5000 b:30000] * 0.001f;
     CCActionInterval *delay = [CCDelayTime actionWithDuration:delayTime];
     CCActionInstant *blink = [CCCallBlock actionWithBlock:^{
         [self showBlink];

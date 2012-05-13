@@ -33,5 +33,125 @@
 		<key>Name</key>
 		<string>Whale Instructor</string>
 	</dict>
+	<dict>
+		<key>Animations</key>
+		<array>
+			<dict>
+				<key>Animate Delay</key>
+				<real>0.25</real>
+				<key>Name</key>
+				<string>Blink</string>
+				<key>Num Frames</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Clam C4</string>
+	</dict>
+	<dict>
+		<key>Animations</key>
+		<array>
+			<dict>
+				<key>Animate Delay</key>
+				<real>0.25</real>
+				<key>Name</key>
+				<string>Blink</string>
+				<key>Num Frames</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Clam D4</string>
+	</dict>
+	<dict>
+		<key>Animations</key>
+		<array>
+			<dict>
+				<key>Animate Delay</key>
+				<real>0.25</real>
+				<key>Name</key>
+				<string>Blink</string>
+				<key>Num Frames</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Clam E4</string>
+	</dict>
+	<dict>
+		<key>Animations</key>
+		<array>
+			<dict>
+				<key>Animate Delay</key>
+				<real>0.25</real>
+				<key>Name</key>
+				<string>Blink</string>
+				<key>Num Frames</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Clam F4</string>
+	</dict>
+	<dict>
+		<key>Animations</key>
+		<array>
+			<dict>
+				<key>Animate Delay</key>
+				<real>0.25</real>
+				<key>Name</key>
+				<string>Blink</string>
+				<key>Num Frames</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Clam G4</string>
+	</dict>
+	<dict>
+		<key>Animations</key>
+		<array>
+			<dict>
+				<key>Animate Delay</key>
+				<real>0.25</real>
+				<key>Name</key>
+				<string>Blink</string>
+				<key>Num Frames</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Clam A4</string>
+	</dict>
+	<dict>
+		<key>Animations</key>
+		<array>
+			<dict>
+				<key>Animate Delay</key>
+				<real>0.25</real>
+				<key>Name</key>
+				<string>Blink</string>
+				<key>Num Frames</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Clam B4</string>
+	</dict>
+	<dict>
+		<key>Animations</key>
+		<array>
+			<dict>
+				<key>Animate Delay</key>
+				<real>0.25</real>
+				<key>Name</key>
+				<string>Blink</string>
+				<key>Num Frames</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Clam C5</string>
+	</dict>
 </array>
 </plist>
