@@ -52,6 +52,8 @@
     [name_ release];
     [sprite_ release];
     [idleAnimation_ release];
+    [singingAnimation_ release];
+    [wrongAnimation_ release];
     
     [super dealloc];
 }

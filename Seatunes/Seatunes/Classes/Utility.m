@@ -397,7 +397,7 @@
 	NSString *path = [[NSBundle mainBundle] pathForResource:songName ofType:@"plist"];
     NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:path];
     
-    NSArray *storedSections = [[NSArray arrayWithArray:[data objectForKey:@"Notes"]] retain];
+    NSArray *storedSections = [NSArray arrayWithArray:[data objectForKey:@"Notes"]];
     
     for (NSArray *section in storedSections) {
         for (NSString *note in section) {

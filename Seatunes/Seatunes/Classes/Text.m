@@ -100,7 +100,7 @@ static const CGFloat TXT_DEFAULT_SPACE_WIDTH = 10.0f;
     [components_ removeAllObjects];    
     
     // Breakup all spaces
-    NSMutableArray *words = [[NSMutableArray arrayWithArray:[text_ componentsSeparatedByString:@" "]] retain];
+    NSMutableArray *words = [NSMutableArray arrayWithArray:[text_ componentsSeparatedByString:@" "]];
  
     formatState_ = kTextNormal;
     for (NSString *word in words) {
