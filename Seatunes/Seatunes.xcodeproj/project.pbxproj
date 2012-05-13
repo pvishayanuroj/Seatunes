@@ -83,6 +83,7 @@
 		A5C65353155D793C008A5689 /* Music On Button.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6534F155D793C008A5689 /* Music On Button.png */; };
 		A5C65355155D7CDE008A5689 /* Bubble Pop 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A5C65354155D7CDE008A5689 /* Bubble Pop 2.mp3 */; };
 		A5C65358155D813A008A5689 /* Sunbeams.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C65357155D8139008A5689 /* Sunbeams.m */; };
+		AE2840AC1560242200A94EFA /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = AE2840AB1560242200A94EFA /* iTunesArtwork.png */; };
 		AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */; };
 		AE48ED1C1543142000747910 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = AE48ED1B1543142000747910 /* Badge.m */; };
 		AE48ED1F1543156700747910 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED1E1543156700747910 /* Star.png */; };
@@ -325,7 +326,6 @@
 		DAB11F2E14C1E847009B60FB /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F2D14C1E847009B60FB /* fps_images.png */; };
 		DAB11F3814C1E847009B60FB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F3714C1E847009B60FB /* Icon.png */; };
 		DAB11F3A14C1E847009B60FB /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F3914C1E847009B60FB /* Icon@2x.png */; };
-		DAB11F3D14C1E847009B60FB /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = DAB11F3C14C1E847009B60FB /* iTunesArtwork */; };
 		DAB11F4214C1E847009B60FB /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB11F4114C1E847009B60FB /* CCAction.m */; };
 		DAB11F4514C1E847009B60FB /* CCActionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB11F4414C1E847009B60FB /* CCActionCamera.m */; };
 		DAB11F4814C1E847009B60FB /* CCActionEase.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB11F4714C1E847009B60FB /* CCActionEase.m */; };
@@ -554,6 +554,7 @@
 		A5C65354155D7CDE008A5689 /* Bubble Pop 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop 2.mp3"; sourceTree = "<group>"; };
 		A5C65356155D8138008A5689 /* Sunbeams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sunbeams.h; sourceTree = "<group>"; };
 		A5C65357155D8139008A5689 /* Sunbeams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sunbeams.m; sourceTree = "<group>"; };
+		AE2840AB1560242200A94EFA /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = Resources/iTunesArtwork.png; sourceTree = "<group>"; };
 		AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
 		AE48ED1A1543142000747910 /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Badge.h; path = Classes/Badge.h; sourceTree = "<group>"; };
 		AE48ED1B1543142000747910 /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Badge.m; path = Classes/Badge.m; sourceTree = "<group>"; };
@@ -823,7 +824,6 @@
 		DAB11F3714C1E847009B60FB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
 		DAB11F3914C1E847009B60FB /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
 		DAB11F3B14C1E847009B60FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
-		DAB11F3C14C1E847009B60FB /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/iTunesArtwork; sourceTree = "<group>"; };
 		DAB11F4014C1E847009B60FB /* CCAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCAction.h; path = libs/cocos2d/CCAction.h; sourceTree = "<group>"; };
 		DAB11F4114C1E847009B60FB /* CCAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCAction.m; path = libs/cocos2d/CCAction.m; sourceTree = "<group>"; };
 		DAB11F4314C1E847009B60FB /* CCActionCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCActionCamera.h; path = libs/cocos2d/CCActionCamera.h; sourceTree = "<group>"; };
@@ -1677,8 +1677,8 @@
 				04B0D4C91504173D00A4A2B8 /* Icon-Small-50.png */,
 				04B0D4CA1504173E00A4A2B8 /* Icon-Small.png */,
 				04B0D4CB1504174000A4A2B8 /* Icon-Small@2x.png */,
+				AE2840AB1560242200A94EFA /* iTunesArtwork.png */,
 				DAB11F3B14C1E847009B60FB /* Info.plist */,
-				DAB11F3C14C1E847009B60FB /* iTunesArtwork */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2092,7 +2092,6 @@
 				DAB11F2E14C1E847009B60FB /* fps_images.png in Resources */,
 				DAB11F3814C1E847009B60FB /* Icon.png in Resources */,
 				DAB11F3A14C1E847009B60FB /* Icon@2x.png in Resources */,
-				DAB11F3D14C1E847009B60FB /* iTunesArtwork in Resources */,
 				DAB1210214C35A08009B60FB /* A4-Piano.m4a in Resources */,
 				DAB1210314C35A08009B60FB /* B4-Piano.m4a in Resources */,
 				DAB1210414C35A08009B60FB /* C4-Piano.m4a in Resources */,
@@ -2360,6 +2359,7 @@
 				AE7987BA155EAE4400A9CA18 /* Sunbeam 4.png in Resources */,
 				AE7987BB155EAE4400A9CA18 /* Sunbeam 5-ipadhd.png in Resources */,
 				AE7987BC155EAE4400A9CA18 /* Sunbeam 5.png in Resources */,
+				AE2840AC1560242200A94EFA /* iTunesArtwork.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2562,8 +2562,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "5C330EEF-15C5-4991-99BF-7A0D6BA9874E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5C330EEF-15C5-4991-99BF-7A0D6BA9874E";
+				PROVISIONING_PROFILE = "E80DDA8B-0921-48DF-BCBC-FC684547C2C7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E80DDA8B-0921-48DF-BCBC-FC684547C2C7";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
