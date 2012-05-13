@@ -19,6 +19,9 @@ static const CGFloat NT_ELONGATE_SCALE_X = 0.9f;
 static const CGFloat NT_ELONGATE_SCALE_Y = 1.1f;
 static const CGFloat NT_RADIUS = 25.0f;
 
+/* Increases the size of the area that accepts touches */
+static const CGFloat NT_TOUCH_SCALE = 1.2f;
+
 @synthesize radius = radius_;
 @synthesize lightCrossFlag = lightCrossFlag_;
 @synthesize keyType = keyType_;
@@ -123,8 +126,8 @@ static const CGFloat NT_RADIUS = 25.0f;
 - (CGRect) rect
 {
 	CGRect r = sprite_.textureRect;    
-	return CGRectMake(sprite_.position.x - (r.size.width * sprite_.scaleX) / 2, sprite_.position.y - 
-                      (r.size.height *sprite_.scaleY ) / 2, r.size.width * sprite_.scaleX, r.size.height * sprite_.scaleY);
+	return CGRectMake(sprite_.position.x - (r.size.width * sprite_.scaleX * NT_TOUCH_SCALE) / 2, sprite_.position.y - 
+                      (r.size.height *sprite_.scaleY * NT_TOUCH_SCALE) / 2, r.size.width * sprite_.scaleX * NT_TOUCH_SCALE, r.size.height * sprite_.scaleY * NT_TOUCH_SCALE);
 }
 
 - (BOOL) containsTouchLocation:(UITouch *)touch
