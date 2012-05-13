@@ -16,6 +16,7 @@
 #import "NoteGenerator.h"
 #import "AudioManager.h"
 #import "BubbleGroup.h"
+#import "Sunbeams.h"
 
 @implementation GameLogicD
 
@@ -27,11 +28,12 @@ static const CGFloat GLD_BUBBLE_X = 350.0f;
 static const CGFloat GLD_BUBBLE_Y = 200.0f;
 
 static const NSInteger GLD_BACKGROUND_Z = 1;
-static const NSInteger GLD_BUBBLES_Z = 2;
-static const NSInteger GLD_INSTRUCTOR_Z = 3;
-static const NSInteger GLD_NOTE_Z = 4;
-static const NSInteger GLD_FOREGROUND_Z = 5;
-static const NSInteger GLD_READER_Z = 6;
+static const NSInteger GLD_SUNBEAMS_Z = 2;
+static const NSInteger GLD_BUBBLES_Z = 3;
+static const NSInteger GLD_INSTRUCTOR_Z = 4;
+static const NSInteger GLD_NOTE_Z = 5;
+static const NSInteger GLD_FOREGROUND_Z = 6;
+static const NSInteger GLD_READER_Z = 7;
 
 + (id) gameLogicD:(NSString *)songName
 {
@@ -53,6 +55,9 @@ static const NSInteger GLD_READER_Z = 6;
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background z:GLD_BACKGROUND_Z];
+        
+        sunbeams_ = [[Sunbeams sunbeamsRandom:NUM_SUNBEAMS] retain];
+        [self addChild:sunbeams_ z:GLD_SUNBEAMS_Z];             
         
         instructor_ = [Instructor instructor:kWhaleInstructor];
         instructor_.position = ccp(GLD_INSTRUCTOR_X, GLD_INSTRUCTOR_Y);
@@ -107,6 +112,7 @@ static const NSInteger GLD_READER_Z = 6;
     [noteGenerator_ release];
     [reader_ release];
     [bubbles_ release];
+    [sunbeams_ release];
     
     [super dealloc];
 }

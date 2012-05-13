@@ -21,7 +21,11 @@
 
 + (id) sunbeamsStatic:(NSUInteger)numbeams;
 
++ (id) sunbeamsRandom:(NSUInteger)numbeams;
+
 - (id) initSunbeams:(NSUInteger)numbeams showAll:(BOOL)showAll;
+
+- (id) initRandomSunbeams:(NSUInteger)numbeams;
 
 - (void) scheduleCycle;
 

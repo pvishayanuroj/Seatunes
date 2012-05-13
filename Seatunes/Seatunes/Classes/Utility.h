@@ -58,6 +58,10 @@
 
 + (NSString *) songKey:(NSString *)songName difficulty:(DifficultyType)difficulty;
 
++ (NSInteger) randomIncl:(NSInteger)a b:(NSInteger)b;
+
++ (void) shuffleArray:(NSMutableArray *)array;
+
 + (CGFloat) getSlope:(CGPoint)a b:(CGPoint)b;
 
 + (BOOL) hasInternetConnection;

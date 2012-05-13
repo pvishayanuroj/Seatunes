@@ -480,6 +480,28 @@
     return key;
 }
 
++ (NSInteger) randomIncl:(NSInteger)a b:(NSInteger)b
+{
+    NSInteger range = abs(a-b) + 1;
+    NSInteger res = arc4random() % range;
+    
+    if (a < b) {
+        return a + res;
+    }
+    else {
+        return b + res;
+    }
+}
+
++ (void) shuffleArray:(NSMutableArray *)array
+{
+    for (NSInteger i = 0; i < [array count]; ++i) {
+        //NSInteger rand = (arc4random() % ([array count] - i)) + i;
+        NSInteger rand = [self randomIncl:i b:([array count] - 1)];
+        [array exchangeObjectAtIndex:i withObjectAtIndex:rand];
+    }
+}
+
 + (CGFloat) getSlope:(CGPoint)a b:(CGPoint)b
 {
     return (a.y - b.y) / (a.x - b.x);

@@ -15,6 +15,8 @@
 #define PACK_MENU_CELL_HEIGHT 160
 #define SONG_MENU_CELL_HEIGHT 55
 
+#define NUM_SUNBEAMS 6
+
 #define PERCENT_FOR_BADGE 90
 
 #define kFirstPlay @"First Play"

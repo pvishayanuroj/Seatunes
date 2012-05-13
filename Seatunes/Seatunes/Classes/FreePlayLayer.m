@@ -66,8 +66,7 @@ static const NSInteger FPL_MENU_LABEL_Z = 10;
         background.anchorPoint = CGPointZero;
         [self addChild:background z:FPL_BACKGROUND_Z];            
         
-        sunbeams_ = [[Sunbeams sunbeamsCycling:2] retain];
-        //sunbeams_ = [[Sunbeams sunbeamsStatic:2] retain];
+        sunbeams_ = [[Sunbeams sunbeamsRandom:NUM_SUNBEAMS] retain];
         [self addChild:sunbeams_ z:FPL_SUNBEAMS_Z];        
         
         bubbles_ = [[BubbleGroup bubbleGroupWithBubbles:0.02f] retain];

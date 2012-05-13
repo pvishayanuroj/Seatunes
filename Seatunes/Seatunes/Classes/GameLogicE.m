@@ -18,6 +18,7 @@
 #import "StaffNote.h"
 #import "GameScene.h"
 #import "BubbleGroup.h"
+#import "Sunbeams.h"
 
 @implementation GameLogicE
 
@@ -33,12 +34,13 @@ static const CGFloat GLE_BUBBLE_X = 150.0f;
 static const CGFloat GLE_BUBBLE_Y = 250.0f;
 
 static const NSInteger GLE_BACKGROUND_Z = 1;
-static const NSInteger GLE_BUBBLES_Z = 2;
-static const NSInteger GLE_FOREGROUND_Z = 3;
-static const NSInteger GLE_STAFF_Z = 4;
-static const NSInteger GLE_INSTRUCTOR_Z = 5;
-static const NSInteger GLE_KEYBOARD_Z = 6;
-static const NSInteger GLE_READER_Z = 7;
+static const NSInteger GLE_SUNBEAMS_Z = 2;
+static const NSInteger GLE_BUBBLES_Z = 3;
+static const NSInteger GLE_FOREGROUND_Z = 4;
+static const NSInteger GLE_STAFF_Z = 5;
+static const NSInteger GLE_INSTRUCTOR_Z = 6;
+static const NSInteger GLE_KEYBOARD_Z = 7;
+static const NSInteger GLE_READER_Z = 8;
 
 + (id) gameLogicE:(NSString *)songName
 {

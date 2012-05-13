@@ -115,8 +115,6 @@
 		A5C65353155D793C008A5689 /* Music On Button.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6534F155D793C008A5689 /* Music On Button.png */; };
 		A5C65355155D7CDE008A5689 /* Bubble Pop 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A5C65354155D7CDE008A5689 /* Bubble Pop 2.mp3 */; };
 		A5C65358155D813A008A5689 /* Sunbeams.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C65357155D8139008A5689 /* Sunbeams.m */; };
-		A5C6535F155D89D2008A5689 /* Sunbeam 0.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6535D155D89D2008A5689 /* Sunbeam 0.png */; };
-		A5C65360155D89D2008A5689 /* Sunbeam 1.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6535E155D89D2008A5689 /* Sunbeam 1.png */; };
 		AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */; };
 		AE48ED1C1543142000747910 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = AE48ED1B1543142000747910 /* Badge.m */; };
 		AE48ED1F1543156700747910 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED1E1543156700747910 /* Star.png */; };
@@ -280,6 +278,19 @@
 		AE792BA9153B233A002A8A18 /* Dialogue Font-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE792BA7153B233A002A8A18 /* Dialogue Font-ipadhd.png */; };
 		AE7944AF152758AC009B0D09 /* MusicNoteTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7944AE152758AC009B0D09 /* MusicNoteTutorial.m */; };
 		AE7944B21527EF31009B0D09 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7944B11527EF31009B0D09 /* Text.m */; };
+		AE7987A3155EAAB100A9CA18 /* Bubble-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7987A2155EAAB100A9CA18 /* Bubble-ipadhd.png */; };
+		AE7987B1155EAE4400A9CA18 /* Sunbeam 0-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7987A5155EAE4400A9CA18 /* Sunbeam 0-ipadhd.png */; };
+		AE7987B2155EAE4400A9CA18 /* Sunbeam 0.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7987A6155EAE4400A9CA18 /* Sunbeam 0.png */; };
+		AE7987B3155EAE4400A9CA18 /* Sunbeam 1-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7987A7155EAE4400A9CA18 /* Sunbeam 1-ipadhd.png */; };
+		AE7987B4155EAE4400A9CA18 /* Sunbeam 1.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7987A8155EAE4400A9CA18 /* Sunbeam 1.png */; };
+		AE7987B5155EAE4400A9CA18 /* Sunbeam 2-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7987A9155EAE4400A9CA18 /* Sunbeam 2-ipadhd.png */; };
+		AE7987B6155EAE4400A9CA18 /* Sunbeam 2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7987AA155EAE4400A9CA18 /* Sunbeam 2.png */; };
+		AE7987B7155EAE4400A9CA18 /* Sunbeam 3-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7987AB155EAE4400A9CA18 /* Sunbeam 3-ipadhd.png */; };
+		AE7987B8155EAE4400A9CA18 /* Sunbeam 3.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7987AC155EAE4400A9CA18 /* Sunbeam 3.png */; };
+		AE7987B9155EAE4400A9CA18 /* Sunbeam 4-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7987AD155EAE4400A9CA18 /* Sunbeam 4-ipadhd.png */; };
+		AE7987BA155EAE4400A9CA18 /* Sunbeam 4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7987AE155EAE4400A9CA18 /* Sunbeam 4.png */; };
+		AE7987BB155EAE4400A9CA18 /* Sunbeam 5-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7987AF155EAE4400A9CA18 /* Sunbeam 5-ipadhd.png */; };
+		AE7987BC155EAE4400A9CA18 /* Sunbeam 5.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7987B0155EAE4400A9CA18 /* Sunbeam 5.png */; };
 		AE7A5DF71539FDAC00A77A8C /* KeyboardLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7A5DF61539FDAC00A77A8C /* KeyboardLetter.m */; };
 		AE7A5DFB153A3E9700A77A8C /* Letter Parchment-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7A5DF9153A3E9700A77A8C /* Letter Parchment-ipadhd.png */; };
 		AE7A5DFC153A3E9700A77A8C /* Letter Parchment.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7A5DFA153A3E9700A77A8C /* Letter Parchment.png */; };
@@ -309,6 +320,7 @@
 		AE7B301F15451DC600A98D82 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7B301D15451DC600A98D82 /* Default-Landscape@2x.png */; };
 		AE7CACD71548F0BA002DB944 /* Help Button-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7CACD51548F0BA002DB944 /* Help Button-ipadhd.png */; };
 		AE7CACD81548F0BA002DB944 /* Help Button.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7CACD61548F0BA002DB944 /* Help Button.png */; };
+		AE7DCBB1155EDEB9000F4B63 /* Sunbeam.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7DCBB0155EDEB9000F4B63 /* Sunbeam.m */; };
 		AE91464315294004007E75F9 /* Music Tutorial.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE91464215294004007E75F9 /* Music Tutorial.plist */; };
 		AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */; };
 		AEE3D628154445240099ADC8 /* BoldMenuFont-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D624154445240099ADC8 /* BoldMenuFont-ipadhd.fnt */; };
@@ -606,8 +618,6 @@
 		A5C65354155D7CDE008A5689 /* Bubble Pop 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop 2.mp3"; sourceTree = "<group>"; };
 		A5C65356155D8138008A5689 /* Sunbeams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sunbeams.h; sourceTree = "<group>"; };
 		A5C65357155D8139008A5689 /* Sunbeams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sunbeams.m; sourceTree = "<group>"; };
-		A5C6535D155D89D2008A5689 /* Sunbeam 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 0.png"; sourceTree = "<group>"; };
-		A5C6535E155D89D2008A5689 /* Sunbeam 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 1.png"; sourceTree = "<group>"; };
 		AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
 		AE48ED1A1543142000747910 /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Badge.h; path = Classes/Badge.h; sourceTree = "<group>"; };
 		AE48ED1B1543142000747910 /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Badge.m; path = Classes/Badge.m; sourceTree = "<group>"; };
@@ -782,6 +792,19 @@
 		AE7944AE152758AC009B0D09 /* MusicNoteTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicNoteTutorial.m; path = Classes/MusicNoteTutorial.m; sourceTree = "<group>"; };
 		AE7944B01527EF31009B0D09 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Text.h; path = Classes/Text.h; sourceTree = "<group>"; };
 		AE7944B11527EF31009B0D09 /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Text.m; path = Classes/Text.m; sourceTree = "<group>"; };
+		AE7987A2155EAAB100A9CA18 /* Bubble-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble-ipadhd.png"; sourceTree = "<group>"; };
+		AE7987A5155EAE4400A9CA18 /* Sunbeam 0-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 0-ipadhd.png"; sourceTree = "<group>"; };
+		AE7987A6155EAE4400A9CA18 /* Sunbeam 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 0.png"; sourceTree = "<group>"; };
+		AE7987A7155EAE4400A9CA18 /* Sunbeam 1-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 1-ipadhd.png"; sourceTree = "<group>"; };
+		AE7987A8155EAE4400A9CA18 /* Sunbeam 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 1.png"; sourceTree = "<group>"; };
+		AE7987A9155EAE4400A9CA18 /* Sunbeam 2-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 2-ipadhd.png"; sourceTree = "<group>"; };
+		AE7987AA155EAE4400A9CA18 /* Sunbeam 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 2.png"; sourceTree = "<group>"; };
+		AE7987AB155EAE4400A9CA18 /* Sunbeam 3-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 3-ipadhd.png"; sourceTree = "<group>"; };
+		AE7987AC155EAE4400A9CA18 /* Sunbeam 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 3.png"; sourceTree = "<group>"; };
+		AE7987AD155EAE4400A9CA18 /* Sunbeam 4-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 4-ipadhd.png"; sourceTree = "<group>"; };
+		AE7987AE155EAE4400A9CA18 /* Sunbeam 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 4.png"; sourceTree = "<group>"; };
+		AE7987AF155EAE4400A9CA18 /* Sunbeam 5-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 5-ipadhd.png"; sourceTree = "<group>"; };
+		AE7987B0155EAE4400A9CA18 /* Sunbeam 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunbeam 5.png"; sourceTree = "<group>"; };
 		AE7A5DF51539FDAC00A77A8C /* KeyboardLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyboardLetter.h; path = Classes/KeyboardLetter.h; sourceTree = "<group>"; };
 		AE7A5DF61539FDAC00A77A8C /* KeyboardLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyboardLetter.m; path = Classes/KeyboardLetter.m; sourceTree = "<group>"; };
 		AE7A5DF9153A3E9700A77A8C /* Letter Parchment-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Letter Parchment-ipadhd.png"; sourceTree = "<group>"; };
@@ -815,6 +838,8 @@
 		AE7B301D15451DC600A98D82 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x.png"; path = "Resources/Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		AE7CACD51548F0BA002DB944 /* Help Button-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Help Button-ipadhd.png"; sourceTree = "<group>"; };
 		AE7CACD61548F0BA002DB944 /* Help Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Help Button.png"; sourceTree = "<group>"; };
+		AE7DCBAF155EDEB9000F4B63 /* Sunbeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sunbeam.h; path = Classes/Sunbeam.h; sourceTree = "<group>"; };
+		AE7DCBB0155EDEB9000F4B63 /* Sunbeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sunbeam.m; path = Classes/Sunbeam.m; sourceTree = "<group>"; };
 		AE91464215294004007E75F9 /* Music Tutorial.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Music Tutorial.plist"; sourceTree = "<group>"; };
 		AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Muted.m4a"; sourceTree = "<group>"; };
 		AED018C61538ECAD0090CEE1 /* AudioManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudioManagerDelegate.h; path = Classes/AudioManagerDelegate.h; sourceTree = "<group>"; };
@@ -1181,6 +1206,8 @@
 				A5C65346155D4167008A5689 /* BubbleGroup.m */,
 				A5C65356155D8138008A5689 /* Sunbeams.h */,
 				A5C65357155D8139008A5689 /* Sunbeams.m */,
+				AE7DCBAF155EDEB9000F4B63 /* Sunbeam.h */,
+				AE7DCBB0155EDEB9000F4B63 /* Sunbeam.m */,
 				AE48ED23154328B600747910 /* IncrementingTextDelegate.h */,
 				AE48ED201543289100747910 /* IncrementingText.h */,
 				AE48ED211543289100747910 /* IncrementingText.m */,
@@ -1411,8 +1438,18 @@
 		AE7773E31522823500CE9332 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				A5C6535D155D89D2008A5689 /* Sunbeam 0.png */,
-				A5C6535E155D89D2008A5689 /* Sunbeam 1.png */,
+				AE7987A5155EAE4400A9CA18 /* Sunbeam 0-ipadhd.png */,
+				AE7987A6155EAE4400A9CA18 /* Sunbeam 0.png */,
+				AE7987A7155EAE4400A9CA18 /* Sunbeam 1-ipadhd.png */,
+				AE7987A8155EAE4400A9CA18 /* Sunbeam 1.png */,
+				AE7987A9155EAE4400A9CA18 /* Sunbeam 2-ipadhd.png */,
+				AE7987AA155EAE4400A9CA18 /* Sunbeam 2.png */,
+				AE7987AB155EAE4400A9CA18 /* Sunbeam 3-ipadhd.png */,
+				AE7987AC155EAE4400A9CA18 /* Sunbeam 3.png */,
+				AE7987AD155EAE4400A9CA18 /* Sunbeam 4-ipadhd.png */,
+				AE7987AE155EAE4400A9CA18 /* Sunbeam 4.png */,
+				AE7987AF155EAE4400A9CA18 /* Sunbeam 5-ipadhd.png */,
+				AE7987B0155EAE4400A9CA18 /* Sunbeam 5.png */,
 				AE7A5DF9153A3E9700A77A8C /* Letter Parchment-ipadhd.png */,
 				AE7A5DFA153A3E9700A77A8C /* Letter Parchment.png */,
 				AE7773E41522823500CE9332 /* Coral Foreground-ipadhd.png */,
@@ -1509,6 +1546,7 @@
 		AE7774281522823500CE9332 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				AE7987A2155EAAB100A9CA18 /* Bubble-ipadhd.png */,
 				A5C6534A155D4204008A5689 /* Bubble.png */,
 				A5C3CF171558725E00373415 /* Small Down Arrow-ipadhd.png */,
 				A5C3CF1515583D0A00373415 /* Small Down Arrow.png */,
@@ -2437,8 +2475,19 @@
 				A5C65352155D793C008A5689 /* Music On Button-ipadhd.png in Resources */,
 				A5C65353155D793C008A5689 /* Music On Button.png in Resources */,
 				A5C65355155D7CDE008A5689 /* Bubble Pop 2.mp3 in Resources */,
-				A5C6535F155D89D2008A5689 /* Sunbeam 0.png in Resources */,
-				A5C65360155D89D2008A5689 /* Sunbeam 1.png in Resources */,
+				AE7987A3155EAAB100A9CA18 /* Bubble-ipadhd.png in Resources */,
+				AE7987B1155EAE4400A9CA18 /* Sunbeam 0-ipadhd.png in Resources */,
+				AE7987B2155EAE4400A9CA18 /* Sunbeam 0.png in Resources */,
+				AE7987B3155EAE4400A9CA18 /* Sunbeam 1-ipadhd.png in Resources */,
+				AE7987B4155EAE4400A9CA18 /* Sunbeam 1.png in Resources */,
+				AE7987B5155EAE4400A9CA18 /* Sunbeam 2-ipadhd.png in Resources */,
+				AE7987B6155EAE4400A9CA18 /* Sunbeam 2.png in Resources */,
+				AE7987B7155EAE4400A9CA18 /* Sunbeam 3-ipadhd.png in Resources */,
+				AE7987B8155EAE4400A9CA18 /* Sunbeam 3.png in Resources */,
+				AE7987B9155EAE4400A9CA18 /* Sunbeam 4-ipadhd.png in Resources */,
+				AE7987BA155EAE4400A9CA18 /* Sunbeam 4.png in Resources */,
+				AE7987BB155EAE4400A9CA18 /* Sunbeam 5-ipadhd.png in Resources */,
+				AE7987BC155EAE4400A9CA18 /* Sunbeam 5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2598,6 +2647,7 @@
 				A5C65347155D4167008A5689 /* Bubble.m in Sources */,
 				A5C65348155D4167008A5689 /* BubbleGroup.m in Sources */,
 				A5C65358155D813A008A5689 /* Sunbeams.m in Sources */,
+				AE7DCBB1155EDEB9000F4B63 /* Sunbeam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

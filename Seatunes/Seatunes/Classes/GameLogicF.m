@@ -16,6 +16,7 @@
 #import "SpeechReader.h"
 #import "AudioManager.h"
 #import "BubbleGroup.h"
+#import "Sunbeams.h"
 
 @implementation GameLogicF
 
@@ -29,12 +30,13 @@ static const CGFloat GLF_BUBBLE_X = 350.0f;
 static const CGFloat GLF_BUBBLE_Y = 200.0f;
 
 static const NSInteger GLF_BACKGROUND_Z = 1;
-static const NSInteger GLF_BUBBLES_Z = 2;
-static const NSInteger GLF_INSTRUCTOR_Z = 3;
-static const NSInteger GLF_NOTE_Z = 4;
-static const NSInteger GLF_FOREGROUND_Z = 5;
-static const NSInteger GLF_KEYBOARD_Z = 6;
-static const NSInteger GLF_READER_Z = 7;
+static const NSInteger GLF_SUNBEAMS_Z = 2;
+static const NSInteger GLF_BUBBLES_Z = 3;
+static const NSInteger GLF_INSTRUCTOR_Z = 4;
+static const NSInteger GLF_NOTE_Z = 5;
+static const NSInteger GLF_FOREGROUND_Z = 6;
+static const NSInteger GLF_KEYBOARD_Z = 7;
+static const NSInteger GLF_READER_Z = 8;
 
 + (id) gameLogicF:(NSString *)songName
 {
@@ -56,6 +58,9 @@ static const NSInteger GLF_READER_Z = 7;
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background z:GLF_BACKGROUND_Z];            
+        
+        sunbeams_ = [[Sunbeams sunbeamsRandom:NUM_SUNBEAMS] retain];
+        [self addChild:sunbeams_ z:GLF_SUNBEAMS_Z];            
         
         instructor_ = [Instructor instructor:kWhaleInstructor];
         instructor_.position = ccp(GLF_INSTRUCTOR_X, GLF_INSTRUCTOR_Y);
@@ -118,6 +123,7 @@ static const NSInteger GLF_READER_Z = 7;
     [noteGenerator_ release];
     [reader_ release];    
     [bubbles_ release];
+    [sunbeams_ release];
     
     [super dealloc];
 }

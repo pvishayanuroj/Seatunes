@@ -18,6 +18,7 @@
 @class SpeechReader;
 @class Staff;
 @class BubbleGroup;
+@class Sunbeams;
 
 @interface GameLogic : CCNode <SpeechReaderDelegate> {
     
@@ -34,6 +35,8 @@
     ScoreInfo scoreInfo_;
     
     BubbleGroup *bubbles_;
+    
+    Sunbeams *sunbeams_;
     
     id <GameLogicDelegate> delegate_;
 }
