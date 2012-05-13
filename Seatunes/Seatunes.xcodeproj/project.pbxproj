@@ -38,38 +38,6 @@
 		04B0D4E81507024500A4A2B8 /* GameLogicE.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4E71507024400A4A2B8 /* GameLogicE.m */; };
 		04B0D4EB1507025F00A4A2B8 /* Staff.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4EA1507025E00A4A2B8 /* Staff.m */; };
 		04B0D4EE1507027400A4A2B8 /* StaffNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4ED1507027200A4A2B8 /* StaffNote.m */; };
-		04C093AA14C4C7090087DA18 /* A4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */; };
-		04C093AB14C4C7090087DA18 /* A4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938B14C4C7090087DA18 /* A4-Martian.m4a */; };
-		04C093AC14C4C7090087DA18 /* A4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */; };
-		04C093AD14C4C7090087DA18 /* A4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938D14C4C7090087DA18 /* A4-Whirly.m4a */; };
-		04C093AE14C4C7090087DA18 /* B4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938E14C4C7090087DA18 /* B4-LunarStrings.m4a */; };
-		04C093AF14C4C7090087DA18 /* B4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0938F14C4C7090087DA18 /* B4-Martian.m4a */; };
-		04C093B014C4C7090087DA18 /* B4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939014C4C7090087DA18 /* B4-PopFlute.m4a */; };
-		04C093B114C4C7090087DA18 /* B4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939114C4C7090087DA18 /* B4-Whirly.m4a */; };
-		04C093B214C4C7090087DA18 /* C4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939214C4C7090087DA18 /* C4-LunarStrings.m4a */; };
-		04C093B314C4C7090087DA18 /* C4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939314C4C7090087DA18 /* C4-Martian.m4a */; };
-		04C093B414C4C7090087DA18 /* C4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939414C4C7090087DA18 /* C4-PopFlute.m4a */; };
-		04C093B514C4C7090087DA18 /* C4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939514C4C7090087DA18 /* C4-Whirly.m4a */; };
-		04C093B614C4C7090087DA18 /* C5-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939614C4C7090087DA18 /* C5-LunarStrings.m4a */; };
-		04C093B714C4C7090087DA18 /* C5-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939714C4C7090087DA18 /* C5-Martian.m4a */; };
-		04C093B814C4C7090087DA18 /* C5-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939814C4C7090087DA18 /* C5-PopFlute.m4a */; };
-		04C093B914C4C7090087DA18 /* C5-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939914C4C7090087DA18 /* C5-Whirly.m4a */; };
-		04C093BA14C4C7090087DA18 /* D4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939A14C4C7090087DA18 /* D4-LunarStrings.m4a */; };
-		04C093BB14C4C7090087DA18 /* D4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939B14C4C7090087DA18 /* D4-Martian.m4a */; };
-		04C093BC14C4C7090087DA18 /* D4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939C14C4C7090087DA18 /* D4-PopFlute.m4a */; };
-		04C093BD14C4C7090087DA18 /* D4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939D14C4C7090087DA18 /* D4-Whirly.m4a */; };
-		04C093BE14C4C7090087DA18 /* E4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939E14C4C7090087DA18 /* E4-LunarStrings.m4a */; };
-		04C093BF14C4C7090087DA18 /* E4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C0939F14C4C7090087DA18 /* E4-Martian.m4a */; };
-		04C093C014C4C7090087DA18 /* E4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A014C4C7090087DA18 /* E4-PopFlute.m4a */; };
-		04C093C114C4C7090087DA18 /* E4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A114C4C7090087DA18 /* E4-Whirly.m4a */; };
-		04C093C214C4C7090087DA18 /* F4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A214C4C7090087DA18 /* F4-LunarStrings.m4a */; };
-		04C093C314C4C7090087DA18 /* F4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A314C4C7090087DA18 /* F4-Martian.m4a */; };
-		04C093C414C4C7090087DA18 /* F4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A414C4C7090087DA18 /* F4-PopFlute.m4a */; };
-		04C093C514C4C7090087DA18 /* F4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A514C4C7090087DA18 /* F4-Whirly.m4a */; };
-		04C093C614C4C7090087DA18 /* G4-LunarStrings.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A614C4C7090087DA18 /* G4-LunarStrings.m4a */; };
-		04C093C714C4C7090087DA18 /* G4-Martian.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A714C4C7090087DA18 /* G4-Martian.m4a */; };
-		04C093C814C4C7090087DA18 /* G4-PopFlute.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A814C4C7090087DA18 /* G4-PopFlute.m4a */; };
-		04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04C093A914C4C7090087DA18 /* G4-Whirly.m4a */; };
 		04D3318E14E2212200DD82D4 /* SpeechReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3318D14E2212200DD82D4 /* SpeechReader.m */; };
 		04D331BD14E6B53700DD82D4 /* SpeechManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D331BC14E6B53700DD82D4 /* SpeechManager.m */; };
 		04D331CF14E7056700DD82D4 /* Speech.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D331CE14E7056700DD82D4 /* Speech.plist */; };
@@ -529,38 +497,6 @@
 		04B0D4EC1507027100A4A2B8 /* StaffNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StaffNote.h; path = Classes/StaffNote.h; sourceTree = "<group>"; };
 		04B0D4ED1507027200A4A2B8 /* StaffNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StaffNote.m; path = Classes/StaffNote.m; sourceTree = "<group>"; };
 		04B0D4F115070DD600A4A2B8 /* StaffDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StaffDelegate.h; path = Classes/StaffDelegate.h; sourceTree = "<group>"; };
-		04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-LunarStrings.m4a"; sourceTree = "<group>"; };
-		04C0938B14C4C7090087DA18 /* A4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-Martian.m4a"; sourceTree = "<group>"; };
-		04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-PopFlute.m4a"; sourceTree = "<group>"; };
-		04C0938D14C4C7090087DA18 /* A4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-Whirly.m4a"; sourceTree = "<group>"; };
-		04C0938E14C4C7090087DA18 /* B4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B4-LunarStrings.m4a"; sourceTree = "<group>"; };
-		04C0938F14C4C7090087DA18 /* B4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B4-Martian.m4a"; sourceTree = "<group>"; };
-		04C0939014C4C7090087DA18 /* B4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B4-PopFlute.m4a"; sourceTree = "<group>"; };
-		04C0939114C4C7090087DA18 /* B4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B4-Whirly.m4a"; sourceTree = "<group>"; };
-		04C0939214C4C7090087DA18 /* C4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-LunarStrings.m4a"; sourceTree = "<group>"; };
-		04C0939314C4C7090087DA18 /* C4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Martian.m4a"; sourceTree = "<group>"; };
-		04C0939414C4C7090087DA18 /* C4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-PopFlute.m4a"; sourceTree = "<group>"; };
-		04C0939514C4C7090087DA18 /* C4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Whirly.m4a"; sourceTree = "<group>"; };
-		04C0939614C4C7090087DA18 /* C5-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C5-LunarStrings.m4a"; sourceTree = "<group>"; };
-		04C0939714C4C7090087DA18 /* C5-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C5-Martian.m4a"; sourceTree = "<group>"; };
-		04C0939814C4C7090087DA18 /* C5-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C5-PopFlute.m4a"; sourceTree = "<group>"; };
-		04C0939914C4C7090087DA18 /* C5-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C5-Whirly.m4a"; sourceTree = "<group>"; };
-		04C0939A14C4C7090087DA18 /* D4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D4-LunarStrings.m4a"; sourceTree = "<group>"; };
-		04C0939B14C4C7090087DA18 /* D4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D4-Martian.m4a"; sourceTree = "<group>"; };
-		04C0939C14C4C7090087DA18 /* D4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D4-PopFlute.m4a"; sourceTree = "<group>"; };
-		04C0939D14C4C7090087DA18 /* D4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D4-Whirly.m4a"; sourceTree = "<group>"; };
-		04C0939E14C4C7090087DA18 /* E4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "E4-LunarStrings.m4a"; sourceTree = "<group>"; };
-		04C0939F14C4C7090087DA18 /* E4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "E4-Martian.m4a"; sourceTree = "<group>"; };
-		04C093A014C4C7090087DA18 /* E4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "E4-PopFlute.m4a"; sourceTree = "<group>"; };
-		04C093A114C4C7090087DA18 /* E4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "E4-Whirly.m4a"; sourceTree = "<group>"; };
-		04C093A214C4C7090087DA18 /* F4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "F4-LunarStrings.m4a"; sourceTree = "<group>"; };
-		04C093A314C4C7090087DA18 /* F4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "F4-Martian.m4a"; sourceTree = "<group>"; };
-		04C093A414C4C7090087DA18 /* F4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "F4-PopFlute.m4a"; sourceTree = "<group>"; };
-		04C093A514C4C7090087DA18 /* F4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "F4-Whirly.m4a"; sourceTree = "<group>"; };
-		04C093A614C4C7090087DA18 /* G4-LunarStrings.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-LunarStrings.m4a"; sourceTree = "<group>"; };
-		04C093A714C4C7090087DA18 /* G4-Martian.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-Martian.m4a"; sourceTree = "<group>"; };
-		04C093A814C4C7090087DA18 /* G4-PopFlute.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-PopFlute.m4a"; sourceTree = "<group>"; };
-		04C093A914C4C7090087DA18 /* G4-Whirly.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "G4-Whirly.m4a"; sourceTree = "<group>"; };
 		04D3318C14E2212100DD82D4 /* SpeechReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechReader.h; path = Classes/SpeechReader.h; sourceTree = "<group>"; };
 		04D3318D14E2212200DD82D4 /* SpeechReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeechReader.m; path = Classes/SpeechReader.m; sourceTree = "<group>"; };
 		04D3318F14E2213000DD82D4 /* SpeechReaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechReaderDelegate.h; path = Classes/SpeechReaderDelegate.h; sourceTree = "<group>"; };
@@ -2077,38 +2013,6 @@
 				DA2D6E2C1514C0E500BA02C0 /* E4-Muted.m4a */,
 				DA2D6E2D1514C0E500BA02C0 /* F4-Muted.m4a */,
 				DA2D6E2E1514C0E500BA02C0 /* G4-Muted.m4a */,
-				04C0938A14C4C7090087DA18 /* A4-LunarStrings.m4a */,
-				04C0938B14C4C7090087DA18 /* A4-Martian.m4a */,
-				04C0938C14C4C7090087DA18 /* A4-PopFlute.m4a */,
-				04C0938D14C4C7090087DA18 /* A4-Whirly.m4a */,
-				04C0938E14C4C7090087DA18 /* B4-LunarStrings.m4a */,
-				04C0938F14C4C7090087DA18 /* B4-Martian.m4a */,
-				04C0939014C4C7090087DA18 /* B4-PopFlute.m4a */,
-				04C0939114C4C7090087DA18 /* B4-Whirly.m4a */,
-				04C0939214C4C7090087DA18 /* C4-LunarStrings.m4a */,
-				04C0939314C4C7090087DA18 /* C4-Martian.m4a */,
-				04C0939414C4C7090087DA18 /* C4-PopFlute.m4a */,
-				04C0939514C4C7090087DA18 /* C4-Whirly.m4a */,
-				04C0939614C4C7090087DA18 /* C5-LunarStrings.m4a */,
-				04C0939714C4C7090087DA18 /* C5-Martian.m4a */,
-				04C0939814C4C7090087DA18 /* C5-PopFlute.m4a */,
-				04C0939914C4C7090087DA18 /* C5-Whirly.m4a */,
-				04C0939A14C4C7090087DA18 /* D4-LunarStrings.m4a */,
-				04C0939B14C4C7090087DA18 /* D4-Martian.m4a */,
-				04C0939C14C4C7090087DA18 /* D4-PopFlute.m4a */,
-				04C0939D14C4C7090087DA18 /* D4-Whirly.m4a */,
-				04C0939E14C4C7090087DA18 /* E4-LunarStrings.m4a */,
-				04C0939F14C4C7090087DA18 /* E4-Martian.m4a */,
-				04C093A014C4C7090087DA18 /* E4-PopFlute.m4a */,
-				04C093A114C4C7090087DA18 /* E4-Whirly.m4a */,
-				04C093A214C4C7090087DA18 /* F4-LunarStrings.m4a */,
-				04C093A314C4C7090087DA18 /* F4-Martian.m4a */,
-				04C093A414C4C7090087DA18 /* F4-PopFlute.m4a */,
-				04C093A514C4C7090087DA18 /* F4-Whirly.m4a */,
-				04C093A614C4C7090087DA18 /* G4-LunarStrings.m4a */,
-				04C093A714C4C7090087DA18 /* G4-Martian.m4a */,
-				04C093A814C4C7090087DA18 /* G4-PopFlute.m4a */,
-				04C093A914C4C7090087DA18 /* G4-Whirly.m4a */,
 				DAB120E814C35A08009B60FB /* A4-Piano.m4a */,
 				DAB120E914C35A08009B60FB /* B4-Piano.m4a */,
 				DAB120EA14C35A08009B60FB /* C4-Piano.m4a */,
@@ -2200,38 +2104,6 @@
 				DAB1216514C48B1B009B60FB /* sheet01_animations.plist in Resources */,
 				DAB1216614C48B1B009B60FB /* sheet01.plist in Resources */,
 				DAB1216714C48B1B009B60FB /* sheet01.png in Resources */,
-				04C093AA14C4C7090087DA18 /* A4-LunarStrings.m4a in Resources */,
-				04C093AB14C4C7090087DA18 /* A4-Martian.m4a in Resources */,
-				04C093AC14C4C7090087DA18 /* A4-PopFlute.m4a in Resources */,
-				04C093AD14C4C7090087DA18 /* A4-Whirly.m4a in Resources */,
-				04C093AE14C4C7090087DA18 /* B4-LunarStrings.m4a in Resources */,
-				04C093AF14C4C7090087DA18 /* B4-Martian.m4a in Resources */,
-				04C093B014C4C7090087DA18 /* B4-PopFlute.m4a in Resources */,
-				04C093B114C4C7090087DA18 /* B4-Whirly.m4a in Resources */,
-				04C093B214C4C7090087DA18 /* C4-LunarStrings.m4a in Resources */,
-				04C093B314C4C7090087DA18 /* C4-Martian.m4a in Resources */,
-				04C093B414C4C7090087DA18 /* C4-PopFlute.m4a in Resources */,
-				04C093B514C4C7090087DA18 /* C4-Whirly.m4a in Resources */,
-				04C093B614C4C7090087DA18 /* C5-LunarStrings.m4a in Resources */,
-				04C093B714C4C7090087DA18 /* C5-Martian.m4a in Resources */,
-				04C093B814C4C7090087DA18 /* C5-PopFlute.m4a in Resources */,
-				04C093B914C4C7090087DA18 /* C5-Whirly.m4a in Resources */,
-				04C093BA14C4C7090087DA18 /* D4-LunarStrings.m4a in Resources */,
-				04C093BB14C4C7090087DA18 /* D4-Martian.m4a in Resources */,
-				04C093BC14C4C7090087DA18 /* D4-PopFlute.m4a in Resources */,
-				04C093BD14C4C7090087DA18 /* D4-Whirly.m4a in Resources */,
-				04C093BE14C4C7090087DA18 /* E4-LunarStrings.m4a in Resources */,
-				04C093BF14C4C7090087DA18 /* E4-Martian.m4a in Resources */,
-				04C093C014C4C7090087DA18 /* E4-PopFlute.m4a in Resources */,
-				04C093C114C4C7090087DA18 /* E4-Whirly.m4a in Resources */,
-				04C093C214C4C7090087DA18 /* F4-LunarStrings.m4a in Resources */,
-				04C093C314C4C7090087DA18 /* F4-Martian.m4a in Resources */,
-				04C093C414C4C7090087DA18 /* F4-PopFlute.m4a in Resources */,
-				04C093C514C4C7090087DA18 /* F4-Whirly.m4a in Resources */,
-				04C093C614C4C7090087DA18 /* G4-LunarStrings.m4a in Resources */,
-				04C093C714C4C7090087DA18 /* G4-Martian.m4a in Resources */,
-				04C093C814C4C7090087DA18 /* G4-PopFlute.m4a in Resources */,
-				04C093C914C4C7090087DA18 /* G4-Whirly.m4a in Resources */,
 				048BBAC114D5368C0086EABC /* Exercise Pack.plist in Resources */,
 				048BBAD114D5368C0086EABC /* Nursery Pack.plist in Resources */,
 				04D331CF14E7056700DD82D4 /* Speech.plist in Resources */,
@@ -2670,7 +2542,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PROVISIONING_PROFILE = "DAD4730E-DA1A-4E51-898F-0CF5A806C639";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EA384E03-00F7-42B9-9951-C53DD3193E8A";
 				SDKROOT = iphoneos;
@@ -2681,17 +2553,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Vishayanuroj (5FZQ8D9467)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paul Vishayanuroj (5FZQ8D9467)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beanstalk Studios LLP";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beanstalk Studios LLP";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "DAD4730E-DA1A-4E51-898F-0CF5A806C639";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DAD4730E-DA1A-4E51-898F-0CF5A806C639";
+				PROVISIONING_PROFILE = "5C330EEF-15C5-4991-99BF-7A0D6BA9874E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5C330EEF-15C5-4991-99BF-7A0D6BA9874E";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -2707,7 +2579,7 @@
 				"GCC_THUMB_SUPPORT[arch=armv7]" = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Seatunes/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -2725,7 +2597,7 @@
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Seatunes/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
