@@ -24,5 +24,7 @@
 
 #define IAP_ON 0
 
+#define ANALYTICS_ON 1
+
 #define DebugPoint(s, p) NSLog(@"%@: (%4.2f, %4.2f)", s, p.x, p.y)
 #define DebugRect(s, r) NSLog(@"%@: (%4.2f, %4.2f, %4.2f, %4.2f)", s, r.origin.x, r.origin.y, r.size.width, r.size.height)

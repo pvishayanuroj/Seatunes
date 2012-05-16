@@ -18,6 +18,8 @@
 #import "DataUtility.h"
 #import "AudioManager.h"
 
+#import "Apsalar.h"
+
 @implementation AppDelegate
 
 @synthesize window;
@@ -43,7 +45,10 @@
 	
 #endif // GAME_AUTOROTATION == kGameAutorotationUIViewController	
 }
-- (void) applicationDidFinishLaunching:(UIApplication*)application
+
+//- (void) applicationDidFinishLaunching:(UIApplication*)application 
+
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	// Init the window
 	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -118,31 +123,49 @@
 	
 	// Run the intro Scene
     [glView setMultipleTouchEnabled:YES];
-	[[CCDirector sharedDirector] runWithScene: [MainMenuScene node]];
+	//[[CCDirector sharedDirector] runWithScene: [MainMenuScene node]];
 
-    /*
+    
     [AudioManager audioManager];
     [DataUtility manager];
     ScoreInfo score;
     score.difficulty = kDifficultyEasy;
     score.notesHit = 90;
     score.notesMissed = 10;
-    [[CCDirector sharedDirector] runWithScene:[ScoreScene scoreScene:score songName:@"Twinkle Twinkle" nextSong:@""]];
-    */
+    score.helpUsed = NO;
+    score.percentage = 90;
+    [[CCDirector sharedDirector] runWithScene:[ScoreScene scoreScene:score songName:@"Twinkle Twinkle" packIndex:0]];
+    
     
     /*
     [DataUtility manager];
     [[CCDirector sharedDirector] runWithScene: [GameScene startWithDifficulty:kDifficultyHard songName:@"Twinkle Twinkle" packIndex:0]];
      */
+    
+#if ANALYTICS_ON
+    [Apsalar startSession:APSALAR_KEY withKey:APSALAR_SECRET andLaunchOptions:launchOptions];
+    [Apsalar event:@"AppLaunched"];
+#endif      
+    
+    return YES;
 }
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 	[[CCDirector sharedDirector] pause];
+    
+#if ANALYTICS_ON
+    [Apsalar event:@"AppSuspended"];
+#endif    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
 	[[CCDirector sharedDirector] resume];
+    
+#if ANALYTICS_ON
+    [Apsalar startSession:APSALAR_KEY withKey:APSALAR_SECRET];
+    [Apsalar event:@"AppResumed"];
+#endif    
 }
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {

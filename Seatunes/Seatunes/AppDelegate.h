@@ -6,6 +6,7 @@
 //  Copyright Paul Vishayanuroj 2012. All rights reserved.
 //
 
+#import "CommonHeaders.h"
 #import <UIKit/UIKit.h>
 
 @class RootViewController;

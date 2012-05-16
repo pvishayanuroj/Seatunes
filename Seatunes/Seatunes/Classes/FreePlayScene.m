@@ -9,6 +9,7 @@
 #import "FreePlayScene.h"
 #import "FreePlayLayer.h"
 #import "AudioManager.h"
+#import "Apsalar.h"
 
 @implementation FreePlayScene
 
@@ -19,7 +20,12 @@
         FreePlayLayer *freePlayLayer = [FreePlayLayer node];
         [self addChild:freePlayLayer];    
         
-        [[AudioManager audioManager] playSoundEffect:kPageFlip];            
+        [[AudioManager audioManager] playSoundEffect:kPageFlip];    
+        
+#if ANALYTICS_ON
+        [Apsalar event:@"Freeplay"];
+#endif        
+        
     }
     return self;
 }

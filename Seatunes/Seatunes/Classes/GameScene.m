@@ -9,6 +9,8 @@
 #import "GameScene.h"
 #import "GameLayer.h"
 #import "AudioManager.h"
+#import "Apsalar.h"
+#import "Utility.h"
 
 @implementation GameScene
 
@@ -24,7 +26,12 @@
         GameLayer *gameLayer = [GameLayer startWithDifficulty:difficulty songName:songName packIndex:packIndex];
         [self addChild:gameLayer];    
         
-        [[AudioManager audioManager] playSoundEffect:kPageFlip];               
+        [[AudioManager audioManager] playSoundEffect:kPageFlip];    
+        
+#if ANALYTICS_ON
+        NSString *difficultyName = [Utility difficultyFromEnum:difficulty];
+        [Apsalar eventWithArgs:@"SongStart", @"difficulty", difficultyName, @"song", songName, nil];
+#endif        
     }
     return self;
 }

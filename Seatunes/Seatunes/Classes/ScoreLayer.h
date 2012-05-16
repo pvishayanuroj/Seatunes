@@ -16,6 +16,7 @@
 @class Instructor;
 @class SpeechReader;
 @class Text;
+@class IncrementingText;
 
 @interface ScoreLayer : CCLayer <ButtonDelegate, SpeechReaderDelegate, IncrementingTextDelegate> {
     
@@ -28,6 +29,8 @@
     CCParticleSystem *particles_;
     
     ScoreInfo scoreInfo_;
+    
+    CCLabelBMFont *title_;
     
     Text *statsLabel_;
     

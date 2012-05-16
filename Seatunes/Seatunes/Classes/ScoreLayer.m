@@ -23,16 +23,20 @@
 
 static const CGFloat SL_MENU_FRAME_X = 70.0f;
 static const CGFloat SL_MENU_FRAME_Y = 350.0f;
-static const CGFloat SL_TITLE_LABEL_X = 512.0f; 
+static const CGFloat SL_TITLE_LABEL_X = 512.0f - 60.0f; 
 static const CGFloat SL_TITLE_LABEL_Y = 680.0f;
 static const CGFloat SL_PERCENT_LABEL_X = 95.0f; 
 static const CGFloat SL_PERCENT_LABEL_Y = 600.0f;
-static const CGFloat SL_NOTES_LABEL_X = 250.0f; 
+// "You hit XX and missed XX notes text"
+static const CGFloat SL_NOTES_LABEL_X = 150.0f; 
 static const CGFloat SL_NOTES_LABEL_Y = 600.0f;
-static const CGFloat SL_EARNED_LABEL_X = 95.0f;
+// "You earned" text
+static const CGFloat SL_EARNED_LABEL_X = 150.0f;
 static const CGFloat SL_EARNED_LABEL_Y = 500.0f;
-static const CGFloat SL_BADGE_LABEL_X = 95.0f;
+// "The XXX badge" text
+static const CGFloat SL_BADGE_LABEL_X = 150.0f;
 static const CGFloat SL_BADGE_LABEL_Y = 450.0f;
+// Badge sprite
 static const CGFloat SL_BADGE_X = 420.0f;
 static const CGFloat SL_BADGE_Y = 480.0f;
 
@@ -81,10 +85,10 @@ static const CGFloat SL_MENU_Y = 430.0f;
         reader_.position = ccp(SL_INSTRUCTOR_X + SL_READER_OFFSET_X, SL_INSTRUCTOR_Y + SL_READER_OFFSET_Y);
         [self addChild:reader_];           
         
-        NSString *titleText = [NSString stringWithFormat:@"%@ Score", songName];
-        CCLabelBMFont *songText = [CCLabelBMFont labelWithString:titleText fntFile:@"BoldMenuFont.fnt"];
-        songText.position = ccp(SL_TITLE_LABEL_X, SL_TITLE_LABEL_Y);
-        [self addChild:songText];
+        NSString *titleText = [NSString stringWithFormat:@"%@", songName];
+        title_ = [[CCLabelBMFont labelWithString:titleText fntFile:@"BoldMenuFont.fnt"] retain];
+        title_.position = ccp(SL_TITLE_LABEL_X, SL_TITLE_LABEL_Y);
+        [self addChild:title_];
         
         Button *replayButton = [ScaledImageButton scaledImageButton:kButtonReplay image:@"Restart Button.png" scale:0.75f];
         Button *menuButton = [ScaledImageButton scaledImageButton:kButtonMenu image:@"Home Button.png" scale:0.75f];           
@@ -131,6 +135,7 @@ static const CGFloat SL_MENU_Y = 430.0f;
 - (void) dealloc
 {
     [instructor_ release];
+    [title_ release];
     [statsLabel_ release];
     [songName_ release];
     [particles_ release];
@@ -231,10 +236,11 @@ static const CGFloat SL_MENU_Y = 430.0f;
 
 - (void) placeIncrementingPercentage
 {
-    IncrementingText *pctLabel = [IncrementingText incrementingText:scoreInfo_.percentage font:@"MenuFont.fnt" alignment:kLeftAligned incrementType:kIncrementPercentage];    
+    IncrementingText *pctLabel = [IncrementingText incrementingText:scoreInfo_.percentage font:@"BoldMenuFont.fnt" alignment:kLeftAligned incrementType:kIncrementPercentage];    
     pctLabel.delegate = self;
     pctLabel.anchorPoint = ccp(0, 0.5f);   
-    pctLabel.position = ccp(SL_PERCENT_LABEL_X, SL_PERCENT_LABEL_Y);    
+    CGFloat x = title_.position.x + title_.contentSize.width * 0.5f + 30.0f;
+    pctLabel.position = ccp(x, SL_TITLE_LABEL_Y);         
     [self addChild:pctLabel];
 }
 

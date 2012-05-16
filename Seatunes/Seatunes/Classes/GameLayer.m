@@ -26,6 +26,7 @@
 #import "GameScene.h"
 #import "PlayMenuScene.h"
 #import "ScoreScene.h"
+#import "Apsalar.h"
 
 @implementation GameLayer
 
@@ -175,7 +176,12 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];    
     
     CCScene *scene = [PlayMenuScene playMenuScene:1];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];     
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];  
+    
+#if ANALYTICS_ON
+    NSString *difficultyName = [Utility difficultyFromEnum:difficulty_];    
+    [Apsalar eventWithArgs:@"ExerciseComplete", @"difficulty", difficultyName, nil];
+#endif    
 }
 
 - (void) lastNotePlayed
@@ -191,6 +197,12 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kFirstPlay];
     
     [self showScoreMenu:scoreInfo];
+    
+#if ANALYTICS_ON
+    NSString *difficultyName = [Utility difficultyFromEnum:difficulty_];
+    NSNumber *scoreValue = [NSNumber numberWithUnsignedInteger:scoreInfo.percentage];
+    [Apsalar eventWithArgs:@"SongComplete", @"difficulty", difficultyName, @"song", songName_, @"score", scoreValue, nil];
+#endif
 }
 
 - (void) buttonClicked:(Button *)button

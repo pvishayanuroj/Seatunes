@@ -21,6 +21,10 @@
 
 #define kFirstPlay @"First Play"
 
+#define APSALAR_KEY @"pvishayanuroj"
+
+#define APSALAR_SECRET @"8WmuWiho"
+
 typedef enum {
     kC4 = 0,
     kD4 = 1,
