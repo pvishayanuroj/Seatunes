@@ -51,7 +51,7 @@ static const CGFloat PMS_SONG_MENU_Y = 125.0f;
 static const CGFloat PMS_SONG_MENU_WIDTH = 560.0f;
 static const CGFloat PMS_SONG_MENU_HEIGHT = 450.0f;
 static const CGFloat PMS_SONG_DOWN_ARROW_X = 650.0f;
-static const CGFloat PMS_SONG_DOWN_ARROW_Y = 110.0f;
+static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
 
 @synthesize currentPack = currentPack_;
 
@@ -95,6 +95,7 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 110.0f;
         songDownArrow_ = [[CCSprite spriteWithFile:@"Small Down Arrow.png"] retain];
         songDownArrow_.position = ccp(PMS_SONG_DOWN_ARROW_X, PMS_SONG_DOWN_ARROW_Y);
         songDownArrow_.visible = YES;
+        songDownArrow_.scale = 0.8f;
         [self addChild:songDownArrow_];                
         
         packTitle_ = [[CCLabelBMFont labelWithString:@"" fntFile:@"BoldMenuFont.fnt"] retain];
