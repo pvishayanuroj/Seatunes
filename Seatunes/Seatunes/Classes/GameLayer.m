@@ -201,7 +201,8 @@ static const CGFloat GL_SCOREMENU_MOVE_TIME = 0.4f;
 #if ANALYTICS_ON
     NSString *difficultyName = [Utility difficultyFromEnum:difficulty_];
     NSNumber *scoreValue = [NSNumber numberWithUnsignedInteger:scoreInfo.percentage];
-    [Apsalar eventWithArgs:@"SongComplete", @"difficulty", difficultyName, @"song", songName_, @"score", scoreValue, nil];
+    NSNumber *help = [NSNumber numberWithBool:scoreInfo.helpUsed];
+    [Apsalar eventWithArgs:@"SongComplete", @"difficulty", difficultyName, @"song", songName_, @"score", scoreValue, @"help", help, nil];
 #endif
 }
 
