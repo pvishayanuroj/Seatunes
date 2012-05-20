@@ -47,8 +47,6 @@
 		04D3E45D14F2025300FB0928 /* Dialogue Font.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D3E45B14F2025300FB0928 /* Dialogue Font.png */; };
 		04D3E46014F2DECD00FB0928 /* StarfishButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3E45F14F2DECC00FB0928 /* StarfishButton.m */; };
 		04D3E46614F358B600FB0928 /* PackMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3E46514F358B200FB0928 /* PackMenuItem.m */; };
-		04DE51C314F7492C00F8E45C /* Applause 2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51B914F7492C00F8E45C /* Applause 2.caf */; };
-		04DE51C414F7492C00F8E45C /* Applause.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51BA14F7492C00F8E45C /* Applause.caf */; };
 		04DE51CA14F7492C00F8E45C /* Page Flip.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE51C014F7492C00F8E45C /* Page Flip.caf */; };
 		04DE51EF14F9DBFC00F8E45C /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DE51EE14F9DBFC00F8E45C /* IAPHelper.m */; };
 		04DE51F114F9F87100F8E45C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DE51F014F9F87100F8E45C /* StoreKit.framework */; };
@@ -310,7 +308,6 @@
 		DA08E0B814D458CE00D1437B /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0B714D458B800D1437B /* MainMenuScene.m */; };
 		DA08E0C214D529CD00D1437B /* SongMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0C114D529C600D1437B /* SongMenuItem.m */; };
 		DA2D6E141512081600BA02C0 /* ParticleGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D6E131512081600BA02C0 /* ParticleGenerator.m */; };
-		DA2D6E171512E71000BA02C0 /* Light.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D6E161512E70F00BA02C0 /* Light.m */; };
 		DA2D6E2F1514C0E500BA02C0 /* A4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA2D6E281514C0E500BA02C0 /* A4-Muted.m4a */; };
 		DA2D6E301514C0E500BA02C0 /* B4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA2D6E291514C0E500BA02C0 /* B4-Muted.m4a */; };
 		DA2D6E311514C0E500BA02C0 /* C5-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA2D6E2A1514C0E500BA02C0 /* C5-Muted.m4a */; };
@@ -517,8 +514,6 @@
 		04D3E45F14F2DECC00FB0928 /* StarfishButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarfishButton.m; path = Classes/StarfishButton.m; sourceTree = "<group>"; };
 		04D3E46414F358B000FB0928 /* PackMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PackMenuItem.h; path = Classes/PackMenuItem.h; sourceTree = "<group>"; };
 		04D3E46514F358B200FB0928 /* PackMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PackMenuItem.m; path = Classes/PackMenuItem.m; sourceTree = "<group>"; };
-		04DE51B914F7492C00F8E45C /* Applause 2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Applause 2.caf"; sourceTree = "<group>"; };
-		04DE51BA14F7492C00F8E45C /* Applause.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Applause.caf; sourceTree = "<group>"; };
 		04DE51C014F7492C00F8E45C /* Page Flip.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Page Flip.caf"; sourceTree = "<group>"; };
 		04DE51ED14F9DBFC00F8E45C /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAPHelper.h; path = Classes/IAPHelper.h; sourceTree = "<group>"; };
 		04DE51EE14F9DBFC00F8E45C /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = Classes/IAPHelper.m; sourceTree = "<group>"; };
@@ -810,8 +805,6 @@
 		DA08E0C114D529C600D1437B /* SongMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SongMenuItem.m; path = Classes/SongMenuItem.m; sourceTree = "<group>"; };
 		DA2D6E121512081600BA02C0 /* ParticleGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleGenerator.h; path = Classes/ParticleGenerator.h; sourceTree = "<group>"; };
 		DA2D6E131512081600BA02C0 /* ParticleGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParticleGenerator.m; path = Classes/ParticleGenerator.m; sourceTree = "<group>"; };
-		DA2D6E151512E70F00BA02C0 /* Light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Light.h; path = Classes/Light.h; sourceTree = "<group>"; };
-		DA2D6E161512E70F00BA02C0 /* Light.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Light.m; path = Classes/Light.m; sourceTree = "<group>"; };
 		DA2D6E281514C0E500BA02C0 /* A4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A4-Muted.m4a"; sourceTree = "<group>"; };
 		DA2D6E291514C0E500BA02C0 /* B4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B4-Muted.m4a"; sourceTree = "<group>"; };
 		DA2D6E2A1514C0E500BA02C0 /* C5-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C5-Muted.m4a"; sourceTree = "<group>"; };
@@ -1180,8 +1173,6 @@
 				04B0D4F115070DD600A4A2B8 /* StaffDelegate.h */,
 				04B0D4EC1507027100A4A2B8 /* StaffNote.h */,
 				04B0D4ED1507027200A4A2B8 /* StaffNote.m */,
-				DA2D6E151512E70F00BA02C0 /* Light.h */,
-				DA2D6E161512E70F00BA02C0 /* Light.m */,
 				AE7944B01527EF31009B0D09 /* Text.h */,
 				AE7944B11527EF31009B0D09 /* Text.m */,
 				AE48ED1A1543142000747910 /* Badge.h */,
@@ -1347,8 +1338,6 @@
 				AE48ED2415432B6000747910 /* Ding.mp3 */,
 				AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */,
 				DA2D6E361514C24000BA02C0 /* Clam Hit.m4a */,
-				04DE51B914F7492C00F8E45C /* Applause 2.caf */,
-				04DE51BA14F7492C00F8E45C /* Applause.caf */,
 				04DE51C014F7492C00F8E45C /* Page Flip.caf */,
 			);
 			name = "Sound Effects";
@@ -2136,8 +2125,6 @@
 				042FCAA714F155FF00E34155 /* MenuFont.png in Resources */,
 				04D3E45C14F2025300FB0928 /* Dialogue Font.fnt in Resources */,
 				04D3E45D14F2025300FB0928 /* Dialogue Font.png in Resources */,
-				04DE51C314F7492C00F8E45C /* Applause 2.caf in Resources */,
-				04DE51C414F7492C00F8E45C /* Applause.caf in Resources */,
 				04DE51CA14F7492C00F8E45C /* Page Flip.caf in Resources */,
 				04DE51F314F9FAC000F8E45C /* Product Identifiers.plist in Resources */,
 				04DE51F514F9FD1A00F8E45C /* Default Packs.plist in Resources */,
@@ -2527,7 +2514,6 @@
 				04B0D4EB1507025F00A4A2B8 /* Staff.m in Sources */,
 				04B0D4EE1507027400A4A2B8 /* StaffNote.m in Sources */,
 				DA2D6E141512081600BA02C0 /* ParticleGenerator.m in Sources */,
-				DA2D6E171512E71000BA02C0 /* Light.m in Sources */,
 				AE5839A61517FC240097EDD5 /* GameLogicF.m in Sources */,
 				AE7A86BD151E0276007CA48C /* FreePlayScene.m in Sources */,
 				AE7A86C4151E068E007CA48C /* FreePlayLayer.m in Sources */,

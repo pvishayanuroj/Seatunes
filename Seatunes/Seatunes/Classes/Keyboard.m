@@ -216,8 +216,6 @@ static const CGFloat KB_LETTER_Y = 90.0f;
     CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(applauseComplete)];
     
     [self runAction:[CCSequence actions:delay, done, nil]];
-    
-    //[[AudioManager audioManager] playSoundEffect:kApplause];
 }
 
 - (void) applauseLoop

@@ -284,9 +284,6 @@
     NSString *name = @"";
     
     switch (soundType) {
-        case kApplause:
-            name = @"Applause 2.caf";
-            break;
         case kPageFlip:
             name = @"Page Flip.caf";
             break;
@@ -330,7 +327,6 @@
 + (NSArray *) allSoundEffects
 {
     NSMutableArray *sounds = [NSMutableArray arrayWithCapacity:12];
-    [sounds addObject:[NSNumber numberWithInteger:kApplause]];
     [sounds addObject:[NSNumber numberWithInteger:kPageFlip]];
     [sounds addObject:[NSNumber numberWithInteger:kClamHit]];
     [sounds addObject:[NSNumber numberWithInteger:kDing]];

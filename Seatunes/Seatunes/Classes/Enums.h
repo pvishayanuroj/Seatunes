@@ -59,7 +59,6 @@ typedef enum {
 
 typedef enum {
     kDummy,
-    kApplause,
     kPageFlip,
     kBubblePop,
     kBubblePop2,
