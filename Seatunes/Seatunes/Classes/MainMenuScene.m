@@ -24,8 +24,8 @@ static const CGFloat MMS_FREEPLAY_X = 200.0f;
 static const CGFloat MMS_FREEPLAY_Y = 475.0f;
 static const CGFloat MMS_BUY_X = 200.0f;
 static const CGFloat MMS_BUY_Y = 500.0f;
-static const CGFloat MMS_MUSIC_X = 1000.0f;
-static const CGFloat MMS_MUSIC_Y = 740.0f;
+static const CGFloat MMS_MUSIC_X = 995.0f;
+static const CGFloat MMS_MUSIC_Y = 735.0f;
 
 - (id) init
 {
