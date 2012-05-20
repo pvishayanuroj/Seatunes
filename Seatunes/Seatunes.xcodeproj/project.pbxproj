@@ -80,7 +80,6 @@
 		A5C65352155D793C008A5689 /* Music On Button-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6534E155D793C008A5689 /* Music On Button-ipadhd.png */; };
 		A5C65353155D793C008A5689 /* Music On Button.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6534F155D793C008A5689 /* Music On Button.png */; };
 		A5C65355155D7CDE008A5689 /* Bubble Pop 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A5C65354155D7CDE008A5689 /* Bubble Pop 2.mp3 */; };
-		A5C65358155D813A008A5689 /* Sunbeams.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C65357155D8139008A5689 /* Sunbeams.m */; };
 		AE2840AC1560242200A94EFA /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = AE2840AB1560242200A94EFA /* iTunesArtwork.png */; };
 		AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */; };
 		AE48ED1C1543142000747910 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = AE48ED1B1543142000747910 /* Badge.m */; };
@@ -293,6 +292,7 @@
 		AE7CACD81548F0BA002DB944 /* Help Button.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7CACD61548F0BA002DB944 /* Help Button.png */; };
 		AE7DCBB1155EDEB9000F4B63 /* Sunbeam.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7DCBB0155EDEB9000F4B63 /* Sunbeam.m */; };
 		AE91464315294004007E75F9 /* Music Tutorial.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE91464215294004007E75F9 /* Music Tutorial.plist */; };
+		AE9F799A1568A1CC00505C83 /* Sunbeams.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F79991568A1CC00505C83 /* Sunbeams.m */; };
 		AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */; };
 		AEE3D628154445240099ADC8 /* BoldMenuFont-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D624154445240099ADC8 /* BoldMenuFont-ipadhd.fnt */; };
 		AEE3D629154445240099ADC8 /* BoldMenuFont-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D625154445240099ADC8 /* BoldMenuFont-ipadhd.png */; };
@@ -551,8 +551,6 @@
 		A5C6534E155D793C008A5689 /* Music On Button-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music On Button-ipadhd.png"; sourceTree = "<group>"; };
 		A5C6534F155D793C008A5689 /* Music On Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music On Button.png"; sourceTree = "<group>"; };
 		A5C65354155D7CDE008A5689 /* Bubble Pop 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop 2.mp3"; sourceTree = "<group>"; };
-		A5C65356155D8138008A5689 /* Sunbeams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sunbeams.h; sourceTree = "<group>"; };
-		A5C65357155D8139008A5689 /* Sunbeams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sunbeams.m; sourceTree = "<group>"; };
 		AE2840AB1560242200A94EFA /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = Resources/iTunesArtwork.png; sourceTree = "<group>"; };
 		AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
 		AE48ED1A1543142000747910 /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Badge.h; path = Classes/Badge.h; sourceTree = "<group>"; };
@@ -782,6 +780,8 @@
 		AE7DCBAF155EDEB9000F4B63 /* Sunbeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sunbeam.h; path = Classes/Sunbeam.h; sourceTree = "<group>"; };
 		AE7DCBB0155EDEB9000F4B63 /* Sunbeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sunbeam.m; path = Classes/Sunbeam.m; sourceTree = "<group>"; };
 		AE91464215294004007E75F9 /* Music Tutorial.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Music Tutorial.plist"; sourceTree = "<group>"; };
+		AE9F79981568A1CC00505C83 /* Sunbeams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sunbeams.h; path = Classes/Sunbeams.h; sourceTree = "<group>"; };
+		AE9F79991568A1CC00505C83 /* Sunbeams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sunbeams.m; path = Classes/Sunbeams.m; sourceTree = "<group>"; };
 		AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Muted.m4a"; sourceTree = "<group>"; };
 		AED018C61538ECAD0090CEE1 /* AudioManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudioManagerDelegate.h; path = Classes/AudioManagerDelegate.h; sourceTree = "<group>"; };
 		AEE3D624154445240099ADC8 /* BoldMenuFont-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BoldMenuFont-ipadhd.fnt"; sourceTree = "<group>"; };
@@ -1141,12 +1141,12 @@
 		04B0D4B91501D64000A4A2B8 /* Game Elements */ = {
 			isa = PBXGroup;
 			children = (
+				AE9F79981568A1CC00505C83 /* Sunbeams.h */,
+				AE9F79991568A1CC00505C83 /* Sunbeams.m */,
 				A5C65343155D4167008A5689 /* Bubble.h */,
 				A5C65344155D4167008A5689 /* Bubble.m */,
 				A5C65345155D4167008A5689 /* BubbleGroup.h */,
 				A5C65346155D4167008A5689 /* BubbleGroup.m */,
-				A5C65356155D8138008A5689 /* Sunbeams.h */,
-				A5C65357155D8139008A5689 /* Sunbeams.m */,
 				AE7DCBAF155EDEB9000F4B63 /* Sunbeam.h */,
 				AE7DCBB0155EDEB9000F4B63 /* Sunbeam.m */,
 				AE48ED23154328B600747910 /* IncrementingTextDelegate.h */,
@@ -2530,9 +2530,9 @@
 				AE7AFCAD154C350500544A0E /* ModEaseBackIn.m in Sources */,
 				A5C65347155D4167008A5689 /* Bubble.m in Sources */,
 				A5C65348155D4167008A5689 /* BubbleGroup.m in Sources */,
-				A5C65358155D813A008A5689 /* Sunbeams.m in Sources */,
 				AE7DCBB1155EDEB9000F4B63 /* Sunbeam.m in Sources */,
 				AE79F2A91560867A00ED4C6B /* Apsalar.js in Sources */,
+				AE9F799A1568A1CC00505C83 /* Sunbeams.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
