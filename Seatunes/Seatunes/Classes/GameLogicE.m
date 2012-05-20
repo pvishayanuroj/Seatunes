@@ -287,11 +287,15 @@ static const NSInteger GLE_READER_Z = 8;
 {
     [delegate_ showKeyboardLettersComplete];
     scoreInfo_.helpUsed = YES;
+    [self unschedule:@selector(loop:)];
+    [self schedule:@selector(loop:) interval:1.75f];
 }
 
 - (void) hideLettersComplete
 {
     [delegate_ hideKeyboardLettersComplete];
+    [self unschedule:@selector(loop:)];
+    [self schedule:@selector(loop:) interval:1.25f];    
 }
 
 @end
