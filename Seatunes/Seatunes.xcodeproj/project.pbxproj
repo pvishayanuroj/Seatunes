@@ -80,7 +80,6 @@
 		A5C65352155D793C008A5689 /* Music On Button-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6534E155D793C008A5689 /* Music On Button-ipadhd.png */; };
 		A5C65353155D793C008A5689 /* Music On Button.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C6534F155D793C008A5689 /* Music On Button.png */; };
 		A5C65355155D7CDE008A5689 /* Bubble Pop 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A5C65354155D7CDE008A5689 /* Bubble Pop 2.mp3 */; };
-		AE2840AC1560242200A94EFA /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = AE2840AB1560242200A94EFA /* iTunesArtwork.png */; };
 		AE3E7C08151580B600E12D58 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */; };
 		AE48ED1C1543142000747910 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = AE48ED1B1543142000747910 /* Badge.m */; };
 		AE48ED1F1543156700747910 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = AE48ED1E1543156700747910 /* Star.png */; };
@@ -294,6 +293,7 @@
 		AE91464315294004007E75F9 /* Music Tutorial.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE91464215294004007E75F9 /* Music Tutorial.plist */; };
 		AE9F799A1568A1CC00505C83 /* Sunbeams.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F79991568A1CC00505C83 /* Sunbeams.m */; };
 		AEA4A99315155ACE00147CA9 /* C4-Muted.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */; };
+		AEDB76D5156B0A100010EB57 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = AEDB76D4156B0A100010EB57 /* iTunesArtwork */; };
 		AEE3D628154445240099ADC8 /* BoldMenuFont-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D624154445240099ADC8 /* BoldMenuFont-ipadhd.fnt */; };
 		AEE3D629154445240099ADC8 /* BoldMenuFont-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D625154445240099ADC8 /* BoldMenuFont-ipadhd.png */; };
 		AEE3D62A154445240099ADC8 /* BoldMenuFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AEE3D626154445240099ADC8 /* BoldMenuFont.fnt */; };
@@ -551,7 +551,6 @@
 		A5C6534E155D793C008A5689 /* Music On Button-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music On Button-ipadhd.png"; sourceTree = "<group>"; };
 		A5C6534F155D793C008A5689 /* Music On Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music On Button.png"; sourceTree = "<group>"; };
 		A5C65354155D7CDE008A5689 /* Bubble Pop 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop 2.mp3"; sourceTree = "<group>"; };
-		AE2840AB1560242200A94EFA /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = Resources/iTunesArtwork.png; sourceTree = "<group>"; };
 		AE3E7C07151580B600E12D58 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
 		AE48ED1A1543142000747910 /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Badge.h; path = Classes/Badge.h; sourceTree = "<group>"; };
 		AE48ED1B1543142000747910 /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Badge.m; path = Classes/Badge.m; sourceTree = "<group>"; };
@@ -784,6 +783,7 @@
 		AE9F79991568A1CC00505C83 /* Sunbeams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sunbeams.m; path = Classes/Sunbeams.m; sourceTree = "<group>"; };
 		AEA4A99215155ACE00147CA9 /* C4-Muted.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "C4-Muted.m4a"; sourceTree = "<group>"; };
 		AED018C61538ECAD0090CEE1 /* AudioManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudioManagerDelegate.h; path = Classes/AudioManagerDelegate.h; sourceTree = "<group>"; };
+		AEDB76D4156B0A100010EB57 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/iTunesArtwork; sourceTree = "<group>"; };
 		AEE3D624154445240099ADC8 /* BoldMenuFont-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BoldMenuFont-ipadhd.fnt"; sourceTree = "<group>"; };
 		AEE3D625154445240099ADC8 /* BoldMenuFont-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoldMenuFont-ipadhd.png"; sourceTree = "<group>"; };
 		AEE3D626154445240099ADC8 /* BoldMenuFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BoldMenuFont.fnt; sourceTree = "<group>"; };
@@ -1691,8 +1691,8 @@
 				04B0D4C91504173D00A4A2B8 /* Icon-Small-50.png */,
 				04B0D4CA1504173E00A4A2B8 /* Icon-Small.png */,
 				04B0D4CB1504174000A4A2B8 /* Icon-Small@2x.png */,
-				AE2840AB1560242200A94EFA /* iTunesArtwork.png */,
 				DAB11F3B14C1E847009B60FB /* Info.plist */,
+				AEDB76D4156B0A100010EB57 /* iTunesArtwork */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2372,7 +2372,7 @@
 				AE7987BA155EAE4400A9CA18 /* Sunbeam 4.png in Resources */,
 				AE7987BB155EAE4400A9CA18 /* Sunbeam 5-ipadhd.png in Resources */,
 				AE7987BC155EAE4400A9CA18 /* Sunbeam 5.png in Resources */,
-				AE2840AC1560242200A94EFA /* iTunesArtwork.png in Resources */,
+				AEDB76D5156B0A100010EB57 /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
