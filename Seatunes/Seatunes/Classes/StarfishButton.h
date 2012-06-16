@@ -24,7 +24,9 @@
 
 + (id) starfishButton:(NSUInteger)numID text:(NSString *)text;
 
-- (id) initStarfishButton:(NSUInteger)numID text:(NSString *)text;
++ (id) starfishButtonUnselected:(NSUInteger)numID text:(NSString *)text;
+
+- (id) initStarfishButton:(NSUInteger)numID text:(NSString *)text image:(NSString *)image fnt:(NSString *)fnt;
 
 - (void) startSpin;
 

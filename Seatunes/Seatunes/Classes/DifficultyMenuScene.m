@@ -11,7 +11,9 @@
 #import "GameScene.h"
 #import "Button.h"
 #import "StarfishButton.h"
+#import "LoadingIndicator.h"
 #import "AudioManager.h"
+#import "SeatunesIAPHelper.h"
 
 @implementation DifficultyMenuScene
 
@@ -31,6 +33,10 @@ static const CGFloat DMS_BACK_BUTTON_Y = 730.0f;
 
 static const CGFloat DMS_PLAY_BUTTON_X = 650.0f;
 static const CGFloat DMS_PLAY_BUTTON_Y = 200.0f;
+
+static const CGFloat DMS_LOCK_OFFSET_X = 50.0f;
+static const CGFloat DMS_LOCK_OFFSET_Y = -50.0f;
+static const CGFloat DMS_LOCK_SCALE = 0.8f;
 
 static const GLubyte DMS_FULL_OPACITY = 255;
 static const GLubyte DMS_SEMI_OPACITY = 150;
@@ -94,17 +100,27 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
         [self addChild:mediumButton_];
         [self addChild:hardButton_];   
         
+        lockIcon_ = nil;
+#if IAP_ON
+        // Add lock icon        
+        if (![[SeatunesIAPHelper manager] allPacksPurchased]) {
+            lockIcon_ = [[CCSprite spriteWithFile:@"Lock Icon.png"] retain];
+            lockIcon_.scale = DMS_LOCK_SCALE;
+            lockIcon_.position = ccp(DMS_BUTTON_X + DMS_BUTTON_PADDING + DMS_LOCK_OFFSET_X, DMS_BUTTON_Y + DMS_LOCK_OFFSET_Y);
+            [self addChild:lockIcon_];
+        }
+#endif
         // Add play button
-        StarfishButton *playButton = [StarfishButton starfishButton:kDMSPlay text:@"Play"];
-        playButton.delegate = self;
-        playButton.position = ccp(DMS_PLAY_BUTTON_X, DMS_PLAY_BUTTON_Y);
-        [self addChild:playButton];        
+        playButton_ = [[StarfishButton starfishButton:kDMSPlay text:@"Play"] retain];
+        playButton_.delegate = self;
+        playButton_.position = ccp(DMS_PLAY_BUTTON_X, DMS_PLAY_BUTTON_Y);
+        [self addChild:playButton_];        
         
         // Add back button
-        Button *backButton = [ScaledImageButton scaledImageButton:kDMSBack image:@"Back Button.png"];
-        backButton.delegate = self;
-        backButton.position = ccp(DMS_BACK_BUTTON_X, DMS_BACK_BUTTON_Y);
-        [self addChild:backButton];
+        backButton_ = [[ScaledImageButton scaledImageButton:kDMSBack image:@"Back Button.png"] retain];
+        backButton_.delegate = self;
+        backButton_.position = ccp(DMS_BACK_BUTTON_X, DMS_BACK_BUTTON_Y);
+        [self addChild:backButton_];
     }
     return self;
 }
@@ -118,6 +134,9 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
     [easyButton_ release];
     [mediumButton_ release];
     [hardButton_ release];
+    [playButton_ release];
+    [backButton_ release];
+    [lockIcon_ release];
     
     [super dealloc];
 }
@@ -126,6 +145,22 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
 {   
     switch (button.numID) {
         case kDMSHard:
+#if IAP_ON
+            [[AudioManager audioManager] playSound:kG4 instrument:kMenu];                
+            if (![[SeatunesIAPHelper manager] allPacksPurchased]) {
+                [[SeatunesIAPHelper manager] buyProduct:self];
+            }
+            else {
+                [(ScaledImageButton *)hardButton_ setImage:@"Music Note Button.png"];
+                [(ScaledImageButton *)mediumButton_ setImage:@"Clam Button Unselected.png"];                        
+                [(ScaledImageButton *)easyButton_ setImage:@"Bubble Button Unselected.png"];  
+                easyText_.opacity = DMS_SEMI_OPACITY;
+                mediumText_.opacity = DMS_SEMI_OPACITY;
+                hardText_.opacity = DMS_FULL_OPACITY;            
+                difficulty_ = kDifficultyHard;   
+ 
+            }
+#else
             [(ScaledImageButton *)hardButton_ setImage:@"Music Note Button.png"];
             [(ScaledImageButton *)mediumButton_ setImage:@"Clam Button Unselected.png"];                        
             [(ScaledImageButton *)easyButton_ setImage:@"Bubble Button Unselected.png"];  
@@ -133,7 +168,8 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
             mediumText_.opacity = DMS_SEMI_OPACITY;
             hardText_.opacity = DMS_FULL_OPACITY;            
             difficulty_ = kDifficultyHard;   
-            [[AudioManager audioManager] playSound:kG4 instrument:kMenu];            
+            [[AudioManager audioManager] playSound:kG4 instrument:kMenu];                 
+#endif
             break;
         case kDMSMedium:
             [(ScaledImageButton *)hardButton_ setImage:@"Music Note Button Unselected.png"];            
@@ -178,6 +214,34 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
     CCScene *scene = [PlayMenuScene playMenuScene:packIndex_];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:YES]];
     [[AudioManager audioManager] playSound:kA4 instrument:kMenu];   
+}
+
+#pragma mark - Delegate Methods
+
+- (void) purchaseComplete
+{
+    lockIcon_.visible = NO;
+}
+
+- (void) showLoading
+{    
+    easyButton_.isClickable = NO;
+    mediumButton_.isClickable = NO;    
+    hardButton_.isClickable = NO;
+    
+    loadingIndicator_ = [[LoadingIndicator loadingIndicator] retain];
+    [self addChild:loadingIndicator_];
+}
+
+- (void) finishLoading
+{ 
+    [loadingIndicator_ remove];
+    [loadingIndicator_ release];
+    loadingIndicator_ = nil;
+    
+    easyButton_.isClickable = YES;
+    mediumButton_.isClickable = YES;    
+    hardButton_.isClickable = YES;  
 }
 
 @end

@@ -10,8 +10,11 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "ButtonDelegate.h"
+#import "IAPDelegate.h"
 
 @class Button;
+@class StarfishButton;
+@class LoadingIndicator;
 
 enum {
     kDMSEasy,
@@ -21,7 +24,7 @@ enum {
     kDMSBack
 };
 
-@interface DifficultyMenuScene : CCScene <ButtonDelegate> {
+@interface DifficultyMenuScene : CCScene <ButtonDelegate, IAPDelegate> {
     
     NSString *songName_;
     
@@ -33,6 +36,10 @@ enum {
     
     Button *hardButton_;    
     
+    Button *backButton_;
+    
+    StarfishButton *playButton_;    
+    
     CCLabelBMFont *easyText_;
     
     CCLabelBMFont *mediumText_;
@@ -40,6 +47,10 @@ enum {
     CCLabelBMFont *hardText_;    
     
     DifficultyType difficulty_;
+    
+    CCSprite *lockIcon_;
+    
+    LoadingIndicator *loadingIndicator_;    
 }
 
 + (id) startWithSongName:(NSString *)songName packIndex:(NSUInteger)packIndex;

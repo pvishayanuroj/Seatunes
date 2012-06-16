@@ -30,7 +30,12 @@ static const CGFloat SMI_LOCK_SCALE = 0.25f;
 {
     if ((self = [super initScrollingMenuItem:songIndex height:SMI_CELL_HEIGHT])) {
         
-        label_ = [[CCLabelBMFont labelWithString:songName fntFile:@"MenuFont.fnt"] retain];
+        if (locked) {
+            label_ = [[CCLabelBMFont labelWithString:songName fntFile:@"MenuFontDisabled.fnt"] retain];   
+        }
+        else {
+            label_ = [[CCLabelBMFont labelWithString:songName fntFile:@"MenuFont.fnt"] retain];   
+        }
         label_.anchorPoint = ccp(0, 0.5f);
         label_.position = ccp(SMI_SONG_NAME_X, 0);
         [self addChild:label_];

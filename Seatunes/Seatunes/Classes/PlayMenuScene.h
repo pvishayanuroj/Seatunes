@@ -11,6 +11,7 @@
 #import "cocos2d.h"
 #import "ScrollingMenuDelegate.h"
 #import "ButtonDelegate.h"
+#import "IAPDelegate.h"
 
 @class ScrollingMenu;
 @class Button;
@@ -24,23 +25,13 @@ enum {
     kButtonBack
 };
 
-typedef enum {
-    kStateNoPurchase,
-    kStateBuyAllPacks,
-    kStateBuyCurrentPack
-} BuyState;
-
-@interface PlayMenuScene : CCScene <ScrollingMenuDelegate, ButtonDelegate, UIAlertViewDelegate> {
+@interface PlayMenuScene : CCScene <ScrollingMenuDelegate, ButtonDelegate, IAPDelegate> {
     
     ScrollingMenu *songMenu_;
     
     ScrollingMenu *packMenu_;
     
     CCLabelBMFont *packTitle_;
-    
-    Button *allPacksButton_;
-    
-    Button *packButton_;
     
     NSUInteger currentPack_;
     
@@ -51,8 +42,6 @@ typedef enum {
     
     /* Maps pack menu item IDs to pack names */
     NSArray *packNames_;
-    
-    BuyState buyState_;
 
     LoadingIndicator *loadingIndicator_;
 
@@ -70,19 +59,11 @@ typedef enum {
 
 - (id) initPlayMenuScene:(NSUInteger)packIndex;
 
-- (void) buyProduct:(BuyState)buyState;
-
 - (void) togglePackSelect:(NSUInteger)packIndex;
 
 - (void) loadPackMenu;
 
 - (void) loadSongMenu:(NSUInteger)packIndex;
-
-- (void) reloadScreen;
-
-- (void) addBuyAllButton;
-
-- (void) removeBuyAllButton;
 
 - (void) loadMainMenu;
 
@@ -93,8 +74,6 @@ typedef enum {
 - (void) cleanupPackMenu;
 
 - (void) showDialog:(NSString *)title text:(NSString *)text;
-
-- (void) showBuyDialog;
 
 - (void) showLoading;
 

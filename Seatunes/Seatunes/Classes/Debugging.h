@@ -22,7 +22,7 @@
 
 #define DEBUG_ALLUNLOCK 1
 
-#define IAP_ON 0
+#define IAP_ON 1
 
 #define ANALYTICS_ON 1
 

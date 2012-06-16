@@ -4,6 +4,12 @@
 <array>
 	<dict>
 		<key>Product Name</key>
+		<string>Lesson Pack</string>
+		<key>Product Identifier</key>
+		<string>com.vindustries.Seatunes.lessontest</string>
+	</dict>
+	<dict>
+		<key>Product Name</key>
 		<string>Nursery Pack</string>
 		<key>Product Identifier</key>
 		<string>com.vindustries.Seatunes.nurserytest</string>
@@ -24,7 +30,7 @@
 		<key>Product Name</key>
 		<string>All Packs</string>
 		<key>Product Identifier</key>
-		<string>com.vindustries.Seatunes.allpackstest</string>
+		<string>com.beanstalkstudios.seatunes.allpacks</string>
 	</dict>
 </array>
 </plist>

@@ -13,6 +13,8 @@
 #import "AudioManager.h"
 #import "DataUtility.h"
 #import "SeatunesIAPHelper.h"
+#import "Utility.h"
+#import "LoadingIndicator.h"
 
 @implementation MainMenuScene
 
@@ -26,10 +28,15 @@ static const CGFloat MMS_BUY_X = 200.0f;
 static const CGFloat MMS_BUY_Y = 500.0f;
 static const CGFloat MMS_MUSIC_X = 995.0f;
 static const CGFloat MMS_MUSIC_Y = 735.0f;
+static const CGFloat MMS_LOCK_X = 40.0f;
+static const CGFloat MMS_LOCK_Y = -30.0f;
+static const CGFloat MMS_LOCK_SCALE = 0.8f;
 
 - (id) init
 {
     if ((self = [super init])) {
+        
+        loadingIndicator_ = nil;
         
         // Initialze the data manager
         [DataUtility manager];
@@ -38,6 +45,7 @@ static const CGFloat MMS_MUSIC_Y = 735.0f;
         [AudioManager audioManager];        
         
         // Load all the IAP singleton with all product identifiers (does not make a network request)
+        // along with all purchased products (by reading the user defaults)
         NSSet *productIdentifiers = [NSSet setWithArray:[[DataUtility manager] allProductIdentifiers]];
         [[SeatunesIAPHelper manager] loadProductIdentifiers:productIdentifiers];
          
@@ -53,16 +61,35 @@ static const CGFloat MMS_MUSIC_Y = 735.0f;
         title.position = ccp(MMS_TITLE_X, MMS_TITLE_Y);
         [self addChild:title];
         
-        Button *playButton = [StarfishButton starfishButton:kPlayButton text:@"Play"];
-        playButton.delegate = self;
-        playButton.position = ccp(MMS_PLAY_X, MMS_PLAY_Y);
+        playButton_ = [[StarfishButton starfishButton:kPlayButton text:@"Play"] retain];
+        playButton_.delegate = self;
+        playButton_.position = ccp(MMS_PLAY_X, MMS_PLAY_Y);
+
+#if IAP_ON
+        BOOL isLocked = ![[SeatunesIAPHelper manager] allPacksPurchased];
+#else
+        BOOL isLocked = NO;
+#endif
         
-        Button *freePlayButton = [StarfishButton starfishButton:kFreePlayButton text:@"Free Play"];
-        freePlayButton.delegate = self;
-        freePlayButton.position = ccp(MMS_FREEPLAY_X, MMS_FREEPLAY_Y);        
+        if (isLocked) {
+            freePlayButton_ = [[StarfishButton starfishButtonUnselected:kFreePlayButton text:@"Free Play"] retain];                 
+        }
+        else {
+            freePlayButton_ = [[StarfishButton starfishButton:kFreePlayButton text:@"Free Play"] retain];            
+        }
+        freePlayButton_.delegate = self;
+        freePlayButton_.position = ccp(MMS_FREEPLAY_X, MMS_FREEPLAY_Y);        
         
-        [self addChild:playButton];
-        [self addChild:freePlayButton];        
+        [self addChild:playButton_];
+        [self addChild:freePlayButton_];        
+
+        lockIcon_ = nil;
+        if (isLocked) {
+            lockIcon_ = [[CCSprite spriteWithFile:@"Lock Icon.png"] retain];
+            lockIcon_.scale = MMS_LOCK_SCALE;
+            lockIcon_.position = ccp(MMS_FREEPLAY_X + MMS_LOCK_X, MMS_FREEPLAY_Y + MMS_LOCK_Y);
+            [self addChild:lockIcon_];
+        }        
         
         if ([DataUtility manager].backgroundMusicOn) {
             musicButton_ = [[ScaledImageButton scaledImageButton:kMusicButton image:@"Music On Button.png"] retain];    
@@ -82,6 +109,10 @@ static const CGFloat MMS_MUSIC_Y = 735.0f;
 - (void) dealloc
 {
     [musicButton_ release];
+    [freePlayButton_ release];
+    [playButton_ release];
+    [loadingIndicator_ release];
+    [lockIcon_ release];
     
     [super dealloc];
 }
@@ -96,9 +127,19 @@ static const CGFloat MMS_MUSIC_Y = 735.0f;
             [[AudioManager audioManager] playSound:kC4 instrument:kMenu];        
             break;
         case kFreePlayButton:
+            [[AudioManager audioManager] playSound:kD4 instrument:kMenu];            
+#if IAP_ON
+            if (![[SeatunesIAPHelper manager] allPacksPurchased]) {
+                [[SeatunesIAPHelper manager] buyProduct:self];
+            }
+            else {
+                scene = [FreePlayScene node];
+                [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:NO]];                
+            }
+#else
             scene = [FreePlayScene node];
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:NO]];
-            [[AudioManager audioManager] playSound:kD4 instrument:kMenu];        
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:NO]];               
+#endif  
             break;
         case kBuySongsButton:
             break;
@@ -123,6 +164,41 @@ static const CGFloat MMS_MUSIC_Y = 735.0f;
         default:
             break;
     }
+}
+
+#pragma mark - Delegate Methods
+
+- (void) purchaseComplete
+{
+    lockIcon_.visible = NO;
+    
+    [freePlayButton_ removeFromParentAndCleanup:YES];
+    [freePlayButton_ release];
+    
+    freePlayButton_ = [[StarfishButton starfishButton:kFreePlayButton text:@"Free Play"] retain];            
+    freePlayButton_.delegate = self;
+    freePlayButton_.position = ccp(MMS_FREEPLAY_X, MMS_FREEPLAY_Y);        
+}
+
+- (void) showLoading
+{    
+    playButton_.isClickable = NO;
+    freePlayButton_.isClickable = NO;    
+    musicButton_.isClickable = NO;
+    
+    loadingIndicator_ = [[LoadingIndicator loadingIndicator] retain];
+    [self addChild:loadingIndicator_];
+}
+
+- (void) finishLoading
+{ 
+    [loadingIndicator_ remove];
+    [loadingIndicator_ release];
+    loadingIndicator_ = nil;
+    
+    playButton_.isClickable = YES;
+    freePlayButton_.isClickable = YES;    
+    musicButton_.isClickable = YES;    
 }
 
 @end

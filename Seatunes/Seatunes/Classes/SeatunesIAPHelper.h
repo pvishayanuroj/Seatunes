@@ -9,8 +9,12 @@
 #import "CommonHeaders.h"
 #import <Foundation/Foundation.h>
 #import "IAPHelper.h"
+#import "IAPDelegate.h"
 
-@interface SeatunesIAPHelper : IAPHelper {
+@interface SeatunesIAPHelper : IAPHelper <UIAlertViewDelegate> {
+    
+    /* Delegate object */
+    id <IAPDelegate> delegate_;    
     
 }
 
@@ -22,6 +26,10 @@
 
 - (BOOL) packPurchased:(NSString *)packName;
 
-- (BOOL) productPurchased:(NSString *)productIdentifier;
+- (BOOL) productIdentifierPurchased:(NSString *)productIdentifier;
+
+- (void) showDialog:(NSString *)title text:(NSString *)text;
+
+- (void) buyProduct:(id <IAPDelegate>)delegate;
 
 @end

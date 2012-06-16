@@ -72,11 +72,8 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     if ((self = [super init])) {
         
         songMenu_ = nil;
-        allPacksButton_ = nil;
-        packButton_ = nil;
         songNames_ = nil;        
         loadingIndicator_ = nil;
-        buyState_ = kStateNoPurchase;
         
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
@@ -109,13 +106,6 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
         [self loadSongMenu:packIndex];
         [packMenu_ setMenuOffset:packIndex];
         
-#if IAP_ON
-        // Check if all packs purchased. If not, add button
-        if (![[SeatunesIAPHelper manager] allPacksPurchased]) {
-            [self addBuyAllButton];
-        }
-#endif
-        
         // Add back button
         Button *backButton = [ScaledImageButton scaledImageButton:kDMSBack image:@"Back Button.png"];
         backButton.delegate = self;
@@ -135,28 +125,26 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     [songNames_ release];
     [packNames_ release];
     [packTitle_ release];
-    [allPacksButton_ release];
     [packDownArrow_ release];
     [songDownArrow_ release];
+    [loadingIndicator_ release];
     
     [super dealloc];
 }
 
 #pragma mark - In-App Purchase Methods
 
-- (void) buyProduct:(BuyState)buyState
+/*
+- (void) buyProduct
 {
     // Check for a connection
     if ([Utility hasInternetConnection]) {
     
         [self showLoading];
         
-        // Set the product to buy
-        buyState_ = buyState;
-        
         // Setup the notifications
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productsLoaded) name:kProductsLoadedNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productsLoadedFailed) name:kProductsLoadedFailedNotification object:nil];            
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productsLoadedFailed:) name:kProductsLoadedFailedNotification object:nil];            
         
         // Make the call to request the products first
         [[SeatunesIAPHelper manager] requestProducts];   
@@ -170,17 +158,7 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];    
     
-    NSString *productIdentifier;
-    if (buyState_ == kStateBuyAllPacks) {
-        productIdentifier = [[DataUtility manager] productIdentifierFromName:kAllPacks];
-    }
-    else if (buyState_ == kStateBuyCurrentPack) {
-        NSString *packName = [packNames_ objectAtIndex:currentPack_];
-        productIdentifier = [[DataUtility manager] productIdentifierFromName:packName];                
-    }    
-    else {
-        return;
-    }
+    NSString *productIdentifier = [[DataUtility manager] productIdentifierFromName:kAllPacks];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:kProductPurchaseNotification object:nil];       
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchasedFailed:) name:kProductPurchaseFailedNotification object:nil];    
@@ -190,7 +168,6 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
 - (void) productsLoadedFailed:(NSNotification *)notification
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];    
-    buyState_ = kStateNoPurchase;
     [self finishLoading];
     
     NSString *errorText;
@@ -213,8 +190,7 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
 
 - (void) productPurchased:(NSNotification *)notification
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];    
-    buyState_ = kStateNoPurchase;    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];      
     
     [self finishLoading];    
     [self reloadScreen];
@@ -227,8 +203,7 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
 
 - (void) productPurchasedFailed:(NSNotification *)notification
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];    
-    buyState_ = kStateNoPurchase;    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];        
     [self finishLoading];    
     
     NSInteger rc = [[notification object] integerValue];
@@ -237,26 +212,23 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
         [self showDialog:@"Error" text:@"Oops! Unable to make purchase. Try again later."];                
     }
 }
+ */
 
 #pragma mark - Delegate Methods
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    /*
     // Assume that all other 
     if (buttonIndex != 0) {
         [self buyProduct:kStateBuyCurrentPack];
     }
+     */
 }
 
 - (void) buttonClicked:(Button *)button
 {
     switch (button.numID) {
-        case kButtonBuyAllPacks:
-            [self buyProduct:kStateBuyAllPacks];
-            break;
-        case kButtonBuyCurrentPack:
-            [self buyProduct:kStateBuyCurrentPack];         
-            break;
         case kButtonBack:
             [self loadMainMenu];
             break;
@@ -264,6 +236,7 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
             break;
     }
 }
+
 
 - (void) scrollingMenuItemClicked:(ScrollingMenu *)scrollingMenu menuItem:(ScrollingMenuItem *)menuItem
 {
@@ -274,12 +247,20 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
             [self loadSong:[songNames_ objectAtIndex:menuItem.numID]];
             break;
         case kScrollingMenuPack:
+            [[AudioManager audioManager] playSound:kB4 instrument:kMenu];            
             packName = [packNames_ objectAtIndex:menuItem.numID];
+#if IAP_ON
+            // If selected pack is not a default pack and all packs haven't been purchased
+            if (![[DataUtility manager] isDefaultPack:packName] && ![[SeatunesIAPHelper manager] allPacksPurchased]) {
+                [[SeatunesIAPHelper manager] buyProduct:self];                  
+            }
+#endif
+            
             if (currentPack_ != menuItem.numID) {
                 [self togglePackSelect:menuItem.numID];
                 [self loadSongMenu:menuItem.numID];
-                [[AudioManager audioManager] playSound:kB4 instrument:kMenu];
             }
+            
             break;
         default:
             break; 
@@ -347,7 +328,12 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     
     NSUInteger idx = 0;
     for (NSString *packName in packNames_) {    
-        ScrollingMenuItem *menuItem = [PackMenuItem packenuItem:packName packIndex:idx++ isLocked:NO];
+#if IAP_ON
+        BOOL isLocked = ![[DataUtility manager] isDefaultPack:packName];
+#else
+        BOOL isLocked = NO;
+#endif
+        ScrollingMenuItem *menuItem = [PackMenuItem packenuItem:packName packIndex:idx++ isLocked:isLocked];
         [packMenu_ addMenuItem:menuItem];
     }
 }
@@ -370,7 +356,7 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     
     // Unlocked if either default or has been purchased 
 #if IAP_ON
-    BOOL isLocked = !([[DataUtility manager] isDefaultPack:packName] || [[SeatunesIAPHelper manager] packPurchased:packName]);
+    BOOL isLocked = ![[DataUtility manager] isDefaultPack:packName];
 #else
     BOOL isLocked = NO;
 #endif
@@ -394,46 +380,15 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     }    
     
     songDownArrow_.visible = [songMenu_ isDownArrowNeeded];
-    
-#if IAP_ON    
-    // If locked, add purchase button
-    if (isLocked) {
-        packButton_ = [[StarfishButton starfishButton:kButtonBuyCurrentPack text:@"Buy Pack"] retain];
-        packButton_.delegate = self;
-        packButton_.position = ccp(PMS_CURRENT_PACK_BUTTON_X, PMS_CURRENT_PACK_BUTTON_Y);
-        [self addChild:packButton_];
-    }
-#endif
 }
 
-- (void) reloadScreen
-{
-    // Check if all packs purchased. If not, add button
-    if (![[SeatunesIAPHelper manager] allPacksPurchased]) {
-        [self addBuyAllButton];
-    }
+- (void) purchaseComplete
+{    
+    [self cleanupSongMenu];  
+    [self cleanupPackMenu];
     
-    // Reload the current song menu
+    [self loadPackMenu];
     [self loadSongMenu:currentPack_];
-}
-
-- (void) addBuyAllButton
-{
-    if (allPacksButton_ == nil) {
-        allPacksButton_ = [[StarfishButton starfishButton:kButtonBuyAllPacks text:@"Buy All"] retain];
-        allPacksButton_.delegate = self;
-        allPacksButton_.position = ccp(PMS_ALL_PACKS_BUTTON_X, PMS_ALL_PACKS_BUTTON_Y);
-        [self addChild:allPacksButton_];    
-    }
-}
-
-- (void) removeBuyAllButton
-{
-    if (allPacksButton_ != nil) {
-        [allPacksButton_ removeFromParentAndCleanup:YES];
-        [allPacksButton_ release];
-        allPacksButton_ = nil;   
-    }
 }
 
 - (void) loadMainMenu
@@ -445,32 +400,28 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
 }
 
 - (void) loadSong:(NSString *)songName
-{
-#if DEBUG_ALLUNLOCK
-    [[AudioManager audioManager] playSound:kF4 instrument:kMenu];      
-    // Check if song is a training song
-    if ([[DataUtility manager] isTrainingSong:songName]) {
-        CCScene *scene = [GameScene startWithDifficulty:kDifficultyMusicNoteTutorial songName:songName packIndex:currentPack_];
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];        
-    }
-    else {
+{  
+    NSString *packName = [packNames_ objectAtIndex:currentPack_];      
+    // Check if current pack is among the defaults or all packs have been unlocked
+    if ([[DataUtility manager] isDefaultPack:packName] || [[SeatunesIAPHelper manager] allPacksPurchased]) {
     
-        CCScene *scene = [DifficultyMenuScene startWithSongName:songName packIndex:currentPack_];
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
-        [[AudioManager audioManager] playSoundEffect:kPageFlip];    
+        [[AudioManager audioManager] playSound:kF4 instrument:kMenu];      
+        // Check if song is a training song
+        if ([[DataUtility manager] isTrainingSong:songName]) {
+            CCScene *scene = [GameScene startWithDifficulty:kDifficultyMusicNoteTutorial songName:songName packIndex:currentPack_];
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];        
+        }
+        else {
+        
+            CCScene *scene = [DifficultyMenuScene startWithSongName:songName packIndex:currentPack_];
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
+            [[AudioManager audioManager] playSoundEffect:kPageFlip];    
+        }
     }
-    
-#else
-    // Check if pack is locked
-    if ([[SeatunesIAPHelper manager] packPurchased:currentPack_]) {    
-        CCScene *scene = [DifficultyMenuScene startWithSongName:songName];
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
-        [[AudioManager audioManager] playSoundEffect:kPageFlip];    
-    }
+    // Else user is trying to click on a locked song
     else {
-        [self showBuyDialog];
+        //[[AudioManager audioManager] playSound:kA4 instrument:kMuted];          
     }
-#endif
 }
 
 - (void) cleanupSongMenu
@@ -479,10 +430,6 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     [songMenu_ removeSuperview];
     [songMenu_ release];   
     songMenu_ = nil;
-    
-    [packButton_ removeFromParentAndCleanup:YES];
-    [packButton_ release];
-    packButton_ = nil;
 }
 
 - (void) cleanupPackMenu
@@ -499,23 +446,8 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     [message show];
 }
 
-- (void) showBuyDialog
-{
-    NSString *title = @"Pack Not Purchased";
-    NSString *text = [NSString stringWithFormat:@"To play this song, the %@ must be purchased.\nBuy it now?", currentPack_];
-    UIAlertView *message = [[[UIAlertView alloc] initWithTitle:title message:text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil] autorelease];
-    [message show];    
-}
-
 - (void) showLoading
-{
-    if (allPacksButton_) {
-        allPacksButton_.isClickable = NO;
-    }
-    if (packButton_.isClickable) {
-        packButton_.isClickable = NO;
-    }
-    
+{    
     songMenu_.isClickable = NO;
     packMenu_.isClickable = NO;    
 
@@ -528,13 +460,6 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     [loadingIndicator_ remove];
     [loadingIndicator_ release];
     loadingIndicator_ = nil;
-
-    if (allPacksButton_) {
-        allPacksButton_.isClickable = YES;
-    }
-    if (packButton_.isClickable) {
-        packButton_.isClickable = YES;
-    }    
     
     songMenu_.isClickable = YES;
     packMenu_.isClickable = YES;

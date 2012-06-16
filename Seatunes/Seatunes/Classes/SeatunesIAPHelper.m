@@ -8,6 +8,7 @@
 
 #import "SeatunesIAPHelper.h"
 #import "DataUtility.h"
+#import "Utility.h"
 
 @implementation SeatunesIAPHelper
 
@@ -49,7 +50,7 @@ static SeatunesIAPHelper *manager_ = nil;
 {
     if ((self = [super init])) {
         
-        
+        delegate_ = nil;
         
     }
     
@@ -61,19 +62,33 @@ static SeatunesIAPHelper *manager_ = nil;
     [super dealloc];
 }
 
+#pragma mark - Delegate Methods
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    /*
+     // Assume that all other 
+     if (buttonIndex != 0) {
+     [self buyProduct:kStateBuyCurrentPack];
+     }
+     */
+}
+
+#pragma mark - Helper Methods
+
 - (BOOL) allPacksPurchased
 {
     NSString *productIdentifier = [[DataUtility manager] productIdentifierFromName:kAllPacks];
-    return [self productPurchased:productIdentifier];
+    return [self productIdentifierPurchased:productIdentifier];
 }
 
 - (BOOL) packPurchased:(NSString *)packName
 {
     NSString *productIdentifier = [[DataUtility manager] productIdentifierFromName:packName];
-    return [self productPurchased:productIdentifier];
+    return [self productIdentifierPurchased:productIdentifier];
 }
 
-- (BOOL) productPurchased:(NSString *)productIdentifier
+- (BOOL) productIdentifierPurchased:(NSString *)productIdentifier
 {
     // Check if all packs purchased, if so, this means all products will return true
     if ([purchasedProducts_ containsObject:[[DataUtility manager] productIdentifierFromName:kAllPacks]]) {
@@ -81,6 +96,112 @@ static SeatunesIAPHelper *manager_ = nil;
     }
     
     return [purchasedProducts_ containsObject:productIdentifier];
+}
+
+- (void) showDialog:(NSString *)title text:(NSString *)text
+{
+    UIAlertView *message = [[[UIAlertView alloc] initWithTitle:title message:text delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+    [message show];
+}
+
+#pragma mark - In-App Purchase Methods
+
+- (void) buyProduct:(id <IAPDelegate>)delegate
+{
+    delegate_ = delegate;
+    
+    // Check for a connection
+    if ([Utility hasInternetConnection]) {
+        
+        if (delegate_ && [delegate_ respondsToSelector:@selector(showLoading)]) {
+            [delegate_ showLoading];
+        }
+        
+        // Setup the notifications
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productsLoaded) name:kProductsLoadedNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productsLoadedFailed:) name:kProductsLoadedFailedNotification object:nil];            
+        
+        // Make the call to request the products first
+        [self requestProducts];   
+    }
+    else {
+        [self showDialog:@"Error" text:@"Internet connection required to make this purchase!"];
+    }   
+}
+
+- (void) productsLoaded
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];    
+    
+    NSString *productIdentifier = [[DataUtility manager] productIdentifierFromName:kAllPacks];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:kProductPurchaseNotification object:nil];       
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchasedFailed:) name:kProductPurchaseFailedNotification object:nil];    
+    [[SeatunesIAPHelper manager] buyProductIdentifier:productIdentifier];      
+}
+
+- (void) productsLoadedFailed:(NSNotification *)notification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];    
+    
+    if (delegate_ && [delegate_ respondsToSelector:@selector(finishLoading)]) {
+        [delegate_ finishLoading];
+    }
+    
+    NSString *errorText;
+    NSInteger rc = [[notification object] integerValue];
+    
+    switch (rc) {
+        case kIAPPurchasesLocked:
+            errorText = @"Oops! Purchases are locked. Go ask your parents to unlock this! (Settings > General > Restrictions)";
+            break;
+        default:
+            errorText = @"Oops! Could not connect to the server. Try again later!";
+            break;
+    }
+    [self showDialog:@"Error" text:errorText];    
+    delegate_ = nil;    
+    
+#if DEBUG_IAP
+    NSLog(@"Error - Product loading failed, rc: %d", rc);
+#endif
+}
+
+- (void) productPurchased:(NSNotification *)notification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];      
+    
+    if (delegate_) {        
+        [delegate_ purchaseComplete];
+        
+        if ([delegate_ respondsToSelector:@selector(finishLoading)]) {
+            [delegate_ finishLoading];
+        }        
+    }
+    
+    delegate_ = nil;
+    
+#if DEBUG_IAP
+    NSString *productIdentifier = [notification object];
+    NSLog(@"Successfully bought %@", productIdentifier);
+#endif
+}
+
+- (void) productPurchasedFailed:(NSNotification *)notification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];   
+    
+    if (delegate_ && [delegate_ respondsToSelector:@selector(finishLoading)]) {
+        [delegate_ finishLoading];
+    }
+    
+    NSInteger rc = [[notification object] integerValue];
+    
+    if (rc != kIAPUserCancelled) {
+        [self showDialog:@"Error" text:@"Oops! Unable to make purchase. Try again later."];                
+    }
+    
+    delegate_ = nil;    
 }
 
 @end

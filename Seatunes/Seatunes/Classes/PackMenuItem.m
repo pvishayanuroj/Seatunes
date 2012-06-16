@@ -13,6 +13,8 @@
 
 static const CGFloat PMI_CELL_HEIGHT = PACK_MENU_CELL_HEIGHT;
 static const CGFloat PMI_SPRITE_X = 100.0f;
+static const CGFloat PMI_LOCK_X = 170.0f;
+static const CGFloat PMI_LOCK_Y = -60.0f;
 
 + (id) packenuItem:(NSString *)packName packIndex:(NSUInteger)packIndex isLocked:(BOOL)isLocked
 {
@@ -26,27 +28,18 @@ static const CGFloat PMI_SPRITE_X = 100.0f;
         isLocked_ = isLocked;
         packName_ = [packName retain];
         
-        NSString *filename;
-        if (isLocked) {
-            filename = [NSString stringWithFormat:@"%@ Locked", packName];
-        }
-        else {
-            filename = [NSString stringWithFormat:@"%@", packName];
-        }
-        
-        /*
-        if (packIndex == 0) {
-            filename = [filename stringByAppendingFormat:@" Selected.png"];
-        }
-        else {
-            filename = [filename stringByAppendingFormat:@" Unselected.png"];
-        }
-         */
-        filename = [filename stringByAppendingFormat:@" Unselected.png"];        
+        NSString *filename = [NSString stringWithFormat:@"%@ Unselected.png", packName];      
         
         sprite_ = [[CCSprite spriteWithFile:filename] retain];
         sprite_.position = ccp(PMI_SPRITE_X, 0);
-        [self addChild:sprite_];
+        [self addChild:sprite_ z:1];
+
+        if (isLocked) {
+            CCSprite *lock = [CCSprite spriteWithFile:@"Lock Icon.png"];
+            lock.scale = 0.7f;
+            lock.position = ccp(PMI_LOCK_X, PMI_LOCK_Y);
+            [self addChild:lock z:2];
+        }        
     }
     return self;
 }
@@ -85,12 +78,15 @@ static const CGFloat PMI_SPRITE_X = 100.0f;
 - (void) toggleSelected:(BOOL)selected
 {
     NSString *filename;
+    /*
     if (isLocked_) {
         filename = [NSString stringWithFormat:@"%@ Locked", packName_];
     }
     else {
         filename = [NSString stringWithFormat:@"%@", packName_];
     }
+     */
+    filename = [NSString stringWithFormat:@"%@", packName_];
     
     if (selected) {
         filename = [filename stringByAppendingFormat:@" Selected.png"];

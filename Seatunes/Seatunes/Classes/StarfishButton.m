@@ -17,18 +17,23 @@ static const CGFloat SB_LABEL_X = 75.0f;
 
 + (id) starfishButton:(NSUInteger)numID text:(NSString *)text
 {
-    return [[[self alloc] initStarfishButton:numID text:text] autorelease];
+    return [[[self alloc] initStarfishButton:numID text:text image:@"Starfish Button.png" fnt:@"MenuFont.fnt"] autorelease];
 }
 
-- (id) initStarfishButton:(NSUInteger)numID text:(NSString *)text
++ (id) starfishButtonUnselected:(NSUInteger)numID text:(NSString *)text
+{
+    return [[[self alloc] initStarfishButton:numID text:text image:@"Starfish Button Unselected.png" fnt:@"MenuFontDisabled.fnt"] autorelease];
+}
+
+- (id) initStarfishButton:(NSUInteger)numID text:(NSString *)text image:(NSString *)image fnt:(NSString *)fnt
 {
     if ((self = [super initButton:numID toggle:NO])) {
         
         isSpinning_ = NO;
-        sprite_ = [[CCSprite spriteWithFile:@"Starfish Button.png"] retain];
+        sprite_ = [[CCSprite spriteWithFile:image] retain];
         [self addChild:sprite_];
         
-        label_ = [[CCLabelBMFont labelWithString:text fntFile:@"MenuFont.fnt"] retain];
+        label_ = [[CCLabelBMFont labelWithString:text fntFile:fnt] retain];
         label_.position = ccp(SB_LABEL_X, 0);
         label_.anchorPoint = ccp(0, 0.5f);
         [self addChild:label_];

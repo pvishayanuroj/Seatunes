@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "ButtonDelegate.h"
+#import "IAPDelegate.h"
 
 enum {
     kPlayButton,
@@ -20,10 +21,20 @@ enum {
 };
 
 @class ScaledImageButton;
+@class Button;
+@class LoadingIndicator;
 
-@interface MainMenuScene : CCScene <ButtonDelegate> {
+@interface MainMenuScene : CCScene <ButtonDelegate, IAPDelegate> {
  
+    Button *freePlayButton_;
+    
+    Button *playButton_;
+    
     ScaledImageButton *musicButton_;
+    
+    LoadingIndicator *loadingIndicator_;    
+    
+    CCSprite *lockIcon_;
     
 }
 
