@@ -321,7 +321,8 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
 
 - (void) loadSong:(NSString *)songName
 {  
-    NSString *packName = [packNames_ objectAtIndex:currentPack_];      
+#if IAP_ON
+    NSString *packName = [packNames_ objectAtIndex:currentPack_];          
     // Check if current pack is among the defaults or all packs have been unlocked
     if ([[DataUtility manager] isDefaultPack:packName] || [[SeatunesIAPHelper manager] allPacksPurchased]) {
     
@@ -342,6 +343,20 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     else {
         //[[AudioManager audioManager] playSound:kA4 instrument:kMuted];          
     }
+#else
+    [[AudioManager audioManager] playSound:kF4 instrument:kMenu];      
+    // Check if song is a training song
+    if ([[DataUtility manager] isTrainingSong:songName]) {
+        CCScene *scene = [GameScene startWithDifficulty:kDifficultyMusicNoteTutorial songName:songName packIndex:currentPack_];
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];        
+    }
+    else {
+        
+        CCScene *scene = [DifficultyMenuScene startWithSongName:songName packIndex:currentPack_];
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];
+        [[AudioManager audioManager] playSoundEffect:kPageFlip];    
+    }    
+#endif
 }
 
 - (void) cleanupSongMenu
