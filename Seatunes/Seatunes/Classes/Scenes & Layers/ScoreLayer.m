@@ -109,7 +109,7 @@ static const CGFloat SL_MENU_Y = 430.0f;
         [self addChild:statsLabel_];
         
         // Record the score if it is good enough
-        if (scoreInfo.percentage >= PERCENT_FOR_BADGE) {
+        if (scoreInfo.percentage >= PERCENT_FOR_BADGE && !scoreInfo.helpUsed) {
             [[DataUtility manager] saveSongScore:songName difficulty:scoreInfo.difficulty];            
         }
         
