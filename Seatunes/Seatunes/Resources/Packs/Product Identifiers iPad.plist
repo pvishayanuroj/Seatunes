@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Product Name</key>
+		<string>Lesson Pack</string>
+		<key>Product Identifier</key>
+		<string>com.vindustries.Seatunes.lessontest</string>
+	</dict>
+	<dict>
+		<key>Product Name</key>
+		<string>Nursery Pack</string>
+		<key>Product Identifier</key>
+		<string>com.vindustries.Seatunes.nurserytest</string>
+	</dict>
+	<dict>
+		<key>Product Name</key>
+		<string>Classics Pack</string>
+		<key>Product Identifier</key>
+		<string>com.vindustries.Seatunes.classicstest</string>
+	</dict>
+	<dict>
+		<key>Product Name</key>
+		<string>Christmas Pack</string>
+		<key>Product Identifier</key>
+		<string>com.vindustries.Seatunes.christmastest</string>
+	</dict>
+	<dict>
+		<key>Product Name</key>
+		<string>All Packs</string>
+		<key>Product Identifier</key>
+		<string>com.beanstalkstudios.Seatunes.allpacks</string>
+	</dict>
+</array>
+</plist>

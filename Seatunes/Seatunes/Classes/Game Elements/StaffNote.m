@@ -135,7 +135,7 @@ static const CGFloat SN_NAME_Y = 90.0f;
 - (void) moveAcross
 {
     state_ = kStaffNoteActive;
-    CCActionInterval *move = [CCMoveBy actionWithDuration:6.0f position:ccp(SN_MOVE_X, 0)];
+    CCActionInterval *move = [CCMoveBy actionWithDuration:6.0f position:ADJUST_IPAD_CCP(ccp(SN_MOVE_X, 0))];
     [self runAction:move];
     
     if (showName_) {

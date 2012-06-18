@@ -131,7 +131,12 @@ static DataUtility *manager_ = nil;
     defaultPacks_ = [[NSArray arrayWithContentsOfFile:path] retain];       
     
     // Load product identifiers
-	path = [[NSBundle mainBundle] pathForResource:@"Product Identifiers" ofType:@"plist"];
+    if (IS_IPAD()) {
+        path = [[NSBundle mainBundle] pathForResource:@"Product Identifiers iPad" ofType:@"plist"];
+    }
+    else {
+        path = [[NSBundle mainBundle] pathForResource:@"Product Identifiers iPhone" ofType:@"plist"];
+    }
     NSArray *data = [NSArray arrayWithContentsOfFile:path];
     
     NSMutableDictionary *packNames = [NSMutableDictionary dictionary];
