@@ -123,9 +123,9 @@
 	
 	// Run the intro Scene
     [glView setMultipleTouchEnabled:YES];
-	//[[CCDirector sharedDirector] runWithScene: [MainMenuScene node]];
+	[[CCDirector sharedDirector] runWithScene: [MainMenuScene node]];
 
-    
+    /*
     [AudioManager audioManager];
     [DataUtility manager];
     ScoreInfo score;
@@ -135,7 +135,7 @@
     score.helpUsed = NO;
     score.percentage = 90;
     [[CCDirector sharedDirector] runWithScene:[ScoreScene scoreScene:score songName:@"Twinkle Twinkle" packIndex:0]];
-    
+    */
     
     /*
     [DataUtility manager];

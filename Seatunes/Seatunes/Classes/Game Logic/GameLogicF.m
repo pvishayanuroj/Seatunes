@@ -218,6 +218,8 @@ static const NSInteger GLF_READER_Z = 8;
 
 - (void) noteCrossedBoundary:(Note *)note
 {
+    [[AudioManager audioManager] playSoundEffect:kBubblePop];    
+    [instructor_ showWrongNote];        
     [self removeNote];
     [score_ setObject:[NSNumber numberWithInteger:kNoteMissed] forKey:[NSNumber numberWithUnsignedInteger:note.numID]];       
     
