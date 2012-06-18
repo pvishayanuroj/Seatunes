@@ -32,12 +32,20 @@
 
 static const CGFloat GL_SIDEMENU_BUTTON_X = 970.0f;
 static const CGFloat GL_SIDEMENU_BUTTON_Y = 720.0f;
+static const CGFloat GL_SIDEMENU_BUTTON_X_M = 454.0f;
+static const CGFloat GL_SIDEMENU_BUTTON_Y_M = 295.0f;
 static const CGFloat GL_SIDEMENU_BUTTON_LABEL_X = 970.0f;
 static const CGFloat GL_SIDEMENU_BUTTON_LABEL_Y = 670.0f;
+static const CGFloat GL_SIDEMENU_BUTTON_LABEL_X_M = 454.0f;
+static const CGFloat GL_SIDEMENU_BUTTON_LABEL_Y_M = 274.2f;
 static const CGFloat GL_HELP_BUTTON_X = 850.0f;
 static const CGFloat GL_HELP_BUTTON_Y = 730.0f;
+static const CGFloat GL_HELP_BUTTON_X_M = 398.4f;
+static const CGFloat GL_HELP_BUTTON_Y_M = 302.0f;
 static const CGFloat GL_HELP_BUTTON_LABEL_X = 850.0f;
 static const CGFloat GL_HELP_BUTTON_LABEL_Y = 690.0f;
+static const CGFloat GL_HELP_BUTTON_LABEL_X_M = 398.4f;
+static const CGFloat GL_HELP_BUTTON_LABEL_Y_M = 285.0f;
 
 static const CGFloat GL_SIDEMENU_ROTATION = 180.0f;
 static const CGFloat GL_SIDEMENU_ITEM_PADDING = 150.0f;
@@ -75,7 +83,7 @@ static const CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         
         sideMenuButton_ = [[ImageButton imageButton:kButtonSideMenu unselectedImage:@"Starfish Button.png" selectedImage:@"Starfish Button.png"] retain];
         sideMenuButton_.delegate = self;
-        sideMenuButton_.position = ADJUST_IPAD_CCP(ccp(GL_SIDEMENU_BUTTON_X, GL_SIDEMENU_BUTTON_Y));
+        sideMenuButton_.position = CHOOSE_REL_CCP(ccp(GL_SIDEMENU_BUTTON_X, GL_SIDEMENU_BUTTON_Y), ccp(GL_SIDEMENU_BUTTON_X_M, GL_SIDEMENU_BUTTON_Y_M));
 
         sideMenu_ = [[Menu menu:CHOOSE_REL_CCP(GL_SIDEMENU_ITEM_PADDING, GL_SIDEMENU_ITEM_PADDING_M) isVertical:YES offset:0.0f] retain];
         sideMenu_.delegate = self; 
@@ -98,7 +106,7 @@ static const CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
                 break;
             case kDifficultyHard:
                 helpButton_ = [[ScaledImageButton scaledImageButton:kButtonHelp image:@"Help Button.png" scale:0.8f] retain];
-                helpButton_.position = ADJUST_IPAD_CCP(ccp(GL_HELP_BUTTON_X, GL_HELP_BUTTON_Y));
+                helpButton_.position = CHOOSE_REL_CCP(ccp(GL_HELP_BUTTON_X, GL_HELP_BUTTON_Y), ccp(GL_HELP_BUTTON_X_M, GL_HELP_BUTTON_Y_M));
                 helpButton_.delegate = self;                
                 gameLogic_ = [[GameLogicE gameLogicE:songName] retain];            
                 break;
@@ -116,14 +124,14 @@ static const CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
         if (helpButton_) {
             [self addChild:helpButton_];   
             CCLabelBMFont *helpLabel = [CCLabelBMFont labelWithString:@"Help" fntFile:@"MenuFont.fnt"];
-            helpLabel.position = ADJUST_IPAD_CCP(ccp(GL_HELP_BUTTON_LABEL_X, GL_HELP_BUTTON_LABEL_Y));
+            helpLabel.position = CHOOSE_REL_CCP(ccp(GL_HELP_BUTTON_LABEL_X, GL_HELP_BUTTON_LABEL_Y), ccp(GL_HELP_BUTTON_LABEL_X_M, GL_HELP_BUTTON_LABEL_Y_M));
             [self addChild:helpLabel];            
         }
         [self addChild:sideMenuButton_];        
         [self addChild:sideMenu_];         
         
         CCLabelBMFont *menuLabel = [CCLabelBMFont labelWithString:@"Menu" fntFile:@"MenuFont.fnt"];
-        menuLabel.position = ADJUST_IPAD_CCP(ccp(GL_SIDEMENU_BUTTON_LABEL_X, GL_SIDEMENU_BUTTON_LABEL_Y));
+        menuLabel.position = CHOOSE_REL_CCP(ccp(GL_SIDEMENU_BUTTON_LABEL_X, GL_SIDEMENU_BUTTON_LABEL_Y), ccp(GL_SIDEMENU_BUTTON_LABEL_X_M, GL_SIDEMENU_BUTTON_LABEL_Y_M));
         [self addChild:menuLabel];
     }
     return self;

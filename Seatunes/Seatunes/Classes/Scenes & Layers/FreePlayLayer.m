@@ -31,6 +31,10 @@ static const CGFloat FPL_SIDEMENU_BUTTON_X = 970.0f;
 static const CGFloat FPL_SIDEMENU_BUTTON_Y = 720.0f;
 static const CGFloat FPL_SIDEMENU_BUTTON_LABEL_X = 970.0f;
 static const CGFloat FPL_SIDEMENU_BUTTON_LABEL_Y = 670.0f;
+static const CGFloat FPL_SIDEMENU_BUTTON_X_M = 454.0f;
+static const CGFloat FPL_SIDEMENU_BUTTON_Y_M = 295.0f;
+static const CGFloat FPL_SIDEMENU_BUTTON_LABEL_X_M = 454.0f;
+static const CGFloat FPL_SIDEMENU_BUTTON_LABEL_Y_M = 274.2f;
 static const CGFloat FPL_SIDEMENU_ROTATION = 180.0f;
 static const CGFloat FPL_SIDEMENU_ITEM_PADDING = 150.0f;
 static const CGFloat FPL_SIDEMENU_ITEM_PADDING_M = 78.0f;
@@ -94,7 +98,7 @@ static const NSInteger FPL_MENU_LABEL_Z = 10;
         
         sideMenuButton_ = [[ImageButton imageButton:kButtonSideMenu unselectedImage:@"Starfish Button.png" selectedImage:@"Starfish Button.png"] retain];
         sideMenuButton_.delegate = self;
-        sideMenuButton_.position = ADJUST_IPAD_CCP(ccp(FPL_SIDEMENU_BUTTON_X, FPL_SIDEMENU_BUTTON_Y));
+        sideMenuButton_.position = CHOOSE_REL_CCP(ccp(FPL_SIDEMENU_BUTTON_X, FPL_SIDEMENU_BUTTON_Y), ccp(FPL_SIDEMENU_BUTTON_X_M, FPL_SIDEMENU_BUTTON_Y_M));
         
         sideMenu_ = [[Menu menu:CHOOSE_REL_CCP(FPL_SIDEMENU_ITEM_PADDING, FPL_SIDEMENU_ITEM_PADDING_M) isVertical:YES offset:0.0f] retain];        
         sideMenu_.delegate = self; 
@@ -112,7 +116,7 @@ static const NSInteger FPL_MENU_LABEL_Z = 10;
         [self addChild:sideMenu_ z:FPL_SIDEMENU_Z];           
         
         CCLabelBMFont *menuLabel = [CCLabelBMFont labelWithString:@"Menu" fntFile:@"MenuFont.fnt"];
-        menuLabel.position = ADJUST_IPAD_CCP(ccp(FPL_SIDEMENU_BUTTON_LABEL_X, FPL_SIDEMENU_BUTTON_LABEL_Y));
+        menuLabel.position = CHOOSE_REL_CCP(ccp(FPL_SIDEMENU_BUTTON_LABEL_X, FPL_SIDEMENU_BUTTON_LABEL_Y), ccp(FPL_SIDEMENU_BUTTON_LABEL_X_M, FPL_SIDEMENU_BUTTON_LABEL_Y_M));
         [self addChild:menuLabel z:FPL_MENU_LABEL_Z];       
     }
     return self;
