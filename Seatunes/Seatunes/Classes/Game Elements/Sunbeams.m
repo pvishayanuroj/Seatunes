@@ -12,26 +12,22 @@
 
 @implementation Sunbeams
 
-static const CGFloat SB_POS0_X = 150.0f;
-static const CGFloat SB_POS0_Y = 670.0f;
-static const CGFloat SB_POS1_X = 250.0f;
-static const CGFloat SB_POS1_Y = 600.0f;
-static const CGFloat SB_POS2_X = 470.0f; 
-static const CGFloat SB_POS2_Y = 700.0f;
-static const CGFloat SB_POS3_X = 540.0f;
-static const CGFloat SB_POS3_Y = 650.0f;
-static const CGFloat SB_POS4_X = 740.0f;
-static const CGFloat SB_POS4_Y = 650.0f;
-static const CGFloat SB_POS5_X = 910.0f;
-static const CGFloat SB_POS5_Y = 650.0f;
+#define SB_POS0_X 150
+#define SB_POS0_Y 670
+#define SB_POS1_X 250
+#define SB_POS1_Y 600
+#define SB_POS2_X 470 
+#define SB_POS2_Y 700
+#define SB_POS3_X 540
+#define SB_POS3_Y 650
+#define SB_POS4_X 740
+#define SB_POS4_Y 650
+#define SB_POS5_X 910
+#define SB_POS5_Y 650
 
-static const CGFloat SB_POS_X[NUM_SUNBEAMS] = {1,1,1,1,1,1};
-static const CGFloat SB_POS_Y[NUM_SUNBEAMS] = {1,1,1,1,1,1};
-
-/*
 static const CGFloat SB_POS_X[NUM_SUNBEAMS] = {SB_POS0_X, SB_POS1_X, SB_POS2_X, SB_POS3_X, SB_POS4_X, SB_POS5_X};
 static const CGFloat SB_POS_Y[NUM_SUNBEAMS] = {SB_POS0_Y, SB_POS1_Y, SB_POS2_Y, SB_POS3_Y, SB_POS4_Y, SB_POS5_Y};
-*/
+
 static const CGFloat SB_FADE_IN_DURATION = 0.35f;
 static const CGFloat SB_FADE_OUT_DURATION = 0.35f;
 
@@ -61,7 +57,7 @@ static const CGFloat SB_FADE_OUT_DURATION = 0.35f;
             
             NSString *spriteName = [NSString stringWithFormat:@"Sunbeam %d.png", i];
             CCSprite *sprite = [CCSprite spriteWithFile:spriteName];
-            sprite.position = ccp(SB_POS_X[i], SB_POS_Y[i]);
+            sprite.position = ADJUST_IPAD_CCP(ccp(SB_POS_X[i], SB_POS_Y[i]));
             [self addChild:sprite];
             
             [sprites_ addObject:sprite];
@@ -98,7 +94,7 @@ static const CGFloat SB_FADE_OUT_DURATION = 0.35f;
                 NSInteger i = [number integerValue];
                 NSString *spriteName = [NSString stringWithFormat:@"Sunbeam %d.png", i];
                 Sunbeam *sunbeam = [Sunbeam sunbeam:spriteName period:0.5f];
-                sunbeam.position = ccp(SB_POS_X[i], SB_POS_Y[i]);
+                sunbeam.position = ADJUST_IPAD_CCP(ccp(SB_POS_X[i], SB_POS_Y[i]));
                 [self addChild:sunbeam];
             }];
             
