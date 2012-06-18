@@ -14,6 +14,8 @@
 #define kAllPacks @"All Packs"
 #define PACK_MENU_CELL_HEIGHT 160
 #define SONG_MENU_CELL_HEIGHT 55
+#define PACK_MENU_CELL_HEIGHT_M 80
+#define SONG_MENU_CELL_HEIGHT_M 25
 
 #define NUM_SUNBEAMS 6
 

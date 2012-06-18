@@ -13,6 +13,7 @@
 @implementation SongMenuItem
 
 static const CGFloat SMI_CELL_HEIGHT = SONG_MENU_CELL_HEIGHT;
+static const CGFloat SMI_CELL_HEIGHT_M = SONG_MENU_CELL_HEIGHT_M;
 
 static const CGFloat SMI_SONG_NAME_X = 200.0f;
 static const CGFloat SMI_LOCKED_ICON_X = 100.0f;
@@ -28,7 +29,7 @@ static const CGFloat SMI_LOCK_SCALE = 0.25f;
 
 - (id) initSongMenuItem:(NSString *)songName scores:(NSDictionary *)scores songIndex:(NSUInteger)songIndex hasScore:(BOOL)hasScore locked:(BOOL)locked
 {
-    if ((self = [super initScrollingMenuItem:songIndex height:ADJUST_IPAD_HEIGHT(SMI_CELL_HEIGHT)])) {
+    if ((self = [super initScrollingMenuItem:songIndex height:CHOOSE_REL_CCP(SMI_CELL_HEIGHT, SMI_CELL_HEIGHT_M)])) {
         
         if (locked) {
             label_ = [[CCLabelBMFont labelWithString:songName fntFile:@"MenuFontDisabled.fnt"] retain];   

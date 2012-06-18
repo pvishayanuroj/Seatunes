@@ -238,9 +238,7 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     packNames_ = [[[DataUtility manager] allPackNames] retain];    
     
     CGRect menuFrame = ADJUST_IPAD_RECT(CGRectMake(PMS_PACK_MENU_X, PMS_PACK_MENU_Y, PMS_PACK_MENU_WIDTH, PMS_PACK_MENU_HEIGHT));
-    DebugRect(@"rect", menuFrame);
-    CGFloat scrollSize = ADJUST_IPAD_HEIGHT((CGFloat)PACK_MENU_CELL_HEIGHT) * [packNames_ count];
-    NSLog(@"scroll size: %4.2f", scrollSize);
+    CGFloat scrollSize = CHOOSE_REL_CCP((CGFloat)PACK_MENU_CELL_HEIGHT, (CGFloat)PACK_MENU_CELL_HEIGHT_M) * [packNames_ count];
     packMenu_ = [[ScrollingMenu scrollingMenu:menuFrame scrollSize:scrollSize numID:kScrollingMenuPack] retain]; 
     
     packMenu_.delegate = self;
@@ -283,7 +281,7 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     
     // Setup the scrolling menu for the songs
     CGRect menuFrame = ADJUST_IPAD_RECT(CGRectMake(PMS_SONG_MENU_X, PMS_SONG_MENU_Y, PMS_SONG_MENU_WIDTH, PMS_SONG_MENU_HEIGHT));
-    CGFloat scrollSize = ADJUST_IPAD_HEIGHT((CGFloat)SONG_MENU_CELL_HEIGHT) * [songNames_ count];
+    CGFloat scrollSize = CHOOSE_REL_CCP((CGFloat)SONG_MENU_CELL_HEIGHT, (CGFloat)SONG_MENU_CELL_HEIGHT_M) * [songNames_ count];
     songMenu_ = [[ScrollingMenu scrollingMenu:menuFrame scrollSize:scrollSize numID:kScrollingMenuSong] retain]; 
 
     songMenu_.delegate = self;

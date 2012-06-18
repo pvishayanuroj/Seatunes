@@ -11,6 +11,7 @@
 @implementation PackMenuItem
 
 static const CGFloat PMI_CELL_HEIGHT = PACK_MENU_CELL_HEIGHT;
+static const CGFloat PMI_CELL_HEIGHT_M = PACK_MENU_CELL_HEIGHT_M;
 static const CGFloat PMI_SPRITE_X = 100.0f;
 static const CGFloat PMI_LOCK_X = 170.0f;
 static const CGFloat PMI_LOCK_Y = -60.0f;
@@ -22,7 +23,7 @@ static const CGFloat PMI_LOCK_Y = -60.0f;
 
 - (id) initPackMenuItem:(NSString *)packName packIndex:(NSUInteger)packIndex isLocked:(BOOL)isLocked;
 {
-    if ((self = [super initScrollingMenuItem:packIndex height:ADJUST_IPAD_HEIGHT(PMI_CELL_HEIGHT)])) {
+    if ((self = [super initScrollingMenuItem:packIndex height:CHOOSE_REL_CCP(PMI_CELL_HEIGHT, PMI_CELL_HEIGHT_M)])) {
 
         isLocked_ = isLocked;
         packName_ = [packName retain];

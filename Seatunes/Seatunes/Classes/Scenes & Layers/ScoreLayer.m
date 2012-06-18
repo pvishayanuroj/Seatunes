@@ -327,7 +327,7 @@ static const CGFloat SL_MENU_Y = 430.0f;
     earnedText.position = ADJUST_IPAD_CCP(ccp(SL_EARNED_LABEL_X, SL_EARNED_LABEL_Y));
     earnedText.anchorPoint = ccp(0, 0.5f);
     [self addChild:earnedText];    
-    [[AudioManager audioManager] playSoundEffect:kWahWah];
+    //[[AudioManager audioManager] playSoundEffect:kWahWah];
 }
 
 - (void) placeNoBadgeFromHelp
