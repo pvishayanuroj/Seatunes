@@ -29,4 +29,6 @@
 
 - (NSDictionary *) textAndAudioFromSpeechTypes:(NSArray *)speechTypes;
 
+- (NSString *) keyFromSpeechType:(SpeechType)speechType;
+
 @end

@@ -15,7 +15,7 @@
 enum {
     kPlayButton,
     kFreePlayButton,
-    kBuySongsButton,
+    kMoreButton,
     kCreditsButton,
     kMusicButton
 };
@@ -29,6 +29,8 @@ enum {
     Button *freePlayButton_;
     
     Button *playButton_;
+    
+    Button *moreButton_;
     
     ScaledImageButton *musicButton_;
     

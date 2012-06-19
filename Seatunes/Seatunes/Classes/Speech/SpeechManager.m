@@ -195,6 +195,24 @@ static SpeechManager *_speechManager = nil;
         case kTutorialComplete:
             key = @"Tutorial Complete";
             break;
+        case kLOIntro:
+            key = @"seatunes-sam";            
+            break;
+        case kLORandom1:
+            key = @"colorful-ocean-awaits";            
+            break;
+        case kLORandom2:
+            key = @"discover-new-animals";            
+            break;
+        case kLORandom3:
+            key = @"follow-me";            
+            break;
+        case kLORandom4:
+            key = @"so-much-fun";            
+            break;
+        case kLORandom5:
+            key = @"time-for-exploration";            
+            break;
         default:
             break;
     }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>sam-eyes-01.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1,1},{52,5}}</string>
+			<key>offset</key>
+			<string>{0,0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0,0},{52,5}}</string>
+			<key>sourceSize</key>
+			<string>{104,10}</string>
+		</dict>
+		<key>sam-eyes-02.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1,7},{56,30}}</string>
+			<key>offset</key>
+			<string>{0,0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0,0},{56,30}}</string>
+			<key>sourceSize</key>
+			<string>{56,30}</string>
+		</dict>
+		<key>sam-eyes-03.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1,1},{52,5}}</string>
+			<key>offset</key>
+			<string>{0,0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0,0},{52,5}}</string>
+			<key>sourceSize</key>
+			<string>{52,5}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>realTextureFileName</key>
+		<string>sam-eyes.png</string>
+		<key>size</key>
+		<string>{128,128}</string>
+		<key>smartupdate</key>
+		<string>$TexturePacker:SmartUpdate:9d98ccec33f5991259da104dcaf540fb$</string>
+		<key>textureFileName</key>
+		<string>sam-eyes.png</string>
+	</dict>
+</dict>
+</plist>

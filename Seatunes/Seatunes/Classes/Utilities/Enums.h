@@ -175,7 +175,13 @@ typedef enum {
     kTutorialF,
     kTutorialA,
     kTutorialC,
-    kTutorialComplete    
+    kTutorialComplete,
+    kLOIntro,
+    kLORandom1,
+    kLORandom2,
+    kLORandom3,
+    kLORandom4,
+    kLORandom5
 } SpeechType;
 
 typedef struct {
