@@ -767,7 +767,6 @@
 		AEE5F56D158EBF4D003BF0D2 /* FontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE5F4F9158EBF4D003BF0D2 /* FontManager.m */; };
 		AEE5F56E158EBF4D003BF0D2 /* ZAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE5F4FB158EBF4D003BF0D2 /* ZAttributedString.m */; };
 		AEE5F56F158EBF4D003BF0D2 /* ZFont.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE5F4FE158EBF4D003BF0D2 /* ZFont.m */; };
-		AEE5F570158EBF4D003BF0D2 /* Apsalar.js in Sources */ = {isa = PBXBuildFile; fileRef = AEE5F501158EBF4D003BF0D2 /* Apsalar.js */; };
 		AEE5F571158EBF4D003BF0D2 /* libApsalar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE5F502158EBF4D003BF0D2 /* libApsalar.a */; };
 		AEE5F572158EBF4D003BF0D2 /* LICENSE_cocos2d.txt in Resources */ = {isa = PBXBuildFile; fileRef = AEE5F503158EBF4D003BF0D2 /* LICENSE_cocos2d.txt */; };
 		AEE5F573158EBF4D003BF0D2 /* LICENSE_CocosDenshion.txt in Resources */ = {isa = PBXBuildFile; fileRef = AEE5F504158EBF4D003BF0D2 /* LICENSE_CocosDenshion.txt */; };
@@ -5006,7 +5005,6 @@
 				AEE5F56D158EBF4D003BF0D2 /* FontManager.m in Sources */,
 				AEE5F56E158EBF4D003BF0D2 /* ZAttributedString.m in Sources */,
 				AEE5F56F158EBF4D003BF0D2 /* ZFont.m in Sources */,
-				AEE5F570158EBF4D003BF0D2 /* Apsalar.js in Sources */,
 				AEE5F576158EBF4D003BF0D2 /* CDataScanner.m in Sources */,
 				AEE5F577158EBF4D003BF0D2 /* CDataScanner_Extensions.m in Sources */,
 				AEE5F578158EBF4D003BF0D2 /* NSDictionary_JSONExtensions.m in Sources */,
@@ -5179,7 +5177,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Vishayanuroj (5FZQ8D9467)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paul Vishayanuroj (5FZQ8D9467)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5195,6 +5193,7 @@
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "18B8F406-28C5-4428-9A24-8774938989E1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "18B8F406-28C5-4428-9A24-8774938989E1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -5203,7 +5202,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				"ARCHS[sdk=*]" = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beanstalk Studios LLP";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beanstalk Studios LLP";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Seatunes For iPhone/Prefix.pch";
@@ -5217,6 +5225,8 @@
 				);
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9CA2B6F7-B19E-4F88-93AE-AE40201B97CC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9CA2B6F7-B19E-4F88-93AE-AE40201B97CC";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
