@@ -99,6 +99,8 @@ static const CGFloat CS_PADDING_Y = 90.0f;
 
 - (void) placeLine:(NSString *)role value:(NSString *)value
 {
+    [[AudioManager audioManager] playSoundEffect:kBubblePop];    
+    
     // Create labels
     CCLabelBMFont *roleLabel = [CCLabelBMFont labelWithString:role fntFile:@"MenuFont.fnt"];
     CCLabelBMFont *valueLabel = [CCLabelBMFont labelWithString:value fntFile:@"Dialogue Font.fnt"];
@@ -127,6 +129,8 @@ static const CGFloat CS_PADDING_Y = 90.0f;
 
 - (void) placeLogo
 {
+    [[AudioManager audioManager] playSoundEffect:kBubblePop];    
+    
     CCSprite *logo = [CCSprite spriteWithFile:@"Ink Blot Logo.png"];
     logo.scale = 0.8f;
     logo.position = ADJUST_IPAD_CCP(ccp(CS_LOGO_X, CS_LOGO_Y));
