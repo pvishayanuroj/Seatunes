@@ -16,7 +16,8 @@
 @class CharacterAvatar;
 
 enum {
-    kLOSBack
+    kLOSBack,
+    kLOSAppStore
 };
 
 @interface LittleOceanScene : CCScene <ButtonDelegate, AudioManagerDelegate, CharacterAvatarDelegate> {
@@ -28,6 +29,10 @@ enum {
     BOOL narrationPlaying_;
 }
 
+- (void) playRandomSpeech;
+
 - (void) loadMainMenu;
+
+- (void) loadAppStore;
 
 @end

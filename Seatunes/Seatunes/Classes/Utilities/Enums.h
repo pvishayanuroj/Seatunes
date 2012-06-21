@@ -11,6 +11,9 @@
 #define kProductsLoadedNotification @"ProductsLoaded"
 #define kProductsLoadedFailedNotification @"ProductsLoadedFailed"
 
+#define LITTLEOCEAN_IPHONE_APPSTORE_LINK @"itms-apps://itunes.com/apps/littleoceanforiphone"
+#define LITTLEOCEAN_IPAD_APPSTORE_LINK @"itms-apps://itunes.com/apps/littleocean"
+
 #define kAllPacks @"All Packs"
 #define PACK_MENU_CELL_HEIGHT 160
 #define SONG_MENU_CELL_HEIGHT 55

@@ -17,8 +17,14 @@
 
 static const CGFloat LOS_BACK_BUTTON_X = 50.0f;
 static const CGFloat LOS_BACK_BUTTON_Y = 730.0f;
+static const CGFloat LOS_LOGO_X = 700.0f;
+static const CGFloat LOS_LOGO_Y = 600.0f;
 static const CGFloat LOS_SAM_X = 300.0f;
 static const CGFloat LOS_SAM_Y = 300.0f;
+static const CGFloat LOS_APPSTORE_X = 800.0f;
+static const CGFloat LOS_APPSTORE_Y = 100.0f;
+
+#pragma mark - Object Lifecycle
 
 - (id) init
 {
@@ -40,6 +46,18 @@ static const CGFloat LOS_SAM_Y = 300.0f;
         [self addChild:avatar_];
         [avatar_ startIdleAnimation];
         
+        // Add logo
+        CCSprite *logo = [CCSprite spriteWithFile:@"Little Ocean Logo.png"];
+        logo.scale = 0.8f;
+        logo.position = ADJUST_IPAD_CCP(ccp(LOS_LOGO_X, LOS_LOGO_Y));
+        [self addChild:logo];
+        
+        // Add button
+        Button *appStoreButton = [ScaledImageButton scaledImageButton:kLOSAppStore image:@"Appstore Button.png"];
+        appStoreButton.delegate = self;
+        appStoreButton.position = ADJUST_IPAD_CCP(ccp(LOS_APPSTORE_X, LOS_APPSTORE_Y));
+        [self addChild:appStoreButton];
+        
         [[AudioManager audioManager] playSoundEffect:kPageFlip];        
         
         CCActionInterval *delay = [CCDelayTime actionWithDuration:1.0f];
@@ -59,9 +77,12 @@ static const CGFloat LOS_SAM_Y = 300.0f;
     [super dealloc];
 }
 
+#pragma mark - Delegate Methods
+
 - (void) characterAvatarPressed
 {
     if (!introPlaying_ && !narrationPlaying_) {
+        [avatar_ startTalking];
         [self playRandomSpeech];
     }
 }
@@ -71,6 +92,9 @@ static const CGFloat LOS_SAM_Y = 300.0f;
     switch (button.numID) {
         case kLOSBack:
             [self loadMainMenu];            
+            break;
+        case kLOSAppStore:
+            [self loadAppStore];
             break;
         default:
             break;
@@ -91,6 +115,8 @@ static const CGFloat LOS_SAM_Y = 300.0f;
             break;
     }
 }
+
+#pragma mark - Helper Methods
 
 - (void) start
 {
@@ -139,6 +165,18 @@ static const CGFloat LOS_SAM_Y = 300.0f;
     CCScene *scene = [MainMenuScene node];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:YES]];    
     [[AudioManager audioManager] playSoundEffect:kPageFlip];  
+}
+
+- (void) loadAppStore
+{
+    NSURL *url;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        url = [NSURL URLWithString:LITTLEOCEAN_IPAD_APPSTORE_LINK];
+    }
+    else {
+        url = [NSURL URLWithString:LITTLEOCEAN_IPHONE_APPSTORE_LINK];
+    }
+    [[UIApplication sharedApplication] openURL:url];    
 }
 
 @end

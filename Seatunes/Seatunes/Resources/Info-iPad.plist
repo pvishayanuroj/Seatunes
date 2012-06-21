@@ -21,7 +21,7 @@
 		<string>Icon-Small@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.beanstalkstudios.Seatunes</string>
+	<string>com.beanstalkstudios.SeatunesHD</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

@@ -6,13 +6,11 @@
 //  Copyright (c) 2012 Paul Vishayanuroj. All rights reserved.
 //
 
-#define DEBUG_SHOWLOADEDANIMATIONS 1
+#define DEBUG_SHOWLOADEDANIMATIONS 0
 
 #define DEBUG_SHOWDEALLOC 0
 
 #define DEBUG_SHOWMAPCURVES 0
-
-#define DEBUG_SHOWSTAFFCURVES 1
 
 #define DEBUG_SHOWLIGHTBOUNDARY 0
 

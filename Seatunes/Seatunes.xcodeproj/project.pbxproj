@@ -954,6 +954,14 @@
 		AE7BEC911592DB850077F950 /* Ink Blot Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BEC8F1592DB840077F950 /* Ink Blot Logo.png */; };
 		AE7BEC941592DEF40077F950 /* Ink Blot Logo-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BEC921592DEF40077F950 /* Ink Blot Logo-hd.png */; };
 		AE7BEC951592DEF40077F950 /* Ink Blot Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BEC931592DEF40077F950 /* Ink Blot Logo.png */; };
+		AE7BEC9D1592E4F70077F950 /* Appstore Button-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BEC9B1592E4F70077F950 /* Appstore Button-ipadhd.png */; };
+		AE7BEC9E1592E4F70077F950 /* Appstore Button.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BEC9C1592E4F70077F950 /* Appstore Button.png */; };
+		AE7BECA11592E5010077F950 /* Little Ocean Logo-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BEC9F1592E5010077F950 /* Little Ocean Logo-ipadhd.png */; };
+		AE7BECA21592E5010077F950 /* Little Ocean Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BECA01592E5010077F950 /* Little Ocean Logo.png */; };
+		AE7BECA51592E5100077F950 /* Appstore Button-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BECA31592E5100077F950 /* Appstore Button-hd.png */; };
+		AE7BECA61592E5100077F950 /* Appstore Button.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BECA41592E5100077F950 /* Appstore Button.png */; };
+		AE7BECA91592E51D0077F950 /* Little Ocean Logo-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BECA71592E51D0077F950 /* Little Ocean Logo-hd.png */; };
+		AE7BECAA1592E51D0077F950 /* Little Ocean Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BECA81592E51D0077F950 /* Little Ocean Logo.png */; };
 		AEE5EE43158EBC4F003BF0D2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1914C1E847009B60FB /* QuartzCore.framework */; };
 		AEE5EE44158EBC4F003BF0D2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1B14C1E847009B60FB /* OpenGLES.framework */; };
 		AEE5EE45158EBC4F003BF0D2 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1D14C1E847009B60FB /* OpenAL.framework */; };
@@ -1815,6 +1823,14 @@
 		AE7BEC8F1592DB840077F950 /* Ink Blot Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ink Blot Logo.png"; path = "Seatunes/Resources/Images/iPad/Misc/Ink Blot Logo.png"; sourceTree = SOURCE_ROOT; };
 		AE7BEC921592DEF40077F950 /* Ink Blot Logo-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ink Blot Logo-hd.png"; sourceTree = "<group>"; };
 		AE7BEC931592DEF40077F950 /* Ink Blot Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ink Blot Logo.png"; sourceTree = "<group>"; };
+		AE7BEC9B1592E4F70077F950 /* Appstore Button-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Appstore Button-ipadhd.png"; sourceTree = "<group>"; };
+		AE7BEC9C1592E4F70077F950 /* Appstore Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Appstore Button.png"; sourceTree = "<group>"; };
+		AE7BEC9F1592E5010077F950 /* Little Ocean Logo-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Little Ocean Logo-ipadhd.png"; sourceTree = "<group>"; };
+		AE7BECA01592E5010077F950 /* Little Ocean Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Little Ocean Logo.png"; sourceTree = "<group>"; };
+		AE7BECA31592E5100077F950 /* Appstore Button-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Appstore Button-hd.png"; sourceTree = "<group>"; };
+		AE7BECA41592E5100077F950 /* Appstore Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Appstore Button.png"; sourceTree = "<group>"; };
+		AE7BECA71592E51D0077F950 /* Little Ocean Logo-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Little Ocean Logo-hd.png"; sourceTree = "<group>"; };
+		AE7BECA81592E51D0077F950 /* Little Ocean Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Little Ocean Logo.png"; sourceTree = "<group>"; };
 		AEE5EE41158EBC4F003BF0D2 /* Seatunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seatunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB11F1514C1E847009B60FB /* Seatunes HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seatunes HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB11F1914C1E847009B60FB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -2559,6 +2575,8 @@
 		AE7BE5B21592C8050077F950 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				AE7BEC9B1592E4F70077F950 /* Appstore Button-ipadhd.png */,
+				AE7BEC9C1592E4F70077F950 /* Appstore Button.png */,
 				AE7BE5B31592C8050077F950 /* Back Button-ipadhd.png */,
 				AE7BE5B41592C8050077F950 /* Back Button.png */,
 				AE7BE5B51592C8050077F950 /* Bubble Button Small Unselected-ipadhd.png */,
@@ -2632,6 +2650,8 @@
 		AE7BE5F51592C8050077F950 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				AE7BEC9F1592E5010077F950 /* Little Ocean Logo-ipadhd.png */,
+				AE7BECA01592E5010077F950 /* Little Ocean Logo.png */,
 				AE7BE5F61592C8050077F950 /* Bubble-ipadhd.png */,
 				AE7BE5F71592C8050077F950 /* Bubble.png */,
 				AE7BE5F81592C8050077F950 /* C Note-ipadhd.png */,
@@ -2713,6 +2733,8 @@
 		AE7BE6311592C8050077F950 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				AE7BECA31592E5100077F950 /* Appstore Button-hd.png */,
+				AE7BECA41592E5100077F950 /* Appstore Button.png */,
 				AE7BE6321592C8050077F950 /* Back Button-hd.png */,
 				AE7BE6331592C8050077F950 /* Back Button.png */,
 				AE7BE6341592C8050077F950 /* Bubble Button Small Unselected-hd.png */,
@@ -2786,6 +2808,8 @@
 		AE7BE6741592C8050077F950 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				AE7BECA71592E51D0077F950 /* Little Ocean Logo-hd.png */,
+				AE7BECA81592E51D0077F950 /* Little Ocean Logo.png */,
 				AE7BEC921592DEF40077F950 /* Ink Blot Logo-hd.png */,
 				AE7BEC931592DEF40077F950 /* Ink Blot Logo.png */,
 				AE7BE6751592C8050077F950 /* Bubble-hd.png */,
@@ -3576,6 +3600,10 @@
 				AE7BEC891592C8050077F950 /* sheet01_animations.plist in Resources */,
 				AE7BEC941592DEF40077F950 /* Ink Blot Logo-hd.png in Resources */,
 				AE7BEC951592DEF40077F950 /* Ink Blot Logo.png in Resources */,
+				AE7BECA51592E5100077F950 /* Appstore Button-hd.png in Resources */,
+				AE7BECA61592E5100077F950 /* Appstore Button.png in Resources */,
+				AE7BECA91592E51D0077F950 /* Little Ocean Logo-hd.png in Resources */,
+				AE7BECAA1592E51D0077F950 /* Little Ocean Logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3900,6 +3928,10 @@
 				AE7BEC881592C8050077F950 /* sheet01_animations.plist in Resources */,
 				AE7BEC901592DB850077F950 /* Ink Blot Logo-ipadhd.png in Resources */,
 				AE7BEC911592DB850077F950 /* Ink Blot Logo.png in Resources */,
+				AE7BEC9D1592E4F70077F950 /* Appstore Button-ipadhd.png in Resources */,
+				AE7BEC9E1592E4F70077F950 /* Appstore Button.png in Resources */,
+				AE7BECA11592E5010077F950 /* Little Ocean Logo-ipadhd.png in Resources */,
+				AE7BECA21592E5010077F950 /* Little Ocean Logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4335,6 +4367,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Vishayanuroj (5FZQ8D9467)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paul Vishayanuroj (5FZQ8D9467)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4349,6 +4383,8 @@
 				);
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "Seatunes HD";
+				PROVISIONING_PROFILE = "C63E7E83-4FFA-4B5A-A9E9-AA6B813F2887";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C63E7E83-4FFA-4B5A-A9E9-AA6B813F2887";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
