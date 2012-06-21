@@ -810,8 +810,6 @@
 		AE7BEB091592C8050077F950 /* Product Identifiers iPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7BE70E1592C8050077F950 /* Product Identifiers iPhone.plist */; };
 		AE7BEB0A1592C8050077F950 /* Training Songs.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7BE70F1592C8050077F950 /* Training Songs.plist */; };
 		AE7BEB0B1592C8050077F950 /* Training Songs.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7BE70F1592C8050077F950 /* Training Songs.plist */; };
-		AE7BEB0C1592C8050077F950 /* .caf in Resources */ = {isa = PBXBuildFile; fileRef = AE7BE7111592C8050077F950 /* .caf */; };
-		AE7BEB0D1592C8050077F950 /* .caf in Resources */ = {isa = PBXBuildFile; fileRef = AE7BE7111592C8050077F950 /* .caf */; };
 		AE7BEB0E1592C8050077F950 /* Bubble Pop 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE7BE7121592C8050077F950 /* Bubble Pop 2.mp3 */; };
 		AE7BEB0F1592C8050077F950 /* Bubble Pop 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE7BE7121592C8050077F950 /* Bubble Pop 2.mp3 */; };
 		AE7BEB101592C8050077F950 /* Bubble Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE7BE7131592C8050077F950 /* Bubble Pop.mp3 */; };
@@ -1744,7 +1742,6 @@
 		AE7BE70D1592C8050077F950 /* Product Identifiers iPad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Product Identifiers iPad.plist"; sourceTree = "<group>"; };
 		AE7BE70E1592C8050077F950 /* Product Identifiers iPhone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Product Identifiers iPhone.plist"; sourceTree = "<group>"; };
 		AE7BE70F1592C8050077F950 /* Training Songs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Training Songs.plist"; sourceTree = "<group>"; };
-		AE7BE7111592C8050077F950 /* .caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = .caf; sourceTree = "<group>"; };
 		AE7BE7121592C8050077F950 /* Bubble Pop 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop 2.mp3"; sourceTree = "<group>"; };
 		AE7BE7131592C8050077F950 /* Bubble Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bubble Pop.mp3"; sourceTree = "<group>"; };
 		AE7BE7141592C8050077F950 /* Clam Hit.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Clam Hit.m4a"; sourceTree = "<group>"; };
@@ -3045,7 +3042,6 @@
 		AE7BE7101592C8050077F950 /* Sound Effects */ = {
 			isa = PBXGroup;
 			children = (
-				AE7BE7111592C8050077F950 /* .caf */,
 				AE7BE7121592C8050077F950 /* Bubble Pop 2.mp3 */,
 				AE7BE7131592C8050077F950 /* Bubble Pop.mp3 */,
 				AE7BE7141592C8050077F950 /* Clam Hit.m4a */,
@@ -3529,7 +3525,6 @@
 				AE7BEB071592C8050077F950 /* Product Identifiers iPad.plist in Resources */,
 				AE7BEB091592C8050077F950 /* Product Identifiers iPhone.plist in Resources */,
 				AE7BEB0B1592C8050077F950 /* Training Songs.plist in Resources */,
-				AE7BEB0D1592C8050077F950 /* .caf in Resources */,
 				AE7BEB0F1592C8050077F950 /* Bubble Pop 2.mp3 in Resources */,
 				AE7BEB111592C8050077F950 /* Bubble Pop.mp3 in Resources */,
 				AE7BEB131592C8050077F950 /* Clam Hit.m4a in Resources */,
@@ -3857,7 +3852,6 @@
 				AE7BEB061592C8050077F950 /* Product Identifiers iPad.plist in Resources */,
 				AE7BEB081592C8050077F950 /* Product Identifiers iPhone.plist in Resources */,
 				AE7BEB0A1592C8050077F950 /* Training Songs.plist in Resources */,
-				AE7BEB0C1592C8050077F950 /* .caf in Resources */,
 				AE7BEB0E1592C8050077F950 /* Bubble Pop 2.mp3 in Resources */,
 				AE7BEB101592C8050077F950 /* Bubble Pop.mp3 in Resources */,
 				AE7BEB121592C8050077F950 /* Clam Hit.m4a in Resources */,
