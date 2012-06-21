@@ -32,6 +32,8 @@ enum {
     
     Button *moreButton_;
     
+    Button *creditsButton_;
+    
     ScaledImageButton *musicButton_;
     
     LoadingIndicator *loadingIndicator_;    

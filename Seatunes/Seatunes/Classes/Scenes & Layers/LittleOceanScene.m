@@ -13,12 +13,12 @@
 #import "Button.h"
 #import "SpeechManager.h"
 
+@implementation LittleOceanScene
+
 static const CGFloat LOS_BACK_BUTTON_X = 50.0f;
 static const CGFloat LOS_BACK_BUTTON_Y = 730.0f;
 static const CGFloat LOS_SAM_X = 300.0f;
 static const CGFloat LOS_SAM_Y = 300.0f;
-
-@implementation LittleOceanScene
 
 - (id) init
 {

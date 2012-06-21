@@ -10,6 +10,7 @@
 #import "PlayMenuScene.h"
 #import "FreePlayScene.h"
 #import "LittleOceanScene.h"
+#import "CreditsScene.h"
 #import "StarfishButton.h"
 #import "AudioManager.h"
 #import "DataUtility.h"
@@ -27,6 +28,8 @@ static const CGFloat MMS_FREEPLAY_X = 200.0f;
 static const CGFloat MMS_FREEPLAY_Y = 525.0f;
 static const CGFloat MMS_MORE_X = 300.0f;
 static const CGFloat MMS_MORE_Y = 400.0f;
+static const CGFloat MMS_CREDITS_X = 400.0f;
+static const CGFloat MMS_CREDITS_Y = 75.0f;
 static const CGFloat MMS_BUY_X = 200.0f;
 static const CGFloat MMS_BUY_Y = 500.0f;
 static const CGFloat MMS_MUSIC_X = 995.0f;
@@ -73,6 +76,11 @@ static const CGFloat MMS_LOCK_SCALE = 0.8f;
         moreButton_.delegate = self;
         moreButton_.position = ADJUST_IPAD_CCP(ccp(MMS_MORE_X, MMS_MORE_Y));
         
+        creditsButton_ = [[StarfishButton starfishButton:kCreditsButton text:@"Credits"] retain];
+        creditsButton_.delegate = self;
+        creditsButton_.position = ADJUST_IPAD_CCP(ccp(MMS_CREDITS_X, MMS_CREDITS_Y));
+        creditsButton_.scale = 0.8f;
+        
 #if IAP_ON
         BOOL isLocked = ![[SeatunesIAPHelper manager] allPacksPurchased];
 #else
@@ -91,6 +99,7 @@ static const CGFloat MMS_LOCK_SCALE = 0.8f;
         [self addChild:playButton_];
         [self addChild:freePlayButton_];     
         [self addChild:moreButton_];
+        [self addChild:creditsButton_];
 
         lockIcon_ = nil;
         if (isLocked) {
@@ -157,7 +166,9 @@ static const CGFloat MMS_LOCK_SCALE = 0.8f;
             [[AudioManager audioManager] playSound:kA4 instrument:kMenu];            
             break;
         case kCreditsButton:
-            [[AudioManager audioManager] playSound:kC4 instrument:kMenu];            
+            scene = [CreditsScene node];
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene backwards:NO]];             
+            [[AudioManager audioManager] playSound:kC5 instrument:kMenu];            
             break;
         case kMusicButton:
             // If music was playing
@@ -199,6 +210,8 @@ static const CGFloat MMS_LOCK_SCALE = 0.8f;
     playButton_.isClickable = NO;
     freePlayButton_.isClickable = NO;    
     musicButton_.isClickable = NO;
+    moreButton_.isClickable = NO;
+    creditsButton_.isClickable = NO;
     
     loadingIndicator_ = [[LoadingIndicator loadingIndicator] retain];
     [self addChild:loadingIndicator_];
@@ -213,6 +226,8 @@ static const CGFloat MMS_LOCK_SCALE = 0.8f;
     playButton_.isClickable = YES;
     freePlayButton_.isClickable = YES;    
     musicButton_.isClickable = YES;    
+    moreButton_.isClickable = YES;
+    creditsButton_.isClickable = YES;    
 }
 
 @end

@@ -948,6 +948,12 @@
 		AE7BEC831592C8050077F950 /* sheet01.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BE7D41592C8050077F950 /* sheet01.png */; };
 		AE7BEC881592C8050077F950 /* sheet01_animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7BE7D71592C8050077F950 /* sheet01_animations.plist */; };
 		AE7BEC891592C8050077F950 /* sheet01_animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE7BE7D71592C8050077F950 /* sheet01_animations.plist */; };
+		AE7BEC8C1592CEF50077F950 /* CreditsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7BEC8B1592CEF50077F950 /* CreditsScene.m */; };
+		AE7BEC8D1592CEF50077F950 /* CreditsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7BEC8B1592CEF50077F950 /* CreditsScene.m */; };
+		AE7BEC901592DB850077F950 /* Ink Blot Logo-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BEC8E1592DB840077F950 /* Ink Blot Logo-ipadhd.png */; };
+		AE7BEC911592DB850077F950 /* Ink Blot Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BEC8F1592DB840077F950 /* Ink Blot Logo.png */; };
+		AE7BEC941592DEF40077F950 /* Ink Blot Logo-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BEC921592DEF40077F950 /* Ink Blot Logo-hd.png */; };
+		AE7BEC951592DEF40077F950 /* Ink Blot Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BEC931592DEF40077F950 /* Ink Blot Logo.png */; };
 		AEE5EE43158EBC4F003BF0D2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1914C1E847009B60FB /* QuartzCore.framework */; };
 		AEE5EE44158EBC4F003BF0D2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1B14C1E847009B60FB /* OpenGLES.framework */; };
 		AEE5EE45158EBC4F003BF0D2 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1D14C1E847009B60FB /* OpenAL.framework */; };
@@ -1803,6 +1809,12 @@
 		AE7BE7D31592C8050077F950 /* sheet01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sheet01.plist; sourceTree = "<group>"; };
 		AE7BE7D41592C8050077F950 /* sheet01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sheet01.png; sourceTree = "<group>"; };
 		AE7BE7D71592C8050077F950 /* sheet01_animations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sheet01_animations.plist; sourceTree = "<group>"; };
+		AE7BEC8A1592CEF50077F950 /* CreditsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsScene.h; sourceTree = "<group>"; };
+		AE7BEC8B1592CEF50077F950 /* CreditsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsScene.m; sourceTree = "<group>"; };
+		AE7BEC8E1592DB840077F950 /* Ink Blot Logo-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ink Blot Logo-ipadhd.png"; path = "Seatunes/Resources/Images/iPad/Misc/Ink Blot Logo-ipadhd.png"; sourceTree = SOURCE_ROOT; };
+		AE7BEC8F1592DB840077F950 /* Ink Blot Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ink Blot Logo.png"; path = "Seatunes/Resources/Images/iPad/Misc/Ink Blot Logo.png"; sourceTree = SOURCE_ROOT; };
+		AE7BEC921592DEF40077F950 /* Ink Blot Logo-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ink Blot Logo-hd.png"; sourceTree = "<group>"; };
+		AE7BEC931592DEF40077F950 /* Ink Blot Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ink Blot Logo.png"; sourceTree = "<group>"; };
 		AEE5EE41158EBC4F003BF0D2 /* Seatunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seatunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB11F1514C1E847009B60FB /* Seatunes HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seatunes HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB11F1914C1E847009B60FB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1972,6 +1984,8 @@
 				AE7680C11591770500458040 /* ScoreLayer.m */,
 				AE7680C21591770500458040 /* ScoreScene.h */,
 				AE7680C31591770500458040 /* ScoreScene.m */,
+				AE7BEC8A1592CEF50077F950 /* CreditsScene.h */,
+				AE7BEC8B1592CEF50077F950 /* CreditsScene.m */,
 			);
 			name = "Scenes & Layers";
 			path = "Classes/Scenes & Layers";
@@ -2504,6 +2518,8 @@
 		AE7BE5911592C8040077F950 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				AE7BEC8E1592DB840077F950 /* Ink Blot Logo-ipadhd.png */,
+				AE7BEC8F1592DB840077F950 /* Ink Blot Logo.png */,
 				AE7BE5921592C8040077F950 /* Coral Foreground-ipadhd.png */,
 				AE7BE5931592C8040077F950 /* Coral Foreground.png */,
 				AE7BE5941592C8040077F950 /* Letter Parchment-ipadhd.png */,
@@ -2770,6 +2786,8 @@
 		AE7BE6741592C8050077F950 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				AE7BEC921592DEF40077F950 /* Ink Blot Logo-hd.png */,
+				AE7BEC931592DEF40077F950 /* Ink Blot Logo.png */,
 				AE7BE6751592C8050077F950 /* Bubble-hd.png */,
 				AE7BE6761592C8050077F950 /* Bubble.png */,
 				AE7BE6771592C8050077F950 /* C Note-hd.png */,
@@ -3556,6 +3574,8 @@
 				AE7BEC811592C8050077F950 /* sheet01.plist in Resources */,
 				AE7BEC831592C8050077F950 /* sheet01.png in Resources */,
 				AE7BEC891592C8050077F950 /* sheet01_animations.plist in Resources */,
+				AE7BEC941592DEF40077F950 /* Ink Blot Logo-hd.png in Resources */,
+				AE7BEC951592DEF40077F950 /* Ink Blot Logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3878,6 +3898,8 @@
 				AE7BEC741592C8050077F950 /* sheet01.plist in Resources */,
 				AE7BEC761592C8050077F950 /* sheet01.png in Resources */,
 				AE7BEC881592C8050077F950 /* sheet01_animations.plist in Resources */,
+				AE7BEC901592DB850077F950 /* Ink Blot Logo-ipadhd.png in Resources */,
+				AE7BEC911592DB850077F950 /* Ink Blot Logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4040,6 +4062,7 @@
 				AE7683161591772600458040 /* CJSONDeserializer.m in Sources */,
 				AE7683181591772600458040 /* CJSONScanner.m in Sources */,
 				AE76831A1591772600458040 /* CJSONSerializer.m in Sources */,
+				AE7BEC8D1592CEF50077F950 /* CreditsScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4199,6 +4222,7 @@
 				AE7683151591772600458040 /* CJSONDeserializer.m in Sources */,
 				AE7683171591772600458040 /* CJSONScanner.m in Sources */,
 				AE7683191591772600458040 /* CJSONSerializer.m in Sources */,
+				AE7BEC8C1592CEF50077F950 /* CreditsScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
