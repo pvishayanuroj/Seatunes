@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AEE5EE40158EBC4F003BF0D2"
-               BuildableName = "Seatunes For iPhone.app"
+               BuildableName = "Seatunes.app"
                BlueprintName = "Seatunes For iPhone"
                ReferencedContainer = "container:Seatunes.xcodeproj">
             </BuildableReference>
@@ -32,7 +32,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AEE5EE40158EBC4F003BF0D2"
-            BuildableName = "Seatunes For iPhone.app"
+            BuildableName = "Seatunes.app"
             BlueprintName = "Seatunes For iPhone"
             ReferencedContainer = "container:Seatunes.xcodeproj">
          </BuildableReference>
@@ -46,12 +46,13 @@
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      enablesOpenGLESFrameCapture = "YES"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AEE5EE40158EBC4F003BF0D2"
-            BuildableName = "Seatunes For iPhone.app"
+            BuildableName = "Seatunes.app"
             BlueprintName = "Seatunes For iPhone"
             ReferencedContainer = "container:Seatunes.xcodeproj">
          </BuildableReference>
@@ -69,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AEE5EE40158EBC4F003BF0D2"
-            BuildableName = "Seatunes For iPhone.app"
+            BuildableName = "Seatunes.app"
             BlueprintName = "Seatunes For iPhone"
             ReferencedContainer = "container:Seatunes.xcodeproj">
          </BuildableReference>

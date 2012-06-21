@@ -66,12 +66,30 @@ static SeatunesIAPHelper *manager_ = nil;
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    // Kind of hacky, but assume that non-zero index means OK was pressed, in which case only the confirmation dialog has an OK button
+    if (buttonIndex != 0) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:kProductPurchaseNotification object:nil];       
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchasedFailed:) name:kProductPurchaseFailedNotification object:nil];    
+        NSString *productIdentifier = [[DataUtility manager] productIdentifierFromName:kAllPacks];        
+        [super buyProductIdentifier:productIdentifier];  
+    }
+}
+
+- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
     /*
-     // Assume that all other 
-     if (buttonIndex != 0) {
-     [self buyProduct:kStateBuyCurrentPack];
-     }
-     */
+    NSString *productIdentifier = [[DataUtility manager] productIdentifierFromName:kAllPacks];
+    SKProduct *product = [products_ objectForKey:productIdentifier]; 
+    NSLog(@"%@", productIdentifier);
+    NSLog(@"%@", product);
+    NSLog(@"%@ vs %@", alertView.title, product.localizedTitle);
+    */
+    //if (product && [alertView.title isEqualToString:product.localizedTitle]) {
+    if (buttonIndex == 0) {
+        if (delegate_ && [delegate_ respondsToSelector:@selector(finishLoading)]) {
+            [delegate_ finishLoading];
+        }
+    }
 }
 
 #pragma mark - Helper Methods
@@ -104,6 +122,24 @@ static SeatunesIAPHelper *manager_ = nil;
     [message show];
 }
 
+- (void) showConfirmation:(SKProduct *)product
+{
+    NSNumberFormatter *formatter = [[[NSNumberFormatter alloc] init] autorelease];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [formatter setLocale:product.priceLocale];
+    NSString *price = [formatter stringFromNumber:product.price];
+    
+    UIAlertView *message = [[[UIAlertView alloc] initWithTitle:product.localizedTitle message:product.localizedDescription delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:price, nil] autorelease];
+    [message show];
+}
+
+- (void) showPurchaseSuccess
+{
+    NSString *text = [NSString stringWithFormat:@"You've unlocked all of the activities available in Seatunes! Have fun!"];
+    UIAlertView *message = [[[UIAlertView alloc] initWithTitle:@"Thank You!" message:text delegate:self cancelButtonTitle:@"Awesome!" otherButtonTitles:nil] autorelease];
+    [message show];    
+}
+
 #pragma mark - In-App Purchase Methods
 
 - (void) buyProduct:(id <IAPDelegate>)delegate
@@ -134,10 +170,18 @@ static SeatunesIAPHelper *manager_ = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];    
     
     NSString *productIdentifier = [[DataUtility manager] productIdentifierFromName:kAllPacks];
+    SKProduct *product = [products_ objectForKey:productIdentifier];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:kProductPurchaseNotification object:nil];       
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchasedFailed:) name:kProductPurchaseFailedNotification object:nil];    
-    [[SeatunesIAPHelper manager] buyProductIdentifier:productIdentifier];      
+    if (product) {
+        [self showConfirmation:product];
+    }
+    else {
+        if (delegate_ && [delegate_ respondsToSelector:@selector(finishLoading)]) {
+            [delegate_ finishLoading];
+        }        
+        [self showDialog:@"Error" text:@"Oops! Could not connect to the server. Try again later!"];    
+        delegate_ = nil; 
+    }
 }
 
 - (void) productsLoadedFailed:(NSNotification *)notification
@@ -173,6 +217,7 @@ static SeatunesIAPHelper *manager_ = nil;
     
     if (delegate_) {        
         [delegate_ purchaseComplete];
+        [self showPurchaseSuccess];
         
         if ([delegate_ respondsToSelector:@selector(finishLoading)]) {
             [delegate_ finishLoading];
