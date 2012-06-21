@@ -169,6 +169,8 @@ static const CGFloat LOS_APPSTORE_Y = 100.0f;
 
 - (void) loadAppStore
 {
+    [[AudioManager audioManager] playSound:kE4 instrument:kMenu];       
+    
     NSURL *url;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         url = [NSURL URLWithString:LITTLEOCEAN_IPAD_APPSTORE_LINK];
