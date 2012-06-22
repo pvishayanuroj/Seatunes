@@ -12,6 +12,7 @@
 
 static const CGFloat LI_BOX_Y = -15.0f;
 static const CGFloat LI_TEXT_Y = -40.0f;
+static const CGFloat LI_TEXT_Y_M = -40.0f;
 
 + (id) loadingIndicator
 {
@@ -36,7 +37,7 @@ static const CGFloat LI_TEXT_Y = -40.0f;
         [self addChild:sprite];
         
         CCLabelTTF *label = [CCLabelTTF labelWithString:text fontName:@"Helvetica" fontSize:14.0f];
-        label.position = ADJUST_IPAD_CCP(ccp(0, LI_TEXT_Y));
+        label.position = ccp(0, CHOOSE_REL_CCP(LI_TEXT_Y, LI_TEXT_Y_M));
         [self addChild:label];
         
         activityIndicator_ = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge] retain];
