@@ -26,6 +26,8 @@
 
 #define kFirstPlay @"First Play"
 
+#define kSongSpeed @"Song Speed"
+
 #define APSALAR_KEY @"pvishayanuroj"
 
 #define APSALAR_SECRET @"8WmuWiho"
@@ -52,6 +54,12 @@ IPHONE_SCREEN_WIDTH * (__r__.size.width / IPAD_SCREEN_WIDTH), IPHONE_SCREEN_HEIG
 #define ADJUST_IPAD_WIDTH(__w__) (IS_IPAD() == YES ? __w__ : IPHONE_SCREEN_WIDTH * (__w__ / IPAD_SCREEN_WIDTH))
 
 #define CHOOSE_REL_CCP(__ipad__, __iphone__) (IS_IPAD() == YES ? __ipad__ : __iphone__)
+
+typedef enum {
+    kSongSpeedSlow = 0,
+    kSongSpeedNormal = 1,
+    kSongSpeedFast = 2 
+} SongSpeed;
 
 typedef enum {
     kC4 = 0,
@@ -91,6 +99,7 @@ typedef enum {
     kBubblePop,
     kBubblePop2,
     kClamHit,
+    kClick,
     kDing,
     kSuccess,
     kThud,

@@ -962,6 +962,16 @@
 		AE7BECAA1592E51D0077F950 /* Little Ocean Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BECA81592E51D0077F950 /* Little Ocean Logo.png */; };
 		AEAE1AEA1593F4E10055CDAB /* Spaces.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEAE1AE91593F4E10055CDAB /* Spaces.plist */; };
 		AEAE1AEC1593F4E50055CDAB /* Spaces.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEAE1AE91593F4E10055CDAB /* Spaces.plist */; };
+		AEAE1AEF1594105A0055CDAB /* Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE1AEE1594105A0055CDAB /* Slider.m */; };
+		AEAE1AF01594105A0055CDAB /* Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE1AEE1594105A0055CDAB /* Slider.m */; };
+		AEAE1AF3159411CE0055CDAB /* SettingsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE1AF2159411CE0055CDAB /* SettingsScene.m */; };
+		AEAE1AF4159411CE0055CDAB /* SettingsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE1AF2159411CE0055CDAB /* SettingsScene.m */; };
+		AEAE1AF815942FD20055CDAB /* Blue Starfish Button-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE1AF615942FD20055CDAB /* Blue Starfish Button-ipadhd.png */; };
+		AEAE1AF915942FD20055CDAB /* Blue Starfish Button.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE1AF715942FD20055CDAB /* Blue Starfish Button.png */; };
+		AEAE1AFC15942FDE0055CDAB /* Blue Starfish Button-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE1AFA15942FDE0055CDAB /* Blue Starfish Button-hd.png */; };
+		AEAE1AFD15942FDE0055CDAB /* Blue Starfish Button.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE1AFB15942FDE0055CDAB /* Blue Starfish Button.png */; };
+		AEAE1AFF1594343E0055CDAB /* Click.wav in Resources */ = {isa = PBXBuildFile; fileRef = AEAE1AFE1594343E0055CDAB /* Click.wav */; };
+		AEAE1B00159434430055CDAB /* Click.wav in Resources */ = {isa = PBXBuildFile; fileRef = AEAE1AFE1594343E0055CDAB /* Click.wav */; };
 		AEE5EE43158EBC4F003BF0D2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1914C1E847009B60FB /* QuartzCore.framework */; };
 		AEE5EE44158EBC4F003BF0D2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1B14C1E847009B60FB /* OpenGLES.framework */; };
 		AEE5EE45158EBC4F003BF0D2 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1D14C1E847009B60FB /* OpenAL.framework */; };
@@ -1831,6 +1841,16 @@
 		AE7BECA71592E51D0077F950 /* Little Ocean Logo-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Little Ocean Logo-hd.png"; sourceTree = "<group>"; };
 		AE7BECA81592E51D0077F950 /* Little Ocean Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Little Ocean Logo.png"; sourceTree = "<group>"; };
 		AEAE1AE91593F4E10055CDAB /* Spaces.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Spaces.plist; sourceTree = "<group>"; };
+		AEAE1AED1594105A0055CDAB /* Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slider.h; sourceTree = "<group>"; };
+		AEAE1AEE1594105A0055CDAB /* Slider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Slider.m; sourceTree = "<group>"; };
+		AEAE1AF1159411CE0055CDAB /* SettingsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsScene.h; sourceTree = "<group>"; };
+		AEAE1AF2159411CE0055CDAB /* SettingsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsScene.m; sourceTree = "<group>"; };
+		AEAE1AF5159414A40055CDAB /* SliderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderDelegate.h; sourceTree = "<group>"; };
+		AEAE1AF615942FD20055CDAB /* Blue Starfish Button-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue Starfish Button-ipadhd.png"; sourceTree = "<group>"; };
+		AEAE1AF715942FD20055CDAB /* Blue Starfish Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue Starfish Button.png"; sourceTree = "<group>"; };
+		AEAE1AFA15942FDE0055CDAB /* Blue Starfish Button-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue Starfish Button-hd.png"; sourceTree = "<group>"; };
+		AEAE1AFB15942FDE0055CDAB /* Blue Starfish Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue Starfish Button.png"; sourceTree = "<group>"; };
+		AEAE1AFE1594343E0055CDAB /* Click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Click.wav; sourceTree = "<group>"; };
 		AEE5EE41158EBC4F003BF0D2 /* Seatunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seatunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB11F1514C1E847009B60FB /* Seatunes HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seatunes HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB11F1914C1E847009B60FB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -2002,6 +2022,8 @@
 				AE7680C31591770500458040 /* ScoreScene.m */,
 				AE7BEC8A1592CEF50077F950 /* CreditsScene.h */,
 				AE7BEC8B1592CEF50077F950 /* CreditsScene.m */,
+				AEAE1AF1159411CE0055CDAB /* SettingsScene.h */,
+				AEAE1AF2159411CE0055CDAB /* SettingsScene.m */,
 			);
 			name = "Scenes & Layers";
 			path = "Classes/Scenes & Layers";
@@ -2050,6 +2072,9 @@
 				AE7680E31591770500458040 /* SongMenuItem.m */,
 				AE7680E41591770500458040 /* StarfishButton.h */,
 				AE7680E51591770500458040 /* StarfishButton.m */,
+				AEAE1AED1594105A0055CDAB /* Slider.h */,
+				AEAE1AEE1594105A0055CDAB /* Slider.m */,
+				AEAE1AF5159414A40055CDAB /* SliderDelegate.h */,
 			);
 			name = UI;
 			path = Classes/UI;
@@ -2575,6 +2600,8 @@
 		AE7BE5B21592C8050077F950 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				AEAE1AF615942FD20055CDAB /* Blue Starfish Button-ipadhd.png */,
+				AEAE1AF715942FD20055CDAB /* Blue Starfish Button.png */,
 				AE7BEC9B1592E4F70077F950 /* Appstore Button-ipadhd.png */,
 				AE7BEC9C1592E4F70077F950 /* Appstore Button.png */,
 				AE7BE5B31592C8050077F950 /* Back Button-ipadhd.png */,
@@ -2733,6 +2760,8 @@
 		AE7BE6311592C8050077F950 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				AEAE1AFA15942FDE0055CDAB /* Blue Starfish Button-hd.png */,
+				AEAE1AFB15942FDE0055CDAB /* Blue Starfish Button.png */,
 				AE7BECA31592E5100077F950 /* Appstore Button-hd.png */,
 				AE7BECA41592E5100077F950 /* Appstore Button.png */,
 				AE7BE6321592C8050077F950 /* Back Button-hd.png */,
@@ -3046,6 +3075,7 @@
 		AE7BE7101592C8050077F950 /* Sound Effects */ = {
 			isa = PBXGroup;
 			children = (
+				AEAE1AFE1594343E0055CDAB /* Click.wav */,
 				AE7BE7121592C8050077F950 /* Bubble Pop 2.mp3 */,
 				AE7BE7131592C8050077F950 /* Bubble Pop.mp3 */,
 				AE7BE7141592C8050077F950 /* Clam Hit.m4a */,
@@ -3604,6 +3634,9 @@
 				AE7BECA91592E51D0077F950 /* Little Ocean Logo-hd.png in Resources */,
 				AE7BECAA1592E51D0077F950 /* Little Ocean Logo.png in Resources */,
 				AEAE1AEC1593F4E50055CDAB /* Spaces.plist in Resources */,
+				AEAE1AFC15942FDE0055CDAB /* Blue Starfish Button-hd.png in Resources */,
+				AEAE1AFD15942FDE0055CDAB /* Blue Starfish Button.png in Resources */,
+				AEAE1B00159434430055CDAB /* Click.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3932,6 +3965,9 @@
 				AE7BECA11592E5010077F950 /* Little Ocean Logo-ipadhd.png in Resources */,
 				AE7BECA21592E5010077F950 /* Little Ocean Logo.png in Resources */,
 				AEAE1AEA1593F4E10055CDAB /* Spaces.plist in Resources */,
+				AEAE1AF815942FD20055CDAB /* Blue Starfish Button-ipadhd.png in Resources */,
+				AEAE1AF915942FD20055CDAB /* Blue Starfish Button.png in Resources */,
+				AEAE1AFF1594343E0055CDAB /* Click.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4095,6 +4131,8 @@
 				AE7683181591772600458040 /* CJSONScanner.m in Sources */,
 				AE76831A1591772600458040 /* CJSONSerializer.m in Sources */,
 				AE7BEC8D1592CEF50077F950 /* CreditsScene.m in Sources */,
+				AEAE1AF01594105A0055CDAB /* Slider.m in Sources */,
+				AEAE1AF4159411CE0055CDAB /* SettingsScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4255,6 +4293,8 @@
 				AE7683171591772600458040 /* CJSONScanner.m in Sources */,
 				AE7683191591772600458040 /* CJSONSerializer.m in Sources */,
 				AE7BEC8C1592CEF50077F950 /* CreditsScene.m in Sources */,
+				AEAE1AEF1594105A0055CDAB /* Slider.m in Sources */,
+				AEAE1AF3159411CE0055CDAB /* SettingsScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

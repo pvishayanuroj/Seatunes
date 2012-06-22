@@ -133,7 +133,7 @@ static const NSInteger GLF_READER_Z = 8;
 - (void) start
 {
     keyboard_.isClickable = YES;
-    [self schedule:@selector(loop:) interval:1.25f];
+    [self schedule:@selector(loop:) interval:[[DataUtility manager] getSongSpeedInSeconds]];
 }
 
 - (void) loop:(ccTime)dt

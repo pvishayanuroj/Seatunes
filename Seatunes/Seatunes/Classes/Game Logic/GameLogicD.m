@@ -119,7 +119,7 @@ static const NSInteger GLD_READER_Z = 7;
 
 - (void) start
 {
-    [self schedule:@selector(loop:) interval:1.25f];
+    [self schedule:@selector(loop:) interval:[[DataUtility manager] getSongSpeedInSeconds]];
 }
 
 - (void) loop:(ccTime)dt

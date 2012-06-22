@@ -290,6 +290,9 @@
         case kClamHit:
             name = @"Clam Hit.m4a";
             break;
+        case kClick:
+            name = @"Click.wav";
+            break;
         case kDing:
             name = @"Ding.mp3";
             break;

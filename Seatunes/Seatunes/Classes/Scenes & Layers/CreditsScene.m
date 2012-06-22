@@ -129,7 +129,7 @@ static const CGFloat CS_PADDING_Y = 90.0f;
 
 - (void) placeLogo
 {
-    [[AudioManager audioManager] playSoundEffect:kBubblePop];    
+    [[AudioManager audioManager] playSoundEffect:kSuccess];   
     
     CCSprite *logo = [CCSprite spriteWithFile:@"Ink Blot Logo.png"];
     logo.scale = 0.8f;

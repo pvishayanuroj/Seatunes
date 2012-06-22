@@ -62,6 +62,13 @@ static DataUtility *manager_ = nil;
         [self animationLoader:@"sheet01_animations" spriteSheetName:@"sheet01"];        
         [self loadPackInfo];
         [self loadTrainingSongs];
+        
+        // Set default speed to normal if not already set
+        NSNumber *songSpeed = [[NSUserDefaults standardUserDefaults] objectForKey:kSongSpeed];
+        if (songSpeed == nil) {
+            songSpeed = [NSNumber numberWithInteger:kSongSpeedNormal];
+            [[NSUserDefaults standardUserDefaults] setObject:songSpeed forKey:kSongSpeed];
+        }
     }
     return self;
 }
@@ -241,6 +248,51 @@ static DataUtility *manager_ = nil;
 {
     NSString *key = [Utility difficultyPlayedKeyFromEnum:difficulty];
     return ![[NSUserDefaults standardUserDefaults] boolForKey:key];   
+}
+
+- (void) resetTutorials
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kFirstPlay];
+    NSString *easy = [Utility difficultyPlayedKeyFromEnum:kDifficultyEasy];
+    NSString *medium = [Utility difficultyPlayedKeyFromEnum:kDifficultyMedium];
+    NSString *hard = [Utility difficultyPlayedKeyFromEnum:kDifficultyHard];
+    NSString *tutorial = [Utility difficultyPlayedKeyFromEnum:kDifficultyMusicNoteTutorial];    
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:easy];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:medium];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:hard];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:tutorial];    
+}
+
+- (SongSpeed) getSongSpeed
+{
+    NSNumber *songSpeed = [[NSUserDefaults standardUserDefaults] objectForKey:kSongSpeed];
+    if (songSpeed) {
+        return [songSpeed integerValue];
+    }
+    else {
+        return kSongSpeedNormal;
+    }
+}
+
+- (CGFloat) getSongSpeedInSeconds
+{
+    SongSpeed speed = [self getSongSpeed];
+    switch (speed) {
+        case kSongSpeedSlow:
+            return 1.8f;
+        case kSongSpeedNormal:
+            return 1.25f;
+        case kSongSpeedFast:
+            return 0.8f;
+        default:
+            return 1.25f;
+    }
+}
+
+- (void) setSongSpeed:(SongSpeed)songSpeed
+{
+    NSNumber *speed = [NSNumber numberWithInteger:songSpeed];
+    [[NSUserDefaults standardUserDefaults] setObject:speed forKey:kSongSpeed];
 }
          
 #pragma mark - Animations

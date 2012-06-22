@@ -67,6 +67,14 @@
 
 - (BOOL) isFirstPlayForDifficulty:(DifficultyType)difficulty;
 
+- (void) resetTutorials;
+
+- (SongSpeed) getSongSpeed;
+
+- (CGFloat) getSongSpeedInSeconds;
+
+- (void) setSongSpeed:(SongSpeed)songSpeed;
+
 - (void) animationLoader:(NSString *)unitListName spriteSheetName:(NSString *)spriteSheetName;
 
 @end

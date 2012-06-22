@@ -25,6 +25,11 @@ static const CGFloat SB_LABEL_X = 75.0f;
     return [[[self alloc] initStarfishButton:numID text:text image:@"Starfish Button Unselected.png" fnt:@"MenuFontDisabled.fnt"] autorelease];
 }
 
++ (id) starfishButtonBlue:(NSUInteger)numID text:(NSString *)text
+{
+    return [[[self alloc] initStarfishButton:numID text:text image:@"Blue Starfish Button.png" fnt:@"MenuFont.fnt"] autorelease];    
+}
+
 - (id) initStarfishButton:(NSUInteger)numID text:(NSString *)text image:(NSString *)image fnt:(NSString *)fnt
 {
     if ((self = [super initButton:numID toggle:NO])) {
