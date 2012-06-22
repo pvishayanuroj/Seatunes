@@ -960,6 +960,8 @@
 		AE7BECA61592E5100077F950 /* Appstore Button.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BECA41592E5100077F950 /* Appstore Button.png */; };
 		AE7BECA91592E51D0077F950 /* Little Ocean Logo-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BECA71592E51D0077F950 /* Little Ocean Logo-hd.png */; };
 		AE7BECAA1592E51D0077F950 /* Little Ocean Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7BECA81592E51D0077F950 /* Little Ocean Logo.png */; };
+		AEAE1AEA1593F4E10055CDAB /* Spaces.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEAE1AE91593F4E10055CDAB /* Spaces.plist */; };
+		AEAE1AEC1593F4E50055CDAB /* Spaces.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEAE1AE91593F4E10055CDAB /* Spaces.plist */; };
 		AEE5EE43158EBC4F003BF0D2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1914C1E847009B60FB /* QuartzCore.framework */; };
 		AEE5EE44158EBC4F003BF0D2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1B14C1E847009B60FB /* OpenGLES.framework */; };
 		AEE5EE45158EBC4F003BF0D2 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB11F1D14C1E847009B60FB /* OpenAL.framework */; };
@@ -1828,6 +1830,7 @@
 		AE7BECA41592E5100077F950 /* Appstore Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Appstore Button.png"; sourceTree = "<group>"; };
 		AE7BECA71592E51D0077F950 /* Little Ocean Logo-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Little Ocean Logo-hd.png"; sourceTree = "<group>"; };
 		AE7BECA81592E51D0077F950 /* Little Ocean Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Little Ocean Logo.png"; sourceTree = "<group>"; };
+		AEAE1AE91593F4E10055CDAB /* Spaces.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Spaces.plist; sourceTree = "<group>"; };
 		AEE5EE41158EBC4F003BF0D2 /* Seatunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seatunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB11F1514C1E847009B60FB /* Seatunes HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seatunes HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB11F1914C1E847009B60FB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -3012,6 +3015,7 @@
 		AE7BE6F81592C8050077F950 /* Exercise Pack */ = {
 			isa = PBXGroup;
 			children = (
+				AEAE1AE91593F4E10055CDAB /* Spaces.plist */,
 				AE7BE6F91592C8050077F950 /* Arpeggios.plist */,
 				AE7BE6FA1592C8050077F950 /* Scales.plist */,
 				AE7BE6FB1592C8050077F950 /* Steps.plist */,
@@ -3599,6 +3603,7 @@
 				AE7BECA61592E5100077F950 /* Appstore Button.png in Resources */,
 				AE7BECA91592E51D0077F950 /* Little Ocean Logo-hd.png in Resources */,
 				AE7BECAA1592E51D0077F950 /* Little Ocean Logo.png in Resources */,
+				AEAE1AEC1593F4E50055CDAB /* Spaces.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3926,6 +3931,7 @@
 				AE7BEC9E1592E4F70077F950 /* Appstore Button.png in Resources */,
 				AE7BECA11592E5010077F950 /* Little Ocean Logo-ipadhd.png in Resources */,
 				AE7BECA21592E5010077F950 /* Little Ocean Logo.png in Resources */,
+				AEAE1AEA1593F4E10055CDAB /* Spaces.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -330,7 +330,6 @@ static const CGFloat ST_MOVING_NOTE_Y = -275.0f;
 #if DEBUG_SHOWSTAFFCURVES
 - (void) draw
 {
-    /*
     glColor4f(1.0, 0, 0, 1.0);      
     glLineWidth(3.0f);
         
@@ -344,7 +343,6 @@ static const CGFloat ST_MOVING_NOTE_Y = -275.0f;
     ccDrawCircle(c1, 3, 360, 64, NO);        
     ccDrawCircle(c2, 3, 360, 64, NO);
     ccDrawCubicBezier(start, c1, c2, end, 128);        
-     */
 }
 #endif
 

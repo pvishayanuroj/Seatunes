@@ -219,7 +219,7 @@ static const CGFloat SN_NAME_Y = 90.0f;
     }
 }
 
-#if !DEBUG_SHOWSTAFFCURVES
+#if DEBUG_SHOWSTAFFCURVES
 - (void) draw
 {
     glColor4f(1.0, 0, 0, 1.0);      
