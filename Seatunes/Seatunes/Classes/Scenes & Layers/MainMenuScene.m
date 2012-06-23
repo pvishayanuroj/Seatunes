@@ -223,6 +223,7 @@ static const CGFloat MMS_LOCK_SCALE = 0.8f;
     freePlayButton_ = [[StarfishButton starfishButton:kFreePlayButton text:@"Free Play"] retain];            
     freePlayButton_.delegate = self;
     freePlayButton_.position = ADJUST_IPAD_CCP(ccp(MMS_FREEPLAY_X, MMS_FREEPLAY_Y));        
+    [self addChild:freePlayButton_];
 }
 
 - (void) showLoading

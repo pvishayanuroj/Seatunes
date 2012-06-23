@@ -135,16 +135,6 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
 
 #pragma mark - Delegate Methods
 
-- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    /*
-    // Assume that all other 
-    if (buttonIndex != 0) {
-        [self buyProduct:kStateBuyCurrentPack];
-    }
-     */
-}
-
 - (void) buttonClicked:(Button *)button
 {
     switch (button.numID) {
@@ -250,12 +240,15 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     
     NSUInteger idx = 0;
     for (NSString *packName in packNames_) {    
+        
+        //NSLog(@"default: %d, all purch: %d", [DataUtility manager] isDefaultPack:packName], 
+        
 #if IAP_ON
-        BOOL isLocked = ![[DataUtility manager] isDefaultPack:packName];
+        BOOL isLocked = !([[DataUtility manager] isDefaultPack:packName] || [[SeatunesIAPHelper manager] allPacksPurchased]);
 #else
         BOOL isLocked = NO;
 #endif
-        ScrollingMenuItem *menuItem = [PackMenuItem packenuItem:packName packIndex:idx++ isLocked:isLocked];
+        ScrollingMenuItem *menuItem = [PackMenuItem packMenuItem:packName packIndex:idx++ isLocked:isLocked];
         [packMenu_ addMenuItem:menuItem];
     }
 }
@@ -278,7 +271,7 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     
     // Unlocked if either default or has been purchased 
 #if IAP_ON
-    BOOL isLocked = ![[DataUtility manager] isDefaultPack:packName];
+    BOOL isLocked = !([[DataUtility manager] isDefaultPack:packName] || [[SeatunesIAPHelper manager] allPacksPurchased]);
 #else
     BOOL isLocked = NO;
 #endif
@@ -311,6 +304,7 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     
     [self loadPackMenu];
     [self loadSongMenu:currentPack_];
+    [self togglePackSelect:currentPack_];    
 }
 
 - (void) loadMainMenu

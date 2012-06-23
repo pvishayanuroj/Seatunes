@@ -16,7 +16,7 @@ static const CGFloat PMI_SPRITE_X = 100.0f;
 static const CGFloat PMI_LOCK_X = 170.0f;
 static const CGFloat PMI_LOCK_Y = -60.0f;
 
-+ (id) packenuItem:(NSString *)packName packIndex:(NSUInteger)packIndex isLocked:(BOOL)isLocked
++ (id) packMenuItem:(NSString *)packName packIndex:(NSUInteger)packIndex isLocked:(BOOL)isLocked
 {
     return [[[self alloc] initPackMenuItem:packName packIndex:packIndex isLocked:isLocked] autorelease];
 }

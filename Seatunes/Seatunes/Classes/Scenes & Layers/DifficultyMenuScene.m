@@ -225,6 +225,14 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
 - (void) purchaseComplete
 {
     lockIcon_.visible = NO;
+
+    [(ScaledImageButton *)hardButton_ setImage:@"Music Note Button.png"];
+    [(ScaledImageButton *)mediumButton_ setImage:@"Clam Button Unselected.png"];                        
+    [(ScaledImageButton *)easyButton_ setImage:@"Bubble Button Unselected.png"];  
+    easyText_.opacity = DMS_SEMI_OPACITY;
+    mediumText_.opacity = DMS_SEMI_OPACITY;
+    hardText_.opacity = DMS_FULL_OPACITY;            
+    difficulty_ = kDifficultyHard;       
 }
 
 - (void) showLoading
