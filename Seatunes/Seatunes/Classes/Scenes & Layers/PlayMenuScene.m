@@ -21,6 +21,7 @@
 #import "AudioManager.h"
 #import "SeatunesIAPHelper.h"
 #import "LoadingIndicator.h"
+#import "Apsalar.h"
 
 @implementation PlayMenuScene
 

@@ -14,6 +14,7 @@
 #import "LoadingIndicator.h"
 #import "AudioManager.h"
 #import "SeatunesIAPHelper.h"
+#import "Apsalar.h"
 
 @implementation DifficultyMenuScene
 
