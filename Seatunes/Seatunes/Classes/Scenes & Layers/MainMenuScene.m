@@ -97,10 +97,10 @@ static const CGFloat MMS_LOCK_SCALE = 0.8f;
 #endif
         
         if (isLocked) {
-            freePlayButton_ = [[StarfishButton starfishButtonUnselected:kFreePlayButton text:@"Free Play"] retain];                 
+            freePlayButton_ = [[StarfishButton starfishButtonUnselected:kFreePlayButton text:@"Keyboard"] retain];                 
         }
         else {
-            freePlayButton_ = [[StarfishButton starfishButton:kFreePlayButton text:@"Free Play"] retain];            
+            freePlayButton_ = [[StarfishButton starfishButton:kFreePlayButton text:@"Keyboard"] retain];            
         }
         freePlayButton_.delegate = self;
         freePlayButton_.position = ADJUST_IPAD_CCP(ccp(MMS_FREEPLAY_X, MMS_FREEPLAY_Y));        
@@ -220,7 +220,7 @@ static const CGFloat MMS_LOCK_SCALE = 0.8f;
     [freePlayButton_ removeFromParentAndCleanup:YES];
     [freePlayButton_ release];
     
-    freePlayButton_ = [[StarfishButton starfishButton:kFreePlayButton text:@"Free Play"] retain];            
+    freePlayButton_ = [[StarfishButton starfishButton:kFreePlayButton text:@"Keyboard"] retain];            
     freePlayButton_.delegate = self;
     freePlayButton_.position = ADJUST_IPAD_CCP(ccp(MMS_FREEPLAY_X, MMS_FREEPLAY_Y));        
     [self addChild:freePlayButton_];
