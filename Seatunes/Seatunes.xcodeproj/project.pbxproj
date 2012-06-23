@@ -4434,6 +4434,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beanstalk Studios LLP";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beanstalk Studios LLP";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Seatunes/Prefix.pch;
@@ -4447,6 +4449,8 @@
 				);
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "Seatunes HD";
+				PROVISIONING_PROFILE = "CCE429B1-45AC-4C07-95DA-B330625D461B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CCE429B1-45AC-4C07-95DA-B330625D461B";
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

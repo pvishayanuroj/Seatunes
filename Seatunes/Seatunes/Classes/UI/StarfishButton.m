@@ -17,20 +17,20 @@ static const CGFloat SB_LABEL_X = 75.0f;
 
 + (id) starfishButton:(NSUInteger)numID text:(NSString *)text
 {
-    return [[[self alloc] initStarfishButton:numID text:text image:@"Starfish Button.png" fnt:@"MenuFont.fnt"] autorelease];
+    return [[[self alloc] initStarfishButton:numID text:text image:@"Starfish Button.png" fnt:@"MenuFont.fnt" textScale:CHOOSE_REL_CCP(1.0f, 1.15f)] autorelease];
 }
 
 + (id) starfishButtonUnselected:(NSUInteger)numID text:(NSString *)text
 {
-    return [[[self alloc] initStarfishButton:numID text:text image:@"Starfish Button Unselected.png" fnt:@"MenuFontDisabled.fnt"] autorelease];
+    return [[[self alloc] initStarfishButton:numID text:text image:@"Starfish Button Unselected.png" fnt:@"MenuFontDisabled.fnt" textScale:CHOOSE_REL_CCP(1.0f, 1.15f)] autorelease];
 }
 
 + (id) starfishButtonBlue:(NSUInteger)numID text:(NSString *)text
 {
-    return [[[self alloc] initStarfishButton:numID text:text image:@"Blue Starfish Button.png" fnt:@"MenuFont.fnt"] autorelease];    
+    return [[[self alloc] initStarfishButton:numID text:text image:@"Blue Starfish Button.png" fnt:@"MenuFont.fnt" textScale:CHOOSE_REL_CCP(1.2f, 1.3f)] autorelease];    
 }
 
-- (id) initStarfishButton:(NSUInteger)numID text:(NSString *)text image:(NSString *)image fnt:(NSString *)fnt
+- (id) initStarfishButton:(NSUInteger)numID text:(NSString *)text image:(NSString *)image fnt:(NSString *)fnt textScale:(CGFloat)textScale
 {
     if ((self = [super initButton:numID toggle:NO])) {
         
@@ -41,6 +41,7 @@ static const CGFloat SB_LABEL_X = 75.0f;
         label_ = [[CCLabelBMFont labelWithString:text fntFile:fnt] retain];
         label_.position = ADJUST_IPAD_CCP(ccp(SB_LABEL_X, 0));
         label_.anchorPoint = ccp(0, 0.5f);
+        label_.scale = textScale;
         [self addChild:label_];
     }
     return self;
