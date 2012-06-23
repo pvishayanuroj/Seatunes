@@ -305,6 +305,7 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
     [self loadPackMenu];
     [self loadSongMenu:currentPack_];
     [self togglePackSelect:currentPack_];    
+    [packMenu_ setMenuOffset:currentPack_];    
 }
 
 - (void) loadMainMenu
