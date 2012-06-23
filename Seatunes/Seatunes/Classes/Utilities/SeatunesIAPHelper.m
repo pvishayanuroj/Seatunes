@@ -9,6 +9,7 @@
 #import "SeatunesIAPHelper.h"
 #import "DataUtility.h"
 #import "Utility.h"
+#import "Apsalar.h"
 
 @implementation SeatunesIAPHelper
 
@@ -72,6 +73,9 @@ static SeatunesIAPHelper *manager_ = nil;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchasedFailed:) name:kProductPurchaseFailedNotification object:nil];    
         NSString *productIdentifier = [[DataUtility manager] productIdentifierFromName:kAllPacks];        
         [super buyProductIdentifier:productIdentifier];  
+#if ANALYTICS_ON
+        [Apsalar event:@"IAP-Confirmed"];
+#endif         
     }
 }
 
@@ -230,6 +234,10 @@ static SeatunesIAPHelper *manager_ = nil;
     NSString *productIdentifier = [notification object];
     NSLog(@"Successfully bought %@", productIdentifier);
 #endif
+    
+#if ANALYTICS_ON
+    [Apsalar event:@"IAP-Purchased"];
+#endif        
 }
 
 - (void) productPurchasedFailed:(NSNotification *)notification

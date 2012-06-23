@@ -18,6 +18,7 @@
 #import "SeatunesIAPHelper.h"
 #import "Utility.h"
 #import "LoadingIndicator.h"
+#import "Apsalar.h"
 
 @implementation MainMenuScene
 
@@ -160,6 +161,9 @@ static const CGFloat MMS_LOCK_SCALE = 0.8f;
             [[AudioManager audioManager] playSound:kD4 instrument:kMenu];            
 #if IAP_ON
             if (![[SeatunesIAPHelper manager] allPacksPurchased]) {
+#if ANALYTICS_ON
+                [Apsalar eventWithArgs:@"IAP-Started", @"Source", @"Freeplay", nil];
+#endif                
                 [[SeatunesIAPHelper manager] buyProduct:self];
             }
             else {

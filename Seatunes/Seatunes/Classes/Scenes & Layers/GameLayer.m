@@ -183,9 +183,8 @@ static const CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
     CCScene *scene = [PlayMenuScene playMenuScene:1];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.6f scene:scene]];  
     
-#if ANALYTICS_ON
-    NSString *difficultyName = [Utility difficultyFromEnum:difficulty_];    
-    [Apsalar eventWithArgs:@"ExerciseComplete", @"difficulty", difficultyName, nil];
+#if ANALYTICS_ON  
+    [Apsalar event:@"MusicTutorialComplete"];
 #endif    
 }
 
@@ -203,12 +202,9 @@ static const CGFloat GL_SIDEMENU_MOVE_AMOUNT = 200.0f;
     
     [self showScoreMenu:scoreInfo];
     
-#if ANALYTICS_ON
-    NSString *difficultyName = [Utility difficultyFromEnum:difficulty_];
-    NSNumber *scoreValue = [NSNumber numberWithUnsignedInteger:scoreInfo.percentage];
-    NSNumber *help = [NSNumber numberWithBool:scoreInfo.helpUsed];
-    [Apsalar eventWithArgs:@"SongComplete", @"difficulty", difficultyName, @"song", songName_, @"score", scoreValue, @"help", help, nil];
-#endif
+#if ANALYTICS_ON  
+    [Apsalar event:@"SongComplete"];
+#endif      
 }
 
 - (void) buttonClicked:(Button *)button

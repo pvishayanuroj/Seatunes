@@ -170,6 +170,9 @@ static const CGFloat PMS_SONG_DOWN_ARROW_Y = 106.0f;
 #if IAP_ON
             // If selected pack is not a default pack and all packs haven't been purchased
             if (![[DataUtility manager] isDefaultPack:packName] && ![[SeatunesIAPHelper manager] allPacksPurchased]) {
+#if ANALYTICS_ON
+                [Apsalar eventWithArgs:@"IAP-Started", @"Source", @"Play Scene", nil];
+#endif                       
                 [[SeatunesIAPHelper manager] buyProduct:self];                  
             }
 #endif

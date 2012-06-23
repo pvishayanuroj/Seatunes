@@ -13,6 +13,7 @@
 #import "Slider.h"
 #import "DataUtility.h"
 #import "StarfishButton.h"
+#import "Apsalar.h"
 
 @implementation SettingsScene
 
@@ -86,6 +87,10 @@ static const CGFloat SS_SPEED_FAST_VALUE = 1.0f;
         CCActionInterval *delay = [CCDelayTime actionWithDuration:0.4f];
         CCActionInstant *done = [CCCallFunc actionWithTarget:self selector:@selector(showSlider)];
         [self runAction:[CCSequence actions:delay, done, nil]];
+        
+#if ANALYTICS_ON
+        [Apsalar event:@"Settings"];
+#endif              
     }
     return self;
 }
@@ -146,6 +151,9 @@ static const CGFloat SS_SPEED_FAST_VALUE = 1.0f;
         [slider_ setSlider:SS_SPEED_NORMAL_VALUE];
         [[DataUtility manager] setSongSpeed:kSongSpeedNormal];          
         [self showResetSuccess];
+#if ANALYTICS_ON  
+        [Apsalar event:@"TutorialsReset"];
+#endif                      
     }
 }
 
@@ -154,15 +162,24 @@ static const CGFloat SS_SPEED_FAST_VALUE = 1.0f;
     [[AudioManager audioManager] playSoundEffect:kClick];
     if (value < 0.33f) {
         [slider_ setSlider:SS_SPEED_SLOW_VALUE];
-        [[DataUtility manager] setSongSpeed:kSongSpeedSlow];        
+        [[DataUtility manager] setSongSpeed:kSongSpeedSlow];       
+#if ANALYTICS_ON  
+        [Apsalar eventWithArgs:@"SetSongSpeed", @"Speed", @"Slow", nil];
+#endif              
     }
     else if (value > 0.66f) {
         [slider_ setSlider:SS_SPEED_FAST_VALUE];
         [[DataUtility manager] setSongSpeed:kSongSpeedFast];
+#if ANALYTICS_ON  
+        [Apsalar eventWithArgs:@"SetSongSpeed", @"Speed", @"Fast", nil];
+#endif                      
     }
     else {
         [slider_ setSlider:SS_SPEED_NORMAL_VALUE];
-        [[DataUtility manager] setSongSpeed:kSongSpeedNormal];        
+        [[DataUtility manager] setSongSpeed:kSongSpeedNormal];      
+#if ANALYTICS_ON  
+        [Apsalar eventWithArgs:@"SetSongSpeed", @"Speed", @"Normal", nil];
+#endif                      
     }
 }
 

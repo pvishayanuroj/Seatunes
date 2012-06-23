@@ -12,6 +12,7 @@
 #import "MainMenuScene.h"
 #import "Button.h"
 #import "SpeechManager.h"
+#import "Apsalar.h"
 
 @implementation LittleOceanScene
 
@@ -66,6 +67,10 @@ static const CGFloat LOS_APPSTORE_Y = 100.0f;
         
         introPlaying_ = YES;
         narrationPlaying_ = YES;
+        
+#if ANALYTICS_ON
+        [Apsalar event:@"MoreApps"];
+#endif          
     }
     return self;
 }
@@ -94,6 +99,9 @@ static const CGFloat LOS_APPSTORE_Y = 100.0f;
             [self loadMainMenu];            
             break;
         case kLOSAppStore:
+#if ANALYTICS_ON
+            [Apsalar event:@"URLPromoClicked"];
+#endif            
             [self loadAppStore];
             break;
         default:

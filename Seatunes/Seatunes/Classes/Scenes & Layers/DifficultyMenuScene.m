@@ -148,6 +148,9 @@ static const GLubyte DMS_SEMI_OPACITY = 150;
 #if IAP_ON
             [[AudioManager audioManager] playSound:kG4 instrument:kMenu];                
             if (![[SeatunesIAPHelper manager] allPacksPurchased]) {
+#if ANALYTICS_ON
+                [Apsalar eventWithArgs:@"IAP-Started", @"Source", @"Difficulty Scene", nil];
+#endif                 
                 [[SeatunesIAPHelper manager] buyProduct:self];
             }
             else {

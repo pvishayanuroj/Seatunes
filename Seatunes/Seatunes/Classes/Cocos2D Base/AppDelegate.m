@@ -144,7 +144,7 @@
     
 #if ANALYTICS_ON
     [Apsalar startSession:APSALAR_KEY withKey:APSALAR_SECRET andLaunchOptions:launchOptions];
-    [Apsalar event:@"AppLaunched"];
+    //[Apsalar event:@"AppLaunched"];
 #endif      
     
     return YES;
@@ -155,7 +155,7 @@
 	[[CCDirector sharedDirector] pause];
     
 #if ANALYTICS_ON
-    [Apsalar event:@"AppSuspended"];
+    //[Apsalar event:@"AppSuspended"];
 #endif    
 }
 
@@ -164,7 +164,7 @@
     
 #if ANALYTICS_ON
     [Apsalar startSession:APSALAR_KEY withKey:APSALAR_SECRET];
-    [Apsalar event:@"AppResumed"];
+    //[Apsalar event:@"AppResumed"];
 #endif    
 }
 

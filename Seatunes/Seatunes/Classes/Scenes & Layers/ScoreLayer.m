@@ -18,6 +18,8 @@
 #import "Text.h"
 #import "AudioManager.h"
 #import "DataUtility.h"
+#import "Utility.h"
+#import "Apsalar.h"
 
 @implementation ScoreLayer
 
@@ -110,7 +112,14 @@ static const CGFloat SL_MENU_Y = 430.0f;
         
         // Record the score if it is good enough
         if (scoreInfo.percentage >= PERCENT_FOR_BADGE && !scoreInfo.helpUsed) {
-            [[DataUtility manager] saveSongScore:songName difficulty:scoreInfo.difficulty];            
+            [[DataUtility manager] saveSongScore:songName difficulty:scoreInfo.difficulty];      
+#if ANALYTICS_ON
+            NSString *difficultyName = [Utility difficultyFromEnum:scoreInfo.difficulty];            
+            [Apsalar eventWithArgs:@"BadgeEarned", @"Difficulty", difficultyName, nil];
+            if (scoreInfo.difficulty == kDifficultyHard) {
+                [Apsalar eventWithArgs:@"HelpUsed", @"Help", scoreInfo.helpUsed, nil];    
+            }
+#endif                   
         }
         
         //CCParticleSystem *ps = [self createBadgePS];

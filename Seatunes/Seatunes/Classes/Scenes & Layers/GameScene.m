@@ -30,7 +30,7 @@
         
 #if ANALYTICS_ON
         NSString *difficultyName = [Utility difficultyFromEnum:difficulty];
-        [Apsalar eventWithArgs:@"SongStart", @"difficulty", difficultyName, @"song", songName, nil];
+        [Apsalar eventWithArgs:@"SongStart", @"Difficulty", difficultyName, @"Song", songName, nil];
 #endif        
     }
     return self;

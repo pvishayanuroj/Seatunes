@@ -10,6 +10,7 @@
 #import "Button.h"
 #import "AudioManager.h"
 #import "MainMenuScene.h"
+#import "Apsalar.h"
 
 @implementation CreditsScene
 
@@ -75,6 +76,10 @@ static const CGFloat CS_PADDING_Y = 90.0f;
         [actions addObject:place];        
         
         [self runAction:[CCSequence actionsWithArray:actions]];
+        
+#if ANALYTICS_ON
+        [Apsalar event:@"Credits"];
+#endif         
     }
     return self;
 }

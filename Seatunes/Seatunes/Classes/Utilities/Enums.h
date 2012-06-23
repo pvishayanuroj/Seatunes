@@ -28,9 +28,11 @@
 
 #define kSongSpeed @"Song Speed"
 
-#define APSALAR_KEY @"pvishayanuroj"
+//#define APSALAR_KEY @"pvishayanuroj"
+//#define APSALAR_SECRET @"8WmuWiho"
 
-#define APSALAR_SECRET @"8WmuWiho"
+#define APSALAR_KEY @"beanstalkstudios"
+#define APSALAR_SECRET @"6ytcJf3k"
 
 #define IS_IPAD() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
