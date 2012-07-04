@@ -169,6 +169,29 @@ static SeatunesIAPHelper *manager_ = nil;
     }   
 }
 
+- (void) restoreProduct:(id <IAPDelegate>)delegate
+{
+    delegate_ = delegate;
+    
+    // Check for a connection
+    if ([Utility hasInternetConnection]) {
+        
+        if (delegate_ && [delegate_ respondsToSelector:@selector(showLoading)]) {
+            [delegate_ showLoading];
+        }
+        
+        // Setup the notifications
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:kProductPurchaseNotification object:nil];       
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productRestoreFailed:) name:kProductRestoreFailedNotification object:nil];                     
+        
+        // Make the call to request the products first
+        [self restoreTransactions];
+    }
+    else {
+        [self showDialog:@"Error" text:@"Internet connection required to restore purchases!"];
+    }       
+}
+
 - (void) productsLoaded
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];    
@@ -255,6 +278,17 @@ static SeatunesIAPHelper *manager_ = nil;
     }
     
     delegate_ = nil;    
+}
+
+- (void) productRestoreFailed:(NSNotification *)notification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];   
+    
+    if (delegate_ && [delegate_ respondsToSelector:@selector(finishLoading)]) {
+        [delegate_ finishLoading];
+    }
+    
+    delegate_ = nil;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #define kProductPurchaseNotification @"ProductPurchased"
 #define kProductPurchaseFailedNotification @"ProductPurchasedFailed"
+#define kProductRestoreFailedNotification @"ProductRestoreFailed"
 #define kProductsLoadedNotification @"ProductsLoaded"
 #define kProductsLoadedFailedNotification @"ProductsLoadedFailed"
 

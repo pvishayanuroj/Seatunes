@@ -36,6 +36,8 @@ enum {
 
 - (void) buyProductIdentifier:(NSString *)productIdentifier;
 
+- (void) restoreTransactions;
+
 - (void) recordTransaction:(SKPaymentTransaction *)transaction;
 
 - (void) provideContent:(NSString *)productIdentifier;

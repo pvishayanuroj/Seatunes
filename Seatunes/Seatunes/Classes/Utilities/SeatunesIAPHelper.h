@@ -32,4 +32,6 @@
 
 - (void) buyProduct:(id <IAPDelegate>)delegate;
 
+- (void) restoreProduct:(id <IAPDelegate>)delegate;
+
 @end

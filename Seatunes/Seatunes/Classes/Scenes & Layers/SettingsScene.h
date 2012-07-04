@@ -11,16 +11,20 @@
 #import "cocos2d.h"
 #import "ButtonDelegate.h"
 #import "SliderDelegate.h"
+#import "IAPDelegate.h"
 
 enum {
     kSSBack,
     kSSResetTutorials,
-    kSSResetScores
+    kSSResetScores,
+    kSSRestore
 };
 
 @class Slider;
+@class LoadingIndicator;
+@class Button;
 
-@interface SettingsScene : CCScene <ButtonDelegate, SliderDelegate, UIAlertViewDelegate> {
+@interface SettingsScene : CCScene <ButtonDelegate, SliderDelegate, IAPDelegate, UIAlertViewDelegate> {
     
     Slider *slider_;
     
@@ -29,6 +33,14 @@ enum {
     CCLabelBMFont *normalLabel_;
 
     CCLabelBMFont *fastLabel_;
+    
+    LoadingIndicator *loadingIndicator_;      
+    
+    Button *backButton_;
+    
+    Button *resetButton_;
+    
+    Button *restoreButton_;
 }
 
 @end

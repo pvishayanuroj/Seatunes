@@ -14,6 +14,8 @@
 #import "DataUtility.h"
 #import "StarfishButton.h"
 #import "Apsalar.h"
+#import "LoadingIndicator.h"
+#import "SeatunesIAPHelper.h"
 
 @implementation SettingsScene
 
@@ -23,6 +25,8 @@ static const CGFloat SS_BACK_BUTTON_X = 50.0f;
 static const CGFloat SS_BACK_BUTTON_Y = 730.0f;
 static const CGFloat SS_RESET_BUTTON_X = 560.0f;
 static const CGFloat SS_RESET_BUTTON_Y = 250.0f;
+static const CGFloat SS_RESTORE_BUTTON_X = 560.0f;
+static const CGFloat SS_RESTORE_BUTTON_Y = 125.0f;
 static const CGFloat SS_MENU_FRAME_X = 512.0f;
 static const CGFloat SS_MENU_FRAME_Y = 500.0f;
 
@@ -41,6 +45,8 @@ static const CGFloat SS_SPEED_FAST_VALUE = 1.0f;
 {
     if ((self = [super init])) {
         
+        loadingIndicator_ = nil;        
+        
         CCSprite *background = [CCSprite spriteWithFile:@"Ocean Background.png"];
         background.anchorPoint = CGPointZero;
         [self addChild:background];            
@@ -56,16 +62,24 @@ static const CGFloat SS_SPEED_FAST_VALUE = 1.0f;
         [self addChild:titleText];        
         
         // Add back button
-        Button *backButton = [ScaledImageButton scaledImageButton:kSSBack image:@"Back Button.png"];
-        backButton.delegate = self;
-        backButton.position = ADJUST_IPAD_CCP(ccp(SS_BACK_BUTTON_X, SS_BACK_BUTTON_Y));
-        [self addChild:backButton];         
+        backButton_ = [[ScaledImageButton scaledImageButton:kSSBack image:@"Back Button.png"] retain];
+        backButton_.delegate = self;
+        backButton_.position = ADJUST_IPAD_CCP(ccp(SS_BACK_BUTTON_X, SS_BACK_BUTTON_Y));
+        [self addChild:backButton_];         
         
-        Button *resetButton = [StarfishButton starfishButtonBlue:kSSResetTutorials text:@"Reset Instructions"];
-        resetButton.delegate = self;
-        resetButton.scale = 0.8f;
-        resetButton.position = ADJUST_IPAD_CCP(ccp(SS_RESET_BUTTON_X, SS_RESET_BUTTON_Y));
-        [self addChild:resetButton];                 
+        // Add reset button
+        resetButton_ = [[StarfishButton starfishButtonBlue:kSSResetTutorials text:@"Reset Instructions"] retain];
+        resetButton_.delegate = self;
+        resetButton_.scale = 0.8f;
+        resetButton_.position = ADJUST_IPAD_CCP(ccp(SS_RESET_BUTTON_X, SS_RESET_BUTTON_Y));
+        [self addChild:resetButton_];                 
+
+        // Add restore button
+        restoreButton_ = [[StarfishButton starfishButtonBlue:kSSRestore text:@"Restore Purchases"] retain];
+        restoreButton_.delegate = self;
+        restoreButton_.scale = 0.8f;
+        restoreButton_.position = ADJUST_IPAD_CCP(ccp(SS_RESTORE_BUTTON_X, SS_RESTORE_BUTTON_Y));
+        [self addChild:restoreButton_];                         
         
         [[AudioManager audioManager] playSoundEffect:kPageFlip];             
         
@@ -101,34 +115,14 @@ static const CGFloat SS_SPEED_FAST_VALUE = 1.0f;
     [normalLabel_ release];
     [fastLabel_ release];
     [slider_ release];
+    [resetButton_ release];
+    [restoreButton_ release];
+    [backButton_ release];
     
     [super dealloc];
 }
 
-- (void) showSlider
-{
-    
-    slider_ = [[Slider slider:ADJUST_IPAD_CCP(ccp(SS_SLIDER_X, SS_SLIDER_Y)) width:ADJUST_IPAD_WIDTH(SS_SLIDER_WIDTH)] retain];
-    slider_.delegate = self;    
-    
-    SongSpeed songSpeed = [[DataUtility manager] getSongSpeed];
-    switch (songSpeed) {
-        case kSongSpeedSlow:
-            [slider_ setSliderNoAnimation:SS_SPEED_SLOW_VALUE];
-            break;
-        case kSongSpeedNormal:
-            [slider_ setSliderNoAnimation:SS_SPEED_NORMAL_VALUE];
-            break;
-        case kSongSpeedFast:
-            [slider_ setSliderNoAnimation:SS_SPEED_FAST_VALUE];
-            break;
-        default:
-            [slider_ setSliderNoAnimation:SS_SPEED_NORMAL_VALUE];
-            break;
-    }  
-    
-    [self addChild:slider_];     
-}
+#pragma mark - Delegate Methods
 
 - (void) buttonClicked:(Button *)button
 {
@@ -138,6 +132,12 @@ static const CGFloat SS_SPEED_FAST_VALUE = 1.0f;
             break;
         case kSSResetTutorials:
             [self showResetConfirmation];
+            break;
+        case kSSRestore:
+            [[SeatunesIAPHelper manager] restoreProduct:self];
+#if ANALYTICS_ON
+            [Apsalar event:@"IAP-Restore"];
+#endif             
             break;
         default:
             break;
@@ -181,6 +181,65 @@ static const CGFloat SS_SPEED_FAST_VALUE = 1.0f;
         [Apsalar eventWithArgs:@"SetSongSpeed", @"Speed", @"Normal", nil];
 #endif                      
     }
+}
+
+- (void) purchaseComplete
+{
+    /*
+    lockIcon_.visible = NO;
+    
+    [freePlayButton_ removeFromParentAndCleanup:YES];
+    [freePlayButton_ release];
+    
+    freePlayButton_ = [[StarfishButton starfishButton:kFreePlayButton text:@"Keyboard"] retain];            
+    freePlayButton_.delegate = self;
+    freePlayButton_.position = ADJUST_IPAD_CCP(ccp(MMS_FREEPLAY_X, MMS_FREEPLAY_Y));        
+    [self addChild:freePlayButton_];
+     */
+}
+
+- (void) showLoading
+{    
+    [slider_ disable];
+    
+    loadingIndicator_ = [[LoadingIndicator loadingIndicator] retain];
+    [self addChild:loadingIndicator_];
+}
+
+- (void) finishLoading
+{ 
+    [loadingIndicator_ remove];
+    [loadingIndicator_ release];
+    loadingIndicator_ = nil;   
+    
+    [slider_ enable];
+}
+
+#pragma mark - Helper Methods
+
+- (void) showSlider
+{
+    
+    slider_ = [[Slider slider:ADJUST_IPAD_CCP(ccp(SS_SLIDER_X, SS_SLIDER_Y)) width:ADJUST_IPAD_WIDTH(SS_SLIDER_WIDTH)] retain];
+    slider_.delegate = self;    
+    
+    SongSpeed songSpeed = [[DataUtility manager] getSongSpeed];
+    switch (songSpeed) {
+        case kSongSpeedSlow:
+            [slider_ setSliderNoAnimation:SS_SPEED_SLOW_VALUE];
+            break;
+        case kSongSpeedNormal:
+            [slider_ setSliderNoAnimation:SS_SPEED_NORMAL_VALUE];
+            break;
+        case kSongSpeedFast:
+            [slider_ setSliderNoAnimation:SS_SPEED_FAST_VALUE];
+            break;
+        default:
+            [slider_ setSliderNoAnimation:SS_SPEED_NORMAL_VALUE];
+            break;
+    }  
+    
+    [self addChild:slider_];     
 }
 
 - (void) showResetConfirmation

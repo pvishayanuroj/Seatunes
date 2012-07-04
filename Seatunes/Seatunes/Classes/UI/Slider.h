@@ -30,4 +30,8 @@
 
 - (void) remove;
 
+- (void) enable;
+
+- (void) disable;
+
 @end

@@ -77,4 +77,14 @@
     }    
 }
 
+- (void) enable
+{
+    slider_.enabled = YES;
+}
+
+- (void) disable
+{
+    slider_.enabled = NO;
+}
+
 @end

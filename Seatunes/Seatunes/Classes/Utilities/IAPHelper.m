@@ -137,6 +137,24 @@
     }
 }
 
+- (void) restoreTransactions
+{
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
+
+- (void) paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
+{  
+    [[NSNotificationCenter defaultCenter] postNotificationName:kProductRestoreFailedNotification object:[NSNumber numberWithInteger:kIAPTransactionFailed]];    
+}
+
+- (void) paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
+{
+    for (SKPaymentTransaction *transaction in queue.transactions) {
+        
+        [self restoreTransaction:transaction];          
+    }
+}
+
 - (void) recordTransaction:(SKPaymentTransaction *)transaction
 {
     // Record on server side if needed
